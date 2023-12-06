@@ -1,0 +1,5 @@
+sphinx-hoverxref
+myst_parser
+sphinx_rtd_theme
+sphinx_copybutton
+sphinxemoji
