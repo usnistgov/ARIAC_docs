@@ -1,7 +1,12 @@
 .. _ARIAC_DOCS_INTRO:
 
 ``ARIAC Docs``
-=============
+==============
+
+Intro
+-----
+
+Welcome to the ARIAC Docs [#]_
 
 .. toctree::
    :caption: ⏩ Getting Started
@@ -9,6 +14,8 @@
    :hidden:
 
    getting_started/updates.rst
+
+
 
 .. [#] Certain commercial firms and trade names are identified in this
     document in order to specify the installation and usage procedures
