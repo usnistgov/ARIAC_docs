@@ -1,12 +1,16 @@
-.. _ARIAC_DOCS_INTRO:
+ARIAC Documentation
+===================
 
-``ARIAC Docs``
-==============
+Welcome to ARIAC 2023!
 
-Intro
------
+Github repository: `https://www.github.com/usnistgov/ARIAC/ <https://www.github.com/usnistgov/ARIAC/>`_
 
-Welcome to the ARIAC Docs [#]_
+
+.. image:: images/environment.png
+  :width: 900
+  :alt: ARIAC environment for 2023
+
+.. Hidden TOCs
 
 .. toctree::
    :caption: ⏩ Getting Started
@@ -14,13 +18,46 @@ Welcome to the ARIAC Docs [#]_
    :hidden:
 
    getting_started/updates.rst
+   getting_started/installation.rst
+   getting_started/registering
+   getting_started/events
 
+.. toctree::
+   :caption: ⏩ Competition Specifications
+   :maxdepth: 3
+   :hidden:
 
+   competition/terminology
+   competition/overview
+   competition/environment
+   competition/orders
+   competition/sensors
+   competition/trials.rst
+   competition/ros_communication
+   competition/challenges
+   competition/tf_frames
+   competition/scoring
 
-.. [#] Certain commercial firms and trade names are identified in this
-    document in order to specify the installation and usage procedures
-    adequately, or to provide context.  Such identification is not intended
-    to imply recommendation or endorsement by the `National Institute of
-    Standards and Technology <https://www.nist.gov>`_, nor is it intended
-    to imply that related products are necessarily the best available for
-    the purpose.
+.. toctree::
+   :caption: ⏩ Tutorials
+   :maxdepth: 3
+   :hidden:
+
+   tutorials/tutorials.rst
+   tutorials/tutorial_1.rst
+   tutorials/tutorial_2.rst
+   tutorials/tutorial_3.rst
+   tutorials/tutorial_4.rst
+   tutorials/tutorial_5.rst
+   tutorials/tutorial_6.rst
+   tutorials/tutorial_7.rst
+   tutorials/tutorial_8.rst
+
+.. toctree::
+   :caption: ⏩ Automated Evaluation
+   :maxdepth: 3
+   :hidden:
+
+   automated_evaluation/automated_evaluation_overview
+   automated_evaluation/competition_launch
+ 
