@@ -35,7 +35,7 @@
 6. Install the necessary sphinx extensions
 
     ```
-    cd ariac_docs
+    cd ARIAC_docs
     pip install -r requirements.txt
     ```
 
