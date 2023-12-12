@@ -1,0 +1,179 @@
+name: ARIAC_docs
+description: Documentation for the ARIAC competition
+author: NIST APRS
+
+branding:
+  icon: book
+  color: blue
+
+inputs:
+  docs-folder:
+    description:
+      Folder containing the documentation.
+    required: true
+    default: "docs/"
+  pages-branch:
+    description: 
+      The branch linked to the documentation server.
+    default: 'nist-pages'
+  pages-url:
+    description:
+      URL of web server for served documentation.
+    default: 'https://pages.nist.gov'
+  formats:
+    description:
+      Type(s) of output desired in addition to html ('pdf', and/or 'epub')
+    required: false
+    default: ''
+  build-html-command:
+    description:
+      The command used to build your html documentation.
+    required: false
+    default: make html
+  build-epub-command:
+    description:
+      The command used to build your ePUB documentation.
+    required: false
+    default: make epub
+  build-pdf-command:
+    description:
+      The command used to build your PDF documentation.
+    required: false
+    default: make latexpdf
+  pre-build-command:
+    description:
+      Run before the build command, you can use this to install system level
+      dependencies, for example with
+      "apt-get update -y && apt-get install -y perl"
+    required: false
+  apt-packages:
+    description:
+      List of APT packages to install.
+    required: false
+    default: ''
+  pip-requirements:
+    description:
+      The path to the pip requirements file, relative to the root of the
+      project.
+    required: false
+  conda-environment:
+    description:
+      The path to the Conda environment file, relative to the root of the
+      project.
+    required: false
+  push-pulls-pages:
+    description:
+      Whether the results of pull requests should be pushed to
+      `pages-branch`.
+    # Idiot GitHub Actions inputs doesn't support 'type'.
+    # https://stackoverflow.com/questions/76292948/github-action-boolean-input-with-default-value
+    default: 'false'
+    options:
+      - true
+      - false
+  insert-header-footer:
+    description:
+      Whether to insert the NIST branding headers and footers
+      (which are incompatible with sphinx_rtd_theme).
+    default: 'true'
+    options:
+      - true
+      - false
+  
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        set-safe-directory: /github/workspace
+    - name: Set env
+      shell: bash
+      # In a PR, github.ref_name can be, e.g., `12/merge`,
+      # which causes downstream grief.
+      run: |
+        refname=${{ github.ref_name }}
+        echo "ARIAC_DOCS_SANITIZED_REF_NAME=${refname////_}" >> $GITHUB_ENV
+        pushpages=${{
+          github.event_name != 'pull_request'
+          || (
+            inputs.push-pulls-pages == 'true'
+            && github.event.pull_request.head.repo.full_name == github.repository
+          )
+        }}
+        echo "ARIAC_DOCS_PUSH_PAGES=${pushpages}" >> $GITHUB_ENV
+    - name: Symlink current Actions repo
+      # from https://github.com/orgs/community/discussions/41927#discussioncomment-4655948
+      # @mbrancato
+      working-directory: ${{ github.action_path }}
+      shell: bash
+      run: ln -fs $(realpath ./)  /home/runner/work/_actions/current
+    - name: Build the docs
+      id: ARIAC_docs
+      # from https://github.com/orgs/community/discussions/41927#discussioncomment-4605881
+      # @mbrancato
+      # because usnistgov/Docs4NIST/ARIAC_docs@${{ github.action_ref }}
+      # doesn't work
+      uses: ./../../_actions/current/ARIAC_docs
+      with:
+        docs-folder: ${{ inputs.docs-folder }}
+        default-branch: ${{ github.event.repository.default_branch }}
+        pages-branch: ${{ inputs.pages-branch }}
+        pages-url: ${{ inputs.pages-url }}
+        formats: ${{ inputs.formats }}
+        build-html-command: ${{ inputs.build-html-command }}
+        build-epub-command: ${{ inputs.build-epub-command }}
+        build-pdf-command: ${{ inputs.build-pdf-command }}
+        pre-build-command: ${{ inputs.pre-build-command }}
+        apt-packages: ${{ inputs.apt-packages }}
+        pip-requirements: ${{ inputs.pip-requirements }}
+        conda-environment: ${{ inputs.conda-environment }}
+        insert-header-footer: ${{ inputs.insert-header-footer }}
+    - name: Change ownership
+      shell: bash
+      run: |
+        sudo chown -R runner:docker __nist-pages
+      if: >-
+        env.ARIAC_DOCS_PUSH_PAGES == 'true'
+        && ( success() || steps.build-html.conclusion == 'success' )
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        branch: ${{ inputs.pages-branch }}
+        directory: __nist-pages
+        github_token: ${{ github.token }}
+      # Pull requests from forked repos don't have permissions
+      # to push back to pages-branch
+      # https://github.com/orgs/community/discussions/26829
+      if: >-
+        env.ARIAC_DOCS_PUSH_PAGES == 'true'
+        && (success() || steps.build-html.conclusion == 'success')
+    - uses: actions/upload-artifact@v3
+      name: Upload Documentation Artifacts
+      with:
+        name: ${{ github.event.repository.name }}-${{ env.ARIAC_DOCS_2D_SANITIZED_REF_NAME }}-${{ github.sha }}
+        path: |
+          ${{ steps.ARIAC_docs.outputs.borged-build-folder }}/html
+      # Use always() to always run this step to publish documentation
+      # artifacts even when there are failures
+      if: ${{ always() }}
+    - uses: actions/upload-artifact@v3
+      name: Upload Documentation Artifacts
+      with:
+        name: ${{ github.event.repository.name }}-${{ env.ARIAC_DOCS_SANITIZED_REF_NAME }}-${{ github.sha }}
+        path: |
+          ${{ steps.ARIAC_docs.outputs.borged-build-folder }}/epub/*.epub
+      # Use always() to always run this step to publish documentation
+      # artifacts even when there are failures
+      if: ${{ contains(inputs.formats, 'epub') && always() }}
+    - uses: actions/upload-artifact@v3
+      name: Upload Documentation Artifacts
+      with:
+        name: ${{ github.event.repository.name }}-${{ env.ARIAC_DOCS_SANITIZED_REF_NAME }}-${{ github.sha }}
+        path: |
+          ${{ steps.ARIAC_docs.outputs.borged-build-folder }}/latex/${{ github.event.repository.name }}.pdf
+          ${{ steps.ARIAC_docs.outputs.borged-build-folder }}/latex/${{ github.event.repository.name }}.log
+          ${{ steps.ARIAC_docs.outputs.borged-build-folder }}/latex/${{ github.event.repository.name }}.tex
+      # Use always() to always run this step to publish documentation
+      # artifacts even when there are failures
+      if: ${{ contains(inputs.formats, 'pdf') && always() }}
