@@ -12,5 +12,5 @@ jobs:
           formats: ''
           pip-requirements: requirements.txt
           build-html-command: make html
-          include-header-footer: false
+          insert-header-footer: false
           
