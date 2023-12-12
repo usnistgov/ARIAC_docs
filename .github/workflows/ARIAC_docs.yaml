@@ -6,9 +6,11 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
-      - uses: usnistgov/ARIAC_docs@main
+      - uses: usnistgov/Docs4NIST@0.5
         with:
           docs-folder: docs/
-          formats: |-
-           epub
-           pdf
+          formats: ''
+          pip-requirements: requirements.txt
+          build-html-command: make html
+          include-header-footer: false
+          
