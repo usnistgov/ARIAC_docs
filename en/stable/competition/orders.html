@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conditions, Orders, and Tasks &mdash; ARIAC_docs 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+      <link rel="stylesheet" type="text/css" href="../_static/ntd2d.css?v=592263c6" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/twemoji.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=62faf5e4" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/hack.css?v=c2ad982c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=359c27e9"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../_static/js/hoverxref.js"></script>
+        <script src="../_static/js/tooltipster.bundle.min.js"></script>
+        <script src="../_static/js/micromodal.min.js"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=faefdcb3"></script>
+        <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"></script>
+        <script src="../_static/twemoji.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../_static/js/custom.js?v=8fe80478"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Sensors" href="sensors.html" />
+    <link rel="prev" title="Environment" href="environment.html" />
+   
+
+  <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+  <script src="https://code.jquery.com/jquery-3.6.2.min.js" type="text/javascript" defer="defer"></script>
+  
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            ARIAC_docs
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">⏩ Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/updates.html">Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installing ARIAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/registering.html">Registering for the Competition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/events.html">Calendar of Events</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Competition Specifications</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview of the Competition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Conditions, Orders, and Tasks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#conditions">Conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#orders">Orders</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setup">Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#kitting-task">Kitting Task</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#assembly-task">Assembly Task</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#combined-task">Combined Task</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Setup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trials.html">Configuration Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ros_communication.html">ROS Communication Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="challenges.html">Agility Challenges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tf_frames.html">TF Frames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scoring.html">Scoring</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">Introduction to Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_1.html">Tutorial 1: Create a Competition Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_2.html">Tutorial 2: Read Data from a Break Beam Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_3.html">Tutorial 3: Read Data from an Advanced Logical Camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_4.html">Tutorial 4: Read an Order</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_5.html">Tutorial 5: Move AGVs to Stations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_6.html">Tutorial 6: Enable/Disable a Gripper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_7.html">Tutorial 7: Move Robots with MoveIt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_8.html">Tutorial 8: Move Robots with ROS2 Actions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Automated Evaluation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../automated_evaluation/automated_evaluation_overview.html">Automated Evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automated_evaluation/competition_launch.html">Launch File Setup</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ARIAC_docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Conditions, Orders, and Tasks</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/competition/orders.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <blockquote>
+<div></div></blockquote>
+<section id="conditions-orders-and-tasks">
+<h1>Conditions, Orders, and Tasks<a class="headerlink" href="#conditions-orders-and-tasks" title="Permalink to this heading"></a></h1>
+<p>This page describes the different types of conditions, orders and tasks that can be found in a trial configuration file.</p>
+<section id="conditions">
+<span id="id1"></span><h2>Conditions<a class="headerlink" href="#conditions" title="Permalink to this heading"></a></h2>
+<p>Orders and challenges are announced under some conditions. There are 3 types of conditions in ARIAC 2023:</p>
+<blockquote>
+<div><ul>
+<li><p><strong>Time-based condition</strong>: This condition is used to announce an order when the competition time has reached the time provided in the condition.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The competition time is set when the competitor starts the competition with the service call <span class="rosservice">/ariac/start_competition</span>. This is different from the simulation time which is set when Gazebo starts.</p>
+</div>
+<p>For each trial, the first order always uses a time-based condition with the value 0.
+This ensures the first order is announced as soon as the competitor starts the competition.
+<a class="hxr-hoverxref hxr-tooltip reference internal" href="#time-based-condition"><span class="std std-numref">Listing 1</span></a> shows an example of a time-based condition where an ordered is announced at <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">10.5</span></code> seconds into the competition.</p>
+<div class="literal-block-wrapper docutils container" id="time-based-condition">
+<div class="code-block-caption"><span class="caption-number">Listing 1 </span><span class="caption-text">Time-based condition.</span><a class="headerlink" href="#time-based-condition" title="Permalink to this code"></a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">announcement</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">time_condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.5</span>
+</pre></div>
+</div>
+</div>
+</li>
+<li><p><strong>Part placement condition</strong>: When this condition is used, an order or a challenge is announced as soon as a specific part is placed on a specific <abbr title="Automated Guided Vehicle">AGV</abbr>.
+<em>Note</em>: This condition only applies to kitting and not assembly.
+<a class="hxr-hoverxref hxr-tooltip reference internal" href="#part-placement-condition"><span class="std std-numref">Listing 2</span></a> shows an example of a part placement condition which announces an order or a challenge when a red pump is placed on AGV 2.</p>
+<div class="literal-block-wrapper docutils container" id="part-placement-condition">
+<div class="code-block-caption"><span class="caption-number">Listing 2 </span><span class="caption-text">Part placement condition.</span><a class="headerlink" href="#part-placement-condition" title="Permalink to this code"></a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">announcement</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">part_place_condition</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">agv</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;pump&#39;</span>
+<span class="w">    </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;red&#39;</span>
+</pre></div>
+</div>
+</div>
+</li>
+<li><p><strong>Submission condition</strong>: When this condition is used, an order or a challenge is announced as soon as another order is submitted.
+<a class="hxr-hoverxref hxr-tooltip reference internal" href="#submission-condition"><span class="std std-numref">Listing 3</span></a> shows an example of a submission condition which announces an order or a challenge when the order <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;MMB30H56&#39;</span></code> is submitted.</p>
+<div class="literal-block-wrapper docutils container" id="submission-condition">
+<div class="code-block-caption"><span class="caption-number">Listing 3 </span><span class="caption-text">Submission condition.</span><a class="headerlink" href="#submission-condition" title="Permalink to this code"></a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">announcement</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">submission_condition</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">order_id</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;MMB30H56&#39;</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</section>
+<section id="orders">
+<span id="id2"></span><h2>Orders<a class="headerlink" href="#orders" title="Permalink to this heading"></a></h2>
+<p>An order is an intruction containing information on a task (<a class="hxr-hoverxref hxr-modal reference internal" href="#kitting-task"><span class="std std-ref">Kitting Task</span></a>, <a class="hxr-hoverxref hxr-modal reference internal" href="#assembly-task"><span class="std std-ref">Assembly Task</span></a>, or <a class="hxr-hoverxref hxr-modal reference internal" href="#combined-task"><span class="std std-ref">Combined Task</span></a>).
+Each task consists of at least one part of a specific color and type. Orders are published on the topic <span class="topic">/ariac/orders</span>. An order has the following specifications:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">id</span></code> (string): Each order in a trial has a unique id. If the trial is generated by the ARIAC GUI, the ids will be auto-generated. For competitors who write trial configuration files by hand, a unique id must be provided for each order in the trial file.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">type</span></code> (string): Each order has a unique type which can take one of the following three values:</p>
+<ul>
+<li><p><code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;kitting&#39;</span></code>: Only kitting is to be performed.</p></li>
+<li><p><code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;assembly&#39;</span></code>: Only assembly is to be performed.</p></li>
+<li><p><code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;combined&#39;</span></code>: Both kitting and assembly are to be performed.</p></li>
+</ul>
+</li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">priority</span></code> (Boolean): Each order has a priority. When set to <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">false</span></code> the order is a regular order and when set to <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">true</span></code>, the order is of high priority.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">announcement</span></code>: One of the 3 <a class="hxr-hoverxref hxr-modal reference internal" href="#conditions"><span class="std std-ref">Conditions</span></a>.</p></li>
+<li><p>Manufacturing task: Only one of the manufacturing tasks below must be provided:</p>
+<ul>
+<li><p><a class="hxr-hoverxref hxr-modal reference internal" href="#kitting-task"><span class="std std-ref">Kitting Task</span></a>: Only kitting is to be performed.</p></li>
+<li><p><a class="hxr-hoverxref hxr-modal reference internal" href="#assembly-task"><span class="std std-ref">Assembly Task</span></a>: Only assembly is to be performed.</p></li>
+<li><p><a class="hxr-hoverxref hxr-modal reference internal" href="#combined-task"><span class="std std-ref">Combined Task</span></a>: Both kitting and assembly are to be performed.</p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<section id="setup">
+<h3>Setup<a class="headerlink" href="#setup" title="Permalink to this heading"></a></h3>
+<p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#order-yaml"><span class="std std-numref">Listing 4</span></a> shows an example of an order description which consists of a kitting task,</p>
+<div class="literal-block-wrapper docutils container" id="order-yaml">
+<div class="code-block-caption"><span class="caption-number">Listing 4 </span><span class="caption-text">Example of an order description.</span><a class="headerlink" href="#order-yaml" title="Permalink to this code"></a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">orders</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;MMB30H56&#39;</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;kitting&#39;</span>
+<span class="w">    </span><span class="nt">announcement</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">time_condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">    </span><span class="nt">priority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">kitting_task</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">agv_number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">      </span><span class="nt">tray_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">      </span><span class="nt">destination</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;warehouse&#39;</span>
+<span class="w">      </span><span class="nt">products</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;battery&#39;</span>
+<span class="w">          </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;blue&#39;</span>
+<span class="w">          </span><span class="nt">quadrant</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;sensor&#39;</span>
+<span class="w">          </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;red&#39;</span>
+<span class="w">          </span><span class="nt">quadrant</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;regulator&#39;</span>
+<span class="w">          </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;purple&#39;</span>
+<span class="w">          </span><span class="nt">quadrant</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;pump&#39;</span>
+<span class="w">          </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;orange&#39;</span>
+<span class="w">          </span><span class="nt">quadrant</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="kitting-task">
+<span id="id3"></span><h2>Kitting Task<a class="headerlink" href="#kitting-task" title="Permalink to this heading"></a></h2>
+<p>Kitting is the process which groups separate but related parts as one unit. For a kitting task, the <abbr title="Competitor Control System">CCS</abbr> is expected to:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Place a kit tray onto one of the four <abbr title="Automated Guided Vehicles">AGVs</abbr>.</p></li>
+<li><p>Place parts onto that kit tray in a specific quadrant.</p></li>
+<li><p>Direct the <abbr title="Automated Guided Vehicle">AGV</abbr> to the warehouse.</p></li>
+<li><p>Evaluate the submitted kit for scoring.</p></li>
+</ol>
+</div></blockquote>
+<section id="id4">
+<h3>Setup<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h3>
+<p>An example of a kitting task in a trial configuration file is presented in <a class="hxr-hoverxref hxr-tooltip reference internal" href="#kitting-task-yaml"><span class="std std-numref">Listing 5</span></a>. The kitting task in this example is described as follows:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The kit must be built on AGV 2 (<code class="code highlight yaml docutils literal highlight-yaml"><span class="nt">agv_number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span></code>).</p></li>
+<li><p>The kitting tray with id 2 must be used to build the kit (<code class="code highlight yaml docutils literal highlight-yaml"><span class="nt">tray_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span></code>).</p></li>
+<li><p>A blue battery must be place in quadrant 1 in the kitting tray (<code class="code highlight yaml docutils literal highlight-yaml"><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;battery&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;blue&#39;</span></code>, and <code class="code highlight yaml docutils literal highlight-yaml"><span class="nt">quadrant</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span></code>).</p></li>
+<li><p>Once the kit is built, the <abbr title="Automated Guided Vehicle">AGV</abbr> must be directed to the warehouse  (<code class="code highlight yaml docutils literal highlight-yaml"><span class="nt">destination</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;warehouse&#39;</span></code>).</p></li>
+</ul>
+</div></blockquote>
+<div class="literal-block-wrapper docutils container" id="kitting-task-yaml">
+<div class="code-block-caption"><span class="caption-number">Listing 5 </span><span class="caption-text">Example of a kitting task description.</span><a class="headerlink" href="#kitting-task-yaml" title="Permalink to this code"></a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">orders</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;MMB30H2&#39;</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;kitting&#39;</span>
+<span class="w">    </span><span class="nt">announcement</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">time_condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">22</span>
+<span class="w">    </span><span class="nt">priority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">kitting_task</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">agv_number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">      </span><span class="nt">tray_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">      </span><span class="nt">destination</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;warehouse&#39;</span>
+<span class="w">      </span><span class="nt">products</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;battery&#39;</span>
+<span class="w">          </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;blue&#39;</span>
+<span class="w">          </span><span class="nt">quadrant</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="assembly-task">
+<span id="id5"></span><h2>Assembly Task<a class="headerlink" href="#assembly-task" title="Permalink to this heading"></a></h2>
+<p>Assembly is a manufacturing process in which interchangeable parts are added to a product in a sequential manner to create an end product.
+In ARIAC, assembly is simplified by not “forcing” competitors to use a sequence during assembly.
+The <abbr title="Competitor Control System">CCS</abbr> can place parts in an <a class="hxr-hoverxref hxr-tooltip reference internal" href="terminology.html#term-Insert"><span class="xref std std-term">insert</span></a> in any order.
+For a trial where assembly tasks are required, the ARIAC environment starts with parts already located on <abbr title="Automated Guided Vehicles">AGVs</abbr>.
+The <abbr title="Competitor Control System">CCS</abbr> is expected to:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Lock the <abbr title="Automated Guided Vehicle">AGV</abbr> trays.</p></li>
+<li><p>Move the <abbr title="Automated Guided Vehicles">AGVs</abbr> to the correct assembly station.</p></li>
+<li><p>Call the pre-assembly poses service.</p></li>
+<li><p>Assemble the parts into an insert.</p></li>
+<li><p>Submit the assembly for scoring.</p></li>
+</ol>
+</div></blockquote>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>This pre-assembly poses service can be called only once for each order ID. The <abbr title="Automated Guided Vehicles">AGVs</abbr> need to be at the correct assembly station for the service to work.</p>
+</div>
+<section id="id6">
+<h3>Setup<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h3>
+<p>An example of an assembly task in a trial configuration file is presented in <a class="hxr-hoverxref hxr-tooltip reference internal" href="#assembly-task-yaml"><span class="std std-numref">Listing 6</span></a> with the following description:</p>
+<ul>
+<li><p>Assembly is required to be performed at assembly station 4 (<code class="code highlight yaml docutils literal highlight-yaml"><span class="nt">station</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;as4&#39;</span></code>).</p></li>
+<li><p>Parts required to do assembly can be found on AGV 3 and AGV 4 (<code class="code highlight yaml docutils literal highlight-yaml"><span class="nt">agv_number</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">4</span><span class="p p-Indicator">,</span><span class="nv">3</span><span class="p p-Indicator">]</span></code>).</p></li>
+<li><p>Each part needed for the assembly is specified under the <code class="code yamlname docutils literal notranslate"><span class="pre">products</span></code> field.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">type</span></code>: The type of the part.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">color</span></code>: The color of the part.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">assembled_pose</span></code>: The pose of the part in the insert frame (<em>Note</em>: These are bogus numbers).</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">assembly_direction</span></code>: The direction in which the part should be inserted into the insert frame (<em>Note</em>: These are bogus numbers).</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="literal-block-wrapper docutils container" id="assembly-task-yaml">
+<div class="code-block-caption"><span class="caption-number">Listing 6 </span><span class="caption-text">Example of an assembly task description.</span><a class="headerlink" href="#assembly-task-yaml" title="Permalink to this code"></a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;MMB30H57&#39;</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;assembly&#39;</span>
+<span class="w">    </span><span class="nt">announcement</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">time_condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="w">    </span><span class="nt">priority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">assembly_task</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">agv_number</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">4</span><span class="p p-Indicator">,</span><span class="nv">3</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="nt">station</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;as4&#39;</span>
+<span class="w">        </span><span class="nt">products</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;sensor&#39;</span>
+<span class="w">          </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;green&#39;</span>
+<span class="w">          </span><span class="nt">assembled_pose</span><span class="p">:</span><span class="w"> </span><span class="c1"># relative to insert frame</span>
+<span class="w">          </span><span class="nt">xyz</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.405</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.164</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.110</span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="nt">rpy</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;pi/2&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="nt">assembly_direction</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># unit vector in insert frame</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;battery&#39;</span>
+<span class="w">          </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;red&#39;</span>
+<span class="w">          </span><span class="nt">assembled_pose</span><span class="p">:</span><span class="w"> </span><span class="c1"># relative to insert frame</span>
+<span class="w">          </span><span class="nt">xyz</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.12</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.122</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.1222</span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="nt">rpy</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;pi/4&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="nt">assembly_direction</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-1.1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-1.11</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># unit vector in insert frame</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;regulator&#39;</span>
+<span class="w">          </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;purple&#39;</span>
+<span class="w">          </span><span class="nt">assembled_pose</span><span class="p">:</span><span class="w"> </span><span class="c1"># relative to insert frame</span>
+<span class="w">          </span><span class="nt">xyz</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.13</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.133</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.133</span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="nt">rpy</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;pi&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="nt">assembly_direction</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-2.2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-2.22</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># unit vector in insert frame</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;pump&#39;</span>
+<span class="w">          </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;orange&#39;</span>
+<span class="w">          </span><span class="nt">assembled_pose</span><span class="p">:</span><span class="w"> </span><span class="c1"># relative to insert frame</span>
+<span class="w">          </span><span class="nt">xyz</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.14</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.144</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.144</span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="nt">rpy</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="nt">assembly_direction</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-3.3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-3.33</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># unit vector in insert frame</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="combined-task">
+<span id="id7"></span><h2>Combined Task<a class="headerlink" href="#combined-task" title="Permalink to this heading"></a></h2>
+<p>A combined task is a task which requires both kitting and assembly.
+For a combined task, the <abbr title="Competitor Control System">CCS</abbr> is expected to first perform a kitting task followed with an assembly task.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The kitting task information is left to the competitors to figure out based on the assembly task information.
+The CCS can place part sanywhere on <abbr title="Automated Guided Vehicles">AGVs</abbr> and then move those <abbr title="Automated Guided Vehicles">AGVs</abbr> to the station where assembly is to be performed.
+Once the assembly is complete, the <abbr title="Competitor Control System">CCS</abbr> can submit the assembly via a ROS service call (see <a class="hxr-hoverxref hxr-tooltip reference internal" href="ros_communication.html#communications-topics"><span class="std std-numref">Table 1</span></a>).
+The <abbr title="ARIAC Manager">AM</abbr> will then evaluate the submitted assembly for scoring (kitting task is not scored).</p>
+</div>
+<section id="id8">
+<h3>Setup<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h3>
+<p>An example of a combined task in a trial configuration file is presented in <a class="hxr-hoverxref hxr-tooltip reference internal" href="#combined-task-yaml"><span class="std std-numref">Listing 7</span></a>.
+This example is similar to the assembly task from <a class="hxr-hoverxref hxr-tooltip reference internal" href="#assembly-task-yaml"><span class="std std-numref">Listing 6</span></a>, except for the field <code class="code yamlname docutils literal notranslate"><span class="pre">agv_number</span></code> which is not used.</p>
+<div class="literal-block-wrapper docutils container" id="combined-task-yaml">
+<div class="code-block-caption"><span class="caption-number">Listing 7 </span><span class="caption-text">Example of a combined task description.</span><a class="headerlink" href="#combined-task-yaml" title="Permalink to this code"></a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;MMB30H58&#39;</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;combined&#39;</span>
+<span class="w">  </span><span class="nt">announcement</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">time_condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">25</span>
+<span class="w">  </span><span class="nt">priority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">combined_task</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">station</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;as2&#39;</span>
+<span class="w">      </span><span class="nt">products</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;sensor&#39;</span>
+<span class="w">        </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;red&#39;</span>
+<span class="w">        </span><span class="nt">assembled_pose</span><span class="p">:</span><span class="w"> </span><span class="c1"># relative to insert frame</span>
+<span class="w">        </span><span class="nt">xyz</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.405</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.164</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.110</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="nt">rpy</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;pi/2&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="nt">assembly_direction</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># unit vector in insert frame</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;battery&#39;</span>
+<span class="w">        </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;red&#39;</span>
+<span class="w">        </span><span class="nt">assembled_pose</span><span class="p">:</span><span class="w"> </span><span class="c1"># relative to insert frame</span>
+<span class="w">        </span><span class="nt">xyz</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.12</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.122</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.1222</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="nt">rpy</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;pi/4&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="nt">assembly_direction</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-1.1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-1.11</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># unit vector in insert frame</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;regulator&#39;</span>
+<span class="w">        </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;red&#39;</span>
+<span class="w">        </span><span class="nt">assembled_pose</span><span class="p">:</span><span class="w"> </span><span class="c1"># relative to insert frame</span>
+<span class="w">        </span><span class="nt">xyz</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.13</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.133</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.133</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="nt">rpy</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;pi&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="nt">assembly_direction</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-2.2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-2.22</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># unit vector in insert frame</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;pump&#39;</span>
+<span class="w">        </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;red&#39;</span>
+<span class="w">        </span><span class="nt">assembled_pose</span><span class="p">:</span><span class="w"> </span><span class="c1"># relative to insert frame</span>
+<span class="w">        </span><span class="nt">xyz</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.14</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.144</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.144</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="nt">rpy</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="nt">assembly_direction</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-3.3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-3.33</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># unit vector in insert frame</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="environment.html" class="btn btn-neutral float-left" title="Environment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sensors.html" class="btn btn-neutral float-right" title="Sensors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright works of NIST employees are not not subject to copyright protection in the United States.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+   
+
+  <!-- Taken from https://www.filamentgroup.com/lab/html-includes/#another-demo%3A-including-another-html-file -->
+  <iframe src="../_static/ntd2d_menu.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+
+</body>
+</html>
