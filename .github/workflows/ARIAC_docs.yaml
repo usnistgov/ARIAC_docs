@@ -1,0 +1,14 @@
+name: "ARIAC documentation"
+
+on: [push, pull_request, delete]
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: usnistgov/ARIAC_docs@main
+        with:
+          docs-folder: docs/
+          formats: |-
+           epub
+           pdf
