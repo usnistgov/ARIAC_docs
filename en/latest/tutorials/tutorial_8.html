@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tutorial 8: Move Robots with ROS2 Actions &mdash; ARIAC_docs 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+      <link rel="stylesheet" type="text/css" href="../_static/ntd2d.css?v=592263c6" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/twemoji.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=62faf5e4" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/hack.css?v=c2ad982c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=359c27e9"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../_static/js/hoverxref.js"></script>
+        <script src="../_static/js/tooltipster.bundle.min.js"></script>
+        <script src="../_static/js/micromodal.min.js"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=faefdcb3"></script>
+        <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"></script>
+        <script src="../_static/twemoji.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../_static/js/custom.js?v=8fe80478"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Automated Evaluation" href="../automated_evaluation/automated_evaluation_overview.html" />
+    <link rel="prev" title="Tutorial 7: Move Robots with MoveIt" href="tutorial_7.html" />
+   
+
+  <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+  <script src="https://code.jquery.com/jquery-3.6.2.min.js" type="text/javascript" defer="defer"></script>
+  <script src="https://pages.nist.gov/nist-header-footer/js/nist-header-footer.js" type="text/javascript" defer="defer"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            ARIAC_docs
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">⏩ Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/updates.html">Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installing ARIAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/registering.html">Registering for the Competition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/events.html">Calendar of Events</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Competition Specifications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../competition/terminology.html">Terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/overview.html">Overview of the Competition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/orders.html">Conditions, Orders, and Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/trials.html">Configuration Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/ros_communication.html">ROS Communication Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/challenges.html">Agility Challenges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/tf_frames.html">TF Frames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/scoring.html">Scoring</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Introduction to Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_1.html">Tutorial 1: Create a Competition Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_2.html">Tutorial 2: Read Data from a Break Beam Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_3.html">Tutorial 3: Read Data from an Advanced Logical Camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_4.html">Tutorial 4: Read an Order</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_5.html">Tutorial 5: Move AGVs to Stations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_6.html">Tutorial 6: Enable/Disable a Gripper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_7.html">Tutorial 7: Move Robots with MoveIt</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial 8: Move Robots with ROS2 Actions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#package-structure">Package Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-the-executable">Run the Executable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#outputs">Outputs</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Automated Evaluation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../automated_evaluation/automated_evaluation_overview.html">Automated Evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automated_evaluation/competition_launch.html">Launch File Setup</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ARIAC_docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Tutorial 8: Move Robots with ROS2 Actions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tutorials/tutorial_8.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <blockquote>
+<div></div></blockquote>
+<section id="tutorial-8-move-robots-with-ros2-actions">
+<span id="tutorial8"></span><h1>Tutorial 8: Move Robots with ROS2 Actions<a class="headerlink" href="#tutorial-8-move-robots-with-ros2-actions" title="Permalink to this heading"></a></h1>
+<div class="attention admonition" id="tutorial-8">
+<p class="admonition-title">Tutorial 8</p>
+<ul>
+<li><p><strong>Prerequisites:</strong> <a class="hxr-hoverxref hxr-modal reference internal" href="tutorials.html#tutorials"><span class="std std-ref">Introduction to Tutorials</span></a> and <a class="hxr-hoverxref hxr-modal reference internal" href="tutorial_7.html#tutorial7"><span class="std std-ref">Tutorial 7</span></a></p></li>
+<li><p><strong>Source Code</strong>: <a class="reference external" href="https://github.com/jaybrecht/ariac_tutorials/tree/tutorial_8">https://github.com/jaybrecht/ariac_tutorials/tree/tutorial_8</a></p></li>
+<li><p><strong>Switch Branch</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/ariac_ws/src/ariac_tutorials
+git<span class="w"> </span>switch<span class="w"> </span>tutorial_8
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<p>The code used in this tutorial is provided as a reference for how to use ROS2 actions to command robots. <span class="topic">MoveIt is not used in this tutorial</span>.
+The main goal of this tutorial is to show how to use ROS2 actions to move both robots simultaneously.
+Competitors interested in using ROS2 actions to command robots are encouraged to use this code as a starting point.
+Competitors are encouraged to learn more about ROS2 actions by reading the <a class="reference external" href="https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Actions/Understanding-ROS2-Actions.html">ROS2 actions documentation</a>.</p>
+<section id="package-structure">
+<h2>Package Structure<a class="headerlink" href="#package-structure" title="Permalink to this heading"></a></h2>
+<p>Updates and additions that are specific to <span class="tuto">Tutorial 8</span>  are highlighted in the tree below.</p>
+<div class="no-copybutton highlight-text notranslate"><div class="highlight"><pre><span></span>ariac_tutorials
+<span class="hll">├── CMakeLists.txt
+</span>├── package.xml
+├── config
+│   └── sensors.yaml
+├── launch
+│   └── robot_commander.launch.py
+├── ariac_tutorials
+│   ├── __init__.py
+│   ├── utils.py
+<span class="hll">|   ├── robot_commander.py
+</span>│   └── competition_interface.py
+├── src
+│   └── robot_commander.cpp
+└── scripts
+    ├── tutorial_1.py
+    ├── tutorial_2.py
+    ├── tutorial_3.py
+    ├── tutorial_4.py
+    ├── tutorial_5.py
+    ├── tutorial_6.py
+<span class="hll">    ├── tutorial_7.py
+</span>    └── tutorial_8.py
+</pre></div>
+</div>
+</section>
+<section id="run-the-executable">
+<h2>Run the Executable<a class="headerlink" href="#run-the-executable" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>In <em>terminal 1</em>, run the following commands:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/ariac_ws
+colcon<span class="w"> </span>build
+.<span class="w"> </span>install/setup.bash
+ros2<span class="w"> </span>run<span class="w"> </span>ariac_tutorials<span class="w"> </span>tutorial_8.py
+</pre></div>
+</div>
+<p>The node will wait until the competition is ready.</p>
+</div></blockquote>
+</li>
+<li><p>In <em>terminal 2</em>, run the following commands:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/ariac_ws
+.<span class="w"> </span>install/setup.bash
+ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gazebo<span class="w"> </span>ariac.launch.py<span class="w"> </span>trial_name:<span class="o">=</span>tutorial<span class="w"> </span>competitor_pkg:<span class="o">=</span>ariac_tutorials
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="outputs">
+<h2>Outputs<a class="headerlink" href="#outputs" title="Permalink to this heading"></a></h2>
+<p>Both robots simultaneously move to their respective home positions.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tutorial_7.html" class="btn btn-neutral float-left" title="Tutorial 7: Move Robots with MoveIt" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../automated_evaluation/automated_evaluation_overview.html" class="btn btn-neutral float-right" title="Automated Evaluation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright works of NIST employees are not not subject to copyright protection in the United States.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+   
+
+  <!-- Taken from https://www.filamentgroup.com/lab/html-includes/#another-demo%3A-including-another-html-file -->
+  <iframe src="../_static/ntd2d_menu.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+
+</body>
+</html>

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tutorial 2: Read Data from a Break Beam Sensor &mdash; ARIAC_docs 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+      <link rel="stylesheet" type="text/css" href="../_static/ntd2d.css?v=592263c6" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/twemoji.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=62faf5e4" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/hack.css?v=c2ad982c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=359c27e9"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../_static/js/hoverxref.js"></script>
+        <script src="../_static/js/tooltipster.bundle.min.js"></script>
+        <script src="../_static/js/micromodal.min.js"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=faefdcb3"></script>
+        <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"></script>
+        <script src="../_static/twemoji.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../_static/js/custom.js?v=8fe80478"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tutorial 3: Read Data from an Advanced Logical Camera" href="tutorial_3.html" />
+    <link rel="prev" title="Tutorial 1: Create a Competition Package" href="tutorial_1.html" />
+   
+
+  <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+  <script src="https://code.jquery.com/jquery-3.6.2.min.js" type="text/javascript" defer="defer"></script>
+  <script src="https://pages.nist.gov/nist-header-footer/js/nist-header-footer.js" type="text/javascript" defer="defer"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            ARIAC_docs
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">⏩ Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/updates.html">Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installing ARIAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/registering.html">Registering for the Competition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/events.html">Calendar of Events</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Competition Specifications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../competition/terminology.html">Terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/overview.html">Overview of the Competition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/orders.html">Conditions, Orders, and Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/trials.html">Configuration Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/ros_communication.html">ROS Communication Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/challenges.html">Agility Challenges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/tf_frames.html">TF Frames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/scoring.html">Scoring</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Introduction to Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_1.html">Tutorial 1: Create a Competition Package</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial 2: Read Data from a Break Beam Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#package-structure">Package Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#updated-created-files">Updated/Created Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sensor-configuration-file">Sensor Configuration File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#competition-interface">Competition Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#code-explanation">Code Explanation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#executable">Executable</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Code Explanation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#build-instructions">Build Instructions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#test-the-sensor-configuration">Test the Sensor Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-the-executable">Run the Executable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#outputs">Outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_3.html">Tutorial 3: Read Data from an Advanced Logical Camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_4.html">Tutorial 4: Read an Order</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_5.html">Tutorial 5: Move AGVs to Stations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_6.html">Tutorial 6: Enable/Disable a Gripper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_7.html">Tutorial 7: Move Robots with MoveIt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_8.html">Tutorial 8: Move Robots with ROS2 Actions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Automated Evaluation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../automated_evaluation/automated_evaluation_overview.html">Automated Evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automated_evaluation/competition_launch.html">Launch File Setup</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ARIAC_docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Tutorial 2: Read Data from a Break Beam Sensor</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tutorials/tutorial_2.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <blockquote>
+<div></div></blockquote>
+<section id="tutorial-2-read-data-from-a-break-beam-sensor">
+<span id="tutorial2"></span><h1>Tutorial 2: Read Data from a Break Beam Sensor<a class="headerlink" href="#tutorial-2-read-data-from-a-break-beam-sensor" title="Permalink to this heading"></a></h1>
+<div class="attention admonition" id="tutorial-2">
+<p class="admonition-title">Tutorial 2</p>
+<ul>
+<li><p><strong>Prerequisites:</strong> <a class="hxr-hoverxref hxr-modal reference internal" href="tutorials.html#tutorials"><span class="std std-ref">Introduction to Tutorials</span></a> and <a class="hxr-hoverxref hxr-modal reference internal" href="tutorial_1.html#tutorial1"><span class="std std-ref">Tutorial 1</span></a></p></li>
+<li><p><strong>Source Code</strong>: <a class="reference external" href="https://github.com/jaybrecht/ariac_tutorials/tree/tutorial_2">https://github.com/jaybrecht/ariac_tutorials/tree/tutorial_2</a></p></li>
+<li><p><strong>Switch Branch</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/ariac_ws/src/ariac_tutorials
+git<span class="w"> </span>switch<span class="w"> </span>tutorial_2
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<p>This tutorial covers the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Creating a configuration file for sensors and cameras,</p></li>
+<li><p>Reading data published by the sensor,</p></li>
+<li><p>Logging the outputs in the terminal.</p></li>
+</ul>
+</div></blockquote>
+<section id="package-structure">
+<h2>Package Structure<a class="headerlink" href="#package-structure" title="Permalink to this heading"></a></h2>
+<p>Updates and additions that are specific to <span class="tuto">Tutorial 2</span>  are highlighted in the tree below.</p>
+<div class="no-copybutton highlight-text notranslate"><div class="highlight"><pre><span></span>ariac_tutorials
+├── CMakeLists.txt
+├── package.xml
+<span class="hll">├── config
+</span><span class="hll">│   └── sensors.yaml
+</span>├── ariac_tutorials
+│   ├── __init__.py
+<span class="hll">│   └── competition_interface.py
+</span>└── scripts
+    ├── tutorial_1.py
+<span class="hll">    └── tutorial_2.py
+</span></pre></div>
+</div>
+</section>
+<section id="updated-created-files">
+<h2>Updated/Created Files<a class="headerlink" href="#updated-created-files" title="Permalink to this heading"></a></h2>
+<section id="sensor-configuration-file">
+<h3>Sensor Configuration File<a class="headerlink" href="#sensor-configuration-file" title="Permalink to this heading"></a></h3>
+<p>A sensor configuration file for a given package must be created in the folder <code class="file docutils literal notranslate"><span class="pre">config</span></code> in the package. The file must be added to the <code class="file docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> file in the package to allow the competition software to find the file.
+To learn more about sensor configuration files, see the Sensor configuration file <a class="hxr-hoverxref hxr-modal reference internal" href="../competition/trials.html#sensor-configuration-file"><span class="std std-ref">section</span></a>.</p>
+<p>A break beam sensor was added to <code class="file docutils literal notranslate"><span class="pre">sensors.yaml</span></code> as seen in <a class="hxr-hoverxref hxr-tooltip reference internal" href="#sensors-yaml-break-beam"><span class="std std-numref">Listing 31</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="sensors-yaml-break-beam">
+<div class="code-block-caption"><span class="caption-number">Listing 31 </span><span class="caption-text"><code class="file docutils literal notranslate"><span class="pre">sensors.yaml</span></code></span><a class="headerlink" href="#sensors-yaml-break-beam" title="Permalink to this code"></a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sensors</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">breakbeam_0</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">break_beam</span>
+<span class="w">    </span><span class="nt">visualize_fov</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">pose</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">xyz</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-0.36</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.88</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">rpy</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pi</span><span class="p p-Indicator">]</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="competition-interface">
+<h3>Competition Interface<a class="headerlink" href="#competition-interface" title="Permalink to this heading"></a></h3>
+<p>The competition interface for <span class="tuto">Tutorial 2</span> is shown in <a class="hxr-hoverxref hxr-tooltip reference internal" href="#competitioninterface-tutorial2"><span class="std std-numref">Listing 32</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="competitioninterface-tutorial2">
+<div class="code-block-caption"><span class="caption-number">Listing 32 </span><span class="caption-text"><code class="file docutils literal notranslate"><span class="pre">competition_interface.py</span></code></span><a class="headerlink" href="#competitioninterface-tutorial2" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="kn">import</span> <span class="nn">rclpy</span>
+<span class="linenos">  2</span><span class="kn">from</span> <span class="nn">rclpy.node</span> <span class="kn">import</span> <span class="n">Node</span>
+<span class="hll"><span class="linenos">  3</span><span class="kn">from</span> <span class="nn">rclpy.qos</span> <span class="kn">import</span> <span class="n">qos_profile_sensor_data</span>
+</span><span class="linenos">  4</span><span class="kn">from</span> <span class="nn">rclpy.parameter</span> <span class="kn">import</span> <span class="n">Parameter</span>
+<span class="linenos">  5</span>
+<span class="linenos">  6</span><span class="kn">from</span> <span class="nn">ariac_msgs.msg</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="linenos">  7</span>    <span class="n">CompetitionState</span> <span class="k">as</span> <span class="n">CompetitionStateMsg</span><span class="p">,</span>
+<span class="hll"><span class="linenos">  8</span>    <span class="n">BreakBeamStatus</span> <span class="k">as</span> <span class="n">BreakBeamStatusMsg</span><span class="p">,</span>
+</span><span class="linenos">  9</span><span class="p">)</span>
+<span class="linenos"> 10</span>
+<span class="linenos"> 11</span><span class="kn">from</span> <span class="nn">std_srvs.srv</span> <span class="kn">import</span> <span class="n">Trigger</span>
+<span class="linenos"> 12</span>
+<span class="linenos"> 13</span>
+<span class="linenos"> 14</span><span class="k">class</span> <span class="nc">CompetitionInterface</span><span class="p">(</span><span class="n">Node</span><span class="p">):</span>
+<span class="linenos"> 15</span><span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos"> 16</span><span class="sd">    Class for a competition interface node.</span>
+<span class="linenos"> 17</span>
+<span class="linenos"> 18</span><span class="sd">    Args:</span>
+<span class="linenos"> 19</span><span class="sd">        Node (rclpy.node.Node): Parent class for ROS nodes</span>
+<span class="linenos"> 20</span>
+<span class="linenos"> 21</span><span class="sd">    Raises:</span>
+<span class="linenos"> 22</span><span class="sd">        KeyboardInterrupt: Exception raised when the user uses Ctrl+C to kill a process</span>
+<span class="linenos"> 23</span><span class="sd">    &#39;&#39;&#39;</span>
+<span class="linenos"> 24</span>    <span class="n">_competition_states</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos"> 25</span>        <span class="n">CompetitionStateMsg</span><span class="o">.</span><span class="n">IDLE</span><span class="p">:</span> <span class="s1">&#39;idle&#39;</span><span class="p">,</span>
+<span class="linenos"> 26</span>        <span class="n">CompetitionStateMsg</span><span class="o">.</span><span class="n">READY</span><span class="p">:</span> <span class="s1">&#39;ready&#39;</span><span class="p">,</span>
+<span class="linenos"> 27</span>        <span class="n">CompetitionStateMsg</span><span class="o">.</span><span class="n">STARTED</span><span class="p">:</span> <span class="s1">&#39;started&#39;</span><span class="p">,</span>
+<span class="linenos"> 28</span>        <span class="n">CompetitionStateMsg</span><span class="o">.</span><span class="n">ORDER_ANNOUNCEMENTS_DONE</span><span class="p">:</span> <span class="s1">&#39;order_announcements_done&#39;</span><span class="p">,</span>
+<span class="linenos"> 29</span>        <span class="n">CompetitionStateMsg</span><span class="o">.</span><span class="n">ENDED</span><span class="p">:</span> <span class="s1">&#39;ended&#39;</span><span class="p">,</span>
+<span class="linenos"> 30</span>    <span class="p">}</span>
+<span class="linenos"> 31</span><span class="w">    </span><span class="sd">&#39;&#39;&#39;Dictionary for converting CompetitionState constants to strings&#39;&#39;&#39;</span>
+<span class="linenos"> 32</span>
+<span class="linenos"> 33</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 34</span>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s1">&#39;competition_interface&#39;</span><span class="p">)</span>
+<span class="linenos"> 35</span>
+<span class="linenos"> 36</span>        <span class="n">sim_time</span> <span class="o">=</span> <span class="n">Parameter</span><span class="p">(</span>
+<span class="linenos"> 37</span>            <span class="s2">&quot;use_sim_time&quot;</span><span class="p">,</span>
+<span class="linenos"> 38</span>            <span class="n">rclpy</span><span class="o">.</span><span class="n">Parameter</span><span class="o">.</span><span class="n">Type</span><span class="o">.</span><span class="n">BOOL</span><span class="p">,</span>
+<span class="linenos"> 39</span>            <span class="kc">True</span>
+<span class="linenos"> 40</span>        <span class="p">)</span>
+<span class="linenos"> 41</span>
+<span class="linenos"> 42</span>        <span class="bp">self</span><span class="o">.</span><span class="n">set_parameters</span><span class="p">([</span><span class="n">sim_time</span><span class="p">])</span>
+<span class="linenos"> 43</span>
+<span class="linenos"> 44</span>        <span class="c1"># Service client for starting the competition</span>
+<span class="linenos"> 45</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_start_competition_client</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_client</span><span class="p">(</span><span class="n">Trigger</span><span class="p">,</span> <span class="s1">&#39;/ariac/start_competition&#39;</span><span class="p">)</span>
+<span class="linenos"> 46</span>
+<span class="linenos"> 47</span>        <span class="c1"># Subscriber to the competition state topic</span>
+<span class="linenos"> 48</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_competition_state_sub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_subscription</span><span class="p">(</span>
+<span class="linenos"> 49</span>            <span class="n">CompetitionStateMsg</span><span class="p">,</span>
+<span class="linenos"> 50</span>            <span class="s1">&#39;/ariac/competition_state&#39;</span><span class="p">,</span>
+<span class="linenos"> 51</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_competition_state_cb</span><span class="p">,</span>
+<span class="linenos"> 52</span>            <span class="mi">10</span><span class="p">)</span>
+<span class="linenos"> 53</span>
+<span class="linenos"> 54</span>        <span class="c1"># Store the state of the competition</span>
+<span class="linenos"> 55</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_competition_state</span><span class="p">:</span> <span class="n">CompetitionStateMsg</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="linenos"> 56</span>
+<span class="hll"><span class="linenos"> 57</span>        <span class="c1"># Subscriber to the break beam status topic</span>
+</span><span class="hll"><span class="linenos"> 58</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_break_beam0_sub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_subscription</span><span class="p">(</span>
+</span><span class="hll"><span class="linenos"> 59</span>            <span class="n">BreakBeamStatusMsg</span><span class="p">,</span>
+</span><span class="hll"><span class="linenos"> 60</span>            <span class="s1">&#39;/ariac/sensors/breakbeam_0/status&#39;</span><span class="p">,</span>
+</span><span class="hll"><span class="linenos"> 61</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_breakbeam0_cb</span><span class="p">,</span>
+</span><span class="hll"><span class="linenos"> 62</span>            <span class="n">qos_profile_sensor_data</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos"> 63</span>
+</span><span class="hll"><span class="linenos"> 64</span>        <span class="c1"># Store the number of parts that crossed the beam</span>
+</span><span class="hll"><span class="linenos"> 65</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_conveyor_part_count</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class="hll"><span class="linenos"> 66</span>
+</span><span class="hll"><span class="linenos"> 67</span>        <span class="c1"># Store whether the beam is broken</span>
+</span><span class="hll"><span class="linenos"> 68</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_object_detected</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span class="linenos"> 69</span>
+<span class="hll"><span class="linenos"> 70</span>    <span class="nd">@property</span>
+</span><span class="hll"><span class="linenos"> 71</span>    <span class="k">def</span> <span class="nf">conveyor_part_count</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span class="hll"><span class="linenos"> 72</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conveyor_part_count</span>
+</span><span class="linenos"> 73</span>
+<span class="hll"><span class="linenos"> 74</span>    <span class="k">def</span> <span class="nf">_breakbeam0_cb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">:</span> <span class="n">BreakBeamStatusMsg</span><span class="p">):</span>
+</span><span class="hll"><span class="linenos"> 75</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;Callback for the topic /ariac/sensors/breakbeam_0/status</span>
+</span><span class="hll"><span class="linenos"> 76</span>
+</span><span class="hll"><span class="linenos"> 77</span><span class="sd">        Arguments:</span>
+</span><span class="hll"><span class="linenos"> 78</span><span class="sd">            msg -- BreakBeamStatusMsg message</span>
+</span><span class="hll"><span class="linenos"> 79</span><span class="sd">        &#39;&#39;&#39;</span>
+</span><span class="hll"><span class="linenos"> 80</span>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_object_detected</span> <span class="ow">and</span> <span class="n">msg</span><span class="o">.</span><span class="n">object_detected</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos"> 81</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_conveyor_part_count</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span class="hll"><span class="linenos"> 82</span>
+</span><span class="hll"><span class="linenos"> 83</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_object_detected</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">object_detected</span>
+</span><span class="linenos"> 84</span>
+<span class="linenos"> 85</span>    <span class="k">def</span> <span class="nf">_competition_state_cb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">:</span> <span class="n">CompetitionStateMsg</span><span class="p">):</span>
+<span class="linenos"> 86</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;Callback for the topic /ariac/competition_state</span>
+<span class="linenos"> 87</span><span class="sd">        Arguments:</span>
+<span class="linenos"> 88</span><span class="sd">            msg -- CompetitionState message</span>
+<span class="linenos"> 89</span><span class="sd">        &#39;&#39;&#39;</span>
+<span class="linenos"> 90</span>        <span class="c1"># Log if competition state has changed</span>
+<span class="linenos"> 91</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_competition_state</span> <span class="o">!=</span> <span class="n">msg</span><span class="o">.</span><span class="n">competition_state</span><span class="p">:</span>
+<span class="linenos"> 92</span>            <span class="n">state</span> <span class="o">=</span> <span class="n">CompetitionInterface</span><span class="o">.</span><span class="n">_competition_states</span><span class="p">[</span><span class="n">msg</span><span class="o">.</span><span class="n">competition_state</span><span class="p">]</span>
+<span class="linenos"> 93</span>            <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Competition state is: </span><span class="si">{</span><span class="n">state</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">throttle_duration_sec</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="linenos"> 94</span>
+<span class="linenos"> 95</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_competition_state</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">competition_state</span>
+<span class="linenos"> 96</span>
+<span class="linenos"> 97</span>    <span class="k">def</span> <span class="nf">start_competition</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 98</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;Function to start the competition.</span>
+<span class="linenos"> 99</span><span class="sd">        &#39;&#39;&#39;</span>
+<span class="linenos">100</span>        <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Waiting for competition to be ready&#39;</span><span class="p">)</span>
+<span class="linenos">101</span>
+<span class="linenos">102</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_competition_state</span> <span class="o">==</span> <span class="n">CompetitionStateMsg</span><span class="o">.</span><span class="n">STARTED</span><span class="p">:</span>
+<span class="linenos">103</span>            <span class="k">return</span>
+<span class="linenos">104</span>        <span class="c1"># Wait for competition to be ready</span>
+<span class="linenos">105</span>        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">_competition_state</span> <span class="o">!=</span> <span class="n">CompetitionStateMsg</span><span class="o">.</span><span class="n">READY</span><span class="p">:</span>
+<span class="linenos">106</span>            <span class="k">try</span><span class="p">:</span>
+<span class="linenos">107</span>                <span class="n">rclpy</span><span class="o">.</span><span class="n">spin_once</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="linenos">108</span>            <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+<span class="linenos">109</span>                <span class="k">return</span>
+<span class="linenos">110</span>
+<span class="linenos">111</span>        <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Competition is ready. Starting...&#39;</span><span class="p">)</span>
+<span class="linenos">112</span>
+<span class="linenos">113</span>        <span class="c1"># Check if service is available</span>
+<span class="linenos">114</span>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_start_competition_client</span><span class="o">.</span><span class="n">wait_for_service</span><span class="p">(</span><span class="n">timeout_sec</span><span class="o">=</span><span class="mf">3.0</span><span class="p">):</span>
+<span class="linenos">115</span>            <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;Service </span><span class="se">\&#39;</span><span class="s1">/ariac/start_competition</span><span class="se">\&#39;</span><span class="s1"> is not available.&#39;</span><span class="p">)</span>
+<span class="linenos">116</span>            <span class="k">return</span>
+<span class="linenos">117</span>
+<span class="linenos">118</span>        <span class="c1"># Create trigger request and call starter service</span>
+<span class="linenos">119</span>        <span class="n">request</span> <span class="o">=</span> <span class="n">Trigger</span><span class="o">.</span><span class="n">Request</span><span class="p">()</span>
+<span class="linenos">120</span>        <span class="n">future</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_start_competition_client</span><span class="o">.</span><span class="n">call_async</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="linenos">121</span>
+<span class="linenos">122</span>        <span class="c1"># Wait until the service call is completed</span>
+<span class="linenos">123</span>        <span class="n">rclpy</span><span class="o">.</span><span class="n">spin_until_future_complete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">future</span><span class="p">)</span>
+<span class="linenos">124</span>
+<span class="linenos">125</span>        <span class="k">if</span> <span class="n">future</span><span class="o">.</span><span class="n">result</span><span class="p">()</span><span class="o">.</span><span class="n">success</span><span class="p">:</span>
+<span class="linenos">126</span>            <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Started competition.&#39;</span><span class="p">)</span>
+<span class="linenos">127</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">128</span>            <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;Unable to start competition&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<section id="code-explanation">
+<h4>Code Explanation<a class="headerlink" href="#code-explanation" title="Permalink to this heading"></a></h4>
+<ul>
+<li><p>Imports</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="kn">from</span> <span class="nn">rclpy.qos</span> <span class="kn">import</span> <span class="n">qos_profile_sensor_data</span></code> is the ROS 2 Quality of Service API. This is used to set the QoS profile for the floor robot gripper state subscriber.</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">BreakBeamStatus</span></code>: Message class that stores the status of the break beam (<a class="hxr-hoverxref hxr-tooltip reference internal" href="../competition/ros_communication.html#term-ariac_msgs-msg-BreakBeamStatus"><span class="xref std std-term">ariac_msgs/msg/BreakBeamStatus</span></a>).</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Instance Variables</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">_break_beam0_sub</span></code>: Subscriber to the break beam status topic.</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">_conveyor_part_count</span></code>: Store the number of parts that crossed the beam.</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">_object_detected</span></code>: Store whether the beam is broken.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Instance Methods</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">conveyor_part_count</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code> is  a getter to the <code class="code highlight python docutils literal highlight-python"><span class="n">_conveyor_part_count</span></code> attribute.</p></li>
+<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">_breakbeam0_cb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span></code> is the callback function for the sensor topic. The callback increments the variable <code class="code highlight python docutils literal highlight-python"><span class="n">_conveyor_part_count</span></code> when the beam is broken and the variable <code class="code highlight python docutils literal highlight-python"><span class="n">_object_detected</span></code> is false. The variable <code class="code highlight python docutils literal highlight-python"><span class="n">_object_detected</span></code> is set to true when the beam is broken.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+<section id="executable">
+<h3>Executable<a class="headerlink" href="#executable" title="Permalink to this heading"></a></h3>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 33 </span><span class="caption-text"><code class="file docutils literal notranslate"><span class="pre">tutorial_2.py</span></code></span><a class="headerlink" href="#id2" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">To test this script, run the following commands in separate terminals:</span>
+<span class="sd">- ros2 launch ariac_gazebo ariac.launch.py trial_name:=tutorial competition_pkg:=ariac_tutorials</span>
+<span class="sd">- ros2 run ariac_tutorials tutorial_2.py</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="kn">import</span> <span class="nn">rclpy</span>
+<span class="kn">from</span> <span class="nn">ariac_tutorials.competition_interface</span> <span class="kn">import</span> <span class="n">CompetitionInterface</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">)</span>
+    <span class="n">interface</span> <span class="o">=</span> <span class="n">CompetitionInterface</span><span class="p">()</span>
+    <span class="n">interface</span><span class="o">.</span><span class="n">start_competition</span><span class="p">()</span>
+
+    <span class="k">while</span> <span class="n">rclpy</span><span class="o">.</span><span class="n">ok</span><span class="p">():</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">rclpy</span><span class="o">.</span><span class="n">spin_once</span><span class="p">(</span><span class="n">interface</span><span class="p">)</span>
+            <span class="n">interface</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s1">&#39;Part Count: </span><span class="si">{</span><span class="n">interface</span><span class="o">.</span><span class="n">conveyor_part_count</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+                <span class="n">throttle_duration_sec</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+            <span class="k">break</span>
+
+    <span class="n">interface</span><span class="o">.</span><span class="n">destroy_node</span><span class="p">()</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<section id="id1">
+<h4>Code Explanation<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h4>
+<p>This executable does the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Initialize the ROS client library.</p></li>
+<li><p>Create an instance of the class <code class="code highlight python docutils literal highlight-python"><span class="n">CompetitionInterface</span></code> as a ROS node.</p></li>
+<li><p>Start the competition.</p></li>
+<li><p>Log the number of parts that crossed the beam every 2 seconds.</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<section id="build-instructions">
+<h3>Build Instructions<a class="headerlink" href="#build-instructions" title="Permalink to this heading"></a></h3>
+<p>To allow for the competition software to be able to find the sensor configuration, it must be installed to the share directory of the package. The <span class="tuto">Tutorial 2</span> executable also needs to be installed.</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span><span class="w"> </span><span class="s">3.8</span><span class="p">)</span>
+<span class="nb">project</span><span class="p">(</span><span class="s">ariac_tutorials</span><span class="p">)</span>
+
+<span class="nb">if</span><span class="p">(</span><span class="s">CMAKE_COMPILER_IS_GNUCXX</span><span class="w"> </span><span class="s">OR</span><span class="w"> </span><span class="s">CMAKE_CXX_COMPILER_ID</span><span class="w"> </span><span class="s">MATCHES</span><span class="w"> </span><span class="s2">&quot;Clang&quot;</span><span class="p">)</span>
+<span class="nb">add_compile_options</span><span class="p">(</span><span class="s">-Wall</span><span class="w"> </span><span class="s">-Wextra</span><span class="w"> </span><span class="s">-Wpedantic</span><span class="p">)</span>
+<span class="nb">endif</span><span class="p">()</span>
+
+<span class="nb">find_package</span><span class="p">(</span><span class="s">ament_cmake</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
+<span class="nb">find_package</span><span class="p">(</span><span class="s">ament_cmake_python</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
+<span class="nb">find_package</span><span class="p">(</span><span class="s">rclcpp</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
+<span class="nb">find_package</span><span class="p">(</span><span class="s">rclpy</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
+<span class="nb">find_package</span><span class="p">(</span><span class="s">ariac_msgs</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
+
+<span class="c"># Install the config directory to the package share directory</span>
+<span class="hll"><span class="nb">install</span><span class="p">(</span><span class="s">DIRECTORY</span>
+</span><span class="hll"><span class="s">config</span>
+</span><span class="hll"><span class="s">DESTINATION</span><span class="w"> </span><span class="s">share/</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span>
+</span><span class="hll"><span class="p">)</span>
+</span>
+<span class="c"># Install Python modules</span>
+<span class="nb">ament_python_install_package</span><span class="p">(</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span><span class="w"> </span><span class="s">SCRIPTS_DESTINATION</span><span class="w"> </span><span class="s">lib/</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span><span class="p">)</span>
+
+<span class="c"># Install Python executables</span>
+<span class="nb">install</span><span class="p">(</span><span class="s">PROGRAMS</span>
+<span class="s">scripts/tutorial_1.py</span>
+<span class="hll"><span class="s">scripts/tutorial_2.py</span>
+</span><span class="s">DESTINATION</span><span class="w"> </span><span class="s">lib/</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span>
+<span class="p">)</span>
+
+<span class="nb">ament_package</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="test-the-sensor-configuration">
+<h2>Test the Sensor Configuration<a class="headerlink" href="#test-the-sensor-configuration" title="Permalink to this heading"></a></h2>
+<p>To test the sensor was correctly added to the environment, run the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/ariac_ws
+colcon<span class="w"> </span>build
+.<span class="w"> </span>install/setup.bash
+ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gazebo<span class="w"> </span>ariac.launch.py<span class="w"> </span>trial_name:<span class="o">=</span>tutorial<span class="w"> </span>competitor_pkg:<span class="o">=</span>ariac_tutorials
+</pre></div>
+</div>
+<p>You should see a break beam sensor on the right side of the conveyor belt, as shown in the figure.</p>
+<figure class="align-center">
+<img alt="Break beam sensor in Gazebo" src="../_images/tutorial_2_image1.png" />
+</figure>
+</section>
+<section id="run-the-executable">
+<h2>Run the Executable<a class="headerlink" href="#run-the-executable" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>In <em>terminal 1</em>, run the following commands:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/ariac_ws
+colcon<span class="w"> </span>build
+.<span class="w"> </span>install/setup.bash
+ros2<span class="w"> </span>run<span class="w"> </span>ariac_tutorials<span class="w"> </span>tutorial_2.py
+</pre></div>
+</div>
+<p>The node will wait until the competition is ready. In a second terminal, run the following:</p>
+</div></blockquote>
+</li>
+<li><p>In <em>terminal 2</em>, run the following commands:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/ariac_ws
+.<span class="w"> </span>install/setup.bash
+ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gazebo<span class="w"> </span>ariac.launch.py<span class="w"> </span>competitor_pkg:<span class="o">=</span>ariac_tutorials<span class="w"> </span>trial_name:<span class="o">=</span>tutorial
+</pre></div>
+</div>
+<p>Once the environment is loaded and the competition state is ready, the interface node running in <em>terminal 2</em> will start the competition and the sensor will start publishing data. In <em>terminal 1</em> you should see the the part count output increasing as parts on the conveyor break the sensor beam, as shown in the figure below.</p>
+<figure class="align-center">
+<img alt="../_images/tutorial_2_image2.png" src="../_images/tutorial_2_image2.png" />
+</figure>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="outputs">
+<h2>Outputs<a class="headerlink" href="#outputs" title="Permalink to this heading"></a></h2>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-number">Listing 34 </span><span class="caption-text">terminal 1 output</span><a class="headerlink" href="#id3" title="Permalink to this code"></a></div>
+<div class="no-copybutton highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[INFO] [1679428743.578614247] [competition_interface]: Waiting for competition to be ready</span>
+<span class="go">[INFO] [1679428754.940750669] [competition_interface]: Competition state is: idle</span>
+<span class="go">[INFO] [1679428762.504895731] [competition_interface]: Competition state is: ready</span>
+<span class="go">[INFO] [1679428762.505326133] [competition_interface]: Competition is ready. Starting...</span>
+<span class="go">[INFO] [1679428762.509538747] [competition_interface]: Started competition.</span>
+<span class="go">[INFO] [1679428762.510511399] [competition_interface]: Part Count: 0</span>
+<span class="go">[INFO] [1679428764.511474366] [competition_interface]: Part Count: 0</span>
+<span class="go">[INFO] [1679428766.511995691] [competition_interface]: Part Count: 0</span>
+<span class="go">[INFO] [1679428768.512622679] [competition_interface]: Part Count: 0</span>
+<span class="go">[INFO] [1679428770.514520304] [competition_interface]: Part Count: 0</span>
+<span class="go">[INFO] [1679428772.514817360] [competition_interface]: Part Count: 0</span>
+<span class="go">[INFO] [1679428774.515932382] [competition_interface]: Part Count: 1</span>
+<span class="go">[INFO] [1679428776.515979983] [competition_interface]: Part Count: 1</span>
+<span class="go">[INFO] [1679428778.518514127] [competition_interface]: Part Count: 1</span>
+<span class="go">[INFO] [1679428780.518756275] [competition_interface]: Part Count: 2</span>
+<span class="go">[INFO] [1679428782.520491157] [competition_interface]: Part Count: 2</span>
+<span class="go">[INFO] [1679428783.500808671] [competition_interface]: Competition state is: order_announcements_done</span>
+<span class="go">[INFO] [1679428784.520939857] [competition_interface]: Part Count: 2</span>
+<span class="go">[INFO] [1679428786.523672799] [competition_interface]: Part Count: 3</span>
+<span class="go">[INFO] [1679428788.525155723] [competition_interface]: Part Count: 3</span>
+<span class="go">[INFO] [1679428790.525464506] [competition_interface]: Part Count: 3</span>
+<span class="go">[INFO] [1679428792.526773421] [competition_interface]: Part Count: 4</span>
+<span class="go">[INFO] [1679428794.527383003] [competition_interface]: Part Count: 4</span>
+<span class="go">[INFO] [1679428796.528573468] [competition_interface]: Part Count: 4</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tutorial_1.html" class="btn btn-neutral float-left" title="Tutorial 1: Create a Competition Package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorial_3.html" class="btn btn-neutral float-right" title="Tutorial 3: Read Data from an Advanced Logical Camera" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright works of NIST employees are not not subject to copyright protection in the United States.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+   
+
+  <!-- Taken from https://www.filamentgroup.com/lab/html-includes/#another-demo%3A-including-another-html-file -->
+  <iframe src="../_static/ntd2d_menu.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+
+</body>
+</html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuration Files &mdash; ARIAC_docs 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+      <link rel="stylesheet" type="text/css" href="../_static/ntd2d.css?v=592263c6" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/twemoji.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=62faf5e4" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/hack.css?v=c2ad982c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=359c27e9"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../_static/js/hoverxref.js"></script>
+        <script src="../_static/js/tooltipster.bundle.min.js"></script>
+        <script src="../_static/js/micromodal.min.js"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=faefdcb3"></script>
+        <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"></script>
+        <script src="../_static/twemoji.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../_static/js/custom.js?v=8fe80478"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ROS Communication Overview" href="ros_communication.html" />
+    <link rel="prev" title="Sensors" href="sensors.html" />
+   
+
+  <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+  <script src="https://code.jquery.com/jquery-3.6.2.min.js" type="text/javascript" defer="defer"></script>
+  <script src="https://pages.nist.gov/nist-header-footer/js/nist-header-footer.js" type="text/javascript" defer="defer"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            ARIAC_docs
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">⏩ Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/updates.html">Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installing ARIAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/registering.html">Registering for the Competition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/events.html">Calendar of Events</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Competition Specifications</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview of the Competition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="orders.html">Conditions, Orders, and Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Configuration Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sensor-configuration-file">Sensor Configuration File</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#placing-sensors-in-the-environment">Placing Sensors in the Environment</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#trial-configuration-file">Trial Configuration File</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#time-limit">Time Limit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#kitting-trays">Kitting Trays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#part-locations">Part Locations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#bins">Bins</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#automated-guided-vehicles-agvs">Automated Guided Vehicles (AGVs)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#conveyor-belt">Conveyor Belt</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ros_communication.html">ROS Communication Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="challenges.html">Agility Challenges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tf_frames.html">TF Frames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scoring.html">Scoring</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">Introduction to Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_1.html">Tutorial 1: Create a Competition Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_2.html">Tutorial 2: Read Data from a Break Beam Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_3.html">Tutorial 3: Read Data from an Advanced Logical Camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_4.html">Tutorial 4: Read an Order</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_5.html">Tutorial 5: Move AGVs to Stations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_6.html">Tutorial 6: Enable/Disable a Gripper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_7.html">Tutorial 7: Move Robots with MoveIt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_8.html">Tutorial 8: Move Robots with ROS2 Actions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Automated Evaluation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../automated_evaluation/automated_evaluation_overview.html">Automated Evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automated_evaluation/competition_launch.html">Launch File Setup</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ARIAC_docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Configuration Files</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/competition/trials.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <blockquote>
+<div></div></blockquote>
+<section id="configuration-files">
+<h1>Configuration Files<a class="headerlink" href="#configuration-files" title="Permalink to this heading"></a></h1>
+<p>Configuration files are described in the YAML format. YAML is a human-readable data serialization format. It is commonly used for configuration files and in applications where data is being stored or transmitted. For more information on YAML, see the <a class="reference external" href="http://yaml.org/">YAML website</a>.</p>
+<p>ARIAC consists of two main configuration files, which are described below in the following subsections.</p>
+<section id="sensor-configuration-file">
+<span id="id1"></span><h2>Sensor Configuration File<a class="headerlink" href="#sensor-configuration-file" title="Permalink to this heading"></a></h2>
+<p>The sensor configuration file describes the location of the sensors in the workcell. One example of sensor configuration file (<span class="incremental">sensors.yaml</span>) is provided in the <a class="reference external" href="https://github.com/usnistgov/ARIAC/tree/ariac2023/test_competitor/config">test_competitor</a> package.</p>
+<p>Below is a description of the different fields in the sensor configuration file. This file contains 4 sensors which have to be described under the field <code class="code yamlname docutils literal notranslate"><span class="pre">sensors</span></code> and each sensor consists of:</p>
+<ol class="arabic">
+<li><p>A name (e.g. <code class="code yamlname docutils literal notranslate"><span class="pre">right_bins_camera</span></code>). This name has to be unique among all sensors in the same configuration file.</p></li>
+<li><p>A type (e.g. <code class="code highlight yaml docutils literal highlight-yaml"><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">advanced_logical_camera</span></code>). This type has to be one of the types defined in the <code class="code yamlname docutils literal notranslate"><span class="pre">sensor_types</span></code> field.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">break_beam</span></code></p></li>
+<li><p><code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">proximity</span></code></p></li>
+<li><p><code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">laser_profiler</span></code></p></li>
+<li><p><code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">lidar</span></code></p></li>
+<li><p><code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">rgb_camera</span></code></p></li>
+<li><p><code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">rgbd_camera</span></code></p></li>
+<li><p><code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">basic_logical_camera</span></code></p></li>
+<li><p><code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">advanced_logical_camera</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>A pose (defined in the world frame with the field <code class="code yamlname docutils literal notranslate"><span class="pre">pose</span></code>):</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Position (e.g. <code class="code highlight yaml docutils literal highlight-yaml"><span class="nt">xyz</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-2.286</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2.96</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.8</span><span class="p p-Indicator">]</span></code>).</p></li>
+<li><p>Orientation (e.g. <code class="code highlight yaml docutils literal highlight-yaml"><span class="nt">rpy</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">pi</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pi/2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span></code>). The orientation is defined using the <a class="reference external" href="https://en.wikipedia.org/wiki/Euler_angles">roll-pitch-yaw</a> convention. The orientation is defined in radians and can be defined using floating-point values or with the <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">pi</span></code> constant (<code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">pi</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">pi/2</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">pi/4</span></code>, etc.).</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#id2"><span class="std std-numref">Listing 8</span></a> shows an example of a sensor configuration file. The field <code class="code yamlname docutils literal notranslate"><span class="pre">visualize_fov</span></code> is optional and can be used to visualize the field of view of the sensor. The field <code class="code yamlname docutils literal notranslate"><span class="pre">visualize_fov</span></code> can be set to <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">true</span></code> or <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">false</span></code>. If the field <code class="code yamlname docutils literal notranslate"><span class="pre">visualize_fov</span></code> is not defined, the field of view will not be visualized.</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 8 </span><span class="caption-text">An example of a sensor configuration file.</span><a class="headerlink" href="#id2" title="Permalink to this code"></a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sensors</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">breakbeam_0</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">break_beam</span>
+<span class="w">      </span><span class="nt">visualize_fov</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">pose</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">xyz</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-0.35</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.95</span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="nt">rpy</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pi</span><span class="p p-Indicator">]</span>
+
+<span class="w">  </span><span class="nt">proximity_sensor_0</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">proximity</span>
+<span class="w">      </span><span class="nt">visualize_fov</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">pose</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">xyz</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-0.573</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2.84</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="nt">rpy</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">pi/2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pi/6</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pi/2</span><span class="p p-Indicator">]</span>
+
+<span class="w">  </span><span class="nt">laser_profiler_0</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">laser_profiler</span>
+<span class="w">      </span><span class="nt">visualize_fov</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">pose</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">xyz</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-0.573</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.486</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.526</span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="nt">rpy</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">pi/2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pi/2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
+
+<span class="w">  </span><span class="nt">lidar_0</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lidar</span>
+<span class="w">      </span><span class="nt">visualize_fov</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">      </span><span class="nt">pose</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">xyz</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-2.286</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-2.96</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.8</span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="nt">rpy</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">pi</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pi/2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
+
+<span class="w">  </span><span class="nt">rgb_camera_0</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rgb_camera</span>
+<span class="w">      </span><span class="nt">visualize_fov</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">      </span><span class="nt">pose</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">xyz</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-2.286</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2.96</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.8</span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="nt">rpy</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">pi</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pi/2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
+
+<span class="w">  </span><span class="nt">rgbd_camera_0</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rgbd_camera</span>
+<span class="w">      </span><span class="nt">visualize_fov</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">      </span><span class="nt">pose</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">xyz</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-2.286</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">4.96</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.8</span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="nt">rpy</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">pi</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pi/2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
+
+<span class="w">  </span><span class="nt">basic_logical_camera_0</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">visualize_fov</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">basic_logical_camera</span>
+<span class="w">      </span><span class="nt">pose</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">xyz</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-2.286</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2.96</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.8</span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="nt">rpy</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">pi</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pi/2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
+
+<span class="w">  </span><span class="nt">advanced_logical_camera_0</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">visualize_fov</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">advanced_logical_camera</span>
+<span class="w">      </span><span class="nt">pose</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">xyz</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-2.286</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-2.96</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.8</span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="nt">rpy</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">pi</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pi/2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
+</pre></div>
+</div>
+</div>
+<section id="placing-sensors-in-the-environment">
+<h3>Placing Sensors in the Environment<a class="headerlink" href="#placing-sensors-in-the-environment" title="Permalink to this heading"></a></h3>
+<p>To add sensors in the environment, one can start the simulation environment and use Gazebo’s GUI to add sensors. The sensors can be added by clicking on the <span class="guilabel">Insert</span> button and then selecting the desired sensor type. The sensors can be placed in the environment by clicking on the <span class="guilabel">Move</span> button and then clicking on the desired location in the environment. The sensors can be rotated by clicking on the <span class="guilabel">Rotate</span> button and then clicking on the desired orientation in the environment.  The sensors can be deleted by clicking on the <span class="guilabel">Delete</span> button and then clicking on the desired sensor in the environment. Once the sensors are placed in the environment, the sensor configuration file can be updated with the new sensor information.</p>
+<p>Another way to place sensors is to add them in the sensor configuration file and then run the simulation environment. The sensors will be added to the environment automatically. They can the been moved and rotated in the environment. Once the sensors are placed in the environment, the sensor configuration file can be updated with the new sensor information.</p>
+</section>
+</section>
+<section id="trial-configuration-file">
+<h2>Trial Configuration File<a class="headerlink" href="#trial-configuration-file" title="Permalink to this heading"></a></h2>
+<p>Trials are the main way to test your robot’s performance. Multiple trials are used during the qualifiers and the finals. The results of each trial are recorded and then used to rank competitors.</p>
+<div class="tip admonition" id="gui">
+<p class="admonition-title">Graphical User Interface</p>
+<p>A graphical user interface (GUI) for creating trial configuration yaml files was developed for ARIAC2023. The use of this tool is demonstrated in <a class="reference external" href="https://youtu.be/8xqCEhBE4-s">this youtube video</a>.</p>
+<p>To run the GUI, build and source the workspace using the <a class="hxr-hoverxref hxr-modal reference internal" href="../getting_started/installation.html#installation"><span class="std std-ref">installation instructions</span></a> and run:</p>
+<div class="highlight highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ros2 run ariac_gui gui</span>
+</pre></div>
+</div>
+</div>
+<p>A trial configuration file (<code class="file docutils literal notranslate"><span class="pre">sample.yaml</span></code>) is provided in the <a class="reference external" href="https://github.com/usnistgov/ARIAC/tree/ariac2023/ariac_gazebo/config/trials">ariac_gazebo package</a>. Below is a description of the different sections in the trial configuration file.</p>
+<section id="time-limit">
+<h3>Time Limit<a class="headerlink" href="#time-limit" title="Permalink to this heading"></a></h3>
+<p>The time limit is defined with the <code class="code yamlname docutils literal notranslate"><span class="pre">time_limit</span></code> field. The time limit is defined in (simulation) seconds and can be defined using floating-point values. A time limit of <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">-1</span></code> means that there is no time limit (infinite) for this trial. Competitors can set no time limit during testing.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>During the qualifiers and the finals, a finite time limit will be set for each trial.</p>
+</div>
+</section>
+<section id="kitting-trays">
+<h3>Kitting Trays<a class="headerlink" href="#kitting-trays" title="Permalink to this heading"></a></h3>
+<p>Kitting trays are defined with the <code class="code yamlname docutils literal notranslate"><span class="pre">kitting_trays</span></code> field. Information in this field is used to spawn kitting trays in the environment. The tray IDs are provided in a list of integers and set with the field <code class="code yamlname docutils literal notranslate"><span class="pre">tray_ids</span></code>. Kitting tray IDs range from 0 to 9. The location of kitting trays in the environment is defined in the field <code class="code yamlname docutils literal notranslate"><span class="pre">slots</span></code>, which are slots located on the tray tables. Each tray table has 3 slots. Slots 1-3 for one tray table and slots 4-6 for the other tray table (see <a class="hxr-hoverxref hxr-tooltip reference internal" href="#kittraytables"><span class="std std-numref">Fig. 2</span></a>).</p>
+<figure class="align-center" id="kittraytables">
+<img alt="kittraytables" class="no-border" src="../_images/TableSlots.jpeg" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Tray tables with slots.</span><a class="headerlink" href="#kittraytables" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#kit-tray-yaml"><span class="std std-numref">Listing 9</span></a> describes 2 kitting trays which are located in slots 2 and 4 on the tray tables. The tray IDs are 1 and 6 respectively.</p>
+<div class="literal-block-wrapper docutils container" id="kit-tray-yaml">
+<div class="code-block-caption"><span class="caption-number">Listing 9 </span><span class="caption-text">Example of kit tray locations.</span><a class="headerlink" href="#kit-tray-yaml" title="Permalink to this code"></a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">kitting_trays</span><span class="p">:</span><span class="w"> </span><span class="c1"># Which kitting trays will be spawn</span>
+<span class="w">  </span><span class="nt">tray_ids</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">6</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">slots</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">4</span><span class="p p-Indicator">]</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="part-locations">
+<h3>Part Locations<a class="headerlink" href="#part-locations" title="Permalink to this heading"></a></h3>
+<p>Parts can be found in 3 different location types: Bins, conveyor belt, and AGVs. The locations of parts in the environment are defined with the <code class="code yamlname docutils literal notranslate"><span class="pre">parts</span></code> field. This field can have three subfields: <code class="code yamlname docutils literal notranslate"><span class="pre">bins</span></code>, <code class="code yamlname docutils literal notranslate"><span class="pre">agvs</span></code>, <code class="code yamlname docutils literal notranslate"><span class="pre">conveyor_belt</span></code>.</p>
+<section id="bins">
+<h4>Bins<a class="headerlink" href="#bins" title="Permalink to this heading"></a></h4>
+<div class="literal-block-wrapper docutils container" id="parts-in-bins">
+<div class="code-block-caption"><span class="caption-number">Listing 10 </span><span class="caption-text">Parts in bins.</span><a class="headerlink" href="#parts-in-bins" title="Permalink to this code"></a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">bins</span><span class="p">:</span><span class="w"> </span><span class="c1"># bin params - 8 total bins each bin has nine total slots (1-9)</span>
+<span class="w">  </span><span class="nt">bin1</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;pump&#39;</span>
+<span class="w">      </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;red&#39;</span>
+<span class="w">      </span><span class="nt">slots</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">9</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;pi/6&#39;</span>
+<span class="w">      </span><span class="nt">flipped</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;battery&#39;</span>
+<span class="w">      </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;blue&#39;</span>
+<span class="w">      </span><span class="nt">slots</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">4</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;pi/2&#39;</span>
+<span class="w">  </span><span class="nt">bin3</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;regulator&#39;</span>
+<span class="w">      </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;purple&#39;</span>
+<span class="w">      </span><span class="nt">slots</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;pi/2&#39;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;regulator&#39;</span>
+<span class="w">      </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;purple&#39;</span>
+<span class="w">      </span><span class="nt">slots</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">4</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;pi/6&#39;</span>
+<span class="w">      </span><span class="nt">flipped</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;regulator&#39;</span>
+<span class="w">      </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;purple&#39;</span>
+<span class="w">      </span><span class="nt">slots</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">6</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">      </span><span class="nt">flipped</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+</div>
+<ul>
+<li><p>The <code class="code yamlname docutils literal notranslate"><span class="pre">bins</span></code> field can have 8 different <code class="code yamlname docutils literal notranslate"><span class="pre">binX</span></code> subfields where <code class="code yamlname docutils literal notranslate"><span class="pre">X</span></code> is the bin number. The bin numbers range from 1 to 8.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The <code class="code yamlname docutils literal notranslate"><span class="pre">type</span></code> field describes the part type in a bin. There can be multiple parts of different types in a bin and multiple parts of the same type. In <a class="hxr-hoverxref hxr-tooltip reference internal" href="#parts-in-bins"><span class="std std-numref">Listing 10</span></a>, there are 3 pumps and 2 batteries in <code class="code yamlname docutils literal notranslate"><span class="pre">bin1</span></code> and 6 purple regulators in <code class="code yamlname docutils literal notranslate"><span class="pre">bin3</span></code>. The way part locations are defined in <code class="code yamlname docutils literal notranslate"><span class="pre">bin3</span></code> allows for the same part type and color with different orientations and flipped states to be placed in the same bin.</p></li>
+<li><p>The <code class="code yamlname docutils literal notranslate"><span class="pre">color</span></code> field describes the part color in a bin.</p></li>
+<li><p>The <code class="code yamlname docutils literal notranslate"><span class="pre">slots</span></code> field describes the slots in a bin where the part can be found. Each bin has 9 slots. The slots are numbered from 1 to 9 (see <span class="xref std std-doc">environment.md</span>  for more information on bin slots).</p></li>
+<li><p>The <code class="code yamlname docutils literal notranslate"><span class="pre">rotation</span></code> field describes the rotation of the part in a bin.</p></li>
+<li><p>The <code class="code yamlname docutils literal notranslate"><span class="pre">flipped</span></code> field describes whether the parts are flipped in a bin. In the provided example, all red pumps in <code class="code yamlname docutils literal notranslate"><span class="pre">bin1</span></code> are flipped and all the blue batteries in <code class="code yamlname docutils literal notranslate"><span class="pre">bin1</span></code> are not flipped. See <a class="hxr-hoverxref hxr-modal reference internal" href="challenges.html#flipped-parts"><span class="std std-ref">Flipped Parts</span></a> for more information about flipped parts.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="automated-guided-vehicles-agvs">
+<h4>Automated Guided Vehicles (AGVs)<a class="headerlink" href="#automated-guided-vehicles-agvs" title="Permalink to this heading"></a></h4>
+<p>In trials where assembly is required, the environment starts with parts already located on the AGVs.</p>
+<ul>
+<li><p>The field <code class="code yamlname docutils literal notranslate"><span class="pre">agvs</span></code> specifies each AGV in the environment that has parts located on their back at the start of the simulation.</p>
+<blockquote>
+<div><ul>
+<li><p>The <code class="code yamlname docutils literal notranslate"><span class="pre">agvs</span></code> field can have 4 subfields: <code class="code yamlname docutils literal notranslate"><span class="pre">agv1</span></code>, <code class="code yamlname docutils literal notranslate"><span class="pre">agv2</span></code>, <code class="code yamlname docutils literal notranslate"><span class="pre">agv3</span></code>, and <code class="code yamlname docutils literal notranslate"><span class="pre">agv4</span></code>. Each one of these subfields contains a tray ID and a list of parts.</p></li>
+<li><p>The <code class="code yamlname docutils literal notranslate"><span class="pre">tray_id</span></code> field describes the tray ID located on the AGV. By convention, tray IDs located on AGVs at the start of the environment are 0.</p></li>
+<li><p>The <code class="code yamlname docutils literal notranslate"><span class="pre">parts</span></code> field describes the parts on the AGV.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The <code class="code yamlname docutils literal notranslate"><span class="pre">type</span></code> field describes the part type on the AGV.</p></li>
+<li><p>The <code class="code yamlname docutils literal notranslate"><span class="pre">color</span></code> field describes the part color on the AGV.</p></li>
+<li><p>The <code class="code yamlname docutils literal notranslate"><span class="pre">quadrant</span></code> field describes the quadrant of the AGV where the part is located.</p></li>
+<li><p>The <code class="code yamlname docutils literal notranslate"><span class="pre">rotation</span></code> field describes the rotation of the part on the AGV.</p></li>
+<li><p>The <code class="code yamlname docutils literal notranslate"><span class="pre">flipped</span></code> field describes whether the part is flipped on the AGV.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#parts-on-agvs"><span class="std std-numref">Listing 11</span></a> shows an example of how to start the simulation with 2 parts located on AGV 4.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In all trials, AGVs are always located at their respective kitting stations. Competitors have to move the AGVs to the assembly station to assemble the parts.</p>
+</div>
+<div class="literal-block-wrapper docutils container" id="parts-on-agvs">
+<div class="code-block-caption"><span class="caption-number">Listing 11 </span><span class="caption-text">Parts on AGVs.</span><a class="headerlink" href="#parts-on-agvs" title="Permalink to this code"></a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">parts</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">agvs</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">agv4</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">tray_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">      </span><span class="nt">parts</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;pump&#39;</span>
+<span class="w">          </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;green&#39;</span>
+<span class="w">          </span><span class="nt">quadrant</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">          </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">          </span><span class="nt">flipped</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;sensor&#39;</span>
+<span class="w">          </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;green&#39;</span>
+<span class="w">          </span><span class="nt">quadrant</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">          </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;pi&#39;</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="conveyor-belt">
+<h4>Conveyor Belt<a class="headerlink" href="#conveyor-belt" title="Permalink to this heading"></a></h4>
+<p>The conveyor belt is the third location where parts can be found.</p>
+<ul class="simple">
+<li><p>Parts on the conveyor belt travel at a constant speed of 0.2 m/s.</p></li>
+<li><p>When a part reaches the end of the conveyor belt, it is removed from the environment.</p></li>
+</ul>
+<p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#parts-on-conveyor"><span class="std std-numref">Listing 12</span></a> shows an example of how to spawn parts on the conveyor belt.</p>
+<div class="literal-block-wrapper docutils container" id="parts-on-conveyor">
+<div class="code-block-caption"><span class="caption-number">Listing 12 </span><span class="caption-text">Parts on the conveyor belt.</span><a class="headerlink" href="#parts-on-conveyor" title="Permalink to this code"></a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">conveyor_belt</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">active</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">spawn_rate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.0</span>
+<span class="w">  </span><span class="nt">order</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;random&#39;</span>
+<span class="w">  </span><span class="nt">parts_to_spawn</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;battery&#39;</span>
+<span class="w">      </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;red&#39;</span>
+<span class="w">      </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">      </span><span class="nt">offset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.15</span><span class="w"> </span><span class="c1"># between -1 and 1</span>
+<span class="w">      </span><span class="nt">flipped</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">      </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;pi/6&#39;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;sensor&#39;</span>
+<span class="w">      </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;green&#39;</span>
+<span class="w">      </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">      </span><span class="nt">offset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span><span class="w"> </span><span class="c1"># between -1 and 1</span>
+<span class="w">      </span><span class="nt">flipped</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;pi&#39;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;regulator&#39;</span>
+<span class="w">      </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;blue&#39;</span>
+<span class="w">      </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">      </span><span class="nt">offset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-0.2</span><span class="w"> </span><span class="c1"># between -1 and 1</span>
+<span class="w">      </span><span class="nt">flipped</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">      </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;pi/2&#39;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;pump&#39;</span>
+<span class="w">      </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;orange&#39;</span>
+<span class="w">      </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">      </span><span class="nt">offset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-0.15</span><span class="w"> </span><span class="c1"># between -1 and 1</span>
+<span class="w">      </span><span class="nt">flipped</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;pi/3&#39;</span>
+</pre></div>
+</div>
+</div>
+<ul>
+<li><p>The top level field <code class="code yamlname docutils literal notranslate"><span class="pre">conveyor_belt</span></code> specifies the parameters for the conveyor belt.</p>
+<blockquote>
+<div><ul>
+<li><p>The <code class="code yamlname docutils literal notranslate"><span class="pre">active</span></code> field specifies whether the conveyor belt is active. If the conveyor belt is active, parts will spawn on the conveyor belt. If the conveyor belt is not active, no parts will spawn on the conveyor belt.</p></li>
+<li><p>The <code class="code yamlname docutils literal notranslate"><span class="pre">spawn_rate</span></code> field specifies the rate at which parts spawn on the conveyor belt. The spawn rate is measured in seconds. In the provided example, parts spawn on the conveyor belt every 3 seconds.</p></li>
+<li><p>The <code class="code yamlname docutils literal notranslate"><span class="pre">order</span></code> field specifies the order in which parts spawn on the conveyor belt. The order can be either <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;random&#39;</span></code> or <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;sequential&#39;</span></code>.</p></li>
+<li><p>The <code class="code yamlname docutils literal notranslate"><span class="pre">parts_to_spawn</span></code> field specifies the parts that spawn on the conveyor belt. The <code class="code yamlname docutils literal notranslate"><span class="pre">parts_to_spawn</span></code> field can have multiple part types. In the provided example, there are 2 red batteries, 2 green sensors, 3 blue regulators, and 1 orange pump that spawn on the conveyor belt.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The <code class="code yamlname docutils literal notranslate"><span class="pre">type</span></code> field specifies the part type that spawns on the conveyor belt.</p></li>
+<li><p>The <code class="code yamlname docutils literal notranslate"><span class="pre">color</span></code> field specifies the part color that spawns on the conveyor belt.</p></li>
+<li><p>The <code class="code yamlname docutils literal notranslate"><span class="pre">number</span></code> field specifies the number of parts that spawn on the conveyor belt.</p></li>
+<li><p>The <code class="code yamlname docutils literal notranslate"><span class="pre">offset</span></code> field specifies the offset of the parts that spawn on the conveyor belt. The offset is measured in meters and ranges from -1 to 1. The offset is the distance between the center of the part and the center of the conveyor belt. In the provided example, the red batteries spawn 0.15 meters to the left of the center of the conveyor belt, the green sensors spawn 0.1 meters to the right of the center of the conveyor belt, the blue regulators spawn 0.2 meters to the left of the center of the conveyor belt, and the orange pump spawns 0.15 meters to the right of the center of the conveyor belt.</p></li>
+<li><p>The <code class="code yamlname docutils literal notranslate"><span class="pre">flipped</span></code> field specifies whether the parts that spawn on the conveyor belt are flipped.</p></li>
+<li><p>The <code class="code yamlname docutils literal notranslate"><span class="pre">rotation</span></code> field specifies the rotation of the parts that spawn on the conveyor belt.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sensors.html" class="btn btn-neutral float-left" title="Sensors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ros_communication.html" class="btn btn-neutral float-right" title="ROS Communication Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright works of NIST employees are not not subject to copyright protection in the United States.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+   
+
+  <!-- Taken from https://www.filamentgroup.com/lab/html-includes/#another-demo%3A-including-another-html-file -->
+  <iframe src="../_static/ntd2d_menu.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+
+</body>
+</html>

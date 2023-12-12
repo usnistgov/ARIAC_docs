@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TF Frames &mdash; ARIAC_docs 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+      <link rel="stylesheet" type="text/css" href="../_static/ntd2d.css?v=592263c6" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/twemoji.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=62faf5e4" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/hack.css?v=c2ad982c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=359c27e9"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../_static/js/hoverxref.js"></script>
+        <script src="../_static/js/tooltipster.bundle.min.js"></script>
+        <script src="../_static/js/micromodal.min.js"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=faefdcb3"></script>
+        <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"></script>
+        <script src="../_static/twemoji.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../_static/js/custom.js?v=8fe80478"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Scoring" href="scoring.html" />
+    <link rel="prev" title="Agility Challenges" href="challenges.html" />
+   
+
+  <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+  <script src="https://code.jquery.com/jquery-3.6.2.min.js" type="text/javascript" defer="defer"></script>
+  <script src="https://pages.nist.gov/nist-header-footer/js/nist-header-footer.js" type="text/javascript" defer="defer"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            ARIAC_docs
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">⏩ Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/updates.html">Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installing ARIAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/registering.html">Registering for the Competition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/events.html">Calendar of Events</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Competition Specifications</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview of the Competition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="orders.html">Conditions, Orders, and Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trials.html">Configuration Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ros_communication.html">ROS Communication Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="challenges.html">Agility Challenges</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">TF Frames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scoring.html">Scoring</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">Introduction to Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_1.html">Tutorial 1: Create a Competition Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_2.html">Tutorial 2: Read Data from a Break Beam Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_3.html">Tutorial 3: Read Data from an Advanced Logical Camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_4.html">Tutorial 4: Read an Order</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_5.html">Tutorial 5: Move AGVs to Stations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_6.html">Tutorial 6: Enable/Disable a Gripper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_7.html">Tutorial 7: Move Robots with MoveIt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_8.html">Tutorial 8: Move Robots with ROS2 Actions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Automated Evaluation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../automated_evaluation/automated_evaluation_overview.html">Automated Evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automated_evaluation/competition_launch.html">Launch File Setup</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ARIAC_docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">TF Frames</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/competition/tf_frames.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tf-frames">
+<h1>TF Frames<a class="headerlink" href="#tf-frames" title="Permalink to this heading"></a></h1>
+<p><img alt="" src="../_images/FRAMES.png" /></p>
+<p>This section describes the TF frames used in the competition. The TF frames are used to describe the position and orientation of the different objects in the competition. After starting the environment, one can visualize the TF tree with the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/tmp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>ros2<span class="w"> </span>run<span class="w"> </span>tf2_tools<span class="w"> </span>view_frames<span class="w">  </span><span class="o">&amp;&amp;</span><span class="w"> </span>evince<span class="w"> </span>frames.pdf
+</pre></div>
+</div>
+<p>A PDF file containing the TF frames is also available <a class="reference download internal" download="" href="../_downloads/cd4bf926119d6cd9ae4aefa2ecd6b94a/frames.pdf"><span class="xref download myst">here</span></a>. A summary of the TF frames used in the competition is provided below:</p>
+<ul class="simple">
+<li><p><strong>World</strong>: The <code class="docutils literal notranslate"><span class="pre">world</span></code> frame is the root frame of the TF tree. It is located at the origin of the competition arena.</p></li>
+<li><p><strong>AGV Trays</strong>: Frames for the AGV trays  are located at the origin of the trays. The frames are named as <code class="docutils literal notranslate"><span class="pre">agvX_tray</span></code> where <code class="docutils literal notranslate"><span class="pre">X</span></code> is the agv number.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    world
+    └─── agv1_track
+    |    |
+    |    └─── agv1_base
+    |         |
+    |         └─── agv1_tray
+    └─── agv2_track
+    |    |
+    |    └─── agv2_base
+    |         |
+    |         └─── agv2_tray
+    └─── agv3_track
+    |    |
+    |    └─── agv3_base
+    |         |
+    |         └─── agv3_tray
+    └─── agv4_track
+         |
+         └─── agv4_base
+              |
+              └─── agv4_tray
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Robots</strong>: Frames of the robots are provided in the TF tree.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    world
+    └─── long_rail_1 (frames for the ceiling robot)
+    |    |
+    |    └─── ...
+    └─── slide_bar (frames for the floor robot)
+         |
+         └─── ...
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Cameras</strong>: Frames for the cameras and sensors defined in the sensor configuration file are published on the TF tree. <strong>Note</strong>: In previous versions of ARIAC parts detected by cameras were published on the TF tree. This is no longer the case. The TF frames are only used to describe the position and orientation of the cameras and sensors. Competitors are expected to subscribe to the topics provided by the cameras and sensors to get the information about the parts.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    world
+    └─── right_bins_camera_frame
+    |
+    └─── left_bins_camera_frame
+    | 
+    └─── ...
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Bins</strong>: Frames for the bins are located at the origin of the bins. The frames are named as <code class="docutils literal notranslate"><span class="pre">binX_frame</span></code> where <code class="docutils literal notranslate"><span class="pre">X</span></code> is the bin number.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    world
+    └─── bin1_frame
+    |
+    └─── bin2_frame
+    |
+    └─── bin3_frame
+    |
+    └─── bin4_frame
+    |
+    └─── bin5_frame
+    |
+    └─── bin6_frame
+    |
+    └─── bin7_frame
+    |
+    └─── bin8_frame
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Inserts</strong>: Frames for the inserts are located at the origin of the inserts. The frames are named as <code class="docutils literal notranslate"><span class="pre">asX_insert_frame</span></code> where <code class="docutils literal notranslate"><span class="pre">X</span></code> is the assembly station number. These frames are useful for assembly and combined tasks.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    world
+    └─── as1_table_frame
+    |    |
+    |    └─── as1_insert_frame
+    |
+    └─── as2_table_frame
+    |    |
+    |    └─── as2_insert_frame
+    |
+    └─── as3_table_frame
+    |    |
+    |    └─── as3_insert_frame
+    |
+    └─── as4_table_frame
+         |
+         └─── as4_insert_frame
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Tray/Tool Changer Tables</strong>: Frames for the tray tables are  named as <code class="docutils literal notranslate"><span class="pre">ktsX_table_frame</span></code> where <code class="docutils literal notranslate"><span class="pre">X</span></code> is the table number. Each <code class="docutils literal notranslate"><span class="pre">ktsX_table_frame</span></code> has two children:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ktsX_tool_changer_parts_frame</span></code> is the frame of the tool changer for the parts gripper.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ktsX_tool_changer_trays_frame</span></code> is the frame of the tool changer for the trays gripper.</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    world
+    |
+    └─── kts1_table_frame
+    |    |
+    |    └─── kts1_tool_changer_parts_frame
+    |    |
+    |    └─── kts1_tool_changer_trays_frame
+    |
+    └─── kts2_table_frame
+         |
+         └─── kts2_tool_changer_parts_frame
+         |
+         └─── kts2_tool_changer_trays_frame
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Conveyor Belt</strong>: Frames for the conveyor belt consists of two frames:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">conveyor_belt_base_frame</span></code> is the frame located below the conveyor belt.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">conveyor_belt_part_spawn_frame</span></code> is the frame origin where parts are spawn on the conveyor belt. This frame is located at one end of the conveyor belt.</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    world
+    |
+    └─── conveyor_belt_base_frame
+         |
+         └─── conveyor_belt_part_spawn_frame
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="challenges.html" class="btn btn-neutral float-left" title="Agility Challenges" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="scoring.html" class="btn btn-neutral float-right" title="Scoring" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright works of NIST employees are not not subject to copyright protection in the United States.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+   
+
+  <!-- Taken from https://www.filamentgroup.com/lab/html-includes/#another-demo%3A-including-another-html-file -->
+  <iframe src="../_static/ntd2d_menu.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+
+</body>
+</html>
