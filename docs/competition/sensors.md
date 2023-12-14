@@ -13,7 +13,7 @@ Competitors can place sensors anywghere in the environment. Sensors have no coll
 | `rgb_camera`              | $300  |
 | `rgbd_camera`             | $500  |
 | `basic_logical_camera`    | $500  |
-| `advanced_logical_camera` | $2000 |
+| `advanced_logical_camera` | n/a |
 
 ## Sensor Types
 
@@ -41,7 +41,7 @@ The LIDAR sensor provides a point cloud of detected objects.
 
 ### RGB Camera
 
-The RGBD camera provides an RGB image.
+The RGB camera provides an RGB image.
 
 ![](../images/RGBCamera.png)
 
