@@ -1577,7 +1577,7 @@ Competition Interface
 
 Code Explanation
 ^^^^^^^^^^^^^^^^
-The competition interface from :ref:`Tutorial 8 <TUTORIAL8>` was augmented with the components described below.
+The competition interface from :ref:`Tutorial 9 <TUTORIAL9>` was augmented with the components described below.
 
 - Instance Variables
 
