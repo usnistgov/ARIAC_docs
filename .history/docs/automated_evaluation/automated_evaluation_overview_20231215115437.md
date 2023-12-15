@@ -10,7 +10,7 @@ we will run a series of automated evaluations and trial evaluations. To properly
 
 1. The configuration file should be named "team_name.yaml".
 
-2. In order to clone from main, the tag in the configuration file should be commented out or set to main.
+2. In order to clone from main, the tag in the configuration file should be commented out.
 
 ---
 
@@ -78,7 +78,7 @@ competition:
 
     `./build_container.sh nist_competitor nvidia`
     
-    - If you do not have nvidia graphics cards or do not want to use gpu acceleration you can run the script without the nvidia argument:
+else you can run the script without the nvidia argument:
 
     `./build_container.sh nist_competitor`
 

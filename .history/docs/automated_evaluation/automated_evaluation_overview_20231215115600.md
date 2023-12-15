@@ -10,7 +10,7 @@ we will run a series of automated evaluations and trial evaluations. To properly
 
 1. The configuration file should be named "team_name.yaml".
 
-2. In order to clone from main, the tag in the configuration file should be commented out or set to main.
+2. In order to clone from main, the tag in the configuration file should be commented out.
 
 ---
 
@@ -83,7 +83,8 @@ competition:
     `./build_container.sh nist_competitor`
 
 
-    - To run the nist_competitor example the personal_access_token should be replaced with the following: `github(UNDERSCORE)pat(UNDERSCORE)11AMERXRA0077fKXamvIKb_3YPuZm5p653Jerzr0BB0PfaFjv2OC5aPs1ujpYTeqm6JX6DNC3GXsCg1xYu`
+
+- To run the nist_competitor example the personal_access_token should be replaced with the following: `github(UNDERSCORE)pat(UNDERSCORE)11AMERXRA0077fKXamvIKb_3YPuZm5p653Jerzr0BB0PfaFjv2OC5aPs1ujpYTeqm6JX6DNC3GXsCg1xYu`
 
         - replace `(UNDERSCORE)`'s with `_`
 

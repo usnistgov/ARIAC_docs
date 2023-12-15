@@ -10,7 +10,7 @@ we will run a series of automated evaluations and trial evaluations. To properly
 
 1. The configuration file should be named "team_name.yaml".
 
-2. In order to clone from main, the tag in the configuration file should be commented out or set to main.
+2. In order to clone from main, the tag in the configuration file should be commented out.
 
 ---
 

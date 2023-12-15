@@ -8,12 +8,10 @@ we will run a series of automated evaluations and trial evaluations. To properly
 ---
 **NOTE**
 
-1. The configuration file should be named "team_name.yaml".
 
-2. In order to clone from main, the tag in the configuration file should be commented out or set to main.
+**_NOTE:_** The configuration file should be named "team_name.yaml".
 
----
-
+**_NOTE:_** In order to clone from main, the tag in the configuration file should be commented out.
 ## Configuration File Example
 
 ``` yaml
@@ -41,9 +39,7 @@ competition:
 
 - For the docker container to clone the environment teams will need to create a personal_access_token for the repository, [the intructions for which are shown here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token). We suggest creating a fine-grain token and only giving read access permissions for the competition repository. 
 
-- The build scripts for the docker container will run rosdep automatically to ensure that any ROS packages you have included in your package manifest (`package.xml`) will be installed.
-
--  However if you need to install packages that are not included in rosdep should create a custom build script, add those to the competitor_build_scripts directory and include the file name in the `pre_build_scripts` section of the yaml file. These scripts will also need to be added to the Google Drive folder. For example of this, see the `nist_competitor_pre_build.sh` script in the `competitor_build_scripts` folder. 
+- The build scripts for the docker container will run rosdep automatically to ensure that any ROS packages you have included in your package manifest (`package.xml`) will be installed. However if you need to install packages that are not included in rosdep you can add them to the build section. Currently debian packages (installed using apt) and pip packages (installed using pip3) are supported. If you would like to run custom build scripts, add those to the competitor_build_scripts directory and include the file name in the `extra_build_scripts` section of the yaml file. These scripts will also need to be added to the Google Drive folder. 
 
 - The competition section includes a launch file and the name of the package that includes that launch file. For the automated evaluation to work properly competitors must create a custom ROS launch file that starts the environment and any nodes that are necessary to complete the competiition. [Detailed instructions for this launch file are shown here](competition_launch.md)
     - *Note: if you have multiple ROS packages ensure that the package_name is set for the package that includes the launch file*
@@ -52,36 +48,29 @@ competition:
 
 1. To run the automated evaluation you must have docker installed. The instructions for installing Docker Desktop (a GUI program that interfaces with Docker) are found [here](https://docs.docker.com/desktop/install/ubuntu/). The instructions to install Docker Engine with the commanand-line interface only are found [here](https://docs.docker.com/engine/install/ubuntu/). Either should work for testing the automated evaluation.
 
-2. In order to enable Nvidia GPU acceleration for the docker container you must install the [Nvidia Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker). 
+2. After docker is installed pull the ARIAC image from docker hub using the terminal command:
 
-3. After docker is installed pull the ARIAC image from docker hub using the terminal command:
+    `docker image pull nistariac/ariac2023:latest`
 
-    `docker image pull nistariac/ariac2024:latest`
+3. Next ensure that the most up-to-date version of ARIAC2023 (at least version 1.2) is on your machine. You can ensure this by running `git pull` from `~/ariac_ws/src/ariac`
 
-4. Next ensure that the most up-to-date version of ARIAC2023 (at least version 1.2) is on your machine. You can ensure this by running `git pull` from `~/ariac_ws/src/ariac`
-
-5. Navigate to the `automated_evaluation` folder
+4. Navigate to the `automated_evaluation` folder
 
     `cd ~/ariac_ws/src/ariac/automated_evaluation`
 
-6. Add your team configuration file to this folder. It can be named however you like.
+5. Add your team configuration file to this folder. It can be named however you like.
 
-7. Ensure that the `build_docker_image`, `build_container` and `run_trial` scripts can be run as executables:
+6. Ensure that the `build_container` and `run_trial` scripts can be run as executables:
 
-    `chmod +x build_docer_image.sh build_container.sh run_trial.sh`
+    `chmod +x build_container.sh run_trial.sh`
 
-8. Make sure the docker engine is running.
+7. Make sure the docker engine is running.
 
-9. Add any trials you want to test to the `~/ariac_ws/src/ariac/automated_evaluation/trials` folder. These will be copied to the container during the build process.
+8. Add any trials you want to test to the `~/ariac_ws/src/ariac/automated_evaluation/trials` folder. These will be copied to the container during the build process.
 
-10. Run the build script with the name of your configuration file (without .yaml) as the first argument. If your host machine has nvidia graphics cards you can add the 'nvidia' argument to the build script to enable gpu acceleration. For example to build the nist_competitor example you would run:
+9. Run the build script with the name of your configuration file (without .yaml) as the first argument and the port number for VNC as the second. For example to build the nist_competitor container on port 6080 you would run:
 
-    `./build_container.sh nist_competitor nvidia`
-    
-    - If you do not have nvidia graphics cards or do not want to use gpu acceleration you can run the script without the nvidia argument:
-
-    `./build_container.sh nist_competitor`
-
+    `./build_container.sh nist_competitor 6080`
 
     - To run the nist_competitor example the personal_access_token should be replaced with the following: `github(UNDERSCORE)pat(UNDERSCORE)11AMERXRA0077fKXamvIKb_3YPuZm5p653Jerzr0BB0PfaFjv2OC5aPs1ujpYTeqm6JX6DNC3GXsCg1xYu`
 
@@ -89,10 +78,9 @@ competition:
 
     - This will create a container from the ARIAC image and attempt to clone and build the competitor package. You should see output in the terminal. If the build is successful continute onto the next step. If not, delete the created container (e.g., `docker rm nist_competitor --force`), fix the error and run the `build_container` script again. If the build script is successful it only needs to be run once. All trials can be run using this container.
 
-1.  To run a trial use the `run_trial.sh` script. The first argument is the team name which should also be the name of the container. The second argument is the name of the trial to be run. To all trials that are in the trials folder you need to pass a second argument `run-all`. For example to run the nist_competitor with  `kitting.yaml` trial you would run:
+10. After the container is built and running, open a web browser and navigate to `http://localhost:6080/`. This should show a VNC display for the container. 
+
+11. To run a trial use the `run_trial.sh` script. The first argument is the team name which should also be the name of the container. The second argument is the name of the trial to be run. If no second argument is passed all trials in the folder will be run sequentially. For example to run the nist_competitor with  `kitting.yaml` trial you would run:
 
     `./run_trial.sh nist_competitor kitting`
-and to run all trials you would run:
-
-    `./run_trial.sh nist_competitor run-all`
 

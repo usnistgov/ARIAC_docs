@@ -10,7 +10,7 @@ we will run a series of automated evaluations and trial evaluations. To properly
 
 1. The configuration file should be named "team_name.yaml".
 
-2. In order to clone from main, the tag in the configuration file should be commented out or set to main.
+2. In order to clone from main, the tag in the configuration file should be commented out.
 
 ---
 
@@ -52,7 +52,7 @@ competition:
 
 1. To run the automated evaluation you must have docker installed. The instructions for installing Docker Desktop (a GUI program that interfaces with Docker) are found [here](https://docs.docker.com/desktop/install/ubuntu/). The instructions to install Docker Engine with the commanand-line interface only are found [here](https://docs.docker.com/engine/install/ubuntu/). Either should work for testing the automated evaluation.
 
-2. In order to enable Nvidia GPU acceleration for the docker container you must install the [Nvidia Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker). 
+2. 
 
 3. After docker is installed pull the ARIAC image from docker hub using the terminal command:
 
@@ -74,11 +74,11 @@ competition:
 
 9. Add any trials you want to test to the `~/ariac_ws/src/ariac/automated_evaluation/trials` folder. These will be copied to the container during the build process.
 
-10. Run the build script with the name of your configuration file (without .yaml) as the first argument. If your host machine has nvidia graphics cards you can add the 'nvidia' argument to the build script to enable gpu acceleration. For example to build the nist_competitor example you would run:
+10. 
+   - Run the build script with the name of your configuration file (without .yaml) as the first argument. If your host machine has nvidia graphics cards you can add the 'nvidia' argument to the build script to enable gpu acceleration. For example to build the nist_competitor example you would run:
 
     `./build_container.sh nist_competitor nvidia`
-    
-    - If you do not have nvidia graphics cards or do not want to use gpu acceleration you can run the script without the nvidia argument:
+    else you can run the script without the nvidia argument:
 
     `./build_container.sh nist_competitor`
 
@@ -89,7 +89,7 @@ competition:
 
     - This will create a container from the ARIAC image and attempt to clone and build the competitor package. You should see output in the terminal. If the build is successful continute onto the next step. If not, delete the created container (e.g., `docker rm nist_competitor --force`), fix the error and run the `build_container` script again. If the build script is successful it only needs to be run once. All trials can be run using this container.
 
-1.  To run a trial use the `run_trial.sh` script. The first argument is the team name which should also be the name of the container. The second argument is the name of the trial to be run. To all trials that are in the trials folder you need to pass a second argument `run-all`. For example to run the nist_competitor with  `kitting.yaml` trial you would run:
+10. To run a trial use the `run_trial.sh` script. The first argument is the team name which should also be the name of the container. The second argument is the name of the trial to be run. To all trials that are in the trials folder you need to pass a second argument `run-all`. For example to run the nist_competitor with  `kitting.yaml` trial you would run:
 
     `./run_trial.sh nist_competitor kitting`
 and to run all trials you would run:
