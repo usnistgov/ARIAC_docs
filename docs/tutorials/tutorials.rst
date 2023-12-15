@@ -35,6 +35,12 @@ A brief description of each tutorial is provided below.
 - :tuto:`Tutorial 8:` :doc:`Move Robots with ROS2 Actions <tutorial_8>`
 
     - Demonstrates how to control both robots using ROS2 Actions.
+- :tuto:`Tutorial 8:` :doc:`Basic Interface with MoveIt_Py <tutorial_9>`
+
+    - Demonstrates how to the floor robot using MoveIt_py.
+- :tuto:`Tutorial 8:` :doc:`Completing a Kitting Order Using MoveIt_Py <tutorial_10>`
+
+    - Demonstrates how to complete a kitting order using MoveIt_Py
 .. important::
 
   Tutorials are meant to be followed in order as each tutorial uses the code from the previous tutorial to which new functionalities and files are added. This allows code from previous tutorials to be used in later tutorials. 
