@@ -94,13 +94,6 @@ competition:
     `./run_trial.sh nist_competitor kitting`
 and to run all trials you would run:
 
-    `./run_trial.sh nist_competitor run-all` 
+    `./run_trial.sh nist_competitor run-all`
 
-and in order to run all trials multiple times you would run:
-
-    `./run_trial.sh nist_competitor run-all 3`
-
-
-    - The third argument is the number of times to run each trial. If this argument is not included the trial will only be run once.
-
-12.  The output of the trial will be saved in the `/automated_evaluation/logs` folder. The output will be saved in a folder named after the trial. The output will include the ROS logs, the output of the evaluation script and the output of the scoring script.
+1.  The output of the trial will be saved in the `/automated_evaluation/logs` folder. The output will be saved in a folder named after the trial. The output will include the ROS logs, the output of the evaluation script and the output of the scoring script.
