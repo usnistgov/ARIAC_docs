@@ -1,14 +1,28 @@
+===================
 ARIAC Documentation
 ===================
 
-Welcome to ARIAC 2023!
+---------------------------------------------------------------------------------------------------------------------------------------
+Welcome to `ARIAC 2024! <https://www.nist.gov/el/intelligent-systems-division-73500/agile-robotics-industrial-automation-competition>`_
+---------------------------------------------------------------------------------------------------------------------------------------
 
-Github repository: `https://www.github.com/usnistgov/ARIAC/ <https://www.github.com/usnistgov/ARIAC/>`_
+The Agile Robotics for Industrial Automation Competition (ARIAC), put on by the National Institute of Standards and Technology (NIST), is an annual competition that tests the ability of robots to perform a series of tasks in a dynamic environment. The tasks are designed to test the robot's ability to perform pick-and-place operations, assembly, and kitting in a simulated warehouse. Agility in the context of ARIAC isn't just about a robot's physical capabilities or speed; it's about how adaptable, efficient, and autonomous it can be in a dynamic manufacturing environment. The competition serves as a testbed for developing algorithms that can be applied in real-world manufacturing settings. NIST uses the insights gained from the contest to shape standard metrics and test methods for future robotic agility in manufacturing.
+
+------------------
+ARIAC Repositories
+------------------
+
+* `ARIAC <https://www.github.com/usnistgov/ARIAC/>`_ (main repository)
+
+* `ARIAC_evaluation <https://www.github.com/usnistgov/ARIAC_evaluation/>`_ (automated evaluation in docker)
+
+* `ARIAC_docs <https://www.github.com/usnistgov/ARIAC_docs/>`_ (source code for this documentation)
 
 
-.. image:: images/environment.png
+
+.. image:: images/environment_2024.png
   :width: 900
-  :alt: ARIAC environment for 2023
+  :alt: ARIAC environment for 2024
 
 .. Hidden TOCs
 
@@ -17,8 +31,8 @@ Github repository: `https://www.github.com/usnistgov/ARIAC/ <https://www.github.
    :maxdepth: 3
    :hidden:
 
-   getting_started/updates.rst
    getting_started/installation.rst
+   getting_started/changelog.rst
    getting_started/registering
    getting_started/events
 

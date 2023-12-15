@@ -1,17 +1,20 @@
 .. _INSTALLATION:
 
-
+================
 Installing ARIAC
-===========================
+================
 
 .. admonition:: Requirements
   :class: attention
 
-    ARIAC 2023 is built for ROS2 Galactic running on Ubuntu 20.04 (Focal Fossa). 
+    ARIAC 2024 is built for ROS2 Iron running on Ubuntu 22.04 (Jammy Jellyfish). 
 
-    - See the `ROS2 Galactic installation instructions <https://docs.ros.org/en/galactic/Installation.html>`_ for more information.
+    * See the `ROS Iron installation instructions <https://docs.ros.org/en/iron/Installation.html>`_ for more information.
+
+        * Install :code:`ros-iron-desktop` using the Debian binaries.
 
 
+----------------------------
 Cloning the ARIAC Repository
 ----------------------------
 
@@ -20,7 +23,7 @@ Cloning the ARIAC Repository
     .. code-block:: bash
         :class: highlight
 
-        source /opt/ros/galactic/setup.bash
+        source /opt/ros/iron/setup.bash
         mkdir -p ~/ariac_ws/src
         cd ~/ariac_ws
 
@@ -33,7 +36,7 @@ Cloning the ARIAC Repository
         git clone https://github.com/usnistgov/ARIAC.git src/ariac
 
     
-    **Note:** Always use the ``ariac2023`` branch.
+    **Note:** Always use the ``ariac2024`` branch.
 
 
 - Install the dependencies:
@@ -53,6 +56,7 @@ Cloning the ARIAC Repository
         - If you are using a virtual machine, you may need to install the :file:`python3-vcstool` package.
 
 
+--------------------------
 Building the ARIAC Package
 --------------------------
 
@@ -73,13 +77,14 @@ Building the ARIAC Package
 
     **Note:** You may want to add the following line to your :file:`~/.bashrc` file: :bash:`source ~/ariac_ws/install/setup.bash`
 
+----------------------------
 Starting the ARIAC Simulator
 ----------------------------
 
 There are mainly two ways to start the ARIAC simulator.
 
 Default Configuration
-~~~~~~~~~~~~~~~~~~~~~
+=====================
 
 The following command starts ARIAC with the default configuration:
 
@@ -94,7 +99,7 @@ The following command starts ARIAC with the default configuration:
     - The default sensor configuration is :file:`sensors.yaml`, located in `test_competitor/config/ <https://github.com/usnistgov/ARIAC/tree/ariac2023/test_competitor/config>`_
 
 Custom Configuration
-~~~~~~~~~~~~~~~~~~~~
+====================
 
 - To start ARIAC with a different trial, use the following command:
 
@@ -152,7 +157,7 @@ Custom Configuration
 
 
 Moving the Robots
------------------
+=================
 
 To verify that the robots can be controlled properly you will need three terminals:
 
@@ -183,7 +188,7 @@ This should start the competition and move each of the robots to the home positi
 
 
 Running the Test Competitor
----------------------------
+===========================
 
 A test competitor has been created to demonstrate how to complete some of the basic functions (no challenges) of working with the ARIAC environment.
 The test competitor has been tested with ``kitting.yaml``, ``assembly.yaml``, ``combined.yaml``, :class: :file:`kitting_assembly.yaml`, and :file:`kitting_combined.yaml`.
