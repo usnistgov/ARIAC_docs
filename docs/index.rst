@@ -32,8 +32,8 @@ ARIAC Repositories
    :maxdepth: 3
    :hidden:
 
-   getting_started/installation.rst
-   getting_started/changelog.rst
+   getting_started/installation
+   getting_started/changelog
    getting_started/registering
    getting_started/events
 
