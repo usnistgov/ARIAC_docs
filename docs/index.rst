@@ -18,6 +18,7 @@ ARIAC Repositories
 
 * `ARIAC_docs <https://www.github.com/usnistgov/ARIAC_docs/>`_ (source code for this documentation)
 
+* `ARIAC_tutorials <https://github.com/usnistgov/ARIAC_tutorials/>`_ (tutorials)
 
 
 .. image:: images/environment_2024.png

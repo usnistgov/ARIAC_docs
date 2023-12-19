@@ -6,9 +6,26 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'ARIAC_docs'
+project = 'ARIAC Docs'
 copyright = u'works of NIST employees are not not subject to copyright protection in the United States'
 author = 'Justin Albrecht'
+
+
+html_theme_options = {
+    'logo_only': False,
+    'display_version': True,
+    'prev_next_buttons_location': 'both',
+    'style_external_links': False,
+    'style_nav_header_background': '#2980B9',
+    # Toc options
+    'collapse_navigation': True,
+    'sticky_navigation': True,
+    'navigation_depth': 4,
+    'includehidden': True,
+    'titles_only': False
+}
+
+html_logo = "images/nist_el_logo.png"
 
 # # -- General configuration ---------------------------------------------------
 # # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -35,7 +52,7 @@ author = 'Justin Albrecht'
 
 
 release = '1.0'
-version = '0.1.0'
+version = '2024.1.0'
 
 
 # -- General configuration
