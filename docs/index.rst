@@ -22,57 +22,56 @@ ARIAC Repositories
 
 
 .. image:: images/environment_2024.png
-  :width: 900
+  :width: 800
   :alt: ARIAC environment for 2024
 
 .. Hidden TOCs
 
 .. toctree::
-   :caption: ⏩ Getting Started
-   :maxdepth: 3
-   :hidden:
+  :caption: ⏩ Getting Started
+  :maxdepth: 3
+  :hidden:
 
-   getting_started/installation
-   getting_started/changelog
-   getting_started/registering
-   getting_started/events
-
-.. toctree::
-   :caption: ⏩ Competition Specifications
-   :maxdepth: 3
-   :hidden:
-
-   competition/terminology
-   competition/overview
-   competition/environment
-   competition/orders
-   competition/sensors
-   competition/trials.rst
-   competition/ros_communication
-   competition/challenges
-   competition/tf_frames
-   competition/scoring
+  getting_started/installation
+  getting_started/changelog
+  getting_started/registering
+  getting_started/events
 
 .. toctree::
-   :caption: ⏩ Tutorials
-   :maxdepth: 3
-   :hidden:
+  :caption: ⏩ Competition
+  :maxdepth: 3
+  :hidden:
 
-   tutorials/tutorials.rst
-   tutorials/tutorial_1.rst
-   tutorials/tutorial_2.rst
-   tutorials/tutorial_3.rst
-   tutorials/tutorial_4.rst
-   tutorials/tutorial_5.rst
-   tutorials/tutorial_6.rst
-   tutorials/tutorial_7.rst
-   tutorials/tutorial_8.rst
+  competition/terminology
+  competition/overview
+  competition/environment
+  competition/orders
+  competition/sensors
+  competition/trials
+  competition/ros_communication
+  competition/challenges
+  competition/tf_frames
 
 .. toctree::
-   :caption: ⏩ Automated Evaluation
-   :maxdepth: 3
-   :hidden:
+  :caption: ⏩ Evaluation
+  :maxdepth: 3
+  :hidden:
 
-   automated_evaluation/automated_evaluation_overview
-   automated_evaluation/competition_launch
- 
+  evaluation/overview
+  evaluation/scoring
+  evaluation/launch_file_setup
+
+.. toctree::
+  :caption: ⏩ Tutorials
+  :maxdepth: 3
+  :hidden:
+
+  tutorials/tutorials
+  tutorials/tutorial_1
+  tutorials/tutorial_2
+  tutorials/tutorial_3
+  tutorials/tutorial_4
+  tutorials/tutorial_5
+  tutorials/tutorial_6
+  tutorials/tutorial_7
+  tutorials/tutorial_8

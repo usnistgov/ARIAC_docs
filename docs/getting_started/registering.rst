@@ -1,8 +1,8 @@
-.. _Registering:
+.. _REGISTRATION:
 
-===============================
-Registering for the Competition
-===============================
+============
+Registration
+============
 
 In order to register for the competition and be eligible, at least one member of the team must sign up using the form at `<https://bit.ly/ariac2023>`_
 

@@ -18,9 +18,9 @@ html_theme_options = {
     'style_external_links': False,
     'style_nav_header_background': '#2980B9',
     # Toc options
-    'collapse_navigation': True,
-    'sticky_navigation': True,
-    'navigation_depth': 4,
+    'collapse_navigation': False,
+    'sticky_navigation': False,
+    'navigation_depth': 3,
     'includehidden': True,
     'titles_only': False
 }
@@ -102,7 +102,6 @@ hoverxref_roles = [
     'confval',
     'setting',
     "doc",
-    'term',
 ]
 hoverxref_intersphinx = [
     'readthedocs',
@@ -162,15 +161,11 @@ rst_prolog = """
     :language: yaml
     :class: highlight
     
- .. role:: tuto
-    :class: tuto
+ .. role:: tutorial
+    :class: tutorial
     
  .. role:: console(code)
     :language: console
-    :class: highlight
-    
- .. role:: bash
-    :language: bash
     :class: highlight
 
  .. role:: cpp(code)

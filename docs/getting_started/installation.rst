@@ -1,8 +1,8 @@
 .. _INSTALLATION:
 
-================
-Installing ARIAC
-================
+============
+Installation
+============
 
 .. admonition:: Requirements
   :class: attention
@@ -19,7 +19,7 @@ Configuring the ARIAC Environment
 
 1. Add the ROS Iron setup script to your :file:`~/.bashrc`
 
-  .. code-block:: zsh
+  .. code-block:: sh
 
     echo "source /opt/ros/iron/setup.bash" >> ~/.bashrc && source ~/.bashrc
 
