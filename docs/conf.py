@@ -129,6 +129,7 @@ hoverxref_role_types = {
     'mod': 'modal',
     'class': 'modal',
     'obj': 'tooltip',
+    'numref': 'modal',
 }
 # hoverxref_domains = [
 #     'py',
