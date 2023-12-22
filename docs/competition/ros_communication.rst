@@ -49,6 +49,8 @@ Competition Topics
      - :term:`ariac_msgs/msg/HumanState`
      - Position and velocity of the human and the ceiling robot
 
+.. _SENSOR_TOPICS:
+
 -------------
 Sensor Topics
 -------------
