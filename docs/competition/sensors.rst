@@ -13,6 +13,7 @@ The second type is robot sensors. Both the floor and ceiling robot can be equipe
 .. note:: 
   All sensors will not publish data to the ROS topics until the competition is started.
 
+------------
 Sensor Costs
 ------------
 
@@ -46,6 +47,10 @@ There is a cost to each of the sensors. This cost will be factored in during the
   * - Advanced logical camera
     - N/A
 
+
+.. _STATIC_SENSORS:
+
+--------------
 Static sensors
 --------------
 
@@ -138,6 +143,7 @@ The advanced logical camera reports the pose, the type, and the color of a detec
 .. caution::
   The advanced logical camera is not allowed to be used for the 2024 competition. It can still be enabled in development by using the :code:`dev_mode` launch argument. 
 
+-------------
 Robot Cameras
 -------------
 
