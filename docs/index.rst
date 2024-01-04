@@ -46,10 +46,10 @@ ARIAC Repositories
   competition/overview
   competition/environment
   competition/orders
-  competition/sensors
-  competition/trials
-  competition/ros_communication
   competition/challenges
+  competition/sensors
+  competition/configuration_files
+  competition/ros_communication
   competition/tf_frames
 
 .. toctree::

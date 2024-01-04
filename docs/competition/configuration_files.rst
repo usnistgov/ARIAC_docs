@@ -103,13 +103,141 @@ The trial configuration file contains all the information that the :term:`AM <AR
 Fields
 ======
 
-:yamlname:`time_limit`
+:yamlname:`time_limit`, :yaml:`Float`
+-------------------------------------
+
+The time limit is a positive floating point number that represents the number of seconds that the competitor has to complete the trial. At the end of the time limit the competition will end automatically. 
+
+:yamlname:`kitting_trays`, :yaml:`Dictionary`
+---------------------------------------------
+
+This section defines the kit trays that will be spawned onto the kit tray stations at the start of simulation.
+
+  * :yamlname:`tray_ids`, :yaml:`List`: The IDs of the all the trays to be spawned (0-9). Several trays can have the same ID.
+
+  * :yamlname:`slots`, :yaml:`List`: The slots on the kitting tray station where the trays will be spawned (kts1: 0-3, kts2: 4-6). Slots must be unique.
+
+  .. note::
+    The :yamlname:`tray_ids` and :yamlname:`slots` lists should be the same length.
+
+:yamlname:`assembly_inserts`, :yaml:`Dictionary`
+------------------------------------------------
+
+This section defines the rotation for each of the assembly station inserts. 
+
+  * :yamlname:`as{n}`, :yaml:`Float` or :yaml:`String`: Rotation in radians of assembly insert n (1-4). Pi strings can be used.
+
+:yamlname:`parts`, :yaml:`Dictionary`
+-------------------------------------
+
+This section defines all the parts that will be spawned into the environment.
+
+  * :yamlname:`agvs`, :yaml:`Dictionary`: Parts that will placed directly onto the AGV at the start of the simulation. These parts are directly related to the assembly order and will be filled out automatically based on the assembly order if using the trial_generator. 
+
+    * :yamlname:`agv{n}`, :yaml:`Dictionary`: The AGV that will have parts (n: 1-4). Multiple agvs may have parts. 
+
+      * :yamlname:`tray_id`, :yaml:`Integer`: The ID of the kitting tray (0-9) that will be placed on the AGV. Parts on AGVs should always be placed onto a kit tray. 
+
+      * :yamlname:`parts`, :yaml:`List`: Parts that will be spawned on the tray.
+
+        * :yamlname:`type`, :yaml:`String`: The type of the part (:yaml:`'sensor'`, :yaml:`'regulator'`, :yaml:`'pump'`, or :yaml:`'battery'`).
+
+        * :yamlname:`color`, :yaml:`String`: The color of the part (:yaml:`'red'`, :yaml:`'blue'`, :yaml:`'green'`, :yaml:`'orange'`, or :yaml:`'purple'`).
+
+        * :yamlname:`quadrant`, :yaml:`Integer`: The quadrant of the kit tray the part will be spawned onto (1-4).
+
+        * :yamlname:`rotation`, :yaml:`Float` or :yaml:`String`: The rotation of the part in radians. Pi strings can be used.
+
+  * :yamlname:`bins`, :yaml:`Dictionary`: Parts that will be placed into the bins at the start of the simulation.
+
+    * :yamlname:`bin{n}`, :yaml:`Dictionary`: The bin that will have parts (n: 1-8). Multiple bins may have parts.
+
+      * :yamlname:`type`, :yaml:`String`: The type of the part (:yaml:`'sensor'`, :yaml:`'regulator'`, :yaml:`'pump'`, or :yaml:`'battery'`).
+
+      * :yamlname:`color`, :yaml:`String`: The color of the part (:yaml:`'red'`, :yaml:`'blue'`, :yaml:`'green'`, :yaml:`'orange'`, or :yaml:`'purple'`).
+
+      * :yamlname:`rotation`, :yaml:`Float` or :yaml:`String`: The rotation of the part in radians. Pi strings can be used.
+
+      * :yamlname:`flipped`, :yaml:`Boolean`: Whether the part will be flipped. If :yaml:`true` the z-axis of the part will face down instead of up. 
+
+      * :yamlname:`slots`, :yaml:`List`: The slots of the bin that this part can be found (1-9). Each slot should be unique for a given bin. 
+
+  * :yamlname:`conveyor_belt`: Parts that will be spawned onto the conveyor when the competition is started. The cycle of parts will be repeated after all parts are spawned, up until the competition ends. 
+
+    * :yamlname:`active`: Boolean for if the conveyor is active. This toggle is mostly used for testing to enable or disable the conveyor without removing all the parts. 
+
+    * :yamlname:`spawn_rate`: Float representing the time in seconds between parts spawned on the conveyor.
+
+    * :yamlname:`order`: Either :yaml:`'sequential'` where all parts of the same type will appear before the next type, or  :yaml:`'random'` where the parts will come out in a random order. 
+
+    * :yamlname:`parts_to_spawn`: This is a list of part lots that will be found on the conveyor.
+
+      * :yamlname:`type`: The type of the part (:yaml:`'sensor'`, :yaml:`'regulator'`, :yaml:`'pump'`, or :yaml:`'battery'`).
+
+      * :yamlname:`color`: The color of the part (sensor, regulator, pump, battery).
+
+      * :yamlname:`number`
+
+      * :yamlname:`offset`
+
+      * :yamlname:`flipped`
+
+      * :yamlname:`rotation`
+
+:yamlname:`orders`
+------------------
+
+  * :yamlname:`id`
+
+  * :yamlname:`type`
+
+  * :yamlname:`announcement`
+
+  * :yamlname:`priority`
+
+  * :yaml:`task_info`
+
+:yamlname:`challenges`
 ----------------------
+
+  * :yamlname:`dropped_part`
+
+    * :yamlname:`robot`
+
+    * :yamlname:`type`
+
+    * :yamlname:`color`
+
+    * :yamlname:`drop_after`
+
+    * :yamlname:`delay`
+  
+  * :yamlname:`robot_malfunction`
+
+    * :yamlname:`duration`
+
+    * :yamlname:`robots_to_disable`
+
+    * :yaml:`announcement`: 
+
+  * :yamlname:`sensor_blackout`
+
+    * :yamlname:`duration`
+
+    * :yamlname:`sensors_to_disable`
+
+    * :yaml:`announcement`: 
+
+  * :yamlname:`faulty_part`
+
+    * :yamlname:`order_id`
+    * :yamlname:`quadrant{n}`
 
 
 .. code-block:: yaml
   :caption: Example of a trial configuration file
   :name: trial-config
+  :linenos:
 
   # Trial name: example.yaml
   # ARIAC2024
@@ -143,7 +271,7 @@ Fields
   assembly_inserts:
     as1: pi/3
     as2: -pi/4
-    as3: '0'
+    as3: 0.0
     as4: pi/2
 
   # PARTS INFORMATION
@@ -156,19 +284,19 @@ Fields
         - type: sensor
           color: blue
           quadrant: 1
-          rotation: '0.0'
+          rotation: 0.0
         - type: pump
           color: blue
           quadrant: 2
-          rotation: '0.0'
+          rotation: 0.0
         - type: regulator
           color: blue
           quadrant: 3
-          rotation: '0.0'
+          rotation: 0.0
         - type: battery
           color: blue
           quadrant: 4
-          rotation: '0.0'
+          rotation: 0.0
     bins:
       bin1:
       - type: sensor
@@ -183,7 +311,7 @@ Fields
       bin2:
       - type: pump
         color: purple
-        rotation: '0'
+        rotation: 0.0
         flipped: false
         slots:
         - 1
@@ -193,7 +321,7 @@ Fields
       bin5:
       - type: battery
         color: orange
-        rotation: '0'
+        rotation: 0.0
         flipped: true
         slots:
         - 2
@@ -226,7 +354,7 @@ Fields
         number: 5
         offset: 0.0
         flipped: true
-        rotation: '0'
+        rotation: 0.0
 
   # ORDERS INFORMATION
 
