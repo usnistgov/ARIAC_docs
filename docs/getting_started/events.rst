@@ -4,6 +4,9 @@
 Calendar of Events
 ==================
 
+.. todo::
+  Update page for 2024
+
 .. list-table:: 
   :widths: 25 75
   :header-rows: 1

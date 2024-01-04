@@ -4,6 +4,9 @@
 Registration
 ============
 
+.. todo::
+  Update page for 2024
+
 In order to register for the competition and be eligible, at least one member of the team must sign up using the form at `<https://bit.ly/ariac2023>`_
 
 Multiple members of the team may fill out the form if desired as this will also be used for creating the mailing list for information on the competition as it is released.
