@@ -162,7 +162,7 @@ This section defines all the parts that will be spawned into the environment.
 
       * :yamlname:`slots`, :yaml:`List`: The slots of the bin that this part can be found (1-9). Each slot should be unique for a given bin. 
 
-  * :yamlname:`conveyor_belt`: Parts that will be spawned onto the conveyor when the competition is started. The cycle of parts will be repeated after all parts are spawned, up until the competition ends. 
+  * :yamlname:`conveyor_belt`, :yaml:`Dictionary`: Parts that will be spawned onto the conveyor when the competition is started. The cycle of parts will be repeated after all parts are spawned, up until the competition ends. 
 
     * :yamlname:`active`, :yaml:`Boolean`: Whether the conveyor is active. This toggle is mostly used for testing to enable or disable the conveyor without removing all the parts. 
 
@@ -176,62 +176,135 @@ This section defines all the parts that will be spawned into the environment.
 
       * :yamlname:`color`, :yaml:`String`: The color of the part (:yaml:`'red'`, :yaml:`'blue'`, :yaml:`'green'`, :yaml:`'orange'`, or :yaml:`'purple'`).
 
-      * :yamlname:`number`
+      * :yamlname:`number`, :yaml:`Integer`: The number of parts spawned with the selected :yamlname:`type`, :yamlname:`color`, :yamlname:`offset`, :yamlname:`flipped`, and :yamlname:`rotation`.
 
-      * :yamlname:`offset`
+      * :yamlname:`offset`, :yaml:`Float`: The position on the conveyor belt. Positive offset is further from the bins and negative offset is closer to the bins. This value should be between -1.0 and 1.0. 
 
-      * :yamlname:`flipped`
+      * :yamlname:`flipped`, :yaml:`Boolean`: Whether the part will be flipped. If :yaml:`true` the z-axis of the part will face down instead of up.
 
-      * :yamlname:`rotation`
+      * :yamlname:`rotation`, :yaml:`Float` or :yaml:`String`: The rotation of the part in radians. Pi strings can be used.
 
 :yamlname:`orders`
 ------------------
 
-  * :yamlname:`id`
+  * :yamlname:`id`, :yaml:`String`: Unique identifier for each order. String with a length of 8 characters.
 
-  * :yamlname:`type`
+  * :yamlname:`type`, :yaml:`String`: Determines the type of order. Possible values are :yaml:`'kitting'`, :yaml:`'assembly'`, and :yaml:`'combined'`.
 
-  * :yamlname:`announcement`
+  * :yamlname:`announcement`, :yaml:`Dictionary`: Determines under what condition the order will be announced.
 
-  * :yamlname:`priority`
+   
 
-  * :yaml:`task_info`
+  * :yamlname:`priority`, :yaml:`Boolean`: Determines whether the order is a regular order, :yaml:`false`, or a high priority order, :yaml:`true`.
+
+  * :yaml:`task_info`: The information for the task based on the order :yamlname:`type`. Either :yamlname:`kitting_task`, :yamlname:`assembly_task`, or :yamlname:`combined_task`
+
+    * :yamlname:`kitting_task`, :yaml:`Dictionary`: This is only used if :yamlname:`type` is set to :yaml:`'kitting'`.
+
+      * :yamlname:`agv_number`, :yaml:`Integer`: The agv number for the agv used in the kitting order.
+
+      * :yamlname:`tray_id`, :yaml:`Integer`: The tray ID which will be placed on the agv for the kitting order.
+
+      * :yamlname:`destination`, :yaml:`String`: The destination for the agv after all parts are placed on it. Destination should always be set to :yaml:`warehouse`.
+
+      * :yamlname:`products`, :yaml:`List`: The list of parts to be placed on the agv for the kitting order. Maximum of four.
+
+        * :yamlname:`type`, :yaml:`String`: The type of the part (:yaml:`'sensor'`, :yaml:`'regulator'`, :yaml:`'pump'`, or :yaml:`'battery'`).
+
+        * :yamlname:`color`, :yaml:`String`: The color of the part (:yaml:`'red'`, :yaml:`'blue'`, :yaml:`'green'`, :yaml:`'orange'`, or :yaml:`'purple'`).
+
+        * :yamlname:`quadrant`, :yaml:`Integer`: The quadrant of the kitting tray which the part should be placed on.
+      
+    * :yamlname:`assembly_task`, :yaml:`Dictionary`: This is only used if :yamlname:`type` is set to :yaml:`'assembly'`.
+
+      * :yamlname:`agv_number`, :yaml:`List`: List of agvs which will be used for the assembly order.
+
+      * :yamlname:`station`, :yaml:`String`: The assembly station where the assembly of the breifcase will take place.
+
+      * :yamlname:`products`, :yaml:`List`: The list of parts to be assembled in the breifcase. Maximum of four.
+
+        * :yamlname:`type`, :yaml:`String`: The type of the part (:yaml:`'sensor'`, :yaml:`'regulator'`, :yaml:`'pump'`, or :yaml:`'battery'`).
+
+        * :yamlname:`color`, :yaml:`String`: The color of the part (:yaml:`'red'`, :yaml:`'blue'`, :yaml:`'green'`, :yaml:`'orange'`, or :yaml:`'purple'`).
+
+        * :yamlname:`assembled_pose`, :yaml:`Dictionary`: The position and orientation of the part relative to the breifcase frame.
+
+          * :yamlname:`xyz`, :yaml:`List`: A list of position coordinates of the part assembly pose relative to the breifcase frame.
+
+          * :yamlname:`rpy`, :yaml:`List`: A list of orientation values of the part assembly pose relative to the breifcase frame.
+        
+        * :yamlname:`assembly_direction`, :yaml:`List`: A unit vector in the breifcase frame.
+      
+    * :yamlname:`combined_task`, :yaml:`Dictionary`: This is only used if :yamlname:`type` is set to :yaml:`'combined'`.
+
+      * :yamlname:`station`, :yaml:`String`: The assembly station where the assembly of the breifcase will take place.
+
+      * :yamlname:`products`, :yaml:`List`: The list of parts to be assembled in the breifcase. Maximum of four.
+
+        * :yamlname:`type`, :yaml:`String`: The type of the part (:yaml:`'sensor'`, :yaml:`'regulator'`, :yaml:`'pump'`, or :yaml:`'battery'`).
+
+        * :yamlname:`color`, :yaml:`String`: The color of the part (:yaml:`'red'`, :yaml:`'blue'`, :yaml:`'green'`, :yaml:`'orange'`, or :yaml:`'purple'`).
+
+        * :yamlname:`assembled_pose`, :yaml:`Dictionary`: The position and orientation of the part relative to the breifcase frame.
+
+          * :yamlname:`xyz`, :yaml:`List`: A list of position coordinates of the part assembly pose relative to the breifcase frame.
+
+          * :yamlname:`rpy`, :yaml:`List`: A list of orientation values of the part assembly pose relative to the breifcase frame.
+        
+        * :yamlname:`assembly_direction`, :yaml:`List`: A unit vector in the breifcase frame.
 
 :yamlname:`challenges`
 ----------------------
 
-  * :yamlname:`dropped_part`
+  * :yamlname:`dropped_part`, :yaml:`Dictionary`: Adds a dropped part challenge to the environment.
 
-    * :yamlname:`robot`
+    * :yamlname:`robot`, :yaml:`String`: Determines which robot will drop the part. Options are :yaml:`'floor_robot'` or :yaml:`'ceiling_robot'`.
 
-    * :yamlname:`type`
+    * :yamlname:`type`, :yaml:`String`: Determines the type of part that will be dropped (:yaml:`'sensor'`, :yaml:`'regulator'`, :yaml:`'pump'`, or :yaml:`'battery'`).
 
-    * :yamlname:`color`
+    * :yamlname:`color`, :yaml:`String`: Determines the color of part that will be dropped (:yaml:`'red'`, :yaml:`'blue'`, :yaml:`'green'`, :yaml:`'orange'`, or :yaml:`'purple'`).
 
-    * :yamlname:`drop_after`
+    * :yamlname:`drop_after`, :yaml:`Integer`: Determines the index of the part to drop after. For example, if :yamlname:`drop_after` is set to 2, the 3rd part the robot successfully picks will be dropped.
 
-    * :yamlname:`delay`
+    * :yamlname:`delay`, :yaml:`Float`: Drops the part after the specified delay. 
   
-  * :yamlname:`robot_malfunction`
+  * :yamlname:`robot_malfunction`, :yaml:`Dictionary`: Adds a robot malfunction challenge to the environment.
 
-    * :yamlname:`duration`
+    * :yamlname:`duration`, :yaml:`Float`: Determines how long the robot malfunction will last.
 
-    * :yamlname:`robots_to_disable`
+    * :yamlname:`robots_to_disable`, :yaml:`List`: List of robots that can be disabled. Options are :yaml:`'floor_robot'` or :yaml:`'ceiling_robot'`.
 
-    * :yaml:`announcement`: 
+.. _ANNOUNCEMENT_YAML:
 
-  * :yamlname:`sensor_blackout`
+    * :yamlname:`announcement`: One of the three :ref:`announcement conditions<CONDITIONS>`
 
-    * :yamlname:`duration`
+      * :yamlname:`time_condition`, :yaml:`Float`: After this amount of time has passed, the specified robot(s) will malfunction.
 
-    * :yamlname:`sensors_to_disable`
+      * :yamlname:`part_place_condition`, :yaml:`Dictionary`: The robot malfunction starts after a part of a specific type and color is placed on a specified agv.
 
-    * :yaml:`announcement`: 
+        * :yamlname:`type`, :yaml:`String`: The type of the part (:yaml:`'sensor'`, :yaml:`'regulator'`, :yaml:`'pump'`, or :yaml:`'battery'`).
 
-  * :yamlname:`faulty_part`
+        * :yamlname:`color`, :yaml:`String`: The color of the part (:yaml:`'red'`, :yaml:`'blue'`, :yaml:`'green'`, :yaml:`'orange'`, or :yaml:`'purple'`).
 
-    * :yamlname:`order_id`
-    * :yamlname:`quadrant{n}`
+        * :yamlname:`agv`, :yaml:`Integer`: The agv number for the part place condition.
+      
+      * :yamlname:`submission_condition`: The robot malfunction will begin after the specified order has been submitted.
+
+        * :yamlname:`order_id`, :yaml:`String`: ID of the order for the submission_condition. The robot malfunction will begin once the order associated with this order ID is submitted. 
+
+  * :yamlname:`sensor_blackout`, :yaml:`Dictionary`: Adds a sensor blackout challenge to the environment.
+
+    * :yamlname:`duration`, :yaml:`Float`: Determines how long the sensor blackout will last.
+
+    * :yamlname:`sensors_to_disable`, :yaml:`List`: List of sensors which will be disabled. Options are :yaml:`'break_beam'`, :yaml:`'proximity'`, :yaml:`'laser_profiler'`, :yaml:`'lidar'`, :yaml:`'camera'`, and :yaml:`'logical_camera'`
+
+    * :yamlname:`announcement`: One of the three :ref:`announcement conditions<CONDITIONS>`. See :ref:`above<ANNOUNCEMENT_YAML>`.
+
+  * :yamlname:`faulty_part`, :yaml:`Dictionary`: Adds a faulty part challenge to the environment.
+
+    * :yamlname:`order_id`, :yaml:`String`: Specifies the order where the selected quadrants will have faulty parts at first. If faulty parts are removed and replaced with new parts, the new parts will be non-faulty.
+
+    * :yamlname:`quadrant{n}`, :yaml:`Bool`: Specifies if quadrant :yaml:`n` has a faulty part or not. For example, if :yamlname:`quadrant1` is set to true, any first part placed in quadrant 1 is faulty.
 
 
 .. code-block:: yaml

@@ -148,11 +148,17 @@ pygments_style = 'tango'
 
 rst_prolog = """
  .. include:: <s5defs.txt>
+
+ .. role:: tf(code)
+    :class: tf
+
+ .. role:: msg(code)
+    :class: msg
  
- .. role:: topic
+ .. role:: topic(code)
     :class: topic
 
- .. role:: rosservice
+ .. role:: rosservice(code)
     :class: rosservice
     
  .. role:: yamlname(code)

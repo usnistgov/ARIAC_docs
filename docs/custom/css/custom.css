@@ -25,11 +25,13 @@ button.copybtn {
 }
 
 .topic {
-    color: rgb(255,0,0);
+    color: #0397b1 !important;
+    font-weight: bold;
 }
 
 .rosservice {
-    color: rgb(102, 0, 255);
+    color: #055c05 !important;
+    font-weight: bold;
 }
 
 .yamlname {
@@ -38,48 +40,21 @@ button.copybtn {
 }
 
 .tutorial {
-    color: #147520 !important;
+    color: #8b089c !important;
     font-weight: bold;
 }
 
-
-/* code.literal {
-    color: #404040 !important;
-    background-color: #fbfbfb !important;
-} */
-
-/* body {
-    counter-reset: h1
+.tf {
+    color: #ff7b00 !important;
+    font-weight: bold;
 }
 
-h1 {
-    counter-reset: h2
+.msg {
+    color: #535353 !important;
+    font-weight: bold;
 }
 
-h2 {
-    counter-reset: h3
+/* override table no-wrap */
+.wy-table-responsive table td, .wy-table-responsive table th {
+    white-space: normal;
 }
-
-h3 {
-    counter-reset: h4
-}
-
-h1:before {
-    counter-increment: h1;
-    content: counter(h1) ". "
-}
-
-h2:before {
-    counter-increment: h2;
-    content: counter(h1) "." counter(h2) ". "
-}
-
-h3:before {
-    counter-increment: h3;
-    content: counter(h1) "." counter(h2) "." counter(h3) ". "
-}
-
-h4:before {
-    counter-increment: h4;
-    content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) ". "
-} */
