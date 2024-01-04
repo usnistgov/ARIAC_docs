@@ -164,17 +164,17 @@ This section defines all the parts that will be spawned into the environment.
 
   * :yamlname:`conveyor_belt`: Parts that will be spawned onto the conveyor when the competition is started. The cycle of parts will be repeated after all parts are spawned, up until the competition ends. 
 
-    * :yamlname:`active`: Boolean for if the conveyor is active. This toggle is mostly used for testing to enable or disable the conveyor without removing all the parts. 
+    * :yamlname:`active`, :yaml:`Boolean`: Whether the conveyor is active. This toggle is mostly used for testing to enable or disable the conveyor without removing all the parts. 
 
-    * :yamlname:`spawn_rate`: Float representing the time in seconds between parts spawned on the conveyor.
+    * :yamlname:`spawn_rate`, :yaml:`Integer`: The time in seconds between parts spawned on the conveyor.
 
-    * :yamlname:`order`: Either :yaml:`'sequential'` where all parts of the same type will appear before the next type, or  :yaml:`'random'` where the parts will come out in a random order. 
+    * :yamlname:`order`, :yaml:`String`: Either :yaml:`'sequential'` where all parts of the same type will appear before the next type, or  :yaml:`'random'` where the parts will come out in a random order. 
 
-    * :yamlname:`parts_to_spawn`: This is a list of part lots that will be found on the conveyor.
+    * :yamlname:`parts_to_spawn`, :yaml:`Dictionary`: This is a list of part lots that will be found on the conveyor.
 
-      * :yamlname:`type`: The type of the part (:yaml:`'sensor'`, :yaml:`'regulator'`, :yaml:`'pump'`, or :yaml:`'battery'`).
+      * :yamlname:`type`, :yaml:`String`: The type of the part (:yaml:`'sensor'`, :yaml:`'regulator'`, :yaml:`'pump'`, or :yaml:`'battery'`).
 
-      * :yamlname:`color`: The color of the part (sensor, regulator, pump, battery).
+      * :yamlname:`color`, :yaml:`String`: The color of the part (:yaml:`'red'`, :yaml:`'blue'`, :yaml:`'green'`, :yaml:`'orange'`, or :yaml:`'purple'`).
 
       * :yamlname:`number`
 
