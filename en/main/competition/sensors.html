@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sensors &mdash; ARIAC_docs 1.0 documentation</title>
+  <title>Sensors &mdash; ARIAC Docs 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
       <link rel="stylesheet" type="text/css" href="../_static/ntd2d.css?v=592263c6" />
       <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.custom.css" />
@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/css/micromodal.css" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../_static/twemoji.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=62faf5e4" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=b115e7bf" />
       <link rel="stylesheet" type="text/css" href="../_static/css/hack.css?v=c2ad982c" />
 
   
@@ -42,8 +42,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Configuration Files" href="trials.html" />
-    <link rel="prev" title="Conditions, Orders, and Tasks" href="orders.html" />
+    <link rel="next" title="Configuration Files" href="configuration_files.html" />
+    <link rel="prev" title="Agility Challenges" href="challenges.html" />
    
 
   <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
@@ -56,15 +56,16 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
 
           
           
           <a href="../index.html" class="icon icon-home">
-            ARIAC_docs
+            ARIAC Docs
+              <img src="../_static/nist_el_logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.1.0
+                2024.1.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -76,64 +77,177 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">⏩ Getting Started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/updates.html">Updates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installing ARIAC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/registering.html">Registering for the Competition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/installation.html#configuring-the-ariac-environment">Configuring the ARIAC Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/installation.html#starting-the-simulation">Starting the Simulation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/installation.html#default">Default</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/installation.html#launch-options">Launch Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/installation.html#running-the-test-competitor">Running the Test Competitor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/changelog.html#id2">2024.1.0, (2023-12-15)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/changelog.html#updates-relevant-to-competitors">Updates relevant to competitors:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/changelog.html#other-updates">Other Updates</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/registering.html">Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/events.html">Calendar of Events</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">⏩ Competition Specifications</span></p>
+<p class="caption" role="heading"><span class="caption-text">⏩ Competition</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview of the Competition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="orders.html">Conditions, Orders, and Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Competition Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#start-up-commands">Start-Up Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#program-flow">Program Flow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#parts">Parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#kit-trays">Kit Trays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#robots">Robots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#floor-robot">Floor Robot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#ceiling-robot">Ceiling Robot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#automated-guided-vehicles-agvs">Automated Guided Vehicles (AGVs)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#part-locations">Part Locations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#part-bins">Part Bins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#conveyor-belt">Conveyor Belt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#agv-parts">AGV Parts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#kit-tray-tool-changer-station">Kit Tray/Tool Changer Station</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#assembly-stations">Assembly Stations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#warehouse">Warehouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#part-disposal-bins">Part Disposal Bins</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="orders.html">Orders</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="orders.html#manufacturing-tasks">Manufacturing Tasks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orders.html#kitting-task">Kitting Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="orders.html#assembly-task">Assembly Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="orders.html#combined-task">Combined Task</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="orders.html#conditions">Conditions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="challenges.html">Agility Challenges</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="challenges.html#faulty-parts-challenge">Faulty Parts Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="challenges.html#faulty-part-detection">Faulty Part Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="challenges.html#flipped-parts-challenge">Flipped Parts Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="challenges.html#flipped-parts-setup">Flipped Parts Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="challenges.html#flipped-part-detection">Flipped Part Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="challenges.html#dropped-part-challenge">Dropped Part Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="challenges.html#dropped-part-detection">Dropped Part Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="challenges.html#robot-malfunction-challenge">Robot Malfunction Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="challenges.html#robot-malfunction-detection">Robot Malfunction Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="challenges.html#sensor-blackout-challenge">Sensor Blackout Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="challenges.html#sensor-blackout-detection">Sensor Blackout Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="challenges.html#high-priority-order-challenge">High Priority Order Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="challenges.html#high-priority-order-detection">High Priority Order Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="challenges.html#insufficient-parts-challenge">Insufficient Parts Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="challenges.html#insufficient-parts-detection">Insufficient Parts Detection</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Sensors</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#sensor-costs">Sensor Costs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#sensor-types">Sensor Types</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#break-beam">Break Beam</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#proximity">Proximity</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#laser-profiler">Laser Profiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#static-sensors">Static sensors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#breakbeam-sensor">Breakbeam sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#proximity-sensor">Proximity sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#laser-profiler">Laser profiler</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lidar">Lidar</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#rgb-camera">RGB Camera</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#rgbd-camera">RGBD Camera</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#basic-logical-camera">Basic Logical Camera</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#advanced-logical-camera">Advanced Logical Camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rgb-camera">RGB camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rgbd-camera">RGBD camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#basic-logical-camera">Basic logical camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#advanced-logical-camera">Advanced logical camera</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#sensor-configuration-file">Sensor Configuration File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#robot-cameras">Robot Cameras</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="trials.html">Configuration Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ros_communication.html">ROS Communication Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="challenges.html">Agility Challenges</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tf_frames.html">TF Frames</a></li>
-<li class="toctree-l1"><a class="reference internal" href="scoring.html">Scoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration_files.html">Configuration Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuration_files.html#sensor-configuration">Sensor Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration_files.html#trial-configuration">Trial Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuration_files.html#fields">Fields</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ros_communication.html">ROS Communication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ros_communication.html#competition-topics">Competition Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_communication.html#sensor-topics">Sensor Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_communication.html#services">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_communication.html#message-definitions">Message Definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_communication.html#service-definitions">Service Definitions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tf_frames.html">TF Frames</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tf_frames.html#list-of-tf-frames">List of TF Frames</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Evaluation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/overview.html">Automated Evaluation Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/overview.html#instructions-for-creating-the-configuration-file">Instructions for creating the configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/overview.html#instructions-for-testing-the-evaluation-system">Instructions for Testing the Evaluation System</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/scoring.html">Scoring</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#cost-factor">Cost Factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#efficiency-factor">Efficiency Factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#completion-score">Completion Score</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#kitting-task-score">Kitting Task Score</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#assembly-task-score">Assembly Task Score</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#combined-task-score">Combined Task Score</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#fianl-completion-score">Fianl Completion Score</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#trial-score">Trial Score</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/launch_file_setup.html">Launch File Setup</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">⏩ Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">Introduction to Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_1.html">Tutorial 1: Create a Competition Package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_2.html">Tutorial 2: Read Data from a Break Beam Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_3.html">Tutorial 3: Read Data from an Advanced Logical Camera</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_4.html">Tutorial 4: Read an Order</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_5.html">Tutorial 5: Move AGVs to Stations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_6.html">Tutorial 6: Enable/Disable a Gripper</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_7.html">Tutorial 7: Move Robots with MoveIt</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_8.html">Tutorial 8: Move Robots with ROS2 Actions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">⏩ Automated Evaluation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../automated_evaluation/automated_evaluation_overview.html">Automated Evaluation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../automated_evaluation/competition_launch.html">Launch File Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_1.html">Tutorial 1: Creating a competition package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_2.html">Tutorial 2: Reading data from a break beam sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_3.html">Tutorial 3: Reading data from a RGBD camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_4.html">Tutorial 4: Reading an order</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_5.html">Tutorial 5: Moving AGVs between stations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_6.html">Tutorial 6: Picking a part</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_7.html">Tutorial 7: Picking and placing a kit tray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_8.html">Tutorial 8: Completing a Kitting Task</a></li>
 </ul>
 
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">ARIAC_docs</a>
+          <a href="../index.html">ARIAC Docs</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -143,155 +257,126 @@
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Sensors</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/competition/sensors.md.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/competition/sensors.rst.txt" rel="nofollow"> View page source</a>
       </li>
-  </ul>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="challenges.html" class="btn btn-neutral float-left" title="Agility Challenges" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="configuration_files.html" class="btn btn-neutral float-right" title="Configuration Files" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="sensors">
-<h1>Sensors<a class="headerlink" href="#sensors" title="Permalink to this heading"></a></h1>
-<p>Competitors can place sensors anywghere in the environment. Sensors have no collision so they can overlap if necessary. Each sensor has a cost that factors into the final score.</p>
+  <blockquote>
+<div></div></blockquote>
+<section id="sensors">
+<span id="id1"></span><h1>Sensors<a class="headerlink" href="#sensors" title="Permalink to this heading"></a></h1>
+<p>There are two categories of sensors that competitors can utilize.</p>
+<p>The first type is static sensors. There are seven types of static sensors. These static sensors can be placed anywhere in the environment that competitors want. Each sensor publishes data to ROS topic(s) namespaced by the name of the sensor. More info can be found in <a class="hxr-hoverxref hxr-modal reference internal" href="ros_communication.html#sensor-topics"><span class="std std-ref">Sensor Topics</span></a> The sensors have no collision in the environment.</p>
+<p>The second type is robot sensors. Both the floor and ceiling robot can be equiped with either an RGB or RGBD camera.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All sensors will not publish data to the ROS topics until the competition is started.</p>
+</div>
 <section id="sensor-costs">
 <h2>Sensor Costs<a class="headerlink" href="#sensor-costs" title="Permalink to this heading"></a></h2>
-<table class="docutils align-default">
+<p>There is a cost to each of the sensors. This cost will be factored in during the calculation of the final score. More details can be found in <a class="hxr-hoverxref hxr-modal reference internal" href="../evaluation/scoring.html#scoring"><span class="std std-ref">Scoring</span></a>.</p>
+<table class="docutils align-center">
+<colgroup>
+<col style="width: 60.0%" />
+<col style="width: 40.0%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Sensor Type</p></th>
 <th class="head"><p>Cost</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">break_beam</span></code></p></td>
+<tr class="row-even"><td><p>Breakbeam</p></td>
 <td><p>$100</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">proximity</span></code></p></td>
+<tr class="row-odd"><td><p>Proximity</p></td>
 <td><p>$100</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">laser_profiler</span></code></p></td>
+<tr class="row-even"><td><p>Laser profiler</p></td>
 <td><p>$200</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">lidar</span></code></p></td>
+<tr class="row-odd"><td><p>Lidar</p></td>
 <td><p>$300</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">rgb_camera</span></code></p></td>
+<tr class="row-even"><td><p>RGB camera</p></td>
 <td><p>$300</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rgbd_camera</span></code></p></td>
+<tr class="row-odd"><td><p>RGBD camera</p></td>
 <td><p>$500</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">basic_logical_camera</span></code></p></td>
+<tr class="row-even"><td><p>Basic logical camera</p></td>
 <td><p>$500</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">advanced_logical_camera</span></code></p></td>
-<td><p>n/a</p></td>
+<tr class="row-odd"><td><p>Robot RGB camera</p></td>
+<td><p>$800</p></td>
+</tr>
+<tr class="row-even"><td><p>Robot RGBD camera</p></td>
+<td><p>$1000</p></td>
+</tr>
+<tr class="row-odd"><td><p>Advanced logical camera</p></td>
+<td><p>N/A</p></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="sensor-types">
-<h2>Sensor Types<a class="headerlink" href="#sensor-types" title="Permalink to this heading"></a></h2>
-<section id="break-beam">
-<h3>Break Beam<a class="headerlink" href="#break-beam" title="Permalink to this heading"></a></h3>
+<section id="static-sensors">
+<span id="id2"></span><h2>Static sensors<a class="headerlink" href="#static-sensors" title="Permalink to this heading"></a></h2>
+<section id="breakbeam-sensor">
+<h3>Breakbeam sensor<a class="headerlink" href="#breakbeam-sensor" title="Permalink to this heading"></a></h3>
 <p>The break beam sensor reports when a beam is broken by an object. It does not provide distance information.</p>
-<p><img alt="break beam" src="../_images/BreakBeam.png" /></p>
+<a class="reference internal image-reference" href="../_images/BreakBeam.png"><img alt="breakbeam sensor" class="align-center" src="../_images/BreakBeam.png" style="width: 60%;" /></a>
 </section>
-<section id="proximity">
-<h3>Proximity<a class="headerlink" href="#proximity" title="Permalink to this heading"></a></h3>
+<section id="proximity-sensor">
+<h3>Proximity sensor<a class="headerlink" href="#proximity-sensor" title="Permalink to this heading"></a></h3>
 <p>The proximity sensor outputs how far an object is from the sensor.</p>
-<p><img alt="proximity" src="../_images/Proximity.png" /></p>
+<a class="reference internal image-reference" href="../_images/Proximity.png"><img alt="proximity sensor" class="align-center" src="../_images/Proximity.png" style="width: 60%;" /></a>
 </section>
 <section id="laser-profiler">
-<h3>Laser Profiler<a class="headerlink" href="#laser-profiler" title="Permalink to this heading"></a></h3>
+<h3>Laser profiler<a class="headerlink" href="#laser-profiler" title="Permalink to this heading"></a></h3>
 <p>The laser profiler provides an array of distances to a sensed object.</p>
-<p><img alt="laser profiler" src="../_images/LaserProfiler.png" /></p>
+<a class="reference internal image-reference" href="../_images/LaserProfiler.png"><img alt="laser profiler sensor" class="align-center" src="../_images/LaserProfiler.png" style="width: 60%;" /></a>
 </section>
 <section id="lidar">
 <h3>Lidar<a class="headerlink" href="#lidar" title="Permalink to this heading"></a></h3>
 <p>The LIDAR sensor provides a point cloud of detected objects.</p>
-<p><img alt="lidar" src="../_images/Lidar.png" /></p>
+<a class="reference internal image-reference" href="../_images/Lidar.png"><img alt="lidar sensor" class="align-center" src="../_images/Lidar.png" style="width: 60%;" /></a>
 </section>
 <section id="rgb-camera">
-<h3>RGB Camera<a class="headerlink" href="#rgb-camera" title="Permalink to this heading"></a></h3>
+<h3>RGB camera<a class="headerlink" href="#rgb-camera" title="Permalink to this heading"></a></h3>
 <p>The RGB camera provides an RGB image.</p>
-<p><img alt="" src="../_images/RGBCamera.png" /></p>
+<a class="reference internal image-reference" href="../_images/RGBCamera.png"><img alt="RGB camera" class="align-center" src="../_images/RGBCamera.png" style="width: 60%;" /></a>
 </section>
 <section id="rgbd-camera">
-<h3>RGBD Camera<a class="headerlink" href="#rgbd-camera" title="Permalink to this heading"></a></h3>
+<h3>RGBD camera<a class="headerlink" href="#rgbd-camera" title="Permalink to this heading"></a></h3>
 <p>The RGBD camera provides an RGB image and a depth image.</p>
-<p><img alt="" src="../_images/RGBDCamera.png" /></p>
+<a class="reference internal image-reference" href="../_images/RGBDCamera.png"><img alt="RGBD camera" class="align-center" src="../_images/RGBDCamera.png" style="width: 60%;" /></a>
 </section>
 <section id="basic-logical-camera">
-<h3>Basic Logical Camera<a class="headerlink" href="#basic-logical-camera" title="Permalink to this heading"></a></h3>
+<h3>Basic logical camera<a class="headerlink" href="#basic-logical-camera" title="Permalink to this heading"></a></h3>
 <p>The basic logical camera provides a list of kit tray poses and a list of part poses. The type and the color of an object are not reported by this sensor.</p>
-<p><img alt="" src="../_images/BasicLogicalCamera.png" /></p>
+<a class="reference internal image-reference" href="../_images/BasicLogicalCamera.png"><img alt="basic logical camera" class="align-center" src="../_images/BasicLogicalCamera.png" style="width: 60%;" /></a>
 </section>
 <section id="advanced-logical-camera">
-<h3>Advanced Logical Camera<a class="headerlink" href="#advanced-logical-camera" title="Permalink to this heading"></a></h3>
+<h3>Advanced logical camera<a class="headerlink" href="#advanced-logical-camera" title="Permalink to this heading"></a></h3>
 <p>The advanced logical camera reports the pose, the type, and the color of a detected object.</p>
-<p><img alt="" src="../_images/AdvancedLogicalCamera.png" /></p>
+<a class="reference internal image-reference" href="../_images/AdvancedLogicalCamera.png"><img alt="advanced logical camera" class="align-center" src="../_images/AdvancedLogicalCamera.png" style="width: 60%;" /></a>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The advanced logical camera is not allowed to be used for the 2024 competition. It can still be enabled in development by using the <code class="code docutils literal notranslate"><span class="pre">dev_mode</span></code> launch argument.</p>
+</div>
 </section>
 </section>
-<section id="sensor-configuration-file">
-<h2>Sensor Configuration File<a class="headerlink" href="#sensor-configuration-file" title="Permalink to this heading"></a></h2>
-<p>Sensors are configured using a YAML file. See the <a class="reference internal" href="trials.html"><span class="std std-doc">Configuration Files</span></a> page for more information on how to configure the competition environment with sensors.</p>
-<!--Competitors should create a configuration file similar to the one below for all sensors they want to place in the environment. Each sensor has the ability to show the FOV for testing by setting the `visualize_fov` item to `true`.
-
-> NOTE: the RGB and RGBD camera FOV is not displayed properly. Use a tool like RVIZ or RQT to see the output of the sensor
-
-``` yaml
-sensors:
-  breakbeam_0:
-    type: break_beam
-    visualize_fov: true
-    pose:
-      xyz: [-0.35, 3, 0.95]
-      rpy: [0, 0, pi]
-
-  proximity_sensor_0:
-    type: proximity
-    pose:
-      xyz: [-0.573, 2.84, 1]
-      rpy: [pi/2, pi/6, pi/2]
-
-  laser_profiler_0:
-    type: laser_profiler
-    pose:
-      xyz: [-0.573, 1.486, 1.526]
-      rpy: [pi/2, pi/2, 0]
-
-  lidar_0:
-    type: lidar
-    pose:
-      xyz: [-2.286, -2.96, 1.8]
-      rpy: [pi, pi/2, 0]
-
-  rgb_camera_0:
-    type: rgb_camera
-    pose:
-      xyz: [-2.286, 2.96, 1.8]
-      rpy: [pi, pi/2, 0]
-
-  rgbd_camera_0:
-    type: rgbd_camera
-    pose:
-      xyz: [-2.286, 4.96, 1.8]
-      rpy: [pi, pi/2, 0]
-
-  basic_logical_camera_0:
-    visualize_fov: true
-    type: basic_logical_camera
-    pose:
-      xyz: [-2.286, 2.96, 1.8]
-      rpy: [pi, pi/2, 0]
-
-  advanced_logical_camera_0:
-    type: advanced_logical_camera
-    pose:
-      xyz: [-2.286, -2.96, 1.8]
-      rpy: [pi, pi/2, 0]
-``` -->
+<section id="robot-cameras">
+<h2>Robot Cameras<a class="headerlink" href="#robot-cameras" title="Permalink to this heading"></a></h2>
+<p>If the camera is enabled for either of the robots, it will show up attached the last link of the robot arm. If the RGB camera is enabled it will only publish an RGB image, if the RGBD is selected it will publish a depth image as well. The camera and mount have no collision so they do not need to be accounted for when planning the robot motions.</p>
+<a class="reference internal image-reference" href="../_images/robot_camera.png"><img alt="robot camera" class="align-center" src="../_images/robot_camera.png" style="width: 80%;" /></a>
 </section>
 </section>
 
@@ -299,8 +384,8 @@ sensors:
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="orders.html" class="btn btn-neutral float-left" title="Conditions, Orders, and Tasks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="trials.html" class="btn btn-neutral float-right" title="Configuration Files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="challenges.html" class="btn btn-neutral float-left" title="Agility Challenges" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="configuration_files.html" class="btn btn-neutral float-right" title="Configuration Files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
@@ -321,7 +406,7 @@ sensors:
   </div>
   <script>
       jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
+          SphinxRtdTheme.Navigation.enable(false);
       });
   </script>
 

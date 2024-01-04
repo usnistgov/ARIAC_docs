@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Calendar of Events &mdash; ARIAC_docs 1.0 documentation</title>
+  <title>Calendar of Events &mdash; ARIAC Docs 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
       <link rel="stylesheet" type="text/css" href="../_static/ntd2d.css?v=592263c6" />
       <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.custom.css" />
@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/css/micromodal.css" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../_static/twemoji.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=62faf5e4" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=b115e7bf" />
       <link rel="stylesheet" type="text/css" href="../_static/css/hack.css?v=c2ad982c" />
 
   
@@ -43,7 +43,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Terminology" href="../competition/terminology.html" />
-    <link rel="prev" title="Registering for the Competition" href="registering.html" />
+    <link rel="prev" title="Registration" href="registering.html" />
    
 
   <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
@@ -56,15 +56,16 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
 
           
           
           <a href="../index.html" class="icon icon-home">
-            ARIAC_docs
+            ARIAC Docs
+              <img src="../_static/nist_el_logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.1.0
+                2024.1.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -76,49 +77,177 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">⏩ Getting Started</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="updates.html">Updates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installing ARIAC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="registering.html">Registering for the Competition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#configuring-the-ariac-environment">Configuring the ARIAC Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#starting-the-simulation">Starting the Simulation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#default">Default</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#launch-options">Launch Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#running-the-test-competitor">Running the Test Competitor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">2024.1.0, (2023-12-15)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#updates-relevant-to-competitors">Updates relevant to competitors:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#other-updates">Other Updates</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="registering.html">Registration</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Calendar of Events</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">⏩ Competition Specifications</span></p>
+<p class="caption" role="heading"><span class="caption-text">⏩ Competition</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../competition/terminology.html">Terminology</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../competition/overview.html">Overview of the Competition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../competition/environment.html">Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../competition/orders.html">Conditions, Orders, and Tasks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../competition/sensors.html">Sensors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../competition/trials.html">Configuration Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../competition/ros_communication.html">ROS Communication Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../competition/challenges.html">Agility Challenges</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../competition/tf_frames.html">TF Frames</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../competition/scoring.html">Scoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/overview.html">Competition Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/overview.html#start-up-commands">Start-Up Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/overview.html#program-flow">Program Flow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/environment.html">Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#parts">Parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#kit-trays">Kit Trays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#robots">Robots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#floor-robot">Floor Robot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#ceiling-robot">Ceiling Robot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#automated-guided-vehicles-agvs">Automated Guided Vehicles (AGVs)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#part-locations">Part Locations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#part-bins">Part Bins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#conveyor-belt">Conveyor Belt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#agv-parts">AGV Parts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#kit-tray-tool-changer-station">Kit Tray/Tool Changer Station</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#assembly-stations">Assembly Stations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#warehouse">Warehouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#part-disposal-bins">Part Disposal Bins</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/orders.html">Orders</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/orders.html#manufacturing-tasks">Manufacturing Tasks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/orders.html#kitting-task">Kitting Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/orders.html#assembly-task">Assembly Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/orders.html#combined-task">Combined Task</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/orders.html#conditions">Conditions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/challenges.html">Agility Challenges</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#faulty-parts-challenge">Faulty Parts Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#faulty-part-detection">Faulty Part Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#flipped-parts-challenge">Flipped Parts Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#flipped-parts-setup">Flipped Parts Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#flipped-part-detection">Flipped Part Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#dropped-part-challenge">Dropped Part Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#dropped-part-detection">Dropped Part Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#robot-malfunction-challenge">Robot Malfunction Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#robot-malfunction-detection">Robot Malfunction Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#sensor-blackout-challenge">Sensor Blackout Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#sensor-blackout-detection">Sensor Blackout Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#high-priority-order-challenge">High Priority Order Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#high-priority-order-detection">High Priority Order Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#insufficient-parts-challenge">Insufficient Parts Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#insufficient-parts-detection">Insufficient Parts Detection</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/sensors.html">Sensors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/sensors.html#sensor-costs">Sensor Costs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/sensors.html#static-sensors">Static sensors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#breakbeam-sensor">Breakbeam sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#proximity-sensor">Proximity sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#laser-profiler">Laser profiler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#lidar">Lidar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#rgb-camera">RGB camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#rgbd-camera">RGBD camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#basic-logical-camera">Basic logical camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#advanced-logical-camera">Advanced logical camera</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/sensors.html#robot-cameras">Robot Cameras</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/configuration_files.html">Configuration Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/configuration_files.html#sensor-configuration">Sensor Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/configuration_files.html#trial-configuration">Trial Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/configuration_files.html#fields">Fields</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/ros_communication.html">ROS Communication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/ros_communication.html#competition-topics">Competition Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/ros_communication.html#sensor-topics">Sensor Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/ros_communication.html#services">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/ros_communication.html#message-definitions">Message Definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/ros_communication.html#service-definitions">Service Definitions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/tf_frames.html">TF Frames</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/tf_frames.html#list-of-tf-frames">List of TF Frames</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Evaluation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/overview.html">Automated Evaluation Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/overview.html#instructions-for-creating-the-configuration-file">Instructions for creating the configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/overview.html#instructions-for-testing-the-evaluation-system">Instructions for Testing the Evaluation System</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/scoring.html">Scoring</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#cost-factor">Cost Factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#efficiency-factor">Efficiency Factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#completion-score">Completion Score</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#kitting-task-score">Kitting Task Score</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#assembly-task-score">Assembly Task Score</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#combined-task-score">Combined Task Score</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#fianl-completion-score">Fianl Completion Score</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#trial-score">Trial Score</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/launch_file_setup.html">Launch File Setup</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">⏩ Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">Introduction to Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_1.html">Tutorial 1: Create a Competition Package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_2.html">Tutorial 2: Read Data from a Break Beam Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_3.html">Tutorial 3: Read Data from an Advanced Logical Camera</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_4.html">Tutorial 4: Read an Order</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_5.html">Tutorial 5: Move AGVs to Stations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_6.html">Tutorial 6: Enable/Disable a Gripper</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_7.html">Tutorial 7: Move Robots with MoveIt</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_8.html">Tutorial 8: Move Robots with ROS2 Actions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">⏩ Automated Evaluation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../automated_evaluation/automated_evaluation_overview.html">Automated Evaluation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../automated_evaluation/competition_launch.html">Launch File Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_1.html">Tutorial 1: Creating a competition package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_2.html">Tutorial 2: Reading data from a break beam sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_3.html">Tutorial 3: Reading data from a RGBD camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_4.html">Tutorial 4: Reading an order</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_5.html">Tutorial 5: Moving AGVs between stations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_6.html">Tutorial 6: Picking a part</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_7.html">Tutorial 7: Picking and placing a kit tray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_8.html">Tutorial 8: Completing a Kitting Task</a></li>
 </ul>
 
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">ARIAC_docs</a>
+          <a href="../index.html">ARIAC Docs</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -128,66 +257,76 @@
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Calendar of Events</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/getting_started/events.md.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/getting_started/events.rst.txt" rel="nofollow"> View page source</a>
       </li>
-  </ul>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="registering.html" class="btn btn-neutral float-left" title="Registration" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../competition/terminology.html" class="btn btn-neutral float-right" title="Terminology" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="calendar-of-events">
-<h1>Calendar of Events<a class="headerlink" href="#calendar-of-events" title="Permalink to this heading"></a></h1>
+  <blockquote>
+<div></div></blockquote>
+<section id="calendar-of-events">
+<span id="events"></span><h1>Calendar of Events<a class="headerlink" href="#calendar-of-events" title="Permalink to this heading"></a></h1>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Update page for 2024</p>
+</div>
 <table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head text-center"><p>Dates</p></th>
+<tr class="row-odd"><th class="head"><p>Dates</p></th>
 <th class="head"><p>Major Milestones</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p>23 January 2023</p></td>
+<tr class="row-even"><td><p>23 January 2023</p></td>
 <td><p>Beta Software and Documentation Released to Competitors</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>01 March 2023</p></td>
-<td><p>Competition(1.0) Software and Documentation Released to Competitors</p></td>
+<tr class="row-odd"><td><p>01 March 2023</p></td>
+<td><p>Competition Software and Documentation Released to Competitors</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>17 April 2023</p></td>
-<td><p>Docker Instructions ready for Competitors</p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>21 April 2023</p></td>
+<tr class="row-even"><td><p>21 April 2023</p></td>
 <td><p>Qualifiers Smoke Test Deadline</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>21 April 2023</p></td>
-<td><p>Team Signups Close</p></td>
+<tr class="row-odd"><td><p>21 April 2023</p></td>
+<td><p>Team Sign-ups Close</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>21 April 2023</p></td>
+<tr class="row-even"><td><p>21 April 2023</p></td>
 <td><p>Qualifiers Begin</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>24 April 2023</p></td>
+<tr class="row-odd"><td><p>24 April 2023</p></td>
 <td><p>Qualifiers Submission Opens</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>28 April 2023</p></td>
+<tr class="row-even"><td><p>28 April 2023</p></td>
 <td><p>Qualifiers Submission Due</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>01 May 2023</p></td>
+<tr class="row-odd"><td><p>01 May 2023</p></td>
 <td><p>Qualifiers Evaluation Week Starts</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>05 May 2023</p></td>
+<tr class="row-even"><td><p>05 May 2023</p></td>
 <td><p>Qualifiers Evaluation Week Ends</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>26 May 2023</p></td>
+<tr class="row-odd"><td><p>26 May 2023</p></td>
 <td><p>Finals Smoke Test</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>~22 May 2023~</p></td>
+<tr class="row-even"><td><p>~22 May 2023~</p></td>
 <td><p>~Finals Begin~</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>~26 May 2023~</p></td>
+<tr class="row-odd"><td><p>~26 May 2023~</p></td>
 <td><p>~Finals End~</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>05 June 2023</p></td>
+<tr class="row-even"><td><p>05 June 2023</p></td>
 <td><p>Finals Submissions Due 8 am Eastern Time</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>June 2023</p></td>
+<tr class="row-odd"><td><p>June 2023</p></td>
 <td><p>Finals Evaluation</p></td>
 </tr>
 </tbody>
@@ -198,7 +337,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="registering.html" class="btn btn-neutral float-left" title="Registering for the Competition" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="registering.html" class="btn btn-neutral float-left" title="Registration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="../competition/terminology.html" class="btn btn-neutral float-right" title="Terminology" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
@@ -220,7 +359,7 @@
   </div>
   <script>
       jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
+          SphinxRtdTheme.Navigation.enable(false);
       });
   </script>
 

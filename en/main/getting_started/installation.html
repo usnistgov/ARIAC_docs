@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Installing ARIAC &mdash; ARIAC_docs 1.0 documentation</title>
+  <title>Installation &mdash; ARIAC Docs 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
       <link rel="stylesheet" type="text/css" href="../_static/ntd2d.css?v=592263c6" />
       <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.custom.css" />
@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/css/micromodal.css" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../_static/twemoji.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=62faf5e4" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=b115e7bf" />
       <link rel="stylesheet" type="text/css" href="../_static/css/hack.css?v=c2ad982c" />
 
   
@@ -42,8 +42,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Registering for the Competition" href="registering.html" />
-    <link rel="prev" title="Updates" href="updates.html" />
+    <link rel="next" title="Changelog" href="changelog.html" />
+    <link rel="prev" title="ARIAC Documentation" href="../index.html" />
    
 
   <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
@@ -56,15 +56,16 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
 
           
           
           <a href="../index.html" class="icon icon-home">
-            ARIAC_docs
+            ARIAC Docs
+              <img src="../_static/nist_el_logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.1.0
+                2024.1.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -76,60 +77,177 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">⏩ Getting Started</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="updates.html">Updates</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installing ARIAC</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#cloning-the-ariac-repository">Cloning the ARIAC Repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#building-the-ariac-package">Building the ARIAC Package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#starting-the-ariac-simulator">Starting the ARIAC Simulator</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#default-configuration">Default Configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#custom-configuration">Custom Configuration</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-the-ariac-environment">Configuring the ARIAC Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#starting-the-simulation">Starting the Simulation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#default">Default</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#launch-options">Launch Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-the-test-competitor">Running the Test Competitor</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#moving-the-robots">Moving the Robots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#running-the-test-competitor">Running the Test Competitor</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="registering.html">Registering for the Competition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">2024.1.0, (2023-12-15)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#updates-relevant-to-competitors">Updates relevant to competitors:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#other-updates">Other Updates</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="registering.html">Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="events.html">Calendar of Events</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">⏩ Competition Specifications</span></p>
+<p class="caption" role="heading"><span class="caption-text">⏩ Competition</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../competition/terminology.html">Terminology</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../competition/overview.html">Overview of the Competition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../competition/environment.html">Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../competition/orders.html">Conditions, Orders, and Tasks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../competition/sensors.html">Sensors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../competition/trials.html">Configuration Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../competition/ros_communication.html">ROS Communication Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../competition/challenges.html">Agility Challenges</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../competition/tf_frames.html">TF Frames</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../competition/scoring.html">Scoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/overview.html">Competition Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/overview.html#start-up-commands">Start-Up Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/overview.html#program-flow">Program Flow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/environment.html">Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#parts">Parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#kit-trays">Kit Trays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#robots">Robots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#floor-robot">Floor Robot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#ceiling-robot">Ceiling Robot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#automated-guided-vehicles-agvs">Automated Guided Vehicles (AGVs)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#part-locations">Part Locations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#part-bins">Part Bins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#conveyor-belt">Conveyor Belt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#agv-parts">AGV Parts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#kit-tray-tool-changer-station">Kit Tray/Tool Changer Station</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#assembly-stations">Assembly Stations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#warehouse">Warehouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#part-disposal-bins">Part Disposal Bins</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/orders.html">Orders</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/orders.html#manufacturing-tasks">Manufacturing Tasks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/orders.html#kitting-task">Kitting Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/orders.html#assembly-task">Assembly Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/orders.html#combined-task">Combined Task</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/orders.html#conditions">Conditions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/challenges.html">Agility Challenges</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#faulty-parts-challenge">Faulty Parts Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#faulty-part-detection">Faulty Part Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#flipped-parts-challenge">Flipped Parts Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#flipped-parts-setup">Flipped Parts Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#flipped-part-detection">Flipped Part Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#dropped-part-challenge">Dropped Part Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#dropped-part-detection">Dropped Part Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#robot-malfunction-challenge">Robot Malfunction Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#robot-malfunction-detection">Robot Malfunction Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#sensor-blackout-challenge">Sensor Blackout Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#sensor-blackout-detection">Sensor Blackout Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#high-priority-order-challenge">High Priority Order Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#high-priority-order-detection">High Priority Order Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#insufficient-parts-challenge">Insufficient Parts Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#insufficient-parts-detection">Insufficient Parts Detection</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/sensors.html">Sensors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/sensors.html#sensor-costs">Sensor Costs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/sensors.html#static-sensors">Static sensors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#breakbeam-sensor">Breakbeam sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#proximity-sensor">Proximity sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#laser-profiler">Laser profiler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#lidar">Lidar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#rgb-camera">RGB camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#rgbd-camera">RGBD camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#basic-logical-camera">Basic logical camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#advanced-logical-camera">Advanced logical camera</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/sensors.html#robot-cameras">Robot Cameras</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/configuration_files.html">Configuration Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/configuration_files.html#sensor-configuration">Sensor Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/configuration_files.html#trial-configuration">Trial Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/configuration_files.html#fields">Fields</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/ros_communication.html">ROS Communication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/ros_communication.html#competition-topics">Competition Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/ros_communication.html#sensor-topics">Sensor Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/ros_communication.html#services">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/ros_communication.html#message-definitions">Message Definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/ros_communication.html#service-definitions">Service Definitions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/tf_frames.html">TF Frames</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/tf_frames.html#list-of-tf-frames">List of TF Frames</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Evaluation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/overview.html">Automated Evaluation Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/overview.html#instructions-for-creating-the-configuration-file">Instructions for creating the configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/overview.html#instructions-for-testing-the-evaluation-system">Instructions for Testing the Evaluation System</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/scoring.html">Scoring</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#cost-factor">Cost Factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#efficiency-factor">Efficiency Factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#completion-score">Completion Score</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#kitting-task-score">Kitting Task Score</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#assembly-task-score">Assembly Task Score</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#combined-task-score">Combined Task Score</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#fianl-completion-score">Fianl Completion Score</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#trial-score">Trial Score</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/launch_file_setup.html">Launch File Setup</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">⏩ Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">Introduction to Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_1.html">Tutorial 1: Create a Competition Package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_2.html">Tutorial 2: Read Data from a Break Beam Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_3.html">Tutorial 3: Read Data from an Advanced Logical Camera</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_4.html">Tutorial 4: Read an Order</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_5.html">Tutorial 5: Move AGVs to Stations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_6.html">Tutorial 6: Enable/Disable a Gripper</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_7.html">Tutorial 7: Move Robots with MoveIt</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_8.html">Tutorial 8: Move Robots with ROS2 Actions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">⏩ Automated Evaluation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../automated_evaluation/automated_evaluation_overview.html">Automated Evaluation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../automated_evaluation/competition_launch.html">Launch File Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_1.html">Tutorial 1: Creating a competition package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_2.html">Tutorial 2: Reading data from a break beam sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_3.html">Tutorial 3: Reading data from a RGBD camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_4.html">Tutorial 4: Reading an order</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_5.html">Tutorial 5: Moving AGVs between stations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_6.html">Tutorial 6: Picking a part</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_7.html">Tutorial 7: Picking and placing a kit tray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_8.html">Tutorial 8: Completing a Kitting Task</a></li>
 </ul>
 
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">ARIAC_docs</a>
+          <a href="../index.html">ARIAC Docs</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -137,11 +255,14 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Installing ARIAC</li>
+      <li class="breadcrumb-item active">Installation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/getting_started/installation.rst.txt" rel="nofollow"> View page source</a>
       </li>
-  </ul>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../index.html" class="btn btn-neutral float-left" title="ARIAC Documentation" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="changelog.html" class="btn btn-neutral float-right" title="Changelog" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -149,221 +270,203 @@
              
   <blockquote>
 <div></div></blockquote>
-<section id="installing-ariac">
-<span id="installation"></span><h1>Installing ARIAC<a class="headerlink" href="#installing-ariac" title="Permalink to this heading"></a></h1>
+<section id="installation">
+<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h1>
 <div class="attention admonition">
 <p class="admonition-title">Requirements</p>
 <blockquote>
-<div><p>ARIAC 2023 is built for ROS2 Galactic running on Ubuntu 20.04 (Focal Fossa).</p>
-<ul class="simple">
-<li><p>See the <a class="reference external" href="https://docs.ros.org/en/galactic/Installation.html">ROS2 Galactic installation instructions</a> for more information.</p></li>
+<div><p>ARIAC 2024 is built for ROS2 Iron running on Ubuntu 22.04 (Jammy Jellyfish).</p>
+<ul>
+<li><p>See the <a class="reference external" href="https://docs.ros.org/en/iron/Installation/Ubuntu-Install-Debians.html">ROS Iron installation instructions</a> for more information.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Install <code class="code docutils literal notranslate"><span class="pre">ros-iron-desktop</span></code> using the Debian binaries.</p></li>
+</ul>
+</div></blockquote>
+</li>
 </ul>
 </div></blockquote>
 </div>
-<section id="cloning-the-ariac-repository">
-<h2>Cloning the ARIAC Repository<a class="headerlink" href="#cloning-the-ariac-repository" title="Permalink to this heading"></a></h2>
-<ul>
-<li><p>Create a new ROS2 workspace:</p>
+<section id="configuring-the-ariac-environment">
+<h2>Configuring the ARIAC Environment<a class="headerlink" href="#configuring-the-ariac-environment" title="Permalink to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Add the ROS Iron setup script to your <code class="file docutils literal notranslate"><span class="pre">~/.bashrc</span></code></p></li>
+</ol>
 <blockquote>
-<div><div class="highlight highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>/opt/ros/galactic/setup.bash
-mkdir<span class="w"> </span>-p<span class="w"> </span>~/ariac_ws/src
-<span class="nb">cd</span><span class="w"> </span>~/ariac_ws
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source /opt/ros/iron/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">source</span><span class="w"> </span>~/.bashrc
 </pre></div>
 </div>
 </div></blockquote>
-</li>
-<li><p>Clone the ARIAC repository:</p>
+<ol class="arabic simple" start="2">
+<li><p>Make a ROS workspace for ARIAC</p></li>
+</ol>
 <blockquote>
-<div><div class="highlight highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/usnistgov/ARIAC.git<span class="w"> </span>src/ariac
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>~/ariac_ws/src<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/ariac_ws
 </pre></div>
 </div>
-<p><strong>Note:</strong> Always use the <code class="docutils literal notranslate"><span class="pre">ariac2023</span></code> branch.</p>
 </div></blockquote>
-</li>
-<li><p>Install the dependencies:</p>
+<ol class="arabic simple" start="3">
+<li><p>Clone the ARIAC repository</p></li>
+</ol>
 <blockquote>
-<div><div class="highlight highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-rosdep
-sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>openjdk-17-jdk
-sudo<span class="w"> </span>rosdep<span class="w"> </span>init
-rosdep<span class="w"> </span>update<span class="w"> </span>--include-eol-distros
-rosdep<span class="w"> </span>install<span class="w"> </span>--from-paths<span class="w"> </span>src<span class="w"> </span>-y<span class="w"> </span>--ignore-src
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/usnistgov/ARIAC.git<span class="w"> </span>src/ARIAC
 </pre></div>
 </div>
+<p><strong>Note:</strong> Always use the <code class="docutils literal notranslate"><span class="pre">ariac2024</span></code> branch.</p>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>Install rosdep</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-rosdep
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>Initialize rosdep</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>rosdep<span class="w"> </span>init
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>Update rosdep</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rosdep<span class="w"> </span>update
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>Install ARIAC dependencies:</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rosdep<span class="w"> </span>install<span class="w"> </span>--from-paths<span class="w"> </span>src<span class="w"> </span>-y<span class="w"> </span>--ignore-src
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>Install necessary packages for building with colcon:</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-colcon-common-extensions<span class="w"> </span>python3-pip<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">setuptools</span><span class="o">==</span><span class="m">58</span>.2.0
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li><p>Build the workspace</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>colcon<span class="w"> </span>build
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="9">
+<li><p>Add the workspace setup script to your <code class="file docutils literal notranslate"><span class="pre">~/.bashrc</span></code></p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source ~/ariac_ws/install/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">source</span><span class="w"> </span>~/.bashrc
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="starting-the-simulation">
+<h2>Starting the Simulation<a class="headerlink" href="#starting-the-simulation" title="Permalink to this heading"></a></h2>
+<section id="default">
+<h3>Default<a class="headerlink" href="#default" title="Permalink to this heading"></a></h3>
+<blockquote>
+<div><p>The following command starts ARIAC with the default configuration:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gazebo<span class="w"> </span>ariac.launch.py
+</pre></div>
+</div>
+<p>The default trial config is <code class="file docutils literal notranslate"><span class="pre">kitting.yaml</span></code>, located in <code class="code docutils literal notranslate"><span class="pre">ARIAC/ariac_gazebo/config/trials/</span></code></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<ul class="simple">
-<li><p><code class="file docutils literal notranslate"><span class="pre">openjdk-17-jdk</span></code> is required to install the Java 17 JDK for the human challenge.</p></li>
-<li><p>If you are using a virtual machine, you may need to install the <code class="file docutils literal notranslate"><span class="pre">python3-vcstool</span></code> package.</p></li>
-</ul>
+<p>All trial files must be placed in this folder.</p>
 </div>
-</div></blockquote>
-</li>
-</ul>
-</section>
-<section id="building-the-ariac-package">
-<h2>Building the ARIAC Package<a class="headerlink" href="#building-the-ariac-package" title="Permalink to this heading"></a></h2>
-<ul>
-<li><p>Build the ARIAC package:</p>
-<blockquote>
-<div><div class="highlight highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-colcon-common-extensions
-colcon<span class="w"> </span>build<span class="w"> </span>--packages-select<span class="w"> </span>ariac
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p>Source the workspace:</p>
-<blockquote>
-<div><div class="highlight highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>install/setup.bash
-</pre></div>
-</div>
-<p><strong>Note:</strong> You may want to add the following line to your <code class="file docutils literal notranslate"><span class="pre">~/.bashrc</span></code> file: <code class="code highlight bash docutils literal highlight-bash"><span class="nb">source</span><span class="w"> </span>~/ariac_ws/install/setup.bash</code></p>
-</div></blockquote>
-</li>
-</ul>
-</section>
-<section id="starting-the-ariac-simulator">
-<h2>Starting the ARIAC Simulator<a class="headerlink" href="#starting-the-ariac-simulator" title="Permalink to this heading"></a></h2>
-<p>There are mainly two ways to start the ARIAC simulator.</p>
-<section id="default-configuration">
-<h3>Default Configuration<a class="headerlink" href="#default-configuration" title="Permalink to this heading"></a></h3>
-<p>The following command starts ARIAC with the default configuration:</p>
-<blockquote>
-<div><div class="highlight highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ros2 launch ariac_gazebo ariac.launch.py</span>
-</pre></div>
-</div>
-<ul>
-<li><p>The default trial file is <code class="file docutils literal notranslate"><span class="pre">kitting.yaml</span></code>, located in <a class="reference external" href="https://github.com/usnistgov/ARIAC/tree/ariac2023/ariac_gazebo/config/trials">ariac_gazebo/config/trials/</a></p>
-<blockquote>
-<div><ul class="simple">
-<li><p><strong>Note:</strong> All trial files must be placed in this folder.</p></li>
-</ul>
-</div></blockquote>
-</li>
-<li><p>The default sensor configuration is <code class="file docutils literal notranslate"><span class="pre">sensors.yaml</span></code>, located in <a class="reference external" href="https://github.com/usnistgov/ARIAC/tree/ariac2023/test_competitor/config">test_competitor/config/</a></p></li>
-</ul>
 </div></blockquote>
 </section>
-<section id="custom-configuration">
-<h3>Custom Configuration<a class="headerlink" href="#custom-configuration" title="Permalink to this heading"></a></h3>
-<ul>
-<li><p>To start ARIAC with a different trial, use the following command:</p>
+<section id="launch-options">
+<h3>Launch Options<a class="headerlink" href="#launch-options" title="Permalink to this heading"></a></h3>
+<section id="trial-name">
+<h4><code class="code docutils literal notranslate"><span class="pre">trial_name</span></code><a class="headerlink" href="#trial-name" title="Permalink to this heading"></a></h4>
 <blockquote>
-<div><div class="highlight highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ros2 launch ariac_gazebo ariac.launch.py trial_name:=&lt;trial_file&gt;</span>
+<div><p>To start ARIAC with a different trial configuration, use the following command:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gazebo<span class="w"> </span>ariac.launch.py<span class="w"> </span>trial_name:<span class="o">=</span>&lt;trial_file&gt;
 </pre></div>
 </div>
-<p>Replace <code class="samp docutils literal notranslate"><em><span class="pre">&lt;trial_file&gt;</span></em></code> with the name of a trial file (without the <code class="docutils literal notranslate"><span class="pre">.yaml</span></code> extension). <strong>Reminder:</strong> This trial file <strong>MUST</strong> be placed in <code class="file docutils literal notranslate"><span class="pre">ariac_gazebo/config/trials/</span></code>.</p>
+<p>Replace <code class="code docutils literal notranslate"><span class="pre">&lt;trial_file&gt;</span></code> with the name of a trial file (without the <code class="code docutils literal notranslate"><span class="pre">.yaml</span></code> extension).</p>
 <p><strong>Example:</strong> To start ARIAC with <code class="file docutils literal notranslate"><span class="pre">assembly.yaml</span></code> trial file, run the following command:</p>
-<blockquote>
-<div><div class="highlight highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ros2 launch ariac_gazebo ariac.launch.py trial_name:=assembly</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gazebo<span class="w"> </span>ariac.launch.py<span class="w"> </span>trial_name:<span class="o">=</span>assembly
 </pre></div>
 </div>
 </div></blockquote>
-</div></blockquote>
-</li>
-<li><p>Competitors will need to create their own competitor package and use their own sensor configuration file.</p>
+</section>
+<section id="competitor-pkg">
+<h4><code class="code docutils literal notranslate"><span class="pre">competitor_pkg</span></code><a class="headerlink" href="#competitor-pkg" title="Permalink to this heading"></a></h4>
 <blockquote>
-<div><ul>
-<li><p>To create a new competitor package, see <a class="hxr-hoverxref hxr-modal reference internal" href="../tutorials/tutorial_1.html#tutorial1"><span class="std std-ref">tutorial 1</span></a>.</p></li>
-<li><p>To use a custom sensor configuration file, create a directory named <code class="file docutils literal notranslate"><span class="pre">config</span></code> in your competitor package and place your sensor configuration file in that directory.</p>
+<div><p>Competitors will need to create their own competitor ROS package. To create a new competitor package, see <a class="hxr-hoverxref hxr-modal reference internal" href="../tutorials/tutorial_1.html#tutorial1"><span class="std std-ref">tutorial 1</span></a>.</p>
+<p><strong>Example:</strong> To start ARIAC using the <code class="file docutils literal notranslate"><span class="pre">sensors.yaml</span></code> sensor file located in the <code class="code docutils literal notranslate"><span class="pre">config</span></code> directory of <code class="code docutils literal notranslate"><span class="pre">my_competitor_pkg</span></code>, run the following command:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gazebo<span class="w"> </span>ariac.launch.py<span class="w"> </span>competitor_pkg:<span class="o">=</span>my_competitor_pkg
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="sensor-config">
+<h4><code class="code docutils literal notranslate"><span class="pre">sensor_config</span></code><a class="headerlink" href="#sensor-config" title="Permalink to this heading"></a></h4>
+<blockquote>
+<div><p>Competitors can have multiple sensor configurations. To specify the file use the <code class="code docutils literal notranslate"><span class="pre">sensor_config</span></code> argument.</p>
+<p><strong>Example:</strong> To start ARIAC using the <code class="file docutils literal notranslate"><span class="pre">my_sensors.yaml</span></code> file located in the <code class="code docutils literal notranslate"><span class="pre">config</span></code> directory of <code class="code docutils literal notranslate"><span class="pre">my_competitor_pkg</span></code>, run the following command:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gazebo<span class="w"> </span>ariac.launch.py<span class="w"> </span>competitor_pkg:<span class="o">=</span>my_competitor_pkg<span class="w"> </span>sensor_config:<span class="o">=</span>my_sensors
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="dev-mode">
+<h4><code class="code docutils literal notranslate"><span class="pre">dev_mode</span></code><a class="headerlink" href="#dev-mode" title="Permalink to this heading"></a></h4>
+<blockquote>
+<div><p>During testing, competitors can enable additional features that will not be available during qualifiers or finals. To enable these features set <code class="code docutils literal notranslate"><span class="pre">dev_mode</span></code> to <code class="code docutils literal notranslate"><span class="pre">true</span></code>.</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Below is an example of competitor package structure with a custom sensor configuration file named <code class="file docutils literal notranslate"><span class="pre">my_sensors.yaml</span></code>.</p></li>
-</ul>
-<div class="no-copybutton highlight-text notranslate"><div class="highlight"><pre><span></span>my_competitor_pkg
-├── CMakeLists.txt
-├── package.xml
-└── config
-    └── my_sensors.yaml
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p>Make sure to edit <code class="file docutils literal notranslate"><span class="pre">CMakelists.txt</span></code> in your competitor package to include the <code class="file docutils literal notranslate"><span class="pre">config</span></code> directory.</p>
-<blockquote>
-<div><div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">install</span><span class="p">(</span><span class="s">DIRECTORY</span><span class="w"> </span><span class="s">config</span>
-<span class="w">    </span><span class="s">DESTINATION</span><span class="w"> </span><span class="s">share/</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span><span class="s">/</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p>Start ARIAC with a custom trial and with a custom sensor configuration file by running the following command:</p>
-<blockquote>
-<div><div class="highlight highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ros2 launch ariac_gazebo ariac.launch.py competitor_pkg:=&lt;package&gt; sensor_config:=&lt;sensor_file&gt; trial_name:=&lt;trial_file&gt;</span>
-</pre></div>
-</div>
-<p><strong>Example:</strong> To start ARIAC with <code class="file docutils literal notranslate"><span class="pre">assembly.yaml</span></code> using <code class="file docutils literal notranslate"><span class="pre">my_sensors.yaml</span></code> sensor configuration file (located in <code class="file docutils literal notranslate"><span class="pre">my_competitor_pkg/config</span></code>), run the following command:</p>
-<blockquote>
-<div><div class="highlight highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ros2 launch ariac_gazebo ariac.launch.py competitor_pkg:=my_competitor_pkg sensor_config:=my_sensors trial_name:=assembly</span>
-</pre></div>
-</div>
-</div></blockquote>
-</div></blockquote>
-</li>
+<li><p>Currently the only additional feature is the ability to spawn advanced logical cameras. More may be added in the future.</p></li>
 </ul>
 </div></blockquote>
-</li>
-</ul>
+<p><strong>Example:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gazebo<span class="w"> </span>ariac.launch.py<span class="w"> </span>dev_mode:<span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+</div></blockquote>
 </section>
-</section>
-<section id="moving-the-robots">
-<h2>Moving the Robots<a class="headerlink" href="#moving-the-robots" title="Permalink to this heading"></a></h2>
-<p>To verify that the robots can be controlled properly you will need three terminals:</p>
-<ul>
-<li><p><em>terminal 1</em>: Start the environment.</p>
-<blockquote>
-<div><div class="highlight highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ros2 launch ariac_gazebo ariac.launch.py</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p><em>terminal 2</em>: Start the moveit node.</p>
-<blockquote>
-<div><div class="highlight highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ros2 launch ariac_moveit_config ariac_robots_moveit.launch.py</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p><em>terminal 3</em>: Start the moveit test node.</p>
-<blockquote>
-<div><div class="highlight highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ros2 launch test_competitor moveit_test.launch.py</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ul>
-<p>This should start the competition and move each of the robots to the home position. It will also open an RVIZ window showing the robot’s planning scene.</p>
 </section>
 <section id="running-the-test-competitor">
-<h2>Running the Test Competitor<a class="headerlink" href="#running-the-test-competitor" title="Permalink to this heading"></a></h2>
-<p>A test competitor has been created to demonstrate how to complete some of the basic functions (no challenges) of working with the ARIAC environment.
-The test competitor has been tested with <code class="docutils literal notranslate"><span class="pre">kitting.yaml</span></code>, <code class="docutils literal notranslate"><span class="pre">assembly.yaml</span></code>, <code class="docutils literal notranslate"><span class="pre">combined.yaml</span></code>, :class: <code class="file docutils literal notranslate"><span class="pre">kitting_assembly.yaml</span></code>, and <code class="file docutils literal notranslate"><span class="pre">kitting_combined.yaml</span></code>.
-There is no guarantee that the test competitor will work with other trials as the goal of the test competitor is to demonstrate how to interface with the ARIAC environment.</p>
-<p>The test competitor is located in the <a class="reference external" href="https://github.com/usnistgov/ARIAC/tree/ariac2023/test_competitor">test_competitor</a> package. To run the test competitor, use the following commands:</p>
-<ul>
-<li><p><em>terminal 1</em>: Start the environment.</p>
+<h3>Running the Test Competitor<a class="headerlink" href="#running-the-test-competitor" title="Permalink to this heading"></a></h3>
 <blockquote>
-<div><div class="highlight highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ros2 launch ariac_gazebo ariac.launch.py trial_name:=&lt;trial_file&gt;</span>
+<div><p>To help lower the barrier to entry a test competitor package was created by the NIST team. This competitor package is able to perform most of the necessary functions for the competition.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The test competitor is programmed to only work with advanced logical cameras and is unable to handle any of the agility challenges.</p>
+</div>
+<p>To run the test competitor, open three terminal windows.</p>
+<p><strong>Terminal 1:</strong> Launch the environment</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gazebo<span class="w"> </span>ariac.launch.py<span class="w"> </span>dev_mode:<span class="o">=</span><span class="nb">true</span>
 </pre></div>
 </div>
-</div></blockquote>
-</li>
-<li><p><em>terminal 2</em>: Start the MoveIt node.</p>
-<blockquote>
-<div><div class="highlight highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ros2 launch ariac_moveit_config ariac_robots_moveit.launch.py</span>
+<p><strong>Terminal 2:</strong> Launch the move_group node</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_moveit_config<span class="w"> </span>ariac_robots_moveit.launch.py
 </pre></div>
 </div>
-</div></blockquote>
-</li>
-<li><p><em>terminal 3</em>: Start the competitor node.</p>
-<blockquote>
-<div><div class="highlight highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ros2 launch test_competitor competitor.launch.py</span>
+<p><strong>Terminal 3:</strong> Launch the environment</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>test_competitor<span class="w"> </span>competitor.launch.py
 </pre></div>
 </div>
+<p>The test competitor should start the competition and start completing the default kitting order specified in <code class="file docutils literal notranslate"><span class="pre">kitting.yaml</span></code>. After the kitting order is completed and submitted, the test competitor will end the competition and a score will be output in terminal 1.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The test competitor has been tested with <code class="file docutils literal notranslate"><span class="pre">kitting.yaml</span></code>, <code class="file docutils literal notranslate"><span class="pre">assembly.yaml</span></code>, and <code class="file docutils literal notranslate"><span class="pre">combined.yaml</span></code>. There is no guarantee that the test competitor will work with other trials.</p>
+</div>
 </div></blockquote>
-</li>
-</ul>
-<p>The test competitor will start the competition, subscribe to camera and orders topics, and complete orders.</p>
+</section>
 </section>
 </section>
 
@@ -371,8 +474,8 @@ There is no guarantee that the test competitor will work with other trials as th
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="updates.html" class="btn btn-neutral float-left" title="Updates" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="registering.html" class="btn btn-neutral float-right" title="Registering for the Competition" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="ARIAC Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="changelog.html" class="btn btn-neutral float-right" title="Changelog" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
@@ -393,7 +496,7 @@ There is no guarantee that the test competitor will work with other trials as th
   </div>
   <script>
       jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
+          SphinxRtdTheme.Navigation.enable(false);
       });
   </script>
 

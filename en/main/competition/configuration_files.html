@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuration Files &mdash; ARIAC Docs 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+      <link rel="stylesheet" type="text/css" href="../_static/ntd2d.css?v=592263c6" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/twemoji.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=b115e7bf" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/hack.css?v=c2ad982c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=359c27e9"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../_static/js/hoverxref.js"></script>
+        <script src="../_static/js/tooltipster.bundle.min.js"></script>
+        <script src="../_static/js/micromodal.min.js"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=faefdcb3"></script>
+        <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"></script>
+        <script src="../_static/twemoji.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../_static/js/custom.js?v=8fe80478"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ROS Communication" href="ros_communication.html" />
+    <link rel="prev" title="Sensors" href="sensors.html" />
+   
+
+  <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+  <script src="https://code.jquery.com/jquery-3.6.2.min.js" type="text/javascript" defer="defer"></script>
+  
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            ARIAC Docs
+              <img src="../_static/nist_el_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                2024.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">⏩ Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/installation.html#configuring-the-ariac-environment">Configuring the ARIAC Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/installation.html#starting-the-simulation">Starting the Simulation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/installation.html#default">Default</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/installation.html#launch-options">Launch Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/installation.html#running-the-test-competitor">Running the Test Competitor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/changelog.html#id2">2024.1.0, (2023-12-15)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/changelog.html#updates-relevant-to-competitors">Updates relevant to competitors:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/changelog.html#other-updates">Other Updates</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/registering.html">Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/events.html">Calendar of Events</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Competition</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Competition Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#start-up-commands">Start-Up Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#program-flow">Program Flow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#parts">Parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#kit-trays">Kit Trays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#robots">Robots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#floor-robot">Floor Robot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#ceiling-robot">Ceiling Robot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#automated-guided-vehicles-agvs">Automated Guided Vehicles (AGVs)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#part-locations">Part Locations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#part-bins">Part Bins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#conveyor-belt">Conveyor Belt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#agv-parts">AGV Parts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#kit-tray-tool-changer-station">Kit Tray/Tool Changer Station</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#assembly-stations">Assembly Stations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#warehouse">Warehouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#part-disposal-bins">Part Disposal Bins</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="orders.html">Orders</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="orders.html#manufacturing-tasks">Manufacturing Tasks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orders.html#kitting-task">Kitting Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="orders.html#assembly-task">Assembly Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="orders.html#combined-task">Combined Task</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="orders.html#conditions">Conditions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="challenges.html">Agility Challenges</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="challenges.html#faulty-parts-challenge">Faulty Parts Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="challenges.html#faulty-part-detection">Faulty Part Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="challenges.html#flipped-parts-challenge">Flipped Parts Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="challenges.html#flipped-parts-setup">Flipped Parts Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="challenges.html#flipped-part-detection">Flipped Part Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="challenges.html#dropped-part-challenge">Dropped Part Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="challenges.html#dropped-part-detection">Dropped Part Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="challenges.html#robot-malfunction-challenge">Robot Malfunction Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="challenges.html#robot-malfunction-detection">Robot Malfunction Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="challenges.html#sensor-blackout-challenge">Sensor Blackout Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="challenges.html#sensor-blackout-detection">Sensor Blackout Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="challenges.html#high-priority-order-challenge">High Priority Order Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="challenges.html#high-priority-order-detection">High Priority Order Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="challenges.html#insufficient-parts-challenge">Insufficient Parts Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="challenges.html#insufficient-parts-detection">Insufficient Parts Detection</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sensors.html#sensor-costs">Sensor Costs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensors.html#static-sensors">Static sensors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#breakbeam-sensor">Breakbeam sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#proximity-sensor">Proximity sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#laser-profiler">Laser profiler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#lidar">Lidar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#rgb-camera">RGB camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#rgbd-camera">RGBD camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#basic-logical-camera">Basic logical camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#advanced-logical-camera">Advanced logical camera</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sensors.html#robot-cameras">Robot Cameras</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Configuration Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sensor-configuration">Sensor Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trial-configuration">Trial Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fields">Fields</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ros_communication.html">ROS Communication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ros_communication.html#competition-topics">Competition Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_communication.html#sensor-topics">Sensor Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_communication.html#services">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_communication.html#message-definitions">Message Definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_communication.html#service-definitions">Service Definitions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tf_frames.html">TF Frames</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tf_frames.html#list-of-tf-frames">List of TF Frames</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Evaluation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/overview.html">Automated Evaluation Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/overview.html#instructions-for-creating-the-configuration-file">Instructions for creating the configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/overview.html#instructions-for-testing-the-evaluation-system">Instructions for Testing the Evaluation System</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/scoring.html">Scoring</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#cost-factor">Cost Factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#efficiency-factor">Efficiency Factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#completion-score">Completion Score</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#kitting-task-score">Kitting Task Score</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#assembly-task-score">Assembly Task Score</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#combined-task-score">Combined Task Score</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#fianl-completion-score">Fianl Completion Score</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#trial-score">Trial Score</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/launch_file_setup.html">Launch File Setup</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">Introduction to Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_1.html">Tutorial 1: Creating a competition package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_2.html">Tutorial 2: Reading data from a break beam sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_3.html">Tutorial 3: Reading data from a RGBD camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_4.html">Tutorial 4: Reading an order</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_5.html">Tutorial 5: Moving AGVs between stations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_6.html">Tutorial 6: Picking a part</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_7.html">Tutorial 7: Picking and placing a kit tray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_8.html">Tutorial 8: Completing a Kitting Task</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ARIAC Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Configuration Files</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/competition/configuration_files.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="sensors.html" class="btn btn-neutral float-left" title="Sensors" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ros_communication.html" class="btn btn-neutral float-right" title="ROS Communication" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <blockquote>
+<div></div></blockquote>
+<section id="configuration-files">
+<span id="trials"></span><h1>Configuration Files<a class="headerlink" href="#configuration-files" title="Permalink to this heading"></a></h1>
+<p>Configuration files are described in the YAML format. YAML is a human-readable data serialization format. It is commonly used for configuration files and in applications where data is being stored or transmitted. For more information on YAML, see the <a class="reference external" href="https://yaml.org/">YAML website</a>.</p>
+<section id="sensor-configuration">
+<h2>Sensor Configuration<a class="headerlink" href="#sensor-configuration" title="Permalink to this heading"></a></h2>
+<p>The sensor configuration file is defined by the competitor and describes the location of sensors added to the competition environment. One example of a sensor configuration file <code class="file docutils literal notranslate"><span class="pre">sensors.yaml</span></code> is provided in the test competitor package in the config directory.</p>
+<p><a class="hxr-hoverxref hxr-modal reference internal" href="#sensor-config"><span class="std std-numref">Listing 11</span></a> shows an example of a sensor configuration file with one of each of the different possible sensors.</p>
+<p>The first field in the yaml file is <code class="code yamlname docutils literal notranslate"><span class="pre">robot_cameras</span></code>. This is an optional field in the sensor configuration file. If this field is not present in the file cameras will not be activated. Alternatively the <code class="code yamlname docutils literal notranslate"><span class="pre">active</span></code> field can be used to enable or disable a camera for either robot. Last the <code class="code yamlname docutils literal notranslate"><span class="pre">type</span></code> field should be either <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">rgb</span></code> or <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">rgbd</span></code>.</p>
+<p>The second field in the configuration file is <code class="code yamlname docutils literal notranslate"><span class="pre">static_sensors</span></code>. This field should contain all the static sensors that the competitor wants to add. Static sensors each have four fields:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>A name (e.g. <code class="code yamlname docutils literal notranslate"><span class="pre">right_bins_camera</span></code>). This name has to be unique among all sensors in the same configuration file.</p></li>
+<li><p>A type (e.g. <code class="code yamlname docutils literal notranslate"><span class="pre">rgb_camera</span></code>). This type has to be one of the following types described in the section <a class="hxr-hoverxref hxr-modal reference internal" href="sensors.html#static-sensors"><span class="std std-ref">Static sensors</span></a>.</p></li>
+<li><p>A pose defined in the world frame:</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>A position <code class="code yamlname docutils literal notranslate"><span class="pre">xyz</span></code>. This should be a list with three elements representing the x, y, and z coordinates for the sensor origin.</p></li>
+<li><p>An orientation <code class="code yamlname docutils literal notranslate"><span class="pre">rpy</span></code>. This should be a three element list containing the roll, pitch and yaw of the sensor using <a class="reference external" href="https://en.wikipedia.org/wiki/Euler_angles">this convention</a> . The orientation should be defined in radians using either floating-point values or with the <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">pi</span></code> constant (<code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">pi</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">pi/2</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">pi/4</span></code>, etc).</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>A toggle for visualizing the sensor field of view <code class="code yamlname docutils literal notranslate"><span class="pre">visualize_fov</span></code>. This field is optional and if not present the default is <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">false</span></code>.</p></li>
+</ol>
+</div></blockquote>
+<div class="literal-block-wrapper docutils container" id="sensor-config">
+<div class="code-block-caption"><span class="caption-number">Listing 11 </span><span class="caption-text">Example of a sensor configuration file</span><a class="headerlink" href="#sensor-config" title="Permalink to this code"></a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">robot_cameras</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">floor_robot_camera</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">active</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rgb</span>
+
+<span class="w">  </span><span class="nt">ceiling_robot_camera</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">active</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rgbd</span>
+
+<span class="nt">static_sensors</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">breakbeam_0</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">break_beam</span>
+<span class="w">    </span><span class="nt">visualize_fov</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">pose</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">xyz</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-0.35</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.95</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">rpy</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pi</span><span class="p p-Indicator">]</span>
+
+<span class="w">  </span><span class="nt">proximity_sensor_0</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">proximity</span>
+<span class="w">    </span><span class="nt">visualize_fov</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">pose</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">xyz</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-0.573</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2.84</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">rpy</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">pi/2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pi/6</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pi/2</span><span class="p p-Indicator">]</span>
+
+<span class="w">  </span><span class="nt">laser_profiler_0</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">laser_profiler</span>
+<span class="w">    </span><span class="nt">visualize_fov</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">pose</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">xyz</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-0.573</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.486</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.526</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">rpy</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">pi/2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pi/2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
+
+<span class="w">  </span><span class="nt">lidar_0</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lidar</span>
+<span class="w">    </span><span class="nt">visualize_fov</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">pose</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">xyz</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-2.286</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-2.96</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.8</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">rpy</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">pi</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pi/2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
+
+<span class="w">  </span><span class="nt">rgb_camera_0</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rgb_camera</span>
+<span class="w">    </span><span class="nt">visualize_fov</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">pose</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">xyz</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-2.286</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2.96</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.8</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">rpy</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">pi</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pi/2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
+
+<span class="w">  </span><span class="nt">rgbd_camera_0</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rgbd_camera</span>
+<span class="w">    </span><span class="nt">visualize_fov</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">pose</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">xyz</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-2.286</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">4.96</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.8</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">rpy</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">pi</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pi/2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
+
+<span class="w">  </span><span class="nt">basic_logical_camera_0</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">visualize_fov</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">basic_logical_camera</span>
+<span class="w">    </span><span class="nt">pose</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">xyz</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-2.286</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2.96</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.8</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">rpy</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">pi</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pi/2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="trial-configuration">
+<h2>Trial Configuration<a class="headerlink" href="#trial-configuration" title="Permalink to this heading"></a></h2>
+<p>The trial configuration file contains all the information that the <a class="reference internal" href="terminology.html#term-ARIAC-Manager-AM"><span class="xref std std-term">AM</span></a> uses to run a given trial. This includes part and kit tray information, orders, and challenges. <a class="hxr-hoverxref hxr-modal reference internal" href="#trial-config"><span class="std std-numref">Listing 12</span></a> shows an example of a trial configuration file with all of the possible fields.</p>
+<section id="fields">
+<h3>Fields<a class="headerlink" href="#fields" title="Permalink to this heading"></a></h3>
+<section id="time-limit-float">
+<h4><code class="code yamlname docutils literal notranslate"><span class="pre">time_limit</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Float</span></code><a class="headerlink" href="#time-limit-float" title="Permalink to this heading"></a></h4>
+<p>The time limit is a positive floating point number that represents the number of seconds that the competitor has to complete the trial. At the end of the time limit the competition will end automatically.</p>
+</section>
+<section id="kitting-trays-dictionary">
+<h4><code class="code yamlname docutils literal notranslate"><span class="pre">kitting_trays</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Dictionary</span></code><a class="headerlink" href="#kitting-trays-dictionary" title="Permalink to this heading"></a></h4>
+<p>This section defines the kit trays that will be spawned onto the kit tray stations at the start of simulation.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">tray_ids</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">List</span></code>: The IDs of the all the trays to be spawned (0-9). Several trays can have the same ID.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">slots</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">List</span></code>: The slots on the kitting tray station where the trays will be spawned (kts1: 0-3, kts2: 4-6). Slots must be unique.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="code yamlname docutils literal notranslate"><span class="pre">tray_ids</span></code> and <code class="code yamlname docutils literal notranslate"><span class="pre">slots</span></code> lists should be the same length.</p>
+</div>
+</div></blockquote>
+</section>
+<section id="assembly-inserts-dictionary">
+<h4><code class="code yamlname docutils literal notranslate"><span class="pre">assembly_inserts</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Dictionary</span></code><a class="headerlink" href="#assembly-inserts-dictionary" title="Permalink to this heading"></a></h4>
+<p>This section defines the rotation for each of the assembly station inserts.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">as{n}</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Float</span></code> or <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: Rotation in radians of assembly insert n (1-4). Pi strings can be used.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="parts-dictionary">
+<h4><code class="code yamlname docutils literal notranslate"><span class="pre">parts</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Dictionary</span></code><a class="headerlink" href="#parts-dictionary" title="Permalink to this heading"></a></h4>
+<p>This section defines all the parts that will be spawned into the environment.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">agvs</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Dictionary</span></code>: Parts that will placed directly onto the AGV at the start of the simulation. These parts are directly related to the assembly order and will be filled out automatically based on the assembly order if using the trial_generator.</p>
+<ul>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">agv{n}</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Dictionary</span></code>: The AGV that will have parts (n: 1-4). Multiple agvs may have parts.</p>
+<ul>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">tray_id</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Integer</span></code>: The ID of the kitting tray (0-9) that will be placed on the AGV. Parts on AGVs should always be placed onto a kit tray.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">parts</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">List</span></code>: Parts that will be spawned on the tray.</p>
+<ul>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">type</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: The type of the part (<code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;sensor&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;regulator&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;pump&#39;</span></code>, or <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;battery&#39;</span></code>).</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">color</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: The color of the part (<code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;red&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;blue&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;green&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;orange&#39;</span></code>, or <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;purple&#39;</span></code>).</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">quadrant</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Integer</span></code>: The quadrant of the kit tray the part will be spawned onto (1-4).</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">rotation</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Float</span></code> or <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: The rotation of the part in radians. Pi strings can be used.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">bins</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Dictionary</span></code>: Parts that will be placed into the bins at the start of the simulation.</p>
+<ul>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">bin{n}</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Dictionary</span></code>: The bin that will have parts (n: 1-8). Multiple bins may have parts.</p>
+<ul>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">type</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: The type of the part (<code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;sensor&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;regulator&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;pump&#39;</span></code>, or <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;battery&#39;</span></code>).</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">color</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: The color of the part (<code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;red&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;blue&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;green&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;orange&#39;</span></code>, or <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;purple&#39;</span></code>).</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">rotation</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Float</span></code> or <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: The rotation of the part in radians. Pi strings can be used.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">flipped</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Boolean</span></code>: Whether the part will be flipped. If <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">true</span></code> the z-axis of the part will face down instead of up.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">slots</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">List</span></code>: The slots of the bin that this part can be found (1-9). Each slot should be unique for a given bin.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">conveyor_belt</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Dictionary</span></code>: Parts that will be spawned onto the conveyor when the competition is started. The cycle of parts will be repeated after all parts are spawned, up until the competition ends.</p>
+<ul>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">active</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Boolean</span></code>: Whether the conveyor is active. This toggle is mostly used for testing to enable or disable the conveyor without removing all the parts.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">spawn_rate</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Integer</span></code>: The time in seconds between parts spawned on the conveyor.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">order</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: Either <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;sequential&#39;</span></code> where all parts of the same type will appear before the next type, or  <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;random&#39;</span></code> where the parts will come out in a random order.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">parts_to_spawn</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Dictionary</span></code>: This is a list of part lots that will be found on the conveyor.</p>
+<ul>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">type</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: The type of the part (<code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;sensor&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;regulator&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;pump&#39;</span></code>, or <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;battery&#39;</span></code>).</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">color</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: The color of the part (<code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;red&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;blue&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;green&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;orange&#39;</span></code>, or <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;purple&#39;</span></code>).</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">number</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Integer</span></code>: The number of parts spawned with the selected <code class="code yamlname docutils literal notranslate"><span class="pre">type</span></code>, <code class="code yamlname docutils literal notranslate"><span class="pre">color</span></code>, <code class="code yamlname docutils literal notranslate"><span class="pre">offset</span></code>, <code class="code yamlname docutils literal notranslate"><span class="pre">flipped</span></code>, and <code class="code yamlname docutils literal notranslate"><span class="pre">rotation</span></code>.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">offset</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Float</span></code>: The position on the conveyor belt. Positive offset is further from the bins and negative offset is closer to the bins. This value should be between -1.0 and 1.0.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">flipped</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Boolean</span></code>: Whether the part will be flipped. If <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">true</span></code> the z-axis of the part will face down instead of up.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">rotation</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Float</span></code> or <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: The rotation of the part in radians. Pi strings can be used.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</section>
+<section id="orders">
+<h4><code class="code yamlname docutils literal notranslate"><span class="pre">orders</span></code><a class="headerlink" href="#orders" title="Permalink to this heading"></a></h4>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">id</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: Unique identifier for each order. String with a length of 8 characters.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">type</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: Determines the type of order. Possible values are <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;kitting&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;assembly&#39;</span></code>, and <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;combined&#39;</span></code>.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">announcement</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Dictionary</span></code>: Determines under what condition the order will be announced.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">priority</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Boolean</span></code>: Determines whether the order is a regular order, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">false</span></code>, or a high priority order, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">true</span></code>.</p></li>
+<li><p><code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">task_info</span></code>: The information for the task based on the order <code class="code yamlname docutils literal notranslate"><span class="pre">type</span></code>. Either <code class="code yamlname docutils literal notranslate"><span class="pre">kitting_task</span></code>, <code class="code yamlname docutils literal notranslate"><span class="pre">assembly_task</span></code>, or <code class="code yamlname docutils literal notranslate"><span class="pre">combined_task</span></code></p>
+<ul>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">kitting_task</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Dictionary</span></code>: This is only used if <code class="code yamlname docutils literal notranslate"><span class="pre">type</span></code> is set to <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;kitting&#39;</span></code>.</p>
+<ul>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">agv_number</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Integer</span></code>: The agv number for the agv used in the kitting order.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">tray_id</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Integer</span></code>: The tray ID which will be placed on the agv for the kitting order.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">destination</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: The destination for the agv after all parts are placed on it. Destination should always be set to <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">warehouse</span></code>.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">products</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">List</span></code>: The list of parts to be placed on the agv for the kitting order. Maximum of four.</p>
+<ul>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">type</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: The type of the part (<code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;sensor&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;regulator&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;pump&#39;</span></code>, or <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;battery&#39;</span></code>).</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">color</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: The color of the part (<code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;red&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;blue&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;green&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;orange&#39;</span></code>, or <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;purple&#39;</span></code>).</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">quadrant</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Integer</span></code>: The quadrant of the kitting tray which the part should be placed on.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">assembly_task</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Dictionary</span></code>: This is only used if <code class="code yamlname docutils literal notranslate"><span class="pre">type</span></code> is set to <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;assembly&#39;</span></code>.</p>
+<ul>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">agv_number</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">List</span></code>: List of agvs which will be used for the assembly order.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">station</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: The assembly station where the assembly of the breifcase will take place.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">products</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">List</span></code>: The list of parts to be assembled in the breifcase. Maximum of four.</p>
+<ul>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">type</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: The type of the part (<code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;sensor&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;regulator&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;pump&#39;</span></code>, or <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;battery&#39;</span></code>).</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">color</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: The color of the part (<code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;red&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;blue&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;green&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;orange&#39;</span></code>, or <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;purple&#39;</span></code>).</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">assembled_pose</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Dictionary</span></code>: The position and orientation of the part relative to the breifcase frame.</p>
+<ul>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">xyz</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">List</span></code>: A list of position coordinates of the part assembly pose relative to the breifcase frame.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">rpy</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">List</span></code>: A list of orientation values of the part assembly pose relative to the breifcase frame.</p></li>
+</ul>
+</li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">assembly_direction</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">List</span></code>: A unit vector in the breifcase frame.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">combined_task</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Dictionary</span></code>: This is only used if <code class="code yamlname docutils literal notranslate"><span class="pre">type</span></code> is set to <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;combined&#39;</span></code>.</p>
+<ul>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">station</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: The assembly station where the assembly of the breifcase will take place.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">products</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">List</span></code>: The list of parts to be assembled in the breifcase. Maximum of four.</p>
+<ul>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">type</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: The type of the part (<code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;sensor&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;regulator&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;pump&#39;</span></code>, or <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;battery&#39;</span></code>).</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">color</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: The color of the part (<code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;red&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;blue&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;green&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;orange&#39;</span></code>, or <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;purple&#39;</span></code>).</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">assembled_pose</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Dictionary</span></code>: The position and orientation of the part relative to the breifcase frame.</p>
+<ul>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">xyz</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">List</span></code>: A list of position coordinates of the part assembly pose relative to the breifcase frame.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">rpy</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">List</span></code>: A list of orientation values of the part assembly pose relative to the breifcase frame.</p></li>
+</ul>
+</li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">assembly_direction</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">List</span></code>: A unit vector in the breifcase frame.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</section>
+<section id="challenges">
+<h4><code class="code yamlname docutils literal notranslate"><span class="pre">challenges</span></code><a class="headerlink" href="#challenges" title="Permalink to this heading"></a></h4>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">dropped_part</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Dictionary</span></code>: Adds a dropped part challenge to the environment.</p>
+<ul>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">robot</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: Determines which robot will drop the part. Options are <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;floor_robot&#39;</span></code> or <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;ceiling_robot&#39;</span></code>.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">type</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: Determines the type of part that will be dropped (<code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;sensor&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;regulator&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;pump&#39;</span></code>, or <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;battery&#39;</span></code>).</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">color</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: Determines the color of part that will be dropped (<code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;red&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;blue&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;green&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;orange&#39;</span></code>, or <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;purple&#39;</span></code>).</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">drop_after</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Integer</span></code>: Determines the index of the part to drop after. For example, if <code class="code yamlname docutils literal notranslate"><span class="pre">drop_after</span></code> is set to 2, the 3rd part the robot successfully picks will be dropped.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">delay</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Float</span></code>: Drops the part after the specified delay.</p></li>
+</ul>
+</li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">robot_malfunction</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Dictionary</span></code>: Adds a robot malfunction challenge to the environment.</p>
+<ul>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">duration</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Float</span></code>: Determines how long the robot malfunction will last.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">robots_to_disable</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">List</span></code>: List of robots that can be disabled. Options are <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;floor_robot&#39;</span></code> or <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;ceiling_robot&#39;</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<blockquote id="announcement-yaml">
+<div><blockquote>
+<div><ul class="simple">
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">announcement</span></code>: One of the three <a class="hxr-hoverxref hxr-modal reference internal" href="orders.html#conditions"><span class="std std-ref">announcement conditions</span></a></p>
+<ul>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">time_condition</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Float</span></code>: After this amount of time has passed, the specified robot(s) will malfunction.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">part_place_condition</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Dictionary</span></code>: The robot malfunction starts after a part of a specific type and color is placed on a specified agv.</p>
+<ul>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">type</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: The type of the part (<code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;sensor&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;regulator&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;pump&#39;</span></code>, or <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;battery&#39;</span></code>).</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">color</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: The color of the part (<code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;red&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;blue&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;green&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;orange&#39;</span></code>, or <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;purple&#39;</span></code>).</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">agv</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Integer</span></code>: The agv number for the part place condition.</p></li>
+</ul>
+</li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">submission_condition</span></code>: The robot malfunction will begin after the specified order has been submitted.</p>
+<ul>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">order_id</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: ID of the order for the submission_condition. The robot malfunction will begin once the order associated with this order ID is submitted.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">sensor_blackout</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Dictionary</span></code>: Adds a sensor blackout challenge to the environment.</p>
+<ul>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">duration</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Float</span></code>: Determines how long the sensor blackout will last.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">sensors_to_disable</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">List</span></code>: List of sensors which will be disabled. Options are <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;break_beam&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;proximity&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;laser_profiler&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;lidar&#39;</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;camera&#39;</span></code>, and <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&#39;logical_camera&#39;</span></code></p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">announcement</span></code>: One of the three <a class="hxr-hoverxref hxr-modal reference internal" href="orders.html#conditions"><span class="std std-ref">announcement conditions</span></a>. See <a class="hxr-hoverxref hxr-modal reference internal" href="#announcement-yaml"><span class="std std-ref">above</span></a>.</p></li>
+</ul>
+</li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">faulty_part</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Dictionary</span></code>: Adds a faulty part challenge to the environment.</p>
+<ul>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">order_id</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">String</span></code>: Specifies the order where the selected quadrants will have faulty parts at first. If faulty parts are removed and replaced with new parts, the new parts will be non-faulty.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">quadrant{n}</span></code>, <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">Bool</span></code>: Specifies if quadrant <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">n</span></code> has a faulty part or not. For example, if <code class="code yamlname docutils literal notranslate"><span class="pre">quadrant1</span></code> is set to true, any first part placed in quadrant 1 is faulty.</p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<div class="literal-block-wrapper docutils container" id="trial-config">
+<div class="code-block-caption"><span class="caption-number">Listing 12 </span><span class="caption-text">Example of a trial configuration file</span><a class="headerlink" href="#trial-config" title="Permalink to this code"></a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="c1"># Trial name: example.yaml</span>
+<span class="linenos">  2</span><span class="c1"># ARIAC2024</span>
+<span class="linenos">  3</span><span class="c1"># Author: Justin Albrecht</span>
+<span class="linenos">  4</span><span class="c1"># 2024-01-03 14:23:37</span>
+<span class="linenos">  5</span>
+<span class="linenos">  6</span><span class="c1"># ENVIRONMENT SETUP</span>
+<span class="linenos">  7</span>
+<span class="linenos">  8</span><span class="nt">time_limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">500</span>
+<span class="linenos">  9</span>
+<span class="linenos"> 10</span><span class="c1"># KITTING TRAYS</span>
+<span class="linenos"> 11</span>
+<span class="linenos"> 12</span><span class="nt">kitting_trays</span><span class="p">:</span>
+<span class="linenos"> 13</span><span class="w">  </span><span class="nt">tray_ids</span><span class="p">:</span>
+<span class="linenos"> 14</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="linenos"> 15</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="linenos"> 16</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="linenos"> 17</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+<span class="linenos"> 18</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+<span class="linenos"> 19</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+<span class="linenos"> 20</span><span class="w">  </span><span class="nt">slots</span><span class="p">:</span>
+<span class="linenos"> 21</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="linenos"> 22</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="linenos"> 23</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="linenos"> 24</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+<span class="linenos"> 25</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="linenos"> 26</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6</span>
+<span class="linenos"> 27</span>
+<span class="linenos"> 28</span><span class="c1"># INSERT ROTATION</span>
+<span class="linenos"> 29</span>
+<span class="linenos"> 30</span><span class="nt">assembly_inserts</span><span class="p">:</span>
+<span class="linenos"> 31</span><span class="w">  </span><span class="nt">as1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pi/3</span>
+<span class="linenos"> 32</span><span class="w">  </span><span class="nt">as2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-pi/4</span>
+<span class="linenos"> 33</span><span class="w">  </span><span class="nt">as3</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
+<span class="linenos"> 34</span><span class="w">  </span><span class="nt">as4</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pi/2</span>
+<span class="linenos"> 35</span>
+<span class="linenos"> 36</span><span class="c1"># PARTS INFORMATION</span>
+<span class="linenos"> 37</span>
+<span class="linenos"> 38</span><span class="nt">parts</span><span class="p">:</span>
+<span class="linenos"> 39</span><span class="w">  </span><span class="nt">agvs</span><span class="p">:</span>
+<span class="linenos"> 40</span><span class="w">    </span><span class="nt">agv2</span><span class="p">:</span>
+<span class="linenos"> 41</span><span class="w">      </span><span class="nt">tray_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="linenos"> 42</span><span class="w">      </span><span class="nt">parts</span><span class="p">:</span>
+<span class="linenos"> 43</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sensor</span>
+<span class="linenos"> 44</span><span class="w">        </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blue</span>
+<span class="linenos"> 45</span><span class="w">        </span><span class="nt">quadrant</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="linenos"> 46</span><span class="w">        </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
+<span class="linenos"> 47</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pump</span>
+<span class="linenos"> 48</span><span class="w">        </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blue</span>
+<span class="linenos"> 49</span><span class="w">        </span><span class="nt">quadrant</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="linenos"> 50</span><span class="w">        </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
+<span class="linenos"> 51</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">regulator</span>
+<span class="linenos"> 52</span><span class="w">        </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blue</span>
+<span class="linenos"> 53</span><span class="w">        </span><span class="nt">quadrant</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="linenos"> 54</span><span class="w">        </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
+<span class="linenos"> 55</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">battery</span>
+<span class="linenos"> 56</span><span class="w">        </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blue</span>
+<span class="linenos"> 57</span><span class="w">        </span><span class="nt">quadrant</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+<span class="linenos"> 58</span><span class="w">        </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
+<span class="linenos"> 59</span><span class="w">  </span><span class="nt">bins</span><span class="p">:</span>
+<span class="linenos"> 60</span><span class="w">    </span><span class="nt">bin1</span><span class="p">:</span>
+<span class="linenos"> 61</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sensor</span>
+<span class="linenos"> 62</span><span class="w">      </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">green</span>
+<span class="linenos"> 63</span><span class="w">      </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pi/4</span>
+<span class="linenos"> 64</span><span class="w">      </span><span class="nt">flipped</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="linenos"> 65</span><span class="w">      </span><span class="nt">slots</span><span class="p">:</span>
+<span class="linenos"> 66</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="linenos"> 67</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="linenos"> 68</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7</span>
+<span class="linenos"> 69</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9</span>
+<span class="linenos"> 70</span><span class="w">    </span><span class="nt">bin2</span><span class="p">:</span>
+<span class="linenos"> 71</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pump</span>
+<span class="linenos"> 72</span><span class="w">      </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">purple</span>
+<span class="linenos"> 73</span><span class="w">      </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
+<span class="linenos"> 74</span><span class="w">      </span><span class="nt">flipped</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="linenos"> 75</span><span class="w">      </span><span class="nt">slots</span><span class="p">:</span>
+<span class="linenos"> 76</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="linenos"> 77</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="linenos"> 78</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7</span>
+<span class="linenos"> 79</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9</span>
+<span class="linenos"> 80</span><span class="w">    </span><span class="nt">bin5</span><span class="p">:</span>
+<span class="linenos"> 81</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">battery</span>
+<span class="linenos"> 82</span><span class="w">      </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">orange</span>
+<span class="linenos"> 83</span><span class="w">      </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
+<span class="linenos"> 84</span><span class="w">      </span><span class="nt">flipped</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="linenos"> 85</span><span class="w">      </span><span class="nt">slots</span><span class="p">:</span>
+<span class="linenos"> 86</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="linenos"> 87</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+<span class="linenos"> 88</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6</span>
+<span class="linenos"> 89</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8</span>
+<span class="linenos"> 90</span><span class="w">    </span><span class="nt">bin6</span><span class="p">:</span>
+<span class="linenos"> 91</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">regulator</span>
+<span class="linenos"> 92</span><span class="w">      </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blue</span>
+<span class="linenos"> 93</span><span class="w">      </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-pi</span>
+<span class="linenos"> 94</span><span class="w">      </span><span class="nt">flipped</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="linenos"> 95</span><span class="w">      </span><span class="nt">slots</span><span class="p">:</span>
+<span class="linenos"> 96</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="linenos"> 97</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+<span class="linenos"> 98</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6</span>
+<span class="linenos"> 99</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8</span>
+<span class="linenos">100</span><span class="w">  </span><span class="nt">conveyor_belt</span><span class="p">:</span>
+<span class="linenos">101</span><span class="w">    </span><span class="nt">active</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="linenos">102</span><span class="w">    </span><span class="nt">spawn_rate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.0</span>
+<span class="linenos">103</span><span class="w">    </span><span class="nt">order</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">random</span>
+<span class="linenos">104</span><span class="w">    </span><span class="nt">parts_to_spawn</span><span class="p">:</span>
+<span class="linenos">105</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sensor</span>
+<span class="linenos">106</span><span class="w">      </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">orange</span>
+<span class="linenos">107</span><span class="w">      </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="linenos">108</span><span class="w">      </span><span class="nt">offset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2</span>
+<span class="linenos">109</span><span class="w">      </span><span class="nt">flipped</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="linenos">110</span><span class="w">      </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pi/3</span>
+<span class="linenos">111</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">battery</span>
+<span class="linenos">112</span><span class="w">      </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">red</span>
+<span class="linenos">113</span><span class="w">      </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="linenos">114</span><span class="w">      </span><span class="nt">offset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
+<span class="linenos">115</span><span class="w">      </span><span class="nt">flipped</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="linenos">116</span><span class="w">      </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
+<span class="linenos">117</span>
+<span class="linenos">118</span><span class="c1"># ORDERS INFORMATION</span>
+<span class="linenos">119</span>
+<span class="linenos">120</span><span class="nt">orders</span><span class="p">:</span>
+<span class="linenos">121</span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">E414303S</span>
+<span class="linenos">122</span><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kitting</span>
+<span class="linenos">123</span><span class="w">  </span><span class="nt">announcement</span><span class="p">:</span>
+<span class="linenos">124</span><span class="w">    </span><span class="nt">time_condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
+<span class="linenos">125</span><span class="w">  </span><span class="nt">priority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="linenos">126</span><span class="w">  </span><span class="nt">kitting_task</span><span class="p">:</span>
+<span class="linenos">127</span><span class="w">    </span><span class="nt">agv_number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="linenos">128</span><span class="w">    </span><span class="nt">tray_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="linenos">129</span><span class="w">    </span><span class="nt">destination</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">warehouse</span>
+<span class="linenos">130</span><span class="w">    </span><span class="nt">products</span><span class="p">:</span>
+<span class="linenos">131</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sensor</span>
+<span class="linenos">132</span><span class="w">      </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">green</span>
+<span class="linenos">133</span><span class="w">      </span><span class="nt">quadrant</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="linenos">134</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">battery</span>
+<span class="linenos">135</span><span class="w">      </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">red</span>
+<span class="linenos">136</span><span class="w">      </span><span class="nt">quadrant</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="linenos">137</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pump</span>
+<span class="linenos">138</span><span class="w">      </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">purple</span>
+<span class="linenos">139</span><span class="w">      </span><span class="nt">quadrant</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+<span class="linenos">140</span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YTDIGV7W</span>
+<span class="linenos">141</span><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">assembly</span>
+<span class="linenos">142</span><span class="w">  </span><span class="nt">announcement</span><span class="p">:</span>
+<span class="linenos">143</span><span class="w">    </span><span class="nt">submission_condition</span><span class="p">:</span>
+<span class="linenos">144</span><span class="w">      </span><span class="nt">order_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">E414303S</span>
+<span class="linenos">145</span><span class="w">  </span><span class="nt">priority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="linenos">146</span><span class="w">  </span><span class="nt">assembly_task</span><span class="p">:</span>
+<span class="linenos">147</span><span class="w">    </span><span class="nt">agv_number</span><span class="p">:</span>
+<span class="linenos">148</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="linenos">149</span><span class="w">    </span><span class="nt">station</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">as1</span>
+<span class="linenos">150</span><span class="w">    </span><span class="nt">products</span><span class="p">:</span>
+<span class="linenos">151</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sensor</span>
+<span class="linenos">152</span><span class="w">      </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blue</span>
+<span class="linenos">153</span><span class="w">      </span><span class="nt">assembled_pose</span><span class="p">:</span>
+<span class="linenos">154</span><span class="w">        </span><span class="nt">xyz</span><span class="p">:</span>
+<span class="linenos">155</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-0.1</span>
+<span class="linenos">156</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.395</span>
+<span class="linenos">157</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.045</span>
+<span class="linenos">158</span><span class="w">        </span><span class="nt">rpy</span><span class="p">:</span>
+<span class="linenos">159</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="linenos">160</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="linenos">161</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-pi/2</span>
+<span class="linenos">162</span><span class="w">      </span><span class="nt">assembly_direction</span><span class="p">:</span>
+<span class="linenos">163</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="linenos">164</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span>
+<span class="linenos">165</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="linenos">166</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pump</span>
+<span class="linenos">167</span><span class="w">      </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blue</span>
+<span class="linenos">168</span><span class="w">      </span><span class="nt">assembled_pose</span><span class="p">:</span>
+<span class="linenos">169</span><span class="w">        </span><span class="nt">xyz</span><span class="p">:</span>
+<span class="linenos">170</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.14</span>
+<span class="linenos">171</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
+<span class="linenos">172</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.02</span>
+<span class="linenos">173</span><span class="w">        </span><span class="nt">rpy</span><span class="p">:</span>
+<span class="linenos">174</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="linenos">175</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="linenos">176</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-pi/2</span>
+<span class="linenos">177</span><span class="w">      </span><span class="nt">assembly_direction</span><span class="p">:</span>
+<span class="linenos">178</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="linenos">179</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="linenos">180</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span>
+<span class="linenos">181</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">regulator</span>
+<span class="linenos">182</span><span class="w">      </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blue</span>
+<span class="linenos">183</span><span class="w">      </span><span class="nt">assembled_pose</span><span class="p">:</span>
+<span class="linenos">184</span><span class="w">        </span><span class="nt">xyz</span><span class="p">:</span>
+<span class="linenos">185</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.175</span>
+<span class="linenos">186</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-0.223</span>
+<span class="linenos">187</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.215</span>
+<span class="linenos">188</span><span class="w">        </span><span class="nt">rpy</span><span class="p">:</span>
+<span class="linenos">189</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pi/2</span>
+<span class="linenos">190</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="linenos">191</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-pi/2</span>
+<span class="linenos">192</span><span class="w">      </span><span class="nt">assembly_direction</span><span class="p">:</span>
+<span class="linenos">193</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="linenos">194</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="linenos">195</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span>
+<span class="linenos">196</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">battery</span>
+<span class="linenos">197</span><span class="w">      </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blue</span>
+<span class="linenos">198</span><span class="w">      </span><span class="nt">assembled_pose</span><span class="p">:</span>
+<span class="linenos">199</span><span class="w">        </span><span class="nt">xyz</span><span class="p">:</span>
+<span class="linenos">200</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-0.15</span>
+<span class="linenos">201</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.035</span>
+<span class="linenos">202</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.043</span>
+<span class="linenos">203</span><span class="w">        </span><span class="nt">rpy</span><span class="p">:</span>
+<span class="linenos">204</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="linenos">205</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="linenos">206</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pi/2</span>
+<span class="linenos">207</span><span class="w">      </span><span class="nt">assembly_direction</span><span class="p">:</span>
+<span class="linenos">208</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="linenos">209</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="linenos">210</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="linenos">211</span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7JADKH4U</span>
+<span class="linenos">212</span><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">combined</span>
+<span class="linenos">213</span><span class="w">  </span><span class="nt">announcement</span><span class="p">:</span>
+<span class="linenos">214</span><span class="w">    </span><span class="nt">part_place_condition</span><span class="p">:</span>
+<span class="linenos">215</span><span class="w">      </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">purple</span>
+<span class="linenos">216</span><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pump</span>
+<span class="linenos">217</span><span class="w">      </span><span class="nt">agv</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="linenos">218</span><span class="w">  </span><span class="nt">priority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="linenos">219</span><span class="w">  </span><span class="nt">combined_task</span><span class="p">:</span>
+<span class="linenos">220</span><span class="w">    </span><span class="nt">station</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">as3</span>
+<span class="linenos">221</span><span class="w">    </span><span class="nt">products</span><span class="p">:</span>
+<span class="linenos">222</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">regulator</span>
+<span class="linenos">223</span><span class="w">      </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blue</span>
+<span class="linenos">224</span><span class="w">      </span><span class="nt">assembled_pose</span><span class="p">:</span>
+<span class="linenos">225</span><span class="w">        </span><span class="nt">xyz</span><span class="p">:</span>
+<span class="linenos">226</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.175</span>
+<span class="linenos">227</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-0.223</span>
+<span class="linenos">228</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.215</span>
+<span class="linenos">229</span><span class="w">        </span><span class="nt">rpy</span><span class="p">:</span>
+<span class="linenos">230</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pi/2</span>
+<span class="linenos">231</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="linenos">232</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-pi/2</span>
+<span class="linenos">233</span><span class="w">      </span><span class="nt">assembly_direction</span><span class="p">:</span>
+<span class="linenos">234</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="linenos">235</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="linenos">236</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span>
+<span class="linenos">237</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sensor</span>
+<span class="linenos">238</span><span class="w">      </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">orange</span>
+<span class="linenos">239</span><span class="w">      </span><span class="nt">assembled_pose</span><span class="p">:</span>
+<span class="linenos">240</span><span class="w">        </span><span class="nt">xyz</span><span class="p">:</span>
+<span class="linenos">241</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-0.1</span>
+<span class="linenos">242</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.395</span>
+<span class="linenos">243</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.045</span>
+<span class="linenos">244</span><span class="w">        </span><span class="nt">rpy</span><span class="p">:</span>
+<span class="linenos">245</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="linenos">246</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="linenos">247</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-pi/2</span>
+<span class="linenos">248</span><span class="w">      </span><span class="nt">assembly_direction</span><span class="p">:</span>
+<span class="linenos">249</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="linenos">250</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span>
+<span class="linenos">251</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="linenos">252</span>
+<span class="linenos">253</span><span class="c1"># CHALLENGES INFORMATION</span>
+<span class="linenos">254</span>
+<span class="linenos">255</span><span class="nt">challenges</span><span class="p">:</span>
+<span class="linenos">256</span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">dropped_part</span><span class="p">:</span>
+<span class="linenos">257</span><span class="w">    </span><span class="nt">robot</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">floor_robot</span>
+<span class="linenos">258</span><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">regulator</span>
+<span class="linenos">259</span><span class="w">    </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blue</span>
+<span class="linenos">260</span><span class="w">    </span><span class="nt">drop_after</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="linenos">261</span><span class="w">    </span><span class="nt">delay</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span>
+<span class="linenos">262</span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">robot_malfunction</span><span class="p">:</span>
+<span class="linenos">263</span><span class="w">    </span><span class="nt">duration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
+<span class="linenos">264</span><span class="w">    </span><span class="nt">robots_to_disable</span><span class="p">:</span>
+<span class="linenos">265</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">floor_robot</span>
+<span class="linenos">266</span><span class="w">    </span><span class="nt">submission_condition</span><span class="p">:</span>
+<span class="linenos">267</span><span class="w">      </span><span class="nt">order_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7JADKH4U</span>
+<span class="linenos">268</span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">sensor_blackout</span><span class="p">:</span>
+<span class="linenos">269</span><span class="w">    </span><span class="nt">duration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
+<span class="linenos">270</span><span class="w">    </span><span class="nt">sensors_to_disable</span><span class="p">:</span>
+<span class="linenos">271</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">logical_camera</span>
+<span class="linenos">272</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">camera</span>
+<span class="linenos">273</span><span class="w">    </span><span class="nt">time_condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100.0</span>
+<span class="linenos">274</span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">faulty_part</span><span class="p">:</span>
+<span class="linenos">275</span><span class="w">    </span><span class="nt">order_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">E414303S</span>
+<span class="linenos">276</span><span class="w">    </span><span class="nt">quadrant1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sensors.html" class="btn btn-neutral float-left" title="Sensors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ros_communication.html" class="btn btn-neutral float-right" title="ROS Communication" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright works of NIST employees are not not subject to copyright protection in the United States.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+   
+
+  <!-- Taken from https://www.filamentgroup.com/lab/html-includes/#another-demo%3A-including-another-html-file -->
+  <iframe src="../_static/ntd2d_menu.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+
+</body>
+</html>

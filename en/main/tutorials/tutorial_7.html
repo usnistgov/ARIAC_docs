@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tutorial 7: Move Robots with MoveIt &mdash; ARIAC_docs 1.0 documentation</title>
+  <title>Tutorial 7: Picking and placing a kit tray &mdash; ARIAC Docs 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
       <link rel="stylesheet" type="text/css" href="../_static/ntd2d.css?v=592263c6" />
       <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.custom.css" />
@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/css/micromodal.css" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../_static/twemoji.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=62faf5e4" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=b115e7bf" />
       <link rel="stylesheet" type="text/css" href="../_static/css/hack.css?v=c2ad982c" />
 
   
@@ -42,8 +42,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Tutorial 8: Move Robots with ROS2 Actions" href="tutorial_8.html" />
-    <link rel="prev" title="Tutorial 6: Enable/Disable a Gripper" href="tutorial_6.html" />
+    <link rel="next" title="Tutorial 8: Completing a Kitting Task" href="tutorial_8.html" />
+    <link rel="prev" title="Tutorial 6: Picking a part" href="tutorial_6.html" />
    
 
   <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
@@ -56,15 +56,16 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
 
           
           
           <a href="../index.html" class="icon icon-home">
-            ARIAC_docs
+            ARIAC Docs
+              <img src="../_static/nist_el_logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.1.0
+                2024.1.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -76,68 +77,177 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">⏩ Getting Started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/updates.html">Updates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installing ARIAC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/registering.html">Registering for the Competition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/installation.html#configuring-the-ariac-environment">Configuring the ARIAC Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/installation.html#starting-the-simulation">Starting the Simulation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/installation.html#default">Default</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/installation.html#launch-options">Launch Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/installation.html#running-the-test-competitor">Running the Test Competitor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/changelog.html#id2">2024.1.0, (2023-12-15)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/changelog.html#updates-relevant-to-competitors">Updates relevant to competitors:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/changelog.html#other-updates">Other Updates</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/registering.html">Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/events.html">Calendar of Events</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">⏩ Competition Specifications</span></p>
+<p class="caption" role="heading"><span class="caption-text">⏩ Competition</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../competition/terminology.html">Terminology</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../competition/overview.html">Overview of the Competition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../competition/environment.html">Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../competition/orders.html">Conditions, Orders, and Tasks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../competition/sensors.html">Sensors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../competition/trials.html">Configuration Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../competition/ros_communication.html">ROS Communication Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../competition/challenges.html">Agility Challenges</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../competition/tf_frames.html">TF Frames</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../competition/scoring.html">Scoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/overview.html">Competition Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/overview.html#start-up-commands">Start-Up Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/overview.html#program-flow">Program Flow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/environment.html">Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#parts">Parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#kit-trays">Kit Trays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#robots">Robots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#floor-robot">Floor Robot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#ceiling-robot">Ceiling Robot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#automated-guided-vehicles-agvs">Automated Guided Vehicles (AGVs)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#part-locations">Part Locations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#part-bins">Part Bins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#conveyor-belt">Conveyor Belt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#agv-parts">AGV Parts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#kit-tray-tool-changer-station">Kit Tray/Tool Changer Station</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#assembly-stations">Assembly Stations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#warehouse">Warehouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#part-disposal-bins">Part Disposal Bins</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/orders.html">Orders</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/orders.html#manufacturing-tasks">Manufacturing Tasks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/orders.html#kitting-task">Kitting Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/orders.html#assembly-task">Assembly Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/orders.html#combined-task">Combined Task</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/orders.html#conditions">Conditions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/challenges.html">Agility Challenges</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#faulty-parts-challenge">Faulty Parts Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#faulty-part-detection">Faulty Part Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#flipped-parts-challenge">Flipped Parts Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#flipped-parts-setup">Flipped Parts Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#flipped-part-detection">Flipped Part Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#dropped-part-challenge">Dropped Part Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#dropped-part-detection">Dropped Part Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#robot-malfunction-challenge">Robot Malfunction Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#robot-malfunction-detection">Robot Malfunction Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#sensor-blackout-challenge">Sensor Blackout Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#sensor-blackout-detection">Sensor Blackout Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#high-priority-order-challenge">High Priority Order Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#high-priority-order-detection">High Priority Order Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#insufficient-parts-challenge">Insufficient Parts Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#insufficient-parts-detection">Insufficient Parts Detection</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/sensors.html">Sensors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/sensors.html#sensor-costs">Sensor Costs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/sensors.html#static-sensors">Static sensors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#breakbeam-sensor">Breakbeam sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#proximity-sensor">Proximity sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#laser-profiler">Laser profiler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#lidar">Lidar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#rgb-camera">RGB camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#rgbd-camera">RGBD camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#basic-logical-camera">Basic logical camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#advanced-logical-camera">Advanced logical camera</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/sensors.html#robot-cameras">Robot Cameras</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/configuration_files.html">Configuration Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/configuration_files.html#sensor-configuration">Sensor Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/configuration_files.html#trial-configuration">Trial Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/configuration_files.html#fields">Fields</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/ros_communication.html">ROS Communication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/ros_communication.html#competition-topics">Competition Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/ros_communication.html#sensor-topics">Sensor Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/ros_communication.html#services">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/ros_communication.html#message-definitions">Message Definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/ros_communication.html#service-definitions">Service Definitions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/tf_frames.html">TF Frames</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/tf_frames.html#list-of-tf-frames">List of TF Frames</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Evaluation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/overview.html">Automated Evaluation Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/overview.html#instructions-for-creating-the-configuration-file">Instructions for creating the configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/overview.html#instructions-for-testing-the-evaluation-system">Instructions for Testing the Evaluation System</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/scoring.html">Scoring</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#cost-factor">Cost Factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#efficiency-factor">Efficiency Factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#completion-score">Completion Score</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#kitting-task-score">Kitting Task Score</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#assembly-task-score">Assembly Task Score</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#combined-task-score">Combined Task Score</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#fianl-completion-score">Fianl Completion Score</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#trial-score">Trial Score</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/launch_file_setup.html">Launch File Setup</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">⏩ Tutorials</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Introduction to Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_1.html">Tutorial 1: Create a Competition Package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_2.html">Tutorial 2: Read Data from a Break Beam Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_3.html">Tutorial 3: Read Data from an Advanced Logical Camera</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_4.html">Tutorial 4: Read an Order</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_5.html">Tutorial 5: Move AGVs to Stations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_6.html">Tutorial 6: Enable/Disable a Gripper</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial 7: Move Robots with MoveIt</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#package-structure">Package Structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#updated-created-files">Updated/Created Files</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#competition-interface">Competition Interface</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#code-explanation">Code Explanation</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#robot-commander">Robot Commander</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#launch-file">Launch File</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#executable">Executable</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id2">Code Explanation</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#build-instructions">Build Instructions</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#run-the-executable">Run the Executable</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#outputs">Outputs</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_8.html">Tutorial 8: Move Robots with ROS2 Actions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">⏩ Automated Evaluation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../automated_evaluation/automated_evaluation_overview.html">Automated Evaluation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../automated_evaluation/competition_launch.html">Launch File Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_1.html">Tutorial 1: Creating a competition package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_2.html">Tutorial 2: Reading data from a break beam sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_3.html">Tutorial 3: Reading data from a RGBD camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_4.html">Tutorial 4: Reading an order</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_5.html">Tutorial 5: Moving AGVs between stations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_6.html">Tutorial 6: Picking a part</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial 7: Picking and placing a kit tray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_8.html">Tutorial 8: Completing a Kitting Task</a></li>
 </ul>
 
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">ARIAC_docs</a>
+          <a href="../index.html">ARIAC Docs</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -145,11 +255,14 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Tutorial 7: Move Robots with MoveIt</li>
+      <li class="breadcrumb-item active">Tutorial 7: Picking and placing a kit tray</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/tutorials/tutorial_7.rst.txt" rel="nofollow"> View page source</a>
       </li>
-  </ul>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="tutorial_6.html" class="btn btn-neutral float-left" title="Tutorial 6: Picking a part" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorial_8.html" class="btn btn-neutral float-right" title="Tutorial 8: Completing a Kitting Task" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -157,1078 +270,20 @@
              
   <blockquote>
 <div></div></blockquote>
-<section id="tutorial-7-move-robots-with-moveit">
-<span id="tutorial7"></span><h1>Tutorial 7: Move Robots with MoveIt<a class="headerlink" href="#tutorial-7-move-robots-with-moveit" title="Permalink to this heading"></a></h1>
-<div class="attention admonition" id="tutorial-7">
-<p class="admonition-title">Tutorial 7</p>
-<ul>
-<li><p><strong>Prerequisites:</strong> <a class="hxr-hoverxref hxr-modal reference internal" href="tutorials.html#tutorials"><span class="std std-ref">Introduction to Tutorials</span></a> and <a class="hxr-hoverxref hxr-modal reference internal" href="tutorial_6.html#tutorial6"><span class="std std-ref">Tutorial 6</span></a></p></li>
-<li><p><strong>Source Code</strong>: <a class="reference external" href="https://github.com/jaybrecht/ariac_tutorials/tree/tutorial_7">https://github.com/jaybrecht/ariac_tutorials/tree/tutorial_7</a></p></li>
-<li><p><strong>Switch Branch</strong>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/ariac_ws/src/ariac_tutorials
-git<span class="w"> </span>switch<span class="w"> </span>tutorial_7
-</pre></div>
+<section id="tutorial-7-picking-and-placing-a-kit-tray">
+<span id="tutorial7"></span><h1>Tutorial 7: Picking and placing a kit tray<a class="headerlink" href="#tutorial-7-picking-and-placing-a-kit-tray" title="Permalink to this heading"></a></h1>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Finish tutorial 7</p>
 </div>
-</li>
-</ul>
-</div>
-<p>This tutorial shows how to move the robots through service calls using the following steps:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Create a C++ class for interfacing with MoveIt (<code class="file docutils literal notranslate"><span class="pre">src/robot_commander.cpp</span></code>).</p>
-<ul>
-<li><p>Initialize a MoveGroupInterface object for each robot.</p></li>
-<li><p>Create a service server for each robot. Service requests sent to these service servers will be used to move the robots to their home position.</p></li>
-</ul>
-</li>
-<li><p>Create a Python method that will be used to move the robot to its home position using a service client.</p></li>
-<li><p>Call the Python method from the script <code class="file docutils literal notranslate"><span class="pre">tutorial_7.py</span></code> to move the robots to their home positions.</p></li>
-</ul>
-</div></blockquote>
-<section id="package-structure">
-<h2>Package Structure<a class="headerlink" href="#package-structure" title="Permalink to this heading"></a></h2>
-<p>Updates and additions that are specific to <span class="tuto">Tutorial 7</span>  are highlighted in the tree below.</p>
-<div class="no-copybutton highlight-text notranslate"><div class="highlight"><pre><span></span>ariac_tutorials
-<span class="hll">├── CMakeLists.txt
-</span>├── package.xml
-├── config
-│   └── sensors.yaml
-<span class="hll">├── launch
-</span><span class="hll">│   └── robot_commander.launch.py
-</span>├── ariac_tutorials
-│   ├── __init__.py
-│   ├── utils.py
-│   └── competition_interface.py
-<span class="hll">├── src
-</span><span class="hll">│   └── robot_commander.cpp
-</span>└── scripts
-    ├── tutorial_1.py
-    ├── tutorial_2.py
-    ├── tutorial_3.py
-    ├── tutorial_4.py
-    ├── tutorial_5.py
-    ├── tutorial_6.py
-<span class="hll">    └── tutorial_7.py
-</span></pre></div>
-</div>
-</section>
-<section id="updated-created-files">
-<h2>Updated/Created Files<a class="headerlink" href="#updated-created-files" title="Permalink to this heading"></a></h2>
-<section id="competition-interface">
-<h3>Competition Interface<a class="headerlink" href="#competition-interface" title="Permalink to this heading"></a></h3>
-<p>The competition interface used in this tutorial is shown in <a class="hxr-hoverxref hxr-tooltip reference internal" href="#competitioninterface-tutorial7"><span class="std std-numref">Listing 53</span></a>.</p>
-<div class="literal-block-wrapper docutils container" id="competitioninterface-tutorial7">
-<div class="code-block-caption"><span class="caption-number">Listing 53 </span><span class="caption-text"><code class="file docutils literal notranslate"><span class="pre">competition_interface.py</span></code></span><a class="headerlink" href="#competitioninterface-tutorial7" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="kn">import</span> <span class="nn">rclpy</span>
-<span class="linenos">  2</span><span class="kn">from</span> <span class="nn">rclpy.time</span> <span class="kn">import</span> <span class="n">Duration</span>
-<span class="linenos">  3</span><span class="kn">from</span> <span class="nn">rclpy.node</span> <span class="kn">import</span> <span class="n">Node</span>
-<span class="linenos">  4</span><span class="kn">from</span> <span class="nn">rclpy.qos</span> <span class="kn">import</span> <span class="n">qos_profile_sensor_data</span>
-<span class="linenos">  5</span><span class="kn">from</span> <span class="nn">rclpy.parameter</span> <span class="kn">import</span> <span class="n">Parameter</span>
-<span class="linenos">  6</span>
-<span class="linenos">  7</span><span class="kn">from</span> <span class="nn">ariac_msgs.msg</span> <span class="kn">import</span> <span class="p">(</span>
-<span class="linenos">  8</span>    <span class="n">CompetitionState</span> <span class="k">as</span> <span class="n">CompetitionStateMsg</span><span class="p">,</span>
-<span class="linenos">  9</span>    <span class="n">BreakBeamStatus</span> <span class="k">as</span> <span class="n">BreakBeamStatusMsg</span><span class="p">,</span>
-<span class="linenos"> 10</span>    <span class="n">AdvancedLogicalCameraImage</span> <span class="k">as</span> <span class="n">AdvancedLogicalCameraImageMsg</span><span class="p">,</span>
-<span class="linenos"> 11</span>    <span class="n">Part</span> <span class="k">as</span> <span class="n">PartMsg</span><span class="p">,</span>
-<span class="linenos"> 12</span>    <span class="n">PartPose</span> <span class="k">as</span> <span class="n">PartPoseMsg</span><span class="p">,</span>
-<span class="linenos"> 13</span>    <span class="n">Order</span> <span class="k">as</span> <span class="n">OrderMsg</span><span class="p">,</span>
-<span class="linenos"> 14</span>    <span class="n">AssemblyPart</span> <span class="k">as</span> <span class="n">AssemblyPartMsg</span><span class="p">,</span>
-<span class="linenos"> 15</span>    <span class="n">AGVStatus</span> <span class="k">as</span> <span class="n">AGVStatusMsg</span><span class="p">,</span>
-<span class="linenos"> 16</span>    <span class="n">AssemblyTask</span> <span class="k">as</span> <span class="n">AssemblyTaskMsg</span><span class="p">,</span>
-<span class="linenos"> 17</span>    <span class="n">VacuumGripperState</span><span class="p">,</span>
-<span class="linenos"> 18</span><span class="p">)</span>
-<span class="linenos"> 19</span>
-<span class="linenos"> 20</span><span class="kn">from</span> <span class="nn">ariac_msgs.srv</span> <span class="kn">import</span> <span class="p">(</span>
-<span class="linenos"> 21</span>    <span class="n">MoveAGV</span><span class="p">,</span>
-<span class="linenos"> 22</span>    <span class="n">VacuumGripperControl</span>
-<span class="linenos"> 23</span><span class="p">)</span>
-<span class="linenos"> 24</span>
-<span class="linenos"> 25</span><span class="kn">from</span> <span class="nn">std_srvs.srv</span> <span class="kn">import</span> <span class="n">Trigger</span>
-<span class="linenos"> 26</span>
-<span class="linenos"> 27</span><span class="kn">from</span> <span class="nn">ariac_tutorials.utils</span> <span class="kn">import</span> <span class="p">(</span>
-<span class="linenos"> 28</span>    <span class="n">multiply_pose</span><span class="p">,</span>
-<span class="linenos"> 29</span>    <span class="n">rpy_from_quaternion</span><span class="p">,</span>
-<span class="linenos"> 30</span>    <span class="n">rad_to_deg_str</span><span class="p">,</span>
-<span class="linenos"> 31</span>    <span class="n">AdvancedLogicalCameraImage</span><span class="p">,</span>
-<span class="linenos"> 32</span>    <span class="n">Order</span><span class="p">,</span>
-<span class="linenos"> 33</span>    <span class="n">KittingTask</span><span class="p">,</span>
-<span class="linenos"> 34</span>    <span class="n">CombinedTask</span><span class="p">,</span>
-<span class="linenos"> 35</span>    <span class="n">AssemblyTask</span><span class="p">,</span>
-<span class="linenos"> 36</span>    <span class="n">KittingPart</span>
-<span class="linenos"> 37</span><span class="p">)</span>
-<span class="linenos"> 38</span>
-<span class="linenos"> 39</span><span class="k">class</span> <span class="nc">CompetitionInterface</span><span class="p">(</span><span class="n">Node</span><span class="p">):</span>
-<span class="linenos"> 40</span><span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
-<span class="linenos"> 41</span><span class="sd">    Class for a competition interface node.</span>
-<span class="linenos"> 42</span>
-<span class="linenos"> 43</span><span class="sd">    Args:</span>
-<span class="linenos"> 44</span><span class="sd">        Node (rclpy.node.Node): Parent class for ROS nodes</span>
-<span class="linenos"> 45</span>
-<span class="linenos"> 46</span><span class="sd">    Raises:</span>
-<span class="linenos"> 47</span><span class="sd">        KeyboardInterrupt: Exception raised when the user uses Ctrl+C to kill a process</span>
-<span class="linenos"> 48</span><span class="sd">    &#39;&#39;&#39;</span>
-<span class="linenos"> 49</span>    <span class="n">_competition_states</span> <span class="o">=</span> <span class="p">{</span>
-<span class="linenos"> 50</span>        <span class="n">CompetitionStateMsg</span><span class="o">.</span><span class="n">IDLE</span><span class="p">:</span> <span class="s1">&#39;idle&#39;</span><span class="p">,</span>
-<span class="linenos"> 51</span>        <span class="n">CompetitionStateMsg</span><span class="o">.</span><span class="n">READY</span><span class="p">:</span> <span class="s1">&#39;ready&#39;</span><span class="p">,</span>
-<span class="linenos"> 52</span>        <span class="n">CompetitionStateMsg</span><span class="o">.</span><span class="n">STARTED</span><span class="p">:</span> <span class="s1">&#39;started&#39;</span><span class="p">,</span>
-<span class="linenos"> 53</span>        <span class="n">CompetitionStateMsg</span><span class="o">.</span><span class="n">ORDER_ANNOUNCEMENTS_DONE</span><span class="p">:</span> <span class="s1">&#39;order_announcements_done&#39;</span><span class="p">,</span>
-<span class="linenos"> 54</span>        <span class="n">CompetitionStateMsg</span><span class="o">.</span><span class="n">ENDED</span><span class="p">:</span> <span class="s1">&#39;ended&#39;</span><span class="p">,</span>
-<span class="linenos"> 55</span>    <span class="p">}</span>
-<span class="linenos"> 56</span><span class="w">    </span><span class="sd">&#39;&#39;&#39;Dictionary for converting CompetitionState constants to strings&#39;&#39;&#39;</span>
-<span class="linenos"> 57</span>
-<span class="linenos"> 58</span>    <span class="n">_part_colors</span> <span class="o">=</span> <span class="p">{</span>
-<span class="linenos"> 59</span>        <span class="n">PartMsg</span><span class="o">.</span><span class="n">RED</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span>
-<span class="linenos"> 60</span>        <span class="n">PartMsg</span><span class="o">.</span><span class="n">BLUE</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span>
-<span class="linenos"> 61</span>        <span class="n">PartMsg</span><span class="o">.</span><span class="n">GREEN</span><span class="p">:</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span>
-<span class="linenos"> 62</span>        <span class="n">PartMsg</span><span class="o">.</span><span class="n">ORANGE</span><span class="p">:</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span>
-<span class="linenos"> 63</span>        <span class="n">PartMsg</span><span class="o">.</span><span class="n">PURPLE</span><span class="p">:</span> <span class="s1">&#39;purple&#39;</span><span class="p">,</span>
-<span class="linenos"> 64</span>    <span class="p">}</span>
-<span class="linenos"> 65</span><span class="w">    </span><span class="sd">&#39;&#39;&#39;Dictionary for converting Part color constants to strings&#39;&#39;&#39;</span>
-<span class="linenos"> 66</span>
-<span class="linenos"> 67</span>    <span class="n">_part_colors_emoji</span> <span class="o">=</span> <span class="p">{</span>
-<span class="linenos"> 68</span>        <span class="n">PartMsg</span><span class="o">.</span><span class="n">RED</span><span class="p">:</span> <span class="s1">&#39;🟥&#39;</span><span class="p">,</span>
-<span class="linenos"> 69</span>        <span class="n">PartMsg</span><span class="o">.</span><span class="n">BLUE</span><span class="p">:</span> <span class="s1">&#39;🟦&#39;</span><span class="p">,</span>
-<span class="linenos"> 70</span>        <span class="n">PartMsg</span><span class="o">.</span><span class="n">GREEN</span><span class="p">:</span> <span class="s1">&#39;🟩&#39;</span><span class="p">,</span>
-<span class="linenos"> 71</span>        <span class="n">PartMsg</span><span class="o">.</span><span class="n">ORANGE</span><span class="p">:</span> <span class="s1">&#39;🟧&#39;</span><span class="p">,</span>
-<span class="linenos"> 72</span>        <span class="n">PartMsg</span><span class="o">.</span><span class="n">PURPLE</span><span class="p">:</span> <span class="s1">&#39;🟪&#39;</span><span class="p">,</span>
-<span class="linenos"> 73</span>    <span class="p">}</span>
-<span class="linenos"> 74</span><span class="w">    </span><span class="sd">&#39;&#39;&#39;Dictionary for converting Part color constants to emojis&#39;&#39;&#39;</span>
-<span class="linenos"> 75</span>
-<span class="linenos"> 76</span>    <span class="n">_part_types</span> <span class="o">=</span> <span class="p">{</span>
-<span class="linenos"> 77</span>        <span class="n">PartMsg</span><span class="o">.</span><span class="n">BATTERY</span><span class="p">:</span> <span class="s1">&#39;battery&#39;</span><span class="p">,</span>
-<span class="linenos"> 78</span>        <span class="n">PartMsg</span><span class="o">.</span><span class="n">PUMP</span><span class="p">:</span> <span class="s1">&#39;pump&#39;</span><span class="p">,</span>
-<span class="linenos"> 79</span>        <span class="n">PartMsg</span><span class="o">.</span><span class="n">REGULATOR</span><span class="p">:</span> <span class="s1">&#39;regulator&#39;</span><span class="p">,</span>
-<span class="linenos"> 80</span>        <span class="n">PartMsg</span><span class="o">.</span><span class="n">SENSOR</span><span class="p">:</span> <span class="s1">&#39;sensor&#39;</span><span class="p">,</span>
-<span class="linenos"> 81</span>    <span class="p">}</span>
-<span class="linenos"> 82</span><span class="w">    </span><span class="sd">&#39;&#39;&#39;Dictionary for converting Part type constants to strings&#39;&#39;&#39;</span>
-<span class="linenos"> 83</span>
-<span class="linenos"> 84</span>    <span class="n">_destinations</span> <span class="o">=</span> <span class="p">{</span>
-<span class="linenos"> 85</span>        <span class="n">AGVStatusMsg</span><span class="o">.</span><span class="n">KITTING</span><span class="p">:</span> <span class="s1">&#39;kitting station&#39;</span><span class="p">,</span>
-<span class="linenos"> 86</span>        <span class="n">AGVStatusMsg</span><span class="o">.</span><span class="n">ASSEMBLY_FRONT</span><span class="p">:</span> <span class="s1">&#39;front assembly station&#39;</span><span class="p">,</span>
-<span class="linenos"> 87</span>        <span class="n">AGVStatusMsg</span><span class="o">.</span><span class="n">ASSEMBLY_BACK</span><span class="p">:</span> <span class="s1">&#39;back assembly station&#39;</span><span class="p">,</span>
-<span class="linenos"> 88</span>        <span class="n">AGVStatusMsg</span><span class="o">.</span><span class="n">WAREHOUSE</span><span class="p">:</span> <span class="s1">&#39;warehouse&#39;</span><span class="p">,</span>
-<span class="linenos"> 89</span>    <span class="p">}</span>
-<span class="linenos"> 90</span><span class="w">    </span><span class="sd">&#39;&#39;&#39;Dictionary for converting AGVDestination constants to strings&#39;&#39;&#39;</span>
-<span class="linenos"> 91</span>
-<span class="linenos"> 92</span>    <span class="n">_stations</span> <span class="o">=</span> <span class="p">{</span>
-<span class="linenos"> 93</span>        <span class="n">AssemblyTaskMsg</span><span class="o">.</span><span class="n">AS1</span><span class="p">:</span> <span class="s1">&#39;assembly station 1&#39;</span><span class="p">,</span>
-<span class="linenos"> 94</span>        <span class="n">AssemblyTaskMsg</span><span class="o">.</span><span class="n">AS2</span><span class="p">:</span> <span class="s1">&#39;assembly station 2&#39;</span><span class="p">,</span>
-<span class="linenos"> 95</span>        <span class="n">AssemblyTaskMsg</span><span class="o">.</span><span class="n">AS3</span><span class="p">:</span> <span class="s1">&#39;assembly station 3&#39;</span><span class="p">,</span>
-<span class="linenos"> 96</span>        <span class="n">AssemblyTaskMsg</span><span class="o">.</span><span class="n">AS4</span><span class="p">:</span> <span class="s1">&#39;assembly station 4&#39;</span><span class="p">,</span>
-<span class="linenos"> 97</span>    <span class="p">}</span>
-<span class="linenos"> 98</span><span class="w">    </span><span class="sd">&#39;&#39;&#39;Dictionary for converting AssemblyTask constants to strings&#39;&#39;&#39;</span>
-<span class="linenos"> 99</span>
-<span class="linenos">100</span>    <span class="n">_gripper_states</span> <span class="o">=</span> <span class="p">{</span>
-<span class="linenos">101</span>        <span class="kc">True</span><span class="p">:</span> <span class="s1">&#39;enabled&#39;</span><span class="p">,</span>
-<span class="linenos">102</span>        <span class="kc">False</span><span class="p">:</span> <span class="s1">&#39;disabled&#39;</span>
-<span class="linenos">103</span>    <span class="p">}</span>
-<span class="linenos">104</span><span class="w">    </span><span class="sd">&#39;&#39;&#39;Dictionary for converting VacuumGripperState constants to strings&#39;&#39;&#39;</span>
-<span class="linenos">105</span>
-<span class="linenos">106</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="linenos">107</span>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s1">&#39;competition_interface&#39;</span><span class="p">)</span>
-<span class="linenos">108</span>
-<span class="linenos">109</span>        <span class="n">sim_time</span> <span class="o">=</span> <span class="n">Parameter</span><span class="p">(</span>
-<span class="linenos">110</span>            <span class="s2">&quot;use_sim_time&quot;</span><span class="p">,</span>
-<span class="linenos">111</span>            <span class="n">rclpy</span><span class="o">.</span><span class="n">Parameter</span><span class="o">.</span><span class="n">Type</span><span class="o">.</span><span class="n">BOOL</span><span class="p">,</span>
-<span class="linenos">112</span>            <span class="kc">True</span>
-<span class="linenos">113</span>        <span class="p">)</span>
-<span class="linenos">114</span>
-<span class="linenos">115</span>        <span class="bp">self</span><span class="o">.</span><span class="n">set_parameters</span><span class="p">([</span><span class="n">sim_time</span><span class="p">])</span>
-<span class="linenos">116</span>
-<span class="linenos">117</span>        <span class="c1"># Service client for starting the competition</span>
-<span class="linenos">118</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_start_competition_client</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_client</span><span class="p">(</span><span class="n">Trigger</span><span class="p">,</span> <span class="s1">&#39;/ariac/start_competition&#39;</span><span class="p">)</span>
-<span class="linenos">119</span>
-<span class="linenos">120</span>        <span class="c1"># Subscriber to the competition state topic</span>
-<span class="linenos">121</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_competition_state_sub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_subscription</span><span class="p">(</span>
-<span class="linenos">122</span>            <span class="n">CompetitionStateMsg</span><span class="p">,</span>
-<span class="linenos">123</span>            <span class="s1">&#39;/ariac/competition_state&#39;</span><span class="p">,</span>
-<span class="linenos">124</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_competition_state_cb</span><span class="p">,</span>
-<span class="linenos">125</span>            <span class="mi">10</span><span class="p">)</span>
-<span class="linenos">126</span>
-<span class="linenos">127</span>        <span class="c1"># Store the state of the competition</span>
-<span class="linenos">128</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_competition_state</span><span class="p">:</span> <span class="n">CompetitionStateMsg</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="linenos">129</span>
-<span class="linenos">130</span>        <span class="c1"># Subscriber to the break beam status topic</span>
-<span class="linenos">131</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_break_beam0_sub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_subscription</span><span class="p">(</span>
-<span class="linenos">132</span>            <span class="n">BreakBeamStatusMsg</span><span class="p">,</span>
-<span class="linenos">133</span>            <span class="s1">&#39;/ariac/sensors/breakbeam_0/status&#39;</span><span class="p">,</span>
-<span class="linenos">134</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_breakbeam0_cb</span><span class="p">,</span>
-<span class="linenos">135</span>            <span class="n">qos_profile_sensor_data</span><span class="p">)</span>
-<span class="linenos">136</span>
-<span class="linenos">137</span>        <span class="c1"># Store the number of parts that crossed the beam</span>
-<span class="linenos">138</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_conveyor_part_count</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos">139</span>
-<span class="linenos">140</span>        <span class="c1"># Store whether the beam is broken</span>
-<span class="linenos">141</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_object_detected</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="linenos">142</span>
-<span class="linenos">143</span>        <span class="c1"># Subscriber to the logical camera topic</span>
-<span class="linenos">144</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_advanced_camera0_sub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_subscription</span><span class="p">(</span>
-<span class="linenos">145</span>            <span class="n">AdvancedLogicalCameraImageMsg</span><span class="p">,</span>
-<span class="linenos">146</span>            <span class="s1">&#39;/ariac/sensors/advanced_camera_0/image&#39;</span><span class="p">,</span>
-<span class="linenos">147</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_advanced_camera0_cb</span><span class="p">,</span>
-<span class="linenos">148</span>            <span class="n">qos_profile_sensor_data</span><span class="p">)</span>
-<span class="linenos">149</span>
-<span class="linenos">150</span>        <span class="c1"># Store each camera image as an AdvancedLogicalCameraImage object</span>
-<span class="linenos">151</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_camera_image</span><span class="p">:</span> <span class="n">AdvancedLogicalCameraImage</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="linenos">152</span>
-<span class="linenos">153</span>        <span class="c1"># Subscriber to the order topic</span>
-<span class="linenos">154</span>        <span class="bp">self</span><span class="o">.</span><span class="n">orders_sub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_subscription</span><span class="p">(</span>
-<span class="linenos">155</span>            <span class="n">OrderMsg</span><span class="p">,</span>
-<span class="linenos">156</span>            <span class="s1">&#39;/ariac/orders&#39;</span><span class="p">,</span>
-<span class="linenos">157</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_orders_cb</span><span class="p">,</span>
-<span class="linenos">158</span>            <span class="mi">10</span><span class="p">)</span>
-<span class="linenos">159</span>
-<span class="linenos">160</span>        <span class="c1"># Flag for parsing incoming orders</span>
-<span class="linenos">161</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_parse_incoming_order</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="linenos">162</span>
-<span class="linenos">163</span>        <span class="c1"># List of orders</span>
-<span class="linenos">164</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_orders</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="linenos">165</span>
-<span class="linenos">166</span>        <span class="c1"># Subscriber to the floor gripper state topic</span>
-<span class="linenos">167</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_floor_robot_gripper_state_sub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_subscription</span><span class="p">(</span>
-<span class="linenos">168</span>            <span class="n">VacuumGripperState</span><span class="p">,</span>
-<span class="linenos">169</span>            <span class="s1">&#39;/ariac/floor_robot_gripper_state&#39;</span><span class="p">,</span>
-<span class="linenos">170</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_floor_robot_gripper_state_cb</span><span class="p">,</span>
-<span class="linenos">171</span>            <span class="n">qos_profile_sensor_data</span><span class="p">)</span>
-<span class="linenos">172</span>
-<span class="linenos">173</span>        <span class="c1"># Service client for turning on/off the vacuum gripper on the floor robot</span>
-<span class="linenos">174</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_floor_gripper_enable</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_client</span><span class="p">(</span>
-<span class="linenos">175</span>            <span class="n">VacuumGripperControl</span><span class="p">,</span>
-<span class="linenos">176</span>            <span class="s2">&quot;/ariac/floor_robot_enable_gripper&quot;</span><span class="p">)</span>
-<span class="linenos">177</span>
-<span class="linenos">178</span>        <span class="c1"># Attribute to store the current state of the floor robot gripper</span>
-<span class="linenos">179</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_floor_robot_gripper_state</span> <span class="o">=</span> <span class="n">VacuumGripperState</span><span class="p">()</span>
-<span class="linenos">180</span>
-<span class="hll"><span class="linenos">181</span>        <span class="c1"># Service client for moving the floor robot to the home position</span>
-</span><span class="hll"><span class="linenos">182</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_move_floor_robot_home</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_client</span><span class="p">(</span>
-</span><span class="hll"><span class="linenos">183</span>            <span class="n">Trigger</span><span class="p">,</span> <span class="s1">&#39;/competitor/move_floor_robot_home&#39;</span><span class="p">)</span>
-</span><span class="hll"><span class="linenos">184</span>
-</span><span class="hll"><span class="linenos">185</span>        <span class="c1"># Service client for moving the ceiling robot to the home position</span>
-</span><span class="hll"><span class="linenos">186</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_move_ceiling_robot_home</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_client</span><span class="p">(</span>
-</span><span class="hll"><span class="linenos">187</span>            <span class="n">Trigger</span><span class="p">,</span> <span class="s1">&#39;/competitor/move_ceiling_robot_home&#39;</span><span class="p">)</span>
-</span><span class="linenos">188</span>
-<span class="linenos">189</span>    <span class="nd">@property</span>
-<span class="linenos">190</span>    <span class="k">def</span> <span class="nf">orders</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="linenos">191</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_orders</span>
-<span class="linenos">192</span>
-<span class="linenos">193</span>    <span class="nd">@property</span>
-<span class="linenos">194</span>    <span class="k">def</span> <span class="nf">camera_image</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="linenos">195</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_camera_image</span>
-<span class="linenos">196</span>
-<span class="linenos">197</span>    <span class="nd">@property</span>
-<span class="linenos">198</span>    <span class="k">def</span> <span class="nf">conveyor_part_count</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="linenos">199</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conveyor_part_count</span>
-<span class="linenos">200</span>
-<span class="linenos">201</span>    <span class="nd">@property</span>
-<span class="linenos">202</span>    <span class="k">def</span> <span class="nf">parse_incoming_order</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="linenos">203</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_incoming_order</span>
-<span class="linenos">204</span>
-<span class="linenos">205</span>    <span class="nd">@parse_incoming_order</span><span class="o">.</span><span class="n">setter</span>
-<span class="linenos">206</span>    <span class="k">def</span> <span class="nf">parse_incoming_order</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-<span class="linenos">207</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_parse_incoming_order</span> <span class="o">=</span> <span class="n">value</span>
-<span class="linenos">208</span>
-<span class="linenos">209</span>    <span class="k">def</span> <span class="nf">_orders_cb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">:</span> <span class="n">Order</span><span class="p">):</span>
-<span class="linenos">210</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;Callback for the topic /ariac/orders</span>
-<span class="linenos">211</span><span class="sd">        Arguments:</span>
-<span class="linenos">212</span><span class="sd">            msg -- Order message</span>
-<span class="linenos">213</span><span class="sd">        &#39;&#39;&#39;</span>
-<span class="linenos">214</span>        <span class="n">order</span> <span class="o">=</span> <span class="n">Order</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="linenos">215</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_orders</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">order</span><span class="p">)</span>
-<span class="linenos">216</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_incoming_order</span><span class="p">:</span>
-<span class="linenos">217</span>            <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_parse_order</span><span class="p">(</span><span class="n">order</span><span class="p">))</span>
-<span class="linenos">218</span>
-<span class="linenos">219</span>    <span class="k">def</span> <span class="nf">_advanced_camera0_cb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">:</span> <span class="n">AdvancedLogicalCameraImageMsg</span><span class="p">):</span>
-<span class="linenos">220</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;Callback for the topic /ariac/sensors/advanced_camera_0/image</span>
-<span class="linenos">221</span>
-<span class="linenos">222</span><span class="sd">        Arguments:</span>
-<span class="linenos">223</span><span class="sd">            msg -- AdvancedLogicalCameraImage message</span>
-<span class="linenos">224</span><span class="sd">        &#39;&#39;&#39;</span>
-<span class="linenos">225</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_camera_image</span> <span class="o">=</span> <span class="n">AdvancedLogicalCameraImage</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">part_poses</span><span class="p">,</span>
-<span class="linenos">226</span>                                                        <span class="n">msg</span><span class="o">.</span><span class="n">tray_poses</span><span class="p">,</span>
-<span class="linenos">227</span>                                                        <span class="n">msg</span><span class="o">.</span><span class="n">sensor_pose</span><span class="p">)</span>
-<span class="linenos">228</span>
-<span class="linenos">229</span>    <span class="k">def</span> <span class="nf">_breakbeam0_cb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">:</span> <span class="n">BreakBeamStatusMsg</span><span class="p">):</span>
-<span class="linenos">230</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;Callback for the topic /ariac/sensors/breakbeam_0/status</span>
-<span class="linenos">231</span>
-<span class="linenos">232</span><span class="sd">        Arguments:</span>
-<span class="linenos">233</span><span class="sd">            msg -- BreakBeamStatusMsg message</span>
-<span class="linenos">234</span><span class="sd">        &#39;&#39;&#39;</span>
-<span class="linenos">235</span>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_object_detected</span> <span class="ow">and</span> <span class="n">msg</span><span class="o">.</span><span class="n">object_detected</span><span class="p">:</span>
-<span class="linenos">236</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_conveyor_part_count</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="linenos">237</span>
-<span class="linenos">238</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_object_detected</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">object_detected</span>
-<span class="linenos">239</span>
-<span class="linenos">240</span>    <span class="k">def</span> <span class="nf">_competition_state_cb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">:</span> <span class="n">CompetitionStateMsg</span><span class="p">):</span>
-<span class="linenos">241</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;Callback for the topic /ariac/competition_state</span>
-<span class="linenos">242</span><span class="sd">        Arguments:</span>
-<span class="linenos">243</span><span class="sd">            msg -- CompetitionState message</span>
-<span class="linenos">244</span><span class="sd">        &#39;&#39;&#39;</span>
-<span class="linenos">245</span>        <span class="c1"># Log if competition state has changed</span>
-<span class="linenos">246</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_competition_state</span> <span class="o">!=</span> <span class="n">msg</span><span class="o">.</span><span class="n">competition_state</span><span class="p">:</span>
-<span class="linenos">247</span>            <span class="n">state</span> <span class="o">=</span> <span class="n">CompetitionInterface</span><span class="o">.</span><span class="n">_competition_states</span><span class="p">[</span><span class="n">msg</span><span class="o">.</span><span class="n">competition_state</span><span class="p">]</span>
-<span class="linenos">248</span>            <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Competition state is: </span><span class="si">{</span><span class="n">state</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">throttle_duration_sec</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
-<span class="linenos">249</span>
-<span class="linenos">250</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_competition_state</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">competition_state</span>
-<span class="linenos">251</span>
-<span class="linenos">252</span>    <span class="k">def</span> <span class="nf">_floor_robot_gripper_state_cb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">:</span> <span class="n">VacuumGripperState</span><span class="p">):</span>
-<span class="linenos">253</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;Callback for the topic /ariac/floor_robot_gripper_state</span>
-<span class="linenos">254</span>
-<span class="linenos">255</span><span class="sd">        Arguments:</span>
-<span class="linenos">256</span><span class="sd">            msg -- VacuumGripperState message</span>
-<span class="linenos">257</span><span class="sd">        &#39;&#39;&#39;</span>
-<span class="linenos">258</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_floor_robot_gripper_state</span> <span class="o">=</span> <span class="n">msg</span>
-<span class="linenos">259</span>
-<span class="linenos">260</span>    <span class="k">def</span> <span class="nf">start_competition</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="linenos">261</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;Function to start the competition.</span>
-<span class="linenos">262</span><span class="sd">        &#39;&#39;&#39;</span>
-<span class="linenos">263</span>        <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Waiting for competition to be ready&#39;</span><span class="p">)</span>
-<span class="linenos">264</span>
-<span class="linenos">265</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_competition_state</span> <span class="o">==</span> <span class="n">CompetitionStateMsg</span><span class="o">.</span><span class="n">STARTED</span><span class="p">:</span>
-<span class="linenos">266</span>            <span class="k">return</span>
-<span class="linenos">267</span>        <span class="c1"># Wait for competition to be ready</span>
-<span class="linenos">268</span>        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">_competition_state</span> <span class="o">!=</span> <span class="n">CompetitionStateMsg</span><span class="o">.</span><span class="n">READY</span><span class="p">:</span>
-<span class="linenos">269</span>            <span class="k">try</span><span class="p">:</span>
-<span class="linenos">270</span>                <span class="n">rclpy</span><span class="o">.</span><span class="n">spin_once</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-<span class="linenos">271</span>            <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
-<span class="linenos">272</span>                <span class="k">return</span>
-<span class="linenos">273</span>
-<span class="linenos">274</span>        <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Competition is ready. Starting...&#39;</span><span class="p">)</span>
-<span class="linenos">275</span>
-<span class="linenos">276</span>        <span class="c1"># Check if service is available</span>
-<span class="linenos">277</span>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_start_competition_client</span><span class="o">.</span><span class="n">wait_for_service</span><span class="p">(</span><span class="n">timeout_sec</span><span class="o">=</span><span class="mf">3.0</span><span class="p">):</span>
-<span class="linenos">278</span>            <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;Service </span><span class="se">\&#39;</span><span class="s1">/ariac/start_competition</span><span class="se">\&#39;</span><span class="s1"> is not available.&#39;</span><span class="p">)</span>
-<span class="linenos">279</span>            <span class="k">return</span>
-<span class="linenos">280</span>
-<span class="linenos">281</span>        <span class="c1"># Create trigger request and call starter service</span>
-<span class="linenos">282</span>        <span class="n">request</span> <span class="o">=</span> <span class="n">Trigger</span><span class="o">.</span><span class="n">Request</span><span class="p">()</span>
-<span class="linenos">283</span>        <span class="n">future</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_start_competition_client</span><span class="o">.</span><span class="n">call_async</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<span class="linenos">284</span>
-<span class="linenos">285</span>        <span class="c1"># Wait until the service call is completed</span>
-<span class="linenos">286</span>        <span class="n">rclpy</span><span class="o">.</span><span class="n">spin_until_future_complete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">future</span><span class="p">)</span>
-<span class="linenos">287</span>
-<span class="linenos">288</span>        <span class="k">if</span> <span class="n">future</span><span class="o">.</span><span class="n">result</span><span class="p">()</span><span class="o">.</span><span class="n">success</span><span class="p">:</span>
-<span class="linenos">289</span>            <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Started competition.&#39;</span><span class="p">)</span>
-<span class="linenos">290</span>        <span class="k">else</span><span class="p">:</span>
-<span class="linenos">291</span>            <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;Unable to start competition&#39;</span><span class="p">)</span>
-<span class="linenos">292</span>
-<span class="linenos">293</span>    <span class="k">def</span> <span class="nf">parse_advanced_camera_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image</span><span class="p">:</span> <span class="n">AdvancedLogicalCameraImage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="linenos">294</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
-<span class="linenos">295</span><span class="sd">        Parse an AdvancedLogicalCameraImage message and return a string representation.</span>
-<span class="linenos">296</span><span class="sd">        &#39;&#39;&#39;</span>
-<span class="linenos">297</span>
-<span class="linenos">298</span>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">_part_poses</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="linenos">299</span>            <span class="k">return</span> <span class="s1">&#39;No parts detected&#39;</span>
-<span class="linenos">300</span>
-<span class="linenos">301</span>        <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span>
-<span class="linenos">302</span>        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">part_pose</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">_part_poses</span><span class="p">):</span>
-<span class="linenos">303</span>            <span class="n">part_pose</span><span class="p">:</span> <span class="n">PartPoseMsg</span>
-<span class="linenos">304</span>            <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;==========================</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">305</span>            <span class="n">part_color</span> <span class="o">=</span> <span class="n">CompetitionInterface</span><span class="o">.</span><span class="n">_part_colors</span><span class="p">[</span><span class="n">part_pose</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">color</span><span class="p">]</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
-<span class="linenos">306</span>            <span class="n">part_color_emoji</span> <span class="o">=</span> <span class="n">CompetitionInterface</span><span class="o">.</span><span class="n">_part_colors_emoji</span><span class="p">[</span><span class="n">part_pose</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">color</span><span class="p">]</span>
-<span class="linenos">307</span>            <span class="n">part_type</span> <span class="o">=</span> <span class="n">CompetitionInterface</span><span class="o">.</span><span class="n">_part_types</span><span class="p">[</span><span class="n">part_pose</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">type</span><span class="p">]</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
-<span class="linenos">308</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;Part </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">part_color_emoji</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">part_color</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">part_type</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">309</span>            <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;--------------------------</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">310</span>            <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;Camera Frame</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">311</span>            <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;--------------------------</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">312</span>
-<span class="linenos">313</span>            <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;  Position:</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">314</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    x: </span><span class="si">{</span><span class="n">part_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">x</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> (m)</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">315</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    y: </span><span class="si">{</span><span class="n">part_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">y</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> (m)</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">316</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    z: </span><span class="si">{</span><span class="n">part_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">z</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> (m)</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">317</span>
-<span class="linenos">318</span>            <span class="n">roll</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">yaw</span> <span class="o">=</span> <span class="n">rpy_from_quaternion</span><span class="p">(</span><span class="n">part_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="p">)</span>
-<span class="linenos">319</span>            <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;  Orientation:</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">320</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    roll: </span><span class="si">{</span><span class="n">rad_to_deg_str</span><span class="p">(</span><span class="n">roll</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">321</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    pitch: </span><span class="si">{</span><span class="n">rad_to_deg_str</span><span class="p">(</span><span class="n">pitch</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">322</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    yaw: </span><span class="si">{</span><span class="n">rad_to_deg_str</span><span class="p">(</span><span class="n">yaw</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">323</span>
-<span class="linenos">324</span>            <span class="n">part_world_pose</span> <span class="o">=</span> <span class="n">multiply_pose</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">_sensor_pose</span><span class="p">,</span> <span class="n">part_pose</span><span class="o">.</span><span class="n">pose</span><span class="p">)</span>
-<span class="linenos">325</span>            <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;--------------------------</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">326</span>            <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;World Frame</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">327</span>            <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;--------------------------</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">328</span>
-<span class="linenos">329</span>            <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;  Position:</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">330</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    x: </span><span class="si">{</span><span class="n">part_world_pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">x</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> (m)</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">331</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    y: </span><span class="si">{</span><span class="n">part_world_pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">y</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> (m)</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">332</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    z: </span><span class="si">{</span><span class="n">part_world_pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">z</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> (m)</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">333</span>
-<span class="linenos">334</span>            <span class="n">roll</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">yaw</span> <span class="o">=</span> <span class="n">rpy_from_quaternion</span><span class="p">(</span><span class="n">part_world_pose</span><span class="o">.</span><span class="n">orientation</span><span class="p">)</span>
-<span class="linenos">335</span>            <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;  Orientation:</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">336</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    roll: </span><span class="si">{</span><span class="n">rad_to_deg_str</span><span class="p">(</span><span class="n">roll</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">337</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    pitch: </span><span class="si">{</span><span class="n">rad_to_deg_str</span><span class="p">(</span><span class="n">pitch</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">338</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    yaw: </span><span class="si">{</span><span class="n">rad_to_deg_str</span><span class="p">(</span><span class="n">yaw</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">339</span>
-<span class="linenos">340</span>            <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;==========================</span><span class="se">\n\n</span><span class="s1">&#39;</span>
-<span class="linenos">341</span>
-<span class="linenos">342</span>        <span class="k">return</span> <span class="n">output</span>
-<span class="linenos">343</span>
-<span class="linenos">344</span>    <span class="k">def</span> <span class="nf">_parse_kitting_task</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kitting_task</span><span class="p">:</span> <span class="n">KittingTask</span><span class="p">):</span>
-<span class="linenos">345</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
-<span class="linenos">346</span><span class="sd">        Parses a KittingTask object and returns a string representation.</span>
-<span class="linenos">347</span><span class="sd">        Args:</span>
-<span class="linenos">348</span><span class="sd">            kitting_task (KittingTask): KittingTask object to parse</span>
-<span class="linenos">349</span><span class="sd">        Returns:</span>
-<span class="linenos">350</span><span class="sd">            str: String representation of the KittingTask object</span>
-<span class="linenos">351</span><span class="sd">        &#39;&#39;&#39;</span>
-<span class="linenos">352</span>        <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;Type: Kitting</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">353</span>        <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;==========================</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">354</span>        <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;AGV: </span><span class="si">{</span><span class="n">kitting_task</span><span class="o">.</span><span class="n">agv_number</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">355</span>        <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;Destination: </span><span class="si">{</span><span class="n">CompetitionInterface</span><span class="o">.</span><span class="n">_destinations</span><span class="p">[</span><span class="n">kitting_task</span><span class="o">.</span><span class="n">destination</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">356</span>        <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;Tray ID: </span><span class="si">{</span><span class="n">kitting_task</span><span class="o">.</span><span class="n">tray_id</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">357</span>        <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;Products:</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">358</span>        <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;==========================</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">359</span>
-<span class="linenos">360</span>        <span class="n">quadrants</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;Quadrant 1: -&quot;</span><span class="p">,</span>
-<span class="linenos">361</span>                    <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;Quadrant 2: -&quot;</span><span class="p">,</span>
-<span class="linenos">362</span>                    <span class="mi">3</span><span class="p">:</span> <span class="s2">&quot;Quadrant 3: -&quot;</span><span class="p">,</span>
-<span class="linenos">363</span>                    <span class="mi">4</span><span class="p">:</span> <span class="s2">&quot;Quadrant 4: -&quot;</span><span class="p">}</span>
-<span class="linenos">364</span>
-<span class="linenos">365</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
-<span class="linenos">366</span>            <span class="n">product</span><span class="p">:</span> <span class="n">KittingPart</span>
-<span class="linenos">367</span>            <span class="k">for</span> <span class="n">product</span> <span class="ow">in</span> <span class="n">kitting_task</span><span class="o">.</span><span class="n">parts</span><span class="p">:</span>
-<span class="linenos">368</span>                <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">product</span><span class="o">.</span><span class="n">quadrant</span><span class="p">:</span>
-<span class="linenos">369</span>                    <span class="n">part_color</span> <span class="o">=</span> <span class="n">CompetitionInterface</span><span class="o">.</span><span class="n">_part_colors</span><span class="p">[</span><span class="n">product</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">color</span><span class="p">]</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
-<span class="linenos">370</span>                    <span class="n">part_color_emoji</span> <span class="o">=</span> <span class="n">CompetitionInterface</span><span class="o">.</span><span class="n">_part_colors_emoji</span><span class="p">[</span><span class="n">product</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">color</span><span class="p">]</span>
-<span class="linenos">371</span>                    <span class="n">part_type</span> <span class="o">=</span> <span class="n">CompetitionInterface</span><span class="o">.</span><span class="n">_part_types</span><span class="p">[</span><span class="n">product</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">type</span><span class="p">]</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
-<span class="linenos">372</span>                    <span class="n">quadrants</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Quadrant </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">part_color_emoji</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">part_color</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">part_type</span><span class="si">}</span><span class="s1">&#39;</span>
-<span class="linenos">373</span>        <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="si">{</span><span class="n">quadrants</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">374</span>        <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="si">{</span><span class="n">quadrants</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">375</span>        <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="si">{</span><span class="n">quadrants</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">376</span>        <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="si">{</span><span class="n">quadrants</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">377</span>
-<span class="linenos">378</span>        <span class="k">return</span> <span class="n">output</span>
-<span class="linenos">379</span>
-<span class="linenos">380</span>    <span class="k">def</span> <span class="nf">_parse_assembly_task</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">assembly_task</span><span class="p">:</span> <span class="n">AssemblyTask</span><span class="p">):</span>
-<span class="linenos">381</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
-<span class="linenos">382</span><span class="sd">        Parses an AssemblyTask object and returns a string representation.</span>
-<span class="linenos">383</span>
-<span class="linenos">384</span><span class="sd">        Args:</span>
-<span class="linenos">385</span><span class="sd">            assembly_task (AssemblyTask): AssemblyTask object to parse</span>
-<span class="linenos">386</span>
-<span class="linenos">387</span><span class="sd">        Returns:</span>
-<span class="linenos">388</span><span class="sd">            str: String representation of the AssemblyTask object</span>
-<span class="linenos">389</span><span class="sd">        &#39;&#39;&#39;</span>
-<span class="linenos">390</span>        <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;Type: Assembly</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">391</span>        <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;==========================</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">392</span>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">assembly_task</span><span class="o">.</span><span class="n">agv_numbers</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<span class="linenos">393</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;AGV: </span><span class="si">{</span><span class="n">assembly_task</span><span class="o">.</span><span class="n">agv_number</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">394</span>        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">assembly_task</span><span class="o">.</span><span class="n">agv_numbers</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-<span class="linenos">395</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;AGV(s): [</span><span class="si">{</span><span class="n">assembly_task</span><span class="o">.</span><span class="n">agv_numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">assembly_task</span><span class="o">.</span><span class="n">agv_numbers</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">]</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">396</span>        <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;Station: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_stations</span><span class="p">[</span><span class="n">assembly_task</span><span class="o">.</span><span class="n">station</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">397</span>        <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;Products:</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">398</span>        <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;==========================</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">399</span>
-<span class="linenos">400</span>        <span class="n">product</span><span class="p">:</span> <span class="n">AssemblyPartMsg</span>
-<span class="linenos">401</span>        <span class="k">for</span> <span class="n">product</span> <span class="ow">in</span> <span class="n">assembly_task</span><span class="o">.</span><span class="n">parts</span><span class="p">:</span>
-<span class="linenos">402</span>            <span class="n">part_color</span> <span class="o">=</span> <span class="n">CompetitionInterface</span><span class="o">.</span><span class="n">_part_colors</span><span class="p">[</span><span class="n">product</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">color</span><span class="p">]</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
-<span class="linenos">403</span>            <span class="n">part_color_emoji</span> <span class="o">=</span> <span class="n">CompetitionInterface</span><span class="o">.</span><span class="n">_part_colors_emoji</span><span class="p">[</span><span class="n">product</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">color</span><span class="p">]</span>
-<span class="linenos">404</span>            <span class="n">part_type</span> <span class="o">=</span> <span class="n">CompetitionInterface</span><span class="o">.</span><span class="n">_part_types</span><span class="p">[</span><span class="n">product</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">type</span><span class="p">]</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
-<span class="linenos">405</span>
-<span class="linenos">406</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;Part: </span><span class="si">{</span><span class="n">part_color_emoji</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">part_color</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">part_type</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">407</span>
-<span class="linenos">408</span>            <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;  Position:</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">409</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    x: </span><span class="si">{</span><span class="n">product</span><span class="o">.</span><span class="n">assembled_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">x</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> (m)</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">410</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    y: </span><span class="si">{</span><span class="n">product</span><span class="o">.</span><span class="n">assembled_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">y</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> (m)</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">411</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    z: </span><span class="si">{</span><span class="n">product</span><span class="o">.</span><span class="n">assembled_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">z</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> (m)</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">412</span>
-<span class="linenos">413</span>            <span class="n">roll</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">yaw</span> <span class="o">=</span> <span class="n">rpy_from_quaternion</span><span class="p">(</span><span class="n">product</span><span class="o">.</span><span class="n">assembled_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="p">)</span>
-<span class="linenos">414</span>            <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;  Orientation:</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">415</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    roll: </span><span class="si">{</span><span class="n">rad_to_deg_str</span><span class="p">(</span><span class="n">roll</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">416</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    pitch: </span><span class="si">{</span><span class="n">rad_to_deg_str</span><span class="p">(</span><span class="n">pitch</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">417</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    yaw: </span><span class="si">{</span><span class="n">rad_to_deg_str</span><span class="p">(</span><span class="n">yaw</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">418</span>
-<span class="linenos">419</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;  Install direction:</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">420</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    x: </span><span class="si">{</span><span class="n">product</span><span class="o">.</span><span class="n">install_direction</span><span class="o">.</span><span class="n">x</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">421</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    y: </span><span class="si">{</span><span class="n">product</span><span class="o">.</span><span class="n">install_direction</span><span class="o">.</span><span class="n">y</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">422</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    z: </span><span class="si">{</span><span class="n">product</span><span class="o">.</span><span class="n">install_direction</span><span class="o">.</span><span class="n">z</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">423</span>
-<span class="linenos">424</span>        <span class="k">return</span> <span class="n">output</span>
-<span class="linenos">425</span>
-<span class="linenos">426</span>    <span class="k">def</span> <span class="nf">_parse_combined_task</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">combined_task</span><span class="p">:</span> <span class="n">CombinedTask</span><span class="p">):</span>
-<span class="linenos">427</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
-<span class="linenos">428</span><span class="sd">        Parses a CombinedTask object and returns a string representation.</span>
-<span class="linenos">429</span>
-<span class="linenos">430</span><span class="sd">        Args:</span>
-<span class="linenos">431</span><span class="sd">            combined_task (CombinedTask): CombinedTask object to parse</span>
-<span class="linenos">432</span>
-<span class="linenos">433</span><span class="sd">        Returns:</span>
-<span class="linenos">434</span><span class="sd">            str: String representation of the CombinedTask object</span>
-<span class="linenos">435</span><span class="sd">        &#39;&#39;&#39;</span>
-<span class="linenos">436</span>
-<span class="linenos">437</span>        <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;Type: Combined</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">438</span>        <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;==========================</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">439</span>        <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;Station: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_stations</span><span class="p">[</span><span class="n">combined_task</span><span class="o">.</span><span class="n">station</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">440</span>        <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;Products:</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">441</span>        <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;==========================</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">442</span>
-<span class="linenos">443</span>        <span class="n">product</span><span class="p">:</span> <span class="n">AssemblyPartMsg</span>
-<span class="linenos">444</span>        <span class="k">for</span> <span class="n">product</span> <span class="ow">in</span> <span class="n">combined_task</span><span class="o">.</span><span class="n">parts</span><span class="p">:</span>
-<span class="linenos">445</span>            <span class="n">part_color</span> <span class="o">=</span> <span class="n">CompetitionInterface</span><span class="o">.</span><span class="n">_part_colors</span><span class="p">[</span><span class="n">product</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">color</span><span class="p">]</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
-<span class="linenos">446</span>            <span class="n">part_color_emoji</span> <span class="o">=</span> <span class="n">CompetitionInterface</span><span class="o">.</span><span class="n">_part_colors_emoji</span><span class="p">[</span><span class="n">product</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">color</span><span class="p">]</span>
-<span class="linenos">447</span>            <span class="n">part_type</span> <span class="o">=</span> <span class="n">CompetitionInterface</span><span class="o">.</span><span class="n">_part_types</span><span class="p">[</span><span class="n">product</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">type</span><span class="p">]</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
-<span class="linenos">448</span>
-<span class="linenos">449</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;Part: </span><span class="si">{</span><span class="n">part_color_emoji</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">part_color</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">part_type</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">450</span>
-<span class="linenos">451</span>            <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;  Position:</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">452</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    x: </span><span class="si">{</span><span class="n">product</span><span class="o">.</span><span class="n">assembled_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">x</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> (m)</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">453</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    y: </span><span class="si">{</span><span class="n">product</span><span class="o">.</span><span class="n">assembled_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">y</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> (m)</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">454</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    z: </span><span class="si">{</span><span class="n">product</span><span class="o">.</span><span class="n">assembled_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">z</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> (m)</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">455</span>
-<span class="linenos">456</span>            <span class="n">roll</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">yaw</span> <span class="o">=</span> <span class="n">rpy_from_quaternion</span><span class="p">(</span><span class="n">product</span><span class="o">.</span><span class="n">assembled_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="p">)</span>
-<span class="linenos">457</span>            <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;  Orientation:</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">458</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    roll: </span><span class="si">{</span><span class="n">rad_to_deg_str</span><span class="p">(</span><span class="n">roll</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">459</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    pitch: </span><span class="si">{</span><span class="n">rad_to_deg_str</span><span class="p">(</span><span class="n">pitch</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">460</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    yaw: </span><span class="si">{</span><span class="n">rad_to_deg_str</span><span class="p">(</span><span class="n">yaw</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">461</span>
-<span class="linenos">462</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;  Install direction:</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">463</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    x: </span><span class="si">{</span><span class="n">product</span><span class="o">.</span><span class="n">install_direction</span><span class="o">.</span><span class="n">x</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">464</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    y: </span><span class="si">{</span><span class="n">product</span><span class="o">.</span><span class="n">install_direction</span><span class="o">.</span><span class="n">y</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">465</span>            <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;    z: </span><span class="si">{</span><span class="n">product</span><span class="o">.</span><span class="n">install_direction</span><span class="o">.</span><span class="n">z</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">466</span>
-<span class="linenos">467</span>        <span class="k">return</span> <span class="n">output</span>
-<span class="linenos">468</span>
-<span class="linenos">469</span>    <span class="k">def</span> <span class="nf">_parse_order</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">:</span> <span class="n">Order</span><span class="p">):</span>
-<span class="linenos">470</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;Parse an order message and return a string representation.</span>
-<span class="linenos">471</span><span class="sd">        Args:</span>
-<span class="linenos">472</span><span class="sd">            order (Order) -- Order message</span>
-<span class="linenos">473</span><span class="sd">        Returns:</span>
-<span class="linenos">474</span><span class="sd">            String representation of the order message</span>
-<span class="linenos">475</span><span class="sd">        &#39;&#39;&#39;</span>
-<span class="linenos">476</span>        <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">==========================</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">477</span>        <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;Received Order: </span><span class="si">{</span><span class="n">order</span><span class="o">.</span><span class="n">order_id</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">478</span>        <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;Priority: </span><span class="si">{</span><span class="n">order</span><span class="o">.</span><span class="n">order_priority</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">479</span>
-<span class="linenos">480</span>        <span class="k">if</span> <span class="n">order</span><span class="o">.</span><span class="n">order_type</span> <span class="o">==</span> <span class="n">OrderMsg</span><span class="o">.</span><span class="n">KITTING</span><span class="p">:</span>
-<span class="linenos">481</span>            <span class="n">output</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_kitting_task</span><span class="p">(</span><span class="n">order</span><span class="o">.</span><span class="n">order_task</span><span class="p">)</span>
-<span class="linenos">482</span>        <span class="k">elif</span> <span class="n">order</span><span class="o">.</span><span class="n">order_type</span> <span class="o">==</span> <span class="n">OrderMsg</span><span class="o">.</span><span class="n">ASSEMBLY</span><span class="p">:</span>
-<span class="linenos">483</span>            <span class="n">output</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_assembly_task</span><span class="p">(</span><span class="n">order</span><span class="o">.</span><span class="n">order_task</span><span class="p">)</span>
-<span class="linenos">484</span>        <span class="k">elif</span> <span class="n">order</span><span class="o">.</span><span class="n">order_type</span> <span class="o">==</span> <span class="n">OrderMsg</span><span class="o">.</span><span class="n">COMBINED</span><span class="p">:</span>
-<span class="linenos">485</span>            <span class="n">output</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_combined_task</span><span class="p">(</span><span class="n">order</span><span class="o">.</span><span class="n">order_task</span><span class="p">)</span>
-<span class="linenos">486</span>        <span class="k">else</span><span class="p">:</span>
-<span class="linenos">487</span>            <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;Type: Unknown</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="linenos">488</span>        <span class="k">return</span> <span class="n">output</span>
-<span class="linenos">489</span>
-<span class="linenos">490</span>    <span class="k">def</span> <span class="nf">lock_agv_tray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
-<span class="linenos">491</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
-<span class="linenos">492</span><span class="sd">        Lock the tray of an AGV and parts on the tray. This will prevent tray and parts from moving during transport.</span>
-<span class="linenos">493</span><span class="sd">        Args:</span>
-<span class="linenos">494</span><span class="sd">            num (int):  AGV number</span>
-<span class="linenos">495</span><span class="sd">        Raises:</span>
-<span class="linenos">496</span><span class="sd">            KeyboardInterrupt: Exception raised when the user presses Ctrl+C</span>
-<span class="linenos">497</span><span class="sd">        &#39;&#39;&#39;</span>
-<span class="linenos">498</span>
-<span class="linenos">499</span>        <span class="c1"># Create a client to send a request to the `/ariac/agv{num}_lock_tray` service</span>
-<span class="linenos">500</span>        <span class="n">tray_locker</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_client</span><span class="p">(</span>
-<span class="linenos">501</span>            <span class="n">Trigger</span><span class="p">,</span>
-<span class="linenos">502</span>            <span class="sa">f</span><span class="s1">&#39;/ariac/agv</span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s1">_lock_tray&#39;</span>
-<span class="linenos">503</span>        <span class="p">)</span>
-<span class="linenos">504</span>
-<span class="linenos">505</span>        <span class="c1"># Build the request</span>
-<span class="linenos">506</span>        <span class="n">request</span> <span class="o">=</span> <span class="n">Trigger</span><span class="o">.</span><span class="n">Request</span><span class="p">()</span>
-<span class="linenos">507</span>        <span class="c1"># Send the request</span>
-<span class="linenos">508</span>        <span class="n">future</span> <span class="o">=</span> <span class="n">tray_locker</span><span class="o">.</span><span class="n">call_async</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<span class="linenos">509</span>
-<span class="linenos">510</span>        <span class="c1"># Wait for the response</span>
-<span class="linenos">511</span>        <span class="k">try</span><span class="p">:</span>
-<span class="linenos">512</span>            <span class="n">rclpy</span><span class="o">.</span><span class="n">spin_until_future_complete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">future</span><span class="p">)</span>
-<span class="linenos">513</span>        <span class="k">except</span> <span class="ne">KeyboardInterrupt</span> <span class="k">as</span> <span class="n">kb_error</span><span class="p">:</span>
-<span class="linenos">514</span>            <span class="k">raise</span> <span class="ne">KeyboardInterrupt</span> <span class="kn">from</span> <span class="nn">kb_error</span>
-<span class="linenos">515</span>
-<span class="linenos">516</span>        <span class="c1"># Check the response</span>
-<span class="linenos">517</span>        <span class="k">if</span> <span class="n">future</span><span class="o">.</span><span class="n">result</span><span class="p">()</span><span class="o">.</span><span class="n">success</span><span class="p">:</span>
-<span class="linenos">518</span>            <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Locked AGV</span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="se">\&#39;</span><span class="s1">s tray&#39;</span><span class="p">)</span>
-<span class="linenos">519</span>        <span class="k">else</span><span class="p">:</span>
-<span class="linenos">520</span>            <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;Unable to lock tray&#39;</span><span class="p">)</span>
-<span class="linenos">521</span>
-<span class="linenos">522</span>    <span class="k">def</span> <span class="nf">move_agv_to_station</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">station</span><span class="p">):</span>
-<span class="linenos">523</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
-<span class="linenos">524</span><span class="sd">        Move an AGV to an assembly station.</span>
-<span class="linenos">525</span><span class="sd">        Args:</span>
-<span class="linenos">526</span><span class="sd">            num (int): AGV number</span>
-<span class="linenos">527</span><span class="sd">            station (int): Assembly station number</span>
-<span class="linenos">528</span><span class="sd">        Raises:</span>
-<span class="linenos">529</span><span class="sd">            KeyboardInterrupt: Exception raised when the user presses Ctrl+C</span>
-<span class="linenos">530</span><span class="sd">        &#39;&#39;&#39;</span>
-<span class="linenos">531</span>
-<span class="linenos">532</span>        <span class="c1"># Create a client to send a request to the `/ariac/move_agv` service.</span>
-<span class="linenos">533</span>        <span class="n">mover</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_client</span><span class="p">(</span>
-<span class="linenos">534</span>            <span class="n">MoveAGV</span><span class="p">,</span>
-<span class="linenos">535</span>            <span class="sa">f</span><span class="s1">&#39;/ariac/move_agv</span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="linenos">536</span>
-<span class="linenos">537</span>        <span class="c1"># Create a request object.</span>
-<span class="linenos">538</span>        <span class="n">request</span> <span class="o">=</span> <span class="n">MoveAGV</span><span class="o">.</span><span class="n">Request</span><span class="p">()</span>
-<span class="linenos">539</span>
-<span class="linenos">540</span>        <span class="c1"># Set the request location.</span>
-<span class="linenos">541</span>        <span class="k">if</span> <span class="n">station</span> <span class="ow">in</span> <span class="p">[</span><span class="n">AssemblyTaskMsg</span><span class="o">.</span><span class="n">AS1</span><span class="p">,</span> <span class="n">AssemblyTaskMsg</span><span class="o">.</span><span class="n">AS3</span><span class="p">]:</span>
-<span class="linenos">542</span>            <span class="n">request</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="n">MoveAGV</span><span class="o">.</span><span class="n">Request</span><span class="o">.</span><span class="n">ASSEMBLY_FRONT</span>
-<span class="linenos">543</span>        <span class="k">else</span><span class="p">:</span>
-<span class="linenos">544</span>            <span class="n">request</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="n">MoveAGV</span><span class="o">.</span><span class="n">Request</span><span class="o">.</span><span class="n">ASSEMBLY_BACK</span>
-<span class="linenos">545</span>
-<span class="linenos">546</span>        <span class="c1"># Send the request.</span>
-<span class="linenos">547</span>        <span class="n">future</span> <span class="o">=</span> <span class="n">mover</span><span class="o">.</span><span class="n">call_async</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<span class="linenos">548</span>
-<span class="linenos">549</span>        <span class="c1"># Wait for the server to respond.</span>
-<span class="linenos">550</span>        <span class="k">try</span><span class="p">:</span>
-<span class="linenos">551</span>            <span class="n">rclpy</span><span class="o">.</span><span class="n">spin_until_future_complete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">future</span><span class="p">)</span>
-<span class="linenos">552</span>        <span class="k">except</span> <span class="ne">KeyboardInterrupt</span> <span class="k">as</span> <span class="n">kb_error</span><span class="p">:</span>
-<span class="linenos">553</span>            <span class="k">raise</span> <span class="ne">KeyboardInterrupt</span> <span class="kn">from</span> <span class="nn">kb_error</span>
-<span class="linenos">554</span>
-<span class="linenos">555</span>        <span class="c1"># Check the result of the service call.</span>
-<span class="linenos">556</span>        <span class="k">if</span> <span class="n">future</span><span class="o">.</span><span class="n">result</span><span class="p">()</span><span class="o">.</span><span class="n">success</span><span class="p">:</span>
-<span class="linenos">557</span>            <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Moved AGV</span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s1"> to </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_stations</span><span class="p">[</span><span class="n">station</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="linenos">558</span>        <span class="k">else</span><span class="p">:</span>
-<span class="linenos">559</span>            <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">future</span><span class="o">.</span><span class="n">result</span><span class="p">()</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
-<span class="linenos">560</span>
-<span class="linenos">561</span>    <span class="k">def</span> <span class="nf">set_floor_robot_gripper_state</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
-<span class="linenos">562</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;Set the gripper state of the floor robot.</span>
-<span class="linenos">563</span>
-<span class="linenos">564</span><span class="sd">        Arguments:</span>
-<span class="linenos">565</span><span class="sd">            state -- True to enable, False to disable</span>
-<span class="linenos">566</span>
-<span class="linenos">567</span><span class="sd">        Raises:</span>
-<span class="linenos">568</span><span class="sd">            KeyboardInterrupt: Exception raised when the user presses Ctrl+C</span>
-<span class="linenos">569</span><span class="sd">        &#39;&#39;&#39;</span>
-<span class="linenos">570</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_floor_robot_gripper_state</span><span class="o">.</span><span class="n">enabled</span> <span class="o">==</span> <span class="n">state</span><span class="p">:</span>
-<span class="linenos">571</span>            <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Gripper is already </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_gripper_states</span><span class="p">[</span><span class="n">state</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="linenos">572</span>            <span class="k">return</span>
-<span class="linenos">573</span>
-<span class="linenos">574</span>        <span class="n">request</span> <span class="o">=</span> <span class="n">VacuumGripperControl</span><span class="o">.</span><span class="n">Request</span><span class="p">()</span>
-<span class="linenos">575</span>        <span class="n">request</span><span class="o">.</span><span class="n">enable</span> <span class="o">=</span> <span class="n">state</span>
-<span class="linenos">576</span>
-<span class="linenos">577</span>        <span class="n">future</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_floor_gripper_enable</span><span class="o">.</span><span class="n">call_async</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<span class="linenos">578</span>
-<span class="linenos">579</span>        <span class="k">try</span><span class="p">:</span>
-<span class="linenos">580</span>            <span class="n">rclpy</span><span class="o">.</span><span class="n">spin_until_future_complete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">future</span><span class="p">)</span>
-<span class="linenos">581</span>        <span class="k">except</span> <span class="ne">KeyboardInterrupt</span> <span class="k">as</span> <span class="n">kb_error</span><span class="p">:</span>
-<span class="linenos">582</span>            <span class="k">raise</span> <span class="ne">KeyboardInterrupt</span> <span class="kn">from</span> <span class="nn">kb_error</span>
-<span class="linenos">583</span>
-<span class="linenos">584</span>        <span class="k">if</span> <span class="n">future</span><span class="o">.</span><span class="n">result</span><span class="p">()</span><span class="o">.</span><span class="n">success</span><span class="p">:</span>
-<span class="linenos">585</span>            <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Changed gripper state to </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_gripper_states</span><span class="p">[</span><span class="n">state</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="linenos">586</span>        <span class="k">else</span><span class="p">:</span>
-<span class="linenos">587</span>            <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;Unable to change gripper state&#39;</span><span class="p">)</span>
-<span class="linenos">588</span>
-<span class="linenos">589</span>    <span class="k">def</span> <span class="nf">wait</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">duration</span><span class="p">):</span>
-<span class="linenos">590</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;Wait for a specified duration.</span>
-<span class="linenos">591</span>
-<span class="linenos">592</span><span class="sd">        Arguments:</span>
-<span class="linenos">593</span><span class="sd">            duration -- Duration to wait in seconds</span>
-<span class="linenos">594</span>
-<span class="linenos">595</span><span class="sd">        Raises:</span>
-<span class="linenos">596</span><span class="sd">            KeyboardInterrupt: Exception raised when the user presses Ctrl+C</span>
-<span class="linenos">597</span><span class="sd">        &#39;&#39;&#39;</span>
-<span class="linenos">598</span>        <span class="n">start</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_clock</span><span class="p">()</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
-<span class="linenos">599</span>
-<span class="linenos">600</span>        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_clock</span><span class="p">()</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="n">start</span> <span class="o">+</span> <span class="n">Duration</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="n">duration</span><span class="p">):</span>
-<span class="linenos">601</span>            <span class="k">try</span><span class="p">:</span>
-<span class="linenos">602</span>                <span class="n">rclpy</span><span class="o">.</span><span class="n">spin_once</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-<span class="linenos">603</span>            <span class="k">except</span> <span class="ne">KeyboardInterrupt</span> <span class="k">as</span> <span class="n">kb_error</span><span class="p">:</span>
-<span class="linenos">604</span>                <span class="k">raise</span> <span class="ne">KeyboardInterrupt</span> <span class="kn">from</span> <span class="nn">kb_error</span>
-<span class="linenos">605</span>
-<span class="hll"><span class="linenos">606</span>    <span class="k">def</span> <span class="nf">move_robot_home</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">robot_name</span><span class="p">):</span>
-</span><span class="hll"><span class="linenos">607</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;Move one of the robots to its home position.</span>
-</span><span class="hll"><span class="linenos">608</span>
-</span><span class="hll"><span class="linenos">609</span><span class="sd">        Arguments:</span>
-</span><span class="hll"><span class="linenos">610</span><span class="sd">            robot_name -- Name of the robot to move home</span>
-</span><span class="hll"><span class="linenos">611</span><span class="sd">        &#39;&#39;&#39;</span>
-</span><span class="hll"><span class="linenos">612</span>        <span class="n">request</span> <span class="o">=</span> <span class="n">Trigger</span><span class="o">.</span><span class="n">Request</span><span class="p">()</span>
-</span><span class="hll"><span class="linenos">613</span>
-</span><span class="hll"><span class="linenos">614</span>        <span class="k">if</span> <span class="n">robot_name</span> <span class="o">==</span> <span class="s1">&#39;floor_robot&#39;</span><span class="p">:</span>
-</span><span class="hll"><span class="linenos">615</span>            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_move_floor_robot_home</span><span class="o">.</span><span class="n">wait_for_service</span><span class="p">(</span><span class="n">timeout_sec</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
-</span><span class="hll"><span class="linenos">616</span>                <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;Robot commander node not running&#39;</span><span class="p">)</span>
-</span><span class="hll"><span class="linenos">617</span>                <span class="k">return</span>
-</span><span class="hll"><span class="linenos">618</span>
-</span><span class="hll"><span class="linenos">619</span>            <span class="n">future</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_move_floor_robot_home</span><span class="o">.</span><span class="n">call_async</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-</span><span class="hll"><span class="linenos">620</span>
-</span><span class="hll"><span class="linenos">621</span>        <span class="k">elif</span> <span class="n">robot_name</span> <span class="o">==</span> <span class="s1">&#39;ceiling_robot&#39;</span><span class="p">:</span>
-</span><span class="hll"><span class="linenos">622</span>            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_move_ceiling_robot_home</span><span class="o">.</span><span class="n">wait_for_service</span><span class="p">(</span><span class="n">timeout_sec</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
-</span><span class="hll"><span class="linenos">623</span>                <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;Robot commander node not running&#39;</span><span class="p">)</span>
-</span><span class="hll"><span class="linenos">624</span>                <span class="k">return</span>
-</span><span class="hll"><span class="linenos">625</span>            <span class="n">future</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_move_ceiling_robot_home</span><span class="o">.</span><span class="n">call_async</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-</span><span class="hll"><span class="linenos">626</span>        <span class="k">else</span><span class="p">:</span>
-</span><span class="hll"><span class="linenos">627</span>            <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Robot name: (</span><span class="si">{</span><span class="n">robot_name</span><span class="si">}</span><span class="s1">) is not valid&#39;</span><span class="p">)</span>
-</span><span class="hll"><span class="linenos">628</span>            <span class="k">return</span>
-</span><span class="hll"><span class="linenos">629</span>
-</span><span class="hll"><span class="linenos">630</span>        <span class="c1"># Wait until the service call is completed</span>
-</span><span class="hll"><span class="linenos">631</span>        <span class="n">rclpy</span><span class="o">.</span><span class="n">spin_until_future_complete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">future</span><span class="p">)</span>
-</span><span class="hll"><span class="linenos">632</span>
-</span><span class="hll"><span class="linenos">633</span>        <span class="k">if</span> <span class="n">future</span><span class="o">.</span><span class="n">result</span><span class="p">()</span><span class="o">.</span><span class="n">success</span><span class="p">:</span>
-</span><span class="hll"><span class="linenos">634</span>            <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Moved </span><span class="si">{</span><span class="n">robot_name</span><span class="si">}</span><span class="s1"> to home position&#39;</span><span class="p">)</span>
-</span><span class="hll"><span class="linenos">635</span>        <span class="k">else</span><span class="p">:</span>
-</span><span class="hll"><span class="linenos">636</span>            <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">future</span><span class="o">.</span><span class="n">result</span><span class="p">()</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
-</span></pre></div>
-</div>
-</div>
-<section id="code-explanation">
-<h4>Code Explanation<a class="headerlink" href="#code-explanation" title="Permalink to this heading"></a></h4>
-<p>The competition interface from <a class="hxr-hoverxref hxr-modal reference internal" href="tutorial_6.html#tutorial6"><span class="std std-ref">Tutorial 6</span></a> was augmented with the components described below.</p>
-<ul>
-<li><p>Instance Variables</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">_move_floor_robot_home</span></code>: Service client for moving the floor robot to the home position.</p></li>
-<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">_move_ceiling_robot_home</span></code>: Service client for moving the ceiling robot to the home position.</p></li>
-</ul>
-</div></blockquote>
-</li>
-<li><p>Instance Methods</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="code highlight python docutils literal highlight-python"><span class="n">move_robot_home</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">robot_name</span><span class="p">)</span></code>: public method is used in the main function to move each robot to its home position. The method takes the name of the robot to move as an argument. The method then calls the appropriate service client to move the robot to its home position.</p></li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
-</section>
-</section>
-<section id="robot-commander">
-<h3>Robot Commander<a class="headerlink" href="#robot-commander" title="Permalink to this heading"></a></h3>
-<p>The RobotCommander class used in this tutorial is shown in <a class="hxr-hoverxref hxr-tooltip reference internal" href="#id1"><span class="std std-numref">Listing 54</span></a>.</p>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 54 </span><span class="caption-text"><code class="file docutils literal notranslate"><span class="pre">robot_commander.cpp</span></code></span><a class="headerlink" href="#id1" title="Permalink to this code"></a></div>
-<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;rclcpp/rclcpp.hpp&gt;</span>
-<span class="linenos">  2</span>
-<span class="linenos">  3</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;std_srvs/srv/trigger.hpp&gt;</span>
-<span class="linenos">  4</span>
-<span class="linenos">  5</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;moveit/move_group_interface/move_group_interface.h&gt;</span>
-<span class="linenos">  6</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;moveit/planning_scene_interface/planning_scene_interface.h&gt;</span>
-<span class="linenos">  7</span>
-<span class="linenos">  8</span><span class="k">class</span><span class="w"> </span><span class="nc">RobotCommander</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">Node</span>
-<span class="linenos">  9</span><span class="p">{</span>
-<span class="linenos"> 10</span><span class="k">public</span><span class="o">:</span>
-<span class="linenos"> 11</span><span class="n">RobotCommander</span><span class="p">();</span>
-<span class="linenos"> 12</span><span class="o">~</span><span class="n">RobotCommander</span><span class="p">();</span>
-<span class="linenos"> 13</span>
-<span class="linenos"> 14</span><span class="k">private</span><span class="o">:</span>
-<span class="linenos"> 15</span><span class="c1">// MoveIt Interfaces</span>
-<span class="linenos"> 16</span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveGroupInterface</span><span class="w"> </span><span class="n">floor_robot_</span><span class="p">;</span>
-<span class="linenos"> 17</span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveGroupInterface</span><span class="w"> </span><span class="n">ceiling_robot_</span><span class="p">;</span>
-<span class="linenos"> 18</span>
-<span class="linenos"> 19</span><span class="c1">// ROS Services</span>
-<span class="linenos"> 20</span><span class="n">rclcpp</span><span class="o">::</span><span class="n">Service</span><span class="o">&lt;</span><span class="n">std_srvs</span><span class="o">::</span><span class="n">srv</span><span class="o">::</span><span class="n">Trigger</span><span class="o">&gt;::</span><span class="n">SharedPtr</span><span class="w"> </span><span class="n">floor_robot_move_home_srv_</span><span class="p">;</span>
-<span class="linenos"> 21</span><span class="n">rclcpp</span><span class="o">::</span><span class="n">Service</span><span class="o">&lt;</span><span class="n">std_srvs</span><span class="o">::</span><span class="n">srv</span><span class="o">::</span><span class="n">Trigger</span><span class="o">&gt;::</span><span class="n">SharedPtr</span><span class="w"> </span><span class="n">ceiling_robot_move_home_srv_</span><span class="p">;</span>
-<span class="linenos"> 22</span>
-<span class="linenos"> 23</span><span class="c1">// Service Callbacks</span>
-<span class="linenos"> 24</span><span class="kt">void</span><span class="w"> </span><span class="nf">FloorRobotMoveHome</span><span class="p">(</span>
-<span class="linenos"> 25</span><span class="w">    </span><span class="n">std_srvs</span><span class="o">::</span><span class="n">srv</span><span class="o">::</span><span class="n">Trigger</span><span class="o">::</span><span class="n">Request</span><span class="o">::</span><span class="n">SharedPtr</span><span class="w"> </span><span class="n">req</span><span class="p">,</span>
-<span class="linenos"> 26</span><span class="w">    </span><span class="n">std_srvs</span><span class="o">::</span><span class="n">srv</span><span class="o">::</span><span class="n">Trigger</span><span class="o">::</span><span class="n">Response</span><span class="o">::</span><span class="n">SharedPtr</span><span class="w"> </span><span class="n">res</span><span class="p">);</span>
-<span class="linenos"> 27</span>
-<span class="linenos"> 28</span><span class="kt">void</span><span class="w"> </span><span class="nf">CeilingRobotMoveHome</span><span class="p">(</span>
-<span class="linenos"> 29</span><span class="w">    </span><span class="n">std_srvs</span><span class="o">::</span><span class="n">srv</span><span class="o">::</span><span class="n">Trigger</span><span class="o">::</span><span class="n">Request</span><span class="o">::</span><span class="n">SharedPtr</span><span class="w"> </span><span class="n">req</span><span class="p">,</span>
-<span class="linenos"> 30</span><span class="w">    </span><span class="n">std_srvs</span><span class="o">::</span><span class="n">srv</span><span class="o">::</span><span class="n">Trigger</span><span class="o">::</span><span class="n">Response</span><span class="o">::</span><span class="n">SharedPtr</span><span class="w"> </span><span class="n">res</span><span class="p">);</span>
-<span class="linenos"> 31</span><span class="p">};</span>
-<span class="linenos"> 32</span>
-<span class="linenos"> 33</span><span class="n">RobotCommander</span><span class="o">::</span><span class="n">RobotCommander</span><span class="p">()</span>
-<span class="linenos"> 34</span><span class="o">:</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="s">&quot;robot_commander&quot;</span><span class="p">),</span>
-<span class="linenos"> 35</span><span class="n">floor_robot_</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">rclcpp</span><span class="o">::</span><span class="n">Node</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="k">this</span><span class="p">)),</span><span class="w"> </span><span class="s">&quot;floor_robot&quot;</span><span class="p">),</span>
-<span class="linenos"> 36</span><span class="n">ceiling_robot_</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">rclcpp</span><span class="o">::</span><span class="n">Node</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="k">this</span><span class="p">)),</span><span class="w"> </span><span class="s">&quot;ceiling_robot&quot;</span><span class="p">)</span>
-<span class="linenos"> 37</span><span class="p">{</span>
-<span class="linenos"> 38</span><span class="c1">// Use upper joint velocity and acceleration limits</span>
-<span class="linenos"> 39</span><span class="n">floor_robot_</span><span class="p">.</span><span class="n">setMaxAccelerationScalingFactor</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>
-<span class="linenos"> 40</span><span class="n">floor_robot_</span><span class="p">.</span><span class="n">setMaxVelocityScalingFactor</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>
-<span class="linenos"> 41</span>
-<span class="linenos"> 42</span><span class="n">ceiling_robot_</span><span class="p">.</span><span class="n">setMaxAccelerationScalingFactor</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>
-<span class="linenos"> 43</span><span class="n">ceiling_robot_</span><span class="p">.</span><span class="n">setMaxVelocityScalingFactor</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>
-<span class="linenos"> 44</span>
-<span class="linenos"> 45</span><span class="c1">// Register services</span>
-<span class="linenos"> 46</span><span class="n">floor_robot_move_home_srv_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">create_service</span><span class="o">&lt;</span><span class="n">std_srvs</span><span class="o">::</span><span class="n">srv</span><span class="o">::</span><span class="n">Trigger</span><span class="o">&gt;</span><span class="p">(</span>
-<span class="linenos"> 47</span><span class="w">    </span><span class="s">&quot;/competitor/move_floor_robot_home&quot;</span><span class="p">,</span>
-<span class="linenos"> 48</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">bind</span><span class="p">(</span>
-<span class="linenos"> 49</span><span class="w">    </span><span class="o">&amp;</span><span class="n">RobotCommander</span><span class="o">::</span><span class="n">FloorRobotMoveHome</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">,</span>
-<span class="linenos"> 50</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">placeholders</span><span class="o">::</span><span class="n">_1</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">placeholders</span><span class="o">::</span><span class="n">_2</span><span class="p">));</span>
-<span class="linenos"> 51</span>
-<span class="linenos"> 52</span><span class="n">ceiling_robot_move_home_srv_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">create_service</span><span class="o">&lt;</span><span class="n">std_srvs</span><span class="o">::</span><span class="n">srv</span><span class="o">::</span><span class="n">Trigger</span><span class="o">&gt;</span><span class="p">(</span>
-<span class="linenos"> 53</span><span class="w">    </span><span class="s">&quot;/competitor/move_ceiling_robot_home&quot;</span><span class="p">,</span>
-<span class="linenos"> 54</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">bind</span><span class="p">(</span>
-<span class="linenos"> 55</span><span class="w">    </span><span class="o">&amp;</span><span class="n">RobotCommander</span><span class="o">::</span><span class="n">CeilingRobotMoveHome</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">,</span>
-<span class="linenos"> 56</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">placeholders</span><span class="o">::</span><span class="n">_1</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">placeholders</span><span class="o">::</span><span class="n">_2</span><span class="p">));</span>
-<span class="linenos"> 57</span><span class="p">}</span>
-<span class="linenos"> 58</span>
-<span class="linenos"> 59</span><span class="n">RobotCommander</span><span class="o">::~</span><span class="n">RobotCommander</span><span class="p">()</span>
-<span class="linenos"> 60</span><span class="p">{</span>
-<span class="linenos"> 61</span><span class="w">    </span><span class="n">floor_robot_</span><span class="p">.</span><span class="o">~</span><span class="n">MoveGroupInterface</span><span class="p">();</span>
-<span class="linenos"> 62</span><span class="w">    </span><span class="n">ceiling_robot_</span><span class="p">.</span><span class="o">~</span><span class="n">MoveGroupInterface</span><span class="p">();</span>
-<span class="linenos"> 63</span><span class="p">}</span>
-<span class="linenos"> 64</span>
-<span class="linenos"> 65</span><span class="kt">void</span><span class="w"> </span><span class="n">RobotCommander</span><span class="o">::</span><span class="n">FloorRobotMoveHome</span><span class="p">(</span>
-<span class="linenos"> 66</span><span class="w">    </span><span class="n">std_srvs</span><span class="o">::</span><span class="n">srv</span><span class="o">::</span><span class="n">Trigger</span><span class="o">::</span><span class="n">Request</span><span class="o">::</span><span class="n">SharedPtr</span><span class="w"> </span><span class="n">req</span><span class="p">,</span>
-<span class="linenos"> 67</span><span class="w">    </span><span class="n">std_srvs</span><span class="o">::</span><span class="n">srv</span><span class="o">::</span><span class="n">Trigger</span><span class="o">::</span><span class="n">Response</span><span class="o">::</span><span class="n">SharedPtr</span><span class="w"> </span><span class="n">res</span><span class="p">)</span>
-<span class="linenos"> 68</span><span class="p">{</span>
-<span class="linenos"> 69</span><span class="w">    </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">req</span><span class="p">;</span><span class="w"> </span><span class="c1">// remove unused parameter warning</span>
-<span class="linenos"> 70</span><span class="w">    </span><span class="n">floor_robot_</span><span class="p">.</span><span class="n">setNamedTarget</span><span class="p">(</span><span class="s">&quot;home&quot;</span><span class="p">);</span>
-<span class="linenos"> 71</span>
-<span class="linenos"> 72</span><span class="w">    </span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveGroupInterface</span><span class="o">::</span><span class="n">Plan</span><span class="w"> </span><span class="n">plan</span><span class="p">;</span>
-<span class="linenos"> 73</span><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="n">floor_robot_</span><span class="p">.</span><span class="n">plan</span><span class="p">(</span><span class="n">plan</span><span class="p">));</span>
-<span class="linenos"> 74</span>
-<span class="linenos"> 75</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">success</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 76</span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="n">floor_robot_</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="n">plan</span><span class="p">)))</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 77</span><span class="w">            </span><span class="n">res</span><span class="o">-&gt;</span><span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
-<span class="linenos"> 78</span><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 79</span><span class="w">            </span><span class="n">res</span><span class="o">-&gt;</span><span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
-<span class="linenos"> 80</span><span class="w">            </span><span class="n">res</span><span class="o">-&gt;</span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Trajectory execution failed&quot;</span><span class="p">;</span>
-<span class="linenos"> 81</span><span class="w">        </span><span class="p">}</span>
-<span class="linenos"> 82</span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 83</span><span class="w">        </span><span class="n">res</span><span class="o">-&gt;</span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Unable to generate trajectory&quot;</span><span class="p">;</span>
-<span class="linenos"> 84</span><span class="w">        </span><span class="n">res</span><span class="o">-&gt;</span><span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
-<span class="linenos"> 85</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos"> 86</span><span class="p">}</span>
-<span class="linenos"> 87</span>
-<span class="linenos"> 88</span><span class="kt">void</span><span class="w"> </span><span class="n">RobotCommander</span><span class="o">::</span><span class="n">CeilingRobotMoveHome</span><span class="p">(</span>
-<span class="linenos"> 89</span><span class="w">    </span><span class="n">std_srvs</span><span class="o">::</span><span class="n">srv</span><span class="o">::</span><span class="n">Trigger</span><span class="o">::</span><span class="n">Request</span><span class="o">::</span><span class="n">SharedPtr</span><span class="w"> </span><span class="n">req</span><span class="p">,</span>
-<span class="linenos"> 90</span><span class="w">    </span><span class="n">std_srvs</span><span class="o">::</span><span class="n">srv</span><span class="o">::</span><span class="n">Trigger</span><span class="o">::</span><span class="n">Response</span><span class="o">::</span><span class="n">SharedPtr</span><span class="w"> </span><span class="n">res</span><span class="p">)</span>
-<span class="linenos"> 91</span><span class="p">{</span>
-<span class="linenos"> 92</span><span class="w">    </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">req</span><span class="p">;</span><span class="w"> </span><span class="c1">// remove unused parameter warning</span>
-<span class="linenos"> 93</span><span class="w">    </span><span class="n">ceiling_robot_</span><span class="p">.</span><span class="n">setNamedTarget</span><span class="p">(</span><span class="s">&quot;home&quot;</span><span class="p">);</span>
-<span class="linenos"> 94</span>
-<span class="linenos"> 95</span><span class="w">    </span><span class="n">moveit</span><span class="o">::</span><span class="n">planning_interface</span><span class="o">::</span><span class="n">MoveGroupInterface</span><span class="o">::</span><span class="n">Plan</span><span class="w"> </span><span class="n">plan</span><span class="p">;</span>
-<span class="linenos"> 96</span><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ceiling_robot_</span><span class="p">.</span><span class="n">plan</span><span class="p">(</span><span class="n">plan</span><span class="p">));</span>
-<span class="linenos"> 97</span>
-<span class="linenos"> 98</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">success</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 99</span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ceiling_robot_</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="n">plan</span><span class="p">)))</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">100</span><span class="w">            </span><span class="n">res</span><span class="o">-&gt;</span><span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
-<span class="linenos">101</span><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">102</span><span class="w">            </span><span class="n">res</span><span class="o">-&gt;</span><span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
-<span class="linenos">103</span><span class="w">            </span><span class="n">res</span><span class="o">-&gt;</span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Trajectory execution failed&quot;</span><span class="p">;</span>
-<span class="linenos">104</span><span class="w">        </span><span class="p">}</span>
-<span class="linenos">105</span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">106</span><span class="w">        </span><span class="n">res</span><span class="o">-&gt;</span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Unable to generate trajectory&quot;</span><span class="p">;</span>
-<span class="linenos">107</span><span class="w">        </span><span class="n">res</span><span class="o">-&gt;</span><span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
-<span class="linenos">108</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos">109</span><span class="p">}</span>
-<span class="linenos">110</span>
-<span class="linenos">111</span><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
-<span class="linenos">112</span><span class="p">{</span>
-<span class="linenos">113</span><span class="w">    </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">);</span>
-<span class="linenos">114</span><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">robot_commander</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">RobotCommander</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="linenos">115</span><span class="w">    </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">spin</span><span class="p">(</span><span class="n">robot_commander</span><span class="p">);</span>
-<span class="linenos">116</span><span class="w">    </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">shutdown</span><span class="p">();</span>
-<span class="linenos">117</span><span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<p>The robot commander node is a C++ node which initializes the <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">MoveGroupInterface</span></code> for the floor and ceiling robots.</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>The move group <code class="docutils literal notranslate"><span class="pre">floor_robot</span></code> is used for the floor robot. This group allows control of the arm and its displacement on the linear rail.</p></li>
-<li><p>The move group <code class="docutils literal notranslate"><span class="pre">ceiling_robot</span></code> is used for the ceiling robot. This group allows control of the arm and the torso of the robot on the rails.</p></li>
-</ul>
-</div></blockquote>
-<p>The node also hosts two services:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><span class="rosservice">/competitor/move_floor_robot_home</span> calls the method <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">FloorRobotMoveHome</span><span class="p">()</span></code> which moves the floor robot to its home position.</p></li>
-<li><p><span class="rosservice">/competitor/move_ceiling_robot_home</span> calls the method <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">CeilingRobotMoveHome</span><span class="p">()</span></code> which moves the ceiling robot to its home position.</p></li>
-</ul>
-</div></blockquote>
-</section>
-<section id="launch-file">
-<h3>Launch File<a class="headerlink" href="#launch-file" title="Permalink to this heading"></a></h3>
-<p>The RobotCommander node and the MoveIt node is started using the launch file shown in  <a class="hxr-hoverxref hxr-tooltip reference internal" href="#robot-commander-launch-file"><span class="std std-numref">Listing 55</span></a>. Nodes that use the MoveGroupInterface need to be launched with specific ROS parameters. A python function in the ariac_moveit_config module <code class="code highlight python docutils literal highlight-python"><span class="n">generate_parameters</span></code> has been added to easily create those parameters. The launch file <code class="file docutils literal notranslate"><span class="pre">ariac_robots_moveit.launch.py</span></code> is also called to start the move group node.</p>
-<div class="literal-block-wrapper docutils container" id="robot-commander-launch-file">
-<div class="code-block-caption"><span class="caption-number">Listing 55 </span><span class="caption-text"><code class="file docutils literal notranslate"><span class="pre">robot_commander.launch.py</span></code></span><a class="headerlink" href="#robot-commander-launch-file" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">launch</span> <span class="kn">import</span> <span class="n">LaunchDescription</span>
-<span class="linenos"> 2</span><span class="kn">from</span> <span class="nn">launch_ros.actions</span> <span class="kn">import</span> <span class="n">Node</span>
-<span class="linenos"> 3</span><span class="kn">from</span> <span class="nn">launch.launch_description_sources</span> <span class="kn">import</span> <span class="n">PythonLaunchDescriptionSource</span>
-<span class="linenos"> 4</span><span class="kn">from</span> <span class="nn">launch.actions</span> <span class="kn">import</span> <span class="n">IncludeLaunchDescription</span>
-<span class="linenos"> 5</span><span class="kn">from</span> <span class="nn">launch_ros.substitutions</span> <span class="kn">import</span> <span class="n">FindPackageShare</span>
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="kn">from</span> <span class="nn">ariac_moveit_config.parameters</span> <span class="kn">import</span> <span class="n">generate_parameters</span>
-<span class="linenos"> 8</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="k">def</span> <span class="nf">generate_launch_description</span><span class="p">():</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span>    <span class="c1"># Robot Commander Node</span>
-<span class="linenos">13</span>    <span class="n">robot_commander</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span>
-<span class="linenos">14</span>        <span class="n">package</span><span class="o">=</span><span class="s2">&quot;ariac_tutorials&quot;</span><span class="p">,</span>
-<span class="linenos">15</span>        <span class="n">executable</span><span class="o">=</span><span class="s2">&quot;robot_commander&quot;</span><span class="p">,</span>
-<span class="linenos">16</span>        <span class="n">output</span><span class="o">=</span><span class="s2">&quot;screen&quot;</span><span class="p">,</span>
-<span class="linenos">17</span>        <span class="n">parameters</span><span class="o">=</span><span class="n">generate_parameters</span><span class="p">()</span>
-<span class="linenos">18</span>    <span class="p">)</span>
-<span class="linenos">19</span>
-<span class="linenos">20</span>    <span class="c1"># MoveIt node</span>
-<span class="linenos">21</span>    <span class="n">moveit</span> <span class="o">=</span> <span class="n">IncludeLaunchDescription</span><span class="p">(</span>
-<span class="linenos">22</span>        <span class="n">PythonLaunchDescriptionSource</span><span class="p">(</span>
-<span class="linenos">23</span>            <span class="p">[</span><span class="n">FindPackageShare</span><span class="p">(</span><span class="s2">&quot;ariac_moveit_config&quot;</span><span class="p">),</span> <span class="s2">&quot;/launch&quot;</span><span class="p">,</span> <span class="s2">&quot;/ariac_robots_moveit.launch.py&quot;</span><span class="p">]</span>
-<span class="linenos">24</span>        <span class="p">)</span>
-<span class="linenos">25</span>    <span class="p">)</span>
-<span class="linenos">26</span>
-<span class="linenos">27</span>    <span class="k">return</span> <span class="n">LaunchDescription</span><span class="p">([</span><span class="n">robot_commander</span><span class="p">,</span> <span class="n">moveit</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</section>
-<section id="executable">
-<h3>Executable<a class="headerlink" href="#executable" title="Permalink to this heading"></a></h3>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Listing 56 </span><span class="caption-text"><code class="file docutils literal notranslate"><span class="pre">tutorial_7.py</span></code></span><a class="headerlink" href="#id3" title="Permalink to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
-<span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">To test this script, run the following commands in separate terminals:</span>
-
-<span class="sd">- ros2 launch ariac_tutorials robot_commander.launch.py</span>
-<span class="sd">- ros2 run ariac_tutorials move_robots.py</span>
-<span class="sd">- ros2 launch ariac_gazebo ariac.launch.py competitor_pkg:=ariac_tutorials trial_name:=tutorials</span>
-<span class="sd">&#39;&#39;&#39;</span>
-
-<span class="kn">import</span> <span class="nn">rclpy</span>
-<span class="kn">from</span> <span class="nn">ariac_tutorials.competition_interface</span> <span class="kn">import</span> <span class="n">CompetitionInterface</span>
-
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="n">rclpy</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">)</span>
-    <span class="n">interface</span> <span class="o">=</span> <span class="n">CompetitionInterface</span><span class="p">()</span>
-    <span class="n">interface</span><span class="o">.</span><span class="n">start_competition</span><span class="p">()</span>
-
-    <span class="n">interface</span><span class="o">.</span><span class="n">move_robot_home</span><span class="p">(</span><span class="s2">&quot;floor_robot&quot;</span><span class="p">)</span>
-    <span class="n">interface</span><span class="o">.</span><span class="n">move_robot_home</span><span class="p">(</span><span class="s2">&quot;ceiling_robot&quot;</span><span class="p">)</span>
-
-    <span class="n">interface</span><span class="o">.</span><span class="n">destroy_node</span><span class="p">()</span>
-    <span class="n">rclpy</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<section id="id2">
-<h4>Code Explanation<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h4>
-<p>This executable does the following:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Initialize the ROS client library.</p></li>
-<li><p>Create an instance of the class <code class="code highlight python docutils literal highlight-python"><span class="n">CompetitionInterface</span></code> as a ROS node.</p></li>
-<li><p>Start the competition.</p></li>
-<li><p>The call to <code class="code highlight python docutils literal highlight-python"><span class="n">move_robot_home</span><span class="p">(</span><span class="s2">&quot;floor_robot&quot;</span><span class="p">)</span></code> sends a service request to <span class="rosservice">/competitor/move_floor_robot_home</span>.</p></li>
-<li><p>The call to <code class="code highlight python docutils literal highlight-python"><span class="n">move_robot_home</span><span class="p">(</span><span class="s2">&quot;ceiling_robot&quot;</span><span class="p">)</span></code> sends a service request to <span class="rosservice">/competitor/move_ceiling_robot_home</span></p></li>
-</ul>
-</div></blockquote>
-</section>
-</section>
-<section id="build-instructions">
-<h3>Build Instructions<a class="headerlink" href="#build-instructions" title="Permalink to this heading"></a></h3>
-<p>Updates and additions that are specific to <span class="tuto">Tutorial 7</span>  are highlighted in the <code class="file docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> below.</p>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-number">Listing 57 </span><span class="caption-text"><code class="file docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code></span><a class="headerlink" href="#id4" title="Permalink to this code"></a></div>
-<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span><span class="w"> </span><span class="s">3.8</span><span class="p">)</span>
-<span class="linenos"> 2</span><span class="nb">project</span><span class="p">(</span><span class="s">ariac_tutorials</span><span class="p">)</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="nb">if</span><span class="p">(</span><span class="s">CMAKE_COMPILER_IS_GNUCXX</span><span class="w"> </span><span class="s">OR</span><span class="w"> </span><span class="s">CMAKE_CXX_COMPILER_ID</span><span class="w"> </span><span class="s">MATCHES</span><span class="w"> </span><span class="s2">&quot;Clang&quot;</span><span class="p">)</span>
-<span class="linenos"> 5</span><span class="nb">add_compile_options</span><span class="p">(</span><span class="s">-Wall</span><span class="w"> </span><span class="s">-Wextra</span><span class="w"> </span><span class="s">-Wpedantic</span><span class="p">)</span>
-<span class="linenos"> 6</span><span class="nb">endif</span><span class="p">()</span>
-<span class="linenos"> 7</span>
-<span class="linenos"> 8</span><span class="nb">find_package</span><span class="p">(</span><span class="s">ament_cmake</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
-<span class="linenos"> 9</span><span class="nb">find_package</span><span class="p">(</span><span class="s">ament_cmake_python</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
-<span class="linenos">10</span><span class="nb">find_package</span><span class="p">(</span><span class="s">rclcpp</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
-<span class="linenos">11</span><span class="nb">find_package</span><span class="p">(</span><span class="s">rclpy</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
-<span class="linenos">12</span><span class="nb">find_package</span><span class="p">(</span><span class="s">ariac_msgs</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
-<span class="linenos">13</span><span class="nb">find_package</span><span class="p">(</span><span class="s">orocos_kdl</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
-<span class="hll"><span class="linenos">14</span><span class="nb">find_package</span><span class="p">(</span><span class="s">moveit_ros_planning_interface</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
-</span><span class="linenos">15</span>
-<span class="linenos">16</span><span class="c"># Install the config directory to the package share directory</span>
-<span class="linenos">17</span><span class="nb">install</span><span class="p">(</span><span class="s">DIRECTORY</span>
-<span class="linenos">18</span><span class="s">config</span>
-<span class="linenos">19</span><span class="s">DESTINATION</span><span class="w"> </span><span class="s">share/</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span>
-<span class="linenos">20</span><span class="p">)</span>
-<span class="linenos">21</span>
-<span class="linenos">22</span><span class="c"># Install Python modules</span>
-<span class="linenos">23</span><span class="nb">ament_python_install_package</span><span class="p">(</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span><span class="w"> </span><span class="s">SCRIPTS_DESTINATION</span><span class="w"> </span><span class="s">lib/</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span><span class="p">)</span>
-<span class="linenos">24</span>
-<span class="linenos">25</span><span class="c"># Install Python executables</span>
-<span class="linenos">26</span><span class="nb">install</span><span class="p">(</span><span class="s">PROGRAMS</span>
-<span class="linenos">27</span><span class="s">scripts/tutorial_1.py</span>
-<span class="linenos">28</span><span class="s">scripts/tutorial_2.py</span>
-<span class="linenos">29</span><span class="s">scripts/tutorial_3.py</span>
-<span class="linenos">30</span><span class="s">scripts/tutorial_4.py</span>
-<span class="linenos">31</span><span class="s">scripts/tutorial_5.py</span>
-<span class="linenos">32</span><span class="s">scripts/tutorial_6.py</span>
-<span class="hll"><span class="linenos">33</span><span class="s">scripts/tutorial_7.py</span>
-</span><span class="linenos">34</span><span class="s">DESTINATION</span><span class="w"> </span><span class="s">lib/</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span>
-<span class="linenos">35</span><span class="p">)</span>
-<span class="linenos">36</span>
-<span class="linenos">37</span><span class="c"># Install the config directory to the package share directory</span>
-<span class="linenos">38</span><span class="nb">install</span><span class="p">(</span><span class="s">DIRECTORY</span>
-<span class="linenos">39</span><span class="s">config</span>
-<span class="hll"><span class="linenos">40</span><span class="s">launch</span>
-</span><span class="linenos">41</span><span class="s">DESTINATION</span><span class="w"> </span><span class="s">share/</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span>
-<span class="linenos">42</span><span class="p">)</span>
-<span class="linenos">43</span>
-<span class="linenos">44</span><span class="c"># Install C++ executables</span>
-<span class="hll"><span class="linenos">45</span><span class="nb">add_executable</span><span class="p">(</span><span class="s">robot_commander</span>
-</span><span class="hll"><span class="linenos">46</span><span class="s">src/robot_commander.cpp</span><span class="p">)</span>
-</span><span class="linenos">47</span>
-<span class="hll"><span class="linenos">48</span><span class="nb">ament_target_dependencies</span><span class="p">(</span><span class="s">robot_commander</span>
-</span><span class="hll"><span class="linenos">49</span><span class="s">rclcpp</span>
-</span><span class="hll"><span class="linenos">50</span><span class="s">moveit_ros_planning_interface</span>
-</span><span class="hll"><span class="linenos">51</span><span class="s">ariac_msgs</span><span class="p">)</span>
-</span><span class="linenos">52</span>
-<span class="hll"><span class="linenos">53</span><span class="nb">install</span><span class="p">(</span><span class="s">TARGETS</span>
-</span><span class="hll"><span class="linenos">54</span><span class="s">robot_commander</span>
-</span><span class="hll"><span class="linenos">55</span><span class="s">DESTINATION</span><span class="w"> </span><span class="s">lib/</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span><span class="p">)</span>
-</span><span class="linenos">56</span>
-<span class="linenos">57</span>
-<span class="linenos">58</span><span class="nb">ament_package</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</section>
-</section>
-<section id="run-the-executable">
-<h2>Run the Executable<a class="headerlink" href="#run-the-executable" title="Permalink to this heading"></a></h2>
-<ul>
-<li><p>In <em>terminal 1</em>, run the following commands:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/ariac_ws
-.<span class="w"> </span>install/setup.bash
-ros2<span class="w"> </span>launch<span class="w"> </span>ariac_tutorials<span class="w"> </span>robot_commander.launch.py
-</pre></div>
-</div>
-<blockquote class="highlights">
-<div><p><em>The launch command starts the robot commander node and move it.</em></p>
-</div></blockquote>
-</div></blockquote>
-</li>
-<li><p>In <em>terminal 2</em>, run the following commands:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/ariac_ws
-.<span class="w"> </span>install/setup.bash
-ros2<span class="w"> </span>run<span class="w"> </span>ariac_tutorials<span class="w"> </span>tutorial_7.py
-</pre></div>
-</div>
-<blockquote class="highlights">
-<div><p><em>The last command starts the competition interface node and sends the service requests to move the robots to their home positions.</em></p>
-</div></blockquote>
-</div></blockquote>
-</li>
-<li><p>In <em>terminal 3</em>, run the following commands:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/ariac_ws
-colcon<span class="w"> </span>build
-.<span class="w"> </span>install/setup.bash
-ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gazebo<span class="w"> </span>ariac.launch.py<span class="w"> </span>trial_name:<span class="o">=</span>tutorial<span class="w"> </span>competitor_pkg:<span class="o">=</span>ariac_tutorials
-</pre></div>
-</div>
-<blockquote class="highlights">
-<div><p><em>The last command starts the environment.</em></p>
-</div></blockquote>
-</div></blockquote>
-</li>
-</ul>
-</section>
-<section id="outputs">
-<h2>Outputs<a class="headerlink" href="#outputs" title="Permalink to this heading"></a></h2>
-<p>The output of the above commands show both robots moving to their home positions in Gazebo.</p>
-<figure class="align-center">
-<img alt="../_images/tutorial7_output.jpg" src="../_images/tutorial7_output.jpg" />
-</figure>
-</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="tutorial_6.html" class="btn btn-neutral float-left" title="Tutorial 6: Enable/Disable a Gripper" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="tutorial_8.html" class="btn btn-neutral float-right" title="Tutorial 8: Move Robots with ROS2 Actions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="tutorial_6.html" class="btn btn-neutral float-left" title="Tutorial 6: Picking a part" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorial_8.html" class="btn btn-neutral float-right" title="Tutorial 8: Completing a Kitting Task" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
@@ -1249,7 +304,7 @@ ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gazebo<span clas
   </div>
   <script>
       jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
+          SphinxRtdTheme.Navigation.enable(false);
       });
   </script>
 

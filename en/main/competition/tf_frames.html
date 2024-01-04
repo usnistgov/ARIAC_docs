@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TF Frames &mdash; ARIAC_docs 1.0 documentation</title>
+  <title>TF Frames &mdash; ARIAC Docs 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
       <link rel="stylesheet" type="text/css" href="../_static/ntd2d.css?v=592263c6" />
       <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.custom.css" />
@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/css/micromodal.css" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../_static/twemoji.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=62faf5e4" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=b115e7bf" />
       <link rel="stylesheet" type="text/css" href="../_static/css/hack.css?v=c2ad982c" />
 
   
@@ -42,8 +42,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Scoring" href="scoring.html" />
-    <link rel="prev" title="Agility Challenges" href="challenges.html" />
+    <link rel="next" title="Automated Evaluation Overview" href="../evaluation/overview.html" />
+    <link rel="prev" title="ROS Communication" href="ros_communication.html" />
    
 
   <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
@@ -56,15 +56,16 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
 
           
           
           <a href="../index.html" class="icon icon-home">
-            ARIAC_docs
+            ARIAC Docs
+              <img src="../_static/nist_el_logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.1.0
+                2024.1.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -76,49 +77,177 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">⏩ Getting Started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/updates.html">Updates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installing ARIAC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/registering.html">Registering for the Competition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/installation.html#configuring-the-ariac-environment">Configuring the ARIAC Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/installation.html#starting-the-simulation">Starting the Simulation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/installation.html#default">Default</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/installation.html#launch-options">Launch Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/installation.html#running-the-test-competitor">Running the Test Competitor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/changelog.html#id2">2024.1.0, (2023-12-15)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/changelog.html#updates-relevant-to-competitors">Updates relevant to competitors:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/changelog.html#other-updates">Other Updates</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/registering.html">Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/events.html">Calendar of Events</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">⏩ Competition Specifications</span></p>
+<p class="caption" role="heading"><span class="caption-text">⏩ Competition</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview of the Competition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="orders.html">Conditions, Orders, and Tasks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="trials.html">Configuration Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ros_communication.html">ROS Communication Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="challenges.html">Agility Challenges</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">TF Frames</a></li>
-<li class="toctree-l1"><a class="reference internal" href="scoring.html">Scoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Competition Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#start-up-commands">Start-Up Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#program-flow">Program Flow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#parts">Parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#kit-trays">Kit Trays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#robots">Robots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#floor-robot">Floor Robot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#ceiling-robot">Ceiling Robot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#automated-guided-vehicles-agvs">Automated Guided Vehicles (AGVs)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#part-locations">Part Locations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#part-bins">Part Bins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#conveyor-belt">Conveyor Belt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#agv-parts">AGV Parts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#kit-tray-tool-changer-station">Kit Tray/Tool Changer Station</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#assembly-stations">Assembly Stations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#warehouse">Warehouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#part-disposal-bins">Part Disposal Bins</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="orders.html">Orders</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="orders.html#manufacturing-tasks">Manufacturing Tasks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orders.html#kitting-task">Kitting Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="orders.html#assembly-task">Assembly Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="orders.html#combined-task">Combined Task</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="orders.html#conditions">Conditions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="challenges.html">Agility Challenges</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="challenges.html#faulty-parts-challenge">Faulty Parts Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="challenges.html#faulty-part-detection">Faulty Part Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="challenges.html#flipped-parts-challenge">Flipped Parts Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="challenges.html#flipped-parts-setup">Flipped Parts Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="challenges.html#flipped-part-detection">Flipped Part Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="challenges.html#dropped-part-challenge">Dropped Part Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="challenges.html#dropped-part-detection">Dropped Part Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="challenges.html#robot-malfunction-challenge">Robot Malfunction Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="challenges.html#robot-malfunction-detection">Robot Malfunction Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="challenges.html#sensor-blackout-challenge">Sensor Blackout Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="challenges.html#sensor-blackout-detection">Sensor Blackout Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="challenges.html#high-priority-order-challenge">High Priority Order Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="challenges.html#high-priority-order-detection">High Priority Order Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="challenges.html#insufficient-parts-challenge">Insufficient Parts Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="challenges.html#insufficient-parts-detection">Insufficient Parts Detection</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sensors.html#sensor-costs">Sensor Costs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensors.html#static-sensors">Static sensors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#breakbeam-sensor">Breakbeam sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#proximity-sensor">Proximity sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#laser-profiler">Laser profiler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#lidar">Lidar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#rgb-camera">RGB camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#rgbd-camera">RGBD camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#basic-logical-camera">Basic logical camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#advanced-logical-camera">Advanced logical camera</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sensors.html#robot-cameras">Robot Cameras</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration_files.html">Configuration Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuration_files.html#sensor-configuration">Sensor Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration_files.html#trial-configuration">Trial Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuration_files.html#fields">Fields</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ros_communication.html">ROS Communication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ros_communication.html#competition-topics">Competition Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_communication.html#sensor-topics">Sensor Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_communication.html#services">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_communication.html#message-definitions">Message Definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_communication.html#service-definitions">Service Definitions</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">TF Frames</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#list-of-tf-frames">List of TF Frames</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Evaluation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/overview.html">Automated Evaluation Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/overview.html#instructions-for-creating-the-configuration-file">Instructions for creating the configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/overview.html#instructions-for-testing-the-evaluation-system">Instructions for Testing the Evaluation System</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/scoring.html">Scoring</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#cost-factor">Cost Factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#efficiency-factor">Efficiency Factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#completion-score">Completion Score</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#kitting-task-score">Kitting Task Score</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#assembly-task-score">Assembly Task Score</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#combined-task-score">Combined Task Score</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#fianl-completion-score">Fianl Completion Score</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#trial-score">Trial Score</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/launch_file_setup.html">Launch File Setup</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">⏩ Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">Introduction to Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_1.html">Tutorial 1: Create a Competition Package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_2.html">Tutorial 2: Read Data from a Break Beam Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_3.html">Tutorial 3: Read Data from an Advanced Logical Camera</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_4.html">Tutorial 4: Read an Order</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_5.html">Tutorial 5: Move AGVs to Stations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_6.html">Tutorial 6: Enable/Disable a Gripper</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_7.html">Tutorial 7: Move Robots with MoveIt</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_8.html">Tutorial 8: Move Robots with ROS2 Actions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">⏩ Automated Evaluation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../automated_evaluation/automated_evaluation_overview.html">Automated Evaluation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../automated_evaluation/competition_launch.html">Launch File Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_1.html">Tutorial 1: Creating a competition package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_2.html">Tutorial 2: Reading data from a break beam sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_3.html">Tutorial 3: Reading data from a RGBD camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_4.html">Tutorial 4: Reading an order</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_5.html">Tutorial 5: Moving AGVs between stations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_6.html">Tutorial 6: Picking a part</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_7.html">Tutorial 7: Picking and placing a kit tray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_8.html">Tutorial 8: Completing a Kitting Task</a></li>
 </ul>
 
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">ARIAC_docs</a>
+          <a href="../index.html">ARIAC Docs</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -128,160 +257,178 @@
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">TF Frames</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/competition/tf_frames.md.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/competition/tf_frames.rst.txt" rel="nofollow"> View page source</a>
       </li>
-  </ul>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="ros_communication.html" class="btn btn-neutral float-left" title="ROS Communication" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../evaluation/overview.html" class="btn btn-neutral float-right" title="Automated Evaluation Overview" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="tf-frames">
-<h1>TF Frames<a class="headerlink" href="#tf-frames" title="Permalink to this heading"></a></h1>
-<p><img alt="" src="../_images/FRAMES.png" /></p>
-<p>This section describes the TF frames used in the competition. The TF frames are used to describe the position and orientation of the different objects in the competition. After starting the environment, one can visualize the TF tree with the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/tmp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>ros2<span class="w"> </span>run<span class="w"> </span>tf2_tools<span class="w"> </span>view_frames<span class="w">  </span><span class="o">&amp;&amp;</span><span class="w"> </span>evince<span class="w"> </span>frames.pdf
+  <blockquote>
+<div></div></blockquote>
+<section id="tf-frames">
+<span id="id1"></span><h1>TF Frames<a class="headerlink" href="#tf-frames" title="Permalink to this heading"></a></h1>
+<a class="reference internal image-reference" href="../_images/tf_frames.png"><img alt="TF Frames for the ARIAC environment" src="../_images/tf_frames.png" style="width: 100%;" /></a>
+<p>The <a class="reference external" href="https://docs.ros.org/en/iron/Concepts/Intermediate/About-Tf2.html">TF2 transform library</a> is used in ARIAC to describe the transformation between all the relevant coordinates systems in the environment. The transformations describe the positions and orientations of various frames relative to a parent frame.</p>
+<p>To visualize the TF tree:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Install the rqt-tf-tree package</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-iron-rqt-tf-tree
 </pre></div>
 </div>
-<p>A PDF file containing the TF frames is also available <a class="reference download internal" download="" href="../_downloads/cd4bf926119d6cd9ae4aefa2ecd6b94a/frames.pdf"><span class="xref download myst">here</span></a>. A summary of the TF frames used in the competition is provided below:</p>
-<ul class="simple">
-<li><p><strong>World</strong>: The <code class="docutils literal notranslate"><span class="pre">world</span></code> frame is the root frame of the TF tree. It is located at the origin of the competition arena.</p></li>
-<li><p><strong>AGV Trays</strong>: Frames for the AGV trays  are located at the origin of the trays. The frames are named as <code class="docutils literal notranslate"><span class="pre">agvX_tray</span></code> where <code class="docutils literal notranslate"><span class="pre">X</span></code> is the agv number.</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    world
-    └─── agv1_track
-    |    |
-    |    └─── agv1_base
-    |         |
-    |         └─── agv1_tray
-    └─── agv2_track
-    |    |
-    |    └─── agv2_base
-    |         |
-    |         └─── agv2_tray
-    └─── agv3_track
-    |    |
-    |    └─── agv3_base
-    |         |
-    |         └─── agv3_tray
-    └─── agv4_track
-         |
-         └─── agv4_base
-              |
-              └─── agv4_tray
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Run the rqt_tf_tree node</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>rqt_tf_tree<span class="w"> </span>rqt_tf_tree
 </pre></div>
 </div>
-<ul class="simple">
-<li><p><strong>Robots</strong>: Frames of the robots are provided in the TF tree.</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    world
-    └─── long_rail_1 (frames for the ceiling robot)
-    |    |
-    |    └─── ...
-    └─── slide_bar (frames for the floor robot)
-         |
-         └─── ...
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><strong>Cameras</strong>: Frames for the cameras and sensors defined in the sensor configuration file are published on the TF tree. <strong>Note</strong>: In previous versions of ARIAC parts detected by cameras were published on the TF tree. This is no longer the case. The TF frames are only used to describe the position and orientation of the cameras and sensors. Competitors are expected to subscribe to the topics provided by the cameras and sensors to get the information about the parts.</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    world
-    └─── right_bins_camera_frame
-    |
-    └─── left_bins_camera_frame
-    | 
-    └─── ...
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><strong>Bins</strong>: Frames for the bins are located at the origin of the bins. The frames are named as <code class="docutils literal notranslate"><span class="pre">binX_frame</span></code> where <code class="docutils literal notranslate"><span class="pre">X</span></code> is the bin number.</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    world
-    └─── bin1_frame
-    |
-    └─── bin2_frame
-    |
-    └─── bin3_frame
-    |
-    └─── bin4_frame
-    |
-    └─── bin5_frame
-    |
-    └─── bin6_frame
-    |
-    └─── bin7_frame
-    |
-    └─── bin8_frame
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><strong>Inserts</strong>: Frames for the inserts are located at the origin of the inserts. The frames are named as <code class="docutils literal notranslate"><span class="pre">asX_insert_frame</span></code> where <code class="docutils literal notranslate"><span class="pre">X</span></code> is the assembly station number. These frames are useful for assembly and combined tasks.</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    world
-    └─── as1_table_frame
-    |    |
-    |    └─── as1_insert_frame
-    |
-    └─── as2_table_frame
-    |    |
-    |    └─── as2_insert_frame
-    |
-    └─── as3_table_frame
-    |    |
-    |    └─── as3_insert_frame
-    |
-    └─── as4_table_frame
-         |
-         └─── as4_insert_frame
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><strong>Tray/Tool Changer Tables</strong>: Frames for the tray tables are  named as <code class="docutils literal notranslate"><span class="pre">ktsX_table_frame</span></code> where <code class="docutils literal notranslate"><span class="pre">X</span></code> is the table number. Each <code class="docutils literal notranslate"><span class="pre">ktsX_table_frame</span></code> has two children:</p>
+</div></blockquote>
+</div></blockquote>
+<p>This will show the entire tree with all frames that are published. Many of the frames are static, meaning that they do not change over the course of the simulation. Others, such as the robot links and AGVs will update based on the actual positions.</p>
+<p>For information on how to get the transformations in your ROS node see the <a class="reference external" href="https://docs.ros.org/en/iron/Tutorials/Intermediate/Tf2/Tf2-Main.html">TF2 tutorials</a>.</p>
+<section id="list-of-tf-frames">
+<h2>List of TF Frames<a class="headerlink" href="#list-of-tf-frames" title="Permalink to this heading"></a></h2>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">ktsX_tool_changer_parts_frame</span></code> is the frame of the tool changer for the parts gripper.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ktsX_tool_changer_trays_frame</span></code> is the frame of the tool changer for the trays gripper.</p></li>
+<li><p><strong>World</strong>: The <code class="code tf docutils literal notranslate"><span class="pre">world</span></code> frame is the root frame of the TF tree. It is located at the origin of the competition arena.</p></li>
+<li><p><strong>AGV Trays</strong>: When placing kit trays onto AGVs competitors should use the <code class="code tf docutils literal notranslate"><span class="pre">agv{n}_tray</span></code> frame where n is the agv number.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>world
+└─── agv1_track
+|    |
+|    └─── agv1_base
+|         |
+|         └─── agv1_tray
+└─── agv2_track
+|    |
+|    └─── agv2_base
+|         |
+|         └─── agv2_tray
+└─── agv3_track
+|    |
+|    └─── agv3_base
+|         |
+|         └─── agv3_tray
+└─── agv4_track
+     |
+     └─── agv4_base
+          |
+          └─── agv4_tray
+</pre></div>
+</div>
+</li>
+<li><p><strong>Robots</strong>: The robot state publisher updates the the tf frames for all the robot links</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>world
+└─── long_rail_1 (frames for the ceiling robot)
+|    |
+|    └─── ...
+└─── slide_bar (frames for the floor robot)
+     |
+     └─── ...
+</pre></div>
+</div>
+</li>
+<li><p><strong>Sensors</strong>: A tf frame is published for all user added sensors. The naming convention is <code class="code tf docutils literal notranslate"><span class="pre">{sensor_name}_frame</span></code>. All data reported from the sensor will be relative to this frame. The robot camera’s will also have frames published if enabled. The naming convention is <code class="code tf docutils literal notranslate"><span class="pre">ceiling_robot_camera_link</span></code> and <code class="code tf docutils literal notranslate"><span class="pre">floor_robot_camera_link</span></code>.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>world
+└─── right_bins_camera_frame
+|
+└─── left_bins_camera_frame
+|
+└─── ceiling_robot_camera_link
+</pre></div>
+</div>
+</li>
+<li><p><strong>Bins</strong>: The tf frames for the bins are located in the center of the bin surface. The frames are named as <code class="code tf docutils literal notranslate"><span class="pre">bin{n}_frame</span></code> where n is the bin number.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>world
+└─── bin1_frame
+|
+└─── bin2_frame
+|
+└─── bin3_frame
+|
+└─── bin4_frame
+|
+└─── bin5_frame
+|
+└─── bin6_frame
+|
+└─── bin7_frame
+|
+└─── bin8_frame
+</pre></div>
+</div>
+</li>
+<li><p><strong>Assembly inserts</strong>: The tf frames for the inserts are located at the center of each insert. The frames are named as <code class="code tf docutils literal notranslate"><span class="pre">as{n}_insert_frame</span></code> where n is the assembly station number. All pose data for assembly and combined tasks are relative to these frames. These frames are updated when the assembly stations are rotated.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>world
+└─── as1_table_frame
+|    |
+|    └─── as1_insert_frame
+|
+└─── as2_table_frame
+|    |
+|    └─── as2_insert_frame
+|
+└─── as3_table_frame
+|    |
+|    └─── as3_insert_frame
+|
+└─── as4_table_frame
+     |
+     └─── as4_insert_frame
+</pre></div>
+</div>
+</li>
+<li><p><strong>Kit Tray Stations/Tool Changer</strong>: Each of the kit tray stations have tf frames for the center of the table surface which is useful for picking trays. These are name <code class="code tf docutils literal notranslate"><span class="pre">kts{n}_table_frame</span></code> where n is the table number. TF frames are also provided for the tool changers attached to the table:</p>
+<ul class="simple">
+<li><p><code class="code tf docutils literal notranslate"><span class="pre">kts{n}_tool_changer_parts_frame</span></code> is the frame of the tool changer for the parts gripper, where n is the table number.</p></li>
+<li><p><code class="code tf docutils literal notranslate"><span class="pre">kts{n}_tool_changer_trays_frame</span></code> is the frame of the tool changer for the trays gripper, where n is the table number.</p></li>
 </ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>world
+|
+└─── kts1_table_frame
+|    |
+|    └─── kts1_tool_changer_parts_frame
+|    |
+|    └─── kts1_tool_changer_trays_frame
+|
+└─── kts2_table_frame
+     |
+     └─── kts2_tool_changer_parts_frame
+     |
+     └─── kts2_tool_changer_trays_frame
+</pre></div>
+</div>
+</li>
+<li><p><strong>Conveyor Belt</strong>: There are two tf frames for the conveyor belt:</p>
+<ul class="simple">
+<li><p><code class="code tf docutils literal notranslate"><span class="pre">conveyor_belt_base_frame</span></code> is the frame located below the conveyor belt.</p></li>
+<li><p><code class="code tf docutils literal notranslate"><span class="pre">conveyor_belt_part_spawn_frame</span></code> is the frame origin where parts are spawn on the conveyor belt. This frame is located at one end of the conveyor belt.</p></li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>world
+|
+└─── conveyor_belt_base_frame
+     |
+     └─── conveyor_belt_part_spawn_frame
+</pre></div>
+</div>
 </li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    world
-    |
-    └─── kts1_table_frame
-    |    |
-    |    └─── kts1_tool_changer_parts_frame
-    |    |
-    |    └─── kts1_tool_changer_trays_frame
-    |
-    └─── kts2_table_frame
-         |
-         └─── kts2_tool_changer_parts_frame
-         |
-         └─── kts2_tool_changer_trays_frame
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><strong>Conveyor Belt</strong>: Frames for the conveyor belt consists of two frames:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">conveyor_belt_base_frame</span></code> is the frame located below the conveyor belt.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">conveyor_belt_part_spawn_frame</span></code> is the frame origin where parts are spawn on the conveyor belt. This frame is located at one end of the conveyor belt.</p></li>
-</ul>
-</li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    world
-    |
-    └─── conveyor_belt_base_frame
-         |
-         └─── conveyor_belt_part_spawn_frame
-</pre></div>
-</div>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="challenges.html" class="btn btn-neutral float-left" title="Agility Challenges" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="scoring.html" class="btn btn-neutral float-right" title="Scoring" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ros_communication.html" class="btn btn-neutral float-left" title="ROS Communication" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../evaluation/overview.html" class="btn btn-neutral float-right" title="Automated Evaluation Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
@@ -302,7 +449,7 @@
   </div>
   <script>
       jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
+          SphinxRtdTheme.Navigation.enable(false);
       });
   </script>
 
