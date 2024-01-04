@@ -4,6 +4,8 @@
 Scoring
 ========
 
+.. todo::
+  Update page for 2024
 
 There are 3 major components of the Trial Score in ARIAC 2023.
 
@@ -229,8 +231,9 @@ Combined Task Score
 
 
 
-Completion Score
-^^^^^^^^^^^^^^^^^^^
+Fianl Completion Score
+^^^^^^^^^^^^^^^^^^^^^^
+
 The final completion score :math:`CompletionScore` combines the kitting, assembly, and combined task scores present in that trial.
 
 
