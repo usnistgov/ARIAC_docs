@@ -1,14 +1,14 @@
-.. _COMMUNICATIONS:
+.. _ROS_COMMUNICATION:
 
-
-ROS Communication Overview
-==========================
+=================
+ROS Communication
+=================
 
 This section shows the ROS topics and services that are used to communicate between the :term:`Competitor Control System (CCS)` and the ARIAC system. The definition of each message and service type is also provided.
 
-Topics
-------
-
+------------------
+Competition Topics
+------------------
 
 .. list-table:: List of topics.
    :widths: auto
@@ -32,10 +32,10 @@ Topics
      - Parts that will come on the conveyor belt 
    * - :topic:`/ariac/agv{n}_status`
      - :term:`ariac_msgs/msg/AGVStatus`
-     - State of the AGV ``{n}`` (location, position, velocity)
+     - State of the AGV :msg:`{n}` (location, position, velocity)
    * - :topic:`/ariac/{robot}_gripper_state`
      - :term:`ariac_msgs/msg/VacuumGripperState`
-     - State of ``{robot}``'s gripper (enabled, attached, type)
+     - State of :msg:`{robot}`'s gripper (enabled, attached, type)
    * - :topic:`/ariac/conveyor_state`
      - :term:`ariac_msgs/msg/ConveyorBeltState`
      - State of the conveyor (enabled, power)
@@ -49,10 +49,9 @@ Topics
      - :term:`ariac_msgs/msg/HumanState`
      - Position and velocity of the human and the ceiling robot
 
+.. _SENSOR_TOPICS:
 
-
-
-
+-------------
 Sensor Topics
 -------------
 
@@ -65,11 +64,8 @@ Sensor Topics
      - Topic Name
      - Message Definition 
    * - break_beam
-     - :topic:`/ariac/sensors/{sensor_name}/change`
-     - :term:`ariac_msgs/msg/BreakBeamStatus`
-   * - 
-     - :topic:`/ariac/sensors/{sensor_name}/status`
-     - :term:`ariac_msgs/msg/BreakBeamStatus`
+     - :topic:`/ariac/sensors/{sensor_name}/change` |br| :topic:`/ariac/sensors/{sensor_name}/status`
+     - :term:`ariac_msgs/msg/BreakBeamStatus` |br| :term:`ariac_msgs/msg/BreakBeamStatus`
    * - proximity
      - :topic:`/ariac/sensors/{sensor_name}/scan`
      - :term:`sensor_msgs/msg/Range`
@@ -83,11 +79,8 @@ Sensor Topics
      - :topic:`/ariac/sensors/{sensor_name}/rgb_image`
      - :term:`sensor_msgs/msg/Image`
    * - rgbd_camera
-     - :topic:`/ariac/sensors/{sensor_name}/rgb_image`
-     - :term:`sensor_msgs/msg/Image`
-   * - 
-     - :topic:`/ariac/sensors/{sensor_name}/depth_image`
-     - :term:`sensor_msgs/msg/Image`
+     - :topic:`/ariac/sensors/{sensor_name}/rgb_image` |br| :topic:`/ariac/sensors/{sensor_name}/depth_image`
+     - :term:`sensor_msgs/msg/Image` |br| :term:`sensor_msgs/msg/Image`
    * - basic_logical_camera
      - :topic:`/ariac/sensors/{sensor_name}/image`
      - :term:`ariac_msgs/msg/BasicLogicalCameraImage`
@@ -95,13 +88,12 @@ Sensor Topics
      - :topic:`/ariac/sensors/{sensor_name}/image`
      - :term:`ariac_msgs/msg/AdvancedLogicalCameraImage`
 
-
-
+--------
 Services
 --------
 
 .. list-table:: List of services.
-   :widths: auto
+   :widths: 20 35 45
    :header-rows: 1
    :name: communications-services
 
@@ -125,25 +117,24 @@ Services
      - Get the pose of parts on the AGVs prior to assembly for an assembly or combined order with **order_id**
    * - :rosservice:`/ariac/move_agv{n}` 
      - :term:`ariac_msgs/srv/MoveAGV`
-     - Move the AGV ``{n}`` to the requested location  
+     - Move the AGV :msg:`{n}` to the requested location  
    * - :rosservice:`/ariac/agv{n}_lock_tray` 
      - :term:`std_srvs/srv/Trigger`
-     - Lock a kit tray to AGV ``{n}`` 
+     - Lock a kit tray to AGV :msg:`{n}` 
    * - :rosservice:`/ariac/agv{n}_unlock_tray`
      - :term:`std_srvs/srv/Trigger`
-     - Unlock a kit tray to AGV ``{n}`` 
+     - Unlock a kit tray to AGV :msg:`{n}` 
    * - :rosservice:`/ariac/{robot}_enable_gripper`
      - :term:`ariac_msgs/srv/VacuumGripperControl`
-     - Set the state of ``{robot}``'s gripper to the request state
+     - Set the state of :msg:`{robot}`'s gripper to the request state
    * - :rosservice:`/ariac/{robot}_change_gripper`
      - :term:`ariac_msgs/srv/ChangeGripper`
-     - Change the type of ``{robot}``'s gripper to the request type
+     - Change the type of :msg:`{robot}`'s gripper to the request type
 
 
-
+-------------------
 Message Definitions
 -------------------
-
 
 .. glossary::
     :sorted:
@@ -162,16 +153,16 @@ Message Definitions
         ariac_msgs/AssemblyTask assembly_task
         ariac_msgs/CombinedTask combined_task
 
-      - ``id``: The unique identifier for the order
-      - ``type``: The type of order. One of the following:
+      - :msg:`id`: The unique identifier for the order
+      - :msg:`type`: The type of order. One of the following:
 
-        - ``KITTING``: A kitting order
-        - ``ASSEMBLY``: An assembly order
-        - ``COMBINED``: A combined order
-      - ``priority``: Whether the order is a priority order
-      - ``kitting_task``: The kitting task for the order
-      - ``assembly_task``: The assembly task for the order
-      - ``combined_task``: The combined task for the order
+        - :msg:`KITTING`: A kitting order
+        - :msg:`ASSEMBLY`: An assembly order
+        - :msg:`COMBINED`: A combined order
+      - :msg:`priority`: Whether the order is a priority order
+      - :msg:`kitting_task`: The kitting task for the order
+      - :msg:`assembly_task`: The assembly task for the order
+      - :msg:`combined_task`: The combined task for the order
 
       .. seealso:: 
         
@@ -192,16 +183,16 @@ Message Definitions
         uint8 destination
         ariac_msgs/KittingPart[] parts
 
-      - ``agv_number``: The AGV number to deliver the kit to (1, 2, 3, or 4)
-      - ``tray_id``: The tray number to deliver the kit to (1, 2, 3, 4, 5, or 6)
-      - ``destination``: The destination of the kit.  One of the following values:
+      - :msg:`agv_number`: The AGV number to deliver the kit to (1, 2, 3, or 4)
+      - :msg:`tray_id`: The tray number to deliver the kit to (1, 2, 3, 4, 5, or 6)
+      - :msg:`destination`: The destination of the kit.  One of the following values:
 
-        - ``KITTING``: The kit is to be delivered to the kitting station
-        - ``ASSEMBLY_FRONT``: The kit is to be delivered to the front assembly station (``as1`` or ``as3`` depending on the AGV number)
-        - ``ASSEMBLY_BACK``: The kit is to be delivered to the back assembly station (``as2`` or ``as4`` depending on the AGV number)
-        - ``WAREHOUSE``: The kit is to be delivered to the warehouse
+        - :msg:`KITTING`: The kit is to be delivered to the kitting station
+        - :msg:`ASSEMBLY_FRONT`: The kit is to be delivered to the front assembly station (:msg:`as1` or :msg:`as3` depending on the AGV number)
+        - :msg:`ASSEMBLY_BACK`: The kit is to be delivered to the back assembly station (:msg:`as2` or :msg:`as4` depending on the AGV number)
+        - :msg:`WAREHOUSE`: The kit is to be delivered to the warehouse
 
-      - ``parts``: The parts to be placed in the kit
+      - :msg:`parts`: The parts to be placed in the kit
 
       .. seealso:: :term:`ariac_msgs/msg/KittingPart`
 
@@ -218,14 +209,14 @@ Message Definitions
         uint8 station
         ariac_msgs/AssemblyPart[] parts
 
-      - ``agv_numbers``: The AGVs which contain parts for assembly
-      - ``station``: The assembly station to assemble the parts at.  One of the following values:
+      - :msg:`agv_numbers`: The AGVs which contain parts for assembly
+      - :msg:`station`: The assembly station to assemble the parts at.  One of the following values:
 
-        - ``AS1``: The front assembly station for AGV 1 and 2
-        - ``AS2``: The back assembly station for AGV 1 and 2
-        - ``AS3``: The front assembly station for AGV 3 and 4
-        - ``AS4``: The back assembly station for AGV 3 and 4
-      - ``parts``: The parts to be assembled
+        - :msg:`AS1`: The front assembly station for AGV 1 and 2
+        - :msg:`AS2`: The back assembly station for AGV 1 and 2
+        - :msg:`AS3`: The front assembly station for AGV 3 and 4
+        - :msg:`AS4`: The back assembly station for AGV 3 and 4
+      - :msg:`parts`: The parts to be assembled
 
       .. seealso:: :term:`ariac_msgs/msg/AssemblyPart`
 
@@ -240,13 +231,13 @@ Message Definitions
         uint8 station
         ariac_msgs/AssemblyPart[] parts
 
-      - ``station``: The assembly station to assemble the parts at.  One of the following values:
+      - :msg:`station`: The assembly station to assemble the parts at.  One of the following values:
 
-        - ``AS1``: The front assembly station for AGV 1 and 2
-        - ``AS2``: The back assembly station for AGV 1 and 2
-        - ``AS3``: The front assembly station for AGV 3 and 4
-        - ``AS4``: The back assembly station for AGV 3 and 4
-      - ``parts``: The parts to be assembled
+        - :msg:`AS1`: The front assembly station for AGV 1 and 2
+        - :msg:`AS2`: The back assembly station for AGV 1 and 2
+        - :msg:`AS3`: The front assembly station for AGV 3 and 4
+        - :msg:`AS4`: The back assembly station for AGV 3 and 4
+      - :msg:`parts`: The parts to be assembled
 
       .. seealso:: :term:`ariac_msgs/msg/AssemblyPart`
 
@@ -257,9 +248,9 @@ Message Definitions
         geometry_msgs/PoseStamped assembled_pose
         geometry_msgs/Vector3 install_direction
 
-      - ``part``: The part to be assembled
-      - ``assembled_pose``: The pose of the part in the assembly station
-      - ``install_direction``: The direction the part should be installed in the assembly station
+      - :msg:`part`: The part to be assembled
+      - :msg:`assembled_pose`: The pose of the part in the assembly station
+      - :msg:`install_direction`: The direction the part should be installed in the assembly station
 
       .. seealso:: 
         
@@ -278,13 +269,13 @@ Message Definitions
         ariac_msgs/Part part
         uint8 quadrant
 
-      - ``part``: The part to be placed in the kit
-      - ``quadrant``: The quadrant of the kit to place the part in.  One of the following values:
+      - :msg:`part`: The part to be placed in the kit
+      - :msg:`quadrant`: The quadrant of the kit to place the part in.  One of the following values:
 
-        - ``QUADRANT1``: The first quadrant of the kit
-        - ``QUADRANT2``: The second quadrant of the kit
-        - ``QUADRANT3``: The third quadrant of the kit
-        - ``QUADRANT4``: The fourth quadrant of the kit
+        - :msg:`QUADRANT1`: The first quadrant of the kit
+        - :msg:`QUADRANT2`: The second quadrant of the kit
+        - :msg:`QUADRANT3`: The third quadrant of the kit
+        - :msg:`QUADRANT4`: The fourth quadrant of the kit
 
 
     ariac_msgs/msg/CompetitionState
@@ -298,20 +289,20 @@ Message Definitions
 
         uint8 competition_state
 
-      - ``competition_state``: The current state of the competition.  One of the following values:
+      - :msg:`competition_state`: The current state of the competition.  One of the following values:
 
-        - ``IDLE``: The competition is idle
-        - ``READY``: The competition is ready to start
-        - ``STARTED``: The competition has started
-        - ``ORDER_ANNOUNCEMENTS_DONE``: The competition has started and all orders have been announced
-        - ``ENDED``: The competition has ended
+        - :msg:`IDLE`: The competition is idle
+        - :msg:`READY`: The competition is ready to start
+        - :msg:`STARTED`: The competition has started
+        - :msg:`ORDER_ANNOUNCEMENTS_DONE`: The competition has started and all orders have been announced
+        - :msg:`ENDED`: The competition has ended
 
     ariac_msgs/msg/BinParts
       .. code-block:: text
         
         ariac_msgs/BinInfo[] bins
 
-      - ``bins``: List of bins and their contents
+      - :msg:`bins`: List of bins and their contents
 
       .. seealso:: :term:`ariac_msgs/msg/BinInfo`
 
@@ -330,17 +321,17 @@ Message Definitions
         uint8 bin_number
         ariac_msgs/PartLot[] parts
 
-      - ``bin_number``: The bin number.  One of the following values:
+      - :msg:`bin_number`: The bin number.  One of the following values:
         
-          - ``BIN1``: The first bin
-          - ``BIN2``: The second bin
-          - ``BIN3``: The third bin
-          - ``BIN4``: The fourth bin
-          - ``BIN5``: The fifth bin
-          - ``BIN6``: The sixth bin
-          - ``BIN7``: The seventh bin
-          - ``BIN8``: The eighth bin
-      - ``parts``: The parts in the bin
+          - :msg:`BIN1`: The first bin
+          - :msg:`BIN2`: The second bin
+          - :msg:`BIN3`: The third bin
+          - :msg:`BIN4`: The fourth bin
+          - :msg:`BIN5`: The fifth bin
+          - :msg:`BIN6`: The sixth bin
+          - :msg:`BIN7`: The seventh bin
+          - :msg:`BIN8`: The eighth bin
+      - :msg:`parts`: The parts in the bin
 
       .. seealso:: :term:`ariac_msgs/msg/PartLot`
 
@@ -350,8 +341,8 @@ Message Definitions
         ariac_msgs/Part part
         uint8 quantity
 
-      - ``part``: The part
-      - ``quantity``: The quantity of the part
+      - :msg:`part`: The part
+      - :msg:`quantity`: The quantity of the part
 
       .. seealso:: :term:`ariac_msgs/msg/Part`
 
@@ -360,7 +351,7 @@ Message Definitions
         
         ariac_msgs/PartLot[] parts
 
-      - ``parts``: The parts on the conveyor
+      - :msg:`parts`: The parts on the conveyor
 
       .. seealso:: :term:`ariac_msgs/msg/PartLot`
 
@@ -377,16 +368,16 @@ Message Definitions
         float64 position
         float64 velocity
 
-      - ``location``: The location of the AGV.  One of the following values:
+      - :msg:`location`: The location of the AGV.  One of the following values:
         
-          - ``KITTING``: The AGV is at the kitting station
-          - ``ASSEMBLY_FRONT``: The AGV is at the front assembly station (``AS1`` or ``AS3`` )
-          - ``ASSEMBLY_BACK``: The AGV is at the back assembly station (``AS2`` or ``AS4`` )
-          - ``WAREHOUSE``: The AGV is at the warehouse
-          - ``UNKNOWN``: The AGV is at an unknown location
+          - :msg:`KITTING`: The AGV is at the kitting station
+          - :msg:`ASSEMBLY_FRONT`: The AGV is at the front assembly station (:msg:`AS1` or :msg:`AS3` )
+          - :msg:`ASSEMBLY_BACK`: The AGV is at the back assembly station (:msg:`AS2` or :msg:`AS4` )
+          - :msg:`WAREHOUSE`: The AGV is at the warehouse
+          - :msg:`UNKNOWN`: The AGV is at an unknown location
 
-      - ``position``: The current position of the AGV in the workcell
-      - ``velocity``: The current velocity of the AGV
+      - :msg:`position`: The current position of the AGV in the workcell
+      - :msg:`velocity`: The current velocity of the AGV
 
     ariac_msgs/msg/VacuumGripperState
       .. code-block:: text
@@ -395,9 +386,9 @@ Message Definitions
         bool attached 
         string type 
 
-      - ``enabled``: Is the suction enabled?
-      - ``attached``: Is an object attached to the gripper?
-      - ``type``: The type of the gripper
+      - :msg:`enabled`: Is the suction enabled?
+      - :msg:`attached`: Is an object attached to the gripper?
+      - :msg:`type`: The type of the gripper
 
     ariac_msgs/msg/ConveyorBeltState
       .. code-block:: text
@@ -405,8 +396,8 @@ Message Definitions
         float64 power
         bool enabled  
 
-      - ``power``: The power of the conveyor belt
-      - ``enabled``: Is the conveyor belt enabled?
+      - :msg:`power`: The power of the conveyor belt
+      - :msg:`enabled`: Is the conveyor belt enabled?
 
     ariac_msgs/msg/Robots
       .. code-block:: text
@@ -414,8 +405,8 @@ Message Definitions
         bool floor_robot
         bool ceiling_robot
 
-      - ``floor_robot``: Is the floor robot enabled?
-      - ``ceiling_robot``: Is the ceiling robot enabled?
+      - :msg:`floor_robot`: Is the floor robot enabled?
+      - :msg:`ceiling_robot`: Is the ceiling robot enabled?
 
     ariac_msgs/msg/Sensors
       .. code-block:: text
@@ -427,12 +418,12 @@ Message Definitions
         bool camera
         bool logical_camera
 
-      - ``break_beam``: Is the break beam sensor type enabled?
-      - ``proximity``: Is the proximity sensor type enabled?
-      - ``laser_profiler``: Is the laser profiler type enabled?
-      - ``lidar``: Is the lidar type enabled?
-      - ``camera``: Is the camera type enabled?
-      - ``logical_camera``: Is the logical camera type enabled?
+      - :msg:`break_beam`: Is the break beam sensor type enabled?
+      - :msg:`proximity`: Is the proximity sensor type enabled?
+      - :msg:`laser_profiler`: Is the laser profiler type enabled?
+      - :msg:`lidar`: Is the lidar type enabled?
+      - :msg:`camera`: Is the camera type enabled?
+      - :msg:`logical_camera`: Is the logical camera type enabled?
 
     ariac_msgs/msg/HumanState
       .. code-block:: text
@@ -442,10 +433,10 @@ Message Definitions
         geometry_msgs/Vector3 human_velocity
         geometry_msgs/Vector3 robot_velocity
 
-      - ``human_position``: The position of the human in the workcell
-      - ``robot_position``: The position of the ceiling robot in the workcell
-      - ``human_velocity``: The velocity of the human in the workcell
-      - ``robot_velocity``: The velocity of the ceiling robot in the workcell
+      - :msg:`human_position`: The position of the human in the workcell
+      - :msg:`robot_position`: The position of the ceiling robot in the workcell
+      - :msg:`human_velocity`: The velocity of the human in the workcell
+      - :msg:`robot_velocity`: The velocity of the ceiling robot in the workcell
 
       .. seealso:: 
         
@@ -469,19 +460,19 @@ Message Definitions
         uint8 color
         uint8 type
 
-      - ``color``: The color of the part.  One of the following values:
+      - :msg:`color`: The color of the part.  One of the following values:
         
-          - ``RED``: The part is red
-          - ``GREEN``: The part is green
-          - ``BLUE``: The part is blue
-          - ``ORANGE``: The part is orange
-          - ``PURPLE``: The part is purple
-      - ``type``: The type of the part.  One of the following values:
+          - :msg:`RED`: The part is red
+          - :msg:`GREEN`: The part is green
+          - :msg:`BLUE`: The part is blue
+          - :msg:`ORANGE`: The part is orange
+          - :msg:`PURPLE`: The part is purple
+      - :msg:`type`: The type of the part.  One of the following values:
         
-          - ``BATTERY``: The part is a battery
-          - ``PUMP``: The part is a pump
-          - ``SENSOR``: The part is a sensor
-          - ``REGULATOR``: The part is a regulator
+          - :msg:`BATTERY`: The part is a battery
+          - :msg:`PUMP`: The part is a pump
+          - :msg:`SENSOR`: The part is a sensor
+          - :msg:`REGULATOR`: The part is a regulator
 
 
     ariac_msgs/msg/PartPose
@@ -490,8 +481,8 @@ Message Definitions
         ariac_msgs/Part part
         geometry_msgs/Pose pose
 
-      - ``part``: The part
-      - ``pose``: The pose of the part
+      - :msg:`part`: The part
+      - :msg:`pose`: The pose of the part
 
       .. seealso:: 
         
@@ -505,9 +496,9 @@ Message Definitions
         ariac_msgs/KitTrayPose[] tray_poses
         geometry_msgs/Pose sensor_pose
 
-      - ``part_poses``: The parts in the camera's field of view
-      - ``tray_poses``: The kit trays in the camera's field of view
-      - ``sensor_pose``: The pose of the camera in the world frame
+      - :msg:`part_poses`: The parts in the camera's field of view
+      - :msg:`tray_poses`: The kit trays in the camera's field of view
+      - :msg:`sensor_pose`: The pose of the camera in the world frame
 
       .. seealso:: 
         
@@ -521,8 +512,8 @@ Message Definitions
         int8 id
         geometry_msgs/Pose pose
 
-      - ``id``: The ID of the kit tray
-      - ``pose``: The pose of the kit tray
+      - :msg:`id`: The ID of the kit tray
+      - :msg:`pose`: The pose of the kit tray
 
       .. seealso:: `geometry_msgs/Pose <https://docs.ros2.org/latest/api/geometry_msgs/msg/Pose.html>`_
 
@@ -532,8 +523,8 @@ Message Definitions
         std_msgs/Header header
         bool object_detected
 
-      - ``header``: The header of the message
-      - ``object_detected``: Is an object detected?
+      - :msg:`header`: The header of the message
+      - :msg:`object_detected`: Is an object detected?
 
     sensor_msgs/msg/Range
       .. code-block:: text
@@ -594,9 +585,9 @@ Message Definitions
         geometry_msgs/Pose[] tray_poses
         geometry_msgs/Pose sensor_pose
 
-      - ``part_poses``: The poses of the parts in the camera's field of view
-      - ``tray_poses``: The poses of the kit trays in the camera's field of view
-      - ``sensor_pose``: The pose of the camera in the world frame
+      - :msg:`part_poses`: The poses of the parts in the camera's field of view
+      - :msg:`tray_poses`: The poses of the kit trays in the camera's field of view
+      - :msg:`sensor_pose`: The pose of the camera in the world frame
 
       .. seealso:: `geometry_msgs/Pose <https://docs.ros2.org/latest/api/geometry_msgs/msg/Pose.html>`_
 
@@ -610,17 +601,17 @@ Message Definitions
         bool incorrect_part_type
         bool incorrect_part_color
 
-      - ``all_passed``: True if all parts passed the quality check, False otherwise
-      - ``missing_part``: True if a part is missing, False otherwise
-      - ``flipped_part``: True if a part is flipped, False otherwise
-      - ``faulty_part``: True if a part is faulty, False otherwise
-      - ``incorrect_part_type``: True if a part has the wrong type, False otherwise
-      - ``incorrect_part_color``: True if a part has the wrong color, False otherwise
+      - :msg:`all_passed`: True if all parts passed the quality check, False otherwise
+      - :msg:`missing_part`: True if a part is missing, False otherwise
+      - :msg:`flipped_part`: True if a part is flipped, False otherwise
+      - :msg:`faulty_part`: True if a part is faulty, False otherwise
+      - :msg:`incorrect_part_type`: True if a part has the wrong type, False otherwise
+      - :msg:`incorrect_part_color`: True if a part has the wrong color, False otherwise
 
 
+-------------------
 Service Definitions
 -------------------
-
 
 .. glossary::
     :sorted:
@@ -632,8 +623,8 @@ Service Definitions
         boolean success
         string message
 
-      - ``success``: True if the service call was successful, False otherwise
-      - ``message``: A message describing the result of the service call
+      - :msg:`success`: True if the service call was successful, False otherwise
+      - :msg:`message`: A message describing the result of the service call
 
     ariac_msgs/srv/SubmitOrder
       .. code-block:: text
@@ -643,9 +634,9 @@ Service Definitions
         bool success
         string message
 
-      - ``order_id``: The ID of the order to be submitted
-      - ``success``: True if the order was submitted successfully, False otherwise
-      - ``message``: A message describing the result of the service call
+      - :msg:`order_id`: The ID of the order to be submitted
+      - :msg:`success`: True if the order was submitted successfully, False otherwise
+      - :msg:`message`: A message describing the result of the service call
 
     ariac_msgs/srv/PerformQualityCheck
       .. code-block:: text
@@ -660,14 +651,14 @@ Service Definitions
         ariac_msgs/QualityIssue quadrant3
         ariac_msgs/QualityIssue quadrant4
 
-      - ``order_id``: The ID of the order to be submitted
-      - ``valid_id``: True if the order ID is valid, False otherwise
-      - ``all_passed``: True if all parts in the order passed the quality check, False otherwise
-      - ``incorrect_tray``: True if the detected tray does not have the correct ID for the order, False otherwise
-      - ``quadrant1``: The quality issue for the first quadrant
-      - ``quadrant2``: The quality issue for the second quadrant
-      - ``quadrant3``: The quality issue for the third quadrant
-      - ``quadrant4``: The quality issue for the fourth quadrant
+      - :msg:`order_id`: The ID of the order to be submitted
+      - :msg:`valid_id`: True if the order ID is valid, False otherwise
+      - :msg:`all_passed`: True if all parts in the order passed the quality check, False otherwise
+      - :msg:`incorrect_tray`: True if the detected tray does not have the correct ID for the order, False otherwise
+      - :msg:`quadrant1`: The quality issue for the first quadrant
+      - :msg:`quadrant2`: The quality issue for the second quadrant
+      - :msg:`quadrant3`: The quality issue for the third quadrant
+      - :msg:`quadrant4`: The quality issue for the fourth quadrant
 
       .. seealso:: :term:`ariac_msgs/msg/QualityIssue`
 
@@ -680,10 +671,10 @@ Service Definitions
         bool agv_at_station
         ariac_msgs/PartPose[] parts
 
-      - ``order_id``: The ID of the order to be submitted
-      - ``valid_id``: True if the order ID is valid, False otherwise
-      - ``agv_at_station``: True if the AGV is at the station, False otherwise
-      - ``parts``: The list of parts to be assembled
+      - :msg:`order_id`: The ID of the order to be submitted
+      - :msg:`valid_id`: True if the order ID is valid, False otherwise
+      - :msg:`agv_at_station`: True if the AGV is at the station, False otherwise
+      - :msg:`parts`: The list of parts to be assembled
 
       .. seealso:: :term:`ariac_msgs/msg/PartPose`
 
@@ -700,14 +691,14 @@ Service Definitions
         bool success
         string message
 
-      - ``location``: The location to move the AGV to. One of the following values:
+      - :msg:`location`: The location to move the AGV to. One of the following values:
 
-        - ``KITTING``: Kitting station
-        - ``ASSEMBLY_FRONT``: Assembly station front (``AS1`` or ``AS3`` depending on the AGV ID)
-        - ``ASSEMBLY_BACK``: Assembly station back  (``AS2`` or ``AS4`` depending on the AGV ID)
-        - ``WAREHOUSE``: Warehouse
-      - ``success``: True if the AGV was moved successfully, False otherwise
-      - ``message``: A message describing the result of the service call
+        - :msg:`KITTING`: Kitting station
+        - :msg:`ASSEMBLY_FRONT`: Assembly station front (:msg:`AS1` or :msg:`AS3` depending on the AGV ID)
+        - :msg:`ASSEMBLY_BACK`: Assembly station back (:msg:`AS2` or :msg:`AS4` depending on the AGV ID)
+        - :msg:`WAREHOUSE`: Warehouse
+      - :msg:`success`: True if the AGV was moved successfully, False otherwise
+      - :msg:`message`: A message describing the result of the service call
 
     ariac_msgs/srv/VacuumGripperControl
       .. code-block:: text
@@ -716,8 +707,8 @@ Service Definitions
         ---
         bool success
 
-      - ``enable``: True to enable the vacuum gripper, False to disable it
-      - ``success``: True if the vacuum gripper was enabled/disabled successfully, False otherwise
+      - :msg:`enable`: True to enable the vacuum gripper, False to disable it
+      - :msg:`success`: True if the vacuum gripper was enabled/disabled successfully, False otherwise
 
     ariac_msgs/srv/ChangeGripper
       .. code-block:: text
@@ -731,10 +722,13 @@ Service Definitions
         bool success
         string message
 
-      - ``gripper_type``: The type of gripper to change to. One of the following values:
+      - :msg:`gripper_type`: The type of gripper to change to. One of the following values:
 
-        - ``PART_GRIPPER``: Part gripper
-        - ``TRAY_GRIPPER``: Tray gripper
-      - ``success``: True if the gripper was changed successfully, False otherwise
-      - ``message``: A message describing the result of the service call
+        - :msg:`PART_GRIPPER`: Part gripper
+        - :msg:`TRAY_GRIPPER`: Tray gripper
+      - :msg:`success`: True if the gripper was changed successfully, False otherwise
+      - :msg:`message`: A message describing the result of the service call
 
+.. |br| raw:: html
+
+      <br>

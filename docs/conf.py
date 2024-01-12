@@ -6,9 +6,26 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'ARIAC_docs'
+project = 'ARIAC Docs'
 copyright = u'works of NIST employees are not not subject to copyright protection in the United States'
 author = 'Justin Albrecht'
+
+
+html_theme_options = {
+    'logo_only': False,
+    'display_version': True,
+    'prev_next_buttons_location': 'both',
+    'style_external_links': False,
+    'style_nav_header_background': '#2980B9',
+    # Toc options
+    'collapse_navigation': False,
+    'sticky_navigation': False,
+    'navigation_depth': 3,
+    'includehidden': True,
+    'titles_only': False
+}
+
+html_logo = "images/nist_el_logo.png"
 
 # # -- General configuration ---------------------------------------------------
 # # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -35,7 +52,7 @@ author = 'Justin Albrecht'
 
 
 release = '1.0'
-version = '0.1.0'
+version = '2024.1.0'
 
 
 # -- General configuration
@@ -85,7 +102,6 @@ hoverxref_roles = [
     'confval',
     'setting',
     "doc",
-    'term',
 ]
 hoverxref_intersphinx = [
     'readthedocs',
@@ -113,6 +129,7 @@ hoverxref_role_types = {
     'mod': 'modal',
     'class': 'modal',
     'obj': 'tooltip',
+    'numref': 'modal',
 }
 # hoverxref_domains = [
 #     'py',
@@ -131,11 +148,17 @@ pygments_style = 'tango'
 
 rst_prolog = """
  .. include:: <s5defs.txt>
+
+ .. role:: tf(code)
+    :class: tf
+
+ .. role:: msg(code)
+    :class: msg
  
- .. role:: topic
+ .. role:: topic(code)
     :class: topic
 
- .. role:: rosservice
+ .. role:: rosservice(code)
     :class: rosservice
     
  .. role:: yamlname(code)
@@ -145,15 +168,11 @@ rst_prolog = """
     :language: yaml
     :class: highlight
     
- .. role:: tuto
-    :class: tuto
+ .. role:: tutorial
+    :class: tutorial
     
  .. role:: console(code)
     :language: console
-    :class: highlight
-    
- .. role:: bash
-    :language: bash
     :class: highlight
 
  .. role:: cpp(code)
