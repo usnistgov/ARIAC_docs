@@ -4,40 +4,31 @@
 Calendar of Events
 ==================
 
-.. todo::
-  Update page for 2024
-
 .. list-table:: 
   :widths: 25 75
   :header-rows: 1
 
   * - Dates
     - Major Milestones
-  * - 23 January 2023
-    - Beta Software and Documentation Released to Competitors
-  * - 01 March 2023
-    - Competition Software and Documentation Released to Competitors
-  * - 21 April 2023
-    - Qualifiers Smoke Test Deadline
-  * - 21 April 2023
+  * - 30 January 2024
+    - Initial Release of Competition Software (2024.1.0)
+  * - 31 January 2024
+    - Kickoff Meeting
+  * - 15 April 2024 (8 AM EDT)
+    - Qualifiers Smoke Test Submission Deadline 
+  * - 19 April 2024 (5 PM EDT)
+    - Qualifiers Smoke Test Results Returned
+  * - 26 April 2024 (5 PM EDT)
     - Team Sign-ups Close
-  * - 21 April 2023
-    - Qualifiers Begin
-  * - 24 April 2023
-    - Qualifiers Submission Opens
-  * - 28 April 2023
-    - Qualifiers Submission Due
-  * - 01 May 2023 
-    - Qualifiers Evaluation Week Starts
-  * - 05 May 2023 
-    - Qualifiers Evaluation Week Ends
-  * - 26 May 2023
-    - Finals Smoke Test
-  * - ~22 May 2023~
-    - ~Finals Begin~
-  * -  ~26 May 2023~
-    - ~Finals End~
-  * - 05 June 2023
-    - Finals Submissions Due 8 am Eastern Time
-  * - June 2023
-    - Finals Evaluation
+  * - 29 April 2024 (8 AM EDT)
+    - Qualifiers Submission Deadline
+  * - 29 April - 3 May 2024
+    - Qualifiers Evaluation Week
+  * - 3 May 2024 (5 PM EDT)
+    - Qualifiers Results Returned
+  * - 31 May 2024 (5 PM EDT)
+    - Finals Submission Deadline
+  * - June 2024
+    - Finals Evaluation Period
+  * - 28 June 2024
+    - Finals Results Released
