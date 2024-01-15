@@ -48,6 +48,9 @@ Competition Topics
    * - :topic:`/ariac_human/state`
      - :term:`ariac_msgs/msg/HumanState`
      - Position and velocity of the human and the ceiling robot
+   * - :topic:`/ariac/assembly_insert_{n}_assembly_state`
+     - :term:`ariac_msgs/msg/AssemblyState`
+     - State of the assembly station :msg:`as{n}` (battery_attached, pump_attached, sensor_attached, regulator_attached)
 
 .. _SENSOR_TOPICS:
 
