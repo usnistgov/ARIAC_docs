@@ -610,6 +610,19 @@ Message Definitions
       - :msg:`faulty_part`: True if a part is faulty, False otherwise
       - :msg:`incorrect_part_type`: True if a part has the wrong type, False otherwise
       - :msg:`incorrect_part_color`: True if a part has the wrong color, False otherwise
+    
+    ariac_msgs/msg/AssemblyState
+      .. code-block:: text
+        
+        bool battery_attached
+        bool pump_attached
+        bool sensor_attached
+        bool regulator_attached
+
+      - :msg:`battery_attached`: True if battery is inserted to assembly station, False otherwise
+      - :msg:`pump_attached`: True if pump is inserted to assembly station, False otherwise
+      - :msg:`sensor_attached`: True if sensor is inserted to assembly station, False otherwise
+      - :msg:`regulator_attached`: True if regulator is inserted to assembly station, False otherwise
 
 
 -------------------
