@@ -39,7 +39,7 @@ The Efficiency Factor :math:`EF_i` for order :math:`i` compares the time to comp
 
   .. math::
 
-    EF_i = w_t \cdot \frac{TC_{avg_{i}}}{T_i}
+    EF_i = w_t \cdot \frac{T_{avg_{i}}}{T_i}
 
 
 Completion Score
