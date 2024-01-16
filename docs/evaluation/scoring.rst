@@ -270,7 +270,7 @@ The trial score :math:`TS` combines the cost factor, efficiency factors and task
 
         \texttt{pm}_p = \begin{cases}
         3, &\text{if} ~~ A \\
-        0, &\text{otherwise} \\
+        1, &\text{otherwise} \\
         \end{cases}
 
 
