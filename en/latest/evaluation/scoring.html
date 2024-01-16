@@ -216,11 +216,10 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Scoring</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#cost-factor">Cost Factor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#efficiency-factor">Efficiency Factor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#completion-score">Completion Score</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#task-scores">Task Scores</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#kitting-task-score">Kitting Task Score</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#assembly-task-score">Assembly Task Score</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#combined-task-score">Combined Task Score</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fianl-completion-score">Fianl Completion Score</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#trial-score">Trial Score</a></li>
@@ -272,16 +271,12 @@
 <div></div></blockquote>
 <section id="scoring">
 <span id="id1"></span><h1>Scoring<a class="headerlink" href="#scoring" title="Permalink to this heading"></a></h1>
-<div class="admonition-todo admonition" id="id2">
-<p class="admonition-title">Todo</p>
-<p>Update page for 2024</p>
-</div>
-<p>There are 3 major components of the Trial Score in ARIAC 2023.</p>
+<p>There are 3 major components of the Trial Score.</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p><span class="incremental">Cost Factor</span>: How much does the system (sensors) cost?</p></li>
-<li><p><span class="incremental">Efficiency Factor</span>: How fast or efficiently did the system complete the task(s)</p></li>
-<li><p><span class="incremental">Completion Score</span>: How well did the task(s) get performed? Are all the correct parts there in the proper place?</p></li>
+<li><p><strong>Cost Factor</strong>: How much does the system (sensors) cost?</p></li>
+<li><p><strong>Efficiency Factor</strong>: How fast or efficiently did the system complete the task(s)</p></li>
+<li><p><strong>Task Score</strong>: How well did the task(s) get performed?</p></li>
 </ol>
 </div></blockquote>
 <section id="cost-factor">
@@ -293,9 +288,12 @@
 <li><p><span class="math notranslate nohighlight">\(TC_{avg}\)</span> is the average sensor cost across all teams.</p></li>
 <li><p><span class="math notranslate nohighlight">\(w_c\)</span> is a weighting constant for cost factor.</p></li>
 </ul>
+</div></blockquote>
+<div class="tip admonition" id="id2">
+<p class="admonition-title">Cost Factor</p>
 <div class="math notranslate nohighlight">
 \[CF = w_c \cdot \frac{TC_{avg}}{TC}\]</div>
-</div></blockquote>
+</div>
 </section>
 <section id="efficiency-factor">
 <h2>Efficiency Factor<a class="headerlink" href="#efficiency-factor" title="Permalink to this heading"></a></h2>
@@ -306,228 +304,220 @@
 <li><p><span class="math notranslate nohighlight">\(T_{avg_{i}}\)</span> is the average time to complete order <span class="math notranslate nohighlight">\(i\)</span> for all teams</p></li>
 <li><p><span class="math notranslate nohighlight">\(w_t\)</span> is a weighting constant for efficiency factor.</p></li>
 </ul>
-<div class="math notranslate nohighlight">
-\[EF_i = w_t \cdot \frac{TC_{avg_{i}}}{T_i}\]</div>
 </div></blockquote>
+<div class="tip admonition" id="id3">
+<p class="admonition-title">Efficiency Factor</p>
+<div class="math notranslate nohighlight">
+\[EF_i = w_t \cdot \frac{T_{avg_{i}}}{T_i}\]</div>
+</div>
 </section>
-<section id="completion-score">
-<h2>Completion Score<a class="headerlink" href="#completion-score" title="Permalink to this heading"></a></h2>
-<p>Completion score varies between Kitting, Assembly, and Combined tasks. Each task is generated from Boolean conditions.</p>
+<section id="task-scores">
+<h2>Task Scores<a class="headerlink" href="#task-scores" title="Permalink to this heading"></a></h2>
+<p>Each submitted order will recieve a task score based on the required task for that order (Kitting, Assembly, or Combined). Each task score is generated from Boolean conditions.</p>
 <section id="kitting-task-score">
 <h3>Kitting Task Score<a class="headerlink" href="#kitting-task-score" title="Permalink to this heading"></a></h3>
 <blockquote>
-<div><ul>
+<div><ul class="simple">
 <li><p>A kitting task has <span class="math notranslate nohighlight">\(n\)</span> parts that need to be placed on the kitting tray.</p></li>
 <li><p>A shipment has <span class="math notranslate nohighlight">\(m\)</span> parts on the kitting tray.</p></li>
 <li><p>For each task there are two Boolean conditions:</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(isCorrectTrayID \rightarrow A\)</span> is true if the shipment tray ID matches the kitting tray ID.</p></li>
-<li><p><span class="math notranslate nohighlight">\(isCorrectDestination\)</span> is true if the shipment was sent to the correct destination (as1, as2, as3, as4, kitting, or warehouse).</p></li>
-</ol>
-</div></blockquote>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\texttt{isCorrectTrayID} \rightarrow A ~~\)</span> : true if the shipment tray ID is correct.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\texttt{isCorrectDestination} \rightarrow B ~~\)</span> : true if the shipment was sent to the correct destination.</p></li>
+</ul>
 </li>
-<li><p>For each quadrant <span class="incremental">q</span> of the kitting tray there are four Boolean conditions:</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(isCorrectType_{q} \rightarrow B\)</span> is true if the part type in quadrant <span class="math notranslate nohighlight">\(q\)</span> is correct.</p></li>
-<li><p><span class="math notranslate nohighlight">\(isCorrectColor_{q} \rightarrow C\)</span> is true if the part color in quadrant <span class="math notranslate nohighlight">\(q\)</span> is correct.</p></li>
-<li><p><span class="math notranslate nohighlight">\(isFlipped_{q} \rightarrow D\)</span> is true if the part in quadrant <span class="math notranslate nohighlight">\(q\)</span> is still flipped.</p></li>
-<li><p><span class="math notranslate nohighlight">\(isFaulty_{q} \rightarrow E\)</span> is true if the part in quadrant <span class="math notranslate nohighlight">\(q\)</span> is faulty.</p></li>
-</ol>
-</div></blockquote>
+<li><p>For each quadrant <span class="math notranslate nohighlight">\(q\)</span> of the kitting tray there are four Boolean conditions:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\texttt{isCorrectType}_{q} \rightarrow C ~~\)</span> : true if the part type in quadrant <span class="math notranslate nohighlight">\(q\)</span> is correct.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\texttt{isCorrectColor}_{q} \rightarrow D ~~\)</span> : true if the part color in quadrant <span class="math notranslate nohighlight">\(q\)</span> is correct.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\texttt{isFlipped}_{q} \rightarrow E ~~\)</span> : true if the part in quadrant <span class="math notranslate nohighlight">\(q\)</span> is flipped.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\texttt{isFaulty}_{q} \rightarrow F ~~\)</span> : true if the part in quadrant <span class="math notranslate nohighlight">\(q\)</span> is faulty.</p></li>
+</ul>
 </li>
 </ul>
 </div></blockquote>
-<div class="admonition-tray-score admonition">
-<p class="admonition-title">Tray Score</p>
+<div class="admonition-tray-points admonition">
+<p class="admonition-title">Tray Points</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\texttt{pt}_{tray} = \begin{cases}
-3, &amp;\text{if} ~~ A \\
+\[\begin{split}\texttt{pt}_{t} = \begin{cases}
+1, &amp;\text{if} ~~ A \\
 0, &amp;\text{otherwise}  \\
 \end{cases}\end{split}\]</div>
 </div>
-<div class="admonition-quadrant-score admonition">
-<p class="admonition-title">Quadrant Score</p>
+<div class="admonition-quadrant-points admonition">
+<p class="admonition-title">Quadrant Points</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\texttt{pt}_q = \begin{cases}
-0, &amp;\text{if} ~~ \lnot B \lor E \\
-3, &amp;\text{if} ~~ B \land C \land \lnot D \land \lnot E\\
-2, &amp;\text{if} ~~ B \land \lnot C \land \lnot D \land \lnot E\\
-2, &amp;\text{if} ~~ B \land C \land  D \land \lnot E\\
-1, &amp;\text{if} ~~ B \land \lnot C \land D \land \lnot E\\
+0, &amp;\text{if} ~~ \lnot C \lor E \lor F \\
+3, &amp;\text{if} ~~ D \\
+2, &amp;\text{if} ~~ \lnot D \\
 \end{cases}\end{split}\]</div>
 </div>
-<div class="admonition-bonus-score admonition">
-<p class="admonition-title">Bonus Score</p>
+<div class="admonition-bonus-points admonition">
+<p class="admonition-title">Bonus Points</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\texttt{pt}_b = \begin{cases}
 n, &amp;\text{if} ~~ \sum_{q}^{n}{\texttt{pt}_q} = n\times 3 \\
 0, &amp;\text{otherwise} \\
 \end{cases}\end{split}\]</div>
 </div>
-<div class="admonition-penalty admonition">
-<p class="admonition-title">Penalty</p>
+<div class="admonition-extra-parts-penalty admonition">
+<p class="admonition-title">Extra Parts Penalty</p>
 <p>A penalty is only applied if more parts are on the tray than needed.</p>
-<blockquote>
-<div><div class="math notranslate nohighlight">
+<div class="math notranslate nohighlight">
 \[\begin{split}\texttt{pn}_{ep} = \begin{cases}
 m - n, &amp;\text{if} ~~ m&gt;n \\
 0, &amp;\text{otherwise} \\
 \end{cases}\end{split}\]</div>
-</div></blockquote>
 </div>
-<div class="admonition-destination-score admonition">
-<p class="admonition-title">Destination Score</p>
+<div class="admonition-wrong-tray-penalty admonition">
+<p class="admonition-title">Wrong Tray Penalty</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\texttt{destination} = \begin{cases}
-1, &amp;\text{if}\, isCorrectDestination\, \text{is true} \\
+\[\begin{split}\texttt{pn}_{t} = \begin{cases}
+1, &amp;\text{if} ~~ \lnot A \\
+0, &amp;\text{otherwise} \\
+\end{cases}\end{split}\]</div>
+</div>
+<div class="admonition-destination-multiplier admonition">
+<p class="admonition-title">Destination Multiplier</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\texttt{pm}_{d} = \begin{cases}
+1, &amp;\text{if}\, B \\
 0, &amp;\text{otherwise} \\
 \end{cases}\end{split}\]</div>
 </div>
 <div class="tip admonition" id="task-score">
 <p class="admonition-title">Kitting Task Score</p>
-<blockquote>
-<div><div class="math notranslate nohighlight">
-\[S_{k} = (\max{[\texttt{pt}_{tray} + \sum_{q}^{n}{\texttt{pt}_q} + \texttt{pt}_b - \texttt{pn}_{ep} , 0]}) \times (\texttt{destination})\]</div>
-</div></blockquote>
+<div class="math notranslate nohighlight">
+\[S_{k} = (\texttt{pt}_{t} + \sum_{q}^{n}{(\texttt{pt}_q)} + \texttt{pt}_b - \texttt{pn}_{ep} - \texttt{pn}_{t}) \times \texttt{pm}_{d}\]</div>
+<p>The task score cannot be negative, if the calculation is negative the score will be set as 0.</p>
 </div>
 </section>
 <section id="assembly-task-score">
 <h3>Assembly Task Score<a class="headerlink" href="#assembly-task-score" title="Permalink to this heading"></a></h3>
 <blockquote>
-<div><ul>
+<div><ul class="simple">
 <li><p>An assembly task has <span class="math notranslate nohighlight">\(n\)</span> parts that need to be assembled into the insert.</p></li>
 <li><p>For each task there is one Boolean condition:</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(isCorrectStation\)</span> is true if the assembly was done at the correct station (as1, as2, as3, or as4).</p></li>
-</ol>
-</div></blockquote>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\texttt{isCorrectStation} \rightarrow A ~~\)</span> : true if the assembly was done at the correct station (as1, as2, as3, or as4).</p></li>
+</ul>
 </li>
-<li><p>Each slot <span class="incremental">s</span> in the insert has the following Boolean conditions:</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(isAssembled_{s} \rightarrow A\)</span> is true if the part in slot <span class="math notranslate nohighlight">\(s\)</span> is assembled. This implicitly means that the part is of the correct type.</p></li>
-<li><p><span class="math notranslate nohighlight">\(isCorrectColor_{s} \rightarrow B\)</span> is true if the part in slot <span class="math notranslate nohighlight">\(s\)</span> is of correct color.</p></li>
-<li><p><span class="math notranslate nohighlight">\(isCorrectPose_{s} \rightarrow C\)</span> is true if the part in slot <span class="math notranslate nohighlight">\(s\)</span> has the correct pose.</p></li>
-</ol>
-</div></blockquote>
+<li><p>Each slot <span class="math notranslate nohighlight">\(s\)</span> in the insert has the following Boolean conditions:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\texttt{isAssembled}_{s} \rightarrow B ~~\)</span> : true if the part in slot <span class="math notranslate nohighlight">\(s\)</span> is reported as assembled.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\texttt{isCorrectColor}_{s} \rightarrow C ~~\)</span> : true if the part in slot <span class="math notranslate nohighlight">\(s\)</span> is of correct color.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\texttt{isCorrectPose}_{s} \rightarrow D ~~\)</span> : true if the part in slot <span class="math notranslate nohighlight">\(s\)</span> has the correct pose.</p></li>
+</ul>
 </li>
 </ul>
 </div></blockquote>
-<div class="admonition-slot-score admonition">
-<p class="admonition-title">Slot Score</p>
+<div class="admonition-slot-points admonition">
+<p class="admonition-title">Slot Points</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\texttt{pt}_s = \begin{cases}
-3, &amp;\text{if} ~~ A \land (B \land C)\\
-2, &amp;\text{if} ~~ A \land (B \lor C)\\
-1, &amp;\text{if} ~~ A \land (\lnot B \land \lnot C)\\
-0, &amp;\text{if} ~~ \lnot A \\
+0, &amp;\text{if} ~~ \lnot B \\
+3, &amp;\text{if} ~~ C \land D \\
+2, &amp;\text{if} ~~ C \lor D \\
+1, &amp;\text{if} ~~ \lnot C \land \lnot D\\
 \end{cases}\end{split}\]</div>
 </div>
-<div class="admonition-bonus-score admonition">
-<p class="admonition-title">Bonus Score</p>
+<div class="admonition-bonus-points admonition">
+<p class="admonition-title">Bonus Points</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\texttt{pt}_b = \begin{cases}
-n \times 4, &amp;\text{if} ~~ \sum_{s}^{n}{\texttt{pt}_{s}} = n\times 3 \\
+n, &amp;\text{if} ~~ \sum_{s}^{n}{\texttt{pt}_{s}} = n\times 3 \\
 0, &amp;\text{otherwise} \\
 \end{cases}\end{split}\]</div>
 </div>
-<div class="admonition-station-score admonition">
-<p class="admonition-title">Station Score</p>
+<div class="admonition-station-multiplier admonition">
+<p class="admonition-title">Station Multiplier</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\texttt{station} = \begin{cases}
-1, &amp;\text{if}\, isCorrectStation\, \text{is}\, \text{true} \\
+\[\begin{split}\texttt{pm}_{s} = \begin{cases}
+1, &amp;\text{if}\, A \\
 0, &amp;\text{otherwise} \\
 \end{cases}\end{split}\]</div>
 </div>
 <div class="tip admonition" id="task-score-assembly">
 <p class="admonition-title">Assembly Task Score</p>
-<blockquote>
-<div><div class="math notranslate nohighlight">
-\[S_{a} = (\sum_{s}^{n}{\texttt{pt}_s} + \texttt{pt}_b) \times (\texttt{station})\]</div>
-</div></blockquote>
+<div class="math notranslate nohighlight">
+\[S_{a} = (\sum_{s}^{n}{\texttt{pt}_s} + \texttt{pt}_b) \times \texttt{pm}_{s}\]</div>
 </div>
 </section>
 <section id="combined-task-score">
 <h3>Combined Task Score<a class="headerlink" href="#combined-task-score" title="Permalink to this heading"></a></h3>
 <blockquote>
-<div><ul>
+<div><ul class="simple">
 <li><p>A combined task has <span class="math notranslate nohighlight">\(n\)</span> parts that need to be gathered from the environment and assembled to the insert.</p></li>
 <li><p>For each task there is one Boolean condition:</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(isCorrectStation\)</span> is true if the assembly was done at the correct station (as1, as2, as3, or as4).</p></li>
-</ol>
-</div></blockquote>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\texttt{isCorrectStation} \rightarrow A ~~\)</span> : true if the assembly was done at the correct station (as1, as2, as3, or as4).</p></li>
+</ul>
 </li>
-<li><p>Each slot <span class="incremental">s</span> in the insert has the following Boolean conditions:</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(isAssembled_{s} \rightarrow A\)</span> is true if the part in slot <span class="math notranslate nohighlight">\(s\)</span> is assembled. This implicitly means that the part is of the correct type.</p></li>
-<li><p><span class="math notranslate nohighlight">\(isCorrectColor_{s} \rightarrow B\)</span> is true if the part in slot <span class="math notranslate nohighlight">\(s\)</span> is of correct color.</p></li>
-<li><p><span class="math notranslate nohighlight">\(isCorrectPose_{s} \rightarrow C\)</span> is true if the part in slot <span class="math notranslate nohighlight">\(s\)</span> has the correct pose.</p></li>
-</ol>
-</div></blockquote>
+<li><p>Each slot <span class="math notranslate nohighlight">\(s\)</span> in the insert has the following Boolean conditions:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\texttt{isAssembled}_{s} \rightarrow B ~~\)</span> : true if the part in slot <span class="math notranslate nohighlight">\(s\)</span> is reported as assembled.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\texttt{isCorrectColor}_{s} \rightarrow C ~~\)</span> : true if the part in slot <span class="math notranslate nohighlight">\(s\)</span> is of correct color.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\texttt{isCorrectPose}_{s} \rightarrow D ~~\)</span> : true if the part in slot <span class="math notranslate nohighlight">\(s\)</span> has the correct pose.</p></li>
+</ul>
 </li>
 </ul>
 </div></blockquote>
-<div class="admonition-slot-score admonition">
-<p class="admonition-title">Slot Score</p>
+<div class="admonition-slot-points admonition">
+<p class="admonition-title">Slot Points</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\texttt{pt}_s = \begin{cases}
-0, &amp;\text{if} ~~ \lnot A \\
-5, &amp;\text{if} ~~ A \land (B \land C)\\
-4, &amp;\text{if} ~~ A \land (B \lor C)\\
-3, &amp;\text{if} ~~ A \land (\lnot B \land \lnot C)\\
+0, &amp;\text{if} ~~ \lnot B \\
+5, &amp;\text{if} ~~ C \land D \\
+4, &amp;\text{if} ~~ C \lor D \\
+3, &amp;\text{if} ~~ \lnot C \land \lnot D\\
 \end{cases}\end{split}\]</div>
 </div>
-<div class="admonition-bonus-score admonition">
-<p class="admonition-title">Bonus Score</p>
+<div class="admonition-bonus-points admonition">
+<p class="admonition-title">Bonus Points</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\texttt{pt}_b = \begin{cases}
-n \times 4, &amp;\text{if} ~~ \sum_{s}^{n}{\texttt{pt}_{s}} = n\times 5 \\
+n, &amp;\text{if} ~~ \sum_{s}^{n}{\texttt{pt}_{s}} = n\times 3 \\
 0, &amp;\text{otherwise} \\
 \end{cases}\end{split}\]</div>
 </div>
-<div class="admonition-station-score admonition">
-<p class="admonition-title">Station Score</p>
+<div class="admonition-station-multiplier admonition">
+<p class="admonition-title">Station Multiplier</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\texttt{station} = \begin{cases}
-1, &amp;\text{if}\: isCorrectStation\: \text{is true} \\
+\[\begin{split}\texttt{pm}_{s} = \begin{cases}
+1, &amp;\text{if}\, A \\
 0, &amp;\text{otherwise} \\
 \end{cases}\end{split}\]</div>
 </div>
 <div class="tip admonition" id="task-score-combined">
-<p class="admonition-title">Combined Task Score</p>
-<blockquote>
-<div><div class="math notranslate nohighlight">
-\[S_{c} = (\sum_{s}^{n}{\texttt{pt}_s} + \texttt{pt}_b) \times (\texttt{station})\]</div>
-</div></blockquote>
-</div>
-</section>
-<section id="fianl-completion-score">
-<h3>Fianl Completion Score<a class="headerlink" href="#fianl-completion-score" title="Permalink to this heading"></a></h3>
-<p>The final completion score <span class="math notranslate nohighlight">\(CompletionScore\)</span> combines the kitting, assembly, and combined task scores present in that trial.</p>
-<div class="tip admonition" id="id3">
-<p class="admonition-title">Completion Score</p>
-<blockquote>
-<div><div class="math notranslate nohighlight">
-\[CompletionScore = \sum_{i=0}^{n_k}{S_{k_i}} + \sum_{j=0}^{n_a}{S_{a_j}} + \sum_{k=0}^{n_c}{S_{c_k}}\]</div>
-</div></blockquote>
+<p class="admonition-title">Assembly Task Score</p>
+<div class="math notranslate nohighlight">
+\[S_{c} = (\sum_{s}^{n}{\texttt{pt}_s} + \texttt{pt}_b) \times \texttt{pm}_{s}\]</div>
 </div>
 </section>
 </section>
 <section id="trial-score">
 <h2>Trial Score<a class="headerlink" href="#trial-score" title="Permalink to this heading"></a></h2>
-<p>The trial score <span class="math notranslate nohighlight">\(TrialScore\)</span> combines the cost factor, efficiency factors and completion scores into a single score for ranking the teams.</p>
+<p>The trial score <span class="math notranslate nohighlight">\(TS\)</span> combines the cost factor, efficiency factors and task scores into a single score for ranking the teams.</p>
+<ul class="simple">
+<li><p>For each order there is one Boolean condition:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\texttt{isPriorityOrder} \rightarrow A ~~\)</span> : true if the order is classified as a priority order</p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition-priority-multiplier admonition">
+<p class="admonition-title">Priority Multiplier</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\texttt{pm}_p = \begin{cases}
+3, &amp;\text{if} ~~ A \\
+1, &amp;\text{otherwise} \\
+\end{cases}\end{split}\]</div>
+</div>
 <div class="caution admonition" id="id4">
 <p class="admonition-title">Trial Score</p>
-<blockquote>
-<div><div class="math notranslate nohighlight">
-\[TrialScore = CF \times \sum_{i=0}^{n}{(h_i \times EF_i \times CS_i)}\]</div>
-</div></blockquote>
+<div class="math notranslate nohighlight">
+\[TS = CF \times \sum_{i=0}^{n}{(\texttt{pm}_p \times EF_i \times S_i)}\]</div>
 </div>
 </section>
 </section>
