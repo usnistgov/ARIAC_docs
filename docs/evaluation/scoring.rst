@@ -262,7 +262,7 @@ The trial score :math:`TS` combines the cost factor, efficiency factors and task
 
 * For each order there is one Boolean condition:
 
-      1. *isPriority* :math:`\rightarrow A` is true if the order is classified as a priority order
+  * :math:`\texttt{isPriorityOrder} \rightarrow A ~~` : true if the order is classified as a priority order
 
 .. admonition:: Priority Multiplier
 
