@@ -4,7 +4,7 @@
 Orders
 ======
 
-The main task of the competition is to complete orders. After the competition is started orders will be published on the topic :topic:`/ariac/orders`. Each order will request competitors to complete one of three possible tasks (:ref:`KITTING_TASK`, :ref:`ASSEMBLY_TASK`, or :ref:`COMBINED_TASK`). An order has the following specifications:
+The main task of the competition is to complete orders. After the competition is started, orders will be published on the topic :topic:`/ariac/orders`. Each order will request competitors to complete one of three possible tasks (:ref:`KITTING_TASK`, :ref:`ASSEMBLY_TASK`, or :ref:`COMBINED_TASK`). An order has the following specifications:
 
   * :yamlname:`id` Each order in a trial has a unique id. The id is an eight character alphanumeric string. 
   
@@ -31,10 +31,10 @@ Kitting is the process of gathering parts into a 'kit'. For a kitting task, the 
 
   1. Locate a tray with the proper tray id, on one of the two kit tray stations. 
 
-  2. Pick and place lock the tray onto the specified :abbr:`AGVs (Automated Guided Vehicles)`.
+  2. Pick, place, and lock the tray onto the specified :abbr:`AGVs (Automated Guided Vehicles)`.
 
   .. note::
-    After placement the tray should be locked to the AGV using the service :rosservice:`/ariac/agv{n}_lock_tray` to prevent the tray from shifting during transport. 
+    After placement, the tray should be locked to the AGV using the service :rosservice:`/ariac/agv{n}_lock_tray` to prevent the tray from shifting during transport. 
 
   3. Place the requested parts onto that kit tray in the specified quadrant.
 
@@ -140,7 +140,7 @@ A combined task is a task which requires both kitting and assembly. For a combin
 
 .. note::
   The kitting task information is left to the competitors to figure out based on the assembly task information. 
-  The CCS can place part sanywhere on :abbr:`AGVs (Automated Guided Vehicles)` and then move those :abbr:`AGVs (Automated Guided Vehicles)` to the station where assembly is to be performed. 
+  The CCS can place parts anywhere on :abbr:`AGVs (Automated Guided Vehicles)` and then move those :abbr:`AGVs (Automated Guided Vehicles)` to the station where assembly is to be performed. 
   Once the assembly is complete, the :abbr:`CCS (Competitor Control System)` can submit the assembly via a ROS service call (see :numref:`communications-topics`). 
   The :abbr:`AM (ARIAC Manager)` will then evaluate the submitted assembly for scoring (kitting task is not scored). 
 
