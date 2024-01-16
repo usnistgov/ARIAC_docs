@@ -48,6 +48,9 @@ Competition Topics
    * - :topic:`/ariac_human/state`
      - :term:`ariac_msgs/msg/HumanState`
      - Position and velocity of the human and the ceiling robot
+   * - :topic:`/ariac/assembly_insert_{n}_assembly_state`
+     - :term:`ariac_msgs/msg/AssemblyState`
+     - State of the assembly station :msg:`as{n}` (battery_attached, pump_attached, sensor_attached, regulator_attached)
 
 .. _SENSOR_TOPICS:
 
@@ -607,6 +610,19 @@ Message Definitions
       - :msg:`faulty_part`: True if a part is faulty, False otherwise
       - :msg:`incorrect_part_type`: True if a part has the wrong type, False otherwise
       - :msg:`incorrect_part_color`: True if a part has the wrong color, False otherwise
+    
+    ariac_msgs/msg/AssemblyState
+      .. code-block:: text
+        
+        bool battery_attached
+        bool pump_attached
+        bool sensor_attached
+        bool regulator_attached
+
+      - :msg:`battery_attached`: True if battery is attached to the assembly insert, False otherwise
+      - :msg:`pump_attached`: True if pump is attached to the assembly insert, False otherwise
+      - :msg:`sensor_attached`: True if sensor is attached to the assembly insert, False otherwise
+      - :msg:`regulator_attached`: True if regulator is attached to the assembly insert, False otherwise
 
 
 -------------------

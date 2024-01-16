@@ -324,6 +324,10 @@
 <td><p><a class="reference internal" href="#term-ariac_msgs-msg-HumanState"><span class="xref std std-term">ariac_msgs/msg/HumanState</span></a></p></td>
 <td><p>Position and velocity of the human and the ceiling robot</p></td>
 </tr>
+<tr class="row-even"><td><p><code class="code topic docutils literal notranslate"><span class="pre">/ariac/assembly_insert_{n}_assembly_state</span></code></p></td>
+<td><p><a class="reference internal" href="#term-ariac_msgs-msg-AssemblyState"><span class="xref std std-term">ariac_msgs/msg/AssemblyState</span></a></p></td>
+<td><p>State of the assembly station <code class="code msg docutils literal notranslate"><span class="pre">as{n}</span></code> (battery_attached, pump_attached, sensor_attached, regulator_attached)</p></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -499,6 +503,19 @@ geometry_msgs/Vector3 install_direction
 <li><p><a class="reference external" href="https://docs.ros2.org/latest/api/geometry_msgs/msg/Vector3.html">geometry_msgs/msg/Vector3</a></p></li>
 </ul>
 </div>
+</dd>
+<dt id="term-ariac_msgs-msg-AssemblyState">ariac_msgs/msg/AssemblyState<a class="headerlink" href="#term-ariac_msgs-msg-AssemblyState" title="Permalink to this term"></a></dt><dd><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>bool battery_attached
+bool pump_attached
+bool sensor_attached
+bool regulator_attached
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="code msg docutils literal notranslate"><span class="pre">battery_attached</span></code>: True if battery is attached to the assembly insert, False otherwise</p></li>
+<li><p><code class="code msg docutils literal notranslate"><span class="pre">pump_attached</span></code>: True if pump is attached to the assembly insert, False otherwise</p></li>
+<li><p><code class="code msg docutils literal notranslate"><span class="pre">sensor_attached</span></code>: True if sensor is attached to the assembly insert, False otherwise</p></li>
+<li><p><code class="code msg docutils literal notranslate"><span class="pre">regulator_attached</span></code>: True if regulator is attached to the assembly insert, False otherwise</p></li>
+</ul>
 </dd>
 <dt id="term-ariac_msgs-msg-AssemblyTask">ariac_msgs/msg/AssemblyTask<a class="headerlink" href="#term-ariac_msgs-msg-AssemblyTask" title="Permalink to this term"></a></dt><dd><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>uint8 AS1=1
 uint8 AS2=2
