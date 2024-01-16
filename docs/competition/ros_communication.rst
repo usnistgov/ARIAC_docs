@@ -619,10 +619,10 @@ Message Definitions
         bool sensor_attached
         bool regulator_attached
 
-      - :msg:`battery_attached`: True if battery is inserted to assembly station, False otherwise
-      - :msg:`pump_attached`: True if pump is inserted to assembly station, False otherwise
-      - :msg:`sensor_attached`: True if sensor is inserted to assembly station, False otherwise
-      - :msg:`regulator_attached`: True if regulator is inserted to assembly station, False otherwise
+      - :msg:`battery_attached`: True if battery is attached to the assembly insert, False otherwise
+      - :msg:`pump_attached`: True if pump is attached to the assembly insert, False otherwise
+      - :msg:`sensor_attached`: True if sensor is attached to the assembly insert, False otherwise
+      - :msg:`regulator_attached`: True if regulator is attached to the assembly insert, False otherwise
 
 
 -------------------
