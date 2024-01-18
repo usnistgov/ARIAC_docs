@@ -1,8 +1,8 @@
 .. _TUTORIAL8:
 
-=========================
-Tutorial 8: Read an order
-=========================
+=====================================
+Tutorial 8: Completing a kitting task
+=====================================
 
 .. admonition:: Tutorial 8
   :class: attention

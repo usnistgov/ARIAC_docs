@@ -37,6 +37,8 @@ To start tutorial 6, open a new terminal and use this command:
 Moveit_py requirements
 ----------------------
 
+For Moveit_py to launch properly, a config file is needed. This file can be found in /ariac_tutorials/config/moveit_config.yaml.
+
 -----------------
 Code explaination
 -----------------

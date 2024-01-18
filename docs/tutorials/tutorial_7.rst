@@ -1,8 +1,8 @@
 .. _TUTORIAL7:
 
-=========================
-Tutorial 7: Read an order
-=========================
+==============================================
+Tutorial 7: Picking and placing a kitting tray
+==============================================
 
 .. admonition:: Tutorial 7
   :class: attention
