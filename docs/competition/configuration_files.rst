@@ -608,14 +608,35 @@ ros2 run ariac_gui trial_generator
 The first menu of the GUI gives two options. A new file can be created or a new file can be loaded in and edited.
 When a file is loaded in, the GUI will be opened as usual, but all of the options will be loaded with those from the configuration file selected.
 
+.. image:: ../images/file_creation_menu.png
+  :width: 100%
+  :alt: File Creation Menu
+
 The first tab of the GUI lets you edit the header of the configuration file. This includes the time limit, the trial name, and the name of the author.
+
+.. image:: ../images/setup_menu.png
+  :width: 100%
+  :alt: Setup Menu
 
 The second tab is the kitting trays menu. This menu lets you choose the kitting tray in each of the slots. 
 When a kitting tray is selected, the kitting tray with the correct fiducial tag appears on the tables in the GUI.
 
+.. image:: ../images/kitting_trays_menu.png
+  :width: 100%
+  :alt: Kitting Trays Menu
+
 The third tab is the assembly insert rotation menu. 
 At first, as long as a file with non-zero assembly insert rotations is not loaded in, this menu will be a button which states that all the inserts are currently set to 0.0.
+
+.. image:: ../images/insert_initial_menu.png
+  :width: 100%
+  :alt: Assembly Inserts Initial Menu
+
 If this needs to be changed, press the button and four sliders appear, which allow you to change the rotation of each of the inserts.
+
+.. image:: ../images/insert_slider_menu.png
+  :width: 100%
+  :alt: Assembly Inserts Slider Menu
 
 The fourth tab is the bin parts menu. At the top of this menu, there is a dropdown menu which changes the bin being edited.
 On the left half of this menu, a diagram of the bin shows up with each slot acting as a button. 
@@ -625,25 +646,58 @@ On the right half of the menu, is a minimap which shows each of the bins. The on
 Under the diagram and the minimap, there are two buttons. The top button allows for multiple parts to be added at the same time.
 The second button clears the selected bin.
 
+.. image:: ../images/bins_menu.png
+  :width: 100%
+  :alt: Bins Menu
+
 The fifth tab is the conveyor parts menu. The top half of this menu has the basic conveyor settings, like spawn rate and whether the order is random or sequential.
 Under these options, there is an add part lot button, which adds parts to the conveyor belt.
 Under these settings, there is a scrollable sub-window with a list of the part lots currently on the conveyor belt.
 This list has buttons where the part lots can be edited or deleted.
 
+.. image:: ../images/conveyor_parts_menu.png
+  :width: 100%
+  :alt: Conveyor Parts Menu
+
 The sixth tab is the orders menu. There are three main buttons in this menu, the "Add kitting order", "Add assembly order",  and "Add combined order".
 If any orders have already been created, a menu will show up under these buttons with edit and delete buttons.
 If no kitting trays have been selected, the GUI will not be able to create a kitting order.
 
+.. image:: ../images/orders_menu.png
+  :width: 100%
+  :alt: Orders Menu
+
 The seventh tab is the challenges menu. This menu can add any of the challenges available in the configuration file. 
 Once challenges are made, they appear in a scrollable sub-window with edit and delete buttons for each of the challenges.
 
+.. image:: ../images/challenge_menu.png
+  :width: 100%
+  :alt: Challenges Menu
+
 The eighth tab shows the current status of the file. This is created live any time a change is made in anypart of the GUI.
 This tab shows the entirety of the configuration file.
+
+.. image:: ../images/current_file_menu.png
+  :width: 100%
+  :alt: Current File Tab
 
 The final tab is a map of the environment which shows each every part present on the agvs, bins, and conveyor belt. It also shows the rotation of the assembly stations.
 To show the conveyor belt parts, set the "Show conveyor_parts" checkbox to true. 
 The parts will move across the conveyor belt. Any time a part is added, edited, or deleted on the conveyor belt, the checkbox will automatically turn off.
 
+.. image:: ../images/full_map_menu.png
+  :width: 100%
+  :alt: Full Map Menu
+
 To save the file, press the "Save file" button in the bottom left. If you loaded in a file at the beginning, you will be asked if you want to overwrite that file. 
+
+.. image:: ../images/overwrite_menu.png
+  :width: 100%
+  :alt: Overwrite Menu
+
 Otherwise, a file saving menu will appear.
+
+.. image:: ../images/save_file_menu.png
+  :width: 100%
+  :alt: Save File Menu
 
