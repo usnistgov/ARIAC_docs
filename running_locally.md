@@ -12,6 +12,14 @@
     sudo apt-get install python3-venv
     ```
 
+3. If running on wsl, this step is needed to be able to browse using the command line
+
+    ```
+    sudo apt install wslu
+    export BROWSER=wslview
+    sudo apt install xdg-utils
+    ```
+
 3. Create a virtual environment for building the sphinx project
 
     ```
