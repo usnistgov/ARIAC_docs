@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tutorial 3: Reading data from a RGBD camera &mdash; ARIAC Docs 1.0 documentation</title>
+  <title>Tutorial 3: Read Data from an Advanced Logical Camera &mdash; ARIAC Docs 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
       <link rel="stylesheet" type="text/css" href="../_static/ntd2d.css?v=592263c6" />
       <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.custom.css" />
@@ -35,14 +35,14 @@
         <script src="../_static/js/micromodal.min.js"></script>
         <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
         <script src="../_static/copybutton.js?v=faefdcb3"></script>
-        <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"></script>
+        <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js"></script>
         <script src="../_static/twemoji.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script src="../_static/js/custom.js?v=8fe80478"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Tutorial 4: Reading an order" href="tutorial_4.html" />
+    <link rel="next" title="Tutorial 4: Read an order" href="tutorial_4.html" />
     <link rel="prev" title="Tutorial 2: Reading data from a break beam sensor" href="tutorial_2.html" />
    
 
@@ -239,14 +239,60 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_1.html">Tutorial 1: Creating a competition package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_2.html">Tutorial 2: Reading data from a break beam sensor</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial 3: Reading data from a RGBD camera</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_4.html">Tutorial 4: Reading an order</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_5.html">Tutorial 5: Moving AGVs between stations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_6.html">Tutorial 6: Picking a part</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_7.html">Tutorial 7: Picking and placing a kit tray</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_8.html">Tutorial 8: Completing a Kitting Task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_1.html">Tutorial 1: Starting the competition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_1.html#starting-the-enviornment">Starting the enviornment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_1.html#running-tutorial-1">Running tutorial 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_1.html#expected-output-of-tutorial-1">Expected output of tutorial 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_1.html#code-explaination">Code explaination</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_2.html">Tutorial 2: Reading data from a break beam sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_2.html#starting-the-enviornment">Starting the enviornment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_2.html#running-tutorial-2">Running tutorial 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_2.html#expected-output-of-tutorial-2">Expected output of tutorial 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_2.html#code-explaination">Code explaination</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial 3: Read Data from an Advanced Logical Camera</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#starting-the-enviornment">Starting the enviornment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-tutorial-3">Running tutorial 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#expected-output-of-tutorial-3">Expected output of tutorial 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-explaination">Code explaination</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_4.html">Tutorial 4: Read an order</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_4.html#starting-the-enviornment">Starting the enviornment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_4.html#running-tutorial-4">Running tutorial 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_4.html#expected-output-of-tutorial-4">Expected output of tutorial 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_4.html#code-explaination">Code explaination</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_5.html">Tutorial 5: Move AGVs to stations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_5.html#starting-the-enviornment">Starting the enviornment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_5.html#running-tutorial-5">Running tutorial 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_5.html#expected-output-of-tutorial-5">Expected output of tutorial 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_5.html#code-explaination">Code explaination</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_6.html">Tutorial 6: Picking a part</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_6.html#starting-the-enviornment">Starting the enviornment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_6.html#running-tutorial-6">Running tutorial 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_6.html#moveit-py-requirements">Moveit_py requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_6.html#code-explaination">Code explaination</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_7.html">Tutorial 7: Picking and placing a kitting tray</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_7.html#starting-the-enviornment">Starting the enviornment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_7.html#running-tutorial-7">Running tutorial 7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_7.html#code-explaination">Code explaination</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_8.html">Tutorial 8: Completing a kitting task</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_8.html#starting-the-enviornment">Starting the enviornment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_8.html#running-tutorial-8">Running tutorial 8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_8.html#code-explaination">Code explaination</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -263,13 +309,13 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Tutorial 3: Reading data from a RGBD camera</li>
+      <li class="breadcrumb-item active">Tutorial 3: Read Data from an Advanced Logical Camera</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/tutorials/tutorial_3.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
         <a href="tutorial_2.html" class="btn btn-neutral float-left" title="Tutorial 2: Reading data from a break beam sensor" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="tutorial_4.html" class="btn btn-neutral float-right" title="Tutorial 4: Reading an order" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="tutorial_4.html" class="btn btn-neutral float-right" title="Tutorial 4: Read an order" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
   <hr/>
 </div>
@@ -278,12 +324,123 @@
              
   <blockquote>
 <div></div></blockquote>
-<section id="tutorial-3-reading-data-from-a-rgbd-camera">
-<span id="tutorial3"></span><h1>Tutorial 3: Reading data from a RGBD camera<a class="headerlink" href="#tutorial-3-reading-data-from-a-rgbd-camera" title="Permalink to this heading"></a></h1>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>Finish tutorial 3</p>
+<section id="tutorial-3-read-data-from-an-advanced-logical-camera">
+<span id="tutorial3"></span><h1>Tutorial 3: Read Data from an Advanced Logical Camera<a class="headerlink" href="#tutorial-3-read-data-from-an-advanced-logical-camera" title="Permalink to this heading"></a></h1>
+<div class="attention admonition" id="tutorial-3">
+<p class="admonition-title">Tutorial 3</p>
+<ul class="simple">
+<li><p><strong>Prerequisites:</strong> <a class="hxr-hoverxref hxr-modal reference internal" href="tutorials.html#tutorials"><span class="std std-ref">Introduction to Tutorials</span></a></p></li>
+<li><p><strong>Source Code</strong>: <a class="reference external" href="https://github.com/usnistgov/ARIAC_tutorials">https://github.com/usnistgov/ARIAC_tutorials</a></p></li>
+</ul>
 </div>
+<p>This tutorial details the steps necessary to start the competition from a competitor package.</p>
+<section id="starting-the-enviornment">
+<h2>Starting the enviornment<a class="headerlink" href="#starting-the-enviornment" title="Permalink to this heading"></a></h2>
+<p>To start the enviornment, use this command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gazebo<span class="w"> </span>ariac.launch.py<span class="w"> </span>competitor_pkg:<span class="o">=</span>ariac_tutorials<span class="w"> </span>trial_name:<span class="o">=</span>tutorial<span class="w"> </span>dev_mode:<span class="o">=</span>True
+</pre></div>
+</div>
+</section>
+<section id="running-tutorial-3">
+<h2>Running tutorial 3<a class="headerlink" href="#running-tutorial-3" title="Permalink to this heading"></a></h2>
+<p>To start tutorial 3, open a new terminal and use this command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_tutorials<span class="w"> </span>tutorial.launch.py<span class="w"> </span>tutorial:<span class="o">=</span><span class="m">3</span>
+</pre></div>
+</div>
+</section>
+<section id="expected-output-of-tutorial-3">
+<h2>Expected output of tutorial 3<a class="headerlink" href="#expected-output-of-tutorial-3" title="Permalink to this heading"></a></h2>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 19 </span><span class="caption-text">Tutorial 3 output</span><a class="headerlink" href="#id2" title="Permalink to this code"></a></div>
+<div class="no-copybutton highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[tutorial_3.py-1] [INFO] [1705523791.505330909] [competition_interface]: Waiting for competition to be ready</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1705523812.096887359] [competition_interface]: Competition state is: idle</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1705523926.539425501] [competition_interface]: Competition state is: ready</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1705523926.561503733] [competition_interface]: Competition is ready. Starting...</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1705523926.610670594] [competition_interface]: Started competition.</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1705523926.613540083] [competition_interface]: Getting parts from bin 2</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1705523926.616115248] [competition_interface]: No image received yet</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1705523927.618836767] [competition_interface]: No image received yet</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1705523928.144099448] [competition_interface]: Competition state is: started</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1705523928.632360416] [competition_interface]: No image received yet</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1705523929.636587739] [competition_interface]: No image received yet</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1705523931.862293284] [competition_interface]: Slot 1: purple pump</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1705523931.864624017] [competition_interface]: Slot 2: Empty</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1705523931.866752218] [competition_interface]: Slot 3: purple pump</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1705523931.869826096] [competition_interface]: Slot 4: Empty</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1705523931.872064874] [competition_interface]: Slot 5: Empty</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1705523931.874144258] [competition_interface]: Slot 6: Empty</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1705523931.877048187] [competition_interface]: Slot 7: purple pump</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1705523931.880235581] [competition_interface]: Slot 8: Empty</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1705523931.883262169] [competition_interface]: Slot 9: Empty</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1705523931.886214625] [competition_interface]: Ending competition</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1705523931.923620397] [competition_interface]: Ended competition.</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="code-explaination">
+<h2>Code explaination<a class="headerlink" href="#code-explaination" title="Permalink to this heading"></a></h2>
+<p>This is the node used for tutorial 3. The functions from competition_interface.py which are used are highlighted.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 20 </span><span class="caption-text"><code class="file docutils literal notranslate"><span class="pre">tutorial_3.py</span></code></span><a class="headerlink" href="#id1" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="kn">import</span> <span class="nn">rclpy</span>
+<span class="kn">import</span> <span class="nn">threading</span>
+<span class="kn">from</span> <span class="nn">rclpy.executors</span> <span class="kn">import</span> <span class="n">MultiThreadedExecutor</span>
+<span class="kn">from</span> <span class="nn">ariac_tutorials.competition_interface</span> <span class="kn">import</span> <span class="n">CompetitionInterface</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">)</span>
+    <span class="n">interface</span> <span class="o">=</span> <span class="n">CompetitionInterface</span><span class="p">(</span><span class="n">enable_moveit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">executor</span> <span class="o">=</span> <span class="n">MultiThreadedExecutor</span><span class="p">()</span>
+    <span class="n">executor</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">interface</span><span class="p">)</span>
+
+    <span class="n">spin_thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">executor</span><span class="o">.</span><span class="n">spin</span><span class="p">)</span>
+    <span class="n">spin_thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">interface</span><span class="o">.</span><span class="n">start_competition</span><span class="p">()</span>
+
+    <span class="c1"># Turns on a debug topic to visualize bounding boxes and slots</span>
+    <span class="c1"># /ariac/sensors/display_bounding_boxes</span>
+<span class="hll">    <span class="n">interface</span><span class="o">.</span><span class="n">display_bounding_boxes</span> <span class="o">=</span> <span class="kc">True</span>
+</span>
+<span class="hll">    <span class="n">bin_number</span> <span class="o">=</span> <span class="mi">2</span>
+</span>
+    <span class="n">interface</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Getting parts from bin </span><span class="si">{</span><span class="n">bin_number</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">bin_parts</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">while</span> <span class="n">bin_parts</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="hll">        <span class="n">bin_parts</span> <span class="o">=</span> <span class="n">interface</span><span class="o">.</span><span class="n">get_bin_parts</span><span class="p">(</span><span class="n">bin_number</span><span class="p">)</span>
+</span>        <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">bin_parts</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">_slot_number</span><span class="p">,</span> <span class="n">_part</span> <span class="ow">in</span> <span class="n">bin_parts</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">_part</span><span class="o">.</span><span class="n">type</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">interface</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Slot </span><span class="si">{</span><span class="n">_slot_number</span><span class="si">}</span><span class="s2">: Empty&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">interface</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Slot </span><span class="si">{</span><span class="n">_slot_number</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">_part</span><span class="o">.</span><span class="n">color</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">_part</span><span class="o">.</span><span class="n">type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">interface</span><span class="o">.</span><span class="n">end_competition</span><span class="p">()</span>
+    <span class="n">interface</span><span class="o">.</span><span class="n">destroy_node</span><span class="p">()</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>The purpose of this tutorial is to use RGB cameras to detect the parts on a chosen bin.
+The two cameras, <code class="code highlight python docutils literal highlight-python"><span class="n">left_bins_rgb_camera</span></code> and <code class="code highlight python docutils literal highlight-python"><span class="n">right_bins_rgb_camera</span></code>, are subscribed to and the image msg is saved in <code class="code highlight python docutils literal highlight-python"><span class="n">_left_bins_camera_image</span></code> and <code class="code highlight python docutils literal highlight-python"><span class="n">_right_bins_camera_image</span></code>.
+The first step of the process of finding parts in the image is to read in an image frame using <code class="code highlight python docutils literal highlight-python"><span class="n">imgmsg_to_csv2</span></code>.
+This function will convert the image msg from the camera and return it as an OpenCV image.
+The second step is finding parts within the image.
+This is done using the <code class="code highlight python docutils literal highlight-python"><span class="n">interface</span><span class="o">.</span><span class="n">find_parts</span></code> function, where the possible colors and types are looped through.
+An image mask is created using the color and using the type, a template is used to find the location of any parts of that type and color.
+The coordinates of where the parts are found are then saved in <code class="code highlight python docutils literal highlight-python"><span class="n">interface</span><span class="o">.</span><span class="n">part_poses</span></code> and <code class="code highlight python docutils literal highlight-python"><span class="n">interface</span><span class="o">.</span><span class="n">centered_part_poses</span></code>.
+The third step is to organize the parts by slots in the bin.
+This is done using the <code class="code highlight python docutils literal highlight-python"><span class="n">interface</span><span class="o">.</span><span class="n">output_by_slot</span></code>, where the coordinates saved in <code class="code highlight python docutils literal highlight-python"><span class="n">interface</span><span class="o">.</span><span class="n">centered_part_poses</span></code> are used to find which slots in the bin that the parts are in.
+After this step, the dictionary containing the slot numbers as the keys and part in the slot as the value is returned and the node logs them.</p>
+</section>
 </section>
 
 
@@ -291,7 +448,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="tutorial_2.html" class="btn btn-neutral float-left" title="Tutorial 2: Reading data from a break beam sensor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="tutorial_4.html" class="btn btn-neutral float-right" title="Tutorial 4: Reading an order" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="tutorial_4.html" class="btn btn-neutral float-right" title="Tutorial 4: Read an order" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

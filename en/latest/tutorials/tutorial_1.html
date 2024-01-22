@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tutorial 1: Creating a competition package &mdash; ARIAC Docs 1.0 documentation</title>
+  <title>Tutorial 1: Starting the competition &mdash; ARIAC Docs 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
       <link rel="stylesheet" type="text/css" href="../_static/ntd2d.css?v=592263c6" />
       <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.custom.css" />
@@ -35,7 +35,7 @@
         <script src="../_static/js/micromodal.min.js"></script>
         <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
         <script src="../_static/copybutton.js?v=faefdcb3"></script>
-        <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"></script>
+        <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js"></script>
         <script src="../_static/twemoji.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script src="../_static/js/custom.js?v=8fe80478"></script>
@@ -239,14 +239,60 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial 1: Creating a competition package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_2.html">Tutorial 2: Reading data from a break beam sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_3.html">Tutorial 3: Reading data from a RGBD camera</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_4.html">Tutorial 4: Reading an order</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_5.html">Tutorial 5: Moving AGVs between stations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_6.html">Tutorial 6: Picking a part</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_7.html">Tutorial 7: Picking and placing a kit tray</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial_8.html">Tutorial 8: Completing a Kitting Task</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial 1: Starting the competition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#starting-the-enviornment">Starting the enviornment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-tutorial-1">Running tutorial 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#expected-output-of-tutorial-1">Expected output of tutorial 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-explaination">Code explaination</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_2.html">Tutorial 2: Reading data from a break beam sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_2.html#starting-the-enviornment">Starting the enviornment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_2.html#running-tutorial-2">Running tutorial 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_2.html#expected-output-of-tutorial-2">Expected output of tutorial 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_2.html#code-explaination">Code explaination</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_3.html">Tutorial 3: Read Data from an Advanced Logical Camera</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_3.html#starting-the-enviornment">Starting the enviornment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_3.html#running-tutorial-3">Running tutorial 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_3.html#expected-output-of-tutorial-3">Expected output of tutorial 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_3.html#code-explaination">Code explaination</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_4.html">Tutorial 4: Read an order</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_4.html#starting-the-enviornment">Starting the enviornment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_4.html#running-tutorial-4">Running tutorial 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_4.html#expected-output-of-tutorial-4">Expected output of tutorial 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_4.html#code-explaination">Code explaination</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_5.html">Tutorial 5: Move AGVs to stations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_5.html#starting-the-enviornment">Starting the enviornment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_5.html#running-tutorial-5">Running tutorial 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_5.html#expected-output-of-tutorial-5">Expected output of tutorial 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_5.html#code-explaination">Code explaination</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_6.html">Tutorial 6: Picking a part</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_6.html#starting-the-enviornment">Starting the enviornment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_6.html#running-tutorial-6">Running tutorial 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_6.html#moveit-py-requirements">Moveit_py requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_6.html#code-explaination">Code explaination</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_7.html">Tutorial 7: Picking and placing a kitting tray</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_7.html#starting-the-enviornment">Starting the enviornment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_7.html#running-tutorial-7">Running tutorial 7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_7.html#code-explaination">Code explaination</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_8.html">Tutorial 8: Completing a kitting task</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_8.html#starting-the-enviornment">Starting the enviornment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_8.html#running-tutorial-8">Running tutorial 8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_8.html#code-explaination">Code explaination</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -263,7 +309,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Tutorial 1: Creating a competition package</li>
+      <li class="breadcrumb-item active">Tutorial 1: Starting the competition</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/tutorials/tutorial_1.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -278,12 +324,87 @@
              
   <blockquote>
 <div></div></blockquote>
-<section id="tutorial-1-creating-a-competition-package">
-<span id="tutorial1"></span><h1>Tutorial 1: Creating a competition package<a class="headerlink" href="#tutorial-1-creating-a-competition-package" title="Permalink to this heading"></a></h1>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>Finish tutorial 1</p>
+<section id="tutorial-1-starting-the-competition">
+<span id="tutorial1"></span><h1>Tutorial 1: Starting the competition<a class="headerlink" href="#tutorial-1-starting-the-competition" title="Permalink to this heading"></a></h1>
+<div class="attention admonition" id="tutorial-1">
+<p class="admonition-title">Tutorial 1</p>
+<ul class="simple">
+<li><p><strong>Prerequisites:</strong> <a class="hxr-hoverxref hxr-modal reference internal" href="tutorials.html#tutorials"><span class="std std-ref">Introduction to Tutorials</span></a></p></li>
+<li><p><strong>Source Code</strong>: <a class="reference external" href="https://github.com/usnistgov/ARIAC_tutorials">https://github.com/usnistgov/ARIAC_tutorials</a></p></li>
+</ul>
 </div>
+<p>This tutorial details the steps necessary to start the competition from a competitor package.</p>
+<section id="starting-the-enviornment">
+<h2>Starting the enviornment<a class="headerlink" href="#starting-the-enviornment" title="Permalink to this heading"></a></h2>
+<p>To start the enviornment, use this command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gazebo<span class="w"> </span>ariac.launch.py<span class="w"> </span>competitor_pkg:<span class="o">=</span>ariac_tutorials<span class="w"> </span>trial_name:<span class="o">=</span>tutorial<span class="w"> </span>dev_mode:<span class="o">=</span>True
+</pre></div>
+</div>
+</section>
+<section id="running-tutorial-1">
+<h2>Running tutorial 1<a class="headerlink" href="#running-tutorial-1" title="Permalink to this heading"></a></h2>
+<p>To start tutorial 1, open a new terminal and use this command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_tutorials<span class="w"> </span>tutorial.launch.py<span class="w"> </span>tutorial:<span class="o">=</span><span class="m">1</span>
+</pre></div>
+</div>
+</section>
+<section id="expected-output-of-tutorial-1">
+<h2>Expected output of tutorial 1<a class="headerlink" href="#expected-output-of-tutorial-1" title="Permalink to this heading"></a></h2>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 15 </span><span class="caption-text">Tutorial 1 output</span><a class="headerlink" href="#id2" title="Permalink to this code"></a></div>
+<div class="no-copybutton highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[tutorial_1.py-1] [INFO] [1705514939.446586830] [competition_interface]: Waiting for competition to be ready</span>
+<span class="go">[tutorial_1.py-1] [INFO] [1705514964.593999751] [competition_interface]: Competition state is: idle</span>
+<span class="go">[tutorial_1.py-1] [INFO] [1705515096.252907877] [competition_interface]: Competition state is: ready</span>
+<span class="go">[tutorial_1.py-1] [INFO] [1705515096.257258480] [competition_interface]: Competition is ready. Starting...</span>
+<span class="go">[tutorial_1.py-1] [INFO] [1705515096.322821850] [competition_interface]: Started competition.</span>
+<span class="go">[tutorial_1.py-1] [INFO] [1705515099.154943257] [competition_interface]: Competition state is: started</span>
+<span class="go">[tutorial_1.py-1] [INFO] [1705515326.346296824] [competition_interface]: Competition state is: order_announcements_done</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="code-explaination">
+<h2>Code explaination<a class="headerlink" href="#code-explaination" title="Permalink to this heading"></a></h2>
+<p>This is the node used for tutorial 1. The functions from competition_interface.py which are used are highlighted.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 16 </span><span class="caption-text"><code class="file docutils literal notranslate"><span class="pre">tutorial_1.py</span></code></span><a class="headerlink" href="#id1" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="kn">import</span> <span class="nn">rclpy</span>
+<span class="kn">import</span> <span class="nn">threading</span>
+<span class="kn">from</span> <span class="nn">rclpy.executors</span> <span class="kn">import</span> <span class="n">MultiThreadedExecutor</span>
+<span class="kn">from</span> <span class="nn">ariac_tutorials.competition_interface</span> <span class="kn">import</span> <span class="n">CompetitionInterface</span>
+<span class="kn">from</span> <span class="nn">ariac_msgs.msg</span> <span class="kn">import</span> <span class="n">CompetitionState</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">)</span>
+    <span class="n">interface</span> <span class="o">=</span> <span class="n">CompetitionInterface</span><span class="p">(</span><span class="n">enable_moveit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="n">executor</span> <span class="o">=</span> <span class="n">MultiThreadedExecutor</span><span class="p">()</span>
+    <span class="n">executor</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">interface</span><span class="p">)</span>
+
+    <span class="n">spin_thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">executor</span><span class="o">.</span><span class="n">spin</span><span class="p">)</span>
+    <span class="n">spin_thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="hll">    <span class="n">interface</span><span class="o">.</span><span class="n">start_competition</span><span class="p">()</span>
+</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">interface</span><span class="o">.</span><span class="n">get_competition_state</span> <span class="o">==</span> <span class="n">CompetitionState</span><span class="o">.</span><span class="n">ORDER_ANNOUNCEMENTS_DONE</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+<span class="hll">    <span class="n">interface</span><span class="o">.</span><span class="n">end_competition</span><span class="p">()</span>
+</span>    <span class="n">spin_thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>First, an instance of the <code class="code highlight python docutils literal highlight-python"><span class="n">CompetitionInterface</span></code> is created with <code class="code highlight python docutils literal highlight-python"><span class="n">enable_moveit</span></code> set to <code class="code highlight python docutils literal highlight-python"><span class="kc">False</span></code>, as moveit_py is not needed for this tutorial.
+Then, an executor is created containing an instance of <code class="code highlight python docutils literal highlight-python"><span class="n">CompetitionInterface</span></code>. After this, a thread is created to spin the executor.
+The competition is then started using the <code class="code highlight python docutils literal highlight-python"><span class="n">start_competition</span></code> method in <code class="code highlight python docutils literal highlight-python"><span class="n">CompetitionInterface</span></code>. This uses the <span class="incremental">/ariac/start_competition</span> service to start the competition.
+The node then waits until the competition state is <span class="incremental">ORDER_ANNOUNCEMENTS_DONE</span>. Finally, the competition is ended using the <span class="incremental">/ariac/end_competition</span> service and the thread is joined with the main thread.</p>
+</section>
 </section>
 
 
