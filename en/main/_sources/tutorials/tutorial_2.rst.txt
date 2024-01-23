@@ -4,24 +4,17 @@
 Tutorial 2: Reading data from a break beam sensor
 =================================================
 
-.. admonition:: Tutorial 2
-  :class: attention
-  :name: tutorial_2
+This tutorial shows how to subscribe to a break beam sensor topic to count parts on the conveyor belt. 
 
-  - **Prerequisites:** :ref:`Introduction to Tutorials <TUTORIALS>`
-  - **Source Code**: `https://github.com/usnistgov/ARIAC_tutorials <https://github.com/usnistgov/ARIAC_tutorials>`_
+---------------------------------------
+Starting the environment for Tutorial 2
+---------------------------------------
 
-This tutorial details the steps necessary to start the competition from a competitor package.
-
-------------------------
-Starting the enviornment
-------------------------
-
-To start the enviornment, use this command:
+To start the environment, use this command:
 
 .. code-block:: bash
         
-            ros2 launch ariac_gazebo ariac.launch.py competitor_pkg:=ariac_tutorials trial_name:=tutorial dev_mode:=True
+    ros2 launch ariac_gazebo ariac.launch.py competitor_pkg:=ariac_tutorials trial_name:=tutorial dev_mode:=True
 
 ------------------
 Running tutorial 2
@@ -31,7 +24,7 @@ To start tutorial 2, open a new terminal and use this command:
 
 .. code-block:: bash
         
-            ros2 launch ariac_tutorials tutorial.launch.py tutorial:=2
+    ros2 launch ariac_tutorials tutorial.launch.py tutorial:=2
 
 -----------------------------
 Expected output of tutorial 2
@@ -54,9 +47,9 @@ Expected output of tutorial 2
     [tutorial_2.py-1] [INFO] [1705518449.918159654] [competition_interface]: Part detected on conveyor. Count: 4
     [tutorial_2.py-1] [INFO] [1705518506.999705068] [competition_interface]: Part detected on conveyor. Count: 5
 
------------------
-Code explaination
------------------
+-------------------------------
+Code explanation for Tutorial 2
+-------------------------------
 
 This is the node used for tutorial 2. The functions from competition_interface.py which are used are highlighted.
 
@@ -99,6 +92,4 @@ This is the node used for tutorial 2. The functions from competition_interface.p
     if __name__ == '__main__':
         main()
 
-The purpose of this tutorial is to log the number of parts that have been counted by the break beam sensor over the course of the competition.
-Whenever the break beam sensor senses a part and that part has not already been counted, :python:`interface._breakbeam_cb` is run and :python:`interface.conveyor_part_count` is incremented by one.
-Inside the node, whenever :python:`interface.conveyor_part_count` is increased, the count is logged.
+The purpose of this tutorial is to log the number of parts that have been counted by the break beam sensor over the course of the competition. Whenever the break beam sensor senses a part and that part has not already been counted, :python:`interface._breakbeam_cb` is run and :python:`interface.conveyor_part_count` is incremented by one. Inside the node, whenever :python:`interface.conveyor_part_count` is increased, the count is logged.

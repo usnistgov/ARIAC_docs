@@ -53,7 +53,7 @@ A brief description of each tutorial is provided below.
     
   - Demonstrates how to add a sensor to the sensor configuration file. The sensor is then used to keep track of the number of parts that are spawned on the conveyor belt.
 
-:tutorial:`Tutorial 3:` :ref:`Reading data from a RGB camera <TUTORIAL3>`
+:tutorial:`Tutorial 3:` :ref:`Processing Data from an RGBD Camera <TUTORIAL3>`
 
   - Demonstrates how to read an image from an RGB to classify objects in a parts bin.
 

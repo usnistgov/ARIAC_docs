@@ -4,24 +4,17 @@
 Tutorial 1: Starting the competition
 ====================================
 
-.. admonition:: Tutorial 1
-  :class: attention
-  :name: tutorial_1
-
-  - **Prerequisites:** :ref:`Introduction to Tutorials <TUTORIALS>`
-  - **Source Code**: `https://github.com/usnistgov/ARIAC_tutorials <https://github.com/usnistgov/ARIAC_tutorials>`_
-
 This tutorial details the steps necessary to start the competition from a competitor package.
 
-------------------------
-Starting the enviornment
-------------------------
+---------------------------------------
+Starting the environment for Tutorial 1
+---------------------------------------
 
-To start the enviornment, use this command:
+To start the environment, use this command:
 
-.. code-block:: bash
+.. code-block:: sh
         
-            ros2 launch ariac_gazebo ariac.launch.py competitor_pkg:=ariac_tutorials trial_name:=tutorial dev_mode:=True
+    ros2 launch ariac_gazebo ariac.launch.py competitor_pkg:=ariac_tutorials trial_name:=tutorial dev_mode:=True
 
 ------------------
 Running tutorial 1
@@ -29,9 +22,9 @@ Running tutorial 1
 
 To start tutorial 1, open a new terminal and use this command:
 
-.. code-block:: bash
+.. code-block:: sh
         
-            ros2 launch ariac_tutorials tutorial.launch.py tutorial:=1
+    ros2 launch ariac_tutorials tutorial.launch.py tutorial:=1
 
 -----------------------------
 Expected output of tutorial 1
@@ -49,9 +42,9 @@ Expected output of tutorial 1
     [tutorial_1.py-1] [INFO] [1705515099.154943257] [competition_interface]: Competition state is: started
     [tutorial_1.py-1] [INFO] [1705515326.346296824] [competition_interface]: Competition state is: order_announcements_done
 
------------------
-Code explaination
------------------
+-------------------------------
+Code explanation for Tutorial 1
+-------------------------------
 
 This is the node used for tutorial 1. The functions from competition_interface.py which are used are highlighted.
 
@@ -90,7 +83,4 @@ This is the node used for tutorial 1. The functions from competition_interface.p
     if __name__ == '__main__':
         main()
 
-First, an instance of the :python:`CompetitionInterface` is created with :python:`enable_moveit` set to :python:`False`, as moveit_py is not needed for this tutorial.
-Then, an executor is created containing an instance of :python:`CompetitionInterface`. After this, a thread is created to spin the executor.
-The competition is then started using the :python:`start_competition` method in :python:`CompetitionInterface`. This uses the `/ariac/start_competition` service to start the competition.
-The node then waits until the competition state is `ORDER_ANNOUNCEMENTS_DONE`. Finally, the competition is ended using the `/ariac/end_competition` service and the thread is joined with the main thread.
+First, an instance of the :python:`CompetitionInterface` is created with :python:`enable_moveit` set to :python:`False`, as moveit_py is not needed for this tutorial. Then, an executor is created containing an instance of :python:`CompetitionInterface`. After this, a thread is created to spin the executor. The competition is then started using the :python:`start_competition` method in :python:`CompetitionInterface`. This uses the `/ariac/start_competition` service to start the competition. The node then waits until the competition state is :msg:`ORDER_ANNOUNCEMENTS_DONE`. Finally, the competition is ended using the :topic:`/ariac/end_competition` service and the thread is joined with the main thread.

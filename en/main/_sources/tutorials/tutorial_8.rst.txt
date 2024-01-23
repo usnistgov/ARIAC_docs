@@ -4,24 +4,17 @@
 Tutorial 8: Completing a kitting task
 =====================================
 
-.. admonition:: Tutorial 8
-  :class: attention
-  :name: tutorial_8
+This tutorial details the steps necessary to complete a kitting task. 
 
-  - **Prerequisites:** :ref:`Introduction to Tutorials <TUTORIALS>`
-  - **Source Code**: `https://github.com/usnistgov/ARIAC_tutorials <https://github.com/usnistgov/ARIAC_tutorials>`_
+---------------------------------------
+Starting the environment for Tutorial 8
+---------------------------------------
 
-This tutorial details the steps necessary to start the competition from a competitor package.
-
-------------------------
-Starting the enviornment
-------------------------
-
-To start the enviornment, use this command:
+To start the environment, use this command:
 
 .. code-block:: bash
         
-            ros2 launch ariac_gazebo ariac.launch.py competitor_pkg:=ariac_tutorials trial_name:=tutorial dev_mode:=True
+    ros2 launch ariac_gazebo ariac.launch.py competitor_pkg:=ariac_tutorials trial_name:=tutorial dev_mode:=True
 
 ------------------
 Running tutorial 8
@@ -31,11 +24,11 @@ To start tutorial 8, open a new terminal and use this command:
 
 .. code-block:: bash
         
-            ros2 launch ariac_tutorials tutorial.launch.py tutorial:=8
+    ros2 launch ariac_tutorials tutorial.launch.py tutorial:=8
 
------------------
-Code explaination
------------------
+-------------------------------
+Code explanation for Tutorial 8
+-------------------------------
 
 This is the node used for tutorial 8. The functions from competition_interface.py which are used are highlighted.
 
@@ -76,8 +69,4 @@ This is the node used for tutorial 8. The functions from competition_interface.p
 
 
 The purpose of this tutorial is to complete a kitting order, which is done using :python:`interface.complete_orders`.
-Inside of this function, the objects like bins, assembly stations, kitting tray stations, and the conveyor belt are added to the planning scene using :python:`interface.add_objects_to_planning_scene`.
-Then, while the competition is active, the orders are looped through until a kitting order is found, where it is passed into :python:`interface._complete_kitting_order`.
-The first step of completing a kitting order is picking and placing the correct tray onto the correct agv.
-Then, the parts in the kitting order are looped through and the robot picks each part and places it on the kitting tray.
-After all of the parts are on the kitting tray, the AGV moves to the warehouseand the order is submitted.
+Inside of this function, the objects like bins, assembly stations, kitting tray stations, and the conveyor belt are added to the planning scene using :python:`interface.add_objects_to_planning_scene`. Then, while the competition is active, the orders are looped through until a kitting order is found, where it is passed into :python:`interface._complete_kitting_order`. The first step of completing a kitting order is picking and placing the correct tray onto the correct agv. Then, the parts in the kitting order are looped through and the robot picks each part and places it on the kitting tray. After all of the parts are on the kitting tray, the AGV moves to the warehouse and the order is submitted.
