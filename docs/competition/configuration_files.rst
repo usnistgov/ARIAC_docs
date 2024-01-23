@@ -193,8 +193,6 @@ This section defines all the parts that will be spawned into the environment.
 
   * :yamlname:`announcement`, :yaml:`Dictionary`: Determines under what condition the order will be announced.
 
-   
-
   * :yamlname:`priority`, :yaml:`Boolean`: Determines whether the order is a regular order, :yaml:`false`, or a high priority order, :yaml:`true`.
 
   * :yaml:`task_info`: The information for the task based on the order :yamlname:`type`. Either :yamlname:`kitting_task`, :yamlname:`assembly_task`, or :yamlname:`combined_task`
@@ -274,8 +272,6 @@ This section defines all the parts that will be spawned into the environment.
 
     * :yamlname:`robots_to_disable`, :yaml:`List`: List of robots that can be disabled. Options are :yaml:`'floor_robot'` or :yaml:`'ceiling_robot'`.
 
-.. _ANNOUNCEMENT_YAML:
-
     * :yamlname:`announcement`: One of the three :ref:`announcement conditions<CONDITIONS>`
 
       * :yamlname:`time_condition`, :yaml:`Float`: After this amount of time has passed, the specified robot(s) will malfunction.
@@ -298,7 +294,7 @@ This section defines all the parts that will be spawned into the environment.
 
     * :yamlname:`sensors_to_disable`, :yaml:`List`: List of sensors which will be disabled. Options are :yaml:`'break_beam'`, :yaml:`'proximity'`, :yaml:`'laser_profiler'`, :yaml:`'lidar'`, :yaml:`'camera'`, and :yaml:`'logical_camera'`
 
-    * :yamlname:`announcement`: One of the three :ref:`announcement conditions<CONDITIONS>`. See :ref:`above<ANNOUNCEMENT_YAML>`.
+    * :yamlname:`announcement`: One of the three :ref:`announcement conditions<CONDITIONS>`. See above.
 
   * :yamlname:`faulty_part`, :yaml:`Dictionary`: Adds a faulty part challenge to the environment.
 
@@ -589,115 +585,177 @@ This section defines all the parts that will be spawned into the environment.
       order_id: E414303S
       quadrant1: true
 
-Configuration GUI
-=================
+Trial Generator GUI
+===================
+
+Instructions to Start the Trial Generator
+-----------------------------------------
 
 To run the ARIAC configuration GUI, first, install the dependencies with
 
-```
-cd ~/ariac_ws
-pip install -r src/ARIAC/ariac_gui/requirements.txt
-```
+  .. code-block:: sh
+
+    cd ~/ariac_ws && pip install -r src/ARIAC/ariac_gui/requirements.txt
+
 
 After the dependencies are installed, run the gui with
 
-```
-ros2 run ariac_gui trial_generator
-```
+  .. code-block:: sh
+    
+    ros2 run ariac_gui trial_generator
 
-The first menu of the GUI gives two options. A new file can be created or a new file can be loaded in and edited.
+Start-Up Menu
+-------------
+
+The first menu of the GUI gives two options. A new file can be created or an existing file can be loaded in and edited.
 When a file is loaded in, the GUI will be opened as usual, but all of the options will be loaded with those from the configuration file selected.
 
-.. image:: ../images/file_creation_menu.png
-  :width: 100%
+.. figure:: ../images/file_creation_menu.png
+  :width: 60%
+  :align: center
   :alt: File Creation Menu
+
+  File Creation Menu
+
+Setup Tab
+---------
 
 The first tab of the GUI lets you edit the header of the configuration file. This includes the time limit, the trial name, and the name of the author.
 
-.. image:: ../images/setup_menu.png
-  :width: 100%
+.. figure:: ../images/setup_menu.png
+  :width: 60%
+  :align: center
   :alt: Setup Menu
 
-The second tab is the kitting trays menu. This menu lets you choose the kitting tray in each of the slots. 
-When a kitting tray is selected, the kitting tray with the correct fiducial tag appears on the tables in the GUI.
+  Setup Menu
 
-.. image:: ../images/kitting_trays_menu.png
-  :width: 100%
+Kitting Trays Tab
+-----------------
+
+The second tab is the kitting trays menu. This menu lets you choose the kitting tray in each of the slots. When a kitting tray is selected, the kitting tray with the correct fiducial tag appears on the tables in the GUI.
+
+.. figure:: ../images/kitting_trays_menu.png
+  :width: 60%
+  :align: center
   :alt: Kitting Trays Menu
 
-The third tab is the assembly insert rotation menu. 
-At first, as long as a file with non-zero assembly insert rotations is not loaded in, this menu will be a button which states that all the inserts are currently set to 0.0.
+  Kitting Trays Menu
 
-.. image:: ../images/insert_initial_menu.png
-  :width: 100%
+Assembly Insert Rotation Tab
+----------------------------
+
+The third tab is the assembly insert rotation menu. At first, as long as a file with non-zero assembly insert rotations is not loaded in, this menu will be a button which states that all the inserts are currently set to 0.0.
+
+.. figure:: ../images/insert_initial_menu.png
+  :width: 60%
+  :align: center
   :alt: Assembly Inserts Initial Menu
+
+  Assembly Inserts Initial Menu
 
 If this needs to be changed, press the button and four sliders appear, which allow you to change the rotation of each of the inserts.
 
-.. image:: ../images/insert_slider_menu.png
-  :width: 100%
+.. figure:: ../images/insert_slider_menu.png
+  :width: 60%
+  :align: center
   :alt: Assembly Inserts Slider Menu
 
-The fourth tab is the bin parts menu. At the top of this menu, there is a dropdown menu which changes the bin being edited.
-On the left half of this menu, a diagram of the bin shows up with each slot acting as a button. 
-If there is a part there, the button will be an image of the part with the correct rotation. If this part is clicked on, it can be edited.
-If there is no part there, the button will be a plus sign. If this button is clicked, the add part menu will appear.
-On the right half of the menu, is a minimap which shows each of the bins. The one currently being edited will show up in blue and the others will be white. This minimap also shows the parts currently on each bin.
-Under the diagram and the minimap, there are two buttons. The top button allows for multiple parts to be added at the same time.
-The second button clears the selected bin.
+  Assembly Inserts Slider Menu
 
-.. image:: ../images/bins_menu.png
-  :width: 100%
+Bin Parts Tab
+-------------
+
+The fourth tab is the bin parts menu. At the top of this menu, there is a dropdown menu which changes the bin being edited.
+On the left half of this menu, a diagram of the bin shows up with each slot acting as a button. If there is a part there, the button will be an figure of the part with the correct rotation. Clicking on a part allows it to be edited. If there is no part there, the button will be a plus sign. If this button is clicked, the add part menu will appear. 
+
+On the right half of the menu, is a minimap which shows each of the bins. The one currently being edited will show up in blue and the others will be white. This minimap also shows the parts currently on each bin. Under the diagram and the minimap, there are two buttons. The top button allows for multiple parts to be added at the same time. The second button clears the selected bin.
+
+.. figure:: ../images/bins_menu.png
+  :width: 60%
+  :align: center
   :alt: Bins Menu
 
-The fifth tab is the conveyor parts menu. The top half of this menu has the basic conveyor settings, like spawn rate and whether the order is random or sequential.
-Under these options, there is an add part lot button, which adds parts to the conveyor belt.
-Under these settings, there is a scrollable sub-window with a list of the part lots currently on the conveyor belt.
-This list has buttons where the part lots can be edited or deleted.
+  Bins Menu
 
-.. image:: ../images/conveyor_parts_menu.png
-  :width: 100%
+Conveyor Parts Tab
+------------------
+
+The fifth tab is the conveyor parts menu. The top half of this menu has the basic conveyor settings, like spawn rate and whether the order is random or sequential. Under these options, there is an add part lot button, which adds parts to the conveyor belt.
+Under these settings, there is a scrollable sub-window with a list of the part lots currently on the conveyor belt. This list has buttons where the part lots can be edited or deleted.
+
+.. figure:: ../images/conveyor_parts_menu.png
+  :width: 60%
+  :align: center
   :alt: Conveyor Parts Menu
 
-The sixth tab is the orders menu. There are three main buttons in this menu, the "Add kitting order", "Add assembly order",  and "Add combined order".
-If any orders have already been created, a menu will show up under these buttons with edit and delete buttons.
-If no kitting trays have been selected, the GUI will not be able to create a kitting order.
+  Conveyor Parts Menu
 
-.. image:: ../images/orders_menu.png
-  :width: 100%
+Orders Tab
+----------
+
+The sixth tab is the orders menu. There are three main buttons in this menu, the "Add kitting order", "Add assembly order",  and "Add combined order". If any orders have already been created, a menu will show up under these buttons with edit and delete buttons. If no kitting trays have been selected, the GUI will not be able to create a kitting order.
+
+.. figure:: ../images/orders_menu.png
+  :width: 60%
+  :align: center
   :alt: Orders Menu
 
-The seventh tab is the challenges menu. This menu can add any of the challenges available in the configuration file. 
-Once challenges are made, they appear in a scrollable sub-window with edit and delete buttons for each of the challenges.
+  Orders Menu
 
-.. image:: ../images/challenge_menu.png
-  :width: 100%
+Challenges Tab
+--------------
+
+The seventh tab is the challenges menu. This menu can add any of the challenges available in the configuration file. Once challenges are made, they appear in a scrollable sub-window with edit and delete buttons for each of the challenges.
+
+.. figure:: ../images/challenge_menu.png
+  :width: 60%
+  :align: center
   :alt: Challenges Menu
 
-The eighth tab shows the current status of the file. This is created live any time a change is made in anypart of the GUI.
-This tab shows the entirety of the configuration file.
+  Challenges Menu
 
-.. image:: ../images/current_file_menu.png
-  :width: 100%
+Current File Tab
+----------------
+
+The eighth tab shows the current file in yaml format. This is updated live any time a change is made.
+
+.. figure:: ../images/current_file_menu.png
+  :width: 60%
+  :align: center
   :alt: Current File Tab
 
-The final tab is a map of the environment which shows each every part present on the agvs, bins, and conveyor belt. It also shows the rotation of the assembly stations.
-To show the conveyor belt parts, set the "Show conveyor_parts" checkbox to true. 
-The parts will move across the conveyor belt. Any time a part is added, edited, or deleted on the conveyor belt, the checkbox will automatically turn off.
+  Current File Tab
 
-.. image:: ../images/full_map_menu.png
-  :width: 100%
+Map Tab
+-------
+
+The final tab is a map of the environment which shows each every part present on the AGVs, bins, and conveyor belt. It also shows the rotation of the assembly stations. To show the conveyor belt parts, set the "Show conveyor_parts" checkbox to true. The parts will move across the conveyor belt. Any time a part is added, edited, or deleted on the conveyor belt, the checkbox will automatically turn off.
+
+.. figure:: ../images/full_map_menu.png
+  :width: 60%
+  :align: center
   :alt: Full Map Menu
+
+  Full Map
+
+Save Menu
+---------
 
 To save the file, press the "Save file" button in the bottom left. If you loaded in a file at the beginning, you will be asked if you want to overwrite that file. 
 
-.. image:: ../images/overwrite_menu.png
-  :width: 100%
+.. figure:: ../images/overwrite_menu.png
+  :width: 60%
+  :align: center
   :alt: Overwrite Menu
+
+  Overwrite Menu
 
 Otherwise, a file saving menu will appear.
 
-.. image:: ../images/save_file_menu.png
-  :width: 100%
+.. figure:: ../images/save_file_menu.png
+  :width: 60%
+  :align: center
   :alt: Save File Menu
+
+  Save File Menu
 
