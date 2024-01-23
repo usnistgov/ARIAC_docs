@@ -56,8 +56,8 @@ Code explanation for Tutorial 5
 This is the node used for tutorial 5. The functions from competition_interface.py which are used are highlighted.
 
 .. code-block:: python
-    :caption: :file:`tutorial_4.py`
-    :name: tutorial_4
+    :caption: :file:`tutorial_5.py`
+    :name: tutorial_5
     :emphasize-lines: 29-30
 
     #!/usr/bin/env python3
