@@ -4,14 +4,7 @@
 Tutorial 6: Picking a part
 ==========================
 
-.. admonition:: Tutorial 6
-  :class: attention
-  :name: tutorial_6
-
-  - **Prerequisites:** :ref:`Introduction to Tutorials <TUTORIALS>`
-  - **Source Code**: `https://github.com/usnistgov/ARIAC_tutorials <https://github.com/usnistgov/ARIAC_tutorials>`_
-
-This tutorial details the steps necessary to start the competition from a competitor package.
+This tutorial details the steps to direct the floor robot to pick a part from the bins using MoveItPy. 
 
 ---------------------------------------
 Starting the environment for Tutorial 6

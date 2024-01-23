@@ -4,14 +4,7 @@
 Tutorial 8: Completing a kitting task
 =====================================
 
-.. admonition:: Tutorial 8
-  :class: attention
-  :name: tutorial_8
-
-  - **Prerequisites:** :ref:`Introduction to Tutorials <TUTORIALS>`
-  - **Source Code**: `https://github.com/usnistgov/ARIAC_tutorials <https://github.com/usnistgov/ARIAC_tutorials>`_
-
-This tutorial details the steps necessary to start the competition from a competitor package.
+This tutorial details the steps necessary to complete a kitting task. 
 
 ---------------------------------------
 Starting the environment for Tutorial 8

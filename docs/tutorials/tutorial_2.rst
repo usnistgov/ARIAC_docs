@@ -4,14 +4,7 @@
 Tutorial 2: Reading data from a break beam sensor
 =================================================
 
-.. admonition:: Tutorial 2
-  :class: attention
-  :name: tutorial_2
-
-  - **Prerequisites:** :ref:`Introduction to Tutorials <TUTORIALS>`
-  - **Source Code**: `https://github.com/usnistgov/ARIAC_tutorials <https://github.com/usnistgov/ARIAC_tutorials>`_
-
-This tutorial details the steps necessary to start the competition from a competitor package.
+This tutorial shows how to subscribe to a break beam sensor topic to count parts on the conveyor belt. 
 
 ---------------------------------------
 Starting the environment for Tutorial 2

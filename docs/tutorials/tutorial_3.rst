@@ -1,17 +1,10 @@
 .. _TUTORIAL3:
 
-=====================================================
-Tutorial 3: Read Data from an Advanced Logical Camera
-=====================================================
+===============================================
+Tutorial 3: Processing Data from an RGBD Camera
+===============================================
 
-.. admonition:: Tutorial 3
-  :class: attention
-  :name: tutorial_3
-
-  - **Prerequisites:** :ref:`Introduction to Tutorials <TUTORIALS>`
-  - **Source Code**: `https://github.com/usnistgov/ARIAC_tutorials <https://github.com/usnistgov/ARIAC_tutorials>`_
-
-This tutorial details the steps necessary to start the competition from a competitor package.
+This tutorial shows how to use OpenCV to parse the RGB image from a camera to classify part type and color for parts in a bin.
 
 ---------------------------------------
 Starting the environment for Tutorial 3
@@ -120,3 +113,7 @@ This is the node used for tutorial 3. The functions from competition_interface.p
         main()
 
 The purpose of this tutorial is to use RGB cameras to detect the parts on a chosen bin. The two cameras, :python:`left_bins_rgb_camera` and :python:`right_bins_rgb_camera`, are subscribed to and the image msg is saved in :python:`_left_bins_camera_image` and :python:`_right_bins_camera_image`. The first step of the process of finding parts in the image is to read in an image frame using :python:`imgmsg_to_csv2`. This function will convert the image msg from the camera and return it as an OpenCV image. The second step is finding parts within the image. This is done using the :python:`interface.find_parts` function, where the possible colors and types are looped through. An image mask is created using the color and using the type, a template is used to find the location of any parts of that type and color. The coordinates of where the parts are found are then saved in :python:`interface.part_poses` and :python:`interface.centered_part_poses`. The third step is to organize the parts by slots in the bin. This is done using the :python:`interface.output_by_slot`, where the coordinates saved in :python:`interface.centered_part_poses` are used to find which slots in the bin that the parts are in. After this step, the dictionary containing the slot numbers as the keys and part in the slot as the value is returned and the node logs them.
+
+.. warning:: 
+
+    The image processing pipeline used for this tutorial only works for parts that are not rotated.

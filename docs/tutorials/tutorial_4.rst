@@ -4,14 +4,7 @@
 Tutorial 4: Read an order
 =========================
 
-.. admonition:: Tutorial 4
-  :class: attention
-  :name: tutorial_4
-
-  - **Prerequisites:** :ref:`Introduction to Tutorials <TUTORIALS>`
-  - **Source Code**: `https://github.com/usnistgov/ARIAC_tutorials <https://github.com/usnistgov/ARIAC_tutorials>`_
-
-This tutorial details the steps necessary to start the competition from a competitor package.
+This tutorial shows how to subscribe to the :topic:`/orders` topic and parse an :msg:`Order` message.
 
 ---------------------------------------
 Starting the environment for Tutorial 4

@@ -4,14 +4,7 @@
 Tutorial 7: Picking and placing a kitting tray
 ==============================================
 
-.. admonition:: Tutorial 7
-  :class: attention
-  :name: tutorial_7
-
-  - **Prerequisites:** :ref:`Introduction to Tutorials <TUTORIALS>`
-  - **Source Code**: `https://github.com/usnistgov/ARIAC_tutorials <https://github.com/usnistgov/ARIAC_tutorials>`_
-
-This tutorial details the steps necessary to start the competition from a competitor package.
+This tutorial details the steps necessary to direct the floor robot to the tool changer station to switch to a tray gripper, then pick a tray from the kitting tray tables and place it onto an AGV. 
 
 ---------------------------------------
 Starting the environment for Tutorial 7

@@ -4,14 +4,7 @@
 Tutorial 5: Move AGVs to stations
 =================================
 
-.. admonition:: Tutorial 5
-  :class: attention
-  :name: tutorial_5
-
-  - **Prerequisites:** :ref:`Introduction to Tutorials <TUTORIALS>`
-  - **Source Code**: `https://github.com/usnistgov/ARIAC_tutorials <https://github.com/usnistgov/ARIAC_tutorials>`_
-
-This tutorial details the steps necessary to start the competition from a competitor package.
+This tutorial details the steps to move the AGVs for an assembly order.
 
 ---------------------------------------
 Starting the environment for Tutorial 5
@@ -48,7 +41,7 @@ Expected output of tutorial 5
     [tutorial_5.py-1] [INFO] [1705526044.247372429] [competition_interface]: Started competition.
     [tutorial_5.py-1] [INFO] [1705526044.250320126] [competition_interface]: Waiting for assembly order...
     [tutorial_5.py-1] [INFO] [1705526046.405434793] [competition_interface]: Competition state is: started
-    [tutorial_5.py-1] [INFO] [1705526134.017383922] [competition_interface]: Assembly order recieved...
+    [tutorial_5.py-1] [INFO] [1705526134.017383922] [competition_interface]: Assembly order received...
     [tutorial_5.py-1] [INFO] [1705526134.113937118] [competition_interface]: Locked AGV1's tray
     [tutorial_5.py-1] [INFO] [1705526225.522884837] [competition_interface]: Moved AGV1 to assembly station 1
     [tutorial_5.py-1] [INFO] [1705526225.538922602] [competition_interface]: Locked AGV2's tray
