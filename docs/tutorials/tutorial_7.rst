@@ -13,15 +13,15 @@ Tutorial 7: Picking and placing a kitting tray
 
 This tutorial details the steps necessary to start the competition from a competitor package.
 
-------------------------
-Starting the enviornment
-------------------------
+---------------------------------------
+Starting the environment for Tutorial 7
+---------------------------------------
 
-To start the enviornment, use this command:
+To start the environment, use this command:
 
 .. code-block:: bash
         
-            ros2 launch ariac_gazebo ariac.launch.py competitor_pkg:=ariac_tutorials trial_name:=tutorial dev_mode:=True
+    ros2 launch ariac_gazebo ariac.launch.py competitor_pkg:=ariac_tutorials trial_name:=tutorial dev_mode:=True
 
 ------------------
 Running tutorial 7
@@ -31,11 +31,11 @@ To start tutorial 7, open a new terminal and use this command:
 
 .. code-block:: bash
         
-            ros2 launch ariac_tutorials tutorial.launch.py tutorial:=7
+    ros2 launch ariac_tutorials tutorial.launch.py tutorial:=7
 
------------------
-Code explaination
------------------
+-------------------------------
+Code explanation for Tutorial 7
+-------------------------------
 
 This is the node used for tutorial 7. The functions from competition_interface.py which are used are highlighted.
 
@@ -79,13 +79,6 @@ This is the node used for tutorial 7. The functions from competition_interface.p
     if __name__ == '__main__':
         main()
 
-The purpose of this tutorial is to pick and place a tray onto an agv. The node starts by looping through recieved orders until a kitting order is found.
-Then, :python:`interface.floor_robot_pick_and_place_tray` is called with the parameters being the tray id and the AGV number from the order.
-Inside of :python:`interface.floor_robot_pick_and_place_tray`, the trays found on kitting stations 1 and 2 are looped through until the correct one is found.
-When it is found, the station and pose of the tray is saved.
-The robot then moves to the station where the tray was found. If the robot is not already using the tray gripper, the gripper is changed.
-The gripper orientation is then set to match the tray rotation and the robot moves directly above the tray.
-The robot then slowly moves down until the tray is attached and moves up.
-After the tray is attached, the pose of the AGV is obtained and the robot moves above the AGV, matching theAGV tray orientation.
-The robot then moves down to the AGV tray, releases the tray, and locks the tray onto the AGV.
-Finally, the robot moves up.
+The purpose of this tutorial is to pick and place a tray onto an agv. The node starts by looping through received orders until a kitting order is found. Then, :python:`interface.floor_robot_pick_and_place_tray` is called with the parameters being the tray id and the AGV number from the order. Inside of :python:`interface.floor_robot_pick_and_place_tray`, the trays found on kitting stations 1 and 2 are looped through until the correct one is found. When it is found, the station and pose of the tray is saved.
+The robot then moves to the station where the tray was found. If the robot is not already using the tray gripper, the gripper is changed. The gripper orientation is then set to match the tray rotation and the robot moves directly above the tray.
+The robot then slowly moves down until the tray is attached and moves up. After the tray is attached, the pose of the AGV is obtained and the robot moves above the AGV, matching theAGV tray orientation. The robot then moves down to the AGV tray, releases the tray, and locks the tray onto the AGV. Finally, the robot moves up.

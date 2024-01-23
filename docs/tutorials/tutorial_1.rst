@@ -13,15 +13,15 @@ Tutorial 1: Starting the competition
 
 This tutorial details the steps necessary to start the competition from a competitor package.
 
-------------------------
-Starting the enviornment
-------------------------
+---------------------------------------
+Starting the environment for Tutorial 1
+---------------------------------------
 
-To start the enviornment, use this command:
+To start the environment, use this command:
 
 .. code-block:: bash
         
-            ros2 launch ariac_gazebo ariac.launch.py competitor_pkg:=ariac_tutorials trial_name:=tutorial dev_mode:=True
+    ros2 launch ariac_gazebo ariac.launch.py competitor_pkg:=ariac_tutorials trial_name:=tutorial dev_mode:=True
 
 ------------------
 Running tutorial 1
@@ -31,7 +31,7 @@ To start tutorial 1, open a new terminal and use this command:
 
 .. code-block:: bash
         
-            ros2 launch ariac_tutorials tutorial.launch.py tutorial:=1
+    ros2 launch ariac_tutorials tutorial.launch.py tutorial:=1
 
 -----------------------------
 Expected output of tutorial 1
@@ -49,9 +49,9 @@ Expected output of tutorial 1
     [tutorial_1.py-1] [INFO] [1705515099.154943257] [competition_interface]: Competition state is: started
     [tutorial_1.py-1] [INFO] [1705515326.346296824] [competition_interface]: Competition state is: order_announcements_done
 
------------------
-Code explaination
------------------
+-------------------------------
+Code explanation for Tutorial 1
+-------------------------------
 
 This is the node used for tutorial 1. The functions from competition_interface.py which are used are highlighted.
 

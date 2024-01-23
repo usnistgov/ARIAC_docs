@@ -13,15 +13,15 @@ Tutorial 4: Read an order
 
 This tutorial details the steps necessary to start the competition from a competitor package.
 
-------------------------
-Starting the enviornment
-------------------------
+---------------------------------------
+Starting the environment for Tutorial 4
+---------------------------------------
 
-To start the enviornment, use this command:
+To start the environment, use this command:
 
 .. code-block:: bash
         
-            ros2 launch ariac_gazebo ariac.launch.py competitor_pkg:=ariac_tutorials trial_name:=tutorial dev_mode:=True
+    ros2 launch ariac_gazebo ariac.launch.py competitor_pkg:=ariac_tutorials trial_name:=tutorial dev_mode:=True
 
 ------------------
 Running tutorial 4
@@ -31,7 +31,7 @@ To start tutorial 4, open a new terminal and use this command:
 
 .. code-block:: bash
         
-            ros2 launch ariac_tutorials tutorial.launch.py tutorial:=4
+    ros2 launch ariac_tutorials tutorial.launch.py tutorial:=4
 
 -----------------------------
 Expected output of tutorial 4
@@ -171,9 +171,9 @@ Expected output of tutorial 4
     [tutorial_4.py-1] [INFO] [1705524802.753138266] [competition_interface]: Competition state is: ended
 
 
------------------
-Code explaination
------------------
+-------------------------------
+Code explanation for Tutorial 4
+-------------------------------
 
 This is the node used for tutorial 4. The functions from competition_interface.py which are used are highlighted.
 
@@ -218,8 +218,5 @@ This is the node used for tutorial 4. The functions from competition_interface.p
     if __name__ == '__main__':
         main()
 
-The purpose of this tutorial is to log orders received by :python:`CompetitionInterface`.
-When an order is published by the :topic:`/ariac/orders`, the :python:`interface._orders_cb` runs.
-The order msg which was published is then appended to :python:`interface._orders`.
-Then, since in the node :python:`interface.parse_incoming_order` was set to :python:`True`, the orders recieved are logged.
+The purpose of this tutorial is to log orders received by :python:`CompetitionInterface`. When an order is published by the :topic:`/ariac/orders`, the :python:`interface._orders_cb` runs. The order msg which was published is then appended to :python:`interface._orders`. Then, since in the node :python:`interface.parse_incoming_order` was set to :python:`True`, the orders received are logged.
 This is done using :python:`interface._parce_order`, where the order is parsed and returned as a :python:`string`.
