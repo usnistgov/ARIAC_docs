@@ -105,13 +105,12 @@ Flipped parts can be detected in one of two ways.
 
 
 .. _DROPPED_PART_CHALLENGE:
-.. _FAULTY_GRIPPER_CHALLENGE:
 
-----------------------------------------------------------
-Faulty Gripper Challenge (formerly Dropped Part Challenge)
-----------------------------------------------------------
+----------------------
+Dropped Part Challenge
+----------------------
 
-The faulty gripper challenge simulates a faulty gripper which can drop a part after the part has been picked up. The gripper can drop a part at any time during the trial. The gripper can drop a part that is in the gripper's grasp even if the gripper or robot is not moving. 
+The dropped part challenge simulates a faulty gripper which can drop a part after the part has been picked up. The gripper can drop a part at any time during the trial. The gripper can drop a part that is in the gripper's grasp even if the gripper or robot is not moving. 
 
 The goal of this challenge is to test the ability of the CCS to: 
   
