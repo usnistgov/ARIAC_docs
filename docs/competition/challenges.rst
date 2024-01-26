@@ -16,7 +16,7 @@ There are 8 possible :term:`agility challenges<Agility Challenge>`. A descriptio
 Faulty Parts Challenge
 ----------------------
 
-Faulty parts are parts that are not suitable for use in the competition. If an order is submitted with faulty parts, these parts are not considered for scoring. Faulty parts are identified by quality control sensors, which are attached to AGVs. This challenge will only occur for kitting orders. 
+Faulty parts are parts that are not suitable for use in the competition. If an order is submitted with faulty parts, the score for that order will be zero. Faulty parts are identified by quality control sensors, which are attached to AGVs. This challenge will only occur for kitting orders. 
 
 The goal of this challenge is to test the ability of the CCS to:
 
@@ -52,7 +52,7 @@ The service will return a response with the following fields:
 Flipped Parts Challenge
 -----------------------
 
-The environment can be started with parts that are flipped. Flipped parts are parts that are upside down (the z-axis of the part faces down instead of up). When a part is spawned as flipped, the CCS is required to flip this part again so it ends up with the correct orientation. If an order is submitted with flipped parts, these parts are not considered for scoring. 
+The environment can be started with parts that are flipped. Flipped parts are parts that are upside down (the z-axis of the part faces down instead of up). When a part is spawned as flipped, the CCS is required to flip this part again so it ends up with the correct orientation. If an order is submitted with flipped parts, the score for that order will be zero. 
 
 The goal of this challenge is to evaluate the approach used by the CCS to flip a part. 
 
