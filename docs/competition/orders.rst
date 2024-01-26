@@ -108,7 +108,7 @@ An example of an assembly order in a trial configuration file is presented in :n
 
 - The parts needed to complete the task are located on AGV 3.
 
-- A purple regulator should be installed at the specified pose (relative to the insert's coordinate frame) in the direction of the specfied unit vector (also relative to the insert frame).
+- A purple regulator should be installed at the specified pose (relative to the insert's coordinate frame) in the direction of the specified unit vector (also relative to the insert frame).
 
 .. code-block:: yaml
   :caption: Example of an assembly task description.
@@ -188,7 +188,7 @@ Orders and challenges are announced under three possible conditions:
       The competition time is set when the competitor starts the competition with the service call :rosservice:`/ariac/start_competition`. This is different from the simulation time which is set when Gazebo starts.
 
    
-    For each trial, the first order always uses a time-based condition with the value 0. This ensures the first order is announced as soon as the competitor starts the competition. :numref:`time-based-condition` shows an example of a time-based condition where an ordered is announced at :yaml:`10.5` seconds into the competition.
+    For each trial, the first order always uses a time-based condition with the value 0. This ensures the first order is announced as soon as the competitor starts the competition. :numref:`time-based-condition` shows an example of a time-based condition where an order is announced at :yaml:`10.5` seconds into the competition.
 
     .. code-block:: yaml
       :caption: Time-based condition.
