@@ -132,7 +132,7 @@ Robot Malfunction Challenge
 
 The robot malfunction challenge simulates a robot malfunction. The robot can malfunction under some :ref:`conditions <CONDITIONS>` during the trial. The robot can malfunction even if it is not moving. When a robot malfunctions, it stops moving and cannot be controlled by the CCS. The robot will remain in the same position until the malfunction is resolved. To specify how long a robot malfunctions, a time duration of the malfunction is specified in the trial configuration file.
 
-The goal of this challenge is to test the ability of the CCS to use the other robot to complete the tasks that was being performed by the robot which is malfunctioning. 
+The goal of this challenge is to test the ability of the CCS to use the other robot to complete the tasks that were being performed by the robot which is malfunctioning. 
 
 .. note::
   It can happen that both robots malfunction at the same time. 
@@ -183,7 +183,7 @@ The goal of this challenge is to test the ability of the CCS to prioritize high-
 High Priority Order Detection
 =============================
 
-To find out out the priority of an order, the CCS is required to parse messages published to the topic :topic:`/ariac/orders` (:term:`ariac_msgs/msg/Order`). For a high-priority order, the value for the field :yamlname:`priority` is set to :yaml:`true`. For a regular-priority order, the value for the field :yamlname:`priority` is set to :yaml:`false`.
+To find out the priority of an order, the CCS is required to parse messages published to the topic :topic:`/ariac/orders` (:term:`ariac_msgs/msg/Order`). For a high-priority order, the value for the field :yamlname:`priority` is set to :yaml:`true`. For a regular-priority order, the value for the field :yamlname:`priority` is set to :yaml:`false`.
 
 
 .. _INSUFFICIENT_PARTS_CHALLENGE:
