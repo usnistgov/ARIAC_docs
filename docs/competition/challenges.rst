@@ -117,10 +117,10 @@ The goal of this challenge is to test the ability of the CCS to:
   #. Recognize that the part has dropped from the gripper. 
   #. Pick a part of the same type and color.
 
-Faulty Gripper Detection
-========================
+Dropped Part Detection
+======================
 
-To detect a faulty gripper the CCS needs a subscriber to the topic :topic:`/ariac/{robot}_gripper_state` (:term:`ariac_msgs/msg/VacuumGripperState`). Checking the :yamlname:`attached` field of the message will inform whether or not the gripper is holding a part. If the gripper is not holding a part, the CCS can assume that the gripper has dropped the part.
+To detect a dropped part challenge the CCS needs a subscriber to the topic :topic:`/ariac/{robot}_gripper_state` (:term:`ariac_msgs/msg/VacuumGripperState`). Checking the :yamlname:`attached` field of the message will inform whether or not the gripper is holding a part. If the gripper is not holding a part, the CCS can assume that the gripper has dropped the part.
 
 
 .. _ROBOT_MALFUNCTION_CHALLENGE:
