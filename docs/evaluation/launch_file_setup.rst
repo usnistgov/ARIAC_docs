@@ -61,9 +61,9 @@ In order to properly evaluate competitors code, competitors will need to create 
           }.items()
       )
 
-      # Test Competitor node
-      test_competitor = Node(
-          package="test_competitor",
+      # NIST Competitor node
+      nist_competitor = Node(
+          package="nist_competitor",
           executable="competitor",
           output="screen",
           parameters=[
@@ -77,7 +77,7 @@ In order to properly evaluate competitors code, competitors will need to create 
       )
 
       nodes_to_start = [
-          test_competitor,
+          nist_competitor,
           ariac_environment,
           moveit
       ]

@@ -16,7 +16,7 @@ To properly build and install the competitor's code onto the container each team
 
   github:
     repository: "github.com/usnistgov/nist_competitor.git"
-    tag: "2024.1.0"
+    tag: "2024.2.0"
     personal_access_token: "****"
 
   build:
