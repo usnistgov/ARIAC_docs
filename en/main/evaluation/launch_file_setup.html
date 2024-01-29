@@ -82,7 +82,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../getting_started/installation.html#starting-the-simulation">Starting the Simulation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../getting_started/installation.html#default">Default</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../getting_started/installation.html#launch-options">Launch Options</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../getting_started/installation.html#running-the-test-competitor">Running the Test Competitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/installation.html#running-the-nist-competitor">Running the NIST Competitor</a></li>
 </ul>
 </li>
 </ul>
@@ -381,9 +381,9 @@
         <span class="p">}</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
     <span class="p">)</span>
 
-    <span class="c1"># Test Competitor node</span>
-    <span class="n">test_competitor</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span>
-        <span class="n">package</span><span class="o">=</span><span class="s2">&quot;test_competitor&quot;</span><span class="p">,</span>
+    <span class="c1"># NIST Competitor node</span>
+    <span class="n">nist_competitor</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span>
+        <span class="n">package</span><span class="o">=</span><span class="s2">&quot;nist_competitor&quot;</span><span class="p">,</span>
         <span class="n">executable</span><span class="o">=</span><span class="s2">&quot;competitor&quot;</span><span class="p">,</span>
         <span class="n">output</span><span class="o">=</span><span class="s2">&quot;screen&quot;</span><span class="p">,</span>
         <span class="n">parameters</span><span class="o">=</span><span class="p">[</span>
@@ -397,7 +397,7 @@
     <span class="p">)</span>
 
     <span class="n">nodes_to_start</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="n">test_competitor</span><span class="p">,</span>
+        <span class="n">nist_competitor</span><span class="p">,</span>
         <span class="n">ariac_environment</span><span class="p">,</span>
         <span class="n">moveit</span>
     <span class="p">]</span>

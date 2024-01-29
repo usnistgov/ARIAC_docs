@@ -152,35 +152,62 @@ Launch Options
 
     ros2 launch ariac_gazebo ariac.launch.py dev_mode:=true
 
-Running the Test Competitor
+Running the NIST Competitor
 ===========================
 
   To help lower the barrier to entry a test competitor package was created by the NIST team. This competitor package is able to perform most of the necessary functions for the competition. 
+
+  1. Clone the NIST competitor repository
+
+  .. code-block:: sh
+
+    cd ~/ariac_ws && git clone https://github.com/usnistgov/nist_competitor.git src/nist_competitor
   
   .. note::
-    The test competitor is programmed to only work with advanced logical cameras and is unable to handle any of the agility challenges.
+    The NIST competitor is programmed to only work with advanced logical cameras and is unable to handle any of the agility challenges.
 
-  To run the test competitor, open three terminal windows. 
-
-  **Terminal 1:** Launch the environment
+  2. Install any dependencies
 
   .. code-block:: sh
 
-    ros2 launch ariac_gazebo ariac.launch.py dev_mode:=true
+    rosdep install --from-paths src -y --ignore-src
 
-  **Terminal 2:** Launch the move_group node
-
-  .. code-block:: sh
-
-    ros2 launch ariac_moveit_config ariac_robots_moveit.launch.py
-
-  **Terminal 3:** Launch the environment
+  3. Build and source the package
 
   .. code-block:: sh
 
-    ros2 launch test_competitor competitor.launch.py
+    colcon build && source install/setup.bash
 
-  The test competitor should start the competition and start completing the default kitting order specified in :file:`kitting.yaml`. After the kitting order is completed and submitted, the test competitor will end the competition and a score will be output in terminal 1. 
+  **Option 1:** Use the :file:`competition.launch.py` launch file. This runs the environment, MoveIt, and the competitor node all in the same terminal.
+
+    .. code-block:: sh
+
+      ros2 launch nist_competitor competition.launch.py trial_name:=kitting
+
+    The NIST competitor should start the competition and start completing the default kitting order specified in :file:`kitting.yaml`. After the kitting order is completed and submitted, the NIST competitor will end the competition and a score will be output in terminal. A score log will also be created in the folder :file:`ariac_log`
+
+  **Option 2:** Use the :file:`competitor.launch.py` launch file. This runs the environment, MoveIt, and the competitor node in separate terminals. This can be useful for testing to cut down on the number of log messages in each terminal.  
+  
+    Open three terminal windows. 
+
+    **Terminal 1:** Launch the environment
+
+    .. code-block:: sh
+
+      ros2 launch ariac_gazebo ariac.launch.py dev_mode:=true trial_name:=kitting
+
+    **Terminal 2:** Launch the move_group node
+
+    .. code-block:: sh
+
+      ros2 launch ariac_moveit_config ariac_robots_moveit.launch.py
+
+    **Terminal 3:** Launch the environment
+
+    .. code-block:: sh
+
+      ros2 launch nist_competitor competitor.launch.py
+
 
   .. note::
-    The test competitor has been tested with :file:`kitting.yaml`, :file:`assembly.yaml`, and :file:`combined.yaml`. There is no guarantee that the test competitor will work with other trials. 
+    The NIST competitor has been tested with :file:`kitting.yaml`, :file:`assembly.yaml`, and :file:`combined.yaml`. There is no guarantee that the NIST competitor will work with other trials. 

@@ -82,7 +82,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#starting-the-simulation">Starting the Simulation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#default">Default</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#launch-options">Launch Options</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#running-the-test-competitor">Running the Test Competitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-the-nist-competitor">Running the NIST Competitor</a></li>
 </ul>
 </li>
 </ul>
@@ -494,17 +494,44 @@
 </div></blockquote>
 </section>
 </section>
-<section id="running-the-test-competitor">
-<h3>Running the Test Competitor<a class="headerlink" href="#running-the-test-competitor" title="Permalink to this heading"></a></h3>
+<section id="running-the-nist-competitor">
+<h3>Running the NIST Competitor<a class="headerlink" href="#running-the-nist-competitor" title="Permalink to this heading"></a></h3>
 <blockquote>
 <div><p>To help lower the barrier to entry a test competitor package was created by the NIST team. This competitor package is able to perform most of the necessary functions for the competition.</p>
+<ol class="arabic simple">
+<li><p>Clone the NIST competitor repository</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/ariac_ws<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/usnistgov/nist_competitor.git<span class="w"> </span>src/nist_competitor
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The test competitor is programmed to only work with advanced logical cameras and is unable to handle any of the agility challenges.</p>
+<p>The NIST competitor is programmed to only work with advanced logical cameras and is unable to handle any of the agility challenges.</p>
 </div>
-<p>To run the test competitor, open three terminal windows.</p>
+<ol class="arabic simple" start="2">
+<li><p>Install any dependencies</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rosdep<span class="w"> </span>install<span class="w"> </span>--from-paths<span class="w"> </span>src<span class="w"> </span>-y<span class="w"> </span>--ignore-src
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Build and source the package</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>colcon<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">source</span><span class="w"> </span>install/setup.bash
+</pre></div>
+</div>
+<p><strong>Option 1:</strong> Use the <code class="file docutils literal notranslate"><span class="pre">competition.launch.py</span></code> launch file. This runs the environment, MoveIt, and the competitor node all in the same terminal.</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>nist_competitor<span class="w"> </span>competition.launch.py<span class="w"> </span>trial_name:<span class="o">=</span>kitting
+</pre></div>
+</div>
+<p>The NIST competitor should start the competition and start completing the default kitting order specified in <code class="file docutils literal notranslate"><span class="pre">kitting.yaml</span></code>. After the kitting order is completed and submitted, the NIST competitor will end the competition and a score will be output in terminal. A score log will also be created in the folder <code class="file docutils literal notranslate"><span class="pre">ariac_log</span></code></p>
+</div></blockquote>
+<p><strong>Option 2:</strong> Use the <code class="file docutils literal notranslate"><span class="pre">competitor.launch.py</span></code> launch file. This runs the environment, MoveIt, and the competitor node in separate terminals. This can be useful for testing to cut down on the number of log messages in each terminal.</p>
+<blockquote>
+<div><p>Open three terminal windows.</p>
 <p><strong>Terminal 1:</strong> Launch the environment</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gazebo<span class="w"> </span>ariac.launch.py<span class="w"> </span>dev_mode:<span class="o">=</span><span class="nb">true</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gazebo<span class="w"> </span>ariac.launch.py<span class="w"> </span>dev_mode:<span class="o">=</span><span class="nb">true</span><span class="w"> </span>trial_name:<span class="o">=</span>kitting
 </pre></div>
 </div>
 <p><strong>Terminal 2:</strong> Launch the move_group node</p>
@@ -512,13 +539,13 @@
 </pre></div>
 </div>
 <p><strong>Terminal 3:</strong> Launch the environment</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>test_competitor<span class="w"> </span>competitor.launch.py
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>nist_competitor<span class="w"> </span>competitor.launch.py
 </pre></div>
 </div>
-<p>The test competitor should start the competition and start completing the default kitting order specified in <code class="file docutils literal notranslate"><span class="pre">kitting.yaml</span></code>. After the kitting order is completed and submitted, the test competitor will end the competition and a score will be output in terminal 1.</p>
+</div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The test competitor has been tested with <code class="file docutils literal notranslate"><span class="pre">kitting.yaml</span></code>, <code class="file docutils literal notranslate"><span class="pre">assembly.yaml</span></code>, and <code class="file docutils literal notranslate"><span class="pre">combined.yaml</span></code>. There is no guarantee that the test competitor will work with other trials.</p>
+<p>The NIST competitor has been tested with <code class="file docutils literal notranslate"><span class="pre">kitting.yaml</span></code>, <code class="file docutils literal notranslate"><span class="pre">assembly.yaml</span></code>, and <code class="file docutils literal notranslate"><span class="pre">combined.yaml</span></code>. There is no guarantee that the NIST competitor will work with other trials.</p>
 </div>
 </div></blockquote>
 </section>

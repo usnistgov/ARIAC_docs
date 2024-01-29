@@ -10,7 +10,7 @@ Configuration files are described in the YAML format. YAML is a human-readable d
 Sensor Configuration
 --------------------
 
-The sensor configuration file is defined by the competitor and describes the location of sensors added to the competition environment. One example of a sensor configuration file :file:`sensors.yaml` is provided in the test competitor package in the config directory. 
+The sensor configuration file is defined by the competitor and describes the location of sensors added to the competition environment. 
 
 :numref:`sensor-config` shows an example of a sensor configuration file with one of each of the different possible sensors. 
 
