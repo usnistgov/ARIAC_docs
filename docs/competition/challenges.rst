@@ -16,7 +16,7 @@ There are 8 possible :term:`agility challenges<Agility Challenge>`. A descriptio
 Faulty Parts Challenge
 ----------------------
 
-Faulty parts are parts that are not suitable for use in the competition. If an order is submitted with faulty parts, these parts are not considered for scoring. Faulty parts are identified by quality control sensors, which are attached to AGVs. This challenge will only occur for kitting orders. 
+Faulty parts are parts that are not suitable for use in the competition. If an order is submitted with faulty parts, the score for that quadrant will be zero. Faulty parts are identified by quality control sensors, which are attached to AGVs. This challenge will only occur for kitting orders. 
 
 The goal of this challenge is to test the ability of the CCS to:
 
@@ -52,7 +52,7 @@ The service will return a response with the following fields:
 Flipped Parts Challenge
 -----------------------
 
-The environment can be started with parts that are flipped. Flipped parts are parts that are upside down (the z-axis of the part faces down instead of up). When a part is spawned as flipped, the CCS is required to flip this part again so it ends up with the correct orientation. If an order is submitted with flipped parts, these parts are not considered for scoring. 
+The environment can be started with parts that are flipped. Flipped parts are parts that are upside down (the z-axis of the part faces down instead of up). When a part is spawned as flipped, the CCS is required to flip this part again so it ends up with the correct orientation. If an order is submitted with flipped parts, the score for that quadrant will be zero. 
 
 The goal of this challenge is to evaluate the approach used by the CCS to flip a part. 
 
@@ -110,7 +110,7 @@ Flipped parts can be detected in one of two ways.
 Dropped Part Challenge
 ----------------------
 
-The faulty gripper challenge simulates a faulty gripper which can drop a part after the part has been picked up. The gripper can drop a part at any time during the trial. The gripper can drop a part that is in the gripper's grasp even if the gripper or robot is not moving. 
+The dropped part challenge simulates a faulty gripper which can drop a part after the part has been picked up. The gripper can drop a part at any time during the trial. The gripper can drop a part that is in the gripper's grasp even if the gripper or robot is not moving. 
 
 The goal of this challenge is to test the ability of the CCS to: 
   
@@ -120,7 +120,7 @@ The goal of this challenge is to test the ability of the CCS to:
 Dropped Part Detection
 ======================
 
-To detect a faulty gripper the CCS needs a subscriber to the topic :topic:`/ariac/{robot}_gripper_state` (:term:`ariac_msgs/msg/VacuumGripperState`). Checking the :yamlname:`attached` field of the message will inform whether or not the gripper is holding a part. If the gripper is not holding a part, the CCS can assume that the gripper has dropped the part.
+To detect a dropped part challenge the CCS needs a subscriber to the topic :topic:`/ariac/{robot}_gripper_state` (:term:`ariac_msgs/msg/VacuumGripperState`). Checking the :yamlname:`attached` field of the message will inform whether or not the gripper is holding a part. If the gripper is not holding a part, the CCS can assume that the gripper has dropped the part.
 
 
 .. _ROBOT_MALFUNCTION_CHALLENGE:
@@ -131,7 +131,7 @@ Robot Malfunction Challenge
 
 The robot malfunction challenge simulates a robot malfunction. The robot can malfunction under some :ref:`conditions <CONDITIONS>` during the trial. The robot can malfunction even if it is not moving. When a robot malfunctions, it stops moving and cannot be controlled by the CCS. The robot will remain in the same position until the malfunction is resolved. To specify how long a robot malfunctions, a time duration of the malfunction is specified in the trial configuration file.
 
-The goal of this challenge is to test the ability of the CCS to use the other robot to complete the tasks that was being performed by the robot which is malfunctioning. 
+The goal of this challenge is to test the ability of the CCS to use the other robot to complete the tasks that were being performed by the robot which is malfunctioning. 
 
 .. note::
   It can happen that both robots malfunction at the same time. 
@@ -182,7 +182,7 @@ The goal of this challenge is to test the ability of the CCS to prioritize high-
 High Priority Order Detection
 =============================
 
-To find out out the priority of an order, the CCS is required to parse messages published to the topic :topic:`/ariac/orders` (:term:`ariac_msgs/msg/Order`). For a high-priority order, the value for the field :yamlname:`priority` is set to :yaml:`true`. For a regular-priority order, the value for the field :yamlname:`priority` is set to :yaml:`false`.
+To find out the priority of an order, the CCS is required to parse messages published to the topic :topic:`/ariac/orders` (:term:`ariac_msgs/msg/Order`). For a high-priority order, the value for the field :yamlname:`priority` is set to :yaml:`true`. For a regular-priority order, the value for the field :yamlname:`priority` is set to :yaml:`false`.
 
 
 .. _INSUFFICIENT_PARTS_CHALLENGE:
