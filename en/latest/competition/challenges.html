@@ -175,7 +175,7 @@
 <li class="toctree-l3"><a class="reference internal" href="sensors.html#breakbeam-sensor">Breakbeam sensor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sensors.html#proximity-sensor">Proximity sensor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sensors.html#laser-profiler">Laser profiler</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sensors.html#lidar">Lidar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#lidar">LIDAR</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sensors.html#rgb-camera">RGB camera</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sensors.html#rgbd-camera">RGBD camera</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sensors.html#basic-logical-camera">Basic logical camera</a></li>
@@ -334,7 +334,7 @@
 </div>
 <section id="faulty-parts-challenge">
 <span id="faulty-parts"></span><h2>Faulty Parts Challenge<a class="headerlink" href="#faulty-parts-challenge" title="Permalink to this heading"></a></h2>
-<p>Faulty parts are parts that are not suitable for use in the competition. If an order is submitted with faulty parts, these parts are not considered for scoring. Faulty parts are identified by quality control sensors, which are attached to AGVs. This challenge will only occur for kitting orders.</p>
+<p>Faulty parts are parts that are not suitable for use in the competition. If an order is submitted with faulty parts, the score for that quadrant will be zero. Faulty parts are identified by quality control sensors, which are attached to AGVs. This challenge will only occur for kitting orders.</p>
 <p>The goal of this challenge is to test the ability of the CCS to:</p>
 <ol class="arabic simple">
 <li><p>Correctly use the quality check sensor to detect a faulty part.</p></li>
@@ -364,7 +364,7 @@
 </section>
 <section id="flipped-parts-challenge">
 <span id="flipped-parts"></span><h2>Flipped Parts Challenge<a class="headerlink" href="#flipped-parts-challenge" title="Permalink to this heading"></a></h2>
-<p>The environment can be started with parts that are flipped. Flipped parts are parts that are upside down (the z-axis of the part faces down instead of up). When a part is spawned as flipped, the CCS is required to flip this part again so it ends up with the correct orientation. If an order is submitted with flipped parts, these parts are not considered for scoring.</p>
+<p>The environment can be started with parts that are flipped. Flipped parts are parts that are upside down (the z-axis of the part faces down instead of up). When a part is spawned as flipped, the CCS is required to flip this part again so it ends up with the correct orientation. If an order is submitted with flipped parts, the score for that quadrant will be zero.</p>
 <p>The goal of this challenge is to evaluate the approach used by the CCS to flip a part.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -415,7 +415,7 @@ one of the robots is not available to flip a part.</p>
 </section>
 <section id="dropped-part-challenge">
 <span id="id2"></span><h2>Dropped Part Challenge<a class="headerlink" href="#dropped-part-challenge" title="Permalink to this heading"></a></h2>
-<p>The faulty gripper challenge simulates a faulty gripper which can drop a part after the part has been picked up. The gripper can drop a part at any time during the trial. The gripper can drop a part that is in the gripper’s grasp even if the gripper or robot is not moving.</p>
+<p>The dropped part challenge simulates a faulty gripper which can drop a part after the part has been picked up. The gripper can drop a part at any time during the trial. The gripper can drop a part that is in the gripper’s grasp even if the gripper or robot is not moving.</p>
 <p>The goal of this challenge is to test the ability of the CCS to:</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -425,13 +425,13 @@ one of the robots is not available to flip a part.</p>
 </div></blockquote>
 <section id="dropped-part-detection">
 <h3>Dropped Part Detection<a class="headerlink" href="#dropped-part-detection" title="Permalink to this heading"></a></h3>
-<p>To detect a faulty gripper the CCS needs a subscriber to the topic <code class="code topic docutils literal notranslate"><span class="pre">/ariac/{robot}_gripper_state</span></code> (<a class="reference internal" href="ros_communication.html#term-ariac_msgs-msg-VacuumGripperState"><span class="xref std std-term">ariac_msgs/msg/VacuumGripperState</span></a>). Checking the <code class="code yamlname docutils literal notranslate"><span class="pre">attached</span></code> field of the message will inform whether or not the gripper is holding a part. If the gripper is not holding a part, the CCS can assume that the gripper has dropped the part.</p>
+<p>To detect a dropped part challenge the CCS needs a subscriber to the topic <code class="code topic docutils literal notranslate"><span class="pre">/ariac/{robot}_gripper_state</span></code> (<a class="reference internal" href="ros_communication.html#term-ariac_msgs-msg-VacuumGripperState"><span class="xref std std-term">ariac_msgs/msg/VacuumGripperState</span></a>). Checking the <code class="code yamlname docutils literal notranslate"><span class="pre">attached</span></code> field of the message will inform whether or not the gripper is holding a part. If the gripper is not holding a part, the CCS can assume that the gripper has dropped the part.</p>
 </section>
 </section>
 <section id="robot-malfunction-challenge">
 <span id="id3"></span><h2>Robot Malfunction Challenge<a class="headerlink" href="#robot-malfunction-challenge" title="Permalink to this heading"></a></h2>
 <p>The robot malfunction challenge simulates a robot malfunction. The robot can malfunction under some <a class="hxr-hoverxref hxr-modal reference internal" href="orders.html#conditions"><span class="std std-ref">conditions</span></a> during the trial. The robot can malfunction even if it is not moving. When a robot malfunctions, it stops moving and cannot be controlled by the CCS. The robot will remain in the same position until the malfunction is resolved. To specify how long a robot malfunctions, a time duration of the malfunction is specified in the trial configuration file.</p>
-<p>The goal of this challenge is to test the ability of the CCS to use the other robot to complete the tasks that was being performed by the robot which is malfunctioning.</p>
+<p>The goal of this challenge is to test the ability of the CCS to use the other robot to complete the tasks that were being performed by the robot which is malfunctioning.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It can happen that both robots malfunction at the same time.
@@ -466,7 +466,7 @@ In this case, the CCS must wait until the malfunction is resolved before continu
 </div>
 <section id="high-priority-order-detection">
 <h3>High Priority Order Detection<a class="headerlink" href="#high-priority-order-detection" title="Permalink to this heading"></a></h3>
-<p>To find out out the priority of an order, the CCS is required to parse messages published to the topic <code class="code topic docutils literal notranslate"><span class="pre">/ariac/orders</span></code> (<a class="reference internal" href="ros_communication.html#term-ariac_msgs-msg-Order"><span class="xref std std-term">ariac_msgs/msg/Order</span></a>). For a high-priority order, the value for the field <code class="code yamlname docutils literal notranslate"><span class="pre">priority</span></code> is set to <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">true</span></code>. For a regular-priority order, the value for the field <code class="code yamlname docutils literal notranslate"><span class="pre">priority</span></code> is set to <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">false</span></code>.</p>
+<p>To find out the priority of an order, the CCS is required to parse messages published to the topic <code class="code topic docutils literal notranslate"><span class="pre">/ariac/orders</span></code> (<a class="reference internal" href="ros_communication.html#term-ariac_msgs-msg-Order"><span class="xref std std-term">ariac_msgs/msg/Order</span></a>). For a high-priority order, the value for the field <code class="code yamlname docutils literal notranslate"><span class="pre">priority</span></code> is set to <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">true</span></code>. For a regular-priority order, the value for the field <code class="code yamlname docutils literal notranslate"><span class="pre">priority</span></code> is set to <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">false</span></code>.</p>
 </section>
 </section>
 <section id="insufficient-parts-challenge">

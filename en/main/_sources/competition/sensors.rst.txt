@@ -32,7 +32,7 @@ There is a cost to each of the sensors. This cost will be factored in during the
     - $100
   * - Laser profiler
     - $200
-  * - Lidar
+  * - LIDAR
     - $300
   * - RGB camera
     - $300
@@ -86,7 +86,7 @@ The laser profiler provides an array of distances to a sensed object.
   :alt: laser profiler sensor
 
 
-Lidar
+LIDAR
 =====
 
 The LIDAR sensor provides a point cloud of detected objects.

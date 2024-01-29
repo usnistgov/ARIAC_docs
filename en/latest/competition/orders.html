@@ -175,7 +175,7 @@
 <li class="toctree-l3"><a class="reference internal" href="sensors.html#breakbeam-sensor">Breakbeam sensor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sensors.html#proximity-sensor">Proximity sensor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sensors.html#laser-profiler">Laser profiler</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sensors.html#lidar">Lidar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#lidar">LIDAR</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sensors.html#rgb-camera">RGB camera</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sensors.html#rgbd-camera">RGBD camera</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sensors.html#basic-logical-camera">Basic logical camera</a></li>
@@ -327,7 +327,7 @@
 <div></div></blockquote>
 <section id="orders">
 <span id="id1"></span><h1>Orders<a class="headerlink" href="#orders" title="Permalink to this heading"></a></h1>
-<p>The main task of the competition is to complete orders. After the competition is started orders will be published on the topic <code class="code topic docutils literal notranslate"><span class="pre">/ariac/orders</span></code>. Each order will request competitors to complete one of three possible tasks (<a class="hxr-hoverxref hxr-modal reference internal" href="#kitting-task"><span class="std std-ref">Kitting Task</span></a>, <a class="hxr-hoverxref hxr-modal reference internal" href="#assembly-task"><span class="std std-ref">Assembly Task</span></a>, or <a class="hxr-hoverxref hxr-modal reference internal" href="#combined-task"><span class="std std-ref">Combined Task</span></a>). An order has the following specifications:</p>
+<p>The main task of the competition is to complete orders. After the competition is started, orders will be published on the topic <code class="code topic docutils literal notranslate"><span class="pre">/ariac/orders</span></code>. Each order will request competitors to complete one of three possible tasks (<a class="hxr-hoverxref hxr-modal reference internal" href="#kitting-task"><span class="std std-ref">Kitting Task</span></a>, <a class="hxr-hoverxref hxr-modal reference internal" href="#assembly-task"><span class="std std-ref">Assembly Task</span></a>, or <a class="hxr-hoverxref hxr-modal reference internal" href="#combined-task"><span class="std std-ref">Combined Task</span></a>). An order has the following specifications:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p><code class="code yamlname docutils literal notranslate"><span class="pre">id</span></code> Each order in a trial has a unique id. The id is an eight character alphanumeric string.</p></li>
@@ -344,11 +344,11 @@
 <blockquote>
 <div><ol class="arabic simple">
 <li><p>Locate a tray with the proper tray id, on one of the two kit tray stations.</p></li>
-<li><p>Pick and place lock the tray onto the specified <abbr title="Automated Guided Vehicles">AGVs</abbr>.</p></li>
+<li><p>Pick, place, and lock the tray onto the specified <abbr title="Automated Guided Vehicles">AGVs</abbr>.</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>After placement the tray should be locked to the AGV using the service <code class="code rosservice docutils literal notranslate"><span class="pre">/ariac/agv{n}_lock_tray</span></code> to prevent the tray from shifting during transport.</p>
+<p>After placement, the tray should be locked to the AGV using the service <code class="code rosservice docutils literal notranslate"><span class="pre">/ariac/agv{n}_lock_tray</span></code> to prevent the tray from shifting during transport.</p>
 </div>
 <ol class="arabic simple" start="3">
 <li><p>Place the requested parts onto that kit tray in the specified quadrant.</p></li>
@@ -415,7 +415,7 @@
 <ul class="simple">
 <li><p>The assembly should be performed at assembly station 4.</p></li>
 <li><p>The parts needed to complete the task are located on AGV 3.</p></li>
-<li><p>A purple regulator should be installed at the specified pose (relative to the insert’s coordinate frame) in the direction of the specfied unit vector (also relative to the insert frame).</p></li>
+<li><p>A purple regulator should be installed at the specified pose (relative to the insert’s coordinate frame) in the direction of the specified unit vector (also relative to the insert frame).</p></li>
 </ul>
 <div class="literal-block-wrapper docutils container" id="assembly-order">
 <div class="code-block-caption"><span class="caption-number">Listing 2 </span><span class="caption-text">Example of an assembly task description.</span><a class="headerlink" href="#assembly-order" title="Permalink to this code"></a></div>
@@ -445,7 +445,7 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The kitting task information is left to the competitors to figure out based on the assembly task information.
-The CCS can place part sanywhere on <abbr title="Automated Guided Vehicles">AGVs</abbr> and then move those <abbr title="Automated Guided Vehicles">AGVs</abbr> to the station where assembly is to be performed.
+The CCS can place parts anywhere on <abbr title="Automated Guided Vehicles">AGVs</abbr> and then move those <abbr title="Automated Guided Vehicles">AGVs</abbr> to the station where assembly is to be performed.
 Once the assembly is complete, the <abbr title="Competitor Control System">CCS</abbr> can submit the assembly via a ROS service call (see <a class="hxr-hoverxref hxr-modal reference internal" href="ros_communication.html#communications-topics"><span class="std std-numref">Table 1</span></a>).
 The <abbr title="ARIAC Manager">AM</abbr> will then evaluate the submitted assembly for scoring (kitting task is not scored).</p>
 </div>
@@ -488,7 +488,7 @@ The <abbr title="ARIAC Manager">AM</abbr> will then evaluate the submitted assem
 <p class="admonition-title">Note</p>
 <p>The competition time is set when the competitor starts the competition with the service call <code class="code rosservice docutils literal notranslate"><span class="pre">/ariac/start_competition</span></code>. This is different from the simulation time which is set when Gazebo starts.</p>
 </div>
-<p>For each trial, the first order always uses a time-based condition with the value 0. This ensures the first order is announced as soon as the competitor starts the competition. <a class="hxr-hoverxref hxr-modal reference internal" href="#time-based-condition"><span class="std std-numref">Listing 4</span></a> shows an example of a time-based condition where an ordered is announced at <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">10.5</span></code> seconds into the competition.</p>
+<p>For each trial, the first order always uses a time-based condition with the value 0. This ensures the first order is announced as soon as the competitor starts the competition. <a class="hxr-hoverxref hxr-modal reference internal" href="#time-based-condition"><span class="std std-numref">Listing 4</span></a> shows an example of a time-based condition where an order is announced at <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">10.5</span></code> seconds into the competition.</p>
 <div class="literal-block-wrapper docutils container" id="time-based-condition">
 <div class="code-block-caption"><span class="caption-number">Listing 4 </span><span class="caption-text">Time-based condition.</span><a class="headerlink" href="#time-based-condition" title="Permalink to this code"></a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">announcement</span><span class="p">:</span>
