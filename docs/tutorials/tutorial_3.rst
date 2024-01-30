@@ -34,29 +34,24 @@ Expected output of tutorial 3
     :caption: Tutorial 3 output
     :class: no-copybutton
 
-    [tutorial_3.py-1] [INFO] [1705523791.505330909] [competition_interface]: Waiting for competition to be ready
-    [tutorial_3.py-1] [INFO] [1705523812.096887359] [competition_interface]: Competition state is: idle
-    [tutorial_3.py-1] [INFO] [1705523926.539425501] [competition_interface]: Competition state is: ready
-    [tutorial_3.py-1] [INFO] [1705523926.561503733] [competition_interface]: Competition is ready. Starting...
-    [tutorial_3.py-1] [INFO] [1705523926.610670594] [competition_interface]: Started competition.
-    [tutorial_3.py-1] [INFO] [1705523926.613540083] [competition_interface]: Getting parts from bin 2
-    [tutorial_3.py-1] [INFO] [1705523926.616115248] [competition_interface]: No image received yet
-    [tutorial_3.py-1] [INFO] [1705523927.618836767] [competition_interface]: No image received yet
-    [tutorial_3.py-1] [INFO] [1705523928.144099448] [competition_interface]: Competition state is: started
-    [tutorial_3.py-1] [INFO] [1705523928.632360416] [competition_interface]: No image received yet
-    [tutorial_3.py-1] [INFO] [1705523929.636587739] [competition_interface]: No image received yet
-    [tutorial_3.py-1] [INFO] [1705523931.862293284] [competition_interface]: Slot 1: purple pump
-    [tutorial_3.py-1] [INFO] [1705523931.864624017] [competition_interface]: Slot 2: Empty
-    [tutorial_3.py-1] [INFO] [1705523931.866752218] [competition_interface]: Slot 3: purple pump
-    [tutorial_3.py-1] [INFO] [1705523931.869826096] [competition_interface]: Slot 4: Empty
-    [tutorial_3.py-1] [INFO] [1705523931.872064874] [competition_interface]: Slot 5: Empty
-    [tutorial_3.py-1] [INFO] [1705523931.874144258] [competition_interface]: Slot 6: Empty
-    [tutorial_3.py-1] [INFO] [1705523931.877048187] [competition_interface]: Slot 7: purple pump
-    [tutorial_3.py-1] [INFO] [1705523931.880235581] [competition_interface]: Slot 8: Empty
-    [tutorial_3.py-1] [INFO] [1705523931.883262169] [competition_interface]: Slot 9: Empty
-    [tutorial_3.py-1] [INFO] [1705523931.886214625] [competition_interface]: Ending competition
-    [tutorial_3.py-1] [INFO] [1705523931.923620397] [competition_interface]: Ended competition.
-
+    [tutorial_3.py-1] [INFO] [1706583134.048895675] [competition_interface]: Waiting for competition to be ready
+    [tutorial_3.py-1] [INFO] [1706583134.490812735] [competition_interface]: Competition state is: idle
+    [tutorial_3.py-1] [INFO] [1706583144.782109220] [competition_interface]: Competition state is: ready
+    [tutorial_3.py-1] [INFO] [1706583144.791058480] [competition_interface]: Competition is ready. Starting...
+    [tutorial_3.py-1] [INFO] [1706583144.817278869] [competition_interface]: Started competition.
+    [tutorial_3.py-1] [INFO] [1706583144.822972336] [competition_interface]: Getting parts from bin 6
+    [tutorial_3.py-1] [INFO] [1706583144.824275618] [competition_interface]: Waiting for camera images ...
+    [tutorial_3.py-1] [INFO] [1706583145.829478237] [competition_interface]: ---
+    [tutorial_3.py-1] [INFO] [1706583146.316575572] [competition_interface]: Slot 1: blue battery
+    [tutorial_3.py-1] [INFO] [1706583146.320312518] [competition_interface]: Slot 2: Empty
+    [tutorial_3.py-1] [INFO] [1706583146.323322363] [competition_interface]: Slot 3: blue battery
+    [tutorial_3.py-1] [INFO] [1706583146.327245429] [competition_interface]: Slot 4: Empty
+    [tutorial_3.py-1] [INFO] [1706583146.334730172] [competition_interface]: Slot 5: Empty
+    [tutorial_3.py-1] [INFO] [1706583146.335420092] [competition_interface]: Slot 6: Empty
+    [tutorial_3.py-1] [INFO] [1706583146.338130357] [competition_interface]: Slot 7: blue battery
+    [tutorial_3.py-1] [INFO] [1706583146.342448139] [competition_interface]: Slot 8: Empty
+    [tutorial_3.py-1] [INFO] [1706583146.360612038] [competition_interface]: Slot 9: blue battery
+    [tutorial_3.py-1] [INFO] [1706583146.368770666] [competition_interface]: ---
 
 --------------------
 Output Visualization
@@ -74,7 +69,7 @@ Use rqt to bring up an image viewer.
 
     ros2 run rqt_image_view rqt_image_view
 
-.. figure:: ../images/tutorial_3/part_detection_boundingbox.png
+.. figure:: ../images/tutorial_3/bounding_box_image.png
     :height: 400px
     :align: center
 
@@ -121,28 +116,24 @@ This is the node used for tutorial 3. The functions from competition_interface.p
         while rclpy.ok():
             try:
                 bin_parts = interface.get_bin_parts(bin_number)
-                
+
                 # bin_parts will be None until image processing starts
                 if bin_parts is None:
                     interface.get_logger().info(f"Waiting for camera images ...")
                     sleep(1)
                 else:
                     for _slot_number, _part in bin_parts.items():
-                        # Check if the bin is empty
-                        if _part is None:
-                            interface.get_logger().info(f"Bin {bin_number} is empty.")
-                            break
+                        if _part.type is None:
+                            interface.get_logger().info(f"Slot {_slot_number}: Empty")
                         else:
-                            if _part.type is None:
-                                interface.get_logger().info(f"Slot {_slot_number}: Empty")
-                            else:
-                                interface.get_logger().info(f"Slot {_slot_number}: {_part.color} {_part.type}")
+                            interface.get_logger().info(f"Slot {_slot_number}: {_part.color} {_part.type}")
 
                 interface.get_logger().info(f"---")
 
             except KeyboardInterrupt:
-                
                 break
+
+            sleep(0.3)
         
         interface.end_competition()
         interface.destroy_node()
@@ -206,7 +197,7 @@ image encoding because the default format used by the RGB cameras is
         except CvBridgeError as e:
             print(e)
 
-.. figure:: ../images/tutorial_3/gazebo_view.png
+.. figure:: ../images/tutorial_3/gazebo_view.jpg
     :height: 400px
     :align: center
 
@@ -400,7 +391,7 @@ and width.
         self.part_poses[color][type] = refined_matches
         self.centered_part_poses[color][type] = centered_refined_matches
 
-.. figure:: ../images/tutorial_3/blue_match_result.png
+.. figure:: ../images/tutorial_3/blue_battery_match_result.png
     :height: 400px
     :align: center
 
@@ -433,7 +424,8 @@ part if one is present.
 .. code-block:: python
 
     def output_by_slot(self):
-        bin = dict([(i, None) for i in range(1, 10)])
+        bin = dict([(i, PartMsg(color=None, type=None)) for i in range(1, 10)])
+
         for color in self.centered_part_poses.keys():
             for type in self.centered_part_poses[color].keys():
                for (csx, csy) in self.centered_part_poses[color][type]:
@@ -456,9 +448,6 @@ part if one is present.
                         col = 2
                     
                     bin[self.slot_mapping[(row, col)]] = PartMsg(color=color, type=type)
-                    for k, v in bin.items():
-                        if v is None:
-                            bin[k] = PartMsg(color=None, type=None)
         return bin
 
 .. warning:: 
