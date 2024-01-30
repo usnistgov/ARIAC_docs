@@ -245,7 +245,7 @@ Combined Task Score
     0, &\text{otherwise} \\
     \end{cases}
 
-.. admonition:: Assembly Task Score
+.. admonition:: Combined Task Score
   :class: tip
   :name: task-score-combined
 

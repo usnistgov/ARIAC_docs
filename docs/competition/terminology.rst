@@ -8,8 +8,8 @@ Terminology
   :sorted:
 
   Agility Challenge
-    The ARIAC Agility Challenge is a competition that tests the ability of a robot to perform a series of tasks in a dynamic environment. The tasks are designed to test the robot's ability to perform pick-and-place operations, assembly, and kitting. The competition is designed to be a testbed for the development of algorithms that can be used in a real-world manufacturing environment.
-
+    An agility challenge in ARIAC refers to a specific scenario or set of scenarios in the competition that are designed to test the adaptability and efficiency of robotic systems in dynamic and often unpredictable manufacturing environments.
+  
   Competitor Control System (CCS)
     The competitor control system (CCS) is the software that is provided by :term:`competitors<Competitor>`. The CCS is responsible for communicating with the competition environment and executing the tasks. 
 
@@ -43,7 +43,7 @@ Terminology
     Assembly is a manufacturing process in which interchangeable :term:`parts<Part>` are added to a product in a sequential manner to create an end product. In ARIAC, assembly is simplified by not "forcing" :term:`competitors<Competitor>` to use a sequence during assembly. :term:`Competitors<Competitor>` can place :term:`parts<Part>` in an insert in any order. For an assembly task, :term:`competitors<Competitor>` are expected to use :term:`parts<Part>` located on an AGV and assemble those parts at one of the four assembly stations.
 
   Combined Task
-    A combined task consists of a :term:`Kitting Task` and an :term:`Assembly Task`. In a combined task, only the Assembly Task is scored. :term:`competitors<Competitor>` have to find a way to move :term:`parts<Part>` from their original locations to the assembly station.
+    A combined task is a fusion of a :term:Kitting Task and an :term:`Assembly Task`. In such tasks, scoring is solely based on the Assembly Task. :term:`Competitors<Competitor>` must devise strategies to relocate :term:`parts<Part>` from their initial positions to the assembly station. For a combined task, it is strongly advised to employ AGVs for the transportation of :term:`parts<Part>` from the kitting station to the assembly station, as this aspect will be under scrutiny by human judges.
       
   Insert
     An insert is a container that holds :term:`parts<Part>`.
