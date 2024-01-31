@@ -598,7 +598,7 @@ To run the ARIAC configuration GUI, first, install the dependencies with
     cd ~/ariac_ws && pip install -r src/ARIAC/ariac_gui/requirements.txt
 
 
-After the dependencies are installed, run the gui with
+After the dependencies are installed, run the GUI with
 
   .. code-block:: sh
     
