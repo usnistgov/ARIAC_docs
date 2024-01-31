@@ -212,6 +212,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../evaluation/overview.html">Automated Evaluation Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../evaluation/overview.html#instructions-for-creating-the-configuration-file">Instructions for creating the configuration file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../evaluation/overview.html#instructions-for-testing-the-evaluation-system">Instructions for Testing the Evaluation System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/overview.html#playing-back-the-gazebo-state-log">Playing back the Gazebo State Log</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../evaluation/scoring.html">Scoring</a><ul>
@@ -499,11 +500,21 @@
 </div>
 </div></blockquote>
 </section>
+<section id="record-state">
+<h4><code class="code docutils literal notranslate"><span class="pre">record_state</span></code><a class="headerlink" href="#record-state" title="Permalink to this heading"></a></h4>
+<blockquote>
+<div><p>This boolean flag controls whether or not gazebo generates a <code class="file docutils literal notranslate"><span class="pre">state.log</span></code> file for the given trial. This is default to <code class="code docutils literal notranslate"><span class="pre">false</span></code> as enabling will cause gazebo to output urdf parsing errors. The errors can be ignored.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gazebo<span class="w"> </span>ariac.launch.py<span class="w"> </span>record_state:<span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+</div></blockquote>
+</section>
 </section>
 <section id="running-the-nist-competitor">
 <h3>Running the NIST Competitor<a class="headerlink" href="#running-the-nist-competitor" title="Permalink to this heading"></a></h3>
 <blockquote>
-<div><p>To help lower the barrier to entry a test competitor package was created by the NIST team. This competitor package is able to perform most of the necessary functions for the competition.</p>
+<div><p>To help lower the barrier to entry a test competitor package was created by the NIST team. This competitor package is able to perform most of the necessary functions for the competition but is not programmed to handle any of the agility challenges.</p>
 <ol class="arabic simple">
 <li><p>Clone the NIST competitor repository</p></li>
 </ol>
@@ -528,7 +539,7 @@
 </div>
 <p><strong>Option 1:</strong> Use the <code class="file docutils literal notranslate"><span class="pre">competition.launch.py</span></code> launch file. This runs the environment, MoveIt, and the competitor node all in the same terminal.</p>
 <blockquote>
-<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>nist_competitor<span class="w"> </span>competition.launch.py<span class="w"> </span>trial_name:<span class="o">=</span>kitting
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>nist_competitor<span class="w"> </span>competition.launch.py<span class="w"> </span>trial_name:<span class="o">=</span>kitting<span class="w"> </span>record_state:<span class="o">=</span><span class="nb">false</span>
 </pre></div>
 </div>
 <p>The NIST competitor should start the competition and start completing the default kitting order specified in <code class="file docutils literal notranslate"><span class="pre">kitting.yaml</span></code>. After the kitting order is completed and submitted, the NIST competitor will end the competition and a score will be output in terminal. A score log will also be created in the folder <code class="file docutils literal notranslate"><span class="pre">ariac_log</span></code></p>
@@ -544,7 +555,7 @@
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_moveit_config<span class="w"> </span>ariac_robots_moveit.launch.py
 </pre></div>
 </div>
-<p><strong>Terminal 3:</strong> Launch the environment</p>
+<p><strong>Terminal 3:</strong> Launch the nist competitor node</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>nist_competitor<span class="w"> </span>competitor.launch.py
 </pre></div>
 </div>

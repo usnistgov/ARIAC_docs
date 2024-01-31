@@ -20,6 +20,8 @@ ARIAC Repositories
 
 * `ARIAC_tutorials <https://github.com/usnistgov/ARIAC_tutorials/>`_ (tutorials)
 
+* `nist_competitor <https://github.com/usnistgov/nist_competitor/>`_ (NIST test competitor)
+
 
 .. image:: images/environment_2024.png
   :width: 800

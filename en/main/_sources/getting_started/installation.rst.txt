@@ -152,10 +152,21 @@ Launch Options
 
     ros2 launch ariac_gazebo ariac.launch.py dev_mode:=true
 
+:code:`record_state`
+--------------------
+
+  This boolean flag controls whether or not gazebo generates a :file:`state.log` file for the given trial. This is default to :code:`false` as enabling will cause gazebo to output urdf parsing errors. The errors can be ignored. 
+
+  **Example:**
+
+  .. code-block:: sh
+
+    ros2 launch ariac_gazebo ariac.launch.py record_state:=true
+
 Running the NIST Competitor
 ===========================
 
-  To help lower the barrier to entry a test competitor package was created by the NIST team. This competitor package is able to perform most of the necessary functions for the competition. 
+  To help lower the barrier to entry a test competitor package was created by the NIST team. This competitor package is able to perform most of the necessary functions for the competition but is not programmed to handle any of the agility challenges. 
 
   1. Clone the NIST competitor repository
 
@@ -182,7 +193,7 @@ Running the NIST Competitor
 
     .. code-block:: sh
 
-      ros2 launch nist_competitor competition.launch.py trial_name:=kitting
+      ros2 launch nist_competitor competition.launch.py trial_name:=kitting record_state:=false
 
     The NIST competitor should start the competition and start completing the default kitting order specified in :file:`kitting.yaml`. After the kitting order is completed and submitted, the NIST competitor will end the competition and a score will be output in terminal. A score log will also be created in the folder :file:`ariac_log`
 
@@ -202,7 +213,7 @@ Running the NIST Competitor
 
       ros2 launch ariac_moveit_config ariac_robots_moveit.launch.py
 
-    **Terminal 3:** Launch the environment
+    **Terminal 3:** Launch the nist competitor node
 
     .. code-block:: sh
 

@@ -212,6 +212,7 @@
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Automated Evaluation Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="overview.html#instructions-for-creating-the-configuration-file">Instructions for creating the configuration file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="overview.html#instructions-for-testing-the-evaluation-system">Instructions for Testing the Evaluation System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#playing-back-the-gazebo-state-log">Playing back the Gazebo State Log</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="scoring.html">Scoring</a><ul>
@@ -355,6 +356,7 @@
 <span class="k">def</span> <span class="nf">launch_setup</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="c1"># Launch arguments</span>
     <span class="n">trial_name</span> <span class="o">=</span> <span class="n">LaunchConfiguration</span><span class="p">(</span><span class="s2">&quot;trial_name&quot;</span><span class="p">)</span>
+    <span class="n">record_state</span> <span class="o">=</span> <span class="n">LaunchConfiguration</span><span class="p">(</span><span class="s2">&quot;record_state&quot;</span><span class="p">)</span>
 
     <span class="n">urdf</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">get_package_share_directory</span><span class="p">(</span><span class="s2">&quot;ariac_description&quot;</span><span class="p">),</span> <span class="s2">&quot;urdf/ariac_robots/ariac_robots.urdf.xacro&quot;</span><span class="p">)</span>
 
@@ -382,12 +384,12 @@
         <span class="n">launch_arguments</span><span class="o">=</span><span class="p">{</span>
             <span class="s1">&#39;trial_name&#39;</span><span class="p">:</span> <span class="n">trial_name</span><span class="p">,</span>
             <span class="s1">&#39;competitor_pkg&#39;</span><span class="p">:</span> <span class="s2">&quot;nist_competitor&quot;</span><span class="p">,</span>
-            <span class="s1">&#39;sensor_config&#39;</span><span class="p">:</span> <span class="s2">&quot;sensors&quot;</span><span class="p">,</span>
             <span class="s1">&#39;dev_mode&#39;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;record_state&#39;</span><span class="p">:</span> <span class="n">record_state</span><span class="p">,</span>
         <span class="p">}</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
     <span class="p">)</span>
 
-    <span class="c1"># NIST Competitor node</span>
+    <span class="c1"># Nist Competitor node</span>
     <span class="n">nist_competitor</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span>
         <span class="n">package</span><span class="o">=</span><span class="s2">&quot;nist_competitor&quot;</span><span class="p">,</span>
         <span class="n">executable</span><span class="o">=</span><span class="s2">&quot;competitor&quot;</span><span class="p">,</span>
@@ -418,6 +420,10 @@
         <span class="n">DeclareLaunchArgument</span><span class="p">(</span><span class="s2">&quot;trial_name&quot;</span><span class="p">,</span> <span class="n">default_value</span><span class="o">=</span><span class="s2">&quot;kitting&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Name of ariac trial&quot;</span><span class="p">)</span>
     <span class="p">)</span>
 
+    <span class="n">declared_arguments</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+        <span class="n">DeclareLaunchArgument</span><span class="p">(</span><span class="s2">&quot;record_state&quot;</span><span class="p">,</span> <span class="n">default_value</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Record gazebo state.log for the trial&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+
     <span class="k">return</span> <span class="n">LaunchDescription</span><span class="p">(</span><span class="n">declared_arguments</span> <span class="o">+</span> <span class="p">[</span><span class="n">OpaqueFunction</span><span class="p">(</span><span class="n">function</span><span class="o">=</span><span class="n">launch_setup</span><span class="p">)])</span>
 </pre></div>
 </div>
@@ -427,6 +433,7 @@
 <li><p>Ensure that the launch arguments for the ariac_environment node are correct for your package</p></li>
 <li><p>Include the trial_name argument as a launch argument for the launch file and make sure that it is passed to the ariac_environment launch file as shown above.</p></li>
 <li><p>Do not pass dev_mode argument as true to <code class="file docutils literal notranslate"><span class="pre">ariac.launch.py</span></code>, doing so will disqualify your team.</p></li>
+<li><p>The <code class="code docutils literal notranslate"><span class="pre">record_state</span></code> launch argument must be passed as <code class="code highlight python docutils literal highlight-python"><span class="s1">&#39;true&#39;</span></code> for the environment launch file. This is necessary for judging.</p></li>
 </ul>
 </div>
 </section>

@@ -212,6 +212,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Automated Evaluation Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#instructions-for-creating-the-configuration-file">Instructions for creating the configuration file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#instructions-for-testing-the-evaluation-system">Instructions for Testing the Evaluation System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#playing-back-the-gazebo-state-log">Playing back the Gazebo State Log</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="scoring.html">Scoring</a><ul>
@@ -341,8 +342,8 @@
 
 <span class="nt">github</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;github.com/usnistgov/nist_competitor.git&quot;</span>
-<span class="w">  </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2024.2.0&quot;</span>
-<span class="w">  </span><span class="nt">personal_access_token</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;****&quot;</span>
+<span class="w">  </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2024.2.2&quot;</span>
+<span class="w">  </span><span class="nt">personal_access_token</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
 
 <span class="nt">build</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">pre_build_scripts</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;nist_competitor_pre_build.sh&quot;</span><span class="p p-Indicator">]</span>
@@ -429,7 +430,7 @@
 </li>
 <li><p>Add any trials you want to test with to the folder:</p>
 <blockquote>
-<div><p><code class="file docutils literal notranslate"><span class="pre">/automated_evaluation/trials</span></code>.</p>
+<div><p><code class="file docutils literal notranslate"><span class="pre">/automated_evaluation/trials</span></code></p>
 </div></blockquote>
 </li>
 <li><p>Navigate to the automated evaluation folder in a terminal.</p></li>
@@ -467,16 +468,6 @@
 </pre></div>
 </div>
 </div></blockquote>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In order to use the nist_competitor example you need to edit the file <code class="file docutils literal notranslate"><span class="pre">nist_competitor.yaml</span></code> in <code class="file docutils literal notranslate"><span class="pre">/automated_evaluation/competitors_configs</span></code></p>
-<ul>
-<li><p>Under <code class="code yamlname docutils literal notranslate"><span class="pre">personal_access_token</span></code> section replace <code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&quot;****&quot;</span></code>  with</p>
-<p><code class="code highlight yaml docutils literal highlight-yaml"><span class="s">&quot;github(UNDERSCORE)pat(UNDERSCORE)11AMERXRA0077fKXamvIKb_3YPuZm5p653Jerzr0BB0PfaFjv2OC5aPs1ujpYTeqm6JX6DNC3GXsCg1xYu&quot;</span></code>.</p>
-</li>
-<li><p>Replace <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">(UNDERSCORE)</span></code> with <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">_</span></code>.</p></li>
-</ul>
-</div>
 <ol class="arabic simple" start="12">
 <li><p>To run a trial use the <code class="file docutils literal notranslate"><span class="pre">run_trial.sh</span></code> script. The first argument is the team name which should also be the name of the container. The second argument is the name of the trial to be run. For example to run the nist_competitor with trial <code class="file docutils literal notranslate"><span class="pre">kitting.yaml</span></code> use the command:</p></li>
 </ol>
@@ -496,6 +487,13 @@
 <ol class="arabic simple" start="13">
 <li><p>View the results of the trial in the folder <code class="file docutils literal notranslate"><span class="pre">/automated_evaluation/logs</span></code>. The output will include the sensor cost calculation, the scoring log, ROS logs, and a gazebo state log.</p></li>
 </ol>
+</section>
+<section id="playing-back-the-gazebo-state-log">
+<h2>Playing back the Gazebo State Log<a class="headerlink" href="#playing-back-the-gazebo-state-log" title="Permalink to this heading"></a></h2>
+<p>To view a interactive replay of the trial after completition, competitors can use the <code class="file docutils literal notranslate"><span class="pre">playback_trial.sh</span></code> script. The script takes two arguments, <code class="code docutils literal notranslate"><span class="pre">team_name</span></code> and <code class="code docutils literal notranslate"><span class="pre">trial_run</span></code>. The <code class="code docutils literal notranslate"><span class="pre">trial_run</span></code> argument should match the name of the log folder created for that trial. For example the second run of a trial named <code class="file docutils literal notranslate"><span class="pre">kitting.yaml</span></code> would be <code class="code docutils literal notranslate"><span class="pre">kitting_2</span></code>. To playback this trial use the command:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./playback_trial.sh<span class="w"> </span>nist_competitor<span class="w"> </span>kitting_2
+</pre></div>
+</div>
 </section>
 </section>
 
