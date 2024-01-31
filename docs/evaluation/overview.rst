@@ -16,8 +16,8 @@ To properly build and install the competitor's code onto the container each team
 
   github:
     repository: "github.com/usnistgov/nist_competitor.git"
-    tag: "2024.2.0"
-    personal_access_token: "****"
+    tag: "2024.2.2"
+    personal_access_token: ""
 
   build:
     pre_build_scripts: ["nist_competitor_pre_build.sh"]
@@ -97,7 +97,7 @@ Competitors can test the evaluation system on their setup with the following ste
 
 7. Add any trials you want to test with to the folder: 
 
-    :file:`/automated_evaluation/trials`.
+    :file:`/automated_evaluation/trials`
 
 8. Navigate to the automated evaluation folder in a terminal.
 
@@ -129,16 +129,6 @@ Competitors can test the evaluation system on their setup with the following ste
 
     ./build_container.sh nist_competitor
 
-.. note::
-
-  In order to use the nist_competitor example you need to edit the file :file:`nist_competitor.yaml` in :file:`/automated_evaluation/competitors_configs`
-  
-  * Under :yamlname:`personal_access_token` section replace :yaml:`"****"`  with
-    
-    :yaml:`"github(UNDERSCORE)pat(UNDERSCORE)11AMERXRA0077fKXamvIKb_3YPuZm5p653Jerzr0BB0PfaFjv2OC5aPs1ujpYTeqm6JX6DNC3GXsCg1xYu"`.
-  
-  * Replace :yaml:`(UNDERSCORE)` with :yaml:`_`.
-
 12. To run a trial use the :file:`run_trial.sh` script. The first argument is the team name which should also be the name of the container. The second argument is the name of the trial to be run. For example to run the nist_competitor with trial :file:`kitting.yaml` use the command:
 
   .. code-block:: sh
@@ -159,4 +149,13 @@ Competitors can test the evaluation system on their setup with the following ste
 
 13. View the results of the trial in the folder :file:`/automated_evaluation/logs`. The output will include the sensor cost calculation, the scoring log, ROS logs, and a gazebo state log.
 
+---------------------------------
+Playing back the Gazebo State Log
+---------------------------------
+
+To view a interactive replay of the trial after completition, competitors can use the :file:`playback_trial.sh` script. The script takes two arguments, :code:`team_name` and :code:`trial_run`. The :code:`trial_run` argument should match the name of the log folder created for that trial. For example the second run of a trial named :file:`kitting.yaml` would be :code:`kitting_2`. To playback this trial use the command:
+
+.. code-block:: sh
+
+    ./playback_trial.sh nist_competitor kitting_2
 
