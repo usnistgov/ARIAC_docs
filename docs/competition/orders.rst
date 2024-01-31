@@ -4,7 +4,7 @@
 Orders
 ======
 
-The main task of the competition is to complete orders. After the competition is started orders will be published on the topic :topic:`/ariac/orders`. Each order will request competitors to complete one of three possible tasks (:ref:`KITTING_TASK`, :ref:`ASSEMBLY_TASK`, or :ref:`COMBINED_TASK`). An order has the following specifications:
+The main task of the competition is to complete orders. After the competition is started, orders will be published on the topic :topic:`/ariac/orders`. Each order will request competitors to complete one of three possible tasks (:ref:`KITTING_TASK`, :ref:`ASSEMBLY_TASK`, or :ref:`COMBINED_TASK`). An order has the following specifications:
 
   * :yamlname:`id` Each order in a trial has a unique id. The id is an eight character alphanumeric string. 
   
@@ -31,10 +31,10 @@ Kitting is the process of gathering parts into a 'kit'. For a kitting task, the 
 
   1. Locate a tray with the proper tray id, on one of the two kit tray stations. 
 
-  2. Pick and place lock the tray onto the specified :abbr:`AGVs (Automated Guided Vehicles)`.
+  2. Pick, place, and lock the tray onto the specified :abbr:`AGVs (Automated Guided Vehicles)`.
 
   .. note::
-    After placement the tray should be locked to the AGV using the service :rosservice:`/ariac/agv{n}_lock_tray` to prevent the tray from shifting during transport. 
+    After placement, the tray should be locked to the AGV using the service :rosservice:`/ariac/agv{n}_lock_tray` to prevent the tray from shifting during transport. 
 
   3. Place the requested parts onto that kit tray in the specified quadrant.
 
@@ -108,7 +108,7 @@ An example of an assembly order in a trial configuration file is presented in :n
 
 - The parts needed to complete the task are located on AGV 3.
 
-- A purple regulator should be installed at the specified pose (relative to the insert's coordinate frame) in the direction of the specfied unit vector (also relative to the insert frame).
+- A purple regulator should be installed at the specified pose (relative to the insert's coordinate frame) in the direction of the specified unit vector (also relative to the insert frame).
 
 .. code-block:: yaml
   :caption: Example of an assembly task description.
@@ -140,7 +140,7 @@ A combined task is a task which requires both kitting and assembly. For a combin
 
 .. note::
   The kitting task information is left to the competitors to figure out based on the assembly task information. 
-  The CCS can place part sanywhere on :abbr:`AGVs (Automated Guided Vehicles)` and then move those :abbr:`AGVs (Automated Guided Vehicles)` to the station where assembly is to be performed. 
+  The CCS can place parts anywhere on :abbr:`AGVs (Automated Guided Vehicles)` and then move those :abbr:`AGVs (Automated Guided Vehicles)` to the station where assembly is to be performed. 
   Once the assembly is complete, the :abbr:`CCS (Competitor Control System)` can submit the assembly via a ROS service call (see :numref:`communications-topics`). 
   The :abbr:`AM (ARIAC Manager)` will then evaluate the submitted assembly for scoring (kitting task is not scored). 
 
@@ -188,7 +188,7 @@ Orders and challenges are announced under three possible conditions:
       The competition time is set when the competitor starts the competition with the service call :rosservice:`/ariac/start_competition`. This is different from the simulation time which is set when Gazebo starts.
 
    
-    For each trial, the first order always uses a time-based condition with the value 0. This ensures the first order is announced as soon as the competitor starts the competition. :numref:`time-based-condition` shows an example of a time-based condition where an ordered is announced at :yaml:`10.5` seconds into the competition.
+    For each trial, the first order always uses a time-based condition with the value 0. This ensures the first order is announced as soon as the competitor starts the competition. :numref:`time-based-condition` shows an example of a time-based condition where an order is announced at :yaml:`10.5` seconds into the competition.
 
     .. code-block:: yaml
       :caption: Time-based condition.

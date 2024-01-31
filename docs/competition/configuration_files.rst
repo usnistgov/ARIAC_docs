@@ -10,11 +10,11 @@ Configuration files are described in the YAML format. YAML is a human-readable d
 Sensor Configuration
 --------------------
 
-The sensor configuration file is defined by the competitor and describes the location of sensors added to the competition environment. One example of a sensor configuration file :file:`sensors.yaml` is provided in the test competitor package in the config directory. 
+The sensor configuration file is defined by the competitor and describes the location of sensors added to the competition environment. 
 
 :numref:`sensor-config` shows an example of a sensor configuration file with one of each of the different possible sensors. 
 
-The first field in the yaml file is :yamlname:`robot_cameras`. This is an optional field in the sensor configuration file. If this field is not present in the file cameras will not be activated. Alternatively the :yamlname:`active` field can be used to enable or disable a camera for either robot. Last the :yamlname:`type` field should be either :yaml:`rgb` or :yaml:`rgbd`.
+The first field in the yaml file is :yamlname:`robot_cameras`. This is an optional field in the sensor configuration file. If this field is not present in the file, cameras will not be activated. Alternatively the :yamlname:`active` field can be used to enable or disable a camera for either robot. Last the :yamlname:`type` field should be either :yaml:`rgb` or :yaml:`rgbd`.
 
 The second field in the configuration file is :yamlname:`static_sensors`. This field should contain all the static sensors that the competitor wants to add. Static sensors each have four fields:
 

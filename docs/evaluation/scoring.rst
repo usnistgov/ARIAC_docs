@@ -232,7 +232,7 @@ Combined Task Score
   .. math::
 
     \texttt{pt}_b = \begin{cases}
-    n, &\text{if} ~~ \sum_{s}^{n}{\texttt{pt}_{s}} = n\times 3 \\
+    n, &\text{if} ~~ \sum_{s}^{n}{\texttt{pt}_{s}} = n\times 5 \\
     0, &\text{otherwise} \\
     \end{cases}
 
