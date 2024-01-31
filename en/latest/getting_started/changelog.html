@@ -88,7 +88,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">2024.1.0, (2023-12-15)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">2024.1.0, (2024-1-30)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#updates-relevant-to-competitors">Updates relevant to competitors:</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#other-updates">Other Updates</a></li>
 </ul>
@@ -335,7 +335,7 @@
 <section id="changelog">
 <span id="id1"></span><h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading"></a></h1>
 <section id="id2">
-<h2>2024.1.0, (2023-12-15)<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<h2>2024.1.0, (2024-1-30)<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>Initial release of the 2024 ARIAC competition.</p>
 <section id="updates-relevant-to-competitors">
 <h3>Updates relevant to competitors:<a class="headerlink" href="#updates-relevant-to-competitors" title="Permalink to this heading"></a></h3>
@@ -350,19 +350,21 @@
 <li><p>Updated conveyor belt to continually spawn parts throughout the competition <a class="reference external" href="https://github.com/usnistgov/ARIAC/pull/264">#264</a></p></li>
 <li><p>Added new challenge where assembly inserts can be rotated on assembly tables <a class="reference external" href="https://github.com/usnistgov/ARIAC/pull/267">#267</a></p></li>
 <li><p>Fixed issue with part inertias that was affecting part pick up (especially pump) <a class="reference external" href="https://github.com/usnistgov/ARIAC/pull/260">#260</a></p></li>
-<li><p>Added output of the competitors’s sensor cost and trial score to the ariac_logs directory</p></li>
 <li><p>Changed initial poses of the robots to be their home pose (from ariac_moveit_config srdf) <a class="reference external" href="https://github.com/usnistgov/ARIAC/pull/271">#271</a></p></li>
 <li><p>Added feature to clear the AGV of tray and parts after kitting orders are submitted <a class="reference external" href="https://github.com/usnistgov/ARIAC/pull/276">#266</a></p></li>
-<li><p>Added the ability to pick parts from the conveyor to the test competitor <a class="reference external" href="https://github.com/usnistgov/ARIAC/pull/262">#262</a></p></li>
+<li><p>Updated task manager scoring of tasks and improved logging display of scoring. Added output of the competitors’s sensor cost and trial score to the ariac_logs directory  <a class="reference external" href="https://github.com/usnistgov/ARIAC/pull/296">#296</a></p></li>
+<li><p>Changed RGB/RGBD cameras to publish a blank image during sensor blackout challenge instead of not publishing <a class="reference external" href="https://github.com/usnistgov/ARIAC/pull/295">#295</a></p></li>
+<li><p>Fixed issues to make part picking and assembly more reliable <a class="reference external" href="https://github.com/usnistgov/ARIAC/pull/288">#288</a></p></li>
+<li><p>Removed human challenge for 2024 competition <a class="reference external" href="https://github.com/usnistgov/ARIAC/pull/280">#280</a></p></li>
 </ul>
 </section>
 <section id="other-updates">
 <h3>Other Updates<a class="headerlink" href="#other-updates" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>Added static controllers to fix issue with new version of ros2_control where the robots drift when no controllers are active. <a class="reference external" href="https://github.com/usnistgov/ARIAC/pull/259">#259</a></p></li>
-<li><p>Updated ariac_moveit_config and test_competitor to use MoveItConfigsBuilder. <a class="reference external" href="https://github.com/usnistgov/ARIAC/pull/257">#257</a></p></li>
+<li><p>Updated ariac_moveit_config to use MoveItConfigsBuilder. <a class="reference external" href="https://github.com/usnistgov/ARIAC/pull/257">#257</a></p></li>
 <li><p>Moved documentation and automated evaluation to separate repositories <a class="reference external" href="https://github.com/usnistgov/ARIAC/pull/275">#275</a></p></li>
-<li><p>Improved test competitor logging <a class="reference external" href="https://github.com/usnistgov/ARIAC/pull/270">#270</a></p></li>
+<li><p>Moved/renamed test_competitor in separate repository <a class="reference external" href="https://github.com/usnistgov/ARIAC/pull/298">#298</a></p></li>
 <li><p>General cleanup of packages <a class="reference external" href="https://github.com/usnistgov/ARIAC/pull/261">#261</a></p></li>
 </ul>
 </section>
