@@ -67,7 +67,7 @@ Competitors can test the evaluation system on their setup with the following ste
 
   Currently the evaluation system only runs on Ubuntu
 
-1. Install Docker. This can be through `Docker Desktop <https://docs.docker.com/desktop/install/ubuntu/>`_ or `Docker Engine <https://docs.docker.com/engine/install/ubuntu/>`_.
+1. Install Docker. This can be through `Docker Engine <https://docs.docker.com/engine/install/ubuntu/>`_.
 
 2. If your machine has an Nvidia GPU and you want to enable GPU acceleration, install the `nvidia container toolkit <https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker>`_.
 
@@ -85,7 +85,7 @@ Competitors can test the evaluation system on their setup with the following ste
 
   .. code-block:: sh
 
-    git pull https://github.com/usnistgov/ARIAC_evaluation.git
+    git clone https://github.com/usnistgov/ARIAC_evaluation.git
 
 5. Add your team's evaluation configuration file to the folder:
   
