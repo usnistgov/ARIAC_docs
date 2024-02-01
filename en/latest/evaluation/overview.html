@@ -395,11 +395,11 @@
 <p>Currently the evaluation system only runs on Ubuntu</p>
 </div>
 <ol class="arabic">
-<li><p>Install Docker. This can be through <a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a>.</p>
+<li><p>Install <a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository">Docker Engine</a>.</p>
 <blockquote>
-<div><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you already have docker desktop installed you would still need to install the docker engine and run the docker daemon. Docker desktop automatically starts a daemon which need to be set to default. To do this run the following command:</p>
+<div><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The automated evaluation does not work with docker-desktop. If you already have docker-desktop installed you must run the following command to switch from the desktop-linux context to the default context. Images and containers will not show up in the docker-desktop GUI.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>context<span class="w"> </span>use<span class="w"> </span>default
 </pre></div>
 </div>
@@ -478,10 +478,10 @@
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./build_container.sh<span class="w"> </span>nist_competitor
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you already have an existing container for your team you can remove it with the command:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>container<span class="w"> </span>rm<span class="w"> </span>nist_competitor<span class="w"> </span>--force
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you make changes to your source code and want to update the container you first need to remove the existing container:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>container<span class="w"> </span>rm<span class="w"> </span><span class="o">{</span>container_name<span class="o">}</span><span class="w"> </span>--force
 </pre></div>
 </div>
 </div>
@@ -492,6 +492,10 @@
 <blockquote>
 <div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./run_trial.sh<span class="w"> </span>nist_competitor<span class="w"> </span>kitting
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can only run trials that were added to the folder <code class="file docutils literal notranslate"><span class="pre">/automated_evaluation/trials</span></code> before running the build container script.</p>
 </div>
 <p>To run all the trials added to the <code class="file docutils literal notranslate"><span class="pre">trials</span></code> folder replace the second argument with run-all, for example:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./run_trial.sh<span class="w"> </span>nist_competitor<span class="w"> </span>run-all
