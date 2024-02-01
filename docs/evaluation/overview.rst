@@ -68,6 +68,15 @@ Competitors can test the evaluation system on their setup with the following ste
   Currently the evaluation system only runs on Ubuntu
 
 1. Install Docker. This can be through `Docker Engine <https://docs.docker.com/engine/install/ubuntu/>`_.
+   
+    .. note::
+  
+      If you already have docker desktop installed you would still need to install the docker engine and run the docker daemon. Docker desktop automatically starts a daemon which need to be set to default. To do this run the following command:
+
+      .. code-block:: sh
+
+        docker context use default
+
 
 2. If your machine has an Nvidia GPU and you want to enable GPU acceleration, install the `nvidia container toolkit <https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker>`_.
 
@@ -128,6 +137,14 @@ Competitors can test the evaluation system on their setup with the following ste
   .. code-block:: sh
 
     ./build_container.sh nist_competitor
+
+  .. note::
+
+    If you already have an existing container for your team you can remove it with the command:
+
+    .. code-block:: sh
+
+      docker container rm nist_competitor --force
 
 12. To run a trial use the :file:`run_trial.sh` script. The first argument is the team name which should also be the name of the container. The second argument is the name of the trial to be run. For example to run the nist_competitor with trial :file:`kitting.yaml` use the command:
 
