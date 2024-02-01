@@ -394,8 +394,18 @@
 <p class="admonition-title">Note</p>
 <p>Currently the evaluation system only runs on Ubuntu</p>
 </div>
-<ol class="arabic simple">
-<li><p>Install Docker. This can be through <a class="reference external" href="https://docs.docker.com/desktop/install/ubuntu/">Docker Desktop</a> or <a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a>.</p></li>
+<ol class="arabic">
+<li><p>Install Docker. This can be through <a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a>.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you already have docker desktop installed you would still need to install the docker engine and run the docker daemon. Docker desktop automatically starts a daemon which need to be set to default. To do this run the following command:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>context<span class="w"> </span>use<span class="w"> </span>default
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
 <li><p>If your machine has an Nvidia GPU and you want to enable GPU acceleration, install the <a class="reference external" href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker">nvidia container toolkit</a>.</p></li>
 </ol>
 <div class="admonition note">
@@ -414,7 +424,7 @@
 <li><p>Clone the ARIAC_evaluation repository:</p></li>
 </ol>
 <blockquote>
-<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull<span class="w"> </span>https://github.com/usnistgov/ARIAC_evaluation.git
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/usnistgov/ARIAC_evaluation.git
 </pre></div>
 </div>
 </div></blockquote>
@@ -467,6 +477,13 @@
 <p>If you do not have nvidia graphics cards or do not want to use gpu acceleration you can run the script without the nvidia argument:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./build_container.sh<span class="w"> </span>nist_competitor
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you already have an existing container for your team you can remove it with the command:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>container<span class="w"> </span>rm<span class="w"> </span>nist_competitor<span class="w"> </span>--force
+</pre></div>
+</div>
 </div>
 </div></blockquote>
 <ol class="arabic simple" start="12">
