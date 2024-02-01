@@ -152,6 +152,10 @@ Competitors can test the evaluation system on their setup with the following ste
 
     ./run_trial.sh nist_competitor kitting
 
+  .. note::
+
+    You can only run trials that were added to the folder :file:`/automated_evaluation/trials` before running the build container script.
+
   To run all the trials added to the :file:`trials` folder replace the second argument with run-all, for example:
 
   .. code-block:: sh
