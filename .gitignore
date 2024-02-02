@@ -3,3 +3,5 @@ docs/_build/
 .DS_store
 
 .vscode/
+
+.history/
