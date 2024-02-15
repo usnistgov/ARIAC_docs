@@ -152,6 +152,12 @@ Competitors can test the evaluation system on their setup with the following ste
 
     ./run_trial.sh nist_competitor kitting
 
+  To run a specific trial multiple times pass a third argument for the number of iterations for that trial. For example to run the kitting trial three times:
+  
+  .. code-block:: sh
+
+    ./run_trial.sh nist_competitor kitting 3
+
   .. note::
 
     You can only run trials that were added to the folder :file:`/automated_evaluation/trials` before running the build container script.
