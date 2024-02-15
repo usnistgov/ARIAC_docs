@@ -205,7 +205,7 @@ Running the NIST Competitor
 
     .. code-block:: sh
 
-      ros2 launch ariac_gazebo ariac.launch.py dev_mode:=true trial_name:=kitting
+      ros2 launch ariac_gazebo ariac.launch.py dev_mode:=true trial_name:=kitting competitor_pkg:=nist_competitor
 
     **Terminal 2:** Launch the move_group node
 
