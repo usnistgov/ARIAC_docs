@@ -41,7 +41,7 @@ Configuring the ARIAC Environment
 
   .. code-block:: sh
 
-    sudo apt install python3-rosdep
+    sudo apt update && sudo apt install python3-rosdep
 
 5. Initialize rosdep
 
