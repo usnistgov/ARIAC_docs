@@ -5,6 +5,12 @@ Changelog
 =========
 
 ---------------------
+2024.2.0, (2024-3-14)
+---------------------
+
+* Added headers to BasicLogicalCameraImage msg and AdvancedLogicalCameraImage msg `313 <https://github.com/usnistgov/ARIAC/pull/313>`_
+
+---------------------
 2024.1.1, (2024-2-1)
 ---------------------
 
