@@ -495,6 +495,7 @@ Message Definitions
     ariac_msgs/msg/AdvancedLogicalCameraImage
       .. code-block:: text
         
+        std_msgs/Header header
         ariac_msgs/PartPose[] part_poses
         ariac_msgs/KitTrayPose[] tray_poses
         geometry_msgs/Pose sensor_pose
@@ -584,6 +585,7 @@ Message Definitions
     ariac_msgs/msg/BasicLogicalCameraImage
       .. code-block:: text
         
+        std_msgs/Header header
         geometry_msgs/Pose[] part_poses
         geometry_msgs/Pose[] tray_poses
         geometry_msgs/Pose sensor_pose
