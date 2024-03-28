@@ -8,11 +8,13 @@ Changelog
 2024.3.0, (2024-3-28)
 ---------------------
 
-* Switched gripper_joint from a revolute joint to a fixed joint `317 <https://github.com/usnistgov/ARIAC/pull/317>`_
+* Fixed issue `#314 <https://github.com/usnistgov/ARIAC/issues/314>`_ with `#317 <https://github.com/usnistgov/ARIAC/pull/317>`_
 
-* Removed gripper_joint from the moveit config
+  * Changes gripper_joint in the vacuum_gripper.xacro to be fixed instead of revolute.
 
-* GUI changes: `320 <https://github.com/usnistgov/ARIAC/pull/320>`_
+  * Removes ceiling_gripper_joint and floor_gripper_joint from MoveItConfig
+
+* Updates to the Trial Configurator GUI: `#320 <https://github.com/usnistgov/ARIAC/pull/320>`_
 
   * Added random parts for conveyor and bins
 
