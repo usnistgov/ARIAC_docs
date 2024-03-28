@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ROS Communication &mdash; ARIAC Docs 1.0 documentation</title>
+  <title>ROS Communication &mdash; ARIAC Docs 2024.2.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
       <link rel="stylesheet" type="text/css" href="../_static/ntd2d.css?v=592263c6" />
       <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.custom.css" />
@@ -27,7 +27,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=359c27e9"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=13c31088"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="../_static/js/hoverxref.js"></script>
@@ -65,7 +65,7 @@
               <img src="../_static/nist_el_logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2024.1.0
+                2024.2.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -88,8 +88,9 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../getting_started/changelog.html#id2">2024.1.1, (2024-2-1)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../getting_started/changelog.html#id4">2024.1.0, (2024-1-30)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/changelog.html#id2">2024.2.0, (2024-3-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/changelog.html#id4">2024.1.1, (2024-2-1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/changelog.html#id6">2024.1.0, (2024-1-30)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../getting_started/changelog.html#updates-relevant-to-competitors">Updates relevant to competitors:</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../getting_started/changelog.html#other-updates">Other Updates</a></li>
 </ul>
@@ -502,7 +503,8 @@
 <section id="message-definitions">
 <h2>Message Definitions<a class="headerlink" href="#message-definitions" title="Permalink to this heading"></a></h2>
 <dl class="glossary">
-<dt id="term-ariac_msgs-msg-AdvancedLogicalCameraImage">ariac_msgs/msg/AdvancedLogicalCameraImage<a class="headerlink" href="#term-ariac_msgs-msg-AdvancedLogicalCameraImage" title="Permalink to this term"></a></dt><dd><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ariac_msgs/PartPose[] part_poses
+<dt id="term-ariac_msgs-msg-AdvancedLogicalCameraImage">ariac_msgs/msg/AdvancedLogicalCameraImage<a class="headerlink" href="#term-ariac_msgs-msg-AdvancedLogicalCameraImage" title="Permalink to this term"></a></dt><dd><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>std_msgs/Header header
+ariac_msgs/PartPose[] part_poses
 ariac_msgs/KitTrayPose[] tray_poses
 geometry_msgs/Pose sensor_pose
 </pre></div>
@@ -607,7 +609,8 @@ ariac_msgs/AssemblyPart[] parts
 <p><a class="reference internal" href="#term-ariac_msgs-msg-AssemblyPart"><span class="xref std std-term">ariac_msgs/msg/AssemblyPart</span></a></p>
 </div>
 </dd>
-<dt id="term-ariac_msgs-msg-BasicLogicalCameraImage">ariac_msgs/msg/BasicLogicalCameraImage<a class="headerlink" href="#term-ariac_msgs-msg-BasicLogicalCameraImage" title="Permalink to this term"></a></dt><dd><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>geometry_msgs/Pose[] part_poses
+<dt id="term-ariac_msgs-msg-BasicLogicalCameraImage">ariac_msgs/msg/BasicLogicalCameraImage<a class="headerlink" href="#term-ariac_msgs-msg-BasicLogicalCameraImage" title="Permalink to this term"></a></dt><dd><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>std_msgs/Header header
+geometry_msgs/Pose[] part_poses
 geometry_msgs/Pose[] tray_poses
 geometry_msgs/Pose sensor_pose
 </pre></div>
