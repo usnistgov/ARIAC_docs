@@ -5,6 +5,28 @@ Changelog
 =========
 
 ---------------------
+2024.3.0, (2024-3-28)
+---------------------
+
+* Switched gripper_joint from a revolute joint to a fixed joint
+
+* Removed gripper_joint from the moveit config
+
+* GUI changes:
+
+  * Added random parts for conveyor and bins
+
+  * Clear all bins and conveyor buttons added
+
+  * More warning messages
+
+  * Save button deactivates if there are no orders
+
+  * Restricted available offsets for pump on conveyor belt
+
+  * Fixed image rotation
+
+---------------------
 2024.2.0, (2024-3-14)
 ---------------------
 
