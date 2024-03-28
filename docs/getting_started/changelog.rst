@@ -8,11 +8,11 @@ Changelog
 2024.3.0, (2024-3-28)
 ---------------------
 
-* Switched gripper_joint from a revolute joint to a fixed joint
+* Switched gripper_joint from a revolute joint to a fixed joint `317 <https://github.com/usnistgov/ARIAC/pull/317>`_
 
 * Removed gripper_joint from the moveit config
 
-* GUI changes:
+* GUI changes: `320 <https://github.com/usnistgov/ARIAC/pull/320>`_
 
   * Added random parts for conveyor and bins
 
