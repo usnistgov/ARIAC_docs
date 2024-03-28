@@ -5,6 +5,30 @@ Changelog
 =========
 
 ---------------------
+2024.3.0, (2024-3-28)
+---------------------
+
+* Fixed issue `#314 <https://github.com/usnistgov/ARIAC/issues/314>`_ with `#317 <https://github.com/usnistgov/ARIAC/pull/317>`_
+
+  * Changes gripper_joint in the vacuum_gripper.xacro to be fixed instead of revolute.
+
+  * Removes ceiling_gripper_joint and floor_gripper_joint from MoveItConfig
+
+* Updates to the Trial Configurator GUI: `#320 <https://github.com/usnistgov/ARIAC/pull/320>`_
+
+  * Added random parts for conveyor and bins
+
+  * Clear all bins and conveyor buttons added
+
+  * More warning messages
+
+  * Save button deactivates if there are no orders
+
+  * Restricted available offsets for pump on conveyor belt
+
+  * Fixed image rotation
+
+---------------------
 2024.2.0, (2024-3-14)
 ---------------------
 
