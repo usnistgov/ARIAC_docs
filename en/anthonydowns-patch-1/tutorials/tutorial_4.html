@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tutorial 4: Read an order &mdash; ARIAC Docs 2024.3.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+      <link rel="stylesheet" type="text/css" href="../_static/ntd2d.css?v=592263c6" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/twemoji.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=b115e7bf" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/hack.css?v=c2ad982c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=62165ad1"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../_static/js/hoverxref.js"></script>
+        <script src="../_static/js/tooltipster.bundle.min.js"></script>
+        <script src="../_static/js/micromodal.min.js"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=faefdcb3"></script>
+        <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js"></script>
+        <script src="../_static/twemoji.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../_static/js/custom.js?v=8fe80478"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tutorial 5: Move AGVs to stations" href="tutorial_5.html" />
+    <link rel="prev" title="Tutorial 3: Processing Data from an RGBD Camera" href="tutorial_3.html" />
+   
+
+  <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+  <script src="https://code.jquery.com/jquery-3.6.2.min.js" type="text/javascript" defer="defer"></script>
+  
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            ARIAC Docs
+              <img src="../_static/nist_el_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                2024.3.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">⏩ Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/installation.html#configuring-the-ariac-environment">Configuring the ARIAC Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/installation.html#starting-the-simulation">Starting the Simulation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/installation.html#default">Default</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/installation.html#launch-options">Launch Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/installation.html#running-the-nist-competitor">Running the NIST Competitor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/changelog.html#id2">2024.3.0, (2024-3-28)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/changelog.html#id6">2024.2.0, (2024-3-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/changelog.html#id8">2024.1.1, (2024-2-1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/changelog.html#id10">2024.1.0, (2024-1-30)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/changelog.html#updates-relevant-to-competitors">Updates relevant to competitors:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/changelog.html#other-updates">Other Updates</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/registering.html">Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/events.html">Calendar of Events</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Competition</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../competition/terminology.html">Terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/overview.html">Competition Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/overview.html#start-up-commands">Start-Up Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/overview.html#program-flow">Program Flow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/environment.html">Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#parts">Parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#kit-trays">Kit Trays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#robots">Robots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#floor-robot">Floor Robot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#ceiling-robot">Ceiling Robot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#automated-guided-vehicles-agvs">Automated Guided Vehicles (AGVs)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#part-locations">Part Locations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#part-bins">Part Bins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#conveyor-belt">Conveyor Belt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#agv-parts">AGV Parts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#kit-tray-tool-changer-station">Kit Tray/Tool Changer Station</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#assembly-stations">Assembly Stations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#warehouse">Warehouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#part-disposal-bins">Part Disposal Bins</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/orders.html">Orders</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/orders.html#manufacturing-tasks">Manufacturing Tasks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/orders.html#kitting-task">Kitting Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/orders.html#assembly-task">Assembly Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/orders.html#combined-task">Combined Task</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/orders.html#conditions">Conditions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/challenges.html">Agility Challenges</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#faulty-parts-challenge">Faulty Parts Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#faulty-part-detection">Faulty Part Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#flipped-parts-challenge">Flipped Parts Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#flipped-parts-setup">Flipped Parts Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#flipped-part-detection">Flipped Part Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#dropped-part-challenge">Dropped Part Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#dropped-part-detection">Dropped Part Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#robot-malfunction-challenge">Robot Malfunction Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#robot-malfunction-detection">Robot Malfunction Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#sensor-blackout-challenge">Sensor Blackout Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#sensor-blackout-detection">Sensor Blackout Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#high-priority-order-challenge">High Priority Order Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#high-priority-order-detection">High Priority Order Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#insufficient-parts-challenge">Insufficient Parts Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#insufficient-parts-detection">Insufficient Parts Detection</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/sensors.html">Sensors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/sensors.html#sensor-costs">Sensor Costs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/sensors.html#static-sensors">Static sensors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#breakbeam-sensor">Breakbeam sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#proximity-sensor">Proximity sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#laser-profiler">Laser profiler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#lidar">LIDAR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#rgb-camera">RGB camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#rgbd-camera">RGBD camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#basic-logical-camera">Basic logical camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#advanced-logical-camera">Advanced logical camera</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/sensors.html#robot-cameras">Robot Cameras</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/configuration_files.html">Configuration Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/configuration_files.html#sensor-configuration">Sensor Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/configuration_files.html#trial-configuration">Trial Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/configuration_files.html#fields">Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/configuration_files.html#trial-generator-gui">Trial Generator GUI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/ros_communication.html">ROS Communication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/ros_communication.html#competition-topics">Competition Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/ros_communication.html#sensor-topics">Sensor Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/ros_communication.html#services">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/ros_communication.html#message-definitions">Message Definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/ros_communication.html#service-definitions">Service Definitions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/tf_frames.html">TF Frames</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/tf_frames.html#list-of-tf-frames">List of TF Frames</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Evaluation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/overview.html">Automated Evaluation Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/overview.html#instructions-for-creating-the-configuration-file">Instructions for creating the configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/overview.html#instructions-for-testing-the-evaluation-system">Instructions for Testing the Evaluation System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/overview.html#playing-back-the-gazebo-state-log">Playing back the Gazebo State Log</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/scoring.html">Scoring</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#cost-factor">Cost Factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#efficiency-factor">Efficiency Factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#task-scores">Task Scores</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#kitting-task-score">Kitting Task Score</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#assembly-task-score">Assembly Task Score</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#combined-task-score">Combined Task Score</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#trial-score">Trial Score</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/launch_file_setup.html">Launch File Setup</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Introduction to Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#list-of-tutorials">List of Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#creating-a-competition-package">Creating a Competition Package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials.html#package-structure">Package Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials.html#list-of-files">List of Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials.html#testing-the-package">Testing the Package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_1.html">Tutorial 1: Starting the competition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_1.html#starting-the-environment-for-tutorial-1">Starting the environment for Tutorial 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_1.html#running-tutorial-1">Running tutorial 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_1.html#expected-output-of-tutorial-1">Expected output of tutorial 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_1.html#code-explanation-for-tutorial-1">Code explanation for Tutorial 1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_2.html">Tutorial 2: Reading data from a break beam sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_2.html#starting-the-environment-for-tutorial-2">Starting the environment for Tutorial 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_2.html#running-tutorial-2">Running tutorial 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_2.html#expected-output-of-tutorial-2">Expected output of tutorial 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_2.html#code-explanation-for-tutorial-2">Code explanation for Tutorial 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_3.html">Tutorial 3: Processing Data from an RGBD Camera</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_3.html#starting-the-environment-for-tutorial-3">Starting the environment for Tutorial 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_3.html#running-tutorial-3">Running tutorial 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_3.html#expected-output-of-tutorial-3">Expected output of tutorial 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_3.html#output-visualization">Output Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_3.html#code-explanation-for-tutorial-3">Code explanation for Tutorial 3</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_3.html#collecting-and-handling-image-data">Collecting and Handling Image Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_3.html#image-processing">Image Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_3.html#reporting-results">Reporting Results</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial 4: Read an order</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#starting-the-environment-for-tutorial-4">Starting the environment for Tutorial 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-tutorial-4">Running tutorial 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#expected-output-of-tutorial-4">Expected output of tutorial 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-explanation-for-tutorial-4">Code explanation for Tutorial 4</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_5.html">Tutorial 5: Move AGVs to stations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_5.html#starting-the-environment-for-tutorial-5">Starting the environment for Tutorial 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_5.html#running-tutorial-5">Running tutorial 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_5.html#expected-output-of-tutorial-5">Expected output of tutorial 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_5.html#code-explanation-for-tutorial-5">Code explanation for Tutorial 5</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_6.html">Tutorial 6: Picking a part</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_6.html#starting-the-environment-for-tutorial-6">Starting the environment for Tutorial 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_6.html#running-tutorial-6">Running tutorial 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_6.html#moveit-py-requirements">Moveit_py requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_6.html#code-explanation-for-tutorial-6">Code explanation for Tutorial 6</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_7.html">Tutorial 7: Picking and placing a kitting tray</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_7.html#starting-the-environment-for-tutorial-7">Starting the environment for Tutorial 7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_7.html#running-tutorial-7">Running tutorial 7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_7.html#code-explanation-for-tutorial-7">Code explanation for Tutorial 7</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_8.html">Tutorial 8: Completing a kitting task</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_8.html#starting-the-environment-for-tutorial-8">Starting the environment for Tutorial 8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_8.html#running-tutorial-8">Running tutorial 8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_8.html#code-explanation-for-tutorial-8">Code explanation for Tutorial 8</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ARIAC Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Tutorial 4: Read an order</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tutorials/tutorial_4.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="tutorial_3.html" class="btn btn-neutral float-left" title="Tutorial 3: Processing Data from an RGBD Camera" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorial_5.html" class="btn btn-neutral float-right" title="Tutorial 5: Move AGVs to stations" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <blockquote>
+<div></div></blockquote>
+<section id="tutorial-4-read-an-order">
+<span id="tutorial4"></span><h1>Tutorial 4: Read an order<a class="headerlink" href="#tutorial-4-read-an-order" title="Permalink to this heading"></a></h1>
+<p>This tutorial shows how to subscribe to the <code class="code topic docutils literal notranslate"><span class="pre">/orders</span></code> topic and parse an <code class="code msg docutils literal notranslate"><span class="pre">Order</span></code> message.</p>
+<section id="starting-the-environment-for-tutorial-4">
+<h2>Starting the environment for Tutorial 4<a class="headerlink" href="#starting-the-environment-for-tutorial-4" title="Permalink to this heading"></a></h2>
+<p>To start the environment, use this command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gazebo<span class="w"> </span>ariac.launch.py<span class="w"> </span>competitor_pkg:<span class="o">=</span>ariac_tutorials<span class="w"> </span>trial_name:<span class="o">=</span>tutorial<span class="w"> </span>dev_mode:<span class="o">=</span>True
+</pre></div>
+</div>
+</section>
+<section id="running-tutorial-4">
+<h2>Running tutorial 4<a class="headerlink" href="#running-tutorial-4" title="Permalink to this heading"></a></h2>
+<p>To start tutorial 4, open a new terminal and use this command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_tutorials<span class="w"> </span>tutorial.launch.py<span class="w"> </span>tutorial:<span class="o">=</span><span class="m">4</span>
+</pre></div>
+</div>
+</section>
+<section id="expected-output-of-tutorial-4">
+<h2>Expected output of tutorial 4<a class="headerlink" href="#expected-output-of-tutorial-4" title="Permalink to this heading"></a></h2>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 21 </span><span class="caption-text">Tutorial 4 output</span><a class="headerlink" href="#id1" title="Permalink to this code"></a></div>
+<div class="no-copybutton highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[tutorial_4.py-1] [INFO] [1705524488.855170123] [competition_interface]: Waiting for competition to be ready</span>
+<span class="go">[tutorial_4.py-1] [INFO] [1705524511.376178625] [competition_interface]: Competition state is: idle</span>
+<span class="go">[tutorial_4.py-1] [INFO] [1705524624.315864392] [competition_interface]: Competition state is: ready</span>
+<span class="go">[tutorial_4.py-1] [INFO] [1705524624.342930104] [competition_interface]: Competition is ready. Starting...</span>
+<span class="go">[tutorial_4.py-1] [INFO] [1705524624.380538068] [competition_interface]: Started competition.</span>
+<span class="go">[tutorial_4.py-1] [INFO] [1705524624.537476295] [competition_interface]:</span>
+<span class="go">[tutorial_4.py-1]</span>
+<span class="go">[tutorial_4.py-1] ==========================</span>
+<span class="go">[tutorial_4.py-1] Received Order: MMB30H56</span>
+<span class="go">[tutorial_4.py-1] Priority: False</span>
+<span class="go">[tutorial_4.py-1] Type: Kitting</span>
+<span class="go">[tutorial_4.py-1] ==========================</span>
+<span class="go">[tutorial_4.py-1] AGV: 3</span>
+<span class="go">[tutorial_4.py-1] Destination: warehouse</span>
+<span class="go">[tutorial_4.py-1] Tray ID: 3</span>
+<span class="go">[tutorial_4.py-1] Products:</span>
+<span class="go">[tutorial_4.py-1] ==========================</span>
+<span class="go">[tutorial_4.py-1]   Quadrant 1: 🟪 Purple Pump</span>
+<span class="go">[tutorial_4.py-1]   Quadrant 2: -</span>
+<span class="go">[tutorial_4.py-1]   Quadrant 3: 🟦 Blue Battery</span>
+<span class="go">[tutorial_4.py-1]   Quadrant 4: -</span>
+<span class="go">[tutorial_4.py-1]</span>
+<span class="go">[tutorial_4.py-1] [INFO] [1705524626.044062501] [competition_interface]: Competition state is: started</span>
+<span class="go">[tutorial_4.py-1] [INFO] [1705524710.359818890] [competition_interface]:</span>
+<span class="go">[tutorial_4.py-1]</span>
+<span class="go">[tutorial_4.py-1] ==========================</span>
+<span class="go">[tutorial_4.py-1] Received Order: 2IZJP127</span>
+<span class="go">[tutorial_4.py-1] Priority: False</span>
+<span class="go">[tutorial_4.py-1] Type: Assembly</span>
+<span class="go">[tutorial_4.py-1] ==========================</span>
+<span class="go">[tutorial_4.py-1] AGV(s): [1, 2]</span>
+<span class="go">[tutorial_4.py-1] Station: Assembly Station 1</span>
+<span class="go">[tutorial_4.py-1] Products:</span>
+<span class="go">[tutorial_4.py-1] ==========================</span>
+<span class="go">[tutorial_4.py-1] Part: 🟥 Red Regulator</span>
+<span class="go">[tutorial_4.py-1]   Position:</span>
+<span class="go">[tutorial_4.py-1]     x: 0.175 (m)</span>
+<span class="go">[tutorial_4.py-1]     y: -0.223 (m)</span>
+<span class="go">[tutorial_4.py-1]     z: 0.215 (m)</span>
+<span class="go">[tutorial_4.py-1]   Orientation:</span>
+<span class="go">[tutorial_4.py-1]     roll: 90°</span>
+<span class="go">[tutorial_4.py-1]     pitch: 0°</span>
+<span class="go">[tutorial_4.py-1]     yaw: -90°</span>
+<span class="go">[tutorial_4.py-1]   Install direction:</span>
+<span class="go">[tutorial_4.py-1]     x: 0.0</span>
+<span class="go">[tutorial_4.py-1]     y: 0.0</span>
+<span class="go">[tutorial_4.py-1]     z: -1.0</span>
+<span class="go">[tutorial_4.py-1] Part: 🟥 Red Battery</span>
+<span class="go">[tutorial_4.py-1]   Position:</span>
+<span class="go">[tutorial_4.py-1]     x: -0.150 (m)</span>
+<span class="go">[tutorial_4.py-1]     y: 0.035 (m)</span>
+<span class="go">[tutorial_4.py-1]     z: 0.043 (m)</span>
+<span class="go">[tutorial_4.py-1]   Orientation:</span>
+<span class="go">[tutorial_4.py-1]     roll: 0°</span>
+<span class="go">[tutorial_4.py-1]     pitch: 0°</span>
+<span class="go">[tutorial_4.py-1]     yaw: 90°</span>
+<span class="go">[tutorial_4.py-1]   Install direction:</span>
+<span class="go">[tutorial_4.py-1]     x: 0.0</span>
+<span class="go">[tutorial_4.py-1]     y: 1.0</span>
+<span class="go">[tutorial_4.py-1]     z: 0.0</span>
+<span class="go">[tutorial_4.py-1] Part: 🟥 Red Pump</span>
+<span class="go">[tutorial_4.py-1]   Position:</span>
+<span class="go">[tutorial_4.py-1]     x: 0.140 (m)</span>
+<span class="go">[tutorial_4.py-1]     y: 0.000 (m)</span>
+<span class="go">[tutorial_4.py-1]     z: 0.020 (m)</span>
+<span class="go">[tutorial_4.py-1]   Orientation:</span>
+<span class="go">[tutorial_4.py-1]     roll: 0°</span>
+<span class="go">[tutorial_4.py-1]     pitch: 0°</span>
+<span class="go">[tutorial_4.py-1]     yaw: -90°</span>
+<span class="go">[tutorial_4.py-1]   Install direction:</span>
+<span class="go">[tutorial_4.py-1]     x: 0.0</span>
+<span class="go">[tutorial_4.py-1]     y: 0.0</span>
+<span class="go">[tutorial_4.py-1]     z: -1.0</span>
+<span class="go">[tutorial_4.py-1] Part: 🟥 Red Sensor</span>
+<span class="go">[tutorial_4.py-1]   Position:</span>
+<span class="go">[tutorial_4.py-1]     x: -0.100 (m)</span>
+<span class="go">[tutorial_4.py-1]     y: 0.395 (m)</span>
+<span class="go">[tutorial_4.py-1]     z: 0.045 (m)</span>
+<span class="go">[tutorial_4.py-1]   Orientation:</span>
+<span class="go">[tutorial_4.py-1]     roll: 0°</span>
+<span class="go">[tutorial_4.py-1]     pitch: 0°</span>
+<span class="go">[tutorial_4.py-1]     yaw: -90°</span>
+<span class="go">[tutorial_4.py-1]   Install direction:</span>
+<span class="go">[tutorial_4.py-1]     x: 0.0</span>
+<span class="go">[tutorial_4.py-1]     y: -1.0</span>
+<span class="go">[tutorial_4.py-1]     z: 0.0</span>
+<span class="go">[tutorial_4.py-1]</span>
+<span class="go">[tutorial_4.py-1] [INFO] [1705524799.525134193] [competition_interface]:</span>
+<span class="go">[tutorial_4.py-1]</span>
+<span class="go">[tutorial_4.py-1] ==========================</span>
+<span class="go">[tutorial_4.py-1] Received Order: 2IZJP320</span>
+<span class="go">[tutorial_4.py-1] Priority: False</span>
+<span class="go">[tutorial_4.py-1] Type: Combined</span>
+<span class="go">[tutorial_4.py-1] ==========================</span>
+<span class="go">[tutorial_4.py-1] Station: Assembly Station 3</span>
+<span class="go">[tutorial_4.py-1] Products:</span>
+<span class="go">[tutorial_4.py-1] ==========================</span>
+<span class="go">[tutorial_4.py-1] Part: 🟧 Orange Pump</span>
+<span class="go">[tutorial_4.py-1]   Position:</span>
+<span class="go">[tutorial_4.py-1]     x: 0.140 (m)</span>
+<span class="go">[tutorial_4.py-1]     y: 0.000 (m)</span>
+<span class="go">[tutorial_4.py-1]     z: 0.020 (m)</span>
+<span class="go">[tutorial_4.py-1]   Orientation:</span>
+<span class="go">[tutorial_4.py-1]     roll: 0°</span>
+<span class="go">[tutorial_4.py-1]     pitch: 0°</span>
+<span class="go">[tutorial_4.py-1]     yaw: -90°</span>
+<span class="go">[tutorial_4.py-1]   Install direction:</span>
+<span class="go">[tutorial_4.py-1]     x: 0.0</span>
+<span class="go">[tutorial_4.py-1]     y: 0.0</span>
+<span class="go">[tutorial_4.py-1]     z: -1.0</span>
+<span class="go">[tutorial_4.py-1] Part: 🟧 Orange Sensor</span>
+<span class="go">[tutorial_4.py-1]   Position:</span>
+<span class="go">[tutorial_4.py-1]     x: -0.100 (m)</span>
+<span class="go">[tutorial_4.py-1]     y: 0.395 (m)</span>
+<span class="go">[tutorial_4.py-1]     z: 0.045 (m)</span>
+<span class="go">[tutorial_4.py-1]   Orientation:</span>
+<span class="go">[tutorial_4.py-1]     roll: 0°</span>
+<span class="go">[tutorial_4.py-1]     pitch: 0°</span>
+<span class="go">[tutorial_4.py-1]     yaw: -90°</span>
+<span class="go">[tutorial_4.py-1]   Install direction:</span>
+<span class="go">[tutorial_4.py-1]     x: 0.0</span>
+<span class="go">[tutorial_4.py-1]     y: -1.0</span>
+<span class="go">[tutorial_4.py-1]     z: 0.0</span>
+<span class="go">[tutorial_4.py-1]</span>
+<span class="go">[tutorial_4.py-1] [INFO] [1705524800.744276295] [competition_interface]: Competition state is: order_announcements_done</span>
+<span class="go">[tutorial_4.py-1] [INFO] [1705524800.759254660] [competition_interface]: Ending competition</span>
+<span class="go">[tutorial_4.py-1] [INFO] [1705524800.815803037] [competition_interface]: Ended competition.</span>
+<span class="go">[tutorial_4.py-1] [INFO] [1705524802.753138266] [competition_interface]: Competition state is: ended</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="code-explanation-for-tutorial-4">
+<h2>Code explanation for Tutorial 4<a class="headerlink" href="#code-explanation-for-tutorial-4" title="Permalink to this heading"></a></h2>
+<p>This is the node used for tutorial 4. The functions from competition_interface.py which are used are highlighted.</p>
+<div class="literal-block-wrapper docutils container" id="tutorial-4">
+<div class="code-block-caption"><span class="caption-number">Listing 22 </span><span class="caption-text"><code class="file docutils literal notranslate"><span class="pre">tutorial_4.py</span></code></span><a class="headerlink" href="#tutorial-4" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="kn">import</span> <span class="nn">rclpy</span>
+<span class="kn">import</span> <span class="nn">threading</span>
+<span class="kn">from</span> <span class="nn">rclpy.executors</span> <span class="kn">import</span> <span class="n">MultiThreadedExecutor</span>
+<span class="kn">from</span> <span class="nn">ariac_tutorials.competition_interface</span> <span class="kn">import</span> <span class="n">CompetitionInterface</span>
+<span class="kn">from</span> <span class="nn">ariac_msgs.msg</span> <span class="kn">import</span> <span class="n">CompetitionState</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">)</span>
+    <span class="n">interface</span> <span class="o">=</span> <span class="n">CompetitionInterface</span><span class="p">(</span><span class="n">enable_moveit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">executor</span> <span class="o">=</span> <span class="n">MultiThreadedExecutor</span><span class="p">()</span>
+    <span class="n">executor</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">interface</span><span class="p">)</span>
+
+    <span class="n">spin_thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">executor</span><span class="o">.</span><span class="n">spin</span><span class="p">)</span>
+    <span class="n">spin_thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+    <span class="c1"># The following line enables order displays in the terminal.</span>
+    <span class="c1"># Set to False to disable.</span>
+<span class="hll">    <span class="n">interface</span><span class="o">.</span><span class="n">parse_incoming_order</span> <span class="o">=</span> <span class="kc">True</span>
+</span>
+    <span class="n">interface</span><span class="o">.</span><span class="n">start_competition</span><span class="p">()</span>
+
+    <span class="k">while</span> <span class="n">rclpy</span><span class="o">.</span><span class="n">ok</span><span class="p">():</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">interface</span><span class="o">.</span><span class="n">get_competition_state</span> <span class="o">==</span> <span class="n">CompetitionState</span><span class="o">.</span><span class="n">ORDER_ANNOUNCEMENTS_DONE</span><span class="p">:</span>
+                <span class="k">break</span>
+        <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+            <span class="k">break</span>
+
+    <span class="n">interface</span><span class="o">.</span><span class="n">end_competition</span><span class="p">()</span>
+    <span class="n">spin_thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>The purpose of this tutorial is to log orders received by <code class="code highlight python docutils literal highlight-python"><span class="n">CompetitionInterface</span></code>. When an order is published by the <code class="code topic docutils literal notranslate"><span class="pre">/ariac/orders</span></code>, the <code class="code highlight python docutils literal highlight-python"><span class="n">interface</span><span class="o">.</span><span class="n">_orders_cb</span></code> runs. The order msg which was published is then appended to <code class="code highlight python docutils literal highlight-python"><span class="n">interface</span><span class="o">.</span><span class="n">_orders</span></code>. Then, since in the node <code class="code highlight python docutils literal highlight-python"><span class="n">interface</span><span class="o">.</span><span class="n">parse_incoming_order</span></code> was set to <code class="code highlight python docutils literal highlight-python"><span class="kc">True</span></code>, the orders received are logged.
+This is done using <code class="code highlight python docutils literal highlight-python"><span class="n">interface</span><span class="o">.</span><span class="n">_parce_order</span></code>, where the order is parsed and returned as a <code class="code highlight python docutils literal highlight-python"><span class="n">string</span></code>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tutorial_3.html" class="btn btn-neutral float-left" title="Tutorial 3: Processing Data from an RGBD Camera" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorial_5.html" class="btn btn-neutral float-right" title="Tutorial 5: Move AGVs to stations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright works of NIST employees are not not subject to copyright protection in the United States.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+   
+
+  <!-- Taken from https://www.filamentgroup.com/lab/html-includes/#another-demo%3A-including-another-html-file -->
+  <iframe src="../_static/ntd2d_menu.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+
+</body>
+</html>
