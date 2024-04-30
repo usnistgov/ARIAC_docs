@@ -5,6 +5,12 @@ Changelog
 =========
 
 ---------------------
+2024.4.0, (2024-4-30)
+---------------------
+
+* Fix QoS of subscriber to in vacuum gripper plugin in order to fix drop part challenge not triggering properly.
+
+---------------------
 2024.3.0, (2024-3-28)
 ---------------------
 
