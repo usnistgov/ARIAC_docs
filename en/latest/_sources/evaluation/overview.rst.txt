@@ -21,6 +21,8 @@ To properly build and install the competitor's code onto the container each team
 
   build:
     pre_build_scripts: ["nist_competitor_pre_build.sh"]
+    extra_colcon_args: []
+    extra_rosdep_args: []
 
   competition:
     package_name: "nist_competitor"
@@ -51,7 +53,9 @@ Instructions for creating the configuration file
 
 5. If your team needs to install dependencies that are not included in rosdep you should create a custom build script, add the script to the competitor_build_scripts directory and include the file name in the :yamlname:`pre_build_scripts` section of the configuration file. These scripts will also need to be added to the Google Drive folder. For example of this, see the :file:`nist_competitor_pre_build.sh` script in the :file:`competitor_build_scripts` folder. 
 
-6. Inside the competition section, competitors should specify the :yamlname:`package_name` and :yamlname:`launch_file`. For the automated evaluation to work properly competitors must create a launch file that starts the environment and any nodes that are necessary for the CCS. The instructions for creating this launch file can be found in :ref:`LAUNCH_FILE_SETUP`.
+6. If your team would like to add arguments to the :bash:`colcon build` or :bash:`rosdep install` commands, add those arguments in the :yamlname:`extra_colcon_args` and :yamlname:`extra_rosdep_args` sections. For example of this, see the :file:`nist_competitor_pre_build.sh` script in the :file:`competitor_build_scripts` folder.
+
+7. Inside the competition section, competitors should specify the :yamlname:`package_name` and :yamlname:`launch_file`. For the automated evaluation to work properly competitors must create a launch file that starts the environment and any nodes that are necessary for the CCS. The instructions for creating this launch file can be found in :ref:`LAUNCH_FILE_SETUP`.
   
 .. note::
     
