@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tutorial 3: Processing Data from an RGBD Camera &mdash; ARIAC Docs 2024.4.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+      <link rel="stylesheet" type="text/css" href="../_static/ntd2d.css?v=592263c6" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/twemoji.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=b115e7bf" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/hack.css?v=c2ad982c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=48352f06"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../_static/js/hoverxref.js"></script>
+        <script src="../_static/js/tooltipster.bundle.min.js"></script>
+        <script src="../_static/js/micromodal.min.js"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=faefdcb3"></script>
+        <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js"></script>
+        <script src="../_static/twemoji.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../_static/js/custom.js?v=8fe80478"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tutorial 4: Read an order" href="tutorial_4.html" />
+    <link rel="prev" title="Tutorial 2: Reading data from a break beam sensor" href="tutorial_2.html" />
+   
+
+  <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+  <script src="https://code.jquery.com/jquery-3.6.2.min.js" type="text/javascript" defer="defer"></script>
+  
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            ARIAC Docs
+              <img src="../_static/nist_el_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                2024.4.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">⏩ Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/installation.html#configuring-the-ariac-environment">Configuring the ARIAC Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/installation.html#starting-the-simulation">Starting the Simulation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/installation.html#default">Default</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/installation.html#launch-options">Launch Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/installation.html#running-the-nist-competitor">Running the NIST Competitor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/changelog.html#id2">2024.4.1, (2024-5-8)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/changelog.html#id3">2024.4.0, (2024-4-30)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/changelog.html#id4">2024.3.0, (2024-3-28)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/changelog.html#id8">2024.2.0, (2024-3-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/changelog.html#id10">2024.1.1, (2024-2-1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/changelog.html#id12">2024.1.0, (2024-1-30)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/changelog.html#updates-relevant-to-competitors">Updates relevant to competitors:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/changelog.html#other-updates">Other Updates</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/registering.html">Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/events.html">Calendar of Events</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Competition</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../competition/terminology.html">Terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/overview.html">Competition Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/overview.html#start-up-commands">Start-Up Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/overview.html#program-flow">Program Flow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/environment.html">Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#parts">Parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#kit-trays">Kit Trays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#robots">Robots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#floor-robot">Floor Robot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#ceiling-robot">Ceiling Robot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#automated-guided-vehicles-agvs">Automated Guided Vehicles (AGVs)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#part-locations">Part Locations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#part-bins">Part Bins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#conveyor-belt">Conveyor Belt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/environment.html#agv-parts">AGV Parts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#kit-tray-tool-changer-station">Kit Tray/Tool Changer Station</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#assembly-stations">Assembly Stations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#warehouse">Warehouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/environment.html#part-disposal-bins">Part Disposal Bins</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/orders.html">Orders</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/orders.html#manufacturing-tasks">Manufacturing Tasks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/orders.html#kitting-task">Kitting Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/orders.html#assembly-task">Assembly Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/orders.html#combined-task">Combined Task</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/orders.html#conditions">Conditions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/challenges.html">Agility Challenges</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#faulty-parts-challenge">Faulty Parts Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#faulty-part-detection">Faulty Part Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#flipped-parts-challenge">Flipped Parts Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#flipped-parts-setup">Flipped Parts Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#flipped-part-detection">Flipped Part Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#dropped-part-challenge">Dropped Part Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#dropped-part-detection">Dropped Part Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#robot-malfunction-challenge">Robot Malfunction Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#robot-malfunction-detection">Robot Malfunction Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#sensor-blackout-challenge">Sensor Blackout Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#sensor-blackout-detection">Sensor Blackout Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#high-priority-order-challenge">High Priority Order Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#high-priority-order-detection">High Priority Order Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/challenges.html#insufficient-parts-challenge">Insufficient Parts Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/challenges.html#insufficient-parts-detection">Insufficient Parts Detection</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/sensors.html">Sensors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/sensors.html#sensor-costs">Sensor Costs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/sensors.html#static-sensors">Static sensors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#breakbeam-sensor">Breakbeam sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#proximity-sensor">Proximity sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#laser-profiler">Laser profiler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#lidar">LIDAR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#rgb-camera">RGB camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#rgbd-camera">RGBD camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#basic-logical-camera">Basic logical camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/sensors.html#advanced-logical-camera">Advanced logical camera</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/sensors.html#robot-cameras">Robot Cameras</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/configuration_files.html">Configuration Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/configuration_files.html#sensor-configuration">Sensor Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/configuration_files.html#trial-configuration">Trial Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../competition/configuration_files.html#fields">Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../competition/configuration_files.html#trial-generator-gui">Trial Generator GUI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/ros_communication.html">ROS Communication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/ros_communication.html#competition-topics">Competition Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/ros_communication.html#sensor-topics">Sensor Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/ros_communication.html#services">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/ros_communication.html#message-definitions">Message Definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../competition/ros_communication.html#service-definitions">Service Definitions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../competition/tf_frames.html">TF Frames</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../competition/tf_frames.html#list-of-tf-frames">List of TF Frames</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Evaluation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/overview.html">Automated Evaluation Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/overview.html#instructions-for-creating-the-configuration-file">Instructions for creating the configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/overview.html#instructions-for-testing-the-evaluation-system">Instructions for Testing the Evaluation System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/overview.html#playing-back-the-gazebo-state-log">Playing back the Gazebo State Log</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/scoring.html">Scoring</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#cost-factor">Cost Factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#efficiency-factor">Efficiency Factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#task-scores">Task Scores</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#kitting-task-score">Kitting Task Score</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#assembly-task-score">Assembly Task Score</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#combined-task-score">Combined Task Score</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#trial-score">Trial Score</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/launch_file_setup.html">Launch File Setup</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Introduction to Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#list-of-tutorials">List of Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#creating-a-competition-package">Creating a Competition Package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials.html#package-structure">Package Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials.html#list-of-files">List of Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials.html#testing-the-package">Testing the Package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_1.html">Tutorial 1: Starting the competition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_1.html#starting-the-environment-for-tutorial-1">Starting the environment for Tutorial 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_1.html#running-tutorial-1">Running tutorial 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_1.html#expected-output-of-tutorial-1">Expected output of tutorial 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_1.html#code-explanation-for-tutorial-1">Code explanation for Tutorial 1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_2.html">Tutorial 2: Reading data from a break beam sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_2.html#starting-the-environment-for-tutorial-2">Starting the environment for Tutorial 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_2.html#running-tutorial-2">Running tutorial 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_2.html#expected-output-of-tutorial-2">Expected output of tutorial 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_2.html#code-explanation-for-tutorial-2">Code explanation for Tutorial 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial 3: Processing Data from an RGBD Camera</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#starting-the-environment-for-tutorial-3">Starting the environment for Tutorial 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-tutorial-3">Running tutorial 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#expected-output-of-tutorial-3">Expected output of tutorial 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#output-visualization">Output Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-explanation-for-tutorial-3">Code explanation for Tutorial 3</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#collecting-and-handling-image-data">Collecting and Handling Image Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#image-processing">Image Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reporting-results">Reporting Results</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_4.html">Tutorial 4: Read an order</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_4.html#starting-the-environment-for-tutorial-4">Starting the environment for Tutorial 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_4.html#running-tutorial-4">Running tutorial 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_4.html#expected-output-of-tutorial-4">Expected output of tutorial 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_4.html#code-explanation-for-tutorial-4">Code explanation for Tutorial 4</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_5.html">Tutorial 5: Move AGVs to stations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_5.html#starting-the-environment-for-tutorial-5">Starting the environment for Tutorial 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_5.html#running-tutorial-5">Running tutorial 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_5.html#expected-output-of-tutorial-5">Expected output of tutorial 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_5.html#code-explanation-for-tutorial-5">Code explanation for Tutorial 5</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_6.html">Tutorial 6: Picking a part</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_6.html#starting-the-environment-for-tutorial-6">Starting the environment for Tutorial 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_6.html#running-tutorial-6">Running tutorial 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_6.html#moveit-py-requirements">Moveit_py requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_6.html#code-explanation-for-tutorial-6">Code explanation for Tutorial 6</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_7.html">Tutorial 7: Picking and placing a kitting tray</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_7.html#starting-the-environment-for-tutorial-7">Starting the environment for Tutorial 7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_7.html#running-tutorial-7">Running tutorial 7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_7.html#code-explanation-for-tutorial-7">Code explanation for Tutorial 7</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_8.html">Tutorial 8: Completing a kitting task</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_8.html#starting-the-environment-for-tutorial-8">Starting the environment for Tutorial 8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_8.html#running-tutorial-8">Running tutorial 8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_8.html#code-explanation-for-tutorial-8">Code explanation for Tutorial 8</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ARIAC Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Tutorial 3: Processing Data from an RGBD Camera</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tutorials/tutorial_3.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="tutorial_2.html" class="btn btn-neutral float-left" title="Tutorial 2: Reading data from a break beam sensor" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorial_4.html" class="btn btn-neutral float-right" title="Tutorial 4: Read an order" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <blockquote>
+<div></div></blockquote>
+<section id="tutorial-3-processing-data-from-an-rgbd-camera">
+<span id="tutorial3"></span><h1>Tutorial 3: Processing Data from an RGBD Camera<a class="headerlink" href="#tutorial-3-processing-data-from-an-rgbd-camera" title="Permalink to this heading"></a></h1>
+<p>This tutorial shows how to use OpenCV to parse the RGB image from a camera to classify part type and color for parts in a bin.</p>
+<section id="starting-the-environment-for-tutorial-3">
+<h2>Starting the environment for Tutorial 3<a class="headerlink" href="#starting-the-environment-for-tutorial-3" title="Permalink to this heading"></a></h2>
+<p>To start the enviornment, use this command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gazebo<span class="w"> </span>ariac.launch.py<span class="w"> </span>competitor_pkg:<span class="o">=</span>ariac_tutorials<span class="w"> </span>trial_name:<span class="o">=</span>tutorial<span class="w"> </span>dev_mode:<span class="o">=</span>True
+</pre></div>
+</div>
+</section>
+<section id="running-tutorial-3">
+<h2>Running tutorial 3<a class="headerlink" href="#running-tutorial-3" title="Permalink to this heading"></a></h2>
+<p>To start tutorial 3, open a new terminal and use this command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_tutorials<span class="w"> </span>tutorial.launch.py<span class="w"> </span>tutorial:<span class="o">=</span><span class="m">3</span>
+</pre></div>
+</div>
+</section>
+<section id="expected-output-of-tutorial-3">
+<h2>Expected output of tutorial 3<a class="headerlink" href="#expected-output-of-tutorial-3" title="Permalink to this heading"></a></h2>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 19 </span><span class="caption-text">Tutorial 3 output</span><a class="headerlink" href="#id1" title="Permalink to this code"></a></div>
+<div class="no-copybutton highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[tutorial_3.py-1] [INFO] [1706583134.048895675] [competition_interface]: Waiting for competition to be ready</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1706583134.490812735] [competition_interface]: Competition state is: idle</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1706583144.782109220] [competition_interface]: Competition state is: ready</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1706583144.791058480] [competition_interface]: Competition is ready. Starting...</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1706583144.817278869] [competition_interface]: Started competition.</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1706583144.822972336] [competition_interface]: Getting parts from bin 6</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1706583144.824275618] [competition_interface]: Waiting for camera images ...</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1706583145.829478237] [competition_interface]: ---</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1706583146.316575572] [competition_interface]: Slot 1: blue battery</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1706583146.320312518] [competition_interface]: Slot 2: Empty</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1706583146.323322363] [competition_interface]: Slot 3: blue battery</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1706583146.327245429] [competition_interface]: Slot 4: Empty</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1706583146.334730172] [competition_interface]: Slot 5: Empty</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1706583146.335420092] [competition_interface]: Slot 6: Empty</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1706583146.338130357] [competition_interface]: Slot 7: blue battery</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1706583146.342448139] [competition_interface]: Slot 8: Empty</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1706583146.360612038] [competition_interface]: Slot 9: blue battery</span>
+<span class="go">[tutorial_3.py-1] [INFO] [1706583146.368770666] [competition_interface]: ---</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="output-visualization">
+<h2>Output Visualization<a class="headerlink" href="#output-visualization" title="Permalink to this heading"></a></h2>
+<p>When <code class="code highlight python docutils literal highlight-python"><span class="n">interface</span><span class="o">.</span><span class="n">display_bounding_boxes</span></code> is set to <code class="code highlight python docutils literal highlight-python"><span class="kc">True</span></code> the
+part detection results can be visualized with bounding boxes overlayed on the
+initial image of the selected bin.</p>
+<p>The processed images are published on <code class="code highlight python docutils literal highlight-python"><span class="o">/</span><span class="n">ariac</span><span class="o">/</span><span class="n">sensors</span><span class="o">/</span><span class="n">display_bounding_boxes</span></code></p>
+<p>Use rqt to bring up an image viewer.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">run</span> <span class="n">rqt_image_view</span> <span class="n">rqt_image_view</span>
+</pre></div>
+</div>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/bounding_box_image.png"><img alt="../_images/bounding_box_image.png" src="../_images/bounding_box_image.png" style="height: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Fig: Part Detection Results</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="code-explanation-for-tutorial-3">
+<h2>Code explanation for Tutorial 3<a class="headerlink" href="#code-explanation-for-tutorial-3" title="Permalink to this heading"></a></h2>
+<p>This is the node used for tutorial 3. The functions from competition_interface.py which are used are highlighted.</p>
+<div class="literal-block-wrapper docutils container" id="tutorial-3">
+<div class="code-block-caption"><span class="caption-number">Listing 20 </span><span class="caption-text"><code class="file docutils literal notranslate"><span class="pre">tutorial_3.py</span></code></span><a class="headerlink" href="#tutorial-3" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="kn">import</span> <span class="nn">rclpy</span>
+<span class="kn">import</span> <span class="nn">threading</span>
+<span class="kn">from</span> <span class="nn">rclpy.executors</span> <span class="kn">import</span> <span class="n">MultiThreadedExecutor</span>
+<span class="kn">from</span> <span class="nn">ariac_tutorials.competition_interface</span> <span class="kn">import</span> <span class="n">CompetitionInterface</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">)</span>
+    <span class="n">interface</span> <span class="o">=</span> <span class="n">CompetitionInterface</span><span class="p">(</span><span class="n">enable_moveit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">executor</span> <span class="o">=</span> <span class="n">MultiThreadedExecutor</span><span class="p">()</span>
+    <span class="n">executor</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">interface</span><span class="p">)</span>
+
+    <span class="n">spin_thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">executor</span><span class="o">.</span><span class="n">spin</span><span class="p">)</span>
+    <span class="n">spin_thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">interface</span><span class="o">.</span><span class="n">start_competition</span><span class="p">()</span>
+
+    <span class="c1"># Turns on a debug topic to visualize bounding boxes and slots</span>
+    <span class="c1"># /ariac/sensors/display_bounding_boxes</span>
+<span class="hll">    <span class="n">interface</span><span class="o">.</span><span class="n">display_bounding_boxes</span> <span class="o">=</span> <span class="kc">True</span>
+</span>
+<span class="hll">    <span class="n">bin_number</span> <span class="o">=</span> <span class="mi">6</span>
+</span>
+    <span class="n">interface</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Getting parts from bin </span><span class="si">{</span><span class="n">bin_number</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">bin_parts</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">while</span> <span class="n">rclpy</span><span class="o">.</span><span class="n">ok</span><span class="p">():</span>
+        <span class="k">try</span><span class="p">:</span>
+<span class="hll">            <span class="n">bin_parts</span> <span class="o">=</span> <span class="n">interface</span><span class="o">.</span><span class="n">get_bin_parts</span><span class="p">(</span><span class="n">bin_number</span><span class="p">)</span>
+</span>
+            <span class="c1"># bin_parts will be None until image processing starts</span>
+            <span class="k">if</span> <span class="n">bin_parts</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">interface</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Waiting for camera images ...&quot;</span><span class="p">)</span>
+                <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">_slot_number</span><span class="p">,</span> <span class="n">_part</span> <span class="ow">in</span> <span class="n">bin_parts</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="k">if</span> <span class="n">_part</span><span class="o">.</span><span class="n">type</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">interface</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Slot </span><span class="si">{</span><span class="n">_slot_number</span><span class="si">}</span><span class="s2">: Empty&quot;</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">interface</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Slot </span><span class="si">{</span><span class="n">_slot_number</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">_part</span><span class="o">.</span><span class="n">color</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">_part</span><span class="o">.</span><span class="n">type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="n">interface</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;---&quot;</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+            <span class="k">break</span>
+
+        <span class="n">sleep</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+
+    <span class="n">interface</span><span class="o">.</span><span class="n">end_competition</span><span class="p">()</span>
+    <span class="n">interface</span><span class="o">.</span><span class="n">destroy_node</span><span class="p">()</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>This tutorial demonstrates how part characteristics can be extracted from
+image data published by the RGB cameras in ARIAC. Once the trivial steps to
+collect data are taken, the image processing steps can be replaced with
+an approach of the competitors’ choosing to extract more information from the
+image. Tutorial 3 contains two configurable settings: the bin number that will
+be checked for parts and a flag to turn on a visualization of the printed
+result. The output lists the type and colour of the part in each slot or states
+‘Empty’ if unoccupied.</p>
+<section id="collecting-and-handling-image-data">
+<h3>Collecting and Handling Image Data<a class="headerlink" href="#collecting-and-handling-image-data" title="Permalink to this heading"></a></h3>
+<p>The RBG and RGBD cameras - through the use of plugins - publish data to
+multiple topics. The topic with the image matrix is
+<code class="code highlight python docutils literal highlight-python"><span class="o">/</span><span class="n">ariac</span><span class="o">/</span><span class="n">sensors</span><span class="o">/&lt;</span><span class="n">SENSOR_NAME</span><span class="o">&gt;/</span><span class="n">rgb_image</span></code>. Notice the QoS profile
+setting. The value of this arguement is an import starting point for
+troubleshooting when your subscriber appears to not receive data.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">right_bins_RGB_camera_sub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_subscription</span><span class="p">(</span><span class="n">ImageMsg</span><span class="p">,</span>
+                                                            <span class="s2">&quot;/ariac/sensors/right_bins_RGB_camera/rgb_image&quot;</span><span class="p">,</span>
+                                                            <span class="bp">self</span><span class="o">.</span><span class="n">_right_bins_RGB_camera_cb</span><span class="p">,</span>
+                                                            <span class="n">qos_profile_sensor_data</span><span class="p">,</span>
+                                                            <span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">left_bins_RGB_camera_sub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_subscription</span><span class="p">(</span><span class="n">ImageMsg</span><span class="p">,</span>
+                                                            <span class="s2">&quot;/ariac/sensors/left_bins_RGB_camera/rgb_image&quot;</span><span class="p">,</span>
+                                                            <span class="bp">self</span><span class="o">.</span><span class="n">_left_bins_RGB_camera_cb</span><span class="p">,</span>
+                                                            <span class="n">qos_profile_sensor_data</span><span class="p">,</span>
+                                                            <span class="p">)</span>
+</pre></div>
+</div>
+<p>Camera images from sensor topics are in a ROS message format and are not
+compatible with OpenCV Matrix types. The ROS2 <code class="code highlight python docutils literal highlight-python"><span class="n">cv_bridge</span></code> package
+allows for efficient conversion between image messages and OpenCV matrices.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">_bridge</span> <span class="o">=</span> <span class="n">CvBridge</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The most recent image from each of the subscribed sensors is stored in an
+instance variable. This is done  with the <code class="code highlight python docutils literal highlight-python"><span class="n">imgmsg_to_cv2</span></code> function.
+<code class="code highlight python docutils literal highlight-python"><span class="n">bgr8</span></code> is the canonical OpenCV format. It is important to specify the
+image encoding because the default format used by the RGB cameras is
+<code class="code highlight python docutils literal highlight-python"><span class="n">rgb8</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_left_bins_RGB_camera_cb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">:</span> <span class="n">ImageMsg</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_left_bins_camera_image</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bridge</span><span class="o">.</span><span class="n">imgmsg_to_cv2</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="s2">&quot;bgr8&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">CvBridgeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../_images/gazebo_view.jpg"><img alt="../_images/gazebo_view.jpg" src="../_images/gazebo_view.jpg" style="height: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Fig: Gazebo View</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../_images/camera_view.png"><img alt="../_images/camera_view.png" src="../_images/camera_view.png" style="height: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Fig: Camera View</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="image-processing">
+<h3>Image Processing<a class="headerlink" href="#image-processing" title="Permalink to this heading"></a></h3>
+<p>The goal of this stage is to take in an RGB camera image and
+return a list of parts in the image. The parts should be identified by colour and
+type. <code class="code highlight python docutils literal highlight-python"><span class="n">get_bin_parts</span></code> when called, picks one of the stored images based
+on the bin number argument and searches it for parts. The image is cropped for
+efficiency down to the bin that is needed.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_bin_parts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bin_number</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    return slot occupancy list</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_left_bins_camera_image</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">([]))</span> <span class="ow">and</span> \
+        <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_right_bins_camera_image</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">([])):</span>
+        <span class="k">if</span> <span class="n">bin_number</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="n">cv_img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_left_bins_camera_image</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cv_img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_right_bins_camera_image</span>
+
+        <span class="n">imgH</span><span class="p">,</span> <span class="n">imgW</span> <span class="o">=</span> <span class="n">cv_img</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+
+        <span class="c1"># roi based on bin number</span>
+        <span class="k">if</span> <span class="n">bin_number</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">bin_number</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+            <span class="c1"># bottom left</span>
+            <span class="n">cv_img</span> <span class="o">=</span> <span class="n">cv_img</span><span class="p">[</span><span class="n">imgH</span><span class="o">//</span><span class="mi">2</span><span class="p">:,</span> <span class="p">(</span><span class="n">imgW</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">20</span><span class="p">:</span><span class="n">imgW</span><span class="o">-</span><span class="mi">100</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">bin_number</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">bin_number</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+            <span class="c1"># bottom right</span>
+            <span class="n">cv_img</span> <span class="o">=</span> <span class="n">cv_img</span><span class="p">[</span><span class="n">imgH</span><span class="o">//</span><span class="mi">2</span><span class="p">:,</span> <span class="mi">100</span><span class="p">:(</span><span class="n">imgW</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">20</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">bin_number</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">or</span> <span class="n">bin_number</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
+            <span class="c1"># top left</span>
+            <span class="n">cv_img</span> <span class="o">=</span> <span class="n">cv_img</span><span class="p">[:</span><span class="n">imgH</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">:(</span><span class="n">imgW</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">20</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">bin_number</span> <span class="o">==</span> <span class="mi">4</span> <span class="ow">or</span> <span class="n">bin_number</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
+            <span class="c1"># top right</span>
+            <span class="n">cv_img</span> <span class="o">=</span> <span class="n">cv_img</span><span class="p">[:</span><span class="n">imgH</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">imgW</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">20</span><span class="p">:</span><span class="n">imgW</span><span class="o">-</span><span class="mi">100</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The search for parts, implemented in <code class="code highlight python docutils literal highlight-python"><span class="n">find_parts</span></code>, does the following:</p>
+<ul class="simple">
+<li><p>HSV Colour Masking</p></li>
+<li><p>Template Matching (Cross Correlation)</p></li>
+<li><p>Non-Maximum Suppression</p></li>
+</ul>
+<p>There are 5 possible part colours and 4 possible part types. Parts are found
+by inspecting the image, once for each colour-type combination. First, the
+image is changed from the BGR to HSV colour space to gain some degree of lighting
+invariance. To pick out parts of a chosen colour, predetermined upper and
+lower bounds of the HSV values for the colour are specified to
+the <code class="code highlight python docutils literal highlight-python"><span class="n">cv2</span><span class="o">.</span><span class="n">inRange</span></code> function which masks out everything but the parts of
+that colour. The colour bounds are chosen such that only the tops of the parts
+are unmasked which is necessary for next step.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_parts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">img</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    image processing</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1"># hsv masking</span>
+    <span class="n">imgHSV</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2HSV</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">color</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">part_poses</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="k">for</span> <span class="nb">type</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">part_poses</span><span class="p">[</span><span class="n">color</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+
+            <span class="c1"># colour filtering</span>
+            <span class="n">imgMask</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">inRange</span><span class="p">(</span><span class="n">imgHSV</span><span class="p">,</span>
+                                <span class="bp">self</span><span class="o">.</span><span class="n">colorBound</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="s2">&quot;lower&quot;</span><span class="p">),</span>
+                                <span class="bp">self</span><span class="o">.</span><span class="n">colorBound</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="s2">&quot;upper&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>These values can be emperically determined. This online tool can help with
+tuning HSV values: <a class="reference external" href="https://pseudopencv.site/utilities/hsvcolormask/">Online HSV Mask Tool</a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">HSVcolors</span> <span class="o">=</span> <span class="p">{</span>
+<span class="s2">&quot;red&quot;</span>    <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;hmin&quot;</span><span class="p">:</span>   <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;smin&quot;</span><span class="p">:</span>  <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;vmin&quot;</span><span class="p">:</span> <span class="mi">115</span><span class="p">,</span> <span class="s2">&quot;hmax&quot;</span><span class="p">:</span>   <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;smax&quot;</span><span class="p">:</span> <span class="mi">255</span><span class="p">,</span> <span class="s2">&quot;vmax&quot;</span><span class="p">:</span> <span class="mi">255</span><span class="p">},</span>
+<span class="s2">&quot;green&quot;</span>  <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;hmin&quot;</span><span class="p">:</span>  <span class="mi">57</span><span class="p">,</span> <span class="s2">&quot;smin&quot;</span><span class="p">:</span>   <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;vmin&quot;</span><span class="p">:</span>   <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;hmax&quot;</span><span class="p">:</span>  <span class="mi">80</span><span class="p">,</span> <span class="s2">&quot;smax&quot;</span><span class="p">:</span> <span class="mi">255</span><span class="p">,</span> <span class="s2">&quot;vmax&quot;</span><span class="p">:</span> <span class="mi">255</span><span class="p">},</span>
+<span class="s2">&quot;blue&quot;</span>   <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;hmin&quot;</span><span class="p">:</span> <span class="mi">116</span><span class="p">,</span> <span class="s2">&quot;smin&quot;</span><span class="p">:</span>   <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;vmin&quot;</span><span class="p">:</span> <span class="mi">134</span><span class="p">,</span> <span class="s2">&quot;hmax&quot;</span><span class="p">:</span> <span class="mi">121</span><span class="p">,</span> <span class="s2">&quot;smax&quot;</span><span class="p">:</span> <span class="mi">255</span><span class="p">,</span> <span class="s2">&quot;vmax&quot;</span><span class="p">:</span> <span class="mi">255</span><span class="p">},</span>
+<span class="s2">&quot;orange&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;hmin&quot;</span><span class="p">:</span>  <span class="mi">14</span><span class="p">,</span> <span class="s2">&quot;smin&quot;</span><span class="p">:</span>   <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;vmin&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s2">&quot;hmax&quot;</span><span class="p">:</span>  <span class="mi">21</span><span class="p">,</span> <span class="s2">&quot;smax&quot;</span><span class="p">:</span> <span class="mi">255</span><span class="p">,</span> <span class="s2">&quot;vmax&quot;</span><span class="p">:</span> <span class="mi">255</span><span class="p">},</span>
+<span class="s2">&quot;purple&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;hmin&quot;</span><span class="p">:</span> <span class="mi">130</span><span class="p">,</span> <span class="s2">&quot;smin&quot;</span><span class="p">:</span> <span class="mi">180</span><span class="p">,</span> <span class="s2">&quot;vmin&quot;</span><span class="p">:</span> <span class="mi">160</span><span class="p">,</span> <span class="s2">&quot;hmax&quot;</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span> <span class="s2">&quot;smax&quot;</span><span class="p">:</span> <span class="mi">255</span><span class="p">,</span> <span class="s2">&quot;vmax&quot;</span><span class="p">:</span> <span class="mi">255</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../_images/blue_masked_camera_view.png"><img alt="../_images/blue_masked_camera_view.png" src="../_images/blue_masked_camera_view.png" style="height: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Fig: Image Masking (Blue Parts)</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The second step is to find the types of parts in the masked image. This is done
+by taking an image of a known part as template and searching the masked image
+for places that match the template. Since the image is an 8-bit
+single channel masked image, the template of the part needs to be in the same
+format. These images can be created and stored off-line since part appearences
+are not subject to change. This code snipped shows how the images are loaded
+when the node is initialized. Missing templates will stop normal operation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">load_part_templates</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+  <span class="bp">self</span><span class="o">.</span><span class="n">sensor_template</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span>
+      <span class="s2">&quot;install/part_detector/share/part_detector/part_detector_assets/partTemplateMasks/sensor.png&quot;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_GRAYSCALE</span><span class="p">)</span>
+  <span class="bp">self</span><span class="o">.</span><span class="n">regulator_template</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span>
+      <span class="s2">&quot;install/part_detector/share/part_detector/part_detector_assets/partTemplateMasks/regulator.png&quot;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_GRAYSCALE</span><span class="p">)</span>
+  <span class="bp">self</span><span class="o">.</span><span class="n">battery_template</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span>
+      <span class="s2">&quot;install/part_detector/share/part_detector/part_detector_assets/partTemplateMasks/battery.png&quot;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_GRAYSCALE</span><span class="p">)</span>
+  <span class="bp">self</span><span class="o">.</span><span class="n">pump_template</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span>
+      <span class="s2">&quot;install/part_detector/share/part_detector/part_detector_assets/partTemplateMasks/pump.png&quot;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_GRAYSCALE</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">sensor_template</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> \
+    <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">regulator_template</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> \
+    <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">battery_template</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> \
+    <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">pump_template</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+    <span class="k">return</span> <span class="kc">False</span>
+  <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../_images/template_all.png"><img alt="../_images/template_all.png" src="../_images/template_all.png" style="height: 150px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Fig: Part Templates</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The <code class="code highlight python docutils literal highlight-python"><span class="n">matchTemplate</span></code> function searches the masked image
+for the template. The function takes in the masked image, the queried type and
+colour. The colour of the parts in the image is known at this stage but is
+included to write out results. <code class="code highlight python docutils literal highlight-python"><span class="n">cv2</span><span class="o">.</span><span class="n">matchTemplate</span></code> performs
+cross-correlation of the template over the masked image and returns a
+confidence map. The highest confidence values are the likely locations of parts
+in the image. If the threshold is too high it causes some parts to be missed. A
+low threshold results in duplicate results for the location of the same part.
+Duplication is mostly solved with non maximum suppression which picks out the highest
+confidence points when there are overlapping detections. The coordinates in the result
+correspond to the top-left of the template at the position where the template
+best matches the underlying image, in line with OpenCV’s image frame
+conventions. Since it is more convenient to know the center of the part
+location, the final coordinates are translated by half the template’s height
+and width.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">matchTemplate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">imgMask</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+    <span class="c1"># template matching</span>
+    <span class="k">if</span> <span class="nb">type</span> <span class="o">==</span> <span class="s2">&quot;pump&quot;</span><span class="p">:</span>
+        <span class="n">tH</span><span class="p">,</span> <span class="n">tW</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pump_template</span><span class="o">.</span><span class="n">shape</span><span class="c1">#[:2]</span>
+        <span class="n">matchField</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">matchTemplate</span><span class="p">(</span><span class="n">imgMask</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pump_template</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">TM_CCOEFF_NORMED</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="s2">&quot;battery&quot;</span><span class="p">:</span>
+        <span class="n">tH</span><span class="p">,</span> <span class="n">tW</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">battery_template</span><span class="o">.</span><span class="n">shape</span><span class="c1">#[:2]</span>
+        <span class="n">matchField</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">matchTemplate</span><span class="p">(</span><span class="n">imgMask</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">battery_template</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">TM_CCOEFF_NORMED</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="s2">&quot;sensor&quot;</span><span class="p">:</span>
+        <span class="n">tH</span><span class="p">,</span> <span class="n">tW</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sensor_template</span><span class="o">.</span><span class="n">shape</span><span class="c1">#[:2]</span>
+        <span class="n">matchField</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">matchTemplate</span><span class="p">(</span><span class="n">imgMask</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sensor_template</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">TM_CCOEFF_NORMED</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="s2">&quot;regulator&quot;</span><span class="p">:</span>
+        <span class="n">tH</span><span class="p">,</span> <span class="n">tW</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">regulator_template</span><span class="o">.</span><span class="n">shape</span><span class="c1">#[:2]</span>
+        <span class="n">matchField</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">matchTemplate</span><span class="p">(</span><span class="n">imgMask</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">regulator_template</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">TM_CCOEFF_NORMED</span><span class="p">)</span>
+
+    <span class="c1"># match many</span>
+    <span class="p">(</span><span class="n">yy</span><span class="p">,</span> <span class="n">xx</span><span class="p">)</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">matchField</span> <span class="o">&gt;=</span> <span class="mf">0.80</span><span class="p">)</span>
+
+    <span class="n">raw_matches</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">):</span>
+        <span class="n">raw_matches</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">tW</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="n">tH</span><span class="p">))</span>
+
+    <span class="c1"># non-max suppression</span>
+    <span class="n">refined_matches</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">refined_matches</span> <span class="o">=</span> <span class="n">non_max_suppression</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">raw_matches</span><span class="p">))</span>
+
+    <span class="c1"># do this once to save divisions</span>
+    <span class="n">htH</span><span class="p">,</span> <span class="n">htW</span> <span class="o">=</span> <span class="n">tH</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="n">tW</span><span class="o">//</span><span class="mi">2</span>
+    <span class="n">centered_refined_matches</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">refined_matches</span><span class="p">:</span>
+        <span class="n">centered_refined_matches</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">sx</span> <span class="o">+</span> <span class="n">htW</span><span class="p">,</span> <span class="n">sy</span> <span class="o">+</span> <span class="n">htH</span><span class="p">))</span>
+
+    <span class="c1"># store results</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">part_poses</span><span class="p">[</span><span class="n">color</span><span class="p">][</span><span class="nb">type</span><span class="p">]</span> <span class="o">=</span> <span class="n">refined_matches</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">centered_part_poses</span><span class="p">[</span><span class="n">color</span><span class="p">][</span><span class="nb">type</span><span class="p">]</span> <span class="o">=</span> <span class="n">centered_refined_matches</span>
+</pre></div>
+</div>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../_images/blue_battery_match_result.png"><img alt="../_images/blue_battery_match_result.png" src="../_images/blue_battery_match_result.png" style="height: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Fig: Template Matching Result(Blue Parts)</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The list of results of part locations are written into a dictionary that stores
+part locations by colour and type that is allocated when the node is initialized.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">part_poses</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;red&quot;</span>    <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;battery&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;pump&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;sensor&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;regulator&quot;</span><span class="p">:</span> <span class="p">[]},</span>
+    <span class="s2">&quot;green&quot;</span>  <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;battery&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;pump&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;sensor&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;regulator&quot;</span><span class="p">:</span> <span class="p">[]},</span>
+    <span class="s2">&quot;blue&quot;</span>   <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;battery&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;pump&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;sensor&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;regulator&quot;</span><span class="p">:</span> <span class="p">[]},</span>
+    <span class="s2">&quot;orange&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;battery&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;pump&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;sensor&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;regulator&quot;</span><span class="p">:</span> <span class="p">[]},</span>
+    <span class="s2">&quot;purple&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;battery&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;pump&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;sensor&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;regulator&quot;</span><span class="p">:</span> <span class="p">[]}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>At this stage, the pose of the parts can be computed if needed. The sensor
+position is clearly known. The position of all the parts in the image are
+known, the bounds of the image’s field of view can be emperically determined
+and used to map the image coordinates to world coordinates.</p>
+</section>
+<section id="reporting-results">
+<h3>Reporting Results<a class="headerlink" href="#reporting-results" title="Permalink to this heading"></a></h3>
+<p>the pixels of the bin are mapped to slot numbers and each slot is assigned a
+part if one is present.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">output_by_slot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nb">bin</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="n">i</span><span class="p">,</span> <span class="n">PartMsg</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="kc">None</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)])</span>
+
+    <span class="k">for</span> <span class="n">color</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">centered_part_poses</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="k">for</span> <span class="nb">type</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">centered_part_poses</span><span class="p">[</span><span class="n">color</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+           <span class="k">for</span> <span class="p">(</span><span class="n">csx</span><span class="p">,</span> <span class="n">csy</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">centered_part_poses</span><span class="p">[</span><span class="n">color</span><span class="p">][</span><span class="nb">type</span><span class="p">]:</span>
+                <span class="n">row</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="c1"># slot 1, 2, 3</span>
+                <span class="k">if</span> <span class="n">csy</span> <span class="o">&lt;=</span> <span class="mi">88</span><span class="p">:</span>
+                    <span class="n">row</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="c1"># slot 7, 8, 9</span>
+                <span class="k">elif</span> <span class="n">csy</span> <span class="o">&gt;=</span> <span class="mi">151</span><span class="p">:</span>
+                    <span class="n">row</span> <span class="o">=</span> <span class="mi">3</span>
+                <span class="c1"># slot 4, 5, 6</span>
+                <span class="k">else</span><span class="p">:</span> <span class="c1">#csy &gt; 88 and csy &lt; 151:</span>
+                    <span class="n">row</span> <span class="o">=</span> <span class="mi">2</span>
+                <span class="n">col</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">if</span> <span class="n">csx</span> <span class="o">&lt;=</span> <span class="mi">68</span><span class="p">:</span>
+                    <span class="n">col</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="k">elif</span> <span class="n">csx</span> <span class="o">&gt;=</span> <span class="mi">131</span><span class="p">:</span>
+                    <span class="n">col</span> <span class="o">=</span> <span class="mi">3</span>
+                <span class="k">else</span><span class="p">:</span> <span class="c1"># csx &gt; 68 and csx &lt; 131:</span>
+                    <span class="n">col</span> <span class="o">=</span> <span class="mi">2</span>
+
+                <span class="nb">bin</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">slot_mapping</span><span class="p">[(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">)]]</span> <span class="o">=</span> <span class="n">PartMsg</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">type</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">bin</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The image processing pipeline used for this tutorial only works for parts that are not rotated.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Pumps might not always be detected.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tutorial_2.html" class="btn btn-neutral float-left" title="Tutorial 2: Reading data from a break beam sensor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorial_4.html" class="btn btn-neutral float-right" title="Tutorial 4: Read an order" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright works of NIST employees are not not subject to copyright protection in the United States.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+   
+
+  <!-- Taken from https://www.filamentgroup.com/lab/html-includes/#another-demo%3A-including-another-html-file -->
+  <iframe src="../_static/ntd2d_menu.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+
+</body>
+</html>
