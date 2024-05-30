@@ -24,7 +24,9 @@ Calendar of Events
     - Qualifiers Evaluation Week
   * - 10 May 2024 (5 PM EDT)
     - Qualifiers Results Returned
-  * - 31 May 2024 (5 PM EDT)
+  * - 24 June 2024 (8 AM EDT)
+    - Final Qualifiers Submission Deadline
+  * - 1 July 2024 (8 AM EDT)
     - Finals Submission Deadline
   * - June 2024
     - Finals Evaluation Period
