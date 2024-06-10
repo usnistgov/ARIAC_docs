@@ -5,6 +5,15 @@ Changelog
 =========
 
 ---------------------
+2024.5.0, (2024-6-10)
+---------------------
+
+* Adds additional optical TF frame for all cameras
+* Fixes criteria for being in a quadrant #347, issue where a part at the edge of a quadrant is identified as flipped
+* Modified values for tape on kit trays to be more gray than black to help with aruco detection
+* Adds option to trial generator GUI to rebuild the ariac_gazebo package after a trial is modified or added.
+
+---------------------
 2024.4.1, (2024-5-8)
 ---------------------
 
