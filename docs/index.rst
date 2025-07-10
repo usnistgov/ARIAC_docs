@@ -12,20 +12,9 @@ The Agile Robotics for Industrial Automation Competition (ARIAC), put on by the 
 ARIAC Repositories
 ------------------
 
+Welcome to ARIAC 2025
+
 * `ARIAC <https://www.github.com/usnistgov/ARIAC/>`_ (main repository)
-
-* `ARIAC_evaluation <https://www.github.com/usnistgov/ARIAC_evaluation/>`_ (automated evaluation in docker)
-
-* `ARIAC_docs <https://www.github.com/usnistgov/ARIAC_docs/>`_ (source code for this documentation)
-
-* `ARIAC_tutorials <https://github.com/usnistgov/ARIAC_tutorials/>`_ (tutorials)
-
-* `nist_competitor <https://github.com/usnistgov/nist_competitor/>`_ (NIST test competitor)
-
-
-.. image:: images/environment_2024.png
-  :width: 800
-  :alt: ARIAC environment for 2024
 
 .. Hidden TOCs
 
@@ -44,36 +33,4 @@ ARIAC Repositories
   :maxdepth: 3
   :hidden:
 
-  competition/terminology
   competition/overview
-  competition/environment
-  competition/orders
-  competition/challenges
-  competition/sensors
-  competition/configuration_files
-  competition/ros_communication
-  competition/tf_frames
-
-.. toctree::
-  :caption: ⏩ Evaluation
-  :maxdepth: 3
-  :hidden:
-
-  evaluation/overview
-  evaluation/scoring
-  evaluation/launch_file_setup
-
-.. toctree::
-  :caption: ⏩ Tutorials
-  :maxdepth: 3
-  :hidden:
-
-  tutorials/tutorials
-  tutorials/tutorial_1
-  tutorials/tutorial_2
-  tutorials/tutorial_3
-  tutorials/tutorial_4
-  tutorials/tutorial_5
-  tutorials/tutorial_6
-  tutorials/tutorial_7
-  tutorials/tutorial_8
