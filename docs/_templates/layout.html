@@ -17,6 +17,7 @@ $(document).ready(function(){
     var url=$(this).attr('href');
     if(re_nist.test(url) || !re_absolute_address.test(url)){
       $(this).addClass('local');
+      $(this).removeClass('external');
     }else{
       //This a href appears to be external, so tag it
       $(this).addClass('external');
