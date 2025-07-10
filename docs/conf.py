@@ -21,7 +21,10 @@ html_theme_options = {
     "logo": {
         "image_light": "_static/nist_el_logo_color.png",
         "image_dark": "_static/nist_el_logo_white.png",
-    }
+    },
+    "use_download_button": False,
+    "use_fullscreen_button": False,
+    
 }
 
 templates_path = ['_templates']
