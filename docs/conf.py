@@ -50,8 +50,8 @@ html_logo = "images/nist_el_logo.png"
 # html_show_copyright = False
 
 
-release = '2024.5.0'
-version = '2024.5.0'
+release = '2025.1.0'
+version = '2025.1.0'
 
 
 # -- General configuration
