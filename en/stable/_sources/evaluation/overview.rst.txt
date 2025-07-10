@@ -21,6 +21,8 @@ To properly build and install the competitor's code onto the container each team
 
   build:
     pre_build_scripts: ["nist_competitor_pre_build.sh"]
+    extra_colcon_args: []
+    extra_rosdep_args: []
 
   competition:
     package_name: "nist_competitor"
@@ -51,7 +53,9 @@ Instructions for creating the configuration file
 
 5. If your team needs to install dependencies that are not included in rosdep you should create a custom build script, add the script to the competitor_build_scripts directory and include the file name in the :yamlname:`pre_build_scripts` section of the configuration file. These scripts will also need to be added to the Google Drive folder. For example of this, see the :file:`nist_competitor_pre_build.sh` script in the :file:`competitor_build_scripts` folder. 
 
-6. Inside the competition section, competitors should specify the :yamlname:`package_name` and :yamlname:`launch_file`. For the automated evaluation to work properly competitors must create a launch file that starts the environment and any nodes that are necessary for the CCS. The instructions for creating this launch file can be found in :ref:`LAUNCH_FILE_SETUP`.
+6. If your team would like to add arguments to the :bash:`colcon build` or :bash:`rosdep install` commands, add those arguments in the :yamlname:`extra_colcon_args` and :yamlname:`extra_rosdep_args` sections. For example of this, see the :file:`nist_competitor_pre_build.sh` script in the :file:`competitor_build_scripts` folder.
+
+7. Inside the competition section, competitors should specify the :yamlname:`package_name` and :yamlname:`launch_file`. For the automated evaluation to work properly competitors must create a launch file that starts the environment and any nodes that are necessary for the CCS. The instructions for creating this launch file can be found in :ref:`LAUNCH_FILE_SETUP`.
   
 .. note::
     
@@ -67,7 +71,16 @@ Competitors can test the evaluation system on their setup with the following ste
 
   Currently the evaluation system only runs on Ubuntu
 
-1. Install Docker. This can be through `Docker Desktop <https://docs.docker.com/desktop/install/ubuntu/>`_ or `Docker Engine <https://docs.docker.com/engine/install/ubuntu/>`_.
+1. Install `Docker Engine <https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository>`_.
+   
+    .. warning::
+  
+      The automated evaluation does not work with docker-desktop. If you already have docker-desktop installed you must run the following command to switch from the desktop-linux context to the default context. Images and containers will not show up in the docker-desktop GUI.
+
+      .. code-block:: sh
+
+        docker context use default
+
 
 2. If your machine has an Nvidia GPU and you want to enable GPU acceleration, install the `nvidia container toolkit <https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker>`_.
 
@@ -85,7 +98,7 @@ Competitors can test the evaluation system on their setup with the following ste
 
   .. code-block:: sh
 
-    git pull https://github.com/usnistgov/ARIAC_evaluation.git
+    git clone https://github.com/usnistgov/ARIAC_evaluation.git
 
 5. Add your team's evaluation configuration file to the folder:
   
@@ -129,11 +142,29 @@ Competitors can test the evaluation system on their setup with the following ste
 
     ./build_container.sh nist_competitor
 
+  .. warning::
+
+    If you make changes to your source code and want to update the container you first need to remove the existing container:
+
+    .. code-block:: sh
+
+      docker container rm {container_name} --force
+
 12. To run a trial use the :file:`run_trial.sh` script. The first argument is the team name which should also be the name of the container. The second argument is the name of the trial to be run. For example to run the nist_competitor with trial :file:`kitting.yaml` use the command:
 
   .. code-block:: sh
 
     ./run_trial.sh nist_competitor kitting
+
+  To run a specific trial multiple times pass a third argument for the number of iterations for that trial. For example to run the kitting trial three times:
+  
+  .. code-block:: sh
+
+    ./run_trial.sh nist_competitor kitting 3
+
+  .. note::
+
+    You can only run trials that were added to the folder :file:`/automated_evaluation/trials` before running the build container script.
 
   To run all the trials added to the :file:`trials` folder replace the second argument with run-all, for example:
 

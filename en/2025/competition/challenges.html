@@ -1,0 +1,579 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agility Challenges &mdash; ARIAC Docs 2024.5.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+      <link rel="stylesheet" type="text/css" href="../_static/ntd2d.css?v=592263c6" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/twemoji.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=b115e7bf" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/hack.css?v=c2ad982c" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=9d98e146"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../_static/js/hoverxref.js"></script>
+      <script src="../_static/js/tooltipster.bundle.min.js"></script>
+      <script src="../_static/js/micromodal.min.js"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=faefdcb3"></script>
+      <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js"></script>
+      <script src="../_static/twemoji.js"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/js/custom.js?v=8fe80478"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Sensors" href="sensors.html" />
+    <link rel="prev" title="Orders" href="orders.html" />
+   
+
+  <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+  <script src="https://code.jquery.com/jquery-3.6.2.min.js" type="text/javascript" defer="defer"></script>
+  
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            ARIAC Docs
+              <img src="../_static/nist_el_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">⏩ Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/installation.html#configuring-the-ariac-environment">Configuring the ARIAC Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/installation.html#starting-the-simulation">Starting the Simulation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/installation.html#default">Default</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/installation.html#launch-options">Launch Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/installation.html#running-the-nist-competitor">Running the NIST Competitor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/changelog.html#id2">2024.5.0, (2024-6-10)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/changelog.html#id3">2024.4.1, (2024-5-8)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/changelog.html#id4">2024.4.0, (2024-4-30)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/changelog.html#id5">2024.3.0, (2024-3-28)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/changelog.html#id9">2024.2.0, (2024-3-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/changelog.html#id11">2024.1.1, (2024-2-1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/changelog.html#id13">2024.1.0, (2024-1-30)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/changelog.html#updates-relevant-to-competitors">Updates relevant to competitors:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/changelog.html#other-updates">Other Updates</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/registering.html">Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/events.html">Calendar of Events</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Competition</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Competition Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#start-up-commands">Start-Up Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#program-flow">Program Flow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#parts">Parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#kit-trays">Kit Trays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#robots">Robots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#floor-robot">Floor Robot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#ceiling-robot">Ceiling Robot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#automated-guided-vehicles-agvs">Automated Guided Vehicles (AGVs)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#part-locations">Part Locations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#part-bins">Part Bins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#conveyor-belt">Conveyor Belt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#agv-parts">AGV Parts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#kit-tray-tool-changer-station">Kit Tray/Tool Changer Station</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#assembly-stations">Assembly Stations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#warehouse">Warehouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#part-disposal-bins">Part Disposal Bins</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="orders.html">Orders</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="orders.html#manufacturing-tasks">Manufacturing Tasks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orders.html#kitting-task">Kitting Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="orders.html#assembly-task">Assembly Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="orders.html#combined-task">Combined Task</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="orders.html#conditions">Conditions</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Agility Challenges</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#faulty-parts-challenge">Faulty Parts Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#faulty-part-detection">Faulty Part Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#flipped-parts-challenge">Flipped Parts Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#flipped-parts-setup">Flipped Parts Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flipped-part-detection">Flipped Part Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#dropped-part-challenge">Dropped Part Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dropped-part-detection">Dropped Part Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#robot-malfunction-challenge">Robot Malfunction Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#robot-malfunction-detection">Robot Malfunction Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#sensor-blackout-challenge">Sensor Blackout Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sensor-blackout-detection">Sensor Blackout Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#high-priority-order-challenge">High Priority Order Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#high-priority-order-detection">High Priority Order Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#insufficient-parts-challenge">Insufficient Parts Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#insufficient-parts-detection">Insufficient Parts Detection</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sensors.html#sensor-costs">Sensor Costs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensors.html#static-sensors">Static sensors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#breakbeam-sensor">Breakbeam sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#proximity-sensor">Proximity sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#laser-profiler">Laser profiler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#lidar">LIDAR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#rgb-camera">RGB camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#rgbd-camera">RGBD camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#basic-logical-camera">Basic logical camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#advanced-logical-camera">Advanced logical camera</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sensors.html#robot-cameras">Robot Cameras</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration_files.html">Configuration Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuration_files.html#sensor-configuration">Sensor Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration_files.html#trial-configuration">Trial Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuration_files.html#fields">Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration_files.html#trial-generator-gui">Trial Generator GUI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ros_communication.html">ROS Communication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ros_communication.html#competition-topics">Competition Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_communication.html#sensor-topics">Sensor Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_communication.html#services">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_communication.html#message-definitions">Message Definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_communication.html#service-definitions">Service Definitions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tf_frames.html">TF Frames</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tf_frames.html#list-of-tf-frames">List of TF Frames</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Evaluation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/overview.html">Automated Evaluation Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/overview.html#instructions-for-creating-the-configuration-file">Instructions for creating the configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/overview.html#instructions-for-testing-the-evaluation-system">Instructions for Testing the Evaluation System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/overview.html#playing-back-the-gazebo-state-log">Playing back the Gazebo State Log</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/scoring.html">Scoring</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#cost-factor">Cost Factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#efficiency-factor">Efficiency Factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#task-scores">Task Scores</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#kitting-task-score">Kitting Task Score</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#assembly-task-score">Assembly Task Score</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../evaluation/scoring.html#combined-task-score">Combined Task Score</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../evaluation/scoring.html#trial-score">Trial Score</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/launch_file_setup.html">Launch File Setup</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">⏩ Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">Introduction to Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorials.html#list-of-tutorials">List of Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorials.html#creating-a-competition-package">Creating a Competition Package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/tutorials.html#package-structure">Package Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/tutorials.html#list-of-files">List of Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/tutorials.html#testing-the-package">Testing the Package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_1.html">Tutorial 1: Starting the competition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_1.html#starting-the-environment-for-tutorial-1">Starting the environment for Tutorial 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_1.html#running-tutorial-1">Running tutorial 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_1.html#expected-output-of-tutorial-1">Expected output of tutorial 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_1.html#code-explanation-for-tutorial-1">Code explanation for Tutorial 1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_2.html">Tutorial 2: Reading data from a break beam sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_2.html#starting-the-environment-for-tutorial-2">Starting the environment for Tutorial 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_2.html#running-tutorial-2">Running tutorial 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_2.html#expected-output-of-tutorial-2">Expected output of tutorial 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_2.html#code-explanation-for-tutorial-2">Code explanation for Tutorial 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_3.html">Tutorial 3: Processing Data from an RGBD Camera</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_3.html#starting-the-environment-for-tutorial-3">Starting the environment for Tutorial 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_3.html#running-tutorial-3">Running tutorial 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_3.html#expected-output-of-tutorial-3">Expected output of tutorial 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_3.html#output-visualization">Output Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_3.html#code-explanation-for-tutorial-3">Code explanation for Tutorial 3</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/tutorial_3.html#collecting-and-handling-image-data">Collecting and Handling Image Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/tutorial_3.html#image-processing">Image Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/tutorial_3.html#reporting-results">Reporting Results</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_4.html">Tutorial 4: Read an order</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_4.html#starting-the-environment-for-tutorial-4">Starting the environment for Tutorial 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_4.html#running-tutorial-4">Running tutorial 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_4.html#expected-output-of-tutorial-4">Expected output of tutorial 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_4.html#code-explanation-for-tutorial-4">Code explanation for Tutorial 4</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_5.html">Tutorial 5: Move AGVs to stations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_5.html#starting-the-environment-for-tutorial-5">Starting the environment for Tutorial 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_5.html#running-tutorial-5">Running tutorial 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_5.html#expected-output-of-tutorial-5">Expected output of tutorial 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_5.html#code-explanation-for-tutorial-5">Code explanation for Tutorial 5</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_6.html">Tutorial 6: Picking a part</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_6.html#starting-the-environment-for-tutorial-6">Starting the environment for Tutorial 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_6.html#running-tutorial-6">Running tutorial 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_6.html#moveit-py-requirements">Moveit_py requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_6.html#code-explanation-for-tutorial-6">Code explanation for Tutorial 6</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_7.html">Tutorial 7: Picking and placing a kitting tray</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_7.html#starting-the-environment-for-tutorial-7">Starting the environment for Tutorial 7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_7.html#running-tutorial-7">Running tutorial 7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_7.html#code-explanation-for-tutorial-7">Code explanation for Tutorial 7</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial_8.html">Tutorial 8: Completing a kitting task</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_8.html#starting-the-environment-for-tutorial-8">Starting the environment for Tutorial 8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_8.html#running-tutorial-8">Running tutorial 8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial_8.html#code-explanation-for-tutorial-8">Code explanation for Tutorial 8</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ARIAC Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Agility Challenges</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/competition/challenges.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="orders.html" class="btn btn-neutral float-left" title="Orders" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sensors.html" class="btn btn-neutral float-right" title="Sensors" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <blockquote>
+<div></div></blockquote>
+<section id="agility-challenges">
+<span id="id1"></span><h1>Agility Challenges<a class="headerlink" href="#agility-challenges" title="Permalink to this heading"></a></h1>
+<p>There are 8 possible <a class="reference internal" href="terminology.html#term-Agility-Challenge"><span class="xref std std-term">agility challenges</span></a>. A description of each challenge is provided below. Challenges can occur multiple times in a given trial.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A trial may consist of some of the challenges described in this page, may consist of no challenge at all, or may consist of all the challenges.</p>
+</div>
+<section id="faulty-parts-challenge">
+<span id="faulty-parts"></span><h2>Faulty Parts Challenge<a class="headerlink" href="#faulty-parts-challenge" title="Permalink to this heading"></a></h2>
+<p>Faulty parts are parts that are not suitable for use in the competition. If an order is submitted with faulty parts, the score for that quadrant will be zero. Faulty parts are identified by quality control sensors, which are attached to AGVs. This challenge will only occur for kitting orders.</p>
+<p>The goal of this challenge is to test the ability of the CCS to:</p>
+<ol class="arabic simple">
+<li><p>Correctly use the quality check sensor to detect a faulty part.</p></li>
+<li><p>Replace the faulty part with a new part.</p></li>
+</ol>
+<section id="faulty-part-detection">
+<h3>Faulty Part Detection<a class="headerlink" href="#faulty-part-detection" title="Permalink to this heading"></a></h3>
+<p>The quality control sensor located above an AGV is capable of detecting faulty parts. A quality check can be performed by calling the service <code class="code rosservice docutils literal notranslate"><span class="pre">/ariac/perform_quality_check</span></code> (<a class="reference internal" href="ros_communication.html#term-ariac_msgs-srv-PerformQualityCheck"><span class="xref std std-term">ariac_msgs/srv/PerformQualityCheck</span></a>). The argument passed to this service call is an order ID. When a faulty part is detected, the CCS has to discard the part and replace it with a new part. The new part will automatically be set to non-faulty by the AM.</p>
+<p>The service will return a response with the following fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">valid_id</span></code> indicating whether or not the order ID is valid. An order ID is not valid if the order ID does not exist or if the order does not contain a kitting task.</p></li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">all_passed</span></code> is set to <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">true</span></code> only if:</p>
+<ul>
+<li><p>All parts in the kitting tray are NOT faulty.</p></li>
+<li><p>All parts are present in the kitting tray (no parts from the order are missing).</p></li>
+<li><p>All parts have the correct orientation (no flipped part).</p></li>
+<li><p>All parts are of the correct type.</p></li>
+<li><p>All parts are of the correct color.</p></li>
+</ul>
+</li>
+<li><p><code class="code yamlname docutils literal notranslate"><span class="pre">incorrect_tray</span></code> informs on whether or not the kitting task was performed in the correct kitting tray.</p></li>
+<li><p>Information for each quadrant is reported as a <a class="reference internal" href="ros_communication.html#term-ariac_msgs-msg-QualityIssue"><span class="xref std std-term">ariac_msgs/msg/QualityIssue</span></a>.</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<section id="flipped-parts-challenge">
+<span id="flipped-parts"></span><h2>Flipped Parts Challenge<a class="headerlink" href="#flipped-parts-challenge" title="Permalink to this heading"></a></h2>
+<p>The environment can be started with parts that are flipped. Flipped parts are parts that are upside down (the z-axis of the part faces down instead of up). When a part is spawned as flipped, the CCS is required to flip this part again so it ends up with the correct orientation. If an order is submitted with flipped parts, the score for that quadrant will be zero.</p>
+<p>The goal of this challenge is to evaluate the approach used by the CCS to flip a part.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Competitors should keep in mind that one of the two robots can malfunction at any point during the trial. This means that the CCS should be able to handle the case where
+one of the robots is not available to flip a part.</p>
+</div>
+<section id="flipped-parts-setup">
+<h3>Flipped Parts Setup<a class="headerlink" href="#flipped-parts-setup" title="Permalink to this heading"></a></h3>
+<p>Flipped parts apply to a specific part type and color in a specific bin or on the conveyor belt. To set parts as flipped, the <code class="code yamlname docutils literal notranslate"><span class="pre">flipped</span></code> field in the trial configuration file must be set as <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">true</span></code> for the corresponding parts. <a class="hxr-hoverxref hxr-modal reference internal" href="#flipped-parts-in-bin"><span class="std std-numref">Listing 7</span></a> describes all purple regulators as flipped in <code class="code yamlname docutils literal notranslate"><span class="pre">bin3</span></code>. <a class="hxr-hoverxref hxr-modal reference internal" href="#flipped-parts-on-conveyor-belt"><span class="std std-numref">Listing 8</span></a> describes all orange batteries as flipped on the conveyor belt.</p>
+<div class="literal-block-wrapper docutils container" id="flipped-parts-in-bin">
+<div class="code-block-caption"><span class="caption-number">Listing 7 </span><span class="caption-text">Setting flipped parts in a bin.</span><a class="headerlink" href="#flipped-parts-in-bin" title="Permalink to this code"></a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">bin3</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;regulator&#39;</span>
+<span class="w">    </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;purple&#39;</span>
+<span class="w">    </span><span class="nt">slots</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;pi/6&#39;</span>
+<span class="w">    </span><span class="nt">flipped</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="flipped-parts-on-conveyor-belt">
+<div class="code-block-caption"><span class="caption-number">Listing 8 </span><span class="caption-text">Setting flipped parts on the conveyor belt.</span><a class="headerlink" href="#flipped-parts-on-conveyor-belt" title="Permalink to this code"></a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">conveyor_belt</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">active</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">spawn_rate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.0</span>
+<span class="w">  </span><span class="nt">order</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;sequential&#39;</span>
+<span class="w">  </span><span class="nt">parts_to_spawn</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;battery&#39;</span>
+<span class="w">      </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;orange&#39;</span>
+<span class="w">      </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="w">      </span><span class="nt">offset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span><span class="w"> </span><span class="c1"># between -1 and 1</span>
+<span class="w">      </span><span class="nt">flipped</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;pi/6&#39;</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="flipped-part-detection">
+<h3>Flipped Part Detection<a class="headerlink" href="#flipped-part-detection" title="Permalink to this heading"></a></h3>
+<p>Flipped parts can be detected in one of two ways.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The first way is to use a basic logical camera. The logical camera will report the pose of all parts that are visible by the camera. The pose for flipped parts will indicate that the z-axis is facing down.</p></li>
+<li><p>The second way is to use the quality check service. A quality check informs whether or not a part is flipped. See the <a class="hxr-hoverxref hxr-modal reference internal" href="#faulty-parts"><span class="std std-ref">Faulty Parts Challenge</span></a> section for more information on how to perform a quality check.</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<section id="dropped-part-challenge">
+<span id="id2"></span><h2>Dropped Part Challenge<a class="headerlink" href="#dropped-part-challenge" title="Permalink to this heading"></a></h2>
+<p>The dropped part challenge simulates a faulty gripper which can drop a part after the part has been picked up. The gripper can drop a part at any time during the trial. The gripper can drop a part that is in the gripper’s grasp even if the gripper or robot is not moving.</p>
+<p>The goal of this challenge is to test the ability of the CCS to:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Recognize that the part has dropped from the gripper.</p></li>
+<li><p>Pick a part of the same type and color.</p></li>
+</ol>
+</div></blockquote>
+<section id="dropped-part-detection">
+<h3>Dropped Part Detection<a class="headerlink" href="#dropped-part-detection" title="Permalink to this heading"></a></h3>
+<p>To detect a dropped part challenge the CCS needs a subscriber to the topic <code class="code topic docutils literal notranslate"><span class="pre">/ariac/{robot}_gripper_state</span></code> (<a class="reference internal" href="ros_communication.html#term-ariac_msgs-msg-VacuumGripperState"><span class="xref std std-term">ariac_msgs/msg/VacuumGripperState</span></a>). Checking the <code class="code yamlname docutils literal notranslate"><span class="pre">attached</span></code> field of the message will inform whether or not the gripper is holding a part. If the gripper is not holding a part, the CCS can assume that the gripper has dropped the part.</p>
+</section>
+</section>
+<section id="robot-malfunction-challenge">
+<span id="id3"></span><h2>Robot Malfunction Challenge<a class="headerlink" href="#robot-malfunction-challenge" title="Permalink to this heading"></a></h2>
+<p>The robot malfunction challenge simulates a robot malfunction. The robot can malfunction under some <a class="hxr-hoverxref hxr-modal reference internal" href="orders.html#conditions"><span class="std std-ref">conditions</span></a> during the trial. The robot can malfunction even if it is not moving. When a robot malfunctions, it stops moving and cannot be controlled by the CCS. The robot will remain in the same position until the malfunction is resolved. To specify how long a robot malfunctions, a time duration of the malfunction is specified in the trial configuration file.</p>
+<p>The goal of this challenge is to test the ability of the CCS to use the other robot to complete the tasks that were being performed by the robot which is malfunctioning.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It can happen that both robots malfunction at the same time.
+In this case, the CCS must wait until the malfunction is resolved before continuing with the trial</p>
+</div>
+<section id="robot-malfunction-detection">
+<h3>Robot Malfunction Detection<a class="headerlink" href="#robot-malfunction-detection" title="Permalink to this heading"></a></h3>
+<p>To detect a robot malfunction, the CCS needs a subscriber to the topic <code class="code topic docutils literal notranslate"><span class="pre">/ariac/robot_health</span></code> (<a class="reference internal" href="ros_communication.html#term-ariac_msgs-msg-Robots"><span class="xref std std-term">ariac_msgs/msg/Robots</span></a>). The message contains Boolean-type fields which provide information on the health of the robots. A value of <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">true</span></code> indicates that the robot is healthy and can be controlled by the CCS. A value of <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">false</span></code> indicates that the robot is malfunctioning and cannot be controlled by the CCS.</p>
+</section>
+</section>
+<section id="sensor-blackout-challenge">
+<span id="id4"></span><h2>Sensor Blackout Challenge<a class="headerlink" href="#sensor-blackout-challenge" title="Permalink to this heading"></a></h2>
+<p>The sensor blackout challenge simulates a situation where some sensors stop reporting data for some duration.</p>
+<p>The goal of this challenge is to test the ability of the CCS to use an internal world model to continue the tasks that were being performed before the blackout.</p>
+<p>The sensor blackout challenge is triggered based on <a class="hxr-hoverxref hxr-modal reference internal" href="orders.html#conditions"><span class="std std-ref">conditions</span></a>. When a <em>sensor type</em> is disabled, all sensors of this type stop publishing data on their respective topics. Once the challenge is resolved (after a duration), these sensors will start publishing again.</p>
+<section id="sensor-blackout-detection">
+<h3>Sensor Blackout Detection<a class="headerlink" href="#sensor-blackout-detection" title="Permalink to this heading"></a></h3>
+<p>To detect a sensor blackout the CCS needs a subscriber to the topic <code class="code topic docutils literal notranslate"><span class="pre">/ariac/sensor_health</span></code> (<a class="reference internal" href="ros_communication.html#term-ariac_msgs-msg-Sensors"><span class="xref std std-term">ariac_msgs/msg/Sensors</span></a>). The message contains Boolean-type fields which provide information on the health of each sensor type. A <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">true</span></code> value indicates that all sensors of a type are healthy (they are publishing) and a <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">false</span></code> value indicates that all sensors of a type are malfunctioning (they are not publishing).</p>
+</section>
+</section>
+<section id="high-priority-order-challenge">
+<span id="id5"></span><h2>High Priority Order Challenge<a class="headerlink" href="#high-priority-order-challenge" title="Permalink to this heading"></a></h2>
+<p>The high-priority orders challenge simulates an order that must be completed before a regular-priority order.</p>
+<p>The goal of this challenge is to test the ability of the CCS to prioritize high-priority orders over regular-priority orders. This requires the CCS to  be able to detect when a high-priority order is announced and to switch task.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A high-priority order can only be announced using the time or part place <a class="hxr-hoverxref hxr-modal reference internal" href="orders.html#conditions"><span class="std std-ref">condition</span></a>. The submission condition is not used to announce a high-priority order.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A high-priority order will only be announced when only regular-priority orders have been announced. A high-priority order will not be announced if there is already a high-priority order in the queue.</p>
+</div>
+<section id="high-priority-order-detection">
+<h3>High Priority Order Detection<a class="headerlink" href="#high-priority-order-detection" title="Permalink to this heading"></a></h3>
+<p>To find out the priority of an order, the CCS is required to parse messages published to the topic <code class="code topic docutils literal notranslate"><span class="pre">/ariac/orders</span></code> (<a class="reference internal" href="ros_communication.html#term-ariac_msgs-msg-Order"><span class="xref std std-term">ariac_msgs/msg/Order</span></a>). For a high-priority order, the value for the field <code class="code yamlname docutils literal notranslate"><span class="pre">priority</span></code> is set to <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">true</span></code>. For a regular-priority order, the value for the field <code class="code yamlname docutils literal notranslate"><span class="pre">priority</span></code> is set to <code class="code highlight yaml docutils literal highlight-yaml"><span class="l l-Scalar l-Scalar-Plain">false</span></code>.</p>
+</section>
+</section>
+<section id="insufficient-parts-challenge">
+<span id="id6"></span><h2>Insufficient Parts Challenge<a class="headerlink" href="#insufficient-parts-challenge" title="Permalink to this heading"></a></h2>
+<p>The insufficient parts challenge simulates a situation where the workcell does not contain enough parts to complete one or multiple orders.</p>
+<p>The goal of this challenge is to test whether or not the CCS is capable of identifying insufficient parts to complete one or multiple orders. When an insufficient parts challenge takes place, the CCS must submit incomplete orders.</p>
+<section id="insufficient-parts-detection">
+<h3>Insufficient Parts Detection<a class="headerlink" href="#insufficient-parts-detection" title="Permalink to this heading"></a></h3>
+<p>To figure out if the insufficient parts challenge is part of a trial, the CCS can rely on two important topics to retrieve part type, color, and quantity from bins and the conveyor belt. If the parts on the bins and expected on the conveyor do not meet the requirements of the order, the CCS can assume that an insufficient part challenge is ongoing.</p>
+<ul>
+<li><p>The topic <code class="code topic docutils literal notranslate"><span class="pre">/ariac/bin_parts</span></code> (<a class="reference internal" href="ros_communication.html#term-ariac_msgs-msg-BinParts"><span class="xref std std-term">ariac_msgs/msg/BinParts</span></a>) publishes the type, color, and the quantity of parts for each of the bins. An output from <code class="code highlight console docutils literal highlight-console"><span class="go">ros2 topic echo /ariac/bin_parts</span></code> is provided in <a class="hxr-hoverxref hxr-modal reference internal" href="#bin-parts-outputs"><span class="std std-numref">Listing 9</span></a>. The output shows that bin1 contains 3 red pumps and 2 blue batteries.</p>
+<div class="literal-block-wrapper docutils container" id="bin-parts-outputs">
+<div class="code-block-caption"><span class="caption-number">Listing 9 </span><span class="caption-text">Message published on the topic <code class="code topic docutils literal notranslate"><span class="pre">/ariac/bin_parts</span></code>.</span><a class="headerlink" href="#bin-parts-outputs" title="Permalink to this code"></a></div>
+<div class="no-copybutton highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">---</span>
+<span class="go">bins:</span>
+<span class="go">- bin_number: 1</span>
+<span class="go">  parts:</span>
+<span class="go">  - part:</span>
+<span class="go">      color: 0</span>
+<span class="go">      type: 11</span>
+<span class="go">    quantity: 3</span>
+<span class="go">  - part:</span>
+<span class="go">      color: 2</span>
+<span class="go">      type: 10</span>
+<span class="go">    quantity: 2</span>
+<span class="go">---</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Bins that do not contain parts are not included in the message.</p>
+</div>
+</li>
+<li><p>The topic <code class="code topic docutils literal notranslate"><span class="pre">/ariac/conveyor_parts</span></code> (<a class="reference internal" href="ros_communication.html#term-ariac_msgs-msg-ConveyorParts"><span class="xref std std-term">ariac_msgs/msg/ConveyorParts</span></a>) outputs information on parts that are expected to spawn on the conveyor belt. An output from <code class="code highlight console docutils literal highlight-console"><span class="go">ros2 topic echo /ariac/conveyor_parts</span></code> is provided in  <a class="hxr-hoverxref hxr-modal reference internal" href="#conveyor-parts-outputs"><span class="std std-numref">Listing 10</span></a>. The message shows that 2 red batteries, 2 green sensors, 3 blue regulators, and 1 orange pump will spawn on the conveyor belt.</p>
+<div class="literal-block-wrapper docutils container" id="conveyor-parts-outputs">
+<div class="code-block-caption"><span class="caption-number">Listing 10 </span><span class="caption-text">Message published on the topic <code class="code topic docutils literal notranslate"><span class="pre">/ariac/conveyor_parts</span></code>.</span><a class="headerlink" href="#conveyor-parts-outputs" title="Permalink to this code"></a></div>
+<div class="no-copybutton highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">---</span>
+<span class="go">parts:</span>
+<span class="go">- part:</span>
+<span class="go">    color: 0</span>
+<span class="go">    type: 10</span>
+<span class="go">  quantity: 2</span>
+<span class="go">- part:</span>
+<span class="go">    color: 1</span>
+<span class="go">    type: 12</span>
+<span class="go">  quantity: 2</span>
+<span class="go">- part:</span>
+<span class="go">    color: 2</span>
+<span class="go">    type: 13</span>
+<span class="go">  quantity: 3</span>
+<span class="go">- part:</span>
+<span class="go">    color: 3</span>
+<span class="go">    type: 11</span>
+<span class="go">  quantity: 1</span>
+<span class="go">---</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="orders.html" class="btn btn-neutral float-left" title="Orders" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sensors.html" class="btn btn-neutral float-right" title="Sensors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright works of NIST employees are not not subject to copyright protection in the United States.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+   
+
+  <!-- Taken from https://www.filamentgroup.com/lab/html-includes/#another-demo%3A-including-another-html-file -->
+  <iframe src="../_static/ntd2d_menu.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+
+</body>
+</html>
