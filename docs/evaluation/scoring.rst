@@ -1,8 +1,8 @@
 .. _SCORING:
 
-=======
+========
 Scoring
-=======
+========
 
 For this year's ARIAC competition, the scoring will be divided into 3 major sections:
 
