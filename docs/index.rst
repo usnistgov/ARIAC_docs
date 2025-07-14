@@ -24,3 +24,10 @@ The `Agile Robotics for Industrial Automation Competition (ARIAC) <https://www.n
   :hidden:
 
   competition/overview
+
+.. toctree::
+  :caption: ⏩ Evaluation
+  :maxdepth: 3
+  :hidden:
+
+  evaluation/scoring
