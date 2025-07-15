@@ -47,7 +47,7 @@ As the non-defective cell progresses along the inspection conveyor, it must be p
 output the voltage of the cells with a small amount of noise present. This noise should be filtered to determine the voltage of the cell. After the voltage of the cell has been
 determined, it will be handled in the next stage.
 
-.. <insert image of a cell in voltage tester>
+.. <insert image of a cell in voltage tester -> post insertion of new parts>
 
 **Kitting on AGVs**
 
@@ -55,7 +55,7 @@ In this stage, four cells will be assembled into kits on AGVs. It is important t
 within specification individually. We have provided a recyling bin which can be used with no penalty to competitors to recycle cells that are either out of specification, or 
 cannot be utilized in the current AGV layout. Once an AGV has been assembled with four cells, it can be used to transport the cells to one of three locations.
 
-.. <insert image of robot placing cell into AGV>
+.. <insert image of robot placing cell into AGV -> post insertion of new parts>
 
 **Moving the AGV**
 
@@ -72,7 +72,7 @@ The AGVs can be moved along pre-determined paths to three locations:
 Once an AGV with four cells arrives at the assembly location, these cells should be assembled into the bottom modules present on the assembly conveyor. Special attention should be 
 made to properly orient the cells into the bottom module. An example of the bottom moduele assembled with the correct orientation is shown below:
 
-.. <insert image showing proper orientation of assembly>
+.. <insert image showing proper orientation of assembly -> post insertion of new parts>
 
 **Top Shell Assembly**
 
@@ -80,7 +80,7 @@ After assembly all four cells into the bottom module, the conveyor should progre
 the top shell using one of two vacuum grippers. This assembly gripper allows the top shell to be grabbed from the top and assembled onto the the bottom module assembly. Special 
 attention should be made to properly orient the top shell. An example of a properly assembled top shell is shown below:
 
-.. <insert image showing proper orientation of top shell>
+.. <insert image showing proper orientation of top shell -> post insertion of new parts>
 
 **Welding**
 
@@ -88,7 +88,7 @@ After assembling the top shell, the module assembly should be sent to the weldin
 weld location on the shell. These can be seen as holes giving access to the batteries. Once the weld has been completed, a weld bead will appear signaling that this has been 
 completed. After completing the first set of welds, the module will need to be sent back to the previous assembly robot to flip the module.
 
-.. <insert image showing the weld locations and a weld in progress, maybe also a weld bead appeared>
+.. <insert image showing the weld locations and a weld in progress, maybe also a weld bead appeared -> post insertion of new parts>
 
 **Tool Changing**
 
@@ -96,7 +96,7 @@ In order to flip the module, the assembly robot much undergo a tool change. The 
 flip the module. The vacuum gripper should then be placed on the side of the module allowing for it to be flipped and giving access to the other necessary welds. The module should 
 then be sent back to the welding robot for the final set of welds.
 
-.. <insert image of module flip in progress>
+.. <insert image of module flip in progress -> post insertion of new parts>
 
 **Module Submission**
 

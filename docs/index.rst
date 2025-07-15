@@ -24,6 +24,7 @@ The `Agile Robotics for Industrial Automation Competition (ARIAC) <https://www.n
   :hidden:
 
   competition/overview
+  competition/sensors
 
 .. toctree::
   :caption: ⏩ Evaluation
