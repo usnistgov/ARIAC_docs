@@ -1,5 +1,7 @@
 .. _SCORING:
 
+.. _scoring-anchor:
+
 ========
 Scoring
 ========
@@ -30,10 +32,10 @@ Where:
 .. container::
 
     * S = the base score for the run
-    * :math:`ω_1` = the weight associated with kit completion
+    * :math:`ω_1` = the weight associated with kit completion. The static value of :math:`ω_1` is 500
     * :math:`k_c` = number of kits successfully completed 
     * :math:`k_d` = number of kits requested
-    * :math:`ω_2` = the weight associated with module completion
+    * :math:`ω_2` = the weight associated with module completion. The static value of :math:`ω_2` is 800
     * :math:`m_c` = number of modules successfully completed 
     * :math:`m_d` = number of modules requested
 
@@ -58,8 +60,8 @@ Where:
 
 .. container::
 
-    * :math:`β_1` = the total bonus for trial time
-    * :math:`ω_3` = the weight associated with the trial time bonus
+    * :math:`β_1` = the total bonus for trial time. 
+    * :math:`ω_3` = the weight associated with the trial time bonus. The static value of :math:`ω_3` is 175
     * :math:`t_e` = run execution duration
     * :math:`t_m` = run time limit
 
@@ -78,9 +80,9 @@ Where:
 .. container::
 
     * :math:`β_2` = the total bonus for inspection speed
-    * :math:`ω_4` = the weight associated with the inspection speed bonus
+    * :math:`ω_4` = the weight associated with the inspection speed bonus. The static value of :math:`ω_4` is 125
     * :math:`γ` = average inspection duration
-    * :math:`γ_d` = desired inspection duration
+    * :math:`γ_d` = desired inspection duration. The desired inspection time is 8 seconds.
 
 **High Priority Order Speed**
 
@@ -97,9 +99,9 @@ Where:
 .. container::
 
     * :math:`β_3` = the total bonus for high priority order speed
-    * :math:`ω_5` = the weight associated with the high priority order speed bonus
+    * :math:`ω_5` = the weight associated with the high priority order speed bonus. The static value of :math:`ω_5` is 150
     * :math:`τ` = average high priority kit execution duration
-    * :math:`τ_d` = desired high priority kit execution duration
+    * :math:`τ_d` = desired high priority kit execution duration. The desired completion time is 130 seconds.
 
 **Sensor Cost**
 
@@ -116,13 +118,14 @@ Where:
 .. container::
 
     * :math:`β_4` = the total bonus for sensor cost
-    * :math:`ω_6` = the weight associated with the sensor cost bonus
+    * :math:`ω_6` = the weight associated with the sensor cost bonus. The static value of :math:`ω_6` is 500
     * :math:`σ` = competitor sensor cost
-    * :math:`σ_b` = sensor budget
+    * :math:`σ_b` = sensor budget. The sensor budget is set at $7000
 
 **Inspection Classification**
 
-The sensor cost bonus is awarded for minimizing the cost of sensors competitors use to complete the competition. Going over budget results instead in a penalty.
+The inspection classification bonus is awarded for correctly identifying the defect type and location. All elements of the defect report must be correct for a report to be considered
+correct.
 
 .. container::
 
@@ -135,7 +138,7 @@ Where:
 .. container::
 
     * :math:`β_5` = the total bonus for inspection classification
-    * :math:`ω_7` = the weight associated with the inspecton classification bonus
+    * :math:`ω_7` = the weight associated with the inspecton classification bonus. The static value of :math:`ω_7` is 100
     * :math:`ν` = number of correctly classified reports
     * :math:`δ` = total number of defective cells
 
@@ -153,6 +156,19 @@ a penalty is recorded, that value will be deducted from the total score. The pen
 * Two AGVs collide
 * A robot collides, either with an object in the environment, or another robot
 * The sensor cost used is over the provided budget
+
+The following table shows the symbols for each penalty and their associated values.
+
+================= =============================================== ======
+Penalty Symbols   Description                                     Value
+================= =============================================== ======
+:math:`ρ_{0}`     Non-defective cell in inspection bin            20
+:math:`ρ_{1}`     Cell in conveyor bin                            20
+:math:`ρ_{2}`     Object on invalid surface                       20
+:math:`ρ_{3}`     AGV collision                                   40
+:math:`ρ_{4}`     Robot collision                                 50
+:math:`ρ_{5}`     Sensor cost over budget                         0.0715
+================= =============================================== ======
 
 .. admonition:: Robot Collision Note
   :class: note

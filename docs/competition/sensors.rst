@@ -13,7 +13,7 @@ to competitiors includes:
 * LiDAR Sensor
 
 Competitors are given a budget of $7000. Going over this budget will incur a penalty, but staying under will reward bonus points. More information about the associated bonus and 
-penalty can be found on the scoring page. <add hyperlink>
+penalty can be found on the :ref:`scoring page <scoring-anchor>`.
 
 We will provide multiple tiers for each sensor, which includes an associated cost. The various sensors with their variants are explained further below.
 
