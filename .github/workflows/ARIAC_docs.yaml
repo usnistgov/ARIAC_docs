@@ -1,6 +1,9 @@
 name: "ARIAC documentation"
 
-on: [push, pull_request, delete]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   docs:
