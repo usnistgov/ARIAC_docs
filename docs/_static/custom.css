@@ -1,0 +1,29 @@
+.image-row {
+    display: flex;
+    justify-content: center;  /* Center the whole row */
+    gap: 20px;                 /* Space between images */
+    margin: 1em 0;
+}
+
+.image-row .image-item {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.centered-table td,
+.centered-table th {
+    text-align: center;    /* Center text horizontally */
+    vertical-align: middle; /* Optional: center vertically */
+}
+
+table, 
+table th, 
+table td {
+  background-color: transparent !important;
+}
+
+tbody tr:hover {
+  background-color: transparent !important;  /* Remove hover highlight */
+=======
+}

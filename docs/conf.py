@@ -16,6 +16,7 @@ html_theme = 'sphinx_book_theme'
 html_logo = "_static/nist_el_logo_color.png"
 
 html_static_path = ["_static"]
+html_css_files = ["custom.css"]
 
 html_theme_options = {
     "logo": {
