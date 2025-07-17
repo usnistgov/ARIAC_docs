@@ -9,7 +9,7 @@ The `Agile Robotics for Industrial Automation Competition (ARIAC) <https://www.n
 .. Hidden TOCs
 
 .. toctree::
-  :caption: ⏩ Getting Started
+  :caption: Getting Started
   :maxdepth: 3
   :hidden:
 
@@ -19,7 +19,7 @@ The `Agile Robotics for Industrial Automation Competition (ARIAC) <https://www.n
   getting_started/events
 
 .. toctree::
-  :caption: ⏩ Competition
+  :caption: Competition
   :maxdepth: 3
   :hidden:
 
@@ -27,8 +27,17 @@ The `Agile Robotics for Industrial Automation Competition (ARIAC) <https://www.n
   competition/sensors
 
 .. toctree::
-  :caption: ⏩ Evaluation
+  :caption: Evaluation
   :maxdepth: 3
   :hidden:
 
   evaluation/scoring
+
+.. toctree::
+  :caption: ROS Interfaces
+  :maxdepth: 3
+  :hidden:
+
+  interfaces/message_definitions
+  interfaces/service_definitions
+  interfaces/action_definitions

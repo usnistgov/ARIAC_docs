@@ -18,26 +18,45 @@ For this year's ARIAC competition, the scoring will be divided into 3 major sect
 Base Score
 ----------
 
+.. Split into kitting score and module score
+
 The base score for the competition stems from the completion of tasks assigned in the run.
-This would include the completion of both kits and moduels as a percentages of the requested number in the run.
+The base score can be split into two major components: the kit score and the module score.
+
+**Kit Score**
 
 .. container::
 
   .. math::
 
-    S = ω_1 \cdot \frac{k_c}{k_d} + ω_2 \cdot \frac{m_c}{m_d}
+    K = ω_1 \cdot \frac{k_c}{k_d}
 
 Where: 
 
 .. container::
 
-    * S = the base score for the run
+    * K = the kit score for the run
     * :math:`ω_1` = the weight associated with kit completion. The static value of :math:`ω_1` is 500
     * :math:`k_c` = number of kits successfully completed 
     * :math:`k_d` = number of kits requested
+
+**Module Score**
+
+.. container::
+
+  .. math::
+
+    M = ω_2 \cdot \frac{m_c}{m_d}
+
+Where: 
+
+.. container::
+
+    * M = the module score for the run
     * :math:`ω_2` = the weight associated with module completion. The static value of :math:`ω_2` is 800
     * :math:`m_c` = number of modules successfully completed 
     * :math:`m_d` = number of modules requested
+
 
 ------------
 Bonus Points
@@ -194,16 +213,17 @@ In order to calculate the entire run score, the following formula can be used, c
 
   .. math::
 
-    R = S + \sum β_i - \sum ρ_i * o_i
+    R = K + M + \sum β_i - \sum ρ_i * o_i
 
 Where:
 
 .. container::
 
     * R = the total run score
-    * S = the base score for the run
+    * K = the kit score for the run
+    * M = the module score for the run
     * :math:`β_i` = the bonus scores
-    * :math:`ρ_i` = the weights for each penalty type
+    * :math:`ρ_i` = the deduction for each penalty type
     * :math:`o_i` = the number of occurances for the associated penalty
 
 .. ---------------
