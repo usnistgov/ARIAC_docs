@@ -12,3 +12,6 @@ Calendar of Events
     - Major Milestones
   * - August 25 2025
     - Kickoff Meeting
+  * - September 2 2025
+    - Code Release
+
