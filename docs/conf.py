@@ -9,7 +9,7 @@
 project = 'ARIAC Docs'
 version = '2025.1.0'
 copyright = u'works of NIST employees are not not subject to copyright protection in the United States'
-author = 'Justin Albrecht'
+author = 'NIST'
 
 html_theme = 'sphinx_book_theme'
 
