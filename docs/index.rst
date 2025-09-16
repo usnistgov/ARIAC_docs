@@ -26,7 +26,7 @@ The `full source code  <https://www.github.com/usnistgov/ARIAC/>`_ for the compe
    :hidden:
 
    pages/events
-   pages/installation
+   pages/startup
    pages/demos
 
 
