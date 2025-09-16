@@ -31,11 +31,10 @@ The `full source code  <https://www.github.com/usnistgov/ARIAC/>`_ for the compe
    :caption: Development
    :maxdepth: 3
    :hidden:
-
+   
    pages/schedule
-   pages/installation
+   pages/startup
    pages/demos
-
 
 .. toctree::
    :caption: ROS Interfaces
