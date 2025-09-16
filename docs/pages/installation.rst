@@ -1,8 +1,8 @@
-.. _CHALLENGES:
+.. _INSTALLATION:
 
-==================
-Agility Challenges
-==================
+============
+Installation
+============
 
 .. admonition:: Under Construction
   :class: caution

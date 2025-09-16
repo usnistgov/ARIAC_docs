@@ -1,8 +1,8 @@
-.. _CHALLENGES:
+.. _API:
 
-==================
-Agility Challenges
-==================
+=======
+ROS API
+=======
 
 .. admonition:: Under Construction
   :class: caution

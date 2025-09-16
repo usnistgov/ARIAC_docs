@@ -1,8 +1,8 @@
-.. _CHALLENGES:
+.. _EVENTS:
 
-==================
-Agility Challenges
-==================
+======
+Events
+======
 
 .. admonition:: Under Construction
   :class: caution

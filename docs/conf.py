@@ -25,10 +25,11 @@ html_theme_options = {
     },
     "use_download_button": False,
     "use_fullscreen_button": False,
+    "home_page_in_toc": True
     
 }
 
-templates_path = ['_templates']
+# templates_path = ['_templates']
 
 extensions = [
     'sphinx.ext.mathjax',

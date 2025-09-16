@@ -1,8 +1,8 @@
-.. _CHALLENGES:
+.. _DEMOS:
 
-==================
-Agility Challenges
-==================
+=====
+Demos
+=====
 
 .. admonition:: Under Construction
   :class: caution

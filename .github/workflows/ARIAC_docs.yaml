@@ -3,7 +3,7 @@ name: "ARIAC documentation"
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   docs:
@@ -15,5 +15,5 @@ jobs:
           formats: ''
           pip-requirements: requirements.txt
           build-html-command: make html
-          insert-header-footer: false
+          insert-header-footer: true
           
