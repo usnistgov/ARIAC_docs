@@ -12,7 +12,7 @@ Schedule
      - Event
    * - **September 4, 2025**
      - Kick-off Presentation
-   * - **September 16, 2025 **
+   * - **September 16, 2025**
      - Code Release
    * - **December 8, 2025**
      - Smoke Test Submission Deadline
