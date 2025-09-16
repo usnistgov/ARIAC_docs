@@ -402,9 +402,9 @@ document.write(`
 <section id="starting-the-app">
 <h3>Starting the App<a class="headerlink" href="#starting-the-app" title="Permalink to this heading">#</a></h3>
 <p>To start the container quickly, the example team has been configured to use Docker compose. So, the example team can be cloned to the host machine using this command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/usnistgov/ariac_example_team.git
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/usnistgov/ariac_example_team.git<span class="w"> </span>~/ariac_example_team
 
-<span class="nb">cd</span><span class="w"> </span>ariac_example_team
+<span class="nb">cd</span><span class="w"> </span>~/ariac_example_team
 </pre></div>
 </div>
 <p>(RECCOMMENDED) If you have an NVIDIA graphics card that you would like to use, run this command:</p>
@@ -417,11 +417,13 @@ document.write(`
 </div>
 <p>After these commands have been run, the container with all of the correct settings with ARIAC and the example team will be started.</p>
 <p>Then, open a new terminal. If you ran the NVIDIA service, run this command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ariac_nvidia<span class="w"> </span>bash
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/ariac_example_team
+docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ariac_nvidia<span class="w"> </span>bash
 </pre></div>
 </div>
 <p>If you ran the non-NVIDIA service, run this command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ariac<span class="w"> </span>bash
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/ariac_example_team
+docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ariac<span class="w"> </span>bash
 </pre></div>
 </div>
 <p>At this point, you should see a terminal inside the docker container.</p>
@@ -437,9 +439,8 @@ document.write(`
 <section id="launching-from-the-launch-file">
 <h3>Launching from the Launch File<a class="headerlink" href="#launching-from-the-launch-file" title="Permalink to this heading">#</a></h3>
 <p>To start the container quickly, the example team has been configured to use Docker compose. So, the example team can be cloned to the host machine using this command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/usnistgov/ariac_example_team.git
-
-<span class="nb">cd</span><span class="w"> </span>ariac_example_team
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/usnistgov/ariac_example_team.git<span class="w"> </span>~/ariac_example_team
+<span class="nb">cd</span><span class="w"> </span>~/ariac_example_team
 </pre></div>
 </div>
 <p>(RECCOMMENDED) If you have an NVIDIA graphics card that you would like to use, run this command:</p>
@@ -452,11 +453,13 @@ document.write(`
 </div>
 <p>After these commands have been run, the container with all of the correct settings with ARIAC and the example team will be started.</p>
 <p>Then, open a new terminal. If you ran the NVIDIA service, run this command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ariac_nvidia<span class="w"> </span>bash
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/ariac_example_team
+docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ariac_nvidia<span class="w"> </span>bash
 </pre></div>
 </div>
 <p>If you ran the non-NVIDIA service, run this command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ariac<span class="w"> </span>bash
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/ariac_example_team
+docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ariac<span class="w"> </span>bash
 </pre></div>
 </div>
 <p>At this point, you should see a terminal inside the docker container and you should be in a directory called <cite>team_ws</cite>.</p>

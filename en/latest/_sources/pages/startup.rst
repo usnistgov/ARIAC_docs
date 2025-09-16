@@ -35,9 +35,9 @@ To start the container quickly, the example team has been configured to use Dock
 
 .. code-block:: bash
 
-   git clone https://github.com/usnistgov/ariac_example_team.git
+   git clone https://github.com/usnistgov/ariac_example_team.git ~/ariac_example_team
 
-   cd ariac_example_team
+   cd ~/ariac_example_team
 
 (RECCOMMENDED) If you have an NVIDIA graphics card that you would like to use, run this command:
 
@@ -57,12 +57,14 @@ Then, open a new terminal. If you ran the NVIDIA service, run this command:
 
 .. code-block:: bash
 
+   cd ~/ariac_example_team
    docker compose exec ariac_nvidia bash
 
 If you ran the non-NVIDIA service, run this command:
 
 .. code-block:: bash
 
+   cd ~/ariac_example_team
    docker compose exec ariac bash
    
 At this point, you should see a terminal inside the docker container.
@@ -88,9 +90,8 @@ To start the container quickly, the example team has been configured to use Dock
 
 .. code-block:: bash
 
-   git clone https://github.com/usnistgov/ariac_example_team.git
-
-   cd ariac_example_team
+   git clone https://github.com/usnistgov/ariac_example_team.git ~/ariac_example_team
+   cd ~/ariac_example_team
 
 (RECCOMMENDED) If you have an NVIDIA graphics card that you would like to use, run this command:
 
@@ -110,12 +111,14 @@ Then, open a new terminal. If you ran the NVIDIA service, run this command:
 
 .. code-block:: bash
 
+   cd ~/ariac_example_team
    docker compose exec ariac_nvidia bash
 
 If you ran the non-NVIDIA service, run this command:
 
 .. code-block:: bash
 
+   cd ~/ariac_example_team
    docker compose exec ariac bash
    
 At this point, you should see a terminal inside the docker container and you should be in a directory called `team_ws`.
