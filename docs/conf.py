@@ -25,8 +25,11 @@ html_theme_options = {
     },
     "use_download_button": False,
     "use_fullscreen_button": False,
-    "home_page_in_toc": True
-    
+    "home_page_in_toc": True,
+    "repository_url": "https://github.com/usnistgov/ARIAC/",
+    # "repository_branch": "2025",
+    "use_issues_button": True,
+    "use_repository_button": True,
 }
 
 # templates_path = ['_templates']
