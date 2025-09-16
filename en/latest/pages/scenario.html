@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Competition Overview &#8212; ARIAC Docs  documentation</title>
+    <title>Scenario &#8212; ARIAC Docs  documentation</title>
   
   
   
@@ -44,6 +44,7 @@
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'pages/scenario';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -175,14 +176,14 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Competition</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Competition Overview</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Scenario</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="challenges.html">Agility Challenges</a></li>
 <li class="toctree-l1"><a class="reference internal" href="evaluation.html">Evaluation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="events.html">Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schedule.html">Schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="demos.html">Demos</a></li>
 </ul>
@@ -270,6 +271,53 @@
 <div class="article-header-buttons">
 
 
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/usnistgov/ARIAC" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/usnistgov/ARIAC/issues/new?title=Issue%20on%20page%20%2Fpages/scenario.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
 <script>
 document.write(`
   <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -288,7 +336,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -299,11 +349,36 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Competition Overview</h1>
+    <h1>Scenario</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1">Task 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1a-physical-inspection">Step 1a: Physical Inspection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1b-conveyor-pickup">Step 1b: Conveyor Pickup</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1c-voltage-inspection">Step 1c: Voltage Inspection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1d-agv-placement">Step 1d: AGV Placement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1e-move-agv">Step 1e: Move AGV</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2">Task 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2a-cell-installation">Step 2a: Cell Installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2b-tool-change">Step 2b: Tool Change</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2c-top-shell-installation">Step 2c: Top Shell Installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2d-top-welds">Step 2d: Top Welds</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2e-module-flip">Step 2e: Module Flip</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2f-bottom-welds">Step 2f: Bottom Welds</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -313,12 +388,250 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="competition-overview">
-<span id="id1"></span><h1>Competition Overview<a class="headerlink" href="#competition-overview" title="Permalink to this heading">#</a></h1>
-<div class="caution admonition" id="under-construction">
-<p class="admonition-title">Under Construction</p>
-<p>🚧 This page is currently under construction. Please check back later. 🚧</p>
+  <section id="scenario">
+<span id="id1"></span><h1>Scenario<a class="headerlink" href="#scenario" title="Permalink to this heading">#</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<p>ARIAC 2025 simulates an EV battery production factory. The factory uses battery cells of two types: Li-Ion (lithium ion) and Ni-MH (nickle metal hydride).</p>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/li-ion_cell.png"><img alt="../_images/li-ion_cell.png" src="../_images/li-ion_cell.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-text">A Li-Ion cell</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="../_images/nimh_cell.png"><img alt="../_images/nimh_cell.png" src="../_images/nimh_cell.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-text">A Ni-MH cell</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>During a run of the competition, teams will be required to complete a certain number of kits and or modules determined by the trial.</p>
+<p>A <strong>kit</strong> is a grouping of four EV battery cells placed onto a tray.</p>
+<p>A <strong>module</strong> is a unit of four EV battery shells arranged with a top and bottom shells and electrically connected with welds.</p>
+<figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="../_images/module.png"><img alt="../_images/module.png" src="../_images/module.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-text">A fully constructed module</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The scenario is broken down into two main tasks:</p>
+<ul class="simple">
+<li><p>Task 1: Inspection and Kit Building</p></li>
+<li><p>Task 2: Module Construction</p></li>
+</ul>
+</section>
+<section id="task-1">
+<h2>Task 1<a class="headerlink" href="#task-1" title="Permalink to this heading">#</a></h2>
+<p>Task 1 involves inspecting the individual cells and arranging them onto a tray on one of the environments AGVs.</p>
+<figure class="align-default" id="id5">
+<a class="reference internal image-reference" href="../_images/task1_environment.png"><img alt="../_images/task1_environment.png" src="../_images/task1_environment.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Task 1 annotated environment</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This task is broken into five steps:</p>
+<ul class="simple">
+<li><p>Step 1a: Physical Inspection</p></li>
+<li><p>Step 1b: Conveyor Pickup</p></li>
+<li><p>Step 1c: Voltage Inspection</p></li>
+<li><p>Step 1d: AGV Placement</p></li>
+<li><p>Step 1e: Move AGV</p></li>
+</ul>
+<section id="step-1a-physical-inspection">
+<h3>Step 1a: Physical Inspection<a class="headerlink" href="#step-1a-physical-inspection" title="Permalink to this heading">#</a></h3>
+<p>The conveyor speed and feed rate for the inspection conveyor are set by the team in their configuration file. After the competition is started a service will become available to control the cell feed type for for the inspection conveyor. Available types are in <a class="reference internal" href="../interfaces/msg/CellTypes.html#cell-types-msg"><span class="std std-ref">CellTypes.msg</span></a>. Sending NONE will disable the cell feed.</p>
+<p>For each cell the team should read data from lidar sensors placed around the inspection conveyor to determine whether or not the cell is defective. After the inspection is complete, an inspection report is sent by the team. If the cell passes inspection the inspection door will open, if not the cell will drop into the bin next to the conveyor.</p>
+<figure class="align-default" id="id6">
+<a class="reference internal image-reference" href="../_images/task_1a.gif"><img alt="../_images/task_1a.gif" src="../_images/task_1a.gif" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Inspecting a cell</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If a non-faulty cell drops into the bin, the team will incur a penalty</p>
 </div>
+</section>
+<section id="step-1b-conveyor-pickup">
+<h3>Step 1b: Conveyor Pickup<a class="headerlink" href="#step-1b-conveyor-pickup" title="Permalink to this heading">#</a></h3>
+<p>After a non-faulty cell passes through the inspection door it must be picked up by inspection robot 1, a UR3e equipped with a robotiq 2f-85 gripper. The gripper is controlled using a ROS action. After the cell is grasped it is placed into one of the two available voltage testers.</p>
+<figure class="align-default" id="id7">
+<a class="reference internal image-reference" href="../_images/task_1b.gif"><img alt="../_images/task_1b.gif" src="../_images/task_1b.gif" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Picking a cell from the conveyor and placing into the voltage tester</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If the robot collides with any object in the environment other than a cell the team will incur a penalty.</p>
+</div>
+</section>
+<section id="step-1c-voltage-inspection">
+<h3>Step 1c: Voltage Inspection<a class="headerlink" href="#step-1c-voltage-inspection" title="Permalink to this heading">#</a></h3>
+<p>Once a cell is placed in the voltage tester, the tester publishes its voltage to a ROS topic.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The testers publish with a small amount of noise so it is best to take readings over a short time period and average the results.</p>
+</div>
+</section>
+<section id="step-1d-agv-placement">
+<h3>Step 1d: AGV Placement<a class="headerlink" href="#step-1d-agv-placement" title="Permalink to this heading">#</a></h3>
+<p>After voltage inspection, the cell should be picked by inspection robot 2 (a UR5e with robotiq 2f-85 gripper). If the cell voltage is outside the tolerance of <span class="math notranslate nohighlight">\(\pm 0.2 V\)</span> it must be placed into the recycling bin. If a cell voltage is within spec it should be placed onto a tray on one of the available AGVs.</p>
+<p>Completed kits must meet a specified voltage tolerance:</p>
+<div class="math notranslate nohighlight">
+\[V_{total} \in 4 \cdot V_{nom_cell} \pm 0.1\]</div>
+<figure class="align-default" id="id8">
+<a class="reference internal image-reference" href="../_images/task_1d.gif"><img alt="../_images/task_1d.gif" src="../_images/task_1d.gif" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Placing cells onto an AGV tray</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cells lock to the tray after they are placed and cannot be moved at the inspection station.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If two robots collide with each other the collision penalty is incurred twice.</p>
+</div>
+</section>
+<section id="step-1e-move-agv">
+<h3>Step 1e: Move AGV<a class="headerlink" href="#step-1e-move-agv" title="Permalink to this heading">#</a></h3>
+<p>There are four possible stations for the AGVs (Inspection, Assembly, Shipping, Recycling)</p>
+<p>To complete a kitting order the AGV with a completed tray must be moved to the shipping station. When the AGV arrives the submit service should be called, at this point the kit will be evaluated to ensure that all four cells are non-defective, within voltage spec, of the same cell type, and the total kit voltage is correct. If the kit is accepted the tray will be cleared and the AGV can be sent back to the inspection station. If the kit is not accepted the AGV must be sent to the recycling station. When the AGV is at the recycling station a service can be called to recycle the tray which clears the cells and allows the AGV to be used again.</p>
+<p>To complete a module order the AGV should be moved the assembly station where task 2 can begin.</p>
+<figure class="align-default" id="id9">
+<a class="reference internal image-reference" href="../_images/task_1e.gif"><img alt="../_images/task_1e.gif" src="../_images/task_1e.gif" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Moving AGV1 to the shipping station and submitting the kit</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If two AGVs collide with each other the team will incur a penalty.</p>
+</div>
+</section>
+</section>
+<section id="task-2">
+<h2>Task 2<a class="headerlink" href="#task-2" title="Permalink to this heading">#</a></h2>
+<p>Task 2 involves constructing a module from a completed kit.</p>
+<figure class="align-default" id="id10">
+<a class="reference internal image-reference" href="../_images/task2_environment.png"><img alt="../_images/task2_environment.png" src="../_images/task2_environment.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Task 2 annotated environment</span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This task is broken into six steps:</p>
+<ul class="simple">
+<li><p>Step 2a: Cell Installation</p></li>
+<li><p>Step 2b: Tool Change</p></li>
+<li><p>Step 2c: Top Shell Installation</p></li>
+<li><p>Step 2d: Top Welds</p></li>
+<li><p>Step 2e: Module Flip</p></li>
+<li><p>Step 2f: Bottom Welds</p></li>
+</ul>
+<section id="step-2a-cell-installation">
+<h3>Step 2a: Cell Installation<a class="headerlink" href="#step-2a-cell-installation" title="Permalink to this heading">#</a></h3>
+<p>When an AGV arrives at the assembly station, module construction can begin. The first step is to insert a new bottom shell into the environment using a service call. The shell will always spawn in the same place.</p>
+<p>Cells should be picked using assembly robot 1 (a UR5e equipped with a robotiq 2f-85 gripper) and placed into each of the four slots in the bottom shell. The cells must be properly oriented. The central hole in the AGV tray can optionally be used to perform a re-grasp of the cell.</p>
+<figure class="align-default" id="id11">
+<a class="reference internal image-reference" href="../_images/shell_interior.png"><img alt="../_images/shell_interior.png" src="../_images/shell_interior.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Shells are marked with + or - to indicate cell direction,</span><a class="headerlink" href="#id11" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id12">
+<a class="reference internal image-reference" href="../_images/task_2a.gif"><img alt="../_images/task_2a.gif" src="../_images/task_2a.gif" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Installing cells into bottom shell</span><a class="headerlink" href="#id12" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The central hole in the AGV tray will automatically center the cell when the cell contacts the bottom of the hole to make alignment easier.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cells lock to bottom shell when placed.</p>
+</div>
+</section>
+<section id="step-2b-tool-change">
+<h3>Step 2b: Tool Change<a class="headerlink" href="#step-2b-tool-change" title="Permalink to this heading">#</a></h3>
+<p>Assembly robot 2 is equipped with a coupler that allows it to utilize one of two vacuum gripper tools (VG2 or VG4). To change tools the coupler should be moved to the location of the desired tool and a ROS service will lock the tool to the robot. For the next step assembly robot 2 must attach VG2 which is capable of picking up a top shell. The tool must then be manuevered away from the tool stand without colliding.</p>
+<figure class="align-default" id="id13">
+<a class="reference internal image-reference" href="../_images/task_2b.gif"><img alt="../_images/task_2b.gif" src="../_images/task_2b.gif" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Performing tool change operation</span><a class="headerlink" href="#id13" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The arrows on the tool coupler and tool must be aligned in order to successfully pick up a tool.</p>
+</div>
+</section>
+<section id="step-2c-top-shell-installation">
+<h3>Step 2c: Top Shell Installation<a class="headerlink" href="#step-2c-top-shell-installation" title="Permalink to this heading">#</a></h3>
+<p>Unlike the inspection conveyor which is constantly moving, the assembly conveyor is broken up into three sections that can be moved independently. Section 1 and 2 can be moved forward and section 3 can be moved forward and backwards. After all four cells are installed to the bottom shell the team should use the section 1 and section 2 conveyors to move the partially completed module until it reaches section 3.</p>
+<p>The next step is to insert a new top shell into the environment using a service call. The shell will spawn at a random location and orientation on the assembly table. Teams must use sensor(s) to determine its location before picking. Assembly robot 2 must then pick up the top shell from the assembly table and place it onto the partial module.</p>
+<figure class="align-default" id="id14">
+<a class="reference internal image-reference" href="../_images/task_2c.gif"><img alt="../_images/task_2c.gif" src="../_images/task_2c.gif" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Installing top shell onto partial module</span><a class="headerlink" href="#id14" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Both suction cups must be in contact with the top shell in order to grasp it.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The black and white bands on the top and bottom shell should be aligned.</p>
+</div>
+</section>
+<section id="step-2d-top-welds">
+<h3>Step 2d: Top Welds<a class="headerlink" href="#step-2d-top-welds" title="Permalink to this heading">#</a></h3>
+<p>With the top shell in place, teams must perform four welds to electrically connect the cells. The module should be moved to underneath the gantry welder using the section 3 conveyor. The gantry welder is a 3-DOF gantry with a set of welder electrodes at the tool. These electrodes must be in contact with the weld plate embedded in the shell before a proper weld can be performed through a service call.</p>
+<figure class="align-default" id="id15">
+<a class="reference internal image-reference" href="../_images/task_2d.gif"><img alt="../_images/task_2d.gif" src="../_images/task_2d.gif" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Performing top welding operations</span><a class="headerlink" href="#id15" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="step-2e-module-flip">
+<h3>Step 2e: Module Flip<a class="headerlink" href="#step-2e-module-flip" title="Permalink to this heading">#</a></h3>
+<p>After completing the top welds, the entire module must be flipped in order to provide access to perform the bottom welds. Assembly robot 2 must perform another tool change operation to return VG2 to the tool stand and pick up VG4.</p>
+<p>The module should be moved back to assembly robot 2 using the section 3 conveyor and grasped from the side. It should then be flipped and returned to the conveyor belt.</p>
+<figure class="align-default" id="id16">
+<a class="reference internal image-reference" href="../_images/task_2e.gif"><img alt="../_images/task_2e.gif" src="../_images/task_2e.gif" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Flipping module to access bottom connections</span><a class="headerlink" href="#id16" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Two of the suction cups must be in contact with the top shell and the other two must be in contact with the bottom shell in order to grasp the module.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If the module or any components of the module drop on the floor or any other invalid surface the team will incur a penalty</p>
+</div>
+</section>
+<section id="step-2f-bottom-welds">
+<h3>Step 2f: Bottom Welds<a class="headerlink" href="#step-2f-bottom-welds" title="Permalink to this heading">#</a></h3>
+<p>The final step involves performing welding operations on the bottom connections to complete the electrical circuit of the module. This completes the module construction process. The module can then be moved to the end of the conveyor to the submission area and the submit module service can be called.</p>
+<figure class="align-default" id="id17">
+<a class="reference internal image-reference" href="../_images/task_2f.gif"><img alt="../_images/task_2f.gif" src="../_images/task_2f.gif" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Performing bottom welding operations</span><a class="headerlink" href="#id17" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The module will be removed from the environment</p>
+</div>
+</section>
+</section>
 </section>
 
 
@@ -356,6 +669,38 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1">Task 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1a-physical-inspection">Step 1a: Physical Inspection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1b-conveyor-pickup">Step 1b: Conveyor Pickup</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1c-voltage-inspection">Step 1c: Voltage Inspection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1d-agv-placement">Step 1d: AGV Placement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1e-move-agv">Step 1e: Move AGV</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2">Task 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2a-cell-installation">Step 2a: Cell Installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2b-tool-change">Step 2b: Tool Change</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2c-top-shell-installation">Step 2c: Top Shell Installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2d-top-welds">Step 2d: Top Welds</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2e-module-flip">Step 2e: Module Flip</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2f-bottom-welds">Step 2f: Bottom Welds</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
