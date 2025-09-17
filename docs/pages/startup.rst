@@ -186,7 +186,7 @@ Install
 
    .. code-block:: bash
 
-      sudo apt install python3-colcon-common-extensions python3-pip && pip install setuptools==58.2.0
+      sudo apt install python3-colcon-common-extensions python3-pip
 
    Install neccessary python packages for the app:
 
