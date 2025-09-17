@@ -16,5 +16,5 @@ jobs:
           pip-requirements: requirements.txt
           build-html-command: make html
           insert-header-footer: true
-          hidden: true
+          hidden: false
           
