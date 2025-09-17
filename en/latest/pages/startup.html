@@ -270,53 +270,6 @@
 <div class="article-header-buttons">
 
 
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/usnistgov/ARIAC" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/usnistgov/ARIAC/issues/new?title=Issue%20on%20page%20%2Fpages/startup.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
 <script>
 document.write(`
   <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -358,16 +311,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-startup">Docker Startup</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker">Docker</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launching-the-environment">Launching the Environment</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-the-app">Starting the App</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launching-from-the-launch-file">Launching from the Launch File</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-startup">Local Startup</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install">Install</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Starting the App</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Launching from the Launch File</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local">Local</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Launching the Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Starting the App</a></li>
 </ul>
 </li>
 </ul>
@@ -383,118 +336,159 @@ document.write(`
                   
   <section id="startup">
 <span id="id1"></span><h1>Startup<a class="headerlink" href="#startup" title="Permalink to this heading">#</a></h1>
-<p>IN ARIAC 2025, there are two methods for running the competition: Docker and locally. In Docker, all of the dependencies for ARIAC are preloaded into the image, making setup easier and fewer potential issues. Local installation is also available to run the competition the same way it has been run in previous years.</p>
-<section id="docker-startup">
-<h2>Docker Startup<a class="headerlink" href="#docker-startup" title="Permalink to this heading">#</a></h2>
+<p>There are two ways for teams to develop a solution for this years ARIAC competition</p>
+<ul class="simple">
+<li><p>Docker</p></li>
+<li><p>Local</p></li>
+</ul>
+<section id="docker">
+<h2>Docker<a class="headerlink" href="#docker" title="Permalink to this heading">#</a></h2>
+<p>Running the competition through docker ensures all of the dependencies for ARIAC are preloaded into the image. This makes setup easier and can lead to fewer potential issues. However there can be a steep learning curve if your team is not familiar with docker. The final evaluation will require team’s to submit a Dockerfile for their solution so this is the recommended approach.</p>
 <section id="installation">
 <h3>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h3>
-<p>If docker is not installed on your device, please follow these instructions: <a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">https://docs.docker.com/engine/install/ubuntu/</a>.</p>
-<p>If you are hoping to use an NVIDIA graphics card and do not have the NVIDIA container toolkit, please follow these instructions: <a class="reference external" href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html">https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html</a>.</p>
-<p>After installing the toolkit, please run this command:</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Running ARIAC though docker requires a linux operating system</p>
+</div>
+<ol class="arabic">
+<li><p>Install prerequisites</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a>.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After installing docker engine, follow the  <a class="reference external" href="https://docs.docker.com/engine/install/linux-postinstall/">post installation instructions</a>.</p>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html">Nvidia Container Toolkit</a>.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The toolkit is only neccessary if you have an NVIDIA graphics card.</p>
+<p>After installation, run this command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nvidia-ctk<span class="w"> </span>runtime<span class="w"> </span>configure<span class="w"> </span>--runtime<span class="o">=</span>docker
 </pre></div>
 </div>
-<p>After Docker is successfully installed and the runtime is set to NVIDIA if you would like to use a graphics card, the image can be pulled using this command:</p>
+</div>
+</li>
+<li><p>Pull the ARIAC image from Docker Hub</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>pull<span class="w"> </span>nistariac/ariac2025:latest
 </pre></div>
 </div>
-</section>
-<section id="starting-the-app">
-<h3>Starting the App<a class="headerlink" href="#starting-the-app" title="Permalink to this heading">#</a></h3>
-<p>To start the container quickly, the example team has been configured to use Docker compose. So, the example team can be cloned to the host machine using this command:</p>
+</li>
+<li><p>Clone the <a class="reference external" href="https://github.com/usnistgov/ariac_example_team.git">example team repository</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/usnistgov/ariac_example_team.git<span class="w"> </span>~/ariac_example_team
 
 <span class="nb">cd</span><span class="w"> </span>~/ariac_example_team
 </pre></div>
 </div>
-<p>(RECCOMMENDED) If you have an NVIDIA graphics card that you would like to use, run this command:</p>
+</li>
+<li><p>Start the container with Docker Compose</p>
+<p>If you have an NVIDIA graphics card:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>ariac_nvidia
 </pre></div>
 </div>
-<p>If you do not have an NVIDIA graphics card, run this command:</p>
+<p>Otherwise:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>ariac
 </pre></div>
 </div>
-<p>After these commands have been run, the container with all of the correct settings with ARIAC and the example team will be started.</p>
-<p>Then, open a new terminal. If you ran the NVIDIA service, run this command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/ariac_example_team
-docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ariac_nvidia<span class="w"> </span>bash
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Running the competition without a dedicated GPU will lead to worse performance.</p>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This terminal must be kept open while ARIAC is running or use <code class="docutils literal notranslate"><span class="pre">-d</span></code> to run the container in detached mode.</p>
+</div>
+</section>
+<section id="launching-the-environment">
+<h3>Launching the Environment<a class="headerlink" href="#launching-the-environment" title="Permalink to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Open a new terminal in the container</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>example_team<span class="w"> </span>bash
 </pre></div>
 </div>
-<p>If you ran the non-NVIDIA service, run this command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/ariac_example_team
-docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ariac<span class="w"> </span>bash
+</li>
+<li><p>Launch the environment</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gz<span class="w"> </span>ariac.launch.py<span class="w"> </span>user_config:<span class="o">=</span>/team_ws/src/example_team/config/example_team_config.yaml<span class="w"> </span>trial_config:<span class="o">=</span>/team_ws/src/example_team/config/trials/LHAF9835.yaml
 </pre></div>
 </div>
-<p>At this point, you should see a terminal inside the docker container.</p>
-<p>After you are in the terminal of the docker container, run this command to start the ARIAC app:</p>
+</li>
+</ol>
+</section>
+<section id="starting-the-app">
+<h3>Starting the App<a class="headerlink" href="#starting-the-app" title="Permalink to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Open a new terminal in the container</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>example_team<span class="w"> </span>bash
+</pre></div>
+</div>
+</li>
+<li><p>Start the app</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>ariac_app<span class="w"> </span>app
 </pre></div>
 </div>
-<p>This will print a message that looks like this:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You should see a message that looks like this:</p>
 <p><cite>NiceGUI ready to go on http://localhost:8080, and http://x.x.x.x:8080</cite></p>
+</div>
+</li>
+<li><p>Open the app in your browser</p>
 <p>To open the app, ctrl+click on either of the links in the terminal or click <a class="reference external" href="http://localhost:8080">here</a>.</p>
-<p>From the app, you are able to launch the competition, select existing trial and user config files, create trial and user config files, and more.</p>
-</section>
-<section id="launching-from-the-launch-file">
-<h3>Launching from the Launch File<a class="headerlink" href="#launching-from-the-launch-file" title="Permalink to this heading">#</a></h3>
-<p>To start the container quickly, the example team has been configured to use Docker compose. So, the example team can be cloned to the host machine using this command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/usnistgov/ariac_example_team.git<span class="w"> </span>~/ariac_example_team
-<span class="nb">cd</span><span class="w"> </span>~/ariac_example_team
-</pre></div>
-</div>
-<p>(RECCOMMENDED) If you have an NVIDIA graphics card that you would like to use, run this command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>ariac_nvidia
-</pre></div>
-</div>
-<p>If you do not have an NVIDIA graphics card, run this command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>ariac
-</pre></div>
-</div>
-<p>After these commands have been run, the container with all of the correct settings with ARIAC and the example team will be started.</p>
-<p>Then, open a new terminal. If you ran the NVIDIA service, run this command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/ariac_example_team
-docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ariac_nvidia<span class="w"> </span>bash
-</pre></div>
-</div>
-<p>If you ran the non-NVIDIA service, run this command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/ariac_example_team
-docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ariac<span class="w"> </span>bash
-</pre></div>
-</div>
-<p>At this point, you should see a terminal inside the docker container and you should be in a directory called <cite>team_ws</cite>.</p>
-<p>To launch the environment using the example team’s user config and trial, use this command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gz<span class="w"> </span>ariac.launch.py<span class="w"> </span>user_config:<span class="o">=</span>src/example_team/config/example_team_config.yaml<span class="w"> </span>trial_config:<span class="o">=</span>src/example_team/config/trials/LHAF9835.yaml
-</pre></div>
-</div>
+</li>
+<li><p>Run the demos</p>
+<p>See the <a class="reference internal" href="demos.html#demos"><span class="std std-ref">demos page</span></a> for instructions on how to run the demos.</p>
+</li>
+</ol>
 </section>
 </section>
-<section id="local-startup">
-<h2>Local Startup<a class="headerlink" href="#local-startup" title="Permalink to this heading">#</a></h2>
-<section id="install">
-<h3>Install<a class="headerlink" href="#install" title="Permalink to this heading">#</a></h3>
+<section id="local">
+<h2>Local<a class="headerlink" href="#local" title="Permalink to this heading">#</a></h2>
+<p>The competition can still be run without using docker by directly installing and building the ARIAC source code on your machine. This may lead to more issues based on how your computer is configured.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Running ARIAC locally requires Ubuntu 24.04.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These instructions are written for bash. If you are using a shell other than bash, the source commands will be different. For example, the command for zsh is this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>/opt/ros/jazzy/setup.zsh
+</pre></div>
+</div>
+</div>
+<section id="id2">
+<h3>Installation<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <ol class="arabic">
 <li><p>Install prerequisites</p>
-<p>ARIAC 2025 requires Ubuntu 24 and ROS2 Jazzy to run locally. To install ROS2 Jazzy, please follow the official documentation instructions, which can be found here: <a class="reference external" href="https://docs.ros.org/en/jazzy/Installation.html">https://docs.ros.org/en/jazzy/Installation.html</a>.</p>
-<p>ARIAC 2025 also requires GZ Harmonic. This can be installed using these instructions: <a class="reference external" href="https://gazebosim.org/docs/harmonic/install_ubuntu/">https://gazebosim.org/docs/harmonic/install_ubuntu/</a>.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html">ROS2 Jazzy</a>.</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The step for “Install development tools (optional)” is required.</p>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="https://gazebosim.org/docs/harmonic/install_ubuntu/">Gazebo Sim (Harmonic)</a>.</p></li>
+</ul>
 </li>
 <li><p>Create a workspace</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>~/ariac_ws/src<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/ariac_ws
 </pre></div>
 </div>
 </li>
-<li><p>Clone ARIAC</p>
+<li><p>Clone ARIAC and the example team</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/usnistgov/ARIAC.git<span class="w"> </span>src/ARIAC
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/usnistgov/ariac_example_team.git<span class="w"> </span>src/ariac_example_team
 </pre></div>
 </div>
 </li>
 <li><p>Rosdep</p>
-<p>Install rosdep</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-rosdep
-</pre></div>
-</div>
 <p>Initialize rosdep</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>rosdep<span class="w"> </span>init
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>/opt/ros/jazzy/setup.bash
+sudo<span class="w"> </span>rosdep<span class="w"> </span>init
 </pre></div>
 </div>
 <p>Update rosdep</p>
@@ -506,13 +500,10 @@ docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">ex
 </pre></div>
 </div>
 </li>
-<li><p>More dependencies</p>
-<p>Install neccessary packages for building with colcon:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-colcon-common-extensions<span class="w"> </span>python3-pip<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">setuptools</span><span class="o">==</span><span class="m">58</span>.2.0
-</pre></div>
-</div>
+<li><p>Pip dependencies</p>
 <p>Install neccessary python packages for the app:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>src/ARIAC/ariac_app/requirements.txt<span class="w"> </span>--break-system-packages
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-pip
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>src/ARIAC/ariac_app/requirements.txt<span class="w"> </span>--break-system-packages
 </pre></div>
 </div>
 </li>
@@ -528,45 +519,50 @@ docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">ex
 </li>
 </ol>
 </section>
-<section id="id2">
-<h3>Starting the App<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
-<p>First, ensure that you are in the correct workspace:</p>
+<section id="id3">
+<h3>Launching the Environment<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Navigate to the workspace and source packages</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/ariac_ws
-</pre></div>
-</div>
-<p>Then, source Jazzy and the workspace:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>/opt/ros/jazzy/setup.bash
+<span class="nb">source</span><span class="w"> </span>/opt/ros/jazzy/setup.bash
 <span class="nb">source</span><span class="w"> </span>install/setup.bash
 </pre></div>
 </div>
-<p>Then, to launch the app, run this command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>ariac_app<span class="w"> </span>app
-</pre></div>
-</div>
-<p>This will print a message that looks like this:</p>
-<p><cite>NiceGUI ready to go on http://localhost:8080, and http://x.x.x.x:8080</cite></p>
-<p>To open the app, ctrl+click on either of the links in the terminal or click <a class="reference external" href="http://localhost:8080">here</a>.</p>
-</section>
-<section id="id4">
-<h3>Launching from the Launch File<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
-<p>First, ensure that you are in the correct workspace:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/ariac_ws
-</pre></div>
-</div>
-<p>Then, source Jazzy:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>/opt/ros/jazzy/setup.bash
-</pre></div>
-</div>
-<p>To test the installation of ARIAC, please clone the example team, rebuild the workspace, and source the workspace:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/usnistgov/ariac_example_team.git<span class="w"> </span>src/ariac_example_team
-colcon<span class="w"> </span>build
-<span class="nb">source</span><span class="w"> </span>install/setup.bash
-</pre></div>
-</div>
-<p>To launch ariac, this command can be used:</p>
+</li>
+<li><p>Launch the environment</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gz<span class="w"> </span>ariac.launch.py<span class="w"> </span>trial_config:<span class="o">=</span>src/ariac_example_team/example_team/config/trials/LHAF9835.yaml<span class="w"> </span>user_config:<span class="o">=</span>src/ariac_example_team/example_team/config/example_team_config.yaml
 </pre></div>
 </div>
+</li>
+</ol>
+</section>
+<section id="id4">
+<h3>Starting the App<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Navigate to the workspace and source packages</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/ariac_ws
+<span class="nb">source</span><span class="w"> </span>/opt/ros/jazzy/setup.bash
+<span class="nb">source</span><span class="w"> </span>install/setup.bash
+</pre></div>
+</div>
+</li>
+<li><p>Start the app</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>ariac_app<span class="w"> </span>app
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You should see a message that looks like this:</p>
+<p><cite>NiceGUI ready to go on http://localhost:8080, and http://x.x.x.x:8080</cite></p>
+</div>
+</li>
+<li><p>Open the app in your browser</p>
+<p>To open the app, ctrl+click on either of the links in the terminal or click <a class="reference external" href="http://localhost:8080">here</a>.</p>
+</li>
+<li><p>Run the demos</p>
+<p>See the <a class="reference internal" href="demos.html#demos"><span class="std std-ref">demos page</span></a> for instructions on how to run the demos.</p>
+</li>
+</ol>
 </section>
 </section>
 </section>
@@ -616,16 +612,16 @@ colcon<span class="w"> </span>build
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-startup">Docker Startup</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker">Docker</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launching-the-environment">Launching the Environment</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-the-app">Starting the App</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launching-from-the-launch-file">Launching from the Launch File</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-startup">Local Startup</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install">Install</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Starting the App</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Launching from the Launch File</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local">Local</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Launching the Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Starting the App</a></li>
 </ul>
 </li>
 </ul>

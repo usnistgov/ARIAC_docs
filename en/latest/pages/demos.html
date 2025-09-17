@@ -270,53 +270,6 @@
 <div class="article-header-buttons">
 
 
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/usnistgov/ARIAC" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/usnistgov/ARIAC/issues/new?title=Issue%20on%20page%20%2Fpages/demos.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
 <script>
 document.write(`
   <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -335,7 +288,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -351,6 +306,37 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-with-the-app">Running with the App</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration">Configuration</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#trial-config">Trial Config</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#team-config">Team Config</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#database">Database</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cheats">Cheats</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-demos">Running the Demos</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dummy-inspection">Dummy Inspection</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#move-robots">Move Robots</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pick-from-voltage-tester">Pick from Voltage Tester</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#submit-kit">Submit Kit</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-with-the-terminal">Running with the Terminal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Dummy Inspection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Move Robots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pick-from-tester">Pick from Tester</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Submit kit</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -362,10 +348,178 @@ document.write(`
                   
   <section id="demos">
 <span id="id1"></span><h1>Demos<a class="headerlink" href="#demos" title="Permalink to this heading">#</a></h1>
-<div class="caution admonition" id="under-construction">
-<p class="admonition-title">Under Construction</p>
-<p>🚧 This page is currently under construction. Please check back later. 🚧</p>
+<section id="running-with-the-app">
+<h2>Running with the App<a class="headerlink" href="#running-with-the-app" title="Permalink to this heading">#</a></h2>
+<p>For instructions on how to start the app either through Docker or locally, please view the <a class="reference internal" href="startup.html#startup"><span class="std std-ref">startup page</span></a>.</p>
+<section id="configuration">
+<h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading">#</a></h3>
+<p>The home page of the app configures the settings for a compeition run. This includes:</p>
+<ul class="simple">
+<li><p>Trial config</p></li>
+<li><p>Team config</p></li>
+<li><p>Database</p></li>
+<li><p>Cheats</p></li>
+</ul>
+<section id="trial-config">
+<h4>Trial Config<a class="headerlink" href="#trial-config" title="Permalink to this heading">#</a></h4>
+<p>For the demos we will use a pregenerated trial config located in the example team’s <code class="docutils literal notranslate"><span class="pre">config/trials</span></code> folder.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/select_trial_config.gif"><img alt="../_images/select_trial_config.gif" src="../_images/select_trial_config.gif" style="width: 60%;" /></a>
+</figure>
+<p>In the Trial section, click the “Select” button. A dialog window will appear where a trial yaml file can be selected. To go up a directory, press the arrow in the top right corner of the dialog window. Below are the file locations depending on your configuration.</p>
+<p>Docker: <code class="docutils literal notranslate"><span class="pre">/team_ws/src/example_team/config/trials/LHAF9835.yaml</span></code></p>
+<p>Local: <code class="docutils literal notranslate"><span class="pre">~/ariac_ws/src/ariac_example_team/example_team/config/trials/LHAF9835.yaml</span></code></p>
+</section>
+<section id="team-config">
+<h4>Team Config<a class="headerlink" href="#team-config" title="Permalink to this heading">#</a></h4>
+<p>For the demos we will use a pregenerated team config located in the example team’s <code class="docutils literal notranslate"><span class="pre">config</span></code> folder.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/select_team_config.gif"><img alt="../_images/select_team_config.gif" src="../_images/select_team_config.gif" style="width: 60%;" /></a>
+</figure>
+<p>In the Team Config section, click the “Select” button. A dialog window will appear where a team config yaml file can be selected. To go up a directory, press the arrow in the top right corner of the dialog window. Below are the file locations depending on your configuration.</p>
+<p>Docker: <code class="docutils literal notranslate"><span class="pre">/team_ws/src/example_team/config/example_team_config.yaml</span></code></p>
+<p>Local: <code class="docutils literal notranslate"><span class="pre">~/ariac_ws/src/ariac_example_team/example_team/config/example_team_config.yaml</span></code></p>
+</section>
+<section id="database">
+<h4>Database<a class="headerlink" href="#database" title="Permalink to this heading">#</a></h4>
+<p>The ARIAC database is a local sqlite database that stores the information needed for scoring. The database is optional to run the environment, but is neccessary to view results. For the demos, create a database.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/create_db.gif"><img alt="../_images/create_db.gif" src="../_images/create_db.gif" style="width: 60%;" /></a>
+</figure>
+<p>To create the database, click the “Create” button in the database section and the file selection dialog will open. From there, navigate to the parent directory of the directory you would like to save the database in. Then, click once on the target directory and click “OK”. The dialog will close and a database will be created.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The location of the database does not matter for its functionality.</p>
 </div>
+</section>
+<section id="cheats">
+<h4>Cheats<a class="headerlink" href="#cheats" title="Permalink to this heading">#</a></h4>
+<p>For testing purposes, cheats have been included to start the environment at different stages of the competition. The available configurations are:</p>
+<ul class="simple">
+<li><p>Cells in voltage testers</p></li>
+<li><p>Kit on AGV</p></li>
+<li><p>Kits on AGVs</p></li>
+<li><p>High priority kit</p></li>
+<li><p>Partial module</p></li>
+<li><p>Module</p></li>
+<li><p>Flipped module</p></li>
+<li><p>Module with welds</p></li>
+</ul>
+<p>The dummy inspection and move robots demos do not require cheats. For the pick from voltage tester demo, start the environment with the “Cells in voltage testers” cheat. For the submit kit demo, start the environment with the “Kit on AGV” cheat.</p>
+</section>
+</section>
+<section id="running-the-demos">
+<h3>Running the Demos<a class="headerlink" href="#running-the-demos" title="Permalink to this heading">#</a></h3>
+<section id="dummy-inspection">
+<h4>Dummy Inspection<a class="headerlink" href="#dummy-inspection" title="Permalink to this heading">#</a></h4>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/dummy_inspection.gif"><img alt="../_images/dummy_inspection.gif" src="../_images/dummy_inspection.gif" style="width: 60%;" /></a>
+</figure>
+<p>This example controls the cell feed on the inspection conveyor and submits dummy inspection reports using data from the break beam sensor.</p>
+<p>To run this demo, select the example team’s trial and team configs using the steps above. Then, press the confirm button, which will open the run page. To start the environment, press the green “START RUN” button. Then, in the “Team Process” section of the run page, select “example_team” in the package dropdown and “dummy_inspection” in the file dropdown. The command will then fill in below the dropdowns. Press the arrow next to the command to run the demo.</p>
+</section>
+<section id="move-robots">
+<h4>Move Robots<a class="headerlink" href="#move-robots" title="Permalink to this heading">#</a></h4>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/move_robots.gif"><img alt="../_images/move_robots.gif" src="../_images/move_robots.gif" style="width: 60%;" /></a>
+</figure>
+<p>This example creates moveit_py nodes for all five robots in the environment and moves the robots in simple linear motions simultaneously.</p>
+<p>To run this demo, select the example team’s trial and team configs using the steps above. Then, press the confirm button, which will open the run page. To start the environment, press the green “START RUN” button. Then, in the “Team Process” section of the run page, select “example_team” in the package dropdown and “move_robots” in the file dropdown. The command will then fill in below the dropdowns. Press the arrow next to the command to run the demo.</p>
+</section>
+<section id="pick-from-voltage-tester">
+<h4>Pick from Voltage Tester<a class="headerlink" href="#pick-from-voltage-tester" title="Permalink to this heading">#</a></h4>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/pick_from_tester.gif"><img alt="../_images/pick_from_tester.gif" src="../_images/pick_from_tester.gif" style="width: 60%;" /></a>
+</figure>
+<p>This example uses inspection robot 2 to pick a cell from the voltage tester and drop it in the recycling bin.</p>
+<p>To run this demo, select the example team’s trial and team configs using the steps above. Then, in the Cheat Selection section, select “Cells in voltage testers” from the dropdown. This will spawn cells into the voltage testers when the environment is launched. Then, press the confirm button, which will open the run page. To start the environment, press the green “START RUN” button. Then, in the “Team Process” section of the run page, select “example_team” in the package dropdown and “pick_from_tester” in the file dropdown. The command will then fill in below the dropdowns. Press the arrow next to the command to run the demo.</p>
+</section>
+<section id="submit-kit">
+<h4>Submit Kit<a class="headerlink" href="#submit-kit" title="Permalink to this heading">#</a></h4>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/submit_kit_db.gif"><img alt="../_images/submit_kit_db.gif" src="../_images/submit_kit_db.gif" style="width: 60%;" /></a>
+</figure>
+<p>This example moves AGV1 to the shipping station and submits a kit.</p>
+<p>To run this demo, select the example team’s trial and team configs using the steps above. Then, in the Cheat Selection section, select “Kit on AGV” from the dropdown. This will spawn cells on AGV1 when the environment is launched. Then, press the confirm button, which will open the run page. To start the environment, press the green “START RUN” button. Then, in the “Team Process” section of the run page, select “example_team” in the package dropdown and “submit_kit” in the file dropdown. The command will then fill in below the dropdowns. Press the arrow next to the command to run the demo.</p>
+</section>
+</section>
+</section>
+<section id="running-with-the-terminal">
+<h2>Running with the Terminal<a class="headerlink" href="#running-with-the-terminal" title="Permalink to this heading">#</a></h2>
+<p>For each of these demos, two terminals are required: one for the environment and the other for the example team.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If running locally, be sure to source in both terminals.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>/opt/ros/jazzy/setup.bash
+<span class="nb">source</span><span class="w"> </span>~/ariac_ws/install/setup.bash
+</pre></div>
+</div>
+</div>
+<section id="id2">
+<h3>Dummy Inspection<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<p>In terminal one, start the environment.</p>
+<p>Docker:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gz<span class="w"> </span>ariac.launch.py<span class="w"> </span>user_config:<span class="o">=</span>/team_ws/src/example_team/config/example_team_config.yaml<span class="w"> </span>trial_config:<span class="o">=</span>/team_ws/src/example_team/config/trials/LHAF9835.yaml
+</pre></div>
+</div>
+<p>Local:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gz<span class="w"> </span>ariac.launch.py<span class="w"> </span>trial_config:<span class="o">=</span>~/ariac_ws/src/ariac_example_team/example_team/config/trials/LHAF9835.yaml<span class="w"> </span>user_config:<span class="o">=</span>~/ariac_ws/src/ariac_example_team/example_team/config/example_team_config.yaml
+</pre></div>
+</div>
+<p>In the second terminal, start the example team:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>example_team<span class="w"> </span>dummy_inspection
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3>Move Robots<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>In terminal one, start the environment.</p>
+<p>Docker:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gz<span class="w"> </span>ariac.launch.py<span class="w"> </span>user_config:<span class="o">=</span>/team_ws/src/example_team/config/example_team_config.yaml<span class="w"> </span>trial_config:<span class="o">=</span>/team_ws/src/example_team/config/trials/LHAF9835.yaml
+</pre></div>
+</div>
+<p>Local:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gz<span class="w"> </span>ariac.launch.py<span class="w"> </span>trial_config:<span class="o">=</span>~/ariac_ws/src/ariac_example_team/example_team/config/trials/LHAF9835.yaml<span class="w"> </span>user_config:<span class="o">=</span>~/ariac_ws/src/ariac_example_team/example_team/config/example_team_config.yaml
+</pre></div>
+</div>
+<p>In the second terminal, start the example team:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>example_team<span class="w"> </span>move_robots
+</pre></div>
+</div>
+</section>
+<section id="pick-from-tester">
+<h3>Pick from Tester<a class="headerlink" href="#pick-from-tester" title="Permalink to this heading">#</a></h3>
+<p>In terminal one, start the environment.</p>
+<p>Docker:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gz<span class="w"> </span>ariac.launch.py<span class="w"> </span>user_config:<span class="o">=</span>/team_ws/src/example_team/config/example_team_config.yaml<span class="w"> </span>trial_config:<span class="o">=</span>/team_ws/src/example_team/config/trials/LHAF9835.yaml<span class="w"> </span>cheat_selection:<span class="o">=</span><span class="m">1</span>
+</pre></div>
+</div>
+<p>Local:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gz<span class="w"> </span>ariac.launch.py<span class="w"> </span>trial_config:<span class="o">=</span>~/ariac_ws/src/ariac_example_team/example_team/config/trials/LHAF9835.yaml<span class="w"> </span>user_config:<span class="o">=</span>~/ariac_ws/src/ariac_example_team/example_team/config/example_team_config.yaml<span class="w"> </span>cheat_selection:<span class="o">=</span><span class="m">1</span>
+</pre></div>
+</div>
+<p>In the second terminal, start the example team:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>example_team<span class="w"> </span>pick_from_tester
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>Submit kit<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<p>In terminal one, start the environment.</p>
+<p>Docker:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gz<span class="w"> </span>ariac.launch.py<span class="w"> </span>user_config:<span class="o">=</span>/team_ws/src/example_team/config/example_team_config.yaml<span class="w"> </span>trial_config:<span class="o">=</span>/team_ws/src/example_team/config/trials/LHAF9835.yaml<span class="w"> </span>cheat_selection:<span class="o">=</span><span class="m">2</span>
+</pre></div>
+</div>
+<p>Local:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gz<span class="w"> </span>ariac.launch.py<span class="w"> </span>trial_config:<span class="o">=</span>~/ariac_ws/src/ariac_example_team/example_team/config/trials/LHAF9835.yaml<span class="w"> </span>user_config:<span class="o">=</span>~/ariac_ws/src/ariac_example_team/example_team/config/example_team_config.yaml<span class="w"> </span>cheat_selection:<span class="o">=</span><span class="m">2</span>
+</pre></div>
+</div>
+<p>In the second terminal, start the example team:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>example_team<span class="w"> </span>submit_kit
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 
 
@@ -403,6 +557,44 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-with-the-app">Running with the App</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration">Configuration</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#trial-config">Trial Config</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#team-config">Team Config</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#database">Database</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cheats">Cheats</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-demos">Running the Demos</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dummy-inspection">Dummy Inspection</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#move-robots">Move Robots</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pick-from-voltage-tester">Pick from Voltage Tester</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#submit-kit">Submit Kit</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-with-the-terminal">Running with the Terminal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Dummy Inspection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Move Robots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pick-from-tester">Pick from Tester</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Submit kit</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
