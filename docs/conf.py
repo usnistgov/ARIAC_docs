@@ -28,8 +28,9 @@ html_theme_options = {
     "home_page_in_toc": True,
     "repository_url": "https://github.com/usnistgov/ARIAC/",
     # "repository_branch": "2025",
-    "use_issues_button": True,
-    "use_repository_button": True,
+    # "use_issues_button": True,
+    # "use_repository_button": True
+    "collapse_navigation": False
 }
 
 # templates_path = ['_templates']
