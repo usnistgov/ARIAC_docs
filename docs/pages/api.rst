@@ -210,6 +210,8 @@ Sensor Interfaces
 Break Beam Sensors
 ^^^^^^^^^^^^^^^^^^
 
+.. _break_beam_anchor:
+
 .. list-table::
    :header-rows: 1
    :widths: 50 50
@@ -225,6 +227,8 @@ Break Beam Sensors
 Distance Sensors
 ^^^^^^^^^^^^^^^^
 
+.. _distance_anchor:
+
 .. list-table::
    :header-rows: 1
    :widths: 50 50
@@ -237,6 +241,8 @@ Distance Sensors
 
 Camera Sensors
 ^^^^^^^^^^^^^^
+
+.. _camera_anchor:
 
 .. list-table::
    :header-rows: 1
@@ -252,6 +258,8 @@ Camera Sensors
 
 Lidar Sensors
 ^^^^^^^^^^^^^
+
+.. _lidar_anchor:
 
 .. list-table::
    :header-rows: 1
