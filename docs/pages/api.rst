@@ -7,7 +7,7 @@ ROS API
 Enumeration Messages
 --------------------
 
-.. list-table:: Message Enumerations
+.. list-table::
    :header-rows: 1
    :widths: 40 60
    :class: api-table
@@ -28,7 +28,7 @@ Enumeration Messages
 Data Structure Messages
 -----------------------
 
-.. list-table:: Complex Data Structures
+.. list-table::
    :header-rows: 1
    :widths: 40 60
    :class: api-table
@@ -53,7 +53,7 @@ Data Structure Messages
 Competition Control Interfaces
 ------------------------------
 
-.. list-table:: Competition Control
+.. list-table::
    :header-rows: 1
    :widths: 35 65
    :class: api-table
@@ -92,7 +92,7 @@ Competition Control Interfaces
 Task 1 Interfaces
 -----------------
 
-.. list-table:: Task 1 Services and Topics
+.. list-table::
    :header-rows: 1
    :widths: 35 65
    :class: api-table
@@ -123,7 +123,7 @@ Task 1 Interfaces
 Task 2 Interfaces
 -----------------
 
-.. list-table:: Task 2 Services and Topics
+.. list-table::
    :header-rows: 1
    :widths: 35 65
    :class: api-table
@@ -162,7 +162,10 @@ Task 2 Interfaces
 Robot Control Interfaces
 ------------------------
 
-.. list-table:: Robot Interfaces
+Joint Control
+^^^^^^^^^^^^^
+
+.. list-table::
    :header-rows: 1
    :widths: 35 65
    :class: api-table
@@ -178,7 +181,10 @@ Robot Control Interfaces
        `control_msgs/action/FollowJointTrajectory <https://docs.ros.org/en/jazzy/p/control_msgs/action/FollowJointTrajectory.html>`_
      - Joint trajectory commands
 
-.. list-table:: Gripper Interface
+Gripper Control
+^^^^^^^^^^^^^^^
+
+.. list-table::
    :header-rows: 1
    :widths: 35 65
    :class: api-table
@@ -190,7 +196,10 @@ Robot Control Interfaces
        :ref:`ariac_interfaces/action/GripperCommand <grippercommand_action>`
      - Control gripper width
 
-.. list-table:: Vacuum Tool Interfaces
+Vacuum Tool Control
+^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
    :header-rows: 1
    :widths: 35 65
    :class: api-table
@@ -221,7 +230,7 @@ Robot Control Interfaces
 AGV Control Interfaces
 ----------------------
 
-.. list-table:: AGV Control
+.. list-table::
    :header-rows: 1
    :widths: 35 65
    :class: api-table
@@ -248,7 +257,14 @@ AGV Control Interfaces
 Sensor Interfaces
 -----------------
 
-.. list-table:: Sensor Topics
+.. note::
+   
+  The **sensor name** is defined by the team in their configuration file
+
+Break Beam Sensors
+^^^^^^^^^^^^^^^^^^
+
+.. list-table::
    :header-rows: 1
    :widths: 40 60
    :class: api-table
@@ -263,10 +279,32 @@ Sensor Interfaces
 
        :ref:`ariac_interfaces/msg/BreakBeamStatus <break-beam-anchor>`
      - Publishes when the breakbeam status changes
+
+Distance Sensors
+^^^^^^^^^^^^^^^^
+
+.. list-table::
+   :header-rows: 1
+   :widths: 40 60
+   :class: api-table
+
+   * - Interface
+     - Description
    * - :topic-name:`/{distance_sensor_name}/distance`
 
        :ref:`ariac_interfaces/msg/DistanceSensor <distance-sensor-anchor>`
      - Reports a distance to the first object in view with a timestamp
+
+Camera Sensors
+^^^^^^^^^^^^^^
+
+.. list-table::
+   :header-rows: 1
+   :widths: 40 60
+   :class: api-table
+
+   * - Interface
+     - Description
    * - :topic-name:`/{camera_name}/image`
 
        `sensor_msgs/msg/Image <https://docs.ros.org/en/jazzy/p/sensor_msgs/msg/Image.html>`_
@@ -275,11 +313,19 @@ Sensor Interfaces
 
        `sensor_msgs/msg/CameraInfo <https://docs.ros.org/en/jazzy/p/sensor_msgs/msg/CameraInfo.html>`_
      - Info about camera sensor
+
+Lidar Sensors
+^^^^^^^^^^^^^
+
+.. list-table::
+   :header-rows: 1
+   :widths: 40 60
+   :class: api-table
+
+   * - Interface
+     - Description
    * - :topic-name:`/{lidar_name}/scan`
 
        `sensor_msgs/msg/PointCloud2 <https://docs.ros.org/en/jazzy/p/sensor_msgs/msg/PointCloud2.html>`_
      - Reports the point cloud detected from the lidar scan
 
-.. note::
-   
-  The **sensor name** is defined by the team in their configuration file
