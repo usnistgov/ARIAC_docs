@@ -134,7 +134,7 @@ Task 2 Interfaces
 
    * - Interface
      - Description
-   * - :topic-name:`/assembly_conveyor/{section_number}/status`
+   * - :topic-name:`/assembly_conveyor/section_{number}/status`
 
        :ref:`ariac_interfaces/msg/ConveyorStatus <conveyorstatus_msg>`
      - Section direction, speed, status
