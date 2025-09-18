@@ -26,3 +26,44 @@ table td {
 tbody tr:hover {
   background-color: transparent !important;  /* Remove hover highlight */
 }
+
+/* ROS API Documentation Styles */
+.topic-name {
+  color: #1976d2;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+.service-name {
+  color: #388e3c;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+.action-name {
+  color: #f57c00;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+/* API Table Styling for Better Readability */
+.api-table td:first-child,
+.api-table th:first-child {
+  width: 35%;
+}
+
+.api-table td:last-child,
+.api-table th:last-child {
+  width: 65%;
+}
+
+/* Make interface names smaller but keep links normal size */
+.api-table td:first-child .topic-name,
+.api-table td:first-child .service-name,
+.api-table td:first-child .action-name {
+  font-size: 0.75em;
+}
+
+.api-table td:last-child a {
+  font-size: 1em;
+}

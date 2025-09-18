@@ -41,3 +41,15 @@ extensions = [
     'sphinx_copybutton',
     'sphinxemoji.sphinxemoji'
 ]
+
+# Custom roles for ROS API documentation
+rst_prolog = """
+.. role:: topic-name
+   :class: topic-name
+
+.. role:: service-name
+   :class: service-name
+
+.. role:: action-name
+   :class: action-name
+"""
