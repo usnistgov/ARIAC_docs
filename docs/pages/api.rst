@@ -4,12 +4,6 @@
 ROS API
 =======
 
-**Interface Types:**
-
-* :topic-name:`Topics` - Data publication/subscription interfaces
-* :service-name:`Services` - Request/response interfaces
-* :action-name:`Actions` - Long-running goal-based interfaces
-
 Enumeration Messages
 --------------------
 
@@ -47,6 +41,12 @@ Data Structure Messages
      - Competition timing data structure
    * - :ref:`ariac_interfaces/msg/InspectionReport <inspectionreport_msg>`
      - Inspection result data structure
+
+**Interface Types:**
+
+* :topic-name:`Topics` - Data publication/subscription interfaces
+* :service-name:`Services` - Request/response interfaces
+* :action-name:`Actions` - Long-running goal-based interfaces
 
 Competition Control Interfaces
 ------------------------------
