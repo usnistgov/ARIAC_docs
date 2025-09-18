@@ -42,6 +42,8 @@ Data Structure Messages
    * - :ref:`ariac_interfaces/msg/InspectionReport <inspectionreport_msg>`
      - Inspection result data structure
 
+----
+
 **Interface Types:**
 
 * :topic-name:`Topics` - Data publication/subscription interfaces
