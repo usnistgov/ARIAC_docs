@@ -207,10 +207,10 @@ Sensor Interfaces
    
   The **sensor name** is defined by the team in their configuration file
 
+.. _break_beam_anchor:
+
 Break Beam Sensors
 ^^^^^^^^^^^^^^^^^^
-
-.. _break_beam_anchor:
 
 .. list-table::
    :header-rows: 1
@@ -224,10 +224,10 @@ Break Beam Sensors
    * - :ref:`/{break_beam_name}/change <break-beam-anchor>`
      - Publishes when the breakbeam status changes
 
+.. _distance_anchor:
+
 Distance Sensors
 ^^^^^^^^^^^^^^^^
-
-.. _distance_anchor:
 
 .. list-table::
    :header-rows: 1
@@ -239,10 +239,10 @@ Distance Sensors
    * - :ref:`/{distance_sensor_name}/distance <distance-sensor-anchor>`
      - Reports a distance to the first object in view with a timestamp
 
+.. _camera_anchor:
+
 Camera Sensors
 ^^^^^^^^^^^^^^
-
-.. _camera_anchor:
 
 .. list-table::
    :header-rows: 1
@@ -256,10 +256,10 @@ Camera Sensors
    * - `/{camera_name}/info <https://docs.ros.org/en/jazzy/p/sensor_msgs/msg/CameraInfo.html>`_
      - Info about camera sensor
 
+.. _lidar_anchor:
+
 Lidar Sensors
 ^^^^^^^^^^^^^
-
-.. _lidar_anchor:
 
 .. list-table::
    :header-rows: 1

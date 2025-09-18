@@ -27,17 +27,17 @@ The base score can is comprised of the the kitting score and the module score.
 
   .. math::
 
-    K = ω_1 \cdot \frac{k_c}{k_d} + ω_2 \cdot \frac{m_c}{m_d}
+    K = \omega_1 \cdot \frac{k_c}{k_d} + \omega_2 \cdot \frac{m_c}{m_d}
 
 Where: 
 
 .. container::
 
     * B = the base score for the run
-    * :math:`ω_1` = the weight associated with kit completion. The static value of :math:`ω_1` is 500
+    * :math:`\omega_1` = the weight associated with kit completion. The static value of :math:`ω_1` is 500
     * :math:`k_c` = number of kits successfully completed 
     * :math:`k_d` = number of kits requested
-    * :math:`ω_2` = the weight associated with module completion. The static value of :math:`ω_2` is 800
+    * :math:`\omega_2` = the weight associated with module completion. The static value of :math:`ω_2` is 800
     * :math:`m_c` = number of modules successfully completed 
     * :math:`m_d` = number of modules requested
 
@@ -57,14 +57,14 @@ The trial time bonus is awarded for successfully completing the competition in l
 
   .. math::
 
-    β_1 = ω_3 \cdot (1 - \frac{t_e}{t_m})
+    \beta_1 = \omega_3 \cdot (1 - \frac{t_e}{t_m})
 
 Where:
 
 .. container::
 
-    * :math:`β_1` = the total bonus for trial time. 
-    * :math:`ω_3` = the weight associated with the trial time bonus. The static value of :math:`ω_3` is 175
+    * :math:`\beta_1` = the total bonus for trial time. 
+    * :math:`\omega_3` = the weight associated with the trial time bonus. The static value of :math:`ω_3` is 175
     * :math:`t_e` = run execution duration
     * :math:`t_m` = run time limit
 
@@ -76,16 +76,16 @@ The inspection speed bonus is awarded for submitting the inspection report in le
 
   .. math::
 
-    β_2 = max [ 0 , ω_4 \cdot (1 - \frac{γ}{γ_d})]
+    \beta_2 = max [ 0 , \omega_4 \cdot (1 - \frac{\gamma}{\gamma_d})]
 
 Where:
 
 .. container::
 
-    * :math:`β_2` = the total bonus for inspection speed
-    * :math:`ω_4` = the weight associated with the inspection speed bonus. The static value of :math:`ω_4` is 125
-    * :math:`γ` = average inspection duration
-    * :math:`γ_d` = desired inspection duration. The desired inspection time is 8 seconds.
+    * :math:`\beta_2` = the total bonus for inspection speed
+    * :math:`\omega_4` = the weight associated with the inspection speed bonus. The static value of :math:`ω_4` is 125
+    * :math:`\gamma` = average inspection duration
+    * :math:`\gamma_d` = desired inspection duration. The desired inspection time is 8 seconds.
 
 **High Priority Order Speed**
 
@@ -95,16 +95,16 @@ The high priority order speed bonus is awarded for successfully completing high 
 
   .. math::
 
-    β_3 = max [ 0 , ω_5 \cdot (1 - \frac{τ}{τ_d})]
+    \beta_3 = max [ 0 , \omega_5 \cdot (1 - \frac{\tau}{\tau_d})]
 
 Where:
 
 .. container::
 
-    * :math:`β_3` = the total bonus for high priority order speed
-    * :math:`ω_5` = the weight associated with the high priority order speed bonus. The static value of :math:`ω_5` is 150
-    * :math:`τ` = average high priority kit execution duration
-    * :math:`τ_d` = desired high priority kit execution duration. The desired completion time is 130 seconds.
+    * :math:`\beta_3` = the total bonus for high priority order speed
+    * :math:`\omega_5` = the weight associated with the high priority order speed bonus. The static value of :math:`ω_5` is 150
+    * :math:`\tau` = average high priority kit execution duration
+    * :math:`\tau_d` = desired high priority kit execution duration. The desired completion time is 130 seconds.
 
 **Sensor Cost**
 
@@ -114,16 +114,16 @@ The sensor cost bonus is awarded for minimizing the cost of sensors competitors 
 
   .. math::
 
-    β_4 = max [ 0 , ω_6 \cdot (1 - \frac{σ}{σ_b})]
+    \beta_4 = max [ 0 , \omega_6 \cdot (1 - \frac{\sigma}{\sigma_b})]
 
 Where:
 
 .. container::
 
-    * :math:`β_4` = the total bonus for sensor cost
-    * :math:`ω_6` = the weight associated with the sensor cost bonus. The static value of :math:`ω_6` is 500
-    * :math:`σ` = competitor sensor cost
-    * :math:`σ_b` = sensor budget. The sensor budget is set at $7000
+    * :math:`\beta_4` = the total bonus for sensor cost
+    * :math:`\omega_6` = the weight associated with the sensor cost bonus. The static value of :math:`ω_6` is 500
+    * :math:`\sigma` = competitor sensor cost
+    * :math:`\sigma_b` = sensor budget. The sensor budget is set at $7000
 
 **Inspection Classification**
 
@@ -134,16 +134,16 @@ correct.
 
   .. math::
 
-    β_5 = ω_7 \cdot (1 - \frac{ν}{δ})
+    \beta_5 = \omega_7 \cdot (1 - \frac{\nu}{\delta})
 
 Where:
 
 .. container::
 
-    * :math:`β_5` = the total bonus for inspection classification
-    * :math:`ω_7` = the weight associated with the inspecton classification bonus. The static value of :math:`ω_7` is 100
-    * :math:`ν` = number of correctly classified reports
-    * :math:`δ` = total number of defective cells
+    * :math:`\beta_5` = the total bonus for inspection classification
+    * :math:`\omega_7` = the weight associated with the inspecton classification bonus. The static value of :math:`ω_7` is 100
+    * :math:`\nu` = number of correctly classified reports
+    * :math:`\delta` = total number of defective cells
 
 ------------
 Penalties
@@ -165,12 +165,12 @@ The following table shows the symbols for each penalty and their associated valu
 ================= =============================================== ======
 Penalty Symbols   Description                                     Value
 ================= =============================================== ======
-:math:`ρ_{0}`     Non-defective cell in inspection bin            20
-:math:`ρ_{1}`     Cell in conveyor bin                            20
-:math:`ρ_{2}`     Object on invalid surface                       20
-:math:`ρ_{3}`     AGV collision                                   40
-:math:`ρ_{4}`     Robot collision                                 50
-:math:`ρ_{5}`     Sensor cost over budget                         0.0715
+:math:`\rho_{0}`     Non-defective cell in inspection bin            20
+:math:`\rho_{1}`     Cell in conveyor bin                            20
+:math:`\rho_{2}`     Object on invalid surface                       20
+:math:`\rho_{3}`     AGV collision                                   40
+:math:`\rho_{4}`     Robot collision                                 50
+:math:`\rho_{5}`     Sensor cost over budget                         0.0715
 ================= =============================================== ======
 
 .. admonition:: Robot Collision Note
@@ -197,7 +197,7 @@ In order to calculate the entire run score, the following formula can be used, c
 
   .. math::
 
-    R = K + M + \sum β_i - \sum ρ_i * o_i
+    R = K + M + \sum \beta_i - \sum \rho_i * o_i
 
 Where:
 
@@ -206,6 +206,6 @@ Where:
     * R = the total run score
     * K = the kit score for the run
     * M = the module score for the run
-    * :math:`β_i` = the bonus scores
-    * :math:`ρ_i` = the deduction for each penalty type
+    * :math:`\beta_i` = the bonus scores
+    * :math:`\rho_i` = the deduction for each penalty type
     * :math:`o_i` = the number of occurances for the associated penalty
