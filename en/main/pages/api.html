@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/ntd2d.css?v=7c2ea725" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=adf18d74" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=0f03d396" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -205,7 +205,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/msg/HighPriorityOrder.html">High Priority Order</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/msg/InspectionReport.html">Inspection Report</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/msg/OperationStates.html">Conveyor State</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../interfaces/msg/PenaltyTypes.html">Penalty Types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/msg/ToolChangerStatus.html">Tool Changer Status</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/msg/VacuumTools.html">Vacuum Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/msg/VoltageReading.html">Voltage Reading</a></li>
@@ -288,7 +287,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -304,6 +305,32 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enumeration-messages">Enumeration Messages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structure-messages">Data Structure Messages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#competition-control-interfaces">Competition Control Interfaces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-interfaces">Task 1 Interfaces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-interfaces">Task 2 Interfaces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#robot-control-interfaces">Robot Control Interfaces</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joint-control">Joint Control</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gripper-control">Gripper Control</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vacuum-tool-control">Vacuum Tool Control</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agv-control-interfaces">AGV Control Interfaces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sensor-interfaces">Sensor Interfaces</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#break-beam-sensors">Break Beam Sensors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-sensors">Distance Sensors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#camera-sensors">Camera Sensors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lidar-sensors">Lidar Sensors</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -315,10 +342,389 @@ document.write(`
                   
   <section id="ros-api">
 <span id="api"></span><h1>ROS API<a class="headerlink" href="#ros-api" title="Permalink to this heading">#</a></h1>
-<div class="caution admonition" id="under-construction">
-<p class="admonition-title">Under Construction</p>
-<p>🚧 This page is currently under construction. Please check back later. 🚧</p>
+<p><strong>Interface Types:</strong></p>
+<ul class="simple">
+<li><p><span class="msg-name">Messages</span> - Message definition structures</p></li>
+<li><p><span class="topic-name">Topics</span> - Data publication/subscription interfaces</p></li>
+<li><p><span class="service-name">Services</span> - Request/response interfaces</p></li>
+<li><p><span class="action-name">Actions</span> - Long-running goal-based interfaces</p></li>
+</ul>
+<hr class="docutils" />
+<section id="enumeration-messages">
+<h2>Enumeration Messages<a class="headerlink" href="#enumeration-messages" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="api-table msg-def-table table">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Message</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/msg/AgvStations.html#agvstations-msg"><span class="std std-ref">AgvStations</span></a></p></td>
+<td><p>AGV station location constants</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../interfaces/msg/CellTypes.html#cell-types-msg"><span class="std std-ref">CellTypes</span></a></p></td>
+<td><p>Cell type definitions and voltage constants</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/msg/CompetitionStates.html#competitionstates-msg"><span class="std std-ref">CompetitionStates</span></a></p></td>
+<td><p>Competition state enumeration values</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../interfaces/msg/OperationStates.html#operationstates-msg"><span class="std std-ref">OperationStates</span></a></p></td>
+<td><p>Operation state definitions</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/msg/VacuumTools.html#vacuumtools-msg"><span class="std std-ref">VacuumTools</span></a></p></td>
+<td><p>Vacuum gripper tool type definitions</p></td>
+</tr>
+</tbody>
+</table>
 </div>
+</section>
+<section id="data-structure-messages">
+<h2>Data Structure Messages<a class="headerlink" href="#data-structure-messages" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="api-table msg-def-table table">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Message</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/msg/CellDefect.html#celldefect-msg"><span class="std std-ref">CellDefect</span></a></p></td>
+<td><p>Cell defect information structure</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../interfaces/msg/CompetitionTime.html#competitiontime-msg"><span class="std std-ref">CompetitionTime</span></a></p></td>
+<td><p>Competition timing data structure</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/msg/InspectionReport.html#inspectionreport-msg"><span class="std std-ref">InspectionReport</span></a></p></td>
+<td><p>Inspection result data structure</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="competition-control-interfaces">
+<h2>Competition Control Interfaces<a class="headerlink" href="#competition-control-interfaces" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="api-table table">
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Interface</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/msg/CompetitionStatus.html#competitionstatus-msg"><span class="std std-ref">/competition_status</span></a></p></td>
+<td><p>Query competition state, time, order counts</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../interfaces/msg/HighPriorityOrder.html#highpriorityorder-msg"><span class="std std-ref">/high_priority_orders</span></a></p></td>
+<td><p>High priority kit requests with order ID</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/srv/Trigger.html#trigger-srv"><span class="std std-ref">/start_competition</span></a></p></td>
+<td><p>Starts the competition</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../interfaces/srv/EndCompetition.html#endcompetition-srv"><span class="std std-ref">/end_competition</span></a></p></td>
+<td><p>Ends competition, optionally shutdown Gazebo</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/srv/Trigger.html#trigger-srv"><span class="std std-ref">/submit_kitting_order</span></a></p></td>
+<td><p>Submit kit (AGV at shipping required)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../interfaces/srv/Trigger.html#trigger-srv"><span class="std std-ref">/submit_module_order</span></a></p></td>
+<td><p>Submit module (in submission zone required)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/srv/SubmitHightPriorityOrder.html#submithighpriorityorder-srv"><span class="std std-ref">/submit_high_priority_order</span></a></p></td>
+<td><p>Submit high priority kit with ID</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="task-1-interfaces">
+<h2>Task 1 Interfaces<a class="headerlink" href="#task-1-interfaces" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="api-table table">
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Interface</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/msg/ConveyorStatus.html#conveyorstatus-msg"><span class="std std-ref">/inspection_conveyor/status</span></a></p></td>
+<td><p>Conveyor direction, speed, operating status</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../interfaces/msg/CellFeederStatus.html#cellfeederstatus-msg"><span class="std std-ref">/inspection_conveyor/cell_feed/status</span></a></p></td>
+<td><p>Current cell type being fed and feed rate</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/msg/VoltageReading.html#voltagereading-msg"><span class="std std-ref">/voltage_tester_1/voltage</span></a></p></td>
+<td><p>Voltage reading for tester 1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../interfaces/msg/VoltageReading.html#voltagereading-msg"><span class="std std-ref">/voltage_tester_2/voltage</span></a></p></td>
+<td><p>Voltage reading for tester 2</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/srv/ControlCellFeeder.html#controlcellfeeder-srv"><span class="std std-ref">/inspection_conveyor/cell_feed/control</span></a></p></td>
+<td><p>Change cell type being fed</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../interfaces/srv/SubmitInspectionReport.html#submitinspectionreport-srv"><span class="std std-ref">/inspection_conveyor/inspection/submit</span></a></p></td>
+<td><p>Submit inspection with pass/fail and defects</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="task-2-interfaces">
+<h2>Task 2 Interfaces<a class="headerlink" href="#task-2-interfaces" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="api-table table">
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Interface</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/msg/ConveyorStatus.html#conveyorstatus-msg"><span class="std std-ref">/assembly_conveyor/section_{number}/status</span></a></p></td>
+<td><p>Section direction, speed, status</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../interfaces/srv/ConveyorControl.html#conveyorcontrol-srv"><span class="std std-ref">/assembly_conveyor/section_1/control</span></a></p></td>
+<td><p>Control conveyor section 1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/srv/ConveyorControl.html#conveyorcontrol-srv"><span class="std std-ref">/assembly_conveyor/section_2/control</span></a></p></td>
+<td><p>Control conveyor section 2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../interfaces/srv/BidirectionalConveyorControl.html#bidirectionalconveyorcontrol-srv"><span class="std std-ref">/assembly_conveyor/section_3/control</span></a></p></td>
+<td><p>Control bidirectional conveyor section 3</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/srv/Trigger.html#trigger-srv"><span class="std std-ref">/gantry_welder/weld</span></a></p></td>
+<td><p>Create weld if electrodes contact plate</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../interfaces/srv/Trigger.html#trigger-srv"><span class="std std-ref">/insert_bottom_shell</span></a></p></td>
+<td><p>Spawn bottom shell on section 1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/srv/Trigger.html#trigger-srv"><span class="std std-ref">/insert_top_shell</span></a></p></td>
+<td><p>Spawn top shell on assembly table</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="robot-control-interfaces">
+<h2>Robot Control Interfaces<a class="headerlink" href="#robot-control-interfaces" title="Permalink to this heading">#</a></h2>
+<section id="joint-control">
+<h3>Joint Control<a class="headerlink" href="#joint-control" title="Permalink to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="api-table table">
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Interface</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://docs.ros.org/en/jazzy/p/sensor_msgs/msg/JointState.html">/{robot_name}/joint_states</a></p></td>
+<td><p>Current joint states</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://docs.ros.org/en/jazzy/p/control_msgs/action/FollowJointTrajectory.html">/{robot_name}/joint_trajectory_controller/follow_joint_trajectory</a></p></td>
+<td><p>Joint trajectory commands</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="gripper-control">
+<h3>Gripper Control<a class="headerlink" href="#gripper-control" title="Permalink to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="api-table table">
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Interface</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/actions/GriperCommand.html#grippercommand-action"><span class="std std-ref">/{robot_name}/gripper_controller/gripper_command</span></a></p></td>
+<td><p>Control gripper width</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="vacuum-tool-control">
+<h3>Vacuum Tool Control<a class="headerlink" href="#vacuum-tool-control" title="Permalink to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="api-table table">
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Interface</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/msg/ToolChangerStatus.html#toolchangerstatus-msg"><span class="std std-ref">/assembly_robot_2/tool_changer/status</span></a></p></td>
+<td><p>Tool changer current state and status</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../interfaces/srv/AttachTool.html#attachtool-srv"><span class="std std-ref">/assembly_robot_2/tool_changer/attach_tool</span></a></p></td>
+<td><p>Attach specified tool to robot, must be in correct position</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/srv/Trigger.html#trigger-srv"><span class="std std-ref">/assembly_robot_2/tool_changer/detach_tool</span></a></p></td>
+<td><p>Detach tool from robot</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../interfaces/srv/Trigger.html#trigger-srv"><span class="std std-ref">/vacuum_tool/vg_2/grasp</span></a></p></td>
+<td><p>Grasp object with vg_2, requires contact with object</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/srv/Trigger.html#trigger-srv"><span class="std std-ref">/vacuum_tool/vg_2/release</span></a></p></td>
+<td><p>Detach object from vg_2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../interfaces/srv/Trigger.html#trigger-srv"><span class="std std-ref">/vacuum_tool/vg_4/grasp</span></a></p></td>
+<td><p>Grasp object with vg_4, requires contact with object</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/srv/Trigger.html#trigger-srv"><span class="std std-ref">/vacuum_tool/vg_4/release</span></a></p></td>
+<td><p>Detach object from vg_4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="agv-control-interfaces">
+<h2>AGV Control Interfaces<a class="headerlink" href="#agv-control-interfaces" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="api-table table">
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Interface</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/msg/AgvStatus.html#agvstatus-msg"><span class="std std-ref">/{agv_name}/info</span></a></p></td>
+<td><p>Current location and pose</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../interfaces/msg/AgvTrayStatus.html#agvtraystatus-msg"><span class="std std-ref">/{agv_name}/tray_status</span></a></p></td>
+<td><p>Tray occupancy and part information</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/srv/Trigger.html#trigger-srv"><span class="std std-ref">/{agv_name}/recycle_cells</span></a></p></td>
+<td><p>Recycle tray at recycling station</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../interfaces/actions/MoveAgv.html#moveagv-action"><span class="std std-ref">/{agv_name}/move</span></a></p></td>
+<td><p>Move AGV to specified station</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sensor-interfaces">
+<h2>Sensor Interfaces<a class="headerlink" href="#sensor-interfaces" title="Permalink to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <strong>sensor name</strong> is defined by the team in their configuration file</p>
+</div>
+<section id="break-beam-sensors">
+<h3>Break Beam Sensors<a class="headerlink" href="#break-beam-sensors" title="Permalink to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="api-table table">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Interface</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/msg/BreakBeamStatus.html#break-beam-anchor"><span class="std std-ref">/{break_beam_name}/status</span></a></p></td>
+<td><p>Reports if an object is detected with a timestamp</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../interfaces/msg/BreakBeamStatus.html#break-beam-anchor"><span class="std std-ref">/{break_beam_name}/change</span></a></p></td>
+<td><p>Publishes when the breakbeam status changes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="distance-sensors">
+<h3>Distance Sensors<a class="headerlink" href="#distance-sensors" title="Permalink to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="api-table table">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Interface</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/msg/DistanceSensor.html#distance-sensor-anchor"><span class="std std-ref">/{distance_sensor_name}/distance</span></a></p></td>
+<td><p>Reports a distance to the first object in view with a timestamp</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="camera-sensors">
+<h3>Camera Sensors<a class="headerlink" href="#camera-sensors" title="Permalink to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="api-table table">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Interface</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://docs.ros.org/en/jazzy/p/sensor_msgs/msg/Image.html">/{camera_name}/image</a></p></td>
+<td><p>Displays current image seen through camera</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://docs.ros.org/en/jazzy/p/sensor_msgs/msg/CameraInfo.html">/{camera_name}/info</a></p></td>
+<td><p>Info about camera sensor</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="lidar-sensors">
+<h3>Lidar Sensors<a class="headerlink" href="#lidar-sensors" title="Permalink to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="api-table table">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Interface</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://docs.ros.org/en/jazzy/p/sensor_msgs/msg/PointCloud2.html">/{lidar_name}/scan</a></p></td>
+<td><p>Reports the point cloud detected from the lidar scan</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
 </section>
 
 
@@ -356,6 +762,39 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enumeration-messages">Enumeration Messages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structure-messages">Data Structure Messages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#competition-control-interfaces">Competition Control Interfaces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-interfaces">Task 1 Interfaces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-interfaces">Task 2 Interfaces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#robot-control-interfaces">Robot Control Interfaces</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joint-control">Joint Control</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gripper-control">Gripper Control</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vacuum-tool-control">Vacuum Tool Control</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agv-control-interfaces">AGV Control Interfaces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sensor-interfaces">Sensor Interfaces</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#break-beam-sensors">Break Beam Sensors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-sensors">Distance Sensors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#camera-sensors">Camera Sensors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lidar-sensors">Lidar Sensors</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

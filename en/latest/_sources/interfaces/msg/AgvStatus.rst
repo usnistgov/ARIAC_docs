@@ -1,3 +1,5 @@
+.. _agvstatus_msg:
+
 Agv Status
 ==========
 This is a ROS message definition.

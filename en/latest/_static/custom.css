@@ -1,28 +1,220 @@
-.image-row {
-    display: flex;
-    justify-content: center;  /* Center the whole row */
-    gap: 20px;                 /* Space between images */
-    margin: 1em 0;
+/* ==========================================================================
+   CSS Custom Properties (Variables) for API Documentation Colors
+   ========================================================================== */
+
+/* Light mode colors */
+:root {
+  --color-msg: #7b1fa2;
+  --color-msg-hover: #4a148c;
+  --color-topic: #1976d2;
+  --color-topic-hover: #0d47a1;
+  --color-service: #388e3c;
+  --color-service-hover: #1b5e20;
+  --color-action: #f57c00;
+  --color-action-hover: #e65100;
+  --color-bg-odd: #f2f4f5;
+  --color-bg-even: #ffffff; 
 }
 
-.image-row .image-item {
-    display: block;
-    max-width: 100%;
-    height: auto;
+/* Dark mode color overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-msg: #ba68c8;
+    --color-msg-hover: #e1bee7;
+    --color-topic: #64b5f6;
+    --color-topic-hover: #90caf9;
+    --color-service: #81c784;
+    --color-service-hover: #a5d6a7;
+    --color-action: #ff9800;
+    --color-action-hover: #ffb74d;
+    --color-bg-odd: #2b313c;
+    --color-bg-even: #232831;
+  }
 }
 
-.centered-table td,
-.centered-table th {
-    text-align: center;    /* Center text horizontally */
-    vertical-align: middle; /* Optional: center vertically */
+/* Dark mode via data attributes */
+[data-theme="dark"] {
+  --color-msg: #ba68c8;
+  --color-msg-hover: #e1bee7;
+  --color-topic: #64b5f6;
+  --color-topic-hover: #90caf9;
+  --color-service: #81c784;
+  --color-service-hover: #a5d6a7;
+  --color-action: #ff9800;
+  --color-action-hover: #ffb74d;
+  --color-bg-odd: #2b313c;
+  --color-bg-even: #232831;
 }
 
-table, 
-table th, 
-table td {
-  background-color: transparent !important;
+[data-bs-theme="dark"] {
+  --color-msg: #ba68c8;
+  --color-msg-hover: #e1bee7;
+  --color-topic: #64b5f6;
+  --color-topic-hover: #90caf9;
+  --color-service: #81c784;
+  --color-service-hover: #a5d6a7;
+  --color-action: #ff9800;
+  --color-action-hover: #ffb74d;
+  --color-bg-odd: #2b313c;
+  --color-bg-even: #232831;
 }
 
-tbody tr:hover {
-  background-color: transparent !important;  /* Remove hover highlight */
+html[data-theme="dark"] {
+  --color-msg: #ba68c8;
+  --color-msg-hover: #e1bee7;
+  --color-topic: #64b5f6;
+  --color-topic-hover: #90caf9;
+  --color-service: #81c784;
+  --color-service-hover: #a5d6a7;
+  --color-action: #ff9800;
+  --color-action-hover: #ffb74d;
+  --color-bg-odd: #2b313c;
+  --color-bg-even: #232831;
 }
+
+
+/* ==========================================================================
+   Role Classes for Interface Types
+   ========================================================================== */
+
+.msg-name {
+  color: var(--color-msg);
+  font-weight: bold;
+  font-family: monospace;
+}
+
+.topic-name {
+  color: var(--color-topic);
+  font-weight: bold;
+  font-family: monospace;
+}
+
+.service-name {
+  color: var(--color-service);
+  font-weight: bold;
+  font-family: monospace;
+}
+
+.action-name {
+  color: var(--color-action);
+  font-weight: bold;
+  font-family: monospace;
+}
+
+/* Remove underlines from role links */
+.topic-name a,
+.service-name a,
+.action-name a {
+  text-decoration: none !important;
+}
+
+.topic-name a:hover,
+.service-name a:hover,
+.action-name a:hover {
+  text-decoration: none !important;
+}
+
+/* ==========================================================================
+   API Table Interface Links
+   ========================================================================== */
+
+/* Base styling for all interface links */
+.api-table td:first-child a.reference {
+  text-decoration: none !important;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+/* Message definition links (purple) */
+.msg-def-table td:first-child a.reference.internal {
+  color: var(--color-msg) !important;
+}
+
+.msg-def-table td:first-child a.reference.internal:hover {
+  color: var(--color-msg-hover) !important;
+}
+
+/* Topic links (blue) - excluding message definition tables */
+.api-table:not(.msg-def-table) td:first-child a.reference[href*="msg"] {
+  color: var(--color-topic);
+}
+
+.api-table:not(.msg-def-table) td:first-child a.reference[href*="msg"]:hover {
+  color: var(--color-topic-hover);
+}
+
+/* Service links (green) */
+.api-table td:first-child a.reference[href*="srv"] {
+  color: var(--color-service);
+}
+
+.api-table td:first-child a.reference[href*="srv"]:hover {
+  color: var(--color-service-hover);
+}
+
+/* Action links (orange) */
+.api-table td:first-child a.reference[href*="action"] {
+  color: var(--color-action);
+}
+
+.api-table td:first-child a.reference[href*="action"]:hover {
+  color: var(--color-action-hover);
+}
+
+/* External ROS documentation links */
+.api-table td:first-child a.reference.external[href*="sensor_msgs"] {
+  color: var(--color-topic);
+}
+
+.api-table td:first-child a.reference.external[href*="sensor_msgs"]:hover {
+  color: var(--color-topic-hover);
+}
+
+.api-table td:first-child a.reference.external[href*="control_msgs"] {
+  color: var(--color-action);
+}
+
+.api-table td:first-child a.reference.external[href*="control_msgs"]:hover {
+  color: var(--color-action-hover);
+}
+
+/* ==========================================================================
+   API Table Layout
+   ========================================================================== */
+
+.api-table td:first-child,
+.api-table th:first-child {
+  width: 35%;
+}
+
+.api-table td:last-child,
+.api-table th:last-child {
+  width: 65%;
+}
+
+.api-table td:last-child a {
+  font-size: 1em;
+}
+
+/* ==========================================================================
+   Alternating Row Colors for API Table
+   ========================================================================== */
+
+.api-table tbody tr:nth-child(odd) {
+  background-color: var(--color-bg-odd); 
+}
+
+.api-table tbody tr:nth-child(even) {
+  background-color: var(--color-bg-even); 
+}
+
+
+.api-table tbody tr:nth-child(odd):hover {
+  background-color: var(--color-bg-odd) !important;
+}
+
+.api-table tbody tr:nth-child(even):hover {
+  background-color: var(--color-bg-even) !important;
+}
+
