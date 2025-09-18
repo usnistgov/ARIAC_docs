@@ -168,13 +168,18 @@ Vacuum Tool Control
    * - :ref:`/assembly_robot_2/tool_changer/status <toolchangerstatus_msg>`
      - Tool changer current state and status
    * - :ref:`/assembly_robot_2/tool_changer/attach_tool <attachtool_srv>`
-     - Connect vacuum gripper to coupler
+     - Attach specified tool to robot, must be in correct position
    * - :ref:`/assembly_robot_2/tool_changer/detach_tool <trigger_srv>`
-     - Disconnect vacuum gripper
-   * - :ref:`/vacuum_tool/{vacuum_gripper}/grasp <trigger_srv>`
-     - Attach gripper to contact object
-   * - :ref:`/vacuum_tool/{vacuum_gripper}/release <trigger_srv>`
-     - Detach gripper from object
+     - Detach tool from robot
+   * - :ref:`/vacuum_tool/vg_2/grasp <trigger_srv>`
+     - Grasp object with vg_2, requires contact with object
+   * - :ref:`/vacuum_tool/vg_2/release <trigger_srv>`
+     - Detach object from vg_2
+   * - :ref:`/vacuum_tool/vg_4/grasp <trigger_srv>`
+     - Grasp object with vg_4, requires contact with object
+   * - :ref:`/vacuum_tool/vg_4/release <trigger_srv>`
+     - Detach object from vg_4
+
 
 AGV Control Interfaces
 ----------------------

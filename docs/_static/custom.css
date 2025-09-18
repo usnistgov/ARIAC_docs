@@ -1,87 +1,188 @@
-.image-row {
-    display: flex;
-    justify-content: center;  /* Center the whole row */
-    gap: 20px;                 /* Space between images */
-    margin: 1em 0;
+/* ==========================================================================
+   CSS Custom Properties (Variables) for API Documentation Colors
+   ========================================================================== */
+
+/* Light mode colors */
+:root {
+  --color-msg: #7b1fa2;
+  --color-msg-hover: #4a148c;
+  --color-topic: #1976d2;
+  --color-topic-hover: #0d47a1;
+  --color-service: #388e3c;
+  --color-service-hover: #1b5e20;
+  --color-action: #f57c00;
+  --color-action-hover: #e65100;
+  --color-bg-odd: #f2f4f5;
+  --color-bg-even: #ffffff; 
 }
 
-.image-row .image-item {
-    display: block;
-    max-width: 100%;
-    height: auto;
+/* Dark mode color overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-msg: #ba68c8;
+    --color-msg-hover: #e1bee7;
+    --color-topic: #64b5f6;
+    --color-topic-hover: #90caf9;
+    --color-service: #81c784;
+    --color-service-hover: #a5d6a7;
+    --color-action: #ff9800;
+    --color-action-hover: #ffb74d;
+    --color-bg-odd: #2b313c;
+    --color-bg-even: #232831;
+  }
 }
 
-.centered-table td,
-.centered-table th {
-    text-align: center;    /* Center text horizontally */
-    vertical-align: middle; /* Optional: center vertically */
+/* Dark mode via data attributes */
+[data-theme="dark"] {
+  --color-msg: #ba68c8;
+  --color-msg-hover: #e1bee7;
+  --color-topic: #64b5f6;
+  --color-topic-hover: #90caf9;
+  --color-service: #81c784;
+  --color-service-hover: #a5d6a7;
+  --color-action: #ff9800;
+  --color-action-hover: #ffb74d;
+  --color-bg-odd: #2b313c;
+  --color-bg-even: #232831;
 }
 
-table, 
-table th, 
-table td {
-  background-color: transparent !important;
+[data-bs-theme="dark"] {
+  --color-msg: #ba68c8;
+  --color-msg-hover: #e1bee7;
+  --color-topic: #64b5f6;
+  --color-topic-hover: #90caf9;
+  --color-service: #81c784;
+  --color-service-hover: #a5d6a7;
+  --color-action: #ff9800;
+  --color-action-hover: #ffb74d;
+  --color-bg-odd: #2b313c;
+  --color-bg-even: #232831;
 }
 
-tbody tr:hover {
-  background-color: transparent !important;  /* Remove hover highlight */
+html[data-theme="dark"] {
+  --color-msg: #ba68c8;
+  --color-msg-hover: #e1bee7;
+  --color-topic: #64b5f6;
+  --color-topic-hover: #90caf9;
+  --color-service: #81c784;
+  --color-service-hover: #a5d6a7;
+  --color-action: #ff9800;
+  --color-action-hover: #ffb74d;
+  --color-bg-odd: #2b313c;
+  --color-bg-even: #232831;
 }
 
-/* Completely disable all hover effects on API tables */
-.api-table tbody tr:hover,
-.api-table tbody tr:hover td,
-.api-table tr:hover,
-.api-table tr:hover td,
-.api-table td:hover,
-.api-table th:hover,
-.api-table:hover,
-.api-table tbody:hover,
-.api-table thead:hover {
-  background-color: unset !important;
-  background: unset !important;
-  background-image: none !important;
-  box-shadow: none !important;
-}
 
-/* Force API table rows to maintain their original styling */
-.api-table tr {
-  background-color: unset !important;
-}
+/* ==========================================================================
+   Role Classes for Interface Types
+   ========================================================================== */
 
-.api-table tr:nth-child(even) {
-  background-color: unset !important;
-}
-
-.api-table tr:nth-child(odd) {
-  background-color: unset !important;
-}
-
-/* ROS API Documentation Styles */
 .msg-name {
-  color: #7b1fa2;
+  color: var(--color-msg);
   font-weight: bold;
   font-family: monospace;
 }
 
 .topic-name {
-  color: #1976d2;
+  color: var(--color-topic);
   font-weight: bold;
   font-family: monospace;
 }
 
 .service-name {
-  color: #388e3c;
+  color: var(--color-service);
   font-weight: bold;
   font-family: monospace;
 }
 
 .action-name {
-  color: #f57c00;
+  color: var(--color-action);
   font-weight: bold;
   font-family: monospace;
 }
 
-/* API Table Styling for Better Readability */
+/* Remove underlines from role links */
+.topic-name a,
+.service-name a,
+.action-name a {
+  text-decoration: none !important;
+}
+
+.topic-name a:hover,
+.service-name a:hover,
+.action-name a:hover {
+  text-decoration: none !important;
+}
+
+/* ==========================================================================
+   API Table Interface Links
+   ========================================================================== */
+
+/* Base styling for all interface links */
+.api-table td:first-child a.reference {
+  text-decoration: none !important;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+/* Message definition links (purple) */
+.msg-def-table td:first-child a.reference.internal {
+  color: var(--color-msg) !important;
+}
+
+.msg-def-table td:first-child a.reference.internal:hover {
+  color: var(--color-msg-hover) !important;
+}
+
+/* Topic links (blue) - excluding message definition tables */
+.api-table:not(.msg-def-table) td:first-child a.reference[href*="msg"] {
+  color: var(--color-topic);
+}
+
+.api-table:not(.msg-def-table) td:first-child a.reference[href*="msg"]:hover {
+  color: var(--color-topic-hover);
+}
+
+/* Service links (green) */
+.api-table td:first-child a.reference[href*="srv"] {
+  color: var(--color-service);
+}
+
+.api-table td:first-child a.reference[href*="srv"]:hover {
+  color: var(--color-service-hover);
+}
+
+/* Action links (orange) */
+.api-table td:first-child a.reference[href*="action"] {
+  color: var(--color-action);
+}
+
+.api-table td:first-child a.reference[href*="action"]:hover {
+  color: var(--color-action-hover);
+}
+
+/* External ROS documentation links */
+.api-table td:first-child a.reference.external[href*="sensor_msgs"] {
+  color: var(--color-topic);
+}
+
+.api-table td:first-child a.reference.external[href*="sensor_msgs"]:hover {
+  color: var(--color-topic-hover);
+}
+
+.api-table td:first-child a.reference.external[href*="control_msgs"] {
+  color: var(--color-action);
+}
+
+.api-table td:first-child a.reference.external[href*="control_msgs"]:hover {
+  color: var(--color-action-hover);
+}
+
+/* ==========================================================================
+   API Table Layout
+   ========================================================================== */
+
 .api-table td:first-child,
 .api-table th:first-child {
   width: 35%;
@@ -92,254 +193,28 @@ tbody tr:hover {
   width: 65%;
 }
 
-/* Make interface names smaller but keep links normal size */
-.api-table td:first-child .topic-name,
-.api-table td:first-child .service-name,
-.api-table td:first-child .action-name {
-  font-size: 0.75em;
-}
-
 .api-table td:last-child a {
   font-size: 1em;
 }
 
-/* Remove underlines from all interface name links (internal and external) */
-.topic-name a,
-.service-name a,
-.action-name a {
-  text-decoration: none !important;
+/* ==========================================================================
+   Alternating Row Colors for API Table
+   ========================================================================== */
+
+.api-table tbody tr:nth-child(odd) {
+  background-color: var(--color-bg-odd); 
 }
 
-/* Preserve hover effects without underlines */
-.topic-name a:hover,
-.service-name a:hover,
-.action-name a:hover {
-  text-decoration: none !important;
+.api-table tbody tr:nth-child(even) {
+  background-color: var(--color-bg-even); 
 }
 
-/* Style external links in API tables to look like interface names */
-.api-table td:first-child a.reference.external {
-  text-decoration: none !important;
-  font-weight: bold;
-  font-family: monospace;
+
+.api-table tbody tr:nth-child(odd):hover {
+  background-color: var(--color-bg-odd) !important;
 }
 
-/* Make sure all interface links in first column are the same size */
-.api-table td:first-child a.reference.external,
-.api-table td:first-child a.reference.internal {
-  font-size: 0.75em;
+.api-table tbody tr:nth-child(even):hover {
+  background-color: var(--color-bg-even) !important;
 }
 
-/* External links for topics (joint_states, image, info, scan) */
-.api-table td:first-child a.reference.external[href*="sensor_msgs"] {
-  color: #1976d2;
-}
-
-.api-table td:first-child a.reference.external[href*="sensor_msgs"]:hover {
-  color: #0d47a1;
-}
-
-/* External links for actions (joint_trajectory) */
-.api-table td:first-child a.reference.external[href*="control_msgs"] {
-  color: #f57c00;
-}
-
-.api-table td:first-child a.reference.external[href*="control_msgs"]:hover {
-  color: #e65100;
-}
-
-/* Style ref links in API tables to look like interface names */
-.api-table td:first-child a.reference.internal {
-  text-decoration: none !important;
-  font-weight: bold;
-  font-family: monospace;
-}
-
-/* Message definition links (for enum and data structure tables) */
-.msg-def-table td:first-child a.reference.internal {
-  color: #7b1fa2 !important;
-}
-
-.msg-def-table td:first-child a.reference.internal:hover {
-  color: #4a148c !important;
-}
-
-/* Topic-style links - match by msg in href */
-.api-table td:first-child a.reference.internal[href*="msg"] {
-  color: #1976d2;
-}
-
-.api-table td:first-child a.reference.internal[href*="msg"]:hover {
-  color: #0d47a1;
-}
-
-/* Service-style links - match by srv in href */
-.api-table td:first-child a.reference.internal[href*="srv"] {
-  color: #388e3c;
-}
-
-.api-table td:first-child a.reference.internal[href*="srv"]:hover {
-  color: #1b5e20;
-}
-
-/* Action-style links - match by action in href */
-.api-table td:first-child a.reference.internal[href*="action"] {
-  color: #f57c00;
-}
-
-.api-table td:first-child a.reference.internal[href*="action"]:hover {
-  color: #e65100;
-}
-
-/* Dark mode color adjustments via media query */
-@media (prefers-color-scheme: dark) {
-  .msg-def-table td:first-child a.reference.internal {
-    color: #ba68c8 !important;
-  }
-  .msg-def-table td:first-child a.reference.internal:hover {
-    color: #e1bee7 !important;
-  }
-  .api-table td:first-child a.reference.internal[href*="msg"] {
-    color: #64b5f6;
-  }
-  .api-table td:first-child a.reference.internal[href*="msg"]:hover {
-    color: #90caf9;
-  }
-  .api-table td:first-child a.reference.internal[href*="srv"] {
-    color: #81c784;
-  }
-  .api-table td:first-child a.reference.internal[href*="srv"]:hover {
-    color: #a5d6a7;
-  }
-  .api-table td:first-child a.reference.internal[href*="action"] {
-    color: #ff9800;
-  }
-  .api-table td:first-child a.reference.internal[href*="action"]:hover {
-    color: #ffb74d;
-  }
-  .api-table td:first-child a.reference.external[href*="sensor_msgs"] {
-    color: #64b5f6;
-  }
-  .api-table td:first-child a.reference.external[href*="sensor_msgs"]:hover {
-    color: #90caf9;
-  }
-  .api-table td:first-child a.reference.external[href*="control_msgs"] {
-    color: #ff9800;
-  }
-  .api-table td:first-child a.reference.external[href*="control_msgs"]:hover {
-    color: #ffb74d;
-  }
-  .msg-name {
-    color: #ba68c8;
-  }
-  .topic-name {
-    color: #64b5f6;
-  }
-  .service-name {
-    color: #81c784;
-  }
-  .action-name {
-    color: #ff9800;
-  }
-}
-
-/* Dark mode via theme data attributes */
-[data-theme="dark"] .msg-def-table td:first-child a.reference.internal,
-[data-bs-theme="dark"] .msg-def-table td:first-child a.reference.internal,
-html[data-theme="dark"] .msg-def-table td:first-child a.reference.internal {
-  color: #ba68c8 !important;
-}
-
-[data-theme="dark"] .msg-def-table td:first-child a.reference.internal:hover,
-[data-bs-theme="dark"] .msg-def-table td:first-child a.reference.internal:hover,
-html[data-theme="dark"] .msg-def-table td:first-child a.reference.internal:hover {
-  color: #e1bee7 !important;
-}
-
-[data-theme="dark"] .msg-name,
-[data-bs-theme="dark"] .msg-name,
-html[data-theme="dark"] .msg-name {
-  color: #ba68c8;
-}
-
-/* Topic colors in dark mode via data attributes */
-[data-theme="dark"] .api-table td:first-child a.reference.internal[href*="msg"],
-[data-bs-theme="dark"] .api-table td:first-child a.reference.internal[href*="msg"],
-html[data-theme="dark"] .api-table td:first-child a.reference.internal[href*="msg"] {
-  color: #64b5f6;
-}
-
-[data-theme="dark"] .api-table td:first-child a.reference.internal[href*="msg"]:hover,
-[data-bs-theme="dark"] .api-table td:first-child a.reference.internal[href*="msg"]:hover,
-html[data-theme="dark"] .api-table td:first-child a.reference.internal[href*="msg"]:hover {
-  color: #90caf9;
-}
-
-[data-theme="dark"] .topic-name,
-[data-bs-theme="dark"] .topic-name,
-html[data-theme="dark"] .topic-name {
-  color: #64b5f6;
-}
-
-/* Service colors in dark mode via data attributes */
-[data-theme="dark"] .api-table td:first-child a.reference.internal[href*="srv"],
-[data-bs-theme="dark"] .api-table td:first-child a.reference.internal[href*="srv"],
-html[data-theme="dark"] .api-table td:first-child a.reference.internal[href*="srv"] {
-  color: #81c784;
-}
-
-[data-theme="dark"] .api-table td:first-child a.reference.internal[href*="srv"]:hover,
-[data-bs-theme="dark"] .api-table td:first-child a.reference.internal[href*="srv"]:hover,
-html[data-theme="dark"] .api-table td:first-child a.reference.internal[href*="srv"]:hover {
-  color: #a5d6a7;
-}
-
-[data-theme="dark"] .service-name,
-[data-bs-theme="dark"] .service-name,
-html[data-theme="dark"] .service-name {
-  color: #81c784;
-}
-
-/* Action colors in dark mode via data attributes */
-[data-theme="dark"] .api-table td:first-child a.reference.internal[href*="action"],
-[data-bs-theme="dark"] .api-table td:first-child a.reference.internal[href*="action"],
-html[data-theme="dark"] .api-table td:first-child a.reference.internal[href*="action"] {
-  color: #ff9800;
-}
-
-[data-theme="dark"] .api-table td:first-child a.reference.internal[href*="action"]:hover,
-[data-bs-theme="dark"] .api-table td:first-child a.reference.internal[href*="action"]:hover,
-html[data-theme="dark"] .api-table td:first-child a.reference.internal[href*="action"]:hover {
-  color: #ffb74d;
-}
-
-[data-theme="dark"] .action-name,
-[data-bs-theme="dark"] .action-name,
-html[data-theme="dark"] .action-name {
-  color: #ff9800;
-}
-
-/* External links in dark mode via data attributes */
-[data-theme="dark"] .api-table td:first-child a.reference.external[href*="sensor_msgs"],
-[data-bs-theme="dark"] .api-table td:first-child a.reference.external[href*="sensor_msgs"],
-html[data-theme="dark"] .api-table td:first-child a.reference.external[href*="sensor_msgs"] {
-  color: #64b5f6;
-}
-
-[data-theme="dark"] .api-table td:first-child a.reference.external[href*="sensor_msgs"]:hover,
-[data-bs-theme="dark"] .api-table td:first-child a.reference.external[href*="sensor_msgs"]:hover,
-html[data-theme="dark"] .api-table td:first-child a.reference.external[href*="sensor_msgs"]:hover {
-  color: #90caf9;
-}
-
-[data-theme="dark"] .api-table td:first-child a.reference.external[href*="control_msgs"],
-[data-bs-theme="dark"] .api-table td:first-child a.reference.external[href*="control_msgs"],
-html[data-theme="dark"] .api-table td:first-child a.reference.external[href*="control_msgs"] {
-  color: #ff9800;
-}
-
-[data-theme="dark"] .api-table td:first-child a.reference.external[href*="control_msgs"]:hover,
-[data-bs-theme="dark"] .api-table td:first-child a.reference.external[href*="control_msgs"]:hover,
-html[data-theme="dark"] .api-table td:first-child a.reference.external[href*="control_msgs"]:hover {
-  color: #ffb74d;
-}
