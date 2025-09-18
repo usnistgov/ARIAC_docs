@@ -1,3 +1,5 @@
+.. _cellfeederstatus_msg:
+
 Cell Feeder Status
 ==================
 This is a ROS message definition.

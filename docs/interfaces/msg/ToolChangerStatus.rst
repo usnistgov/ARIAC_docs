@@ -1,3 +1,5 @@
+.. _toolchangerstatus_msg:
+
 Tool Changer Status
 ===================
 This is a ROS message definition.

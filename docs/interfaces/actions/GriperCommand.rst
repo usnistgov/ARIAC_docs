@@ -1,3 +1,5 @@
+.. _grippercommand_action:
+
 Gripper Command
 ===============
 This is a ROS message definition.
