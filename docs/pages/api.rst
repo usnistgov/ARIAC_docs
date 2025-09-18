@@ -4,25 +4,34 @@
 ROS API
 =======
 
+**Interface Types:**
+
+* :msg-name:`Messages` - Message definition structures
+* :topic-name:`Topics` - Data publication/subscription interfaces
+* :service-name:`Services` - Request/response interfaces
+* :action-name:`Actions` - Long-running goal-based interfaces
+
+----
+
 Enumeration Messages
 --------------------
 
 .. list-table::
    :header-rows: 1
-   :widths: 50 50
-   :class: api-table
+   :widths: 30 70
+   :class: api-table msg-def-table
 
    * - Message
      - Description
-   * - :ref:`ariac_interfaces/msg/AgvStations <agvstations_msg>`
+   * - :ref:`AgvStations <agvstations_msg>`
      - AGV station location constants
-   * - :ref:`ariac_interfaces/msg/CellTypes <cell_types_msg>`
+   * - :ref:`CellTypes <cell_types_msg>`
      - Cell type definitions and voltage constants
-   * - :ref:`ariac_interfaces/msg/CompetitionStates <competitionstates_msg>`
+   * - :ref:`CompetitionStates <competitionstates_msg>`
      - Competition state enumeration values
-   * - :ref:`ariac_interfaces/msg/OperationStates <operationstates_msg>`
+   * - :ref:`OperationStates <operationstates_msg>`
      - Operation state definitions
-   * - :ref:`ariac_interfaces/msg/VacuumTools <vacuumtools_msg>`
+   * - :ref:`VacuumTools <vacuumtools_msg>`
      - Vacuum gripper tool type definitions
 
 Data Structure Messages
@@ -30,25 +39,17 @@ Data Structure Messages
 
 .. list-table::
    :header-rows: 1
-   :widths: 50 50
-   :class: api-table
+   :widths: 30 70
+   :class: api-table msg-def-table
 
    * - Message
      - Description
-   * - :ref:`ariac_interfaces/msg/CellDefect <celldefect_msg>`
+   * - :ref:`CellDefect <celldefect_msg>`
      - Cell defect information structure
-   * - :ref:`ariac_interfaces/msg/CompetitionTime <competitiontime_msg>`
+   * - :ref:`CompetitionTime <competitiontime_msg>`
      - Competition timing data structure
-   * - :ref:`ariac_interfaces/msg/InspectionReport <inspectionreport_msg>`
+   * - :ref:`InspectionReport <inspectionreport_msg>`
      - Inspection result data structure
-
-----
-
-**Interface Types:**
-
-* :topic-name:`Topics` - Data publication/subscription interfaces
-* :service-name:`Services` - Request/response interfaces
-* :action-name:`Actions` - Long-running goal-based interfaces
 
 Competition Control Interfaces
 ------------------------------
@@ -60,33 +61,19 @@ Competition Control Interfaces
 
    * - Interface
      - Description
-   * - :topic-name:`/competition_status`
-
-       :ref:`ariac_interfaces/msg/CompetitionStatus <competitionstatus_msg>`
+   * - :ref:`/competition_status <competitionstatus_msg>`
      - Query competition state, time, order counts
-   * - :topic-name:`/high_priority_orders`
-
-       :ref:`ariac_interfaces/msg/HighPriorityOrder <highpriorityorder_msg>`
+   * - :ref:`/high_priority_orders <highpriorityorder_msg>`
      - High priority kit requests with order ID
-   * - :service-name:`/start_competition`
-
-       :ref:`ariac_interfaces/srv/Trigger <trigger_srv>`
+   * - :ref:`/start_competition <trigger_srv>`
      - Starts the competition
-   * - :service-name:`/end_competition`
-
-       :ref:`ariac_interfaces/srv/EndCompetition <endcompetition_srv>`
+   * - :ref:`/end_competition <endcompetition_srv>`
      - Ends competition, optionally shutdown Gazebo
-   * - :service-name:`/submit_kitting_order`
-
-       :ref:`ariac_interfaces/srv/Trigger <trigger_srv>`
+   * - :ref:`/submit_kitting_order <trigger_srv>`
      - Submit kit (AGV at shipping required)
-   * - :service-name:`/submit_module_order`
-
-       :ref:`ariac_interfaces/srv/Trigger <trigger_srv>`
+   * - :ref:`/submit_module_order <trigger_srv>`
      - Submit module (in submission zone required)
-   * - :service-name:`/submit_high_priority_order`
-
-       :ref:`ariac_interfaces/srv/SubmitHighPriorityOrder <submithighpriorityorder_srv>`
+   * - :ref:`/submit_high_priority_order <submithighpriorityorder_srv>`
      - Submit high priority kit with ID
 
 Task 1 Interfaces
@@ -99,29 +86,17 @@ Task 1 Interfaces
 
    * - Interface
      - Description
-   * - :topic-name:`/inspection_conveyor/status`
-
-       :ref:`ariac_interfaces/msg/ConveyorStatus <conveyorstatus_msg>`
+   * - :ref:`/inspection_conveyor/status <conveyorstatus_msg>`
      - Conveyor direction, speed, operating status
-   * - :topic-name:`/inspection_conveyor/cell_feed/status`
-
-       :ref:`ariac_interfaces/msg/CellFeederStatus <cellfeederstatus_msg>`
+   * - :ref:`/inspection_conveyor/cell_feed/status <cellfeederstatus_msg>`
      - Current cell type being fed and feed rate
-   * - :topic-name:`/voltage_tester_1/voltage`
-
-       :ref:`ariac_interfaces/msg/VoltageReading <voltagereading_msg>`
+   * - :ref:`/voltage_tester_1/voltage <voltagereading_msg>`
      - Voltage reading for tester 1
-   * - :topic-name:`/voltage_tester_2/voltage`
-
-       :ref:`ariac_interfaces/msg/VoltageReading <voltagereading_msg>`
+   * - :ref:`/voltage_tester_2/voltage <voltagereading_msg>`
      - Voltage reading for tester 2
-   * - :service-name:`/inspection_conveyor/cell_feed/control`
-
-       :ref:`ariac_interfaces/srv/ControlCellFeeder <controlcellfeeder_srv>`
+   * - :ref:`/inspection_conveyor/cell_feed/control <controlcellfeeder_srv>`
      - Change cell type being fed
-   * - :service-name:`/inspection_conveyor/inspection/submit`
-
-       :ref:`ariac_interfaces/srv/SubmitInspectionReport <submitinspectionreport_srv>`
+   * - :ref:`/inspection_conveyor/inspection/submit <submitinspectionreport_srv>`
      - Submit inspection with pass/fail and defects
 
 Task 2 Interfaces
@@ -134,33 +109,19 @@ Task 2 Interfaces
 
    * - Interface
      - Description
-   * - :topic-name:`/assembly_conveyor/section_{number}/status`
-
-       :ref:`ariac_interfaces/msg/ConveyorStatus <conveyorstatus_msg>`
+   * - :ref:`/assembly_conveyor/section_{number}/status <conveyorstatus_msg>`
      - Section direction, speed, status
-   * - :service-name:`/assembly_conveyor/section_1/control`
-
-       :ref:`ariac_interfaces/srv/ConveyorControl <conveyorcontrol_srv>`
+   * - :ref:`/assembly_conveyor/section_1/control <conveyorcontrol_srv>`
      - Control conveyor section 1
-   * - :service-name:`/assembly_conveyor/section_2/control`
-
-       :ref:`ariac_interfaces/srv/ConveyorControl <conveyorcontrol_srv>`
+   * - :ref:`/assembly_conveyor/section_2/control <conveyorcontrol_srv>`
      - Control conveyor section 2
-   * - :service-name:`/assembly_conveyor/section_3/control`
-
-       :ref:`ariac_interfaces/srv/BidirectionalConveyorControl <bidirectionalconveyorcontrol_srv>`
+   * - :ref:`/assembly_conveyor/section_3/control <bidirectionalconveyorcontrol_srv>`
      - Control bidirectional conveyor section 3
-   * - :service-name:`/gantry_welder/weld`
-
-       :ref:`ariac_interfaces/srv/Trigger <trigger_srv>`
+   * - :ref:`/gantry_welder/weld <trigger_srv>`
      - Create weld if electrodes contact plate
-   * - :service-name:`/insert_bottom_shell`
-
-       :ref:`ariac_interfaces/srv/Trigger <trigger_srv>`
+   * - :ref:`/insert_bottom_shell <trigger_srv>`
      - Spawn bottom shell on section 1
-   * - :service-name:`/insert_top_shell`
-
-       :ref:`ariac_interfaces/srv/Trigger <trigger_srv>`
+   * - :ref:`/insert_top_shell <trigger_srv>`
      - Spawn top shell on assembly table
 
 Robot Control Interfaces
@@ -176,13 +137,9 @@ Joint Control
 
    * - Interface
      - Description
-   * - :topic-name:`/{robot_name}/joint_states`
-
-       `sensor_msgs/msg/JointState <https://docs.ros.org/en/jazzy/p/sensor_msgs/msg/JointState.html>`_
+   * - `/{robot_name}/joint_states <https://docs.ros.org/en/jazzy/p/sensor_msgs/msg/JointState.html>`_
      - Current joint states
-   * - :action-name:`/{robot_name}/joint_trajectory_controller/follow_joint_trajectory`
-
-       `control_msgs/action/FollowJointTrajectory <https://docs.ros.org/en/jazzy/p/control_msgs/action/FollowJointTrajectory.html>`_
+   * - `/{robot_name}/joint_trajectory_controller/follow_joint_trajectory <https://docs.ros.org/en/jazzy/p/control_msgs/action/FollowJointTrajectory.html>`_
      - Joint trajectory commands
 
 Gripper Control
@@ -195,9 +152,7 @@ Gripper Control
 
    * - Interface
      - Description
-   * - :action-name:`/{robot_name}/gripper_controller/gripper_command`
-
-       :ref:`ariac_interfaces/action/GripperCommand <grippercommand_action>`
+   * - :ref:`/{robot_name}/gripper_controller/gripper_command <grippercommand_action>`
      - Control gripper width
 
 Vacuum Tool Control
@@ -210,25 +165,15 @@ Vacuum Tool Control
 
    * - Interface
      - Description
-   * - :topic-name:`/assembly_robot_2/tool_changer/status`
-
-       :ref:`ariac_interfaces/msg/ToolChangerStatus <toolchangerstatus_msg>`
+   * - :ref:`/assembly_robot_2/tool_changer/status <toolchangerstatus_msg>`
      - Tool changer current state and status
-   * - :service-name:`/assembly_robot_2/tool_changer/attach_tool`
-
-       :ref:`ariac_interfaces/srv/AttachTool <attachtool_srv>`
+   * - :ref:`/assembly_robot_2/tool_changer/attach_tool <attachtool_srv>`
      - Connect vacuum gripper to coupler
-   * - :service-name:`/assembly_robot_2/tool_changer/detach_tool`
-
-       :ref:`ariac_interfaces/srv/Trigger <trigger_srv>`
+   * - :ref:`/assembly_robot_2/tool_changer/detach_tool <trigger_srv>`
      - Disconnect vacuum gripper
-   * - :service-name:`/vacuum_tool/{vacuum_gripper}/grasp`
-
-       :ref:`ariac_interfaces/srv/Trigger <trigger_srv>`
+   * - :ref:`/vacuum_tool/{vacuum_gripper}/grasp <trigger_srv>`
      - Attach gripper to contact object
-   * - :service-name:`/vacuum_tool/{vacuum_gripper}/release`
-
-       :ref:`ariac_interfaces/srv/Trigger <trigger_srv>`
+   * - :ref:`/vacuum_tool/{vacuum_gripper}/release <trigger_srv>`
      - Detach gripper from object
 
 AGV Control Interfaces
@@ -241,21 +186,13 @@ AGV Control Interfaces
 
    * - Interface
      - Description
-   * - :topic-name:`/{agv_name}/info`
-
-       :ref:`ariac_interfaces/msg/AgvStatus <agvstatus_msg>`
+   * - :ref:`/{agv_name}/info <agvstatus_msg>`
      - Current location and pose
-   * - :topic-name:`/{agv_name}/tray_status`
-
-       :ref:`ariac_interfaces/msg/AgvTrayStatus <agvtraystatus_msg>`
+   * - :ref:`/{agv_name}/tray_status <agvtraystatus_msg>`
      - Tray occupancy and part information
-   * - :service-name:`/{agv_name}/recycle_cells`
-
-       :ref:`ariac_interfaces/srv/Trigger <trigger_srv>`
+   * - :ref:`/{agv_name}/recycle_cells <trigger_srv>`
      - Recycle tray at recycling station
-   * - :action-name:`/{agv_name}/move`
-
-       :ref:`ariac_interfaces/action/MoveAgv <moveagv_action>`
+   * - :ref:`/{agv_name}/move <moveagv_action>`
      - Move AGV to specified station
 
 Sensor Interfaces
@@ -275,13 +212,9 @@ Break Beam Sensors
 
    * - Interface
      - Description
-   * - :topic-name:`/{break_beam_name}/status`
-
-       :ref:`ariac_interfaces/msg/BreakBeamStatus <break-beam-anchor>`
+   * - :ref:`/{break_beam_name}/status <break-beam-anchor>`
      - Reports if an object is detected with a timestamp
-   * - :topic-name:`/{break_beam_name}/change`
-
-       :ref:`ariac_interfaces/msg/BreakBeamStatus <break-beam-anchor>`
+   * - :ref:`/{break_beam_name}/change <break-beam-anchor>`
      - Publishes when the breakbeam status changes
 
 Distance Sensors
@@ -294,9 +227,7 @@ Distance Sensors
 
    * - Interface
      - Description
-   * - :topic-name:`/{distance_sensor_name}/distance`
-
-       :ref:`ariac_interfaces/msg/DistanceSensor <distance-sensor-anchor>`
+   * - :ref:`/{distance_sensor_name}/distance <distance-sensor-anchor>`
      - Reports a distance to the first object in view with a timestamp
 
 Camera Sensors
@@ -309,13 +240,9 @@ Camera Sensors
 
    * - Interface
      - Description
-   * - :topic-name:`/{camera_name}/image`
-
-       `sensor_msgs/msg/Image <https://docs.ros.org/en/jazzy/p/sensor_msgs/msg/Image.html>`_
+   * - `/{camera_name}/image <https://docs.ros.org/en/jazzy/p/sensor_msgs/msg/Image.html>`_
      - Displays current image seen through camera
-   * - :topic-name:`/{camera_name}/info`
-
-       `sensor_msgs/msg/CameraInfo <https://docs.ros.org/en/jazzy/p/sensor_msgs/msg/CameraInfo.html>`_
+   * - `/{camera_name}/info <https://docs.ros.org/en/jazzy/p/sensor_msgs/msg/CameraInfo.html>`_
      - Info about camera sensor
 
 Lidar Sensors
@@ -328,8 +255,6 @@ Lidar Sensors
 
    * - Interface
      - Description
-   * - :topic-name:`/{lidar_name}/scan`
-
-       `sensor_msgs/msg/PointCloud2 <https://docs.ros.org/en/jazzy/p/sensor_msgs/msg/PointCloud2.html>`_
+   * - `/{lidar_name}/scan <https://docs.ros.org/en/jazzy/p/sensor_msgs/msg/PointCloud2.html>`_
      - Reports the point cloud detected from the lidar scan
 

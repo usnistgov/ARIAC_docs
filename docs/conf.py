@@ -42,8 +42,12 @@ extensions = [
     'sphinxemoji.sphinxemoji'
 ]
 
+
 # Custom roles for ROS API documentation
 rst_prolog = """
+.. role:: msg-name
+   :class: msg-name
+
 .. role:: topic-name
    :class: topic-name
 

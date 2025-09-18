@@ -27,7 +27,42 @@ tbody tr:hover {
   background-color: transparent !important;  /* Remove hover highlight */
 }
 
+/* Completely disable all hover effects on API tables */
+.api-table tbody tr:hover,
+.api-table tbody tr:hover td,
+.api-table tr:hover,
+.api-table tr:hover td,
+.api-table td:hover,
+.api-table th:hover,
+.api-table:hover,
+.api-table tbody:hover,
+.api-table thead:hover {
+  background-color: unset !important;
+  background: unset !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Force API table rows to maintain their original styling */
+.api-table tr {
+  background-color: unset !important;
+}
+
+.api-table tr:nth-child(even) {
+  background-color: unset !important;
+}
+
+.api-table tr:nth-child(odd) {
+  background-color: unset !important;
+}
+
 /* ROS API Documentation Styles */
+.msg-name {
+  color: #7b1fa2;
+  font-weight: bold;
+  font-family: monospace;
+}
+
 .topic-name {
   color: #1976d2;
   font-weight: bold;
@@ -66,4 +101,245 @@ tbody tr:hover {
 
 .api-table td:last-child a {
   font-size: 1em;
+}
+
+/* Remove underlines from all interface name links (internal and external) */
+.topic-name a,
+.service-name a,
+.action-name a {
+  text-decoration: none !important;
+}
+
+/* Preserve hover effects without underlines */
+.topic-name a:hover,
+.service-name a:hover,
+.action-name a:hover {
+  text-decoration: none !important;
+}
+
+/* Style external links in API tables to look like interface names */
+.api-table td:first-child a.reference.external {
+  text-decoration: none !important;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+/* Make sure all interface links in first column are the same size */
+.api-table td:first-child a.reference.external,
+.api-table td:first-child a.reference.internal {
+  font-size: 0.75em;
+}
+
+/* External links for topics (joint_states, image, info, scan) */
+.api-table td:first-child a.reference.external[href*="sensor_msgs"] {
+  color: #1976d2;
+}
+
+.api-table td:first-child a.reference.external[href*="sensor_msgs"]:hover {
+  color: #0d47a1;
+}
+
+/* External links for actions (joint_trajectory) */
+.api-table td:first-child a.reference.external[href*="control_msgs"] {
+  color: #f57c00;
+}
+
+.api-table td:first-child a.reference.external[href*="control_msgs"]:hover {
+  color: #e65100;
+}
+
+/* Style ref links in API tables to look like interface names */
+.api-table td:first-child a.reference.internal {
+  text-decoration: none !important;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+/* Message definition links (for enum and data structure tables) */
+.msg-def-table td:first-child a.reference.internal {
+  color: #7b1fa2 !important;
+}
+
+.msg-def-table td:first-child a.reference.internal:hover {
+  color: #4a148c !important;
+}
+
+/* Topic-style links - match by msg in href */
+.api-table td:first-child a.reference.internal[href*="msg"] {
+  color: #1976d2;
+}
+
+.api-table td:first-child a.reference.internal[href*="msg"]:hover {
+  color: #0d47a1;
+}
+
+/* Service-style links - match by srv in href */
+.api-table td:first-child a.reference.internal[href*="srv"] {
+  color: #388e3c;
+}
+
+.api-table td:first-child a.reference.internal[href*="srv"]:hover {
+  color: #1b5e20;
+}
+
+/* Action-style links - match by action in href */
+.api-table td:first-child a.reference.internal[href*="action"] {
+  color: #f57c00;
+}
+
+.api-table td:first-child a.reference.internal[href*="action"]:hover {
+  color: #e65100;
+}
+
+/* Dark mode color adjustments via media query */
+@media (prefers-color-scheme: dark) {
+  .msg-def-table td:first-child a.reference.internal {
+    color: #ba68c8 !important;
+  }
+  .msg-def-table td:first-child a.reference.internal:hover {
+    color: #e1bee7 !important;
+  }
+  .api-table td:first-child a.reference.internal[href*="msg"] {
+    color: #64b5f6;
+  }
+  .api-table td:first-child a.reference.internal[href*="msg"]:hover {
+    color: #90caf9;
+  }
+  .api-table td:first-child a.reference.internal[href*="srv"] {
+    color: #81c784;
+  }
+  .api-table td:first-child a.reference.internal[href*="srv"]:hover {
+    color: #a5d6a7;
+  }
+  .api-table td:first-child a.reference.internal[href*="action"] {
+    color: #ff9800;
+  }
+  .api-table td:first-child a.reference.internal[href*="action"]:hover {
+    color: #ffb74d;
+  }
+  .api-table td:first-child a.reference.external[href*="sensor_msgs"] {
+    color: #64b5f6;
+  }
+  .api-table td:first-child a.reference.external[href*="sensor_msgs"]:hover {
+    color: #90caf9;
+  }
+  .api-table td:first-child a.reference.external[href*="control_msgs"] {
+    color: #ff9800;
+  }
+  .api-table td:first-child a.reference.external[href*="control_msgs"]:hover {
+    color: #ffb74d;
+  }
+  .msg-name {
+    color: #ba68c8;
+  }
+  .topic-name {
+    color: #64b5f6;
+  }
+  .service-name {
+    color: #81c784;
+  }
+  .action-name {
+    color: #ff9800;
+  }
+}
+
+/* Dark mode via theme data attributes */
+[data-theme="dark"] .msg-def-table td:first-child a.reference.internal,
+[data-bs-theme="dark"] .msg-def-table td:first-child a.reference.internal,
+html[data-theme="dark"] .msg-def-table td:first-child a.reference.internal {
+  color: #ba68c8 !important;
+}
+
+[data-theme="dark"] .msg-def-table td:first-child a.reference.internal:hover,
+[data-bs-theme="dark"] .msg-def-table td:first-child a.reference.internal:hover,
+html[data-theme="dark"] .msg-def-table td:first-child a.reference.internal:hover {
+  color: #e1bee7 !important;
+}
+
+[data-theme="dark"] .msg-name,
+[data-bs-theme="dark"] .msg-name,
+html[data-theme="dark"] .msg-name {
+  color: #ba68c8;
+}
+
+/* Topic colors in dark mode via data attributes */
+[data-theme="dark"] .api-table td:first-child a.reference.internal[href*="msg"],
+[data-bs-theme="dark"] .api-table td:first-child a.reference.internal[href*="msg"],
+html[data-theme="dark"] .api-table td:first-child a.reference.internal[href*="msg"] {
+  color: #64b5f6;
+}
+
+[data-theme="dark"] .api-table td:first-child a.reference.internal[href*="msg"]:hover,
+[data-bs-theme="dark"] .api-table td:first-child a.reference.internal[href*="msg"]:hover,
+html[data-theme="dark"] .api-table td:first-child a.reference.internal[href*="msg"]:hover {
+  color: #90caf9;
+}
+
+[data-theme="dark"] .topic-name,
+[data-bs-theme="dark"] .topic-name,
+html[data-theme="dark"] .topic-name {
+  color: #64b5f6;
+}
+
+/* Service colors in dark mode via data attributes */
+[data-theme="dark"] .api-table td:first-child a.reference.internal[href*="srv"],
+[data-bs-theme="dark"] .api-table td:first-child a.reference.internal[href*="srv"],
+html[data-theme="dark"] .api-table td:first-child a.reference.internal[href*="srv"] {
+  color: #81c784;
+}
+
+[data-theme="dark"] .api-table td:first-child a.reference.internal[href*="srv"]:hover,
+[data-bs-theme="dark"] .api-table td:first-child a.reference.internal[href*="srv"]:hover,
+html[data-theme="dark"] .api-table td:first-child a.reference.internal[href*="srv"]:hover {
+  color: #a5d6a7;
+}
+
+[data-theme="dark"] .service-name,
+[data-bs-theme="dark"] .service-name,
+html[data-theme="dark"] .service-name {
+  color: #81c784;
+}
+
+/* Action colors in dark mode via data attributes */
+[data-theme="dark"] .api-table td:first-child a.reference.internal[href*="action"],
+[data-bs-theme="dark"] .api-table td:first-child a.reference.internal[href*="action"],
+html[data-theme="dark"] .api-table td:first-child a.reference.internal[href*="action"] {
+  color: #ff9800;
+}
+
+[data-theme="dark"] .api-table td:first-child a.reference.internal[href*="action"]:hover,
+[data-bs-theme="dark"] .api-table td:first-child a.reference.internal[href*="action"]:hover,
+html[data-theme="dark"] .api-table td:first-child a.reference.internal[href*="action"]:hover {
+  color: #ffb74d;
+}
+
+[data-theme="dark"] .action-name,
+[data-bs-theme="dark"] .action-name,
+html[data-theme="dark"] .action-name {
+  color: #ff9800;
+}
+
+/* External links in dark mode via data attributes */
+[data-theme="dark"] .api-table td:first-child a.reference.external[href*="sensor_msgs"],
+[data-bs-theme="dark"] .api-table td:first-child a.reference.external[href*="sensor_msgs"],
+html[data-theme="dark"] .api-table td:first-child a.reference.external[href*="sensor_msgs"] {
+  color: #64b5f6;
+}
+
+[data-theme="dark"] .api-table td:first-child a.reference.external[href*="sensor_msgs"]:hover,
+[data-bs-theme="dark"] .api-table td:first-child a.reference.external[href*="sensor_msgs"]:hover,
+html[data-theme="dark"] .api-table td:first-child a.reference.external[href*="sensor_msgs"]:hover {
+  color: #90caf9;
+}
+
+[data-theme="dark"] .api-table td:first-child a.reference.external[href*="control_msgs"],
+[data-bs-theme="dark"] .api-table td:first-child a.reference.external[href*="control_msgs"],
+html[data-theme="dark"] .api-table td:first-child a.reference.external[href*="control_msgs"] {
+  color: #ff9800;
+}
+
+[data-theme="dark"] .api-table td:first-child a.reference.external[href*="control_msgs"]:hover,
+[data-bs-theme="dark"] .api-table td:first-child a.reference.external[href*="control_msgs"]:hover,
+html[data-theme="dark"] .api-table td:first-child a.reference.external[href*="control_msgs"]:hover {
+  color: #ffb74d;
 }
