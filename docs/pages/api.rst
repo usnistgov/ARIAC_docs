@@ -9,7 +9,7 @@ Enumeration Messages
 
 .. list-table::
    :header-rows: 1
-   :widths: 40 60
+   :widths: 50 50
    :class: api-table
 
    * - Message
@@ -30,7 +30,7 @@ Data Structure Messages
 
 .. list-table::
    :header-rows: 1
-   :widths: 40 60
+   :widths: 50 50
    :class: api-table
 
    * - Message
@@ -55,7 +55,7 @@ Competition Control Interfaces
 
 .. list-table::
    :header-rows: 1
-   :widths: 35 65
+   :widths: 45 55
    :class: api-table
 
    * - Interface
@@ -94,7 +94,7 @@ Task 1 Interfaces
 
 .. list-table::
    :header-rows: 1
-   :widths: 35 65
+   :widths: 45 55
    :class: api-table
 
    * - Interface
@@ -107,10 +107,14 @@ Task 1 Interfaces
 
        :ref:`ariac_interfaces/msg/CellFeederStatus <cellfeederstatus_msg>`
      - Current cell type being fed and feed rate
-   * - :topic-name:`/{voltage_tester_number}/voltage`
+   * - :topic-name:`/voltage_tester_1/voltage`
 
        :ref:`ariac_interfaces/msg/VoltageReading <voltagereading_msg>`
-     - Voltage reading with noise
+     - Voltage reading for tester 1
+   * - :topic-name:`/voltage_tester_2/voltage`
+
+       :ref:`ariac_interfaces/msg/VoltageReading <voltagereading_msg>`
+     - Voltage reading for tester 2
    * - :service-name:`/inspection_conveyor/cell_feed/control`
 
        :ref:`ariac_interfaces/srv/ControlCellFeeder <controlcellfeeder_srv>`
@@ -125,7 +129,7 @@ Task 2 Interfaces
 
 .. list-table::
    :header-rows: 1
-   :widths: 35 65
+   :widths: 45 55
    :class: api-table
 
    * - Interface
@@ -167,7 +171,7 @@ Joint Control
 
 .. list-table::
    :header-rows: 1
-   :widths: 35 65
+   :widths: 45 55
    :class: api-table
 
    * - Interface
@@ -186,7 +190,7 @@ Gripper Control
 
 .. list-table::
    :header-rows: 1
-   :widths: 35 65
+   :widths: 45 55
    :class: api-table
 
    * - Interface
@@ -201,7 +205,7 @@ Vacuum Tool Control
 
 .. list-table::
    :header-rows: 1
-   :widths: 35 65
+   :widths: 45 55
    :class: api-table
 
    * - Interface
@@ -232,7 +236,7 @@ AGV Control Interfaces
 
 .. list-table::
    :header-rows: 1
-   :widths: 35 65
+   :widths: 45 55
    :class: api-table
 
    * - Interface
@@ -266,7 +270,7 @@ Break Beam Sensors
 
 .. list-table::
    :header-rows: 1
-   :widths: 40 60
+   :widths: 50 50
    :class: api-table
 
    * - Interface
@@ -285,7 +289,7 @@ Distance Sensors
 
 .. list-table::
    :header-rows: 1
-   :widths: 40 60
+   :widths: 50 50
    :class: api-table
 
    * - Interface
@@ -300,7 +304,7 @@ Camera Sensors
 
 .. list-table::
    :header-rows: 1
-   :widths: 40 60
+   :widths: 50 50
    :class: api-table
 
    * - Interface
@@ -319,7 +323,7 @@ Lidar Sensors
 
 .. list-table::
    :header-rows: 1
-   :widths: 40 60
+   :widths: 50 50
    :class: api-table
 
    * - Interface
