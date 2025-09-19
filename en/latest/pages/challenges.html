@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Agility Challenges &#8212; ARIAC Docs  documentation</title>
+    <title>Challenges &#8212; ARIAC Docs  documentation</title>
   
   
   
@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/ntd2d.css?v=7c2ea725" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=0f03d396" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f232d258" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -177,7 +177,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="scenario.html">Scenario</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Agility Challenges</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Challenges</a></li>
 <li class="toctree-l1"><a class="reference internal" href="evaluation.html">Evaluation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Development</span></p>
@@ -287,7 +287,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -298,11 +300,22 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Agility Challenges</h1>
+    <h1>Challenges</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conveyor-malfunction">Conveyor Malfunction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voltage-tester-malfunction">Voltage Tester Malfunction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vacuum-tool-malfunction">Vacuum Tool Malfunction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#high-priority-order">High Priority Order</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -312,12 +325,59 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="agility-challenges">
-<span id="challenges"></span><h1>Agility Challenges<a class="headerlink" href="#agility-challenges" title="Permalink to this heading">#</a></h1>
-<div class="caution admonition" id="under-construction">
-<p class="admonition-title">Under Construction</p>
-<p>🚧 This page is currently under construction. Please check back later. 🚧</p>
-</div>
+  <section id="challenges">
+<span id="id1"></span><h1>Challenges<a class="headerlink" href="#challenges" title="Permalink to this heading">#</a></h1>
+<p>The agility challenges test teams’ ability to adapt to unexpected situations and system failures during competition runs. Successfully handling these challenges is crucial for maintaining high performance and achieving competitive scores.</p>
+<p>The competition incorporates challenges to test the robustness of team systems. Teams should be able to recognize when a challenge is occurring and properly handle the situation. There are four possible challenges that can occur during a run:</p>
+<ul class="simple">
+<li><p><strong>Conveyor Malfunction</strong> - Inspection conveyor stops operating</p></li>
+<li><p><strong>Voltage Tester Malfunction</strong> - One or both voltage testers stop providing data</p></li>
+<li><p><strong>Vacuum Tool Malfunction</strong> - Vacuum gripper fails to grasp objects</p></li>
+<li><p><strong>High Priority Order</strong> - Urgent kit request with time constraints</p></li>
+</ul>
+<section id="conveyor-malfunction">
+<h2>Conveyor Malfunction<a class="headerlink" href="#conveyor-malfunction" title="Permalink to this heading">#</a></h2>
+<p>When the conveyor malfunction challenge occurs, the inspection conveyor will pause its motion. In addition, the cell feed will pause, so no new cells can be added during the challenge. Teams are expected to handle this challenge by:</p>
+<ol class="arabic simple">
+<li><p><strong>Detecting the malfunction</strong> by monitoring the conveyor status topic (<a class="reference internal" href="api.html#inspection-challenge-anchor"><span class="std std-ref">reference</span></a>)</p></li>
+<li><p><strong>Pausing the inspection system</strong> to avoid conflicts</p></li>
+<li><p><strong>Waiting for recovery</strong> by monitoring the status topic until it reports operational status</p></li>
+<li><p><strong>Resuming operations</strong> once the conveyor and cell feed return to normal</p></li>
+</ol>
+</section>
+<section id="voltage-tester-malfunction">
+<h2>Voltage Tester Malfunction<a class="headerlink" href="#voltage-tester-malfunction" title="Permalink to this heading">#</a></h2>
+<p>When the voltage tester malfunction occurs, one or both voltage testers will stop publishing data. Teams are expected to handle this challenge by:</p>
+<ol class="arabic simple">
+<li><p><strong>Detecting the malfunction</strong> by monitoring voltage tester topics for data availability (<a class="reference internal" href="api.html#inspection-challenge-anchor"><span class="std std-ref">reference</span></a>)</p></li>
+<li><p><strong>Adapting operations</strong> to avoid using the affected voltage tester(s)</p></li>
+<li><p><strong>Monitoring for recovery</strong> by watching the status topic until operational status is restored</p></li>
+<li><p><strong>Continuing progress</strong> using any operational voltage testers to maintain productivity</p></li>
+<li><p><strong>Resuming full operations</strong> once all voltage testers return to operational status</p></li>
+</ol>
+</section>
+<section id="vacuum-tool-malfunction">
+<h2>Vacuum Tool Malfunction<a class="headerlink" href="#vacuum-tool-malfunction" title="Permalink to this heading">#</a></h2>
+<p>When the vacuum tool malfunction occurs, a specified vacuum gripper will fail during grasp attempts. Teams are expected to handle this challenge by:</p>
+<ol class="arabic simple">
+<li><p><strong>Detecting the failure</strong> by monitoring the response from the grasp service (<a class="reference internal" href="api.html#vacuum-tool-challenge-anchor"><span class="std std-ref">reference</span></a>)</p></li>
+<li><p><strong>Repositioning the gripper</strong> by moving it away from the target object</p></li>
+<li><p><strong>Retrying the grasp</strong> with proper positioning and approach</p></li>
+</ol>
+</section>
+<section id="high-priority-order">
+<h2>High Priority Order<a class="headerlink" href="#high-priority-order" title="Permalink to this heading">#</a></h2>
+<p>When a high priority order is requested, an internal timer starts tracking completion time. Teams should minimize the time taken to submit this urgent kit request. Teams are expected to handle this challenge by:</p>
+<ol class="arabic simple">
+<li><p><strong>Detecting the request</strong> by monitoring the high priority order topic (<a class="reference internal" href="api.html#high-priority-anchor"><span class="std std-ref">reference</span></a>)</p></li>
+<li><p><strong>Switching cell feed</strong> to begin feeding NiMH cells</p></li>
+<li><p><strong>Building the kit</strong> using four NiMH cells with proper voltage specifications</p></li>
+<li><p><strong>Delivering the kit</strong> by moving the AGV to the shipping location</p></li>
+<li><p><strong>Submitting the order</strong> using the high priority submission service with the correct order ID (<a class="reference internal" href="api.html#high-priority-anchor"><span class="std std-ref">reference</span></a>)</p></li>
+<li><p><strong>Restoring normal operations</strong> by switching cell feed back to Li-ion batteries</p></li>
+<li><p><strong>Resuming standard tasks</strong> to continue regular production</p></li>
+</ol>
+</section>
 </section>
 
 
@@ -355,6 +415,24 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conveyor-malfunction">Conveyor Malfunction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voltage-tester-malfunction">Voltage Tester Malfunction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vacuum-tool-malfunction">Vacuum Tool Malfunction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#high-priority-order">High Priority Order</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/ntd2d.css?v=7c2ea725" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=0f03d396" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f232d258" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -177,7 +177,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="scenario.html">Scenario</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="challenges.html">Agility Challenges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="challenges.html">Challenges</a></li>
 <li class="toctree-l1"><a class="reference internal" href="evaluation.html">Evaluation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Development</span></p>
@@ -335,19 +335,19 @@ document.write(`
                   
   <section id="startup">
 <span id="id1"></span><h1>Startup<a class="headerlink" href="#startup" title="Permalink to this heading">#</a></h1>
-<p>There are two ways for teams to develop a solution for this years ARIAC competition</p>
+<p>There are two ways for teams to develop a solution for this year’s ARIAC competition:</p>
 <ul class="simple">
 <li><p>Docker</p></li>
 <li><p>Local</p></li>
 </ul>
 <section id="docker">
 <h2>Docker<a class="headerlink" href="#docker" title="Permalink to this heading">#</a></h2>
-<p>Running the competition through docker ensures all of the dependencies for ARIAC are preloaded into the image. This makes setup easier and can lead to fewer potential issues. However there can be a steep learning curve if your team is not familiar with docker. The final evaluation will require team’s to submit a Dockerfile for their solution so this is the recommended approach.</p>
+<p>Running the competition through Docker ensures all ARIAC dependencies are preloaded into the image. This makes setup easier and can lead to fewer potential issues. However, there can be a steep learning curve if your team is not familiar with Docker. The final evaluation will require teams to submit a Dockerfile for their solution, so this is the recommended approach.</p>
 <section id="installation">
 <h3>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h3>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>Running ARIAC though docker requires a linux operating system</p>
+<p>Running ARIAC through Docker requires a Linux operating system</p>
 </div>
 <ol class="arabic">
 <li><p>Install prerequisites</p>
@@ -356,15 +356,15 @@ document.write(`
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>After installing docker engine, follow the  <a class="reference external" href="https://docs.docker.com/engine/install/linux-postinstall/">post installation instructions</a>.</p>
+<p>After installing Docker Engine, follow the <a class="reference external" href="https://docs.docker.com/engine/install/linux-postinstall/">post-installation instructions</a>.</p>
 </div>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html">Nvidia Container Toolkit</a>.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The toolkit is only neccessary if you have an NVIDIA graphics card.</p>
-<p>After installation, run this command:</p>
+<p>The toolkit is only necessary if you have an NVIDIA graphics card.</p>
+<p>After installation, run the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nvidia-ctk<span class="w"> </span>runtime<span class="w"> </span>configure<span class="w"> </span>--runtime<span class="o">=</span>docker
 </pre></div>
 </div>
@@ -446,14 +446,14 @@ document.write(`
 </section>
 <section id="local">
 <h2>Local<a class="headerlink" href="#local" title="Permalink to this heading">#</a></h2>
-<p>The competition can still be run without using docker by directly installing and building the ARIAC source code on your machine. This may lead to more issues based on how your computer is configured.</p>
+<p>The competition can still be run without using Docker by directly installing and building the ARIAC source code on your machine. This may lead to more issues depending on how your computer is configured.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>Running ARIAC locally requires Ubuntu 24.04.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>These instructions are written for bash. If you are using a shell other than bash, the source commands will be different. For example, the command for zsh is this:</p>
+<p>These instructions are written for Bash. If you are using a shell other than Bash, the source commands will be different. For example, the command for Zsh is:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>/opt/ros/jazzy/setup.zsh
 </pre></div>
 </div>
@@ -500,7 +500,7 @@ sudo<span class="w"> </span>rosdep<span class="w"> </span>init
 </div>
 </li>
 <li><p>Pip dependencies</p>
-<p>Install neccessary python packages for the app:</p>
+<p>Install necessary Python packages for the app:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-pip
 pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>src/ARIAC/ariac_app/requirements.txt<span class="w"> </span>--break-system-packages
 </pre></div>

@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/ntd2d.css?v=7c2ea725" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=0f03d396" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f232d258" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -177,7 +177,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="scenario.html">Scenario</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="challenges.html">Agility Challenges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="challenges.html">Challenges</a></li>
 <li class="toctree-l1"><a class="reference internal" href="evaluation.html">Evaluation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Development</span></p>
@@ -352,7 +352,7 @@ document.write(`
 <p>For instructions on how to start the app either through Docker or locally, please view the <a class="reference internal" href="startup.html#startup"><span class="std std-ref">startup page</span></a>.</p>
 <section id="configuration">
 <h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading">#</a></h3>
-<p>The home page of the app configures the settings for a compeition run. This includes:</p>
+<p>The home page of the app configures the settings for a competition run. This includes:</p>
 <ul class="simple">
 <li><p>Trial config</p></li>
 <li><p>Team config</p></li>
@@ -381,7 +381,7 @@ document.write(`
 </section>
 <section id="database">
 <h4>Database<a class="headerlink" href="#database" title="Permalink to this heading">#</a></h4>
-<p>The ARIAC database is a local sqlite database that stores the information needed for scoring. The database is optional to run the environment, but is neccessary to view results. For the demos, create a database.</p>
+<p>The ARIAC database is a local SQLite database that stores the information needed for scoring. The database is optional to run the environment, but is necessary to view results. For the demos, create a database.</p>
 <figure class="align-default">
 <a class="reference internal image-reference" href="../_images/create_db.gif"><img alt="../_images/create_db.gif" src="../_images/create_db.gif" style="width: 60%;" /></a>
 </figure>
@@ -393,7 +393,7 @@ document.write(`
 </section>
 <section id="cheats">
 <h4>Cheats<a class="headerlink" href="#cheats" title="Permalink to this heading">#</a></h4>
-<p>For testing purposes, cheats have been included to start the environment at different stages of the competition. The available configurations are:</p>
+<p>For testing purposes, cheats have been included to start the environment at different stages of the competition. The available cheat configurations are:</p>
 <ul class="simple">
 <li><p>Cells in voltage testers</p></li>
 <li><p>Kit on AGV</p></li>
@@ -414,7 +414,7 @@ document.write(`
 <figure class="align-default">
 <a class="reference internal image-reference" href="../_images/dummy_inspection.gif"><img alt="../_images/dummy_inspection.gif" src="../_images/dummy_inspection.gif" style="width: 60%;" /></a>
 </figure>
-<p>This example controls the cell feed on the inspection conveyor and submits dummy inspection reports using data from the break beam sensor.</p>
+<p>This example controls the cell feed on the inspection conveyor and submits dummy inspection reports using data from the break-beam sensor.</p>
 <p>To run this demo, select the example team’s trial and team configs using the steps above. Then, press the confirm button, which will open the run page. To start the environment, press the green “START RUN” button. Then, in the “Team Process” section of the run page, select “example_team” in the package dropdown and “dummy_inspection” in the file dropdown. The command will then fill in below the dropdowns. Press the arrow next to the command to run the demo.</p>
 </section>
 <section id="move-robots">
@@ -422,7 +422,7 @@ document.write(`
 <figure class="align-default">
 <a class="reference internal image-reference" href="../_images/move_robots.gif"><img alt="../_images/move_robots.gif" src="../_images/move_robots.gif" style="width: 60%;" /></a>
 </figure>
-<p>This example creates moveit_py nodes for all five robots in the environment and moves the robots in simple linear motions simultaneously.</p>
+<p>This example creates MoveIt.py nodes for all five robots in the environment and moves the robots in simple linear motions simultaneously.</p>
 <p>To run this demo, select the example team’s trial and team configs using the steps above. Then, press the confirm button, which will open the run page. To start the environment, press the green “START RUN” button. Then, in the “Team Process” section of the run page, select “example_team” in the package dropdown and “move_robots” in the file dropdown. The command will then fill in below the dropdowns. Press the arrow next to the command to run the demo.</p>
 </section>
 <section id="pick-from-voltage-tester">
@@ -445,10 +445,10 @@ document.write(`
 </section>
 <section id="running-with-the-terminal">
 <h2>Running with the Terminal<a class="headerlink" href="#running-with-the-terminal" title="Permalink to this heading">#</a></h2>
-<p>For each of these demos, two terminals are required: one for the environment and the other for the example team.</p>
+<p>For each of these demos, two terminals are required: one for the environment and another for the example team.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If running locally, be sure to source in both terminals.</p>
+<p>If running locally, be sure to source the setup files in both terminals.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>/opt/ros/jazzy/setup.bash
 <span class="nb">source</span><span class="w"> </span>~/ariac_ws/install/setup.bash
 </pre></div>

@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/ntd2d.css?v=7c2ea725" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=0f03d396" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f232d258" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -178,7 +178,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Scenario</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="challenges.html">Agility Challenges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="challenges.html">Challenges</a></li>
 <li class="toctree-l1"><a class="reference internal" href="evaluation.html">Evaluation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Development</span></p>
@@ -329,6 +329,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2f-bottom-welds">Step 2f: Bottom Welds</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#competition-flow">Competition Flow</a></li>
 </ul>
             </nav>
         </div>
@@ -344,7 +345,7 @@ document.write(`
 <span id="id1"></span><h1>Scenario<a class="headerlink" href="#scenario" title="Permalink to this heading">#</a></h1>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
-<p>ARIAC 2025 simulates an EV battery production factory. The factory uses battery cells of two types: Li-Ion (lithium ion) and Ni-MH (nickle metal hydride).</p>
+<p>The competition simulates an EV battery production factory. The factory uses battery cells of two types: Li-Ion (lithium ion) and Ni-MH (nickel metal hydride).</p>
 <figure class="align-default" id="id2">
 <a class="reference internal image-reference" href="../_images/li-ion_cell.png"><img alt="../_images/li-ion_cell.png" src="../_images/li-ion_cell.png" style="width: 50%;" /></a>
 <figcaption>
@@ -357,7 +358,7 @@ document.write(`
 <p><span class="caption-text">A Ni-MH cell</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>During a run of the competition, teams will be required to complete a certain number of kits and or modules determined by the trial.</p>
+<p>During a competition run, teams will be required to complete a certain number of kits and/or modules as determined by the trial.</p>
 <p>A <strong>kit</strong> is a grouping of four EV battery cells placed onto a tray.</p>
 <p>A <strong>module</strong> is a unit of four EV battery shells arranged with a top and bottom shells and electrically connected with welds.</p>
 <figure class="align-default" id="id4">
@@ -391,8 +392,8 @@ document.write(`
 </ul>
 <section id="step-1a-physical-inspection">
 <h3>Step 1a: Physical Inspection<a class="headerlink" href="#step-1a-physical-inspection" title="Permalink to this heading">#</a></h3>
-<p>The conveyor speed and feed rate for the inspection conveyor are set by the team in their configuration file. After the competition is started a service will become available to control the cell feed type for for the inspection conveyor. Available types are in <a class="reference internal" href="../interfaces/msg/CellTypes.html#cell-types-msg"><span class="std std-ref">CellTypes.msg</span></a>. Sending NONE will disable the cell feed.</p>
-<p>For each cell the team should read data from lidar sensors placed around the inspection conveyor to determine whether or not the cell is defective. After the inspection is complete, an inspection report is sent by the team. If the cell passes inspection the inspection door will open, if not the cell will drop into the bin next to the conveyor.</p>
+<p>The conveyor speed and feed rate for the inspection conveyor are set by the team in their configuration file. After the competition is started, a service will become available to control the cell feed type for the inspection conveyor. Available types are in <a class="reference internal" href="../interfaces/msg/CellTypes.html#cell-types-msg"><span class="std std-ref">CellTypes.msg</span></a>. Sending NONE will disable the cell feed.</p>
+<p>For each cell, the team should read data from lidar sensors placed around the inspection conveyor to determine whether the cell is defective. After the inspection is complete, an inspection report is sent by the team. If the cell passes inspection the inspection door will open, if not the cell will drop into the bin next to the conveyor.</p>
 <figure class="align-default" id="id6">
 <a class="reference internal image-reference" href="../_images/task_1a.gif"><img alt="../_images/task_1a.gif" src="../_images/task_1a.gif" style="width: 100%;" /></a>
 <figcaption>
@@ -489,7 +490,7 @@ document.write(`
 <figure class="align-default" id="id11">
 <a class="reference internal image-reference" href="../_images/shell_interior.png"><img alt="../_images/shell_interior.png" src="../_images/shell_interior.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-text">Shells are marked with + or - to indicate cell direction,</span><a class="headerlink" href="#id11" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Shells are marked with + or - to indicate cell polarity direction</span><a class="headerlink" href="#id11" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id12">
@@ -509,7 +510,7 @@ document.write(`
 </section>
 <section id="step-2b-tool-change">
 <h3>Step 2b: Tool Change<a class="headerlink" href="#step-2b-tool-change" title="Permalink to this heading">#</a></h3>
-<p>Assembly robot 2 is equipped with a coupler that allows it to utilize one of two vacuum gripper tools (VG2 or VG4). To change tools the coupler should be moved to the location of the desired tool and a ROS service will lock the tool to the robot. For the next step assembly robot 2 must attach VG2 which is capable of picking up a top shell. The tool must then be manuevered away from the tool stand without colliding.</p>
+<p>Assembly robot 2 is equipped with a coupler that allows it to utilize one of two vacuum gripper tools (VG2 or VG4). To change tools the coupler should be moved to the location of the desired tool and a ROS service will lock the tool to the robot. For the next step assembly robot 2 must attach VG2 which is capable of picking up a top shell. The tool must then be maneuvered away from the tool stand without colliding.</p>
 <figure class="align-default" id="id13">
 <a class="reference internal image-reference" href="../_images/task_2b.gif"><img alt="../_images/task_2b.gif" src="../_images/task_2b.gif" style="width: 100%;" /></a>
 <figcaption>
@@ -584,6 +585,41 @@ document.write(`
 </div>
 </section>
 </section>
+<section id="competition-flow">
+<h2>Competition Flow<a class="headerlink" href="#competition-flow" title="Permalink to this heading">#</a></h2>
+<p>The competition follows a structured workflow with distinct states and phases. The flowchart below illustrates the complete competition lifecycle from preparation to completion.</p>
+<figure class="align-default">
+<a class="only-dark reference internal image-reference" href="../_images/flowchart_dark.png"><img alt="../_images/flowchart_dark.png" class="only-dark" src="../_images/flowchart_dark.png" style="width: 40%;" /></a>
+</figure>
+<figure class="align-default">
+<a class="only-light reference internal image-reference" href="../_images/flowchart_light.png"><img alt="../_images/flowchart_light.png" class="only-light" src="../_images/flowchart_light.png" style="width: 40%;" /></a>
+</figure>
+<p><strong>Competition States</strong></p>
+<p>The competition progresses through five distinct states:</p>
+<ul class="simple">
+<li><p><strong>PREPARING</strong> - Initial state where the simulation environment is being set up</p></li>
+<li><p><strong>READY</strong> - Environment is fully initialized and waiting for teams to connect</p></li>
+<li><p><strong>STARTED</strong> - Active competition phase where teams execute their solutions</p></li>
+<li><p><strong>ORDERS_COMPLETE</strong> - All required orders have been successfully completed</p></li>
+<li><p><strong>ENDED</strong> - Competition has concluded</p></li>
+</ul>
+<p><strong>Competition Flow</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Setup Phase</strong>: Once the competition state reaches READY, teams must connect to all robots and sensors in the environment. This ensures proper communication channels are established before production begins.</p></li>
+<li><p><strong>Start Competition</strong>: Teams initiate the competition through a service call, transitioning the state to STARTED.</p></li>
+<li><p><strong>Production Phase</strong>: Teams monitor incoming orders and execute the complete production workflow:</p>
+<ul class="simple">
+<li><p><strong>Task 1</strong>: Inspect cells, build kits, and deliver to shipping or assembly stations</p></li>
+<li><p><strong>Task 2</strong>: Construct modules from completed kits (when applicable)</p></li>
+</ul>
+</li>
+<li><p><strong>Competition End</strong>: The competition ends when the time limit is reached or when teams manually end it through a service call. When all orders are complete, the state changes to ORDERS_COMPLETE as a signal to teams that they have finished everything required.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The competition state will not change to ORDERS_COMPLETE if there is still a high priority order to be announced.</p>
+</div>
+</section>
 </section>
 
 
@@ -649,6 +685,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2f-bottom-welds">Step 2f: Bottom Welds</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#competition-flow">Competition Flow</a></li>
 </ul>
   </nav></div>
 

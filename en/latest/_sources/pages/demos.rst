@@ -13,7 +13,7 @@ For instructions on how to start the app either through Docker or locally, pleas
 Configuration
 =============
 
-The home page of the app configures the settings for a compeition run. This includes: 
+The home page of the app configures the settings for a competition run. This includes: 
 
 * Trial config
 * Team config 
@@ -51,7 +51,7 @@ Local: ``~/ariac_ws/src/ariac_example_team/example_team/config/example_team_conf
 Database
 --------
 
-The ARIAC database is a local sqlite database that stores the information needed for scoring. The database is optional to run the environment, but is neccessary to view results. For the demos, create a database.
+The ARIAC database is a local SQLite database that stores the information needed for scoring. The database is optional to run the environment, but is necessary to view results. For the demos, create a database.
 
 .. figure:: /_static/images/create_db.gif
   :width: 60%
@@ -65,7 +65,7 @@ To create the database, click the "Create" button in the database section and th
 Cheats
 ------
 
-For testing purposes, cheats have been included to start the environment at different stages of the competition. The available configurations are:
+For testing purposes, cheats have been included to start the environment at different stages of the competition. The available cheat configurations are:
 
 * Cells in voltage testers
 * Kit on AGV
@@ -87,7 +87,7 @@ Dummy Inspection
 .. figure:: /_static/images/dummy_inspection.gif
   :width: 60%
 
-This example controls the cell feed on the inspection conveyor and submits dummy inspection reports using data from the break beam sensor.
+This example controls the cell feed on the inspection conveyor and submits dummy inspection reports using data from the break-beam sensor.
 
 To run this demo, select the example team's trial and team configs using the steps above. Then, press the confirm button, which will open the run page. To start the environment, press the green "START RUN" button. Then, in the "Team Process" section of the run page, select "example_team" in the package dropdown and "dummy_inspection" in the file dropdown. The command will then fill in below the dropdowns. Press the arrow next to the command to run the demo.
 
@@ -97,7 +97,7 @@ Move Robots
 .. figure:: /_static/images/move_robots.gif
   :width: 60%
 
-This example creates moveit_py nodes for all five robots in the environment and moves the robots in simple linear motions simultaneously.
+This example creates MoveIt.py nodes for all five robots in the environment and moves the robots in simple linear motions simultaneously.
 
 To run this demo, select the example team's trial and team configs using the steps above. Then, press the confirm button, which will open the run page. To start the environment, press the green "START RUN" button. Then, in the "Team Process" section of the run page, select "example_team" in the package dropdown and "move_robots" in the file dropdown. The command will then fill in below the dropdowns. Press the arrow next to the command to run the demo.
 
@@ -125,11 +125,11 @@ To run this demo, select the example team's trial and team configs using the ste
 Running with the Terminal
 -------------------------
 
-For each of these demos, two terminals are required: one for the environment and the other for the example team.
+For each of these demos, two terminals are required: one for the environment and another for the example team.
 
 .. note::
 
-  If running locally, be sure to source in both terminals.
+  If running locally, be sure to source the setup files in both terminals.
 
   .. code-block:: bash
 

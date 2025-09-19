@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/ntd2d.css?v=7c2ea725" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=0f03d396" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f232d258" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -44,11 +44,12 @@
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'pages/evaluation';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Schedule" href="schedule.html" />
-    <link rel="prev" title="Agility Challenges" href="challenges.html" />
+    <link rel="prev" title="Challenges" href="challenges.html" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -177,7 +178,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="scenario.html">Scenario</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="challenges.html">Agility Challenges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="challenges.html">Challenges</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Evaluation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Development</span></p>
@@ -287,7 +288,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -303,6 +306,34 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-score">Run Score</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scoring-weights">Scoring Weights</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#base-score">Base Score</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kit-acceptance-criteria">Kit Acceptance Criteria</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#module-acceptance-criteria">Module Acceptance Criteria</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-points">Bonus Points</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#trial-time">Trial Time</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inspection-speed">Inspection Speed</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#high-priority-order-speed">High Priority Order Speed</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sensor-cost">Sensor Cost</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inspection-classification">Inspection Classification</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penalties">Penalties</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-score">Execution Score</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#human-evaluation">Human Evaluation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-competition-score">Final Competition Score</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -314,10 +345,413 @@ document.write(`
                   
   <section id="evaluation">
 <span id="id1"></span><h1>Evaluation<a class="headerlink" href="#evaluation" title="Permalink to this heading">#</a></h1>
-<div class="caution admonition" id="under-construction">
-<p class="admonition-title">Under Construction</p>
-<p>🚧 This page is currently under construction. Please check back later. 🚧</p>
+<p>This page describes the scoring system for the competition. Teams are evaluated on their performance across multiple runs and trials, with scores calculated based on task completion, efficiency bonuses, and penalty deductions. The evaluation process covers individual run scores, which are aggregated into an execution score (80%) and combined with human judging (20%) to determine final team rankings.</p>
+<section id="run-score">
+<h2>Run Score<a class="headerlink" href="#run-score" title="Permalink to this heading">#</a></h2>
+<div class="docutils container">
+<ol class="arabic simple">
+<li><p><strong>Base Score</strong>: How well was the assigned task completed?</p></li>
+<li><p><strong>Bonus Score</strong>: Various factors; how efficient and accurate is the system?</p></li>
+<li><p><strong>Penalties</strong>: Various sources; how often did the team perform an illegal action?</p></li>
+</ol>
 </div>
+<div class="formula-highlight docutils container">
+<div class="math notranslate nohighlight">
+\[R = B + \sum \beta_i - \sum \rho_i * o_i\]</div>
+</div>
+<div class="pst-scrollable-table-container"><table class="centered-table table" id="id4" style="width: 80%">
+<caption><span class="caption-text">Variables</span><a class="headerlink" href="#id4" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(R\)</span></p></td>
+<td><p>Total run score</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(B\)</span></p></td>
+<td><p>Base score</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\beta_i\)</span></p></td>
+<td><p>Bonus scores</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\rho_i\)</span></p></td>
+<td><p>Deduction for each penalty type</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(o_i\)</span></p></td>
+<td><p>Number of occurrences for the associated penalty</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="scoring-weights">
+<h3>Scoring Weights<a class="headerlink" href="#scoring-weights" title="Permalink to this heading">#</a></h3>
+<p>The scoring system uses predefined weights to balance the importance of different performance aspects. These weights determine how much each component contributes to the overall score.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The exact scoring weight values are subject to change and are defined in the <a class="reference external" href="https://github.com/usnistgov/ARIAC/blob/ariac2025/ariac_db/config/scoring_weights.yaml">scoring_weights.yaml configuration file</a>. Teams should refer to this file for the current values used by the scoring system.</p>
+</div>
+<p>The following weights are used in the scoring calculations:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\omega_1\)</span> - Kit completion weight</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega_2\)</span> - Module completion weight</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega_3\)</span> - Trial time bonus weight</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega_4\)</span> - Inspection speed bonus weight</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega_5\)</span> - High priority order speed bonus weight</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega_6\)</span> - Sensor cost bonus weight</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega_7\)</span> - Inspection classification bonus weight</p></li>
+</ul>
+</section>
+<section id="base-score">
+<h3>Base Score<a class="headerlink" href="#base-score" title="Permalink to this heading">#</a></h3>
+<p>The base score is calculated from the submission of kitting orders and module orders.</p>
+<div class="formula-highlight docutils container">
+<div class="math notranslate nohighlight">
+\[B = \omega_1 \cdot \frac{k_c}{k_d} + \omega_2 \cdot \frac{m_c}{m_d}\]</div>
+</div>
+<div class="pst-scrollable-table-container"><table class="centered-table table" id="id5" style="width: 80%">
+<caption><span class="caption-text">Variables</span><a class="headerlink" href="#id5" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(B\)</span></p></td>
+<td><p>Base score for the run</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(k_c\)</span></p></td>
+<td><p>Number of kits successfully submitted</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(k_d\)</span></p></td>
+<td><p>Number of kits desired</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(m_c\)</span></p></td>
+<td><p>Number of modules successfully submitted</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(m_d\)</span></p></td>
+<td><p>Number of modules desired</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>High priority kits are included in <span class="math notranslate nohighlight">\(k_d\)</span></p>
+</div>
+<section id="kit-acceptance-criteria">
+<h4>Kit Acceptance Criteria<a class="headerlink" href="#kit-acceptance-criteria" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Four good cells (not defective and within voltage specification)</p></li>
+<li><p>Total kit voltage within tolerance</p></li>
+<li><p>Kit delivered to shipping area on an AGV</p></li>
+</ul>
+</section>
+<section id="module-acceptance-criteria">
+<h4>Module Acceptance Criteria<a class="headerlink" href="#module-acceptance-criteria" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Four good cells with individual voltages in specification</p></li>
+<li><p>All cells properly oriented with correct polarity</p></li>
+<li><p>Total module voltage within tolerance</p></li>
+<li><p>Bottom and top shells properly installed and secured</p></li>
+<li><p>All six welds completed successfully:</p>
+<ul>
+<li><p>Four top welds</p></li>
+<li><p>Two bottom welds</p></li>
+</ul>
+</li>
+<li><p>Module delivered to submission area on assembly conveyor</p></li>
+</ul>
+</section>
+</section>
+<section id="bonus-points">
+<h3>Bonus Points<a class="headerlink" href="#bonus-points" title="Permalink to this heading">#</a></h3>
+<p>Teams can earn bonus points from several sources:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All bonus values are clamped to zero - bonuses cannot be negative.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Teams are only eligible for bonuses if all desired kits and modules were submitted</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Target values and thresholds used in bonus calculations are subject to change and are defined in the <a class="reference external" href="https://github.com/usnistgov/ARIAC/blob/ariac2025/ariac_db/config/scoring_weights.yaml">scoring_weights.yaml configuration file</a>. Teams should refer to this file for the current values used by the scoring system.</p>
+</div>
+<section id="trial-time">
+<h4>Trial Time<a class="headerlink" href="#trial-time" title="Permalink to this heading">#</a></h4>
+<p>The trial time bonus is awarded for completing the competition in less time than allocated.</p>
+<div class="formula-highlight docutils container">
+<div class="math notranslate nohighlight">
+\[\beta_1 = \omega_3 \cdot (1 - \frac{t_e}{t_m})\]</div>
+</div>
+<div class="pst-scrollable-table-container"><table class="centered-table table" id="id6" style="width: 80%">
+<caption><span class="caption-text">Variables</span><a class="headerlink" href="#id6" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\beta_1\)</span></p></td>
+<td><p>Trial time bonus</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(t_e\)</span></p></td>
+<td><p>Run execution duration</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(t_m\)</span></p></td>
+<td><p>Run time limit</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="inspection-speed">
+<h4>Inspection Speed<a class="headerlink" href="#inspection-speed" title="Permalink to this heading">#</a></h4>
+<p>The inspection speed bonus is awarded for submitting inspection reports faster than the target time.</p>
+<div class="formula-highlight docutils container">
+<div class="math notranslate nohighlight">
+\[\beta_2 = \omega_4 \cdot (1 - \frac{\gamma}{\gamma_d})\]</div>
+</div>
+<div class="pst-scrollable-table-container"><table class="centered-table table" id="id7" style="width: 80%">
+<caption><span class="caption-text">Variables</span><a class="headerlink" href="#id7" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\beta_2\)</span></p></td>
+<td><p>Inspection speed bonus</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\gamma\)</span></p></td>
+<td><p>Average inspection duration</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\gamma_d\)</span></p></td>
+<td><p>Desired inspection duration</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="high-priority-order-speed">
+<h4>High Priority Order Speed<a class="headerlink" href="#high-priority-order-speed" title="Permalink to this heading">#</a></h4>
+<p>The high priority order speed bonus is awarded for completing high priority orders faster than the time limit.</p>
+<div class="formula-highlight docutils container">
+<div class="math notranslate nohighlight">
+\[\beta_3 = \omega_5 \cdot (1 - \frac{\tau}{\tau_d})\]</div>
+</div>
+<div class="pst-scrollable-table-container"><table class="centered-table table" id="id8" style="width: 80%">
+<caption><span class="caption-text">Variables</span><a class="headerlink" href="#id8" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\beta_3\)</span></p></td>
+<td><p>High priority order speed bonus</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\tau\)</span></p></td>
+<td><p>Average high priority kit execution duration</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\tau_d\)</span></p></td>
+<td><p>Desired high priority kit execution duration</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sensor-cost">
+<h4>Sensor Cost<a class="headerlink" href="#sensor-cost" title="Permalink to this heading">#</a></h4>
+<p>The sensor cost bonus is awarded for using sensors below the allocated budget. Exceeding the budget results in a penalty instead.</p>
+<div class="formula-highlight docutils container">
+<div class="math notranslate nohighlight">
+\[\beta_4 = \omega_6 \cdot (1 - \frac{\sigma}{\sigma_b})\]</div>
+</div>
+<div class="pst-scrollable-table-container"><table class="centered-table table" id="id9" style="width: 80%">
+<caption><span class="caption-text">Variables</span><a class="headerlink" href="#id9" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\beta_4\)</span></p></td>
+<td><p>Sensor cost bonus</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\sigma\)</span></p></td>
+<td><p>Team sensor cost</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\sigma_b\)</span></p></td>
+<td><p>Sensor budget</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="inspection-classification">
+<h4>Inspection Classification<a class="headerlink" href="#inspection-classification" title="Permalink to this heading">#</a></h4>
+<p>The inspection classification bonus is awarded for correctly identifying defect types and locations. All elements of the defect report must be correct.</p>
+<div class="formula-highlight docutils container">
+<div class="math notranslate nohighlight">
+\[\beta_5 = \omega_7 \cdot (1 - \frac{\nu}{\delta})\]</div>
+</div>
+<div class="pst-scrollable-table-container"><table class="centered-table table" id="id10" style="width: 80%">
+<caption><span class="caption-text">Variables</span><a class="headerlink" href="#id10" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\beta_5\)</span></p></td>
+<td><p>Inspection classification bonus</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\nu\)</span></p></td>
+<td><p>Number of correctly classified defect reports</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\delta\)</span></p></td>
+<td><p>Total number of defective cells</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="penalties">
+<h3>Penalties<a class="headerlink" href="#penalties" title="Permalink to this heading">#</a></h3>
+<p>The competition applies penalties for certain events during runs. Penalties are calculated per occurrence - each penalty has an associated value that is deducted from the total score when the event occurs. Penalties come from the following sources:</p>
+<ul class="simple">
+<li><p>Non-defective cell placed in inspection bin</p></li>
+<li><p>Cell falls into conveyor bin</p></li>
+<li><p>Cell comes into contact with an invalid surface</p></li>
+<li><p>Two AGVs collide</p></li>
+<li><p>A robot collides, either with an object in the environment, or another robot</p></li>
+<li><p>The sensor cost used is over the provided budget</p></li>
+</ul>
+<p>The following penalty symbols are used in the scoring calculations:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\rho_{0}\)</span> - Non-defective cell placed in inspection bin</p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho_{1}\)</span> - Cell falls into conveyor bin</p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho_{2}\)</span> - Object on invalid surface</p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho_{3}\)</span> - AGV collision</p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho_{4}\)</span> - Robot collision</p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho_{5}\)</span> - Sensor cost over budget</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The exact penalty values are subject to change and are defined in the <a class="reference external" href="https://github.com/usnistgov/ARIAC/blob/ariac2025/ariac_db/config/scoring_weights.yaml">scoring_weights.yaml configuration file</a>. Teams should refer to this file for the current values used by the scoring system.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For the robot collision, for every 5 seconds the robot is in collision, another occurrence of the penalty will be recorded.
+In addition, if a robot is in collision with another robot, this penalty will be counted twice.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the sensor cost penalty, the penalty is calculated for each dollar over the allocated budget. Using less than the allocated budget will result in a bonus being applied to the score.</p>
+</div>
+</section>
+</section>
+<section id="execution-score">
+<h2>Execution Score<a class="headerlink" href="#execution-score" title="Permalink to this heading">#</a></h2>
+<p>The execution score aggregates individual run scores across all trials to determine the final performance ranking. Teams complete five runs per trial, with the two best scores from each trial being averaged together. These trial averages are then summed to create the total execution score.</p>
+<div class="formula-highlight docutils container">
+<div class="math notranslate nohighlight">
+\[E = \sum_{i=1}^{n} \frac{R_1 + R_2}{2}\]</div>
+</div>
+<div class="pst-scrollable-table-container"><table class="centered-table table" id="id11" style="width: 80%">
+<caption><span class="caption-text">Variables</span><a class="headerlink" href="#id11" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(E\)</span></p></td>
+<td><p>Total execution score</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(n\)</span></p></td>
+<td><p>Number of trials</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(R_1\)</span></p></td>
+<td><p>Best run score for trial i</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(R_2\)</span></p></td>
+<td><p>Second best run score for trial i</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="human-evaluation">
+<h2>Human Evaluation<a class="headerlink" href="#human-evaluation" title="Permalink to this heading">#</a></h2>
+<p>In addition to the execution score, teams are evaluated by human judges who assess the overall approach and innovation demonstrated during the competition. Judges independently review videos of trial runs and evaluate teams across three categories.</p>
+<p>Each team receives scores from 1 to 5 in the following categories:</p>
+<ul class="simple">
+<li><p><strong>Novelty/Innovation</strong>: Creative and original approaches to solving competition challenges</p></li>
+<li><p><strong>Feasibility of Approach</strong>: Practicality and robustness of the implemented solution</p></li>
+<li><p><strong>Alignment with Spirit of Competition</strong>: How well the approach embodies the goals and values of the competition</p></li>
+</ul>
+<p>The human evaluation score is the sum of all individual judge scores across the three categories:</p>
+<div class="formula-highlight docutils container">
+<div class="math notranslate nohighlight">
+\[H = \sum_{j=1}^{n} (\eta_j + \phi_j + \alpha_j)\]</div>
+</div>
+<div class="pst-scrollable-table-container"><table class="centered-table table" id="id12" style="width: 90%">
+<caption><span class="caption-text">Variables</span><a class="headerlink" href="#id12" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(H\)</span></p></td>
+<td><p>Human evaluation score</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(n\)</span></p></td>
+<td><p>Number of judges</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\eta_j\)</span></p></td>
+<td><p>Judge j’s score for Novelty/Innovation (1-5 scale)</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\phi_j\)</span></p></td>
+<td><p>Judge j’s score for Feasibility of Approach (1-5 scale)</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\alpha_j\)</span></p></td>
+<td><p>Judge j’s score for Alignment with Spirit of Competition (1-5 scale)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="final-competition-score">
+<h2>Final Competition Score<a class="headerlink" href="#final-competition-score" title="Permalink to this heading">#</a></h2>
+<p>The final competition ranking is determined by converting both execution scores and human evaluation scores to standardized rankings, then combining them with 80% weight for execution performance and 20% weight for human evaluation.</p>
+<p><strong>Ranking Process:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Execution Ranking</strong>: Teams are ranked by execution score (highest to lowest)</p></li>
+<li><p><strong>Human Evaluation Ranking</strong>: Teams are ranked by human evaluation score (highest to lowest)</p></li>
+<li><p><strong>Combined Ranking</strong>: Rankings are weighted and combined to determine final standings</p></li>
+</ol>
+<div class="formula-highlight docutils container">
+<div class="math notranslate nohighlight">
+\[F_{rank} = 0.8 \cdot R_E + 0.2 \cdot R_H\]</div>
+</div>
+<div class="pst-scrollable-table-container"><table class="centered-table table" id="id13" style="width: 80%">
+<caption><span class="caption-text">Variables</span><a class="headerlink" href="#id13" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(F_{rank}\)</span></p></td>
+<td><p>Final weighted ranking score (lower is better)</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(R_E\)</span></p></td>
+<td><p>Execution score ranking (1 = best execution score)</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(R_H\)</span></p></td>
+<td><p>Human evaluation ranking (1 = best human score)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 </section>
 
 
@@ -337,7 +771,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Agility Challenges</p>
+        <p class="prev-next-title">Challenges</p>
       </div>
     </a>
     <a class="right-next"
@@ -355,6 +789,41 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-score">Run Score</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scoring-weights">Scoring Weights</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#base-score">Base Score</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kit-acceptance-criteria">Kit Acceptance Criteria</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#module-acceptance-criteria">Module Acceptance Criteria</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-points">Bonus Points</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#trial-time">Trial Time</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inspection-speed">Inspection Speed</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#high-priority-order-speed">High Priority Order Speed</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sensor-cost">Sensor Cost</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inspection-classification">Inspection Classification</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penalties">Penalties</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-score">Execution Score</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#human-evaluation">Human Evaluation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-competition-score">Final Competition Score</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
