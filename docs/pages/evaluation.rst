@@ -44,36 +44,19 @@ Scoring Weights
 
 The scoring system uses predefined weights to balance the importance of different performance aspects. These weights determine how much each component contributes to the overall score.
 
-.. list-table:: Scoring Weights
-   :header-rows: 1
-   :widths: 25 50 25
-   :class: centered-table
-   :width: 80%
+.. important::
 
-   * - Weight
-     - Description
-     - Value
-   * - :math:`\omega_1`
-     - Kit completion weight
-     - 500
-   * - :math:`\omega_2`
-     - Module completion weight
-     - 800
-   * - :math:`\omega_3`
-     - Trial time bonus weight
-     - 175
-   * - :math:`\omega_4`
-     - Inspection speed bonus weight
-     - 125
-   * - :math:`\omega_5`
-     - High priority order speed bonus weight
-     - 150
-   * - :math:`\omega_6`
-     - Sensor cost bonus weight
-     - 500
-   * - :math:`\omega_7`
-     - Inspection classification bonus weight
-     - 100
+   The exact scoring weight values are subject to change and are defined in the `scoring_weights.yaml configuration file <https://github.com/usnistgov/ARIAC/blob/ariac2025/ariac_db/config/scoring_weights.yaml>`_. Teams should refer to this file for the current values used by the scoring system.
+
+The following weights are used in the scoring calculations:
+
+* :math:`\omega_1` - Kit completion weight
+* :math:`\omega_2` - Module completion weight
+* :math:`\omega_3` - Trial time bonus weight
+* :math:`\omega_4` - Inspection speed bonus weight
+* :math:`\omega_5` - High priority order speed bonus weight
+* :math:`\omega_6` - Sensor cost bonus weight
+* :math:`\omega_7` - Inspection classification bonus weight
 
 Base Score
 ==========
@@ -117,6 +100,7 @@ Module Acceptance Criteria
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Four good cells with individual voltages in specification
+* All cells properly oriented with correct polarity
 * Total module voltage within tolerance
 * Bottom and top shells properly installed and secured
 * All six welds completed successfully:
@@ -138,6 +122,10 @@ Teams can earn bonus points from several sources:
 .. important::
 
   Teams are only eligible for bonuses if all desired kits and modules were submitted
+
+.. important::
+
+  Target values and thresholds used in bonus calculations are subject to change and are defined in the `scoring_weights.yaml configuration file <https://github.com/usnistgov/ARIAC/blob/ariac2025/ariac_db/config/scoring_weights.yaml>`_. Teams should refer to this file for the current values used by the scoring system.
 
 Trial Time
 ^^^^^^^^^^
@@ -183,7 +171,7 @@ The inspection speed bonus is awarded for submitting inspection reports faster t
    * - :math:`\gamma`
      - Average inspection duration
    * - :math:`\gamma_d`
-     - Desired inspection duration (target: 8 seconds)
+     - Desired inspection duration
 
 High Priority Order Speed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -206,7 +194,7 @@ The high priority order speed bonus is awarded for completing high priority orde
    * - :math:`\tau`
      - Average high priority kit execution duration
    * - :math:`\tau_d`
-     - Desired high priority kit execution duration (target: 130 seconds)
+     - Desired high priority kit execution duration
 
 Sensor Cost
 ^^^^^^^^^^^
@@ -229,7 +217,7 @@ The sensor cost bonus is awarded for using sensors below the allocated budget. E
    * - :math:`\sigma`
      - Team sensor cost
    * - :math:`\sigma_b`
-     - Sensor budget ($7000)
+     - Sensor budget
 
 Inspection Classification
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -267,34 +255,18 @@ The competition applies penalties for certain events during runs. Penalties are 
 * A robot collides, either with an object in the environment, or another robot
 * The sensor cost used is over the provided budget
 
-The following table shows the symbols for each penalty and their associated values.
+The following penalty symbols are used in the scoring calculations:
 
-.. list-table:: Penalty Values
-   :header-rows: 1
-   :widths: 25 50 25
-   :class: centered-table
+* :math:`\rho_{0}` - Non-defective cell placed in inspection bin
+* :math:`\rho_{1}` - Cell falls into conveyor bin
+* :math:`\rho_{2}` - Object on invalid surface
+* :math:`\rho_{3}` - AGV collision
+* :math:`\rho_{4}` - Robot collision
+* :math:`\rho_{5}` - Sensor cost over budget
 
-   * - Penalty Symbol
-     - Description
-     - Value
-   * - :math:`\rho_{0}`
-     - Non-defective cell placed in inspection bin
-     - 20
-   * - :math:`\rho_{1}`
-     - Cell falls into conveyor bin
-     - 20
-   * - :math:`\rho_{2}`
-     - Object on invalid surface
-     - 20
-   * - :math:`\rho_{3}`
-     - AGV collision
-     - 40
-   * - :math:`\rho_{4}`
-     - Robot collision
-     - 50
-   * - :math:`\rho_{5}`
-     - Sensor cost over budget
-     - 0.0715
+.. important::
+
+   The exact penalty values are subject to change and are defined in the `scoring_weights.yaml configuration file <https://github.com/usnistgov/ARIAC/blob/ariac2025/ariac_db/config/scoring_weights.yaml>`_. Teams should refer to this file for the current values used by the scoring system.
 
 .. warning::
 
