@@ -51,6 +51,9 @@ Data Structure Messages
    * - :ref:`InspectionReport <inspectionreport_msg>`
      - Inspection result data structure
 
+
+.. _high-priority-anchor:
+
 Competition Control Interfaces
 ------------------------------
 
@@ -75,6 +78,10 @@ Competition Control Interfaces
      - Submit module (in submission zone required)
    * - :ref:`/submit_high_priority_order <submithighpriorityorder_srv>`
      - Submit high priority kit with ID
+
+
+.. _inspection_challenge_anchor:
+
 
 Task 1 Interfaces
 -----------------
@@ -154,6 +161,9 @@ Gripper Control
      - Description
    * - :ref:`/{robot_name}/gripper_controller/gripper_command <grippercommand_action>`
      - Control gripper width
+
+
+.. _vacuum_tool_challenge_anchor:
 
 Vacuum Tool Control
 ^^^^^^^^^^^^^^^^^^^
@@ -270,4 +280,3 @@ Lidar Sensors
      - Description
    * - `/{lidar_name}/scan <https://docs.ros.org/en/jazzy/p/sensor_msgs/msg/PointCloud2.html>`_
      - Reports the point cloud detected from the lidar scan
-

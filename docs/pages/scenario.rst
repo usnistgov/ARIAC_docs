@@ -8,7 +8,7 @@ Scenario
 Overview
 --------
 
-ARIAC 2025 simulates an EV battery production factory. The factory uses battery cells of two types: Li-Ion (lithium ion) and Ni-MH (nickle metal hydride). 
+The competition simulates an EV battery production factory. The factory uses battery cells of two types: Li-Ion (lithium ion) and Ni-MH (nickel metal hydride). 
 
 .. figure:: /_static/images/li-ion_cell.png
   :width: 50%
@@ -20,7 +20,7 @@ ARIAC 2025 simulates an EV battery production factory. The factory uses battery 
 
   A Ni-MH cell
 
-During a run of the competition, teams will be required to complete a certain number of kits and or modules determined by the trial. 
+During a competition run, teams will be required to complete a certain number of kits and/or modules as determined by the trial. 
 
 A **kit** is a grouping of four EV battery cells placed onto a tray. 
 
@@ -59,9 +59,9 @@ This task is broken into five steps:
 Step 1a: Physical Inspection 
 ============================
 
-The conveyor speed and feed rate for the inspection conveyor are set by the team in their configuration file. After the competition is started a service will become available to control the cell feed type for for the inspection conveyor. Available types are in :ref:`CellTypes.msg <cell_types_msg>`. Sending NONE will disable the cell feed.
+The conveyor speed and feed rate for the inspection conveyor are set by the team in their configuration file. After the competition is started, a service will become available to control the cell feed type for the inspection conveyor. Available types are in :ref:`CellTypes.msg <cell_types_msg>`. Sending NONE will disable the cell feed.
 
-For each cell the team should read data from lidar sensors placed around the inspection conveyor to determine whether or not the cell is defective. After the inspection is complete, an inspection report is sent by the team. If the cell passes inspection the inspection door will open, if not the cell will drop into the bin next to the conveyor. 
+For each cell, the team should read data from lidar sensors placed around the inspection conveyor to determine whether the cell is defective. After the inspection is complete, an inspection report is sent by the team. If the cell passes inspection the inspection door will open, if not the cell will drop into the bin next to the conveyor. 
 
 .. figure:: /_static/images/task_1a.gif
   :width: 100%
@@ -172,7 +172,7 @@ Cells should be picked using assembly robot 1 (a UR5e equipped with a robotiq 2f
 .. figure:: /_static/images/shell_interior.png
   :width: 100%
 
-  Shells are marked with + or - to indicate cell direction, 
+  Shells are marked with + or - to indicate cell polarity direction 
 
 .. figure:: /_static/images/task_2a.gif
   :width: 100%
@@ -191,7 +191,7 @@ Cells should be picked using assembly robot 1 (a UR5e equipped with a robotiq 2f
 Step 2b: Tool Change
 ====================
 
-Assembly robot 2 is equipped with a coupler that allows it to utilize one of two vacuum gripper tools (VG2 or VG4). To change tools the coupler should be moved to the location of the desired tool and a ROS service will lock the tool to the robot. For the next step assembly robot 2 must attach VG2 which is capable of picking up a top shell. The tool must then be manuevered away from the tool stand without colliding. 
+Assembly robot 2 is equipped with a coupler that allows it to utilize one of two vacuum gripper tools (VG2 or VG4). To change tools the coupler should be moved to the location of the desired tool and a ROS service will lock the tool to the robot. For the next step assembly robot 2 must attach VG2 which is capable of picking up a top shell. The tool must then be maneuvered away from the tool stand without colliding. 
 
 .. figure:: /_static/images/task_2b.gif
   :width: 100%
