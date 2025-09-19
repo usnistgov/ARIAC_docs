@@ -13,27 +13,14 @@
   --color-action: #f57c00;
   --color-action-hover: #e65100;
   --color-bg-odd: #f2f4f5;
-  --color-bg-even: #ffffff; 
-}
-
-/* Dark mode color overrides */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-msg: #ba68c8;
-    --color-msg-hover: #e1bee7;
-    --color-topic: #64b5f6;
-    --color-topic-hover: #90caf9;
-    --color-service: #81c784;
-    --color-service-hover: #a5d6a7;
-    --color-action: #ff9800;
-    --color-action-hover: #ffb74d;
-    --color-bg-odd: #2b313c;
-    --color-bg-even: #232831;
-  }
+  --color-bg-even: #ffffff;
+  --formula-bg: #f8fafc;
+  --formula-border: #1976d2;
+  --formula-accent: #1976d2;
 }
 
 /* Dark mode via data attributes */
-[data-theme="dark"] {
+html[data-theme='dark']  {
   --color-msg: #ba68c8;
   --color-msg-hover: #e1bee7;
   --color-topic: #64b5f6;
@@ -44,32 +31,13 @@
   --color-action-hover: #ffb74d;
   --color-bg-odd: #2b313c;
   --color-bg-even: #232831;
+  --formula-bg: #1e293b;
+  --formula-border: #64b5f6;
+  --formula-accent: #64b5f6;
 }
 
-[data-bs-theme="dark"] {
-  --color-msg: #ba68c8;
-  --color-msg-hover: #e1bee7;
-  --color-topic: #64b5f6;
-  --color-topic-hover: #90caf9;
-  --color-service: #81c784;
-  --color-service-hover: #a5d6a7;
-  --color-action: #ff9800;
-  --color-action-hover: #ffb74d;
-  --color-bg-odd: #2b313c;
-  --color-bg-even: #232831;
-}
-
-html[data-theme="dark"] {
-  --color-msg: #ba68c8;
-  --color-msg-hover: #e1bee7;
-  --color-topic: #64b5f6;
-  --color-topic-hover: #90caf9;
-  --color-service: #81c784;
-  --color-service-hover: #a5d6a7;
-  --color-action: #ff9800;
-  --color-action-hover: #ffb74d;
-  --color-bg-odd: #2b313c;
-  --color-bg-even: #232831;
+html[data-theme="dark"] img {
+    background: transparent !important;
 }
 
 
@@ -115,7 +83,7 @@ html[data-theme="dark"] {
 }
 
 /* ==========================================================================
-   API Table Interface Links
+   API Table 
    ========================================================================== */
 
 /* Base styling for all interface links */
@@ -179,27 +147,9 @@ html[data-theme="dark"] {
   color: var(--color-action-hover);
 }
 
-/* ==========================================================================
-   API Table Layout
-   ========================================================================== */
-
-.api-table td:first-child,
-.api-table th:first-child {
-  width: 35%;
-}
-
-.api-table td:last-child,
-.api-table th:last-child {
-  width: 65%;
-}
-
 .api-table td:last-child a {
   font-size: 1em;
 }
-
-/* ==========================================================================
-   Alternating Row Colors for API Table
-   ========================================================================== */
 
 .api-table tbody tr:nth-child(odd) {
   background-color: var(--color-bg-odd); 
@@ -218,3 +168,65 @@ html[data-theme="dark"] {
   background-color: var(--color-bg-even) !important;
 }
 
+/* ==========================================================================
+   Centered Table 
+   ========================================================================== */
+
+.centered-table td,
+.centered-table th {
+    text-align: center;    
+    vertical-align: middle; 
+}
+
+.centered-table tbody tr:nth-child(odd) {
+  background-color: var(--color-bg-odd); 
+}
+
+.centered-table tbody tr:nth-child(even) {
+  background-color: var(--color-bg-even); 
+}
+
+
+.centered-table tbody tr:nth-child(odd):hover {
+  background-color: var(--color-bg-odd) !important;
+}
+
+.centered-table tbody tr:nth-child(even):hover {
+  background-color: var(--color-bg-even) !important;
+}
+
+/* ==========================================================================
+   Formula Highlighting
+   ========================================================================== */
+
+.formula-highlight {
+  background: var(--formula-bg);
+  border: 2px solid var(--formula-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem auto !important;
+  width: 60% !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  position: relative;
+}
+
+.formula-highlight::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--formula-accent);
+  border-radius: 12px 12px 0 0;
+}
+
+.formula-highlight .math {
+  text-align: center;
+  font-size: 1.1em;
+}
+
+/* Dark mode adjustments */
+html[data-theme='dark'] .formula-highlight {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}

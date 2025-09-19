@@ -4,7 +4,7 @@
 Startup
 =======
 
-There are two ways for teams to develop a solution for this years ARIAC competition 
+There are two ways for teams to develop a solution for this year's ARIAC competition: 
 
 * Docker 
 * Local
@@ -13,14 +13,14 @@ There are two ways for teams to develop a solution for this years ARIAC competit
 Docker
 ------
 
-Running the competition through docker ensures all of the dependencies for ARIAC are preloaded into the image. This makes setup easier and can lead to fewer potential issues. However there can be a steep learning curve if your team is not familiar with docker. The final evaluation will require team's to submit a Dockerfile for their solution so this is the recommended approach. 
+Running the competition through Docker ensures all ARIAC dependencies are preloaded into the image. This makes setup easier and can lead to fewer potential issues. However, there can be a steep learning curve if your team is not familiar with Docker. The final evaluation will require teams to submit a Dockerfile for their solution, so this is the recommended approach. 
 
 Installation
 ============
 
 .. attention::
 
-   Running ARIAC though docker requires a linux operating system
+   Running ARIAC through Docker requires a Linux operating system
 
 1. Install prerequisites
 
@@ -28,15 +28,15 @@ Installation
 
    .. note::
    
-      After installing docker engine, follow the  `post installation instructions <https://docs.docker.com/engine/install/linux-postinstall/>`_.
+      After installing Docker Engine, follow the `post-installation instructions <https://docs.docker.com/engine/install/linux-postinstall/>`_.
 
    * `Nvidia Container Toolkit <https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html>`_.
 
    .. note::
       
-      The toolkit is only neccessary if you have an NVIDIA graphics card.
+      The toolkit is only necessary if you have an NVIDIA graphics card.
 
-      After installation, run this command:
+      After installation, run the following command:
 
       .. code-block:: bash
 
@@ -129,7 +129,7 @@ Starting the App
 Local
 -----
 
-The competition can still be run without using docker by directly installing and building the ARIAC source code on your machine. This may lead to more issues based on how your computer is configured. 
+The competition can still be run without using Docker by directly installing and building the ARIAC source code on your machine. This may lead to more issues depending on how your computer is configured. 
 
 .. attention::
 
@@ -137,7 +137,7 @@ The competition can still be run without using docker by directly installing and
 
 .. note::
 
-  These instructions are written for bash. If you are using a shell other than bash, the source commands will be different. For example, the command for zsh is this:
+  These instructions are written for Bash. If you are using a shell other than Bash, the source commands will be different. For example, the command for Zsh is:
 
   .. code-block:: bash
 
@@ -195,7 +195,7 @@ Installation
    
 5. Pip dependencies
 
-   Install neccessary python packages for the app:
+   Install necessary Python packages for the app:
 
    .. code-block:: bash
 
