@@ -13,7 +13,10 @@
   --color-action: #f57c00;
   --color-action-hover: #e65100;
   --color-bg-odd: #f2f4f5;
-  --color-bg-even: #ffffff; 
+  --color-bg-even: #ffffff;
+  --formula-bg: #f8fafc;
+  --formula-border: #1976d2;
+  --formula-accent: #1976d2;
 }
 
 /* Dark mode via data attributes */
@@ -28,6 +31,9 @@ html[data-theme='dark']  {
   --color-action-hover: #ffb74d;
   --color-bg-odd: #2b313c;
   --color-bg-even: #232831;
+  --formula-bg: #1e293b;
+  --formula-border: #64b5f6;
+  --formula-accent: #64b5f6;
 }
 
 html[data-theme="dark"] img {
@@ -187,4 +193,40 @@ html[data-theme="dark"] img {
 
 .centered-table tbody tr:nth-child(even):hover {
   background-color: var(--color-bg-even) !important;
+}
+
+/* ==========================================================================
+   Formula Highlighting
+   ========================================================================== */
+
+.formula-highlight {
+  background: var(--formula-bg);
+  border: 2px solid var(--formula-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem auto !important;
+  width: 60% !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  position: relative;
+}
+
+.formula-highlight::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--formula-accent);
+  border-radius: 12px 12px 0 0;
+}
+
+.formula-highlight .math {
+  text-align: center;
+  font-size: 1.1em;
+}
+
+/* Dark mode adjustments */
+html[data-theme='dark'] .formula-highlight {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }

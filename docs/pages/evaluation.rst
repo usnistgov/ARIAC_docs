@@ -4,156 +4,263 @@
 Evaluation
 ==========
 
-The scoring for ARIAC 2025 will be divided into three major sections:
+This page describes the scoring system for the competition. Teams are evaluated on their performance across multiple runs and trials, with scores calculated based on task completion, efficiency bonuses, and penalty deductions. The evaluation process covers individual run scores, which are aggregated into an execution score (80%) and combined with human judging (20%) to determine final team rankings.
+
+---------
+Run Score
+---------
 
 .. container::
 
     1. **Base Score**: How well was the assigned task completed?
-    2. **Bonus Score**: Various factors; how efficient and accurate is the created system?
-    3. **Penalties**: Various sources; how often did the competitor perform an illegal action?
+    2. **Bonus Score**: Various factors; how efficient and accurate is the system?
+    3. **Penalties**: Various sources; how often did the team perform an illegal action?
 
-----------
-Base Score
-----------
-
-.. Split into kitting score and module score
-
-The base score for the competition stems from the completion of tasks assigned in the run.
-The base score can is comprised of the the kitting score and the module score.
-
-**Base Score**
-
-.. container::
+.. container:: formula-highlight
 
   .. math::
 
-    K = \omega_1 \cdot \frac{k_c}{k_d} + \omega_2 \cdot \frac{m_c}{m_d}
+    R = B + \sum \beta_i - \sum \rho_i * o_i
 
-Where: 
+.. list-table:: Variables
+   :widths: 25 75
+   :class: centered-table
+   :width: 80%
 
-.. container::
+   * - :math:`R`
+     - Total run score
+   * - :math:`B`
+     - Base score
+   * - :math:`\beta_i`
+     - Bonus scores
+   * - :math:`\rho_i`
+     - Deduction for each penalty type
+   * - :math:`o_i`
+     - Number of occurrences for the associated penalty
 
-    * B = the base score for the run
-    * :math:`\omega_1` = the weight associated with kit completion. The static value of :math:`ω_1` is 500
-    * :math:`k_c` = number of kits successfully completed 
-    * :math:`k_d` = number of kits requested
-    * :math:`\omega_2` = the weight associated with module completion. The static value of :math:`ω_2` is 800
-    * :math:`m_c` = number of modules successfully completed 
-    * :math:`m_d` = number of modules requested
 
+Scoring Weights
+===============
 
-------------
+The scoring system uses predefined weights to balance the importance of different performance aspects. These weights determine how much each component contributes to the overall score.
+
+.. list-table:: Scoring Weights
+   :header-rows: 1
+   :widths: 25 50 25
+   :class: centered-table
+   :width: 80%
+
+   * - Weight
+     - Description
+     - Value
+   * - :math:`\omega_1`
+     - Kit completion weight
+     - 500
+   * - :math:`\omega_2`
+     - Module completion weight
+     - 800
+   * - :math:`\omega_3`
+     - Trial time bonus weight
+     - 175
+   * - :math:`\omega_4`
+     - Inspection speed bonus weight
+     - 125
+   * - :math:`\omega_5`
+     - High priority order speed bonus weight
+     - 150
+   * - :math:`\omega_6`
+     - Sensor cost bonus weight
+     - 500
+   * - :math:`\omega_7`
+     - Inspection classification bonus weight
+     - 100
+
+Base Score
+==========
+
+The base score is calculated from the submission of kitting orders and module orders.
+
+.. container:: formula-highlight
+
+  .. math::
+
+    B = \omega_1 \cdot \frac{k_c}{k_d} + \omega_2 \cdot \frac{m_c}{m_d}
+
+.. list-table:: Variables
+   :widths: 25 75
+   :class: centered-table
+   :width: 80%
+
+   * - :math:`B`
+     - Base score for the run
+   * - :math:`k_c`
+     - Number of kits successfully submitted
+   * - :math:`k_d`
+     - Number of kits desired
+   * - :math:`m_c`
+     - Number of modules successfully submitted
+   * - :math:`m_d`
+     - Number of modules desired
+
+.. important::
+
+  High priority kits are included in :math:`k_d`
+
+Kit Acceptance Criteria
+^^^^^^^^^^^^^^^^^^^^^^^
+
+* Four good cells (not defective and within voltage specification)
+* Total kit voltage within tolerance
+* Kit delivered to shipping area on an AGV
+
+Module Acceptance Criteria
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Four good cells with individual voltages in specification
+* Total module voltage within tolerance
+* Bottom and top shells properly installed and secured
+* All six welds completed successfully:
+
+  * Four top welds 
+  * Two bottom welds
+
+* Module delivered to submission area on assembly conveyor
+
 Bonus Points
-------------
+============
 
-ARIAC 2025 allows competitors to acquire bonus points from a variety of sources. 
-These sources include the following:
+Teams can earn bonus points from several sources:
 
-**Trial Time**
+.. note::
 
-The trial time bonus is awarded for successfully completing the competition in less time than alloted.
+  All bonus values are clamped to zero - bonuses cannot be negative.
 
-.. container:: 
+.. important::
+
+  Teams are only eligible for bonuses if all desired kits and modules were submitted
+
+Trial Time
+^^^^^^^^^^
+
+The trial time bonus is awarded for completing the competition in less time than allocated.
+
+.. container:: formula-highlight
 
   .. math::
 
     \beta_1 = \omega_3 \cdot (1 - \frac{t_e}{t_m})
 
-Where:
+.. list-table:: Variables
+   :widths: 25 75
+   :class: centered-table
+   :width: 80%
 
-.. container::
+   * - :math:`\beta_1`
+     - Trial time bonus
+   * - :math:`t_e`
+     - Run execution duration
+   * - :math:`t_m`
+     - Run time limit
 
-    * :math:`\beta_1` = the total bonus for trial time. 
-    * :math:`\omega_3` = the weight associated with the trial time bonus. The static value of :math:`ω_3` is 175
-    * :math:`t_e` = run execution duration
-    * :math:`t_m` = run time limit
+Inspection Speed
+^^^^^^^^^^^^^^^^
 
-**Inspection Speed**
+The inspection speed bonus is awarded for submitting inspection reports faster than the target time.
 
-The inspection speed bonus is awarded for submitting the inspection report in less time than needed.
-
-.. container::
-
-  .. math::
-
-    \beta_2 = max [ 0 , \omega_4 \cdot (1 - \frac{\gamma}{\gamma_d})]
-
-Where:
-
-.. container::
-
-    * :math:`\beta_2` = the total bonus for inspection speed
-    * :math:`\omega_4` = the weight associated with the inspection speed bonus. The static value of :math:`ω_4` is 125
-    * :math:`\gamma` = average inspection duration
-    * :math:`\gamma_d` = desired inspection duration. The desired inspection time is 8 seconds.
-
-**High Priority Order Speed**
-
-The high priority order speed bonus is awarded for successfully completing high priority orders faster than the high priority time limit.
-
-.. container::
+.. container:: formula-highlight
 
   .. math::
 
-    \beta_3 = max [ 0 , \omega_5 \cdot (1 - \frac{\tau}{\tau_d})]
+    \beta_2 = \omega_4 \cdot (1 - \frac{\gamma}{\gamma_d})
 
-Where:
+.. list-table:: Variables
+   :widths: 25 75
+   :class: centered-table
+   :width: 80%
 
-.. container::
+   * - :math:`\beta_2`
+     - Inspection speed bonus
+   * - :math:`\gamma`
+     - Average inspection duration
+   * - :math:`\gamma_d`
+     - Desired inspection duration (target: 8 seconds)
 
-    * :math:`\beta_3` = the total bonus for high priority order speed
-    * :math:`\omega_5` = the weight associated with the high priority order speed bonus. The static value of :math:`ω_5` is 150
-    * :math:`\tau` = average high priority kit execution duration
-    * :math:`\tau_d` = desired high priority kit execution duration. The desired completion time is 130 seconds.
+High Priority Order Speed
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Sensor Cost**
+The high priority order speed bonus is awarded for completing high priority orders faster than the time limit.
 
-The sensor cost bonus is awarded for minimizing the cost of sensors competitors use to complete the competition. Going over budget results instead in a penalty.
-
-.. container::
+.. container:: formula-highlight
 
   .. math::
 
-    \beta_4 = max [ 0 , \omega_6 \cdot (1 - \frac{\sigma}{\sigma_b})]
+    \beta_3 = \omega_5 \cdot (1 - \frac{\tau}{\tau_d})
 
-Where:
+.. list-table:: Variables
+   :widths: 25 75
+   :class: centered-table
+   :width: 80%
 
-.. container::
+   * - :math:`\beta_3`
+     - High priority order speed bonus
+   * - :math:`\tau`
+     - Average high priority kit execution duration
+   * - :math:`\tau_d`
+     - Desired high priority kit execution duration (target: 130 seconds)
 
-    * :math:`\beta_4` = the total bonus for sensor cost
-    * :math:`\omega_6` = the weight associated with the sensor cost bonus. The static value of :math:`ω_6` is 500
-    * :math:`\sigma` = competitor sensor cost
-    * :math:`\sigma_b` = sensor budget. The sensor budget is set at $7000
+Sensor Cost
+^^^^^^^^^^^
 
-**Inspection Classification**
+The sensor cost bonus is awarded for using sensors below the allocated budget. Exceeding the budget results in a penalty instead.
 
-The inspection classification bonus is awarded for correctly identifying the defect type and location. All elements of the defect report must be correct for a report to be considered
-correct.
+.. container:: formula-highlight
 
-.. container::
+  .. math::
+
+    \beta_4 = \omega_6 \cdot (1 - \frac{\sigma}{\sigma_b})
+
+.. list-table:: Variables
+   :widths: 25 75
+   :class: centered-table
+   :width: 80%
+
+   * - :math:`\beta_4`
+     - Sensor cost bonus
+   * - :math:`\sigma`
+     - Team sensor cost
+   * - :math:`\sigma_b`
+     - Sensor budget ($7000)
+
+Inspection Classification
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The inspection classification bonus is awarded for correctly identifying defect types and locations. All elements of the defect report must be correct.
+
+.. container:: formula-highlight
 
   .. math::
 
     \beta_5 = \omega_7 \cdot (1 - \frac{\nu}{\delta})
 
-Where:
+.. list-table:: Variables
+   :widths: 25 75
+   :class: centered-table
+   :width: 80%
 
-.. container::
+   * - :math:`\beta_5`
+     - Inspection classification bonus
+   * - :math:`\nu`
+     - Number of correctly classified defect reports
+   * - :math:`\delta`
+     - Total number of defective cells
 
-    * :math:`\beta_5` = the total bonus for inspection classification
-    * :math:`\omega_7` = the weight associated with the inspecton classification bonus. The static value of :math:`ω_7` is 100
-    * :math:`\nu` = number of correctly classified reports
-    * :math:`\delta` = total number of defective cells
 
-------------
 Penalties
-------------
+=========
 
-ARIAC 2025 incorporates penalties for certain events that occur during the competition.
-All penalties are calculated per occurance, meaning that each penalty has an associated value, and each time
-a penalty is recorded, that value will be deducted from the total score. The penalties come from the following sources:
+The competition applies penalties for certain events during runs. Penalties are calculated per occurrence - each penalty has an associated value that is deducted from the total score when the event occurs. Penalties come from the following sources:
 
-* Non-defective cell is pushed into inspection bin
+* Non-defective cell placed in inspection bin
 * Cell falls into conveyor bin
 * Cell comes into contact with an invalid surface
 * Two AGVs collide
@@ -162,50 +269,130 @@ a penalty is recorded, that value will be deducted from the total score. The pen
 
 The following table shows the symbols for each penalty and their associated values.
 
-================= =============================================== ======
-Penalty Symbols   Description                                     Value
-================= =============================================== ======
-:math:`\rho_{0}`     Non-defective cell in inspection bin            20
-:math:`\rho_{1}`     Cell in conveyor bin                            20
-:math:`\rho_{2}`     Object on invalid surface                       20
-:math:`\rho_{3}`     AGV collision                                   40
-:math:`\rho_{4}`     Robot collision                                 50
-:math:`\rho_{5}`     Sensor cost over budget                         0.0715
-================= =============================================== ======
+.. list-table:: Penalty Values
+   :header-rows: 1
+   :widths: 25 50 25
+   :class: centered-table
 
-.. admonition:: Robot Collision Note
-  :class: note
-  :name: robot-collision
+   * - Penalty Symbol
+     - Description
+     - Value
+   * - :math:`\rho_{0}`
+     - Non-defective cell placed in inspection bin
+     - 20
+   * - :math:`\rho_{1}`
+     - Cell falls into conveyor bin
+     - 20
+   * - :math:`\rho_{2}`
+     - Object on invalid surface
+     - 20
+   * - :math:`\rho_{3}`
+     - AGV collision
+     - 40
+   * - :math:`\rho_{4}`
+     - Robot collision
+     - 50
+   * - :math:`\rho_{5}`
+     - Sensor cost over budget
+     - 0.0715
 
-  For the robot collision, for every 5 seconds the robot is in collision, another occurance of the penalty will be recorded.
+.. warning::
+
+  For the robot collision, for every 5 seconds the robot is in collision, another occurrence of the penalty will be recorded.
   In addition, if a robot is in collision with another robot, this penalty will be counted twice.
 
-.. admonition:: Sensor Cost Note
-  :class: note
-  :name: sensor-over-budget
+.. note::
 
-  For the sensor cost penalty, the penalty is calculated for each dollar over the provided budget. Using less than the provided
-  budget will result in a bonus being applied to the score.
+  For the sensor cost penalty, the penalty is calculated for each dollar over the allocated budget. Using less than the allocated budget will result in a bonus being applied to the score.
 
------------
-Total Score
------------
+---------------
+Execution Score
+---------------
 
-In order to calculate the entire run score, the following formula can be used, combining the previous calculations:
+The execution score aggregates individual run scores across all trials to determine the final performance ranking. Teams complete five runs per trial, with the two best scores from each trial being averaged together. These trial averages are then summed to create the total execution score.
 
-.. container::
+.. container:: formula-highlight
 
   .. math::
 
-    R = K + M + \sum \beta_i - \sum \rho_i * o_i
+    E = \sum_{i=1}^{n} \frac{R_1 + R_2}{2}
 
-Where:
+.. list-table:: Variables
+   :widths: 25 75
+   :class: centered-table
+   :width: 80%
 
-.. container::
+   * - :math:`E`
+     - Total execution score
+   * - :math:`n`
+     - Number of trials
+   * - :math:`R_1`
+     - Best run score for trial i
+   * - :math:`R_2`
+     - Second best run score for trial i
 
-    * R = the total run score
-    * K = the kit score for the run
-    * M = the module score for the run
-    * :math:`\beta_i` = the bonus scores
-    * :math:`\rho_i` = the deduction for each penalty type
-    * :math:`o_i` = the number of occurances for the associated penalty
+----------------
+Human Evaluation
+----------------
+
+In addition to the execution score, teams are evaluated by human judges who assess the overall approach and innovation demonstrated during the competition. Judges independently review videos of trial runs and evaluate teams across three categories.
+
+Each team receives scores from 1 to 5 in the following categories:
+
+* **Novelty/Innovation**: Creative and original approaches to solving competition challenges
+* **Feasibility of Approach**: Practicality and robustness of the implemented solution
+* **Alignment with Spirit of Competition**: How well the approach embodies the goals and values of the competition
+
+The human evaluation score is the sum of all individual judge scores across the three categories:
+
+.. container:: formula-highlight
+
+  .. math::
+
+    H = \sum_{j=1}^{n} (\eta_j + \phi_j + \alpha_j)
+
+.. list-table:: Variables
+   :widths: 25 75
+   :class: centered-table
+   :width: 90%
+
+   * - :math:`H`
+     - Human evaluation score
+   * - :math:`n`
+     - Number of judges
+   * - :math:`\eta_j`
+     - Judge j's score for Novelty/Innovation (1-5 scale)
+   * - :math:`\phi_j`
+     - Judge j's score for Feasibility of Approach (1-5 scale)
+   * - :math:`\alpha_j`
+     - Judge j's score for Alignment with Spirit of Competition (1-5 scale)
+
+-----------------------
+Final Competition Score
+-----------------------
+
+The final competition ranking is determined by converting both execution scores and human evaluation scores to standardized rankings, then combining them with 80% weight for execution performance and 20% weight for human evaluation.
+
+**Ranking Process:**
+
+1. **Execution Ranking**: Teams are ranked by execution score (highest to lowest)
+2. **Human Evaluation Ranking**: Teams are ranked by human evaluation score (highest to lowest)
+3. **Combined Ranking**: Rankings are weighted and combined to determine final standings
+
+.. container:: formula-highlight
+
+  .. math::
+
+    F_{rank} = 0.8 \cdot R_E + 0.2 \cdot R_H
+
+.. list-table:: Variables
+   :widths: 25 75
+   :class: centered-table
+   :width: 80%
+
+   * - :math:`F_{rank}`
+     - Final weighted ranking score (lower is better)
+   * - :math:`R_E`
+     - Execution score ranking (1 = best execution score)
+   * - :math:`R_H`
+     - Human evaluation ranking (1 = best human score)
