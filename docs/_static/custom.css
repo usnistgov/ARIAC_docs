@@ -16,24 +16,8 @@
   --color-bg-even: #ffffff; 
 }
 
-/* Dark mode color overrides */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-msg: #ba68c8;
-    --color-msg-hover: #e1bee7;
-    --color-topic: #64b5f6;
-    --color-topic-hover: #90caf9;
-    --color-service: #81c784;
-    --color-service-hover: #a5d6a7;
-    --color-action: #ff9800;
-    --color-action-hover: #ffb74d;
-    --color-bg-odd: #2b313c;
-    --color-bg-even: #232831;
-  }
-}
-
 /* Dark mode via data attributes */
-[data-theme="dark"] {
+html[data-theme='dark']  {
   --color-msg: #ba68c8;
   --color-msg-hover: #e1bee7;
   --color-topic: #64b5f6;
@@ -46,30 +30,8 @@
   --color-bg-even: #232831;
 }
 
-[data-bs-theme="dark"] {
-  --color-msg: #ba68c8;
-  --color-msg-hover: #e1bee7;
-  --color-topic: #64b5f6;
-  --color-topic-hover: #90caf9;
-  --color-service: #81c784;
-  --color-service-hover: #a5d6a7;
-  --color-action: #ff9800;
-  --color-action-hover: #ffb74d;
-  --color-bg-odd: #2b313c;
-  --color-bg-even: #232831;
-}
-
-html[data-theme="dark"] {
-  --color-msg: #ba68c8;
-  --color-msg-hover: #e1bee7;
-  --color-topic: #64b5f6;
-  --color-topic-hover: #90caf9;
-  --color-service: #81c784;
-  --color-service-hover: #a5d6a7;
-  --color-action: #ff9800;
-  --color-action-hover: #ffb74d;
-  --color-bg-odd: #2b313c;
-  --color-bg-even: #232831;
+html[data-theme="dark"] img {
+    background: transparent !important;
 }
 
 
@@ -115,7 +77,7 @@ html[data-theme="dark"] {
 }
 
 /* ==========================================================================
-   API Table Interface Links
+   API Table 
    ========================================================================== */
 
 /* Base styling for all interface links */
@@ -179,27 +141,9 @@ html[data-theme="dark"] {
   color: var(--color-action-hover);
 }
 
-/* ==========================================================================
-   API Table Layout
-   ========================================================================== */
-
-.api-table td:first-child,
-.api-table th:first-child {
-  width: 35%;
-}
-
-.api-table td:last-child,
-.api-table th:last-child {
-  width: 65%;
-}
-
 .api-table td:last-child a {
   font-size: 1em;
 }
-
-/* ==========================================================================
-   Alternating Row Colors for API Table
-   ========================================================================== */
 
 .api-table tbody tr:nth-child(odd) {
   background-color: var(--color-bg-odd); 
@@ -218,3 +162,29 @@ html[data-theme="dark"] {
   background-color: var(--color-bg-even) !important;
 }
 
+/* ==========================================================================
+   Centered Table 
+   ========================================================================== */
+
+.centered-table td,
+.centered-table th {
+    text-align: center;    
+    vertical-align: middle; 
+}
+
+.centered-table tbody tr:nth-child(odd) {
+  background-color: var(--color-bg-odd); 
+}
+
+.centered-table tbody tr:nth-child(even) {
+  background-color: var(--color-bg-even); 
+}
+
+
+.centered-table tbody tr:nth-child(odd):hover {
+  background-color: var(--color-bg-odd) !important;
+}
+
+.centered-table tbody tr:nth-child(even):hover {
+  background-color: var(--color-bg-even) !important;
+}
