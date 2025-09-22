@@ -31,9 +31,10 @@ The `full source code  <https://www.github.com/usnistgov/ARIAC/>`_ for the compe
    :caption: Development
    :maxdepth: 3
    :hidden:
-   
+
    pages/schedule
    pages/startup
+   pages/config_files
    pages/demos
 
 .. toctree::
