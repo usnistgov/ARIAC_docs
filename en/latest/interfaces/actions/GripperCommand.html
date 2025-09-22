@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Submit High Priority Order &#8212; ARIAC Docs  documentation</title>
+    <title>Gripper Command &#8212; ARIAC Docs  documentation</title>
   
   
   
@@ -44,11 +44,11 @@
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'interfaces/srv/SubmitHightPriorityOrder';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'interfaces/actions/GripperCommand';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Submit Inspection Report" href="SubmitInspectionReport.html" />
-    <link rel="prev" title="End Competition" href="EndCompetition.html" />
+    <link rel="next" title="Move AGV" href="MoveAgv.html" />
+    <link rel="prev" title="Action Definitions" href="../action_definitions.html" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -184,11 +184,12 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../pages/schedule.html">Schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../pages/startup.html">Startup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/config_files.html">Configuration Files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../pages/demos.html">Demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/api.html">ROS API</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ROS Interfaces</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../pages/api.html">ROS API</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../message_definitions.html">Message Definitions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../msg/AgvStations.html">Agv Stations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../msg/AgvStatus.html">Agv Status</a></li>
@@ -210,20 +211,20 @@
 <li class="toctree-l2"><a class="reference internal" href="../msg/VoltageReading.html">Voltage Reading</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../service_definitions.html">Service Definitions</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="AttachTool.html">Attach Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BidirectionalConveyorControl.html">Bidirectional Conveyor Control</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ControlCellFeeder.html">Control Cell Feeder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ConveyorControl.html">Conveyor Control</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EndCompetition.html">End Competition</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Submit High Priority Order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SubmitInspectionReport.html">Submit Inspection Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Trigger.html">Trigger</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../service_definitions.html">Service Definitions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../srv/AttachTool.html">Attach Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../srv/BidirectionalConveyorControl.html">Bidirectional Conveyor Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../srv/ControlCellFeeder.html">Control Cell Feeder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../srv/ConveyorControl.html">Conveyor Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../srv/EndCompetition.html">End Competition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../srv/SubmitHighPriorityOrder.html">Submit High Priority Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../srv/SubmitInspectionReport.html">Submit Inspection Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../srv/Trigger.html">Trigger</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../action_definitions.html">Action Definitions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../actions/GriperCommand.html">Gripper Command</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../actions/MoveAgv.html">Move AGV</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../action_definitions.html">Action Definitions</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Gripper Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MoveAgv.html">Move AGV</a></li>
 </ul>
 </details></li>
 </ul>
@@ -298,7 +299,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Submit High Priority Order</h1>
+    <h1>Gripper Command</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -312,15 +313,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="submit-high-priority-order">
-<span id="submithighpriorityorder-srv"></span><h1>Submit High Priority Order<a class="headerlink" href="#submit-high-priority-order" title="Permalink to this heading">#</a></h1>
+  <section id="gripper-command">
+<span id="grippercommand-action"></span><h1>Gripper Command<a class="headerlink" href="#gripper-command" title="Permalink to this heading">#</a></h1>
 <p>This is a ROS message definition.</p>
 <p><strong>Source</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># SubmitHighPriorityOrder.srv</span>
-<span class="n">string</span> <span class="nb">id</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">float64</span> <span class="n">width</span>
 <span class="o">---</span>
-<span class="nb">bool</span> <span class="n">success</span>
-<span class="n">string</span> <span class="n">message</span>
+<span class="nb">bool</span> <span class="n">stalled</span> 
+<span class="nb">bool</span> <span class="n">reached_goal_width</span> 
+<span class="n">float64</span> <span class="n">width</span> <span class="c1"># final width</span>
+<span class="o">---</span>
+<span class="n">float64</span> <span class="n">width</span> <span class="c1"># current width</span>
 </pre></div>
 </div>
 </section>
@@ -337,20 +340,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="EndCompetition.html"
+       href="../action_definitions.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">End Competition</p>
+        <p class="prev-next-title">Action Definitions</p>
       </div>
     </a>
     <a class="right-next"
-       href="SubmitInspectionReport.html"
+       href="MoveAgv.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Submit Inspection Report</p>
+        <p class="prev-next-title">Move AGV</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -185,11 +185,12 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="pages/schedule.html">Schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pages/startup.html">Startup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/config_files.html">Configuration Files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pages/demos.html">Demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/api.html">ROS API</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ROS Interfaces</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="pages/api.html">ROS API</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="interfaces/message_definitions.html">Message Definitions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="interfaces/msg/AgvStations.html">Agv Stations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="interfaces/msg/AgvStatus.html">Agv Status</a></li>
@@ -217,13 +218,13 @@
 <li class="toctree-l2"><a class="reference internal" href="interfaces/srv/ControlCellFeeder.html">Control Cell Feeder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="interfaces/srv/ConveyorControl.html">Conveyor Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="interfaces/srv/EndCompetition.html">End Competition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interfaces/srv/SubmitHightPriorityOrder.html">Submit High Priority Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interfaces/srv/SubmitHighPriorityOrder.html">Submit High Priority Order</a></li>
 <li class="toctree-l2"><a class="reference internal" href="interfaces/srv/SubmitInspectionReport.html">Submit Inspection Report</a></li>
 <li class="toctree-l2"><a class="reference internal" href="interfaces/srv/Trigger.html">Trigger</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="interfaces/action_definitions.html">Action Definitions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="interfaces/actions/GriperCommand.html">Gripper Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interfaces/actions/GripperCommand.html">Gripper Command</a></li>
 <li class="toctree-l2"><a class="reference internal" href="interfaces/actions/MoveAgv.html">Move AGV</a></li>
 </ul>
 </details></li>
@@ -288,7 +289,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -304,6 +307,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting Started</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -323,13 +336,27 @@ document.write(`
 <p><span class="caption-text">ARIAC environment</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>The <a class="reference external" href="https://www.github.com/usnistgov/ARIAC/">full source code</a> for the competition is available on github.</p>
-<div class="toctree-wrapper compound">
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Competition Information</strong>: The official <a class="reference external" href="https://www.nist.gov/el/intelligent-systems-division-73500/agile-robotics-industrial-automation-competition">ARIAC competition page</a> provides competition history, previous results, and cash prize eligibility requirements. Teams from universities and research institutions worldwide participate in developing agile robotic systems for industrial automation.</p></li>
+<li><p><strong>Team Registration</strong>: <a class="reference external" href="https://bit.ly/ariac2025">Register for ARIAC 2025</a> to receive competition updates and access team resources. Registration is open to both cash prize eligible and non-eligible teams.</p></li>
+<li><p><strong>ARIAC GitHub Repo</strong>: The <a class="reference external" href="https://www.github.com/usnistgov/ARIAC/">full source code</a> is available on GitHub, including simulation environments and ROS interfaces.</p></li>
+<li><p><strong>Installation</strong>: See the <a class="reference internal" href="pages/startup.html#startup"><span class="std std-ref">startup page</span></a> for detailed installation instructions using Docker or local setup.</p></li>
+<li><p><strong>Example Implementation and Demos</strong>: The <a class="reference external" href="https://github.com/usnistgov/ariac_example_team">example team repository</a> provides reference implementations and configuration examples. Visit the <a class="reference internal" href="pages/demos.html#demos"><span class="std std-ref">demos page</span></a> for step-by-step instructions on running these examples and testing your setup.</p></li>
+<li><p><strong>Technical Support</strong>: For technical issues and questions, visit the <a class="reference external" href="https://github.com/usnistgov/ARIAC/issues">ARIAC GitHub issues page</a>.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Official competition rules will be available on challenge.gov at a later date.</p>
 </div>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
 </div>
+<div class="toctree-wrapper compound">
+</div>
+</section>
 </section>
 
 
@@ -358,6 +385,23 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting Started</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

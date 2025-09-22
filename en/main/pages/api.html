@@ -181,14 +181,15 @@
 <li class="toctree-l1"><a class="reference internal" href="evaluation.html">Evaluation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Development</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="schedule.html">Schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="startup.html">Startup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config_files.html">Configuration Files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="demos.html">Demos</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">ROS API</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ROS Interfaces</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">ROS API</a></li>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../interfaces/message_definitions.html">Message Definitions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/msg/AgvStations.html">Agv Stations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/msg/AgvStatus.html">Agv Status</a></li>
@@ -216,13 +217,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/srv/ControlCellFeeder.html">Control Cell Feeder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/srv/ConveyorControl.html">Conveyor Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/srv/EndCompetition.html">End Competition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../interfaces/srv/SubmitHightPriorityOrder.html">Submit High Priority Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../interfaces/srv/SubmitHighPriorityOrder.html">Submit High Priority Order</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/srv/SubmitInspectionReport.html">Submit Inspection Report</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/srv/Trigger.html">Trigger</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../interfaces/action_definitions.html">Action Definitions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../interfaces/actions/GriperCommand.html">Gripper Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../interfaces/actions/GripperCommand.html">Gripper Command</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/actions/MoveAgv.html">Move AGV</a></li>
 </ul>
 </details></li>
@@ -439,7 +440,7 @@ document.write(`
 <tr class="row-odd"><td><p><a class="reference internal" href="../interfaces/srv/Trigger.html#trigger-srv"><span class="std std-ref">/submit_module_order</span></a></p></td>
 <td><p>Submit module (in submission zone required)</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/srv/SubmitHightPriorityOrder.html#submithighpriorityorder-srv"><span class="std std-ref">/submit_high_priority_order</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/srv/SubmitHighPriorityOrder.html#submithighpriorityorder-srv"><span class="std std-ref">/submit_high_priority_order</span></a></p></td>
 <td><p>Submit high priority kit with ID</p></td>
 </tr>
 </tbody>
@@ -557,7 +558,7 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/actions/GriperCommand.html#grippercommand-action"><span class="std std-ref">/{robot_name}/gripper_controller/gripper_command</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../interfaces/actions/GripperCommand.html#grippercommand-action"><span class="std std-ref">/{robot_name}/gripper_controller/gripper_command</span></a></p></td>
 <td><p>Control gripper width</p></td>
 </tr>
 </tbody>

@@ -185,11 +185,12 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="schedule.html">Schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="startup.html">Startup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config_files.html">Configuration Files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="demos.html">Demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">ROS API</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ROS Interfaces</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="api.html">ROS API</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../interfaces/message_definitions.html">Message Definitions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/msg/AgvStations.html">Agv Stations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/msg/AgvStatus.html">Agv Status</a></li>
@@ -217,13 +218,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/srv/ControlCellFeeder.html">Control Cell Feeder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/srv/ConveyorControl.html">Conveyor Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/srv/EndCompetition.html">End Competition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../interfaces/srv/SubmitHightPriorityOrder.html">Submit High Priority Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../interfaces/srv/SubmitHighPriorityOrder.html">Submit High Priority Order</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/srv/SubmitInspectionReport.html">Submit Inspection Report</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/srv/Trigger.html">Trigger</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../interfaces/action_definitions.html">Action Definitions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../interfaces/actions/GriperCommand.html">Gripper Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../interfaces/actions/GripperCommand.html">Gripper Command</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/actions/MoveAgv.html">Move AGV</a></li>
 </ul>
 </details></li>
@@ -660,51 +661,7 @@ document.write(`
 </section>
 <section id="configuration-example">
 <h2>Configuration Example<a class="headerlink" href="#configuration-example" title="Permalink to this heading">#</a></h2>
-<p>Here is an example YAML configuration showing all sensor types with valid parameters:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">SENSORS</span><span class="p">:</span>
-<span class="w">  </span><span class="c1"># Break beam sensor example</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">NAME</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;conveyor_break_beam&quot;</span>
-<span class="w">    </span><span class="nt">TYPE</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;break_beam&quot;</span>
-<span class="w">    </span><span class="nt">POSE</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">XYZ</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.5</span><span class="p p-Indicator">]</span>
-<span class="w">      </span><span class="nt">RPY</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.57</span><span class="p p-Indicator">]</span>
-<span class="w">    </span><span class="nt">UPDATE_RATE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span>
-
-<span class="w">  </span><span class="c1"># Distance sensor example</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">NAME</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;proximity_sensor&quot;</span>
-<span class="w">    </span><span class="nt">TYPE</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;distance&quot;</span>
-<span class="w">    </span><span class="nt">POSE</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">XYZ</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.8</span><span class="p p-Indicator">]</span>
-<span class="w">      </span><span class="nt">RPY</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
-<span class="w">    </span><span class="nt">UPDATE_RATE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
-
-<span class="w">  </span><span class="c1"># RGB camera example</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">NAME</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;inspection_camera&quot;</span>
-<span class="w">    </span><span class="nt">TYPE</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;camera&quot;</span>
-<span class="w">    </span><span class="nt">POSE</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">XYZ</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">2.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.2</span><span class="p p-Indicator">]</span>
-<span class="w">      </span><span class="nt">RPY</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
-<span class="w">    </span><span class="nt">UPDATE_RATE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span>
-<span class="w">    </span><span class="nt">RESOLUTION</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1080p&quot;</span>
-<span class="w">    </span><span class="nt">FOV</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.57</span>
-
-<span class="w">  </span><span class="c1"># Lidar sensor example (must be within bounding boxes)</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">NAME</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;inspection_lidar&quot;</span>
-<span class="w">    </span><span class="nt">TYPE</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;lidar&quot;</span>
-<span class="w">    </span><span class="nt">POSE</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">XYZ</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.8</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.825</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.52</span><span class="p p-Indicator">]</span><span class="w">  </span><span class="c1"># Within Box A limits</span>
-<span class="w">      </span><span class="nt">RPY</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
-<span class="w">    </span><span class="nt">UPDATE_RATE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span>
-<span class="w">    </span><span class="nt">HORIZONTAL</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">SAMPLES</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50</span>
-<span class="w">      </span><span class="nt">MIN_ANGLE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1.57</span>
-<span class="w">      </span><span class="nt">MAX_ANGLE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.57</span>
-<span class="w">    </span><span class="nt">VERTICAL</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">SAMPLES</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8</span>
-<span class="w">      </span><span class="nt">MIN_ANGLE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-0.5</span>
-<span class="w">      </span><span class="nt">MAX_ANGLE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span>
-</pre></div>
-</div>
+<p>For complete sensor configuration examples showing all sensor types with valid parameters, see the <a class="reference internal" href="config_files.html#sensors-config-example"><span class="std std-ref">Sensors Configuration Reference</span></a>.</p>
 </section>
 </section>
 

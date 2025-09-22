@@ -14,7 +14,24 @@ The competition serves as a testbed for developing algorithms that can be applie
 
    ARIAC environment
 
-The `full source code  <https://www.github.com/usnistgov/ARIAC/>`_ for the competition is available on github.
+Getting Started
+===============
+
+* **Competition Information**: The official `ARIAC competition page <https://www.nist.gov/el/intelligent-systems-division-73500/agile-robotics-industrial-automation-competition>`_ provides competition history, previous results, and cash prize eligibility requirements. Teams from universities and research institutions worldwide participate in developing agile robotic systems for industrial automation.
+
+* **Team Registration**: `Register for ARIAC 2025 <https://bit.ly/ariac2025>`_ to receive competition updates and access team resources. Registration is open to both cash prize eligible and non-eligible teams.
+
+* **ARIAC GitHub Repo**: The `full source code <https://www.github.com/usnistgov/ARIAC/>`_ is available on GitHub, including simulation environments and ROS interfaces.
+
+* **Installation**: See the :ref:`startup page <STARTUP>` for detailed installation instructions using Docker or local setup.
+
+* **Example Implementation and Demos**: The `example team repository <https://github.com/usnistgov/ariac_example_team>`_ provides reference implementations and configuration examples. Visit the :ref:`demos page <DEMOS>` for step-by-step instructions on running these examples and testing your setup.
+
+* **Technical Support**: For technical issues and questions, visit the `ARIAC GitHub issues page <https://github.com/usnistgov/ARIAC/issues>`_.
+
+.. note::
+
+   Official competition rules will be available on challenge.gov at a later date.
 
 
 .. toctree::
@@ -31,17 +48,18 @@ The `full source code  <https://www.github.com/usnistgov/ARIAC/>`_ for the compe
    :caption: Development
    :maxdepth: 3
    :hidden:
-   
+
    pages/schedule
    pages/startup
+   pages/config_files
    pages/demos
+   pages/api
 
 .. toctree::
    :caption: ROS Interfaces
    :maxdepth: 3
    :hidden:
 
-   pages/api
    interfaces/message_definitions
    interfaces/service_definitions
    interfaces/action_definitions

@@ -6,6 +6,10 @@ Evaluation
 
 This page describes the scoring system for the competition. Teams are evaluated on their performance across multiple runs and trials, with scores calculated based on task completion, efficiency bonuses, and penalty deductions. The evaluation process covers individual run scores, which are aggregated into an execution score (80%) and combined with human judging (20%) to determine final team rankings.
 
+.. note::
+
+   Detailed submission requirements and procedures will be announced at a later date.
+
 ---------
 Run Score
 ---------
