@@ -62,6 +62,10 @@ Optional Parameters
      - array
      - Challenge configuration section (see :ref:`challenges page <CHALLENGES>`)
 
+.. note::
+
+   The defect types included in the current version of ARIAC are only for training purposes. The final competition version of the defects will be modified.
+
 Example
 =======
 
