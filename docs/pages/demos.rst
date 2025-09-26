@@ -4,16 +4,22 @@
 Demos
 =====
 
+This page provides instructions for running ARIAC demo scenarios to help you get familiar with the competition environment. The demos can be run either through the ARIAC App or directly from the terminal.
+
+.. note::
+
+   Before running any demos, ensure you have followed the setup instructions on the :ref:`startup page <STARTUP>`.
+
 --------------------
 Running with the App
 --------------------
 
-For instructions on how to start the app either through Docker or locally, please view the :ref:`startup page <STARTUP>`.
+The ARIAC App provides an interface for configuring and running trials.
 
 Configuration
 =============
 
-The home page of the app configures the settings for a competition run:
+The home page of the ARIAC App is where you configure all the settings needed for a competition run. This configuration page allows you to set up trials, team parameters, database storage, and testing options before starting a run:
 
 .. list-table::
    :header-rows: 1
@@ -244,16 +250,18 @@ Submit Kit Demo
 Running with the Terminal
 -------------------------
 
-For each of these demos, two terminals are required: one for the environment and another for the example team.
+For advanced users or automation purposes, demos can be run directly from the terminal. This approach requires two separate terminal sessions.
 
-.. note::
+.. important::
 
-  If running locally, be sure to source the setup files in both terminals.
+   **Local Installation Setup**
 
-  .. code-block:: bash
+   If running locally (not Docker), source the setup files in both terminals:
 
-    source /opt/ros/jazzy/setup.bash
-    source ~/ariac_ws/install/setup.bash
+   .. code-block:: bash
+
+      source /opt/ros/jazzy/setup.bash
+      source ~/ariac_ws/install/setup.bash
 
 Dummy Inspection
 ================
@@ -262,17 +270,21 @@ Dummy Inspection
 
 **Terminal 1 - Start Environment:**
 
-Docker:
+*Docker:*
 
 .. code-block:: bash
 
-  ros2 launch ariac_gz ariac.launch.py user_config:=/team_ws/src/example_team/config/example_team_config.yaml trial_config:=/team_ws/src/example_team/config/trials/LHAF9835.yaml
+   ros2 launch ariac_gz ariac.launch.py \
+     user_config:=/team_ws/src/example_team/config/example_team_config.yaml \
+     trial_config:=/team_ws/src/example_team/config/trials/LHAF9835.yaml
 
-Local:
+*Local:*
 
 .. code-block:: bash
 
-  ros2 launch ariac_gz ariac.launch.py trial_config:=~/ariac_ws/src/ariac_example_team/example_team/config/trials/LHAF9835.yaml user_config:=~/ariac_ws/src/ariac_example_team/example_team/config/example_team_config.yaml
+   ros2 launch ariac_gz ariac.launch.py \
+     trial_config:=~/ariac_ws/src/ariac_example_team/example_team/config/trials/LHAF9835.yaml \
+     user_config:=~/ariac_ws/src/ariac_example_team/example_team/config/example_team_config.yaml
 
 **Terminal 2 - Run Demo:**
 
@@ -287,17 +299,21 @@ Move Robots
 
 **Terminal 1 - Start Environment:**
 
-Docker:
+*Docker:*
 
 .. code-block:: bash
 
-  ros2 launch ariac_gz ariac.launch.py user_config:=/team_ws/src/example_team/config/example_team_config.yaml trial_config:=/team_ws/src/example_team/config/trials/LHAF9835.yaml
+   ros2 launch ariac_gz ariac.launch.py \
+     user_config:=/team_ws/src/example_team/config/example_team_config.yaml \
+     trial_config:=/team_ws/src/example_team/config/trials/LHAF9835.yaml
 
-Local:
+*Local:*
 
 .. code-block:: bash
 
-  ros2 launch ariac_gz ariac.launch.py trial_config:=~/ariac_ws/src/ariac_example_team/example_team/config/trials/LHAF9835.yaml user_config:=~/ariac_ws/src/ariac_example_team/example_team/config/example_team_config.yaml
+   ros2 launch ariac_gz ariac.launch.py \
+     trial_config:=~/ariac_ws/src/ariac_example_team/example_team/config/trials/LHAF9835.yaml \
+     user_config:=~/ariac_ws/src/ariac_example_team/example_team/config/example_team_config.yaml
 
 **Terminal 2 - Run Demo:**
 
@@ -312,17 +328,23 @@ Pick from Voltage Tester
 
 **Terminal 1 - Start Environment:**
 
-Docker:
+*Docker:*
 
 .. code-block:: bash
 
-  ros2 launch ariac_gz ariac.launch.py user_config:=/team_ws/src/example_team/config/example_team_config.yaml trial_config:=/team_ws/src/example_team/config/trials/LHAF9835.yaml cheat_selection:=1
+   ros2 launch ariac_gz ariac.launch.py \
+     user_config:=/team_ws/src/example_team/config/example_team_config.yaml \
+     trial_config:=/team_ws/src/example_team/config/trials/LHAF9835.yaml \
+     cheat_selection:=1
 
-Local:
+*Local:*
 
 .. code-block:: bash
 
-  ros2 launch ariac_gz ariac.launch.py trial_config:=~/ariac_ws/src/ariac_example_team/example_team/config/trials/LHAF9835.yaml user_config:=~/ariac_ws/src/ariac_example_team/example_team/config/example_team_config.yaml cheat_selection:=1
+   ros2 launch ariac_gz ariac.launch.py \
+     trial_config:=~/ariac_ws/src/ariac_example_team/example_team/config/trials/LHAF9835.yaml \
+     user_config:=~/ariac_ws/src/ariac_example_team/example_team/config/example_team_config.yaml \
+     cheat_selection:=1
 
 **Terminal 2 - Run Demo:**
 
@@ -337,17 +359,23 @@ Submit Kit
 
 **Terminal 1 - Start Environment:**
 
-Docker:
+*Docker:*
 
 .. code-block:: bash
 
-  ros2 launch ariac_gz ariac.launch.py user_config:=/team_ws/src/example_team/config/example_team_config.yaml trial_config:=/team_ws/src/example_team/config/trials/LHAF9835.yaml cheat_selection:=2
+   ros2 launch ariac_gz ariac.launch.py \
+     user_config:=/team_ws/src/example_team/config/example_team_config.yaml \
+     trial_config:=/team_ws/src/example_team/config/trials/LHAF9835.yaml \
+     cheat_selection:=2
 
-Local:
+*Local:*
 
 .. code-block:: bash
 
-  ros2 launch ariac_gz ariac.launch.py trial_config:=~/ariac_ws/src/ariac_example_team/example_team/config/trials/LHAF9835.yaml user_config:=~/ariac_ws/src/ariac_example_team/example_team/config/example_team_config.yaml cheat_selection:=2
+   ros2 launch ariac_gz ariac.launch.py \
+     trial_config:=~/ariac_ws/src/ariac_example_team/example_team/config/trials/LHAF9835.yaml \
+     user_config:=~/ariac_ws/src/ariac_example_team/example_team/config/example_team_config.yaml \
+     cheat_selection:=2
 
 **Terminal 2 - Run Demo:**
 
