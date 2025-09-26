@@ -43,6 +43,7 @@ Getting Started
    pages/sensors
    pages/challenges
    pages/evaluation
+   pages/submission
 
 .. toctree::
    :caption: Development
