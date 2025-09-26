@@ -1,0 +1,68 @@
+flowchart TD
+    %% Competition States
+    STATE1[Competition State: <br/>PREPARING]
+    STATE2[Competition State: <br/>READY]
+    STATE3[Competition State: <br/>STARTED]
+    STATE4[Competition State: <br/>ORDERS_COMPLETE]
+    STATE5[Competition State: <br/>ENDED]
+    
+    %% Actions
+    B[Connect to Robots and Sensors]
+    C[Start Competition]
+    
+    %% Setup Phase  
+    D[Monitor Orders]
+    
+    %% Production Phase
+    F[Complete Kits and Modules]
+    
+    %% Decision Points
+    I{All Orders<br/>Complete?}
+    J{Time Limit<br/>Reached?}
+    
+    %% End Actions
+    K[End Competition]
+    
+    %% Main Flow Connections
+    STATE1 --> STATE2
+    STATE2 --> B
+    B --> C
+    C --> STATE3
+    STATE3 --> D
+    D --> F
+    F --> I
+    F --> J
+    I -->|Yes| STATE4
+    I -->|No| F
+    J -->|Yes| STATE5
+    J -->|No| F
+    STATE4 --> K
+    K --> STATE5
+    
+    %% Styling with Competition State Colors
+    style STATE1 fill:#fbc02d,color:#000000,stroke:#f57c00,stroke-width:2px, font-size: 22px
+    style STATE2 fill:#1976d2,color:#ffffff,stroke:#0d47a1,stroke-width:2px, font-size: 22px
+    style STATE3 fill:#388e3c,color:#ffffff,stroke:#2e7d32,stroke-width:2px, font-size: 22px
+    style STATE4 fill:#7b1fa2,color:#ffffff,stroke:#4a148c,stroke-width:2px, font-size: 22px
+    style STATE5 fill:#d32f2f,color:#ffffff,stroke:#b71c1c,stroke-width:2px, font-size: 22px
+    style F fill:#e3f2fd,stroke:#1976d2,stroke-dasharray: 10 5, font-size: 22px
+    style B fill:#f5f5f5,stroke:#666666, font-size: 22px, 
+    style C fill:#f5f5f5,stroke:#666666, font-size: 22px
+    style D fill:#f5f5f5,stroke:#666666, font-size: 22px
+    style I fill:#f5f5f5,stroke:#666666, font-size: 22px
+    style J fill:#f5f5f5,stroke:#666666, font-size: 22px
+    style K fill:#f5f5f5,stroke:#666666, font-size: 22px
+
+    %% Dark Mode Styling
+    %% style STATE1 fill:#ffb300,color:#000000,stroke:#ff8f00,stroke-width:3px, font-size: 22px
+    %% style STATE2 fill:#1e88e5,color:#ffffff,stroke:#1565c0,stroke-width:3px, font-size: 22px
+    %% style STATE3 fill:#43a047,color:#ffffff,stroke:#2e7d32,stroke-width:3px, font-size: 22px
+    %% style STATE4 fill:#8e24aa,color:#ffffff,stroke:#6a1b9a,stroke-width:3px, font-size: 22px
+    %% style STATE5 fill:#e53935,color:#ffffff,stroke:#c62828,stroke-width:3px, font-size: 22px
+    %% style F fill:#263238,color:#64b5f6,stroke:#42a5f5,stroke-dasharray: 5 5, font-size: 22px
+    %% style B fill:#424242,color:#ffffff,stroke:#757575, font-size: 22px
+    %% style C fill:#424242,color:#ffffff,stroke:#757575, font-size: 22px
+    %% style D fill:#424242,color:#ffffff,stroke:#757575, font-size: 22px
+    %% style I fill:#424242,color:#ffffff,stroke:#757575, font-size: 22px
+    %% style J fill:#424242,color:#ffffff,stroke:#757575, font-size: 22px
+    %% style K fill:#424242,color:#ffffff,stroke:#757575, font-size: 22px

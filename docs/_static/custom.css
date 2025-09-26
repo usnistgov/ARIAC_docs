@@ -1,28 +1,232 @@
-.image-row {
-    display: flex;
-    justify-content: center;  /* Center the whole row */
-    gap: 20px;                 /* Space between images */
-    margin: 1em 0;
+/* ==========================================================================
+   CSS Custom Properties (Variables) for API Documentation Colors
+   ========================================================================== */
+
+/* Light mode colors */
+:root {
+  --color-msg: #7b1fa2;
+  --color-msg-hover: #4a148c;
+  --color-topic: #1976d2;
+  --color-topic-hover: #0d47a1;
+  --color-service: #388e3c;
+  --color-service-hover: #1b5e20;
+  --color-action: #f57c00;
+  --color-action-hover: #e65100;
+  --color-bg-odd: #f2f4f5;
+  --color-bg-even: #ffffff;
+  --formula-bg: #f8fafc;
+  --formula-border: #1976d2;
+  --formula-accent: #1976d2;
 }
 
-.image-row .image-item {
-    display: block;
-    max-width: 100%;
-    height: auto;
+/* Dark mode via data attributes */
+html[data-theme='dark']  {
+  --color-msg: #ba68c8;
+  --color-msg-hover: #e1bee7;
+  --color-topic: #64b5f6;
+  --color-topic-hover: #90caf9;
+  --color-service: #81c784;
+  --color-service-hover: #a5d6a7;
+  --color-action: #ff9800;
+  --color-action-hover: #ffb74d;
+  --color-bg-odd: #2b313c;
+  --color-bg-even: #232831;
+  --formula-bg: #1e293b;
+  --formula-border: #64b5f6;
+  --formula-accent: #64b5f6;
 }
+
+html[data-theme="dark"] img {
+    background: transparent !important;
+}
+
+
+/* ==========================================================================
+   Role Classes for Interface Types
+   ========================================================================== */
+
+.msg-name {
+  color: var(--color-msg);
+  font-weight: bold;
+  font-family: monospace;
+}
+
+.topic-name {
+  color: var(--color-topic);
+  font-weight: bold;
+  font-family: monospace;
+}
+
+.service-name {
+  color: var(--color-service);
+  font-weight: bold;
+  font-family: monospace;
+}
+
+.action-name {
+  color: var(--color-action);
+  font-weight: bold;
+  font-family: monospace;
+}
+
+/* Remove underlines from role links */
+.topic-name a,
+.service-name a,
+.action-name a {
+  text-decoration: none !important;
+}
+
+.topic-name a:hover,
+.service-name a:hover,
+.action-name a:hover {
+  text-decoration: none !important;
+}
+
+/* ==========================================================================
+   API Table 
+   ========================================================================== */
+
+/* Base styling for all interface links */
+.api-table td:first-child a.reference {
+  text-decoration: none !important;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+/* Message definition links (purple) */
+.msg-def-table td:first-child a.reference.internal {
+  color: var(--color-msg) !important;
+}
+
+.msg-def-table td:first-child a.reference.internal:hover {
+  color: var(--color-msg-hover) !important;
+}
+
+/* Topic links (blue) - excluding message definition tables */
+.api-table:not(.msg-def-table) td:first-child a.reference[href*="msg"] {
+  color: var(--color-topic);
+}
+
+.api-table:not(.msg-def-table) td:first-child a.reference[href*="msg"]:hover {
+  color: var(--color-topic-hover);
+}
+
+/* Service links (green) */
+.api-table td:first-child a.reference[href*="srv"] {
+  color: var(--color-service);
+}
+
+.api-table td:first-child a.reference[href*="srv"]:hover {
+  color: var(--color-service-hover);
+}
+
+/* Action links (orange) */
+.api-table td:first-child a.reference[href*="action"] {
+  color: var(--color-action);
+}
+
+.api-table td:first-child a.reference[href*="action"]:hover {
+  color: var(--color-action-hover);
+}
+
+/* External ROS documentation links */
+.api-table td:first-child a.reference.external[href*="sensor_msgs"] {
+  color: var(--color-topic);
+}
+
+.api-table td:first-child a.reference.external[href*="sensor_msgs"]:hover {
+  color: var(--color-topic-hover);
+}
+
+.api-table td:first-child a.reference.external[href*="control_msgs"] {
+  color: var(--color-action);
+}
+
+.api-table td:first-child a.reference.external[href*="control_msgs"]:hover {
+  color: var(--color-action-hover);
+}
+
+.api-table td:last-child a {
+  font-size: 1em;
+}
+
+.api-table tbody tr:nth-child(odd) {
+  background-color: var(--color-bg-odd); 
+}
+
+.api-table tbody tr:nth-child(even) {
+  background-color: var(--color-bg-even); 
+}
+
+
+.api-table tbody tr:nth-child(odd):hover {
+  background-color: var(--color-bg-odd) !important;
+}
+
+.api-table tbody tr:nth-child(even):hover {
+  background-color: var(--color-bg-even) !important;
+}
+
+/* ==========================================================================
+   Centered Table 
+   ========================================================================== */
 
 .centered-table td,
 .centered-table th {
-    text-align: center;    /* Center text horizontally */
-    vertical-align: middle; /* Optional: center vertically */
+    text-align: center;    
+    vertical-align: middle; 
 }
 
-table, 
-table th, 
-table td {
-  background-color: transparent !important;
+.centered-table tbody tr:nth-child(odd) {
+  background-color: var(--color-bg-odd); 
 }
 
-tbody tr:hover {
-  background-color: transparent !important;  /* Remove hover highlight */
+.centered-table tbody tr:nth-child(even) {
+  background-color: var(--color-bg-even); 
+}
+
+
+.centered-table tbody tr:nth-child(odd):hover {
+  background-color: var(--color-bg-odd) !important;
+}
+
+.centered-table tbody tr:nth-child(even):hover {
+  background-color: var(--color-bg-even) !important;
+}
+
+/* ==========================================================================
+   Formula Highlighting
+   ========================================================================== */
+
+.formula-highlight {
+  background: var(--formula-bg);
+  border: 2px solid var(--formula-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem auto !important;
+  width: 60% !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  position: relative;
+}
+
+.formula-highlight::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--formula-accent);
+  border-radius: 12px 12px 0 0;
+}
+
+.formula-highlight .math {
+  text-align: center;
+  font-size: 1.1em;
+}
+
+/* Dark mode adjustments */
+html[data-theme='dark'] .formula-highlight {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }

@@ -1,3 +1,5 @@
+.. _competitiontime_msg:
+
 Competition Time
 ================
 This is a ROS message definition.
