@@ -232,7 +232,7 @@ The inspection classification bonus is awarded for correctly identifying defect 
 
   .. math::
 
-    \beta_5 = \omega_7 \cdot (1 - \frac{\nu}{\delta})
+    \beta_5 = \omega_7 \cdot \frac{\nu}{\delta}
 
 .. list-table:: Variables
    :widths: 25 75
@@ -250,23 +250,28 @@ The inspection classification bonus is awarded for correctly identifying defect 
 Penalties
 =========
 
-The competition applies penalties for certain events during runs. Penalties are calculated per occurrence - each penalty has an associated value that is deducted from the total score when the event occurs. Penalties come from the following sources:
+The competition applies penalties for certain events during runs. Penalties are calculated per occurrence - each penalty has an associated value that is deducted from the total score when the event occurs.
 
-* Non-defective cell placed in inspection bin
-* Cell falls into conveyor bin
-* Cell comes into contact with an invalid surface
-* Two AGVs collide
-* A robot collides, either with an object in the environment, or another robot
-* The sensor cost used is over the provided budget
+.. list-table::
+   :header-rows: 1
+   :widths: 20 80
+   :class: centered-table
+   :width: 80%
 
-The following penalty symbols are used in the scoring calculations:
-
-* :math:`\rho_{0}` - Non-defective cell placed in inspection bin
-* :math:`\rho_{1}` - Cell falls into conveyor bin
-* :math:`\rho_{2}` - Object on invalid surface
-* :math:`\rho_{3}` - AGV collision
-* :math:`\rho_{4}` - Robot collision
-* :math:`\rho_{5}` - Sensor cost over budget
+   * - Penalty
+     - Description
+   * - :math:`\rho_{0}`
+     - Non-defective cell dropped in inspection bin 1
+   * - :math:`\rho_{1}`
+     - Cell falls into inspection bin 2
+   * - :math:`\rho_{2}`
+     - Object on invalid surface
+   * - :math:`\rho_{3}`
+     - AGV collision
+   * - :math:`\rho_{4}`
+     - Robot collision
+   * - :math:`\rho_{5}`
+     - Sensor cost over budget
 
 .. important::
 
