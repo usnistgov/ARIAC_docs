@@ -4,226 +4,381 @@
 Demos
 =====
 
+This page provides instructions for running ARIAC demo scenarios to help you get familiar with the competition environment. The demos can be run either through the ARIAC App or directly from the terminal.
+
+.. note::
+
+   Before running any demos, ensure you have followed the setup instructions on the :ref:`startup page <STARTUP>`.
+
 --------------------
 Running with the App
 --------------------
 
-For instructions on how to start the app either through Docker or locally, please view the :ref:`startup page <STARTUP>`.
+The ARIAC App provides an interface for configuring and running trials.
 
 Configuration
 =============
 
-The home page of the app configures the settings for a competition run. This includes: 
+The home page of the ARIAC App is where you configure all the settings needed for a competition run. This configuration page allows you to set up trials, team parameters, database storage, and testing options before starting a run:
 
-* Trial config
-* Team config 
-* Database
-* Cheats
+.. list-table::
+   :header-rows: 1
+   :widths: 25 75
+   :class: centered-table
+   :width: 80%
 
-Trial Config
-------------
+   * - Setting
+     - Description
+   * - Trial Config
+     - Defines the competition scenario and tasks
+   * - Team Config
+     - Specifies robot configurations and team settings
+   * - Database
+     - SQLite database for storing results and scoring
+   * - Cheats
+     - Testing shortcuts to start at different competition stages
 
-For the demos we will use a pregenerated trial config located in the example team's ``config/trials`` folder. 
+Trial Configuration
+-------------------
+
+The trial config defines the competition scenario. For demos, use the pregenerated config file:
 
 .. figure:: /_static/images/select_trial_config.gif
   :width: 60%
+  :align: center
 
-In the Trial section, click the "Select" button. A dialog window will appear where a trial yaml file can be selected. To go up a directory, press the arrow in the top right corner of the dialog window. Below are the file locations depending on your configuration.
+**Steps:**
 
-Docker: ``/team_ws/src/example_team/config/trials/LHAF9835.yaml``
+1. Click the "Select" button in the Trial section
+2. Navigate to the trial config file using the dialog
+3. Use the arrow button (top right) to go up directories if needed
+4. Select the appropriate file based on your setup (see table below)
 
-Local: ``~/ariac_ws/src/ariac_example_team/example_team/config/trials/LHAF9835.yaml``
+.. list-table::
+   :header-rows: 1
+   :widths: 20 80
+   :class: centered-table
+   :width: 80%
 
-Team Config
------------
+   * - Setup Type
+     - File Path
+   * - Docker
+     - ``/team_ws/src/example_team/config/trials/LHAF9835.yaml``
+   * - Local
+     - ``~/ariac_ws/src/ariac_example_team/example_team/config/trials/LHAF9835.yaml``
 
-For the demos we will use a pregenerated team config located in the example team's ``config`` folder. 
+Team Configuration
+------------------
+
+The team config specifies robot settings and team parameters:
 
 .. figure:: /_static/images/select_team_config.gif
   :width: 60%
+  :align: center
 
-In the Team Config section, click the "Select" button. A dialog window will appear where a team config yaml file can be selected. To go up a directory, press the arrow in the top right corner of the dialog window. Below are the file locations depending on your configuration.
+**Steps:**
 
-Docker: ``/team_ws/src/example_team/config/example_team_config.yaml``
+1. Click the "Select" button in the Team Config section
+2. Navigate to the team config file using the dialog
+3. Use the arrow button (top right) to go up directories if needed
+4. Select the appropriate file based on your setup (see table below)
 
-Local: ``~/ariac_ws/src/ariac_example_team/example_team/config/example_team_config.yaml``
+.. list-table::
+   :header-rows: 1
+   :widths: 20 80
+   :class: centered-table
+   :width: 80%
 
-Database
---------
+   * - Setup Type
+     - File Path
+   * - Docker
+     - ``/team_ws/src/example_team/config/example_team_config.yaml``
+   * - Local
+     - ``~/ariac_ws/src/ariac_example_team/example_team/config/example_team_config.yaml``
 
-The ARIAC database is a local SQLite database that stores the information needed for scoring. The database is optional to run the environment, but is necessary to view results. For the demos, create a database.
+Database Setup
+--------------
+
+The ARIAC database stores scoring information and results. While optional for running the environment, it's required for viewing demo results.
 
 .. figure:: /_static/images/create_db.gif
   :width: 60%
+  :align: center
 
-To create the database, click the "Create" button in the database section and the file selection dialog will open. From there, navigate to the parent directory of the directory you would like to save the database in. Then, click once on the target directory and click "OK". The dialog will close and a database will be created.
+**Steps to create a database:**
+
+1. Click the "Create" button in the Database section
+2. Navigate to your desired parent directory using the file dialog
+3. Select the target directory where you want to save the database
+4. Click "OK" to create the database
 
 .. note::
 
-  The location of the database does not matter for its functionality.
+   The database location doesn't affect functionality - choose any convenient location.
 
 Cheats
 ------
 
-For testing purposes, cheats have been included to start the environment at different stages of the competition. The available cheat configurations are:
+For testing purposes, cheats have been included to start the environment at different stages of the competition:
 
-* Cells in voltage testers
-* Kit on AGV
-* Kits on AGVs
-* High priority kit
-* Partial module
-* Module
-* Flipped module
-* Module with welds
+.. list-table::
+   :header-rows: 1
+   :widths: 10 35 55
+   :class: centered-table
+   :width: 80%
 
-The dummy inspection and move robots demos do not require cheats. For the pick from voltage tester demo, start the environment with the "Cells in voltage testers" cheat. For the submit kit demo, start the environment with the "Kit on AGV" cheat.
+   * - Number
+     - Cheat Option
+     - Description
+   * - 1
+     - Cells in voltage testers
+     - Pre-places cells in voltage testing stations
+   * - 2
+     - Kit on AGV
+     - Places a complete kit on AGV1
+   * - 3
+     - Kits on AGVs
+     - Places kits on multiple AGVs
+   * - 4
+     - High priority kit
+     - Creates a high-priority kit scenario
+   * - 5
+     - Partial module
+     - Starts with partially assembled modules
+   * - 6
+     - Module
+     - Provides complete modules
+   * - 7
+     - Flipped module
+     - Creates flipped module scenarios
+   * - 8
+     - Module with welds
+     - Includes welded module scenarios
 
 Running the Demos
 =================
 
-Dummy Inspection
-----------------
+Dummy Inspection Demo
+---------------------
 
 .. figure:: /_static/images/dummy_inspection.gif
   :width: 60%
+  :align: center
 
-This example controls the cell feed on the inspection conveyor and submits dummy inspection reports using data from the break-beam sensor.
+**Overview:** Demonstrates inspection conveyor control and sensor-based reporting by controlling the cell feed on the inspection conveyor and submitting dummy inspection reports using break-beam sensor data.
 
-To run this demo, select the example team's trial and team configs using the steps above. Then, press the confirm button, which will open the run page. To start the environment, press the green "START RUN" button. Then, in the "Team Process" section of the run page, select "example_team" in the package dropdown and "dummy_inspection" in the file dropdown. The command will then fill in below the dropdowns. Press the arrow next to the command to run the demo.
+**Steps to run:**
 
-Move Robots
------------
+1. Configure trial and team configs (see sections above)
+2. No cheat selection required
+3. Click "Confirm" to open the run page
+4. Press the green "START RUN" button
+5. In the "Team Process" section:
+
+   - Package dropdown: Select "example_team"
+   - File dropdown: Select "dummy_inspection"
+
+6. Press the arrow button next to the generated command
+
+Move Robots Demo
+----------------
 
 .. figure:: /_static/images/move_robots.gif
   :width: 60%
+  :align: center
 
-This example creates MoveIt.py nodes for all five robots in the environment and moves the robots in simple linear motions simultaneously.
+**Overview:** Demonstrates basic robot motion control across multiple robots by creating MoveIt nodes for all five robots and executing simultaneous linear motions.
 
-To run this demo, select the example team's trial and team configs using the steps above. Then, press the confirm button, which will open the run page. To start the environment, press the green "START RUN" button. Then, in the "Team Process" section of the run page, select "example_team" in the package dropdown and "move_robots" in the file dropdown. The command will then fill in below the dropdowns. Press the arrow next to the command to run the demo.
+**Steps to run:**
 
-Pick from Voltage Tester
-------------------------
+1. Configure trial and team configs
+2. No cheat selection required
+3. Click "Confirm" to open the run page
+4. Press the green "START RUN" button
+5. In the "Team Process" section:
+
+   - Package dropdown: Select "example_team"
+   - File dropdown: Select "move_robots"
+
+6. Press the arrow button next to the generated command
+
+Pick from Voltage Tester Demo
+-----------------------------
 
 .. figure:: /_static/images/pick_from_tester.gif
   :width: 60%
+  :align: center
 
-This example uses inspection robot 2 to pick a cell from the voltage tester and drop it in the recycling bin.
+**Overview:** Demonstrates cell manipulation and recycling operations by using inspection robot 2 to pick a cell from the voltage tester and drop it in the recycling bin.
 
-To run this demo, select the example team's trial and team configs using the steps above. Then, in the Cheat Selection section, select "Cells in voltage testers" from the dropdown. This will spawn cells into the voltage testers when the environment is launched. Then, press the confirm button, which will open the run page. To start the environment, press the green "START RUN" button. Then, in the "Team Process" section of the run page, select "example_team" in the package dropdown and "pick_from_tester" in the file dropdown. The command will then fill in below the dropdowns. Press the arrow next to the command to run the demo.
+**Steps to run:**
 
-Submit Kit
-----------
+1. Configure trial and team configs
+2. **Cheat Selection:** Select "Cells in voltage testers" from the dropdown
+3. Click "Confirm" to open the run page
+4. Press the green "START RUN" button
+5. In the "Team Process" section:
+
+   - Package dropdown: Select "example_team"
+   - File dropdown: Select "pick_from_tester"
+
+6. Press the arrow button next to the generated command
+
+Submit Kit Demo
+---------------
 
 .. figure:: /_static/images/submit_kit_db.gif
   :width: 60%
+  :align: center
 
-This example moves AGV1 to the shipping station and submits a kit.
+**Overview:** Demonstrates AGV movement and kit submission workflow by moving AGV1 to the shipping station and submitting a complete kit.
 
-To run this demo, select the example team's trial and team configs using the steps above. Then, in the Cheat Selection section, select "Kit on AGV" from the dropdown. This will spawn cells on AGV1 when the environment is launched. Then, press the confirm button, which will open the run page. To start the environment, press the green "START RUN" button. Then, in the "Team Process" section of the run page, select "example_team" in the package dropdown and "submit_kit" in the file dropdown. The command will then fill in below the dropdowns. Press the arrow next to the command to run the demo.
+**Steps to run:**
+
+1. Configure trial and team configs
+2. **Cheat Selection:** Select "Kit on AGV" from the dropdown
+3. Click "Confirm" to open the run page
+4. Press the green "START RUN" button
+5. In the "Team Process" section:
+
+   - Package dropdown: Select "example_team"
+   - File dropdown: Select "submit_kit"
+
+6. Press the arrow button next to the generated command
 
 -------------------------
 Running with the Terminal
 -------------------------
 
-For each of these demos, two terminals are required: one for the environment and another for the example team.
+For advanced users or automation purposes, demos can be run directly from the terminal. This approach requires two separate terminal sessions.
 
-.. note::
+.. important::
 
-  If running locally, be sure to source the setup files in both terminals.
+   **Local Installation Setup**
 
-  .. code-block:: bash
+   If running locally (not Docker), source the setup files in both terminals:
 
-    source /opt/ros/jazzy/setup.bash
-    source ~/ariac_ws/install/setup.bash
+   .. code-block:: bash
+
+      source /opt/ros/jazzy/setup.bash
+      source ~/ariac_ws/install/setup.bash
 
 Dummy Inspection
 ================
 
-In terminal one, start the environment.
+**Overview:** Demonstrates inspection conveyor control and sensor-based reporting by controlling the cell feed on the inspection conveyor and submitting dummy inspection reports using break-beam sensor data.
 
-Docker:
+**Terminal 1 - Start Environment:**
 
-.. code-block:: bash
-
-  ros2 launch ariac_gz ariac.launch.py user_config:=/team_ws/src/example_team/config/example_team_config.yaml trial_config:=/team_ws/src/example_team/config/trials/LHAF9835.yaml
-
-Local:
+*Docker:*
 
 .. code-block:: bash
 
-  ros2 launch ariac_gz ariac.launch.py trial_config:=~/ariac_ws/src/ariac_example_team/example_team/config/trials/LHAF9835.yaml user_config:=~/ariac_ws/src/ariac_example_team/example_team/config/example_team_config.yaml
+   ros2 launch ariac_gz ariac.launch.py \
+     user_config:=/team_ws/src/example_team/config/example_team_config.yaml \
+     trial_config:=/team_ws/src/example_team/config/trials/LHAF9835.yaml
 
-In the second terminal, start the example team:
+*Local:*
 
 .. code-block:: bash
 
-  ros2 run example_team dummy_inspection
+   ros2 launch ariac_gz ariac.launch.py \
+     trial_config:=~/ariac_ws/src/ariac_example_team/example_team/config/trials/LHAF9835.yaml \
+     user_config:=~/ariac_ws/src/ariac_example_team/example_team/config/example_team_config.yaml
+
+**Terminal 2 - Run Demo:**
+
+.. code-block:: bash
+
+   ros2 run example_team dummy_inspection
 
 Move Robots
 ===========
 
-In terminal one, start the environment.
+**Overview:** Demonstrates basic robot motion control across multiple robots by creating MoveIt nodes for all five robots and executing simultaneous linear motions.
 
-Docker:
+**Terminal 1 - Start Environment:**
 
-.. code-block:: bash
-
-  ros2 launch ariac_gz ariac.launch.py user_config:=/team_ws/src/example_team/config/example_team_config.yaml trial_config:=/team_ws/src/example_team/config/trials/LHAF9835.yaml
-
-Local:
+*Docker:*
 
 .. code-block:: bash
 
-  ros2 launch ariac_gz ariac.launch.py trial_config:=~/ariac_ws/src/ariac_example_team/example_team/config/trials/LHAF9835.yaml user_config:=~/ariac_ws/src/ariac_example_team/example_team/config/example_team_config.yaml
+   ros2 launch ariac_gz ariac.launch.py \
+     user_config:=/team_ws/src/example_team/config/example_team_config.yaml \
+     trial_config:=/team_ws/src/example_team/config/trials/LHAF9835.yaml
 
-In the second terminal, start the example team:
-
-.. code-block:: bash
-
-  ros2 run example_team move_robots
-
-Pick from Tester
-================
-
-In terminal one, start the environment.
-
-Docker:
+*Local:*
 
 .. code-block:: bash
 
-  ros2 launch ariac_gz ariac.launch.py user_config:=/team_ws/src/example_team/config/example_team_config.yaml trial_config:=/team_ws/src/example_team/config/trials/LHAF9835.yaml cheat_selection:=1
+   ros2 launch ariac_gz ariac.launch.py \
+     trial_config:=~/ariac_ws/src/ariac_example_team/example_team/config/trials/LHAF9835.yaml \
+     user_config:=~/ariac_ws/src/ariac_example_team/example_team/config/example_team_config.yaml
 
-Local:
-
-.. code-block:: bash
-
-  ros2 launch ariac_gz ariac.launch.py trial_config:=~/ariac_ws/src/ariac_example_team/example_team/config/trials/LHAF9835.yaml user_config:=~/ariac_ws/src/ariac_example_team/example_team/config/example_team_config.yaml cheat_selection:=1
-
-In the second terminal, start the example team:
+**Terminal 2 - Run Demo:**
 
 .. code-block:: bash
 
-  ros2 run example_team pick_from_tester
+   ros2 run example_team move_robots
 
-Submit kit
+Pick from Voltage Tester
+========================
+
+**Overview:** Demonstrates cell manipulation and recycling operations by using inspection robot 2 to pick a cell from the voltage tester and drop it in the recycling bin.
+
+**Terminal 1 - Start Environment:**
+
+*Docker:*
+
+.. code-block:: bash
+
+   ros2 launch ariac_gz ariac.launch.py \
+     user_config:=/team_ws/src/example_team/config/example_team_config.yaml \
+     trial_config:=/team_ws/src/example_team/config/trials/LHAF9835.yaml \
+     cheat_selection:=1
+
+*Local:*
+
+.. code-block:: bash
+
+   ros2 launch ariac_gz ariac.launch.py \
+     trial_config:=~/ariac_ws/src/ariac_example_team/example_team/config/trials/LHAF9835.yaml \
+     user_config:=~/ariac_ws/src/ariac_example_team/example_team/config/example_team_config.yaml \
+     cheat_selection:=1
+
+**Terminal 2 - Run Demo:**
+
+.. code-block:: bash
+
+   ros2 run example_team pick_from_tester
+
+Submit Kit
 ==========
 
-In terminal one, start the environment.
+**Overview:** Demonstrates AGV movement and kit submission workflow by moving AGV1 to the shipping station and submitting a complete kit.
 
-Docker:
+**Terminal 1 - Start Environment:**
 
-.. code-block:: bash
-
-  ros2 launch ariac_gz ariac.launch.py user_config:=/team_ws/src/example_team/config/example_team_config.yaml trial_config:=/team_ws/src/example_team/config/trials/LHAF9835.yaml cheat_selection:=2
-
-Local:
+*Docker:*
 
 .. code-block:: bash
 
-  ros2 launch ariac_gz ariac.launch.py trial_config:=~/ariac_ws/src/ariac_example_team/example_team/config/trials/LHAF9835.yaml user_config:=~/ariac_ws/src/ariac_example_team/example_team/config/example_team_config.yaml cheat_selection:=2
+   ros2 launch ariac_gz ariac.launch.py \
+     user_config:=/team_ws/src/example_team/config/example_team_config.yaml \
+     trial_config:=/team_ws/src/example_team/config/trials/LHAF9835.yaml \
+     cheat_selection:=2
 
-In the second terminal, start the example team:
+*Local:*
 
 .. code-block:: bash
 
-  ros2 run example_team submit_kit
+   ros2 launch ariac_gz ariac.launch.py \
+     trial_config:=~/ariac_ws/src/ariac_example_team/example_team/config/trials/LHAF9835.yaml \
+     user_config:=~/ariac_ws/src/ariac_example_team/example_team/config/example_team_config.yaml \
+     cheat_selection:=2
+
+**Terminal 2 - Run Demo:**
+
+.. code-block:: bash
+
+   ros2 run example_team submit_kit

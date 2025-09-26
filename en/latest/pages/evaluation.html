@@ -596,7 +596,7 @@ document.write(`
 <p>The inspection classification bonus is awarded for correctly identifying defect types and locations. All elements of the defect report must be correct.</p>
 <div class="formula-highlight docutils container">
 <div class="math notranslate nohighlight">
-\[\beta_5 = \omega_7 \cdot (1 - \frac{\nu}{\delta})\]</div>
+\[\beta_5 = \omega_7 \cdot \frac{\nu}{\delta}\]</div>
 </div>
 <div class="pst-scrollable-table-container"><table class="centered-table table" id="id10" style="width: 80%">
 <caption><span class="caption-text">Variables</span><a class="headerlink" href="#id10" title="Permalink to this table">#</a></caption>
@@ -621,24 +621,39 @@ document.write(`
 </section>
 <section id="penalties">
 <h3>Penalties<a class="headerlink" href="#penalties" title="Permalink to this heading">#</a></h3>
-<p>The competition applies penalties for certain events during runs. Penalties are calculated per occurrence - each penalty has an associated value that is deducted from the total score when the event occurs. Penalties come from the following sources:</p>
-<ul class="simple">
-<li><p>Non-defective cell placed in inspection bin</p></li>
-<li><p>Cell falls into conveyor bin</p></li>
-<li><p>Cell comes into contact with an invalid surface</p></li>
-<li><p>Two AGVs collide</p></li>
-<li><p>A robot collides, either with an object in the environment, or another robot</p></li>
-<li><p>The sensor cost used is over the provided budget</p></li>
-</ul>
-<p>The following penalty symbols are used in the scoring calculations:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\rho_{0}\)</span> - Non-defective cell placed in inspection bin</p></li>
-<li><p><span class="math notranslate nohighlight">\(\rho_{1}\)</span> - Cell falls into conveyor bin</p></li>
-<li><p><span class="math notranslate nohighlight">\(\rho_{2}\)</span> - Object on invalid surface</p></li>
-<li><p><span class="math notranslate nohighlight">\(\rho_{3}\)</span> - AGV collision</p></li>
-<li><p><span class="math notranslate nohighlight">\(\rho_{4}\)</span> - Robot collision</p></li>
-<li><p><span class="math notranslate nohighlight">\(\rho_{5}\)</span> - Sensor cost over budget</p></li>
-</ul>
+<p>The competition applies penalties for certain events during runs. Penalties are calculated per occurrence - each penalty has an associated value that is deducted from the total score when the event occurs.</p>
+<div class="pst-scrollable-table-container"><table class="centered-table table" style="width: 80%">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Penalty</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\rho_{0}\)</span></p></td>
+<td><p>Non-defective cell dropped in inspection bin 1</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\rho_{1}\)</span></p></td>
+<td><p>Cell falls into inspection bin 2</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\rho_{2}\)</span></p></td>
+<td><p>Object on invalid surface</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\rho_{3}\)</span></p></td>
+<td><p>AGV collision</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\rho_{4}\)</span></p></td>
+<td><p>Robot collision</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\rho_{5}\)</span></p></td>
+<td><p>Sensor cost over budget</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>The exact penalty values are subject to change and are defined in the <a class="reference external" href="https://github.com/usnistgov/ARIAC/blob/ariac2025/ariac_db/config/scoring_weights.yaml">scoring_weights.yaml configuration file</a>. Teams should refer to this file for the current values used by the scoring system.</p>
