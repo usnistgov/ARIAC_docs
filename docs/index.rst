@@ -26,6 +26,7 @@ The `full source code  <https://www.github.com/usnistgov/ARIAC/>`_ for the compe
    pages/sensors
    pages/challenges
    pages/evaluation
+   pages/submission
 
 .. toctree::
    :caption: Development
