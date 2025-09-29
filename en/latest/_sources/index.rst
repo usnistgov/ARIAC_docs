@@ -14,8 +14,8 @@ The competition serves as a testbed for developing algorithms that can be applie
 
    ARIAC environment
 
-Getting Started
-===============
+Key Resources
+=============
 
 * **Competition Information**: The official `ARIAC competition page <https://www.nist.gov/el/intelligent-systems-division-73500/agile-robotics-industrial-automation-competition>`_ provides competition history, previous results, and cash prize eligibility requirements. Teams from universities and research institutions worldwide participate in developing agile robotic systems for industrial automation.
 
@@ -42,18 +42,26 @@ Getting Started
    pages/scenario
    pages/sensors
    pages/challenges
-   pages/evaluation
+   pages/schedule
+   pages/api
 
 .. toctree::
-   :caption: Development
+   :caption: Getting Started
    :maxdepth: 3
    :hidden:
 
-   pages/schedule
    pages/startup
    pages/config_files
    pages/demos
-   pages/api
+
+.. toctree::
+   :caption: Evaluation
+   :maxdepth: 3
+   :hidden:
+
+   pages/submission
+   pages/scoring
+   
 
 .. toctree::
    :caption: ROS Interfaces

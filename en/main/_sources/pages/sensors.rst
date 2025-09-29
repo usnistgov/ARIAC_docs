@@ -6,7 +6,7 @@ Sensors
 
 Teams are allowed to use sensors to gather information about the environment during competition trials. Sensors can be strategically placed throughout the workspace to inspect cells for defects, monitor conveyor operations, detect object presence, and guide robotic manipulation. The sensor data helps teams make informed decisions about task execution, object handling, and navigation.
 
-Teams are given a budget for their total sensor cost. Each sensor is assigned a grade based on its parameters, and the grade determines its cost. Going over budget will incur a penalty, but staying under will reward bonus points. More information about the associated bonus and penalty can be found on the :ref:`evaluation page <EVALUATION>`.
+Teams are given a budget for their total sensor cost. Each sensor is assigned a grade based on its parameters, and the grade determines its cost. Going over budget will incur a penalty, but staying under will reward bonus points. More information about the associated bonus and penalty can be found on the :ref:`scoring page <SCORING>`.
 
 .. _COMMON_PARAMETERS:
 

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Startup &#8212; ARIAC Docs  documentation</title>
+    <title>Submission &#8212; ARIAC Docs  documentation</title>
   
   
   
@@ -44,11 +44,11 @@
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'pages/startup';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pages/submission';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Configuration Files" href="config_files.html" />
-    <link rel="prev" title="ROS API" href="api.html" />
+    <link rel="next" title="Scoring" href="scoring.html" />
+    <link rel="prev" title="Demos" href="demos.html" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -182,14 +182,14 @@
 <li class="toctree-l1"><a class="reference internal" href="api.html">ROS API</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Startup</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="startup.html">Startup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="config_files.html">Configuration Files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="demos.html">Demos</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Evaluation</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="submission.html">Submission</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Submission</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scoring.html">Scoring</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ROS Interfaces</span></p>
@@ -305,7 +305,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Startup</h1>
+    <h1>Submission</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -315,18 +315,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker">Docker</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launching-the-environment">Launching the Environment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-the-app">Starting the App</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local">Local</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Installation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Launching the Environment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Starting the App</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-steps">Submission Steps</a></li>
 </ul>
             </nav>
         </div>
@@ -338,52 +327,172 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="startup">
-<span id="id1"></span><h1>Startup<a class="headerlink" href="#startup" title="Permalink to this heading">#</a></h1>
-<p>There are two ways for teams to develop a solution for this year’s ARIAC competition:</p>
-<section id="docker">
-<h2>Docker<a class="headerlink" href="#docker" title="Permalink to this heading">#</a></h2>
-<p>Running the competition through Docker ensures all ARIAC dependencies are preloaded into the image. This makes setup easier and can lead to fewer potential issues. However, there can be a steep learning curve if your team is not familiar with Docker. The final evaluation will require teams to submit a Dockerfile for their solution, so this is the recommended approach.</p>
-<section id="installation">
-<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h3>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>Running ARIAC through Docker requires a Linux operating system</p>
+  <section id="submission">
+<span id="id1"></span><h1>Submission<a class="headerlink" href="#submission" title="Permalink to this heading">#</a></h1>
+<p>This page provides a step-by-step guide for submitting your code for the competition. See the <a class="reference internal" href="schedule.html#schedule"><span class="std std-ref">schedule</span></a> for submission dates.</p>
+<p><strong>Smoke Test (Optional)</strong></p>
+<p>The smoke test is an optional preliminary evaluation to:</p>
+<ul class="simple">
+<li><p>Validate your submission process</p></li>
+<li><p>Ensure your code runs on the evaluation infrastructure</p></li>
+<li><p>Help identify issues before the final submission</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Teams are <strong>not expected</strong> to have fully operational submissions at this stage. The goal is to verify your code runs without crashing.</p>
 </div>
+<p><strong>Finals (Required)</strong></p>
+<p>The finals submission is the scored evaluation that determines your final team ranking.</p>
+<section id="submission-steps">
+<h2>Submission Steps<a class="headerlink" href="#submission-steps" title="Permalink to this heading">#</a></h2>
 <ol class="arabic">
-<li><p>Install prerequisites</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a>.</p></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>After installing Docker Engine, follow the <a class="reference external" href="https://docs.docker.com/engine/install/linux-postinstall/">post-installation instructions</a>.</p>
-</div>
-<ul class="simple">
-<li><p><a class="reference external" href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html">Nvidia Container Toolkit</a>.</p></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The toolkit is only necessary if you have an NVIDIA graphics card.</p>
-<p>After installation, run the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nvidia-ctk<span class="w"> </span>runtime<span class="w"> </span>configure<span class="w"> </span>--runtime<span class="o">=</span>docker
-</pre></div>
-</div>
+<li><p><strong>Get Repository Access</strong></p>
+<ol class="loweralpha simple">
+<li><p>Submit team information: Complete the <a class="reference external" href="https://forms.gle/aiaySnEiS8vna2op8">Google form</a> before the smoke test deadline. You’ll receive an email invitation within 24-48 hours.</p></li>
+<li><p>Accept the GitHub invitation: Check your email and accept the invitation to your team’s private repository.</p></li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Set up SSH key</strong> (if not already done): Follow GitHub’s guide to <a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">generate an SSH key</a> and <a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">add it to your GitHub account</a>.</p>
 </div>
 </li>
-<li><p>Pull the ARIAC image from Docker Hub</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>pull<span class="w"> </span>nistariac/ariac2025:latest
-</pre></div>
-</div>
-</li>
-<li><p>Clone the <a class="reference external" href="https://github.com/usnistgov/ariac_example_team.git">example team repository</a></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/usnistgov/ariac_example_team.git<span class="w"> </span>~/ariac_example_team
+<li><p><strong>Upload Your Code</strong></p>
+<p>Choose the option that matches your current setup:</p>
+<p>Option 1: You already use Git</p>
+<p>Add the submission repository as a remote and push your existing code:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Navigate to your existing repository</span>
+<span class="nb">cd</span><span class="w"> </span>your-existing-repo
 
-<span class="nb">cd</span><span class="w"> </span>~/ariac_example_team
+<span class="c1"># Add the new repository as a remote</span>
+git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>submission<span class="w"> </span>git@github.com:usnistgov/ariac2025_<span class="o">{</span>team_name<span class="o">}</span>.git
+
+<span class="c1"># Push your existing code</span>
+git<span class="w"> </span>push<span class="w"> </span>submission<span class="w"> </span>main
+</pre></div>
+</div>
+<p>Option 2: You don’t use Git</p>
+<p>Clone the empty repository and copy your files:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the empty repository</span>
+git<span class="w"> </span>clone<span class="w"> </span>git@github.com:usnistgov/ariac2025_<span class="o">{</span>team_name<span class="o">}</span>.git
+<span class="nb">cd</span><span class="w"> </span>ariac2025_<span class="o">{</span>team_name<span class="o">}</span>
+
+<span class="c1"># Copy your existing files into this directory</span>
+<span class="c1"># Replace {path_to_existing_files} with your actual file path</span>
+cp<span class="w"> </span>-r<span class="w"> </span><span class="o">{</span>path_to_existing_files<span class="o">}</span>/*<span class="w"> </span>.
+
+<span class="c1"># Add and commit your files</span>
+git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Initial commit with team code&quot;</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
 </pre></div>
 </div>
 </li>
-<li><p>Start the container with Docker Compose</p>
+<li><p><strong>Create a Dockerfile</strong></p>
+<p>Create a Dockerfile in your repository’s root directory. This file tells the evaluation system how to build and run your code. Your Dockerfile must include the base image, environment variables, and any setup needed for your solution.</p>
+<ol class="loweralpha">
+<li><p>Use the correct base image:</p>
+<div class="highlight-docker notranslate"><div class="highlight"><pre><span></span><span class="c"># For smoke test</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">nistariac/ariac2025:smoke_test</span>
+
+<span class="c"># For finals</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">nistariac/ariac2025:final</span>
+</pre></div>
+</div>
+</li>
+<li><p>Set required environment variables:</p>
+<div class="highlight-docker notranslate"><div class="highlight"><pre><span></span><span class="k">ENV</span><span class="w"> </span><span class="nv">TEAM_CONFIG</span><span class="o">=</span>/team_ws/config/team_config.yaml
+<span class="k">ENV</span><span class="w"> </span><span class="nv">TEAM_COMMAND</span><span class="o">=</span><span class="s2">&quot;ros2 launch your_package your_launch.py&quot;</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><code class="docutils literal notranslate"><span class="pre">TEAM_COMMAND</span></code> can be a ROS 2 command or shell script. For shell scripts, set proper permissions with <code class="docutils literal notranslate"><span class="pre">RUN</span> <span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">/path/to/script.sh</span></code>.</p>
+</div>
+</li>
+</ol>
+<p>In addition the Dockerfile should:</p>
+<ul class="simple">
+<li><p>Install all dependencies for your solution</p></li>
+<li><p>Build your ROS workspace</p></li>
+<li><p>Source the workspace in the container’s .bashrc</p></li>
+</ul>
+<p><strong>Example Dockerfile</strong>:</p>
+<div class="highlight-docker notranslate"><div class="highlight"><pre><span></span><span class="c"># ================================================================</span>
+<span class="c"># Team overlay image extending ARIAC base</span>
+<span class="c"># ================================================================</span>
+
+<span class="k">FROM</span><span class="w"> </span><span class="s">nistariac/ariac2025:final</span>
+
+<span class="c"># Include neccessary environment variables</span>
+<span class="k">ENV</span><span class="w"> </span><span class="nv">TEAM_COMMAND</span><span class="o">=</span><span class="s2">&quot;ros2 run example_team submit_kit&quot;</span>
+<span class="k">ENV</span><span class="w"> </span><span class="nv">TEAM_CONFIG</span><span class="o">=</span><span class="s2">&quot;/team_ws/src/example_team/config/example_team_config.yaml&quot;</span>
+
+<span class="c"># Create a new overlay workspace</span>
+<span class="k">ENV</span><span class="w"> </span><span class="nv">TEAM_WS</span><span class="o">=</span>/team_ws
+<span class="k">RUN</span><span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$TEAM_WS</span>/src
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">$TEAM_WS</span>
+
+<span class="c"># Copy team packages into the overlay workspace</span>
+<span class="k">COPY</span><span class="w"> </span>./<span class="w"> </span><span class="nv">$TEAM_WS</span>/src/
+
+<span class="c"># Update apt and install any OS dependencies needed for rosdep</span>
+<span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>rosdep<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>rosdep<span class="w"> </span>install<span class="w"> </span>--from-paths<span class="w"> </span>src<span class="w"> </span>--ignore-src<span class="w"> </span>-r<span class="w"> </span>-y
+
+<span class="c"># This is how you can run a pip install for Python packages</span>
+<span class="c"># RUN pip3 install -r $TEAM_WS/src/requirements.txt --break-system-packages</span>
+
+<span class="c"># Build the workspace (symlink install is fine for overlays)</span>
+<span class="k">RUN</span><span class="w"> </span>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;source /opt/ros/jazzy/setup.bash &amp;&amp; \</span>
+<span class="s2">                  source /ariac_ws/install/setup.bash &amp;&amp; \</span>
+<span class="s2">                  colcon build --symlink-install&quot;</span>
+
+<span class="c"># Source automatically in container</span>
+<span class="k">RUN</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source /team_ws/install/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.bashrc
+
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">$TEAM_WS</span>
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;bash&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Test Your Submission</strong></p>
+<ol class="loweralpha">
+<li><p>Add a docker compose configuration to your repository:</p>
+<p>Example:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ariac</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">build</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">context</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.</span>
+<span class="w">      </span><span class="nt">dockerfile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dockerfile</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example_team</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8080:8080&quot;</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/tmp/.X11-unix:/tmp/.X11-unix:rw</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./:/team_ws/src/</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DISPLAY=${DISPLAY}</span>
+<span class="w">    </span><span class="nt">stdin_open</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">tty</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span>
+<span class="w">  </span><span class="nt">ariac_nvidia</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">extends</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ariac</span>
+<span class="w">    </span><span class="nt">runtime</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nvidia</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">QT_X11_NO_MITSHM=1</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NVIDIA_VISIBLE_DEVICES=all</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NVIDIA_DRIVER_CAPABILITIES=all</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR}</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">__NV_PRIME_RENDER_OFFLOAD=1</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">__GLX_VENDOR_LIBRARY_NAME=nvidia</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">XAUTHORITY=${XAUTHORITY}</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${XAUTHORITY}:${XAUTHORITY}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Start the container using docker compose:</p>
 <p>If you have an NVIDIA graphics card:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>ariac_nvidia
 </pre></div>
@@ -392,178 +501,44 @@ document.write(`
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>ariac
 </pre></div>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Running the competition without a dedicated GPU will lead to worse performance.</p>
-</div>
 </li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This terminal must be kept open while ARIAC is running or use <code class="docutils literal notranslate"><span class="pre">-d</span></code> to run the container in detached mode.</p>
-</div>
-</section>
-<section id="launching-the-environment">
-<h3>Launching the Environment<a class="headerlink" href="#launching-the-environment" title="Permalink to this heading">#</a></h3>
-<ol class="arabic">
-<li><p>Open a new terminal in the container</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>example_team<span class="w"> </span>bash
+<li><p>Launch the environment (in a new terminal):</p>
+<p>Open a new terminal in the container and launch the environment with your team config:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>your_container_name<span class="w"> </span>bash
+ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gz<span class="w"> </span>ariac.launch.py<span class="w"> </span>user_config:<span class="o">=</span><span class="nv">$TEAM_CONFIG</span><span class="w"> </span>trial_config:<span class="o">=</span>/path/to/trial/config.yaml
 </pre></div>
 </div>
 </li>
-<li><p>Launch the environment</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gz<span class="w"> </span>ariac.launch.py<span class="w"> </span>user_config:<span class="o">=</span>/team_ws/src/example_team/config/example_team_config.yaml<span class="w"> </span>trial_config:<span class="o">=</span>/team_ws/src/example_team/config/trials/LHAF9835.yaml
+<li><p>Run your team command (in another new terminal):</p>
+<p>Open another terminal in the container and execute your team’s solution:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>your_container_name<span class="w"> </span>bash
+<span class="nv">$TEAM_COMMAND</span>
 </pre></div>
 </div>
 </li>
 </ol>
-</section>
-<section id="starting-the-app">
-<h3>Starting the App<a class="headerlink" href="#starting-the-app" title="Permalink to this heading">#</a></h3>
-<ol class="arabic">
-<li><p>Open a new terminal in the container</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>example_team<span class="w"> </span>bash
+</li>
+<li><p><strong>Create Tagged Release</strong></p>
+<p>NIST will evaluate your code using specific tagged versions. Create the appropriate tag for each submission:</p>
+<ol class="loweralpha">
+<li><p>Create and push a git tag:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># For smoke test</span>
+git<span class="w"> </span>tag<span class="w"> </span>smoketest
+git<span class="w"> </span>push<span class="w"> </span>submission<span class="w"> </span>smoketest
+
+<span class="c1"># For finals</span>
+git<span class="w"> </span>tag<span class="w"> </span>final
+git<span class="w"> </span>push<span class="w"> </span>submission<span class="w"> </span>final
 </pre></div>
 </div>
-</li>
-<li><p>Start the app</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>ariac_app<span class="w"> </span>app
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You should see a message that looks like this:</p>
-<p><cite>NiceGUI ready to go on http://localhost:8080, and http://x.x.x.x:8080</cite></p>
-</div>
-</li>
-<li><p>Open the app in your browser</p>
-<p>To open the app, ctrl+click on either of the links in the terminal or click <a class="reference external" href="http://localhost:8080">here</a>.</p>
-</li>
-<li><p>Run the demos</p>
-<p>See the <a class="reference internal" href="demos.html#demos"><span class="std std-ref">demos page</span></a> for instructions on how to run the demos.</p>
 </li>
 </ol>
-</section>
-</section>
-<section id="local">
-<h2>Local<a class="headerlink" href="#local" title="Permalink to this heading">#</a></h2>
-<p>The competition can still be run without using Docker by directly installing and building the ARIAC source code on your machine. This may lead to more issues depending on how your computer is configured.</p>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>Running ARIAC locally requires Ubuntu 24.04.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>These instructions are written for Bash. If you are using a shell other than Bash, the source commands will be different. For example, the command for Zsh is:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>/opt/ros/jazzy/setup.zsh
-</pre></div>
-</div>
-</div>
-<section id="id2">
-<h3>Installation<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
-<ol class="arabic">
-<li><p>Install prerequisites</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html">ROS2 Jazzy</a>.</p></li>
-</ul>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>The step for “Install development tools (optional)” is required.</p>
-</div>
-<ul class="simple">
-<li><p><a class="reference external" href="https://gazebosim.org/docs/harmonic/install_ubuntu/">Gazebo Sim (Harmonic)</a>.</p></li>
-</ul>
-</li>
-<li><p>Create a workspace</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>~/ariac_ws/src<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/ariac_ws
-</pre></div>
-</div>
-</li>
-<li><p>Clone ARIAC and the example team</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/usnistgov/ARIAC.git<span class="w"> </span>src/ARIAC
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/usnistgov/ariac_example_team.git<span class="w"> </span>src/ariac_example_team
-</pre></div>
-</div>
-</li>
-<li><p>Rosdep</p>
-<p>Initialize rosdep</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>/opt/ros/jazzy/setup.bash
-sudo<span class="w"> </span>rosdep<span class="w"> </span>init
-</pre></div>
-</div>
-<p>Update rosdep</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosdep<span class="w"> </span>update
-</pre></div>
-</div>
-<p>Install ARIAC dependencies</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosdep<span class="w"> </span>install<span class="w"> </span>--from-paths<span class="w"> </span>src<span class="w"> </span>--ignore-src<span class="w"> </span>-r<span class="w"> </span>-y
-</pre></div>
-</div>
-</li>
-<li><p>Pip dependencies</p>
-<p>Install necessary Python packages for the app:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-pip
-pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>src/ARIAC/ariac_app/requirements.txt<span class="w"> </span>--break-system-packages
-</pre></div>
-</div>
-</li>
-<li><p>Build the workspace</p>
-<p>First, ROS must be sourced using this command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>/opt/ros/jazzy/setup.bash
-</pre></div>
-</div>
-<p>After sourcing ROS, the workspace can be built using this command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>colcon<span class="w"> </span>build
-</pre></div>
+<p>Ensure all your code and Dockerfile are committed and pushed before creating a tag. Tags must be created before the submission deadline.</p>
 </div>
 </li>
 </ol>
-</section>
-<section id="id3">
-<h3>Launching the Environment<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
-<ol class="arabic">
-<li><p>Navigate to the workspace and source packages</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/ariac_ws
-<span class="nb">source</span><span class="w"> </span>/opt/ros/jazzy/setup.bash
-<span class="nb">source</span><span class="w"> </span>install/setup.bash
-</pre></div>
-</div>
-</li>
-<li><p>Launch the environment</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ariac_gz<span class="w"> </span>ariac.launch.py<span class="w"> </span>trial_config:<span class="o">=</span>src/ariac_example_team/example_team/config/trials/LHAF9835.yaml<span class="w"> </span>user_config:<span class="o">=</span>src/ariac_example_team/example_team/config/example_team_config.yaml
-</pre></div>
-</div>
-</li>
-</ol>
-</section>
-<section id="id4">
-<h3>Starting the App<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
-<ol class="arabic">
-<li><p>Navigate to the workspace and source packages</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/ariac_ws
-<span class="nb">source</span><span class="w"> </span>/opt/ros/jazzy/setup.bash
-<span class="nb">source</span><span class="w"> </span>install/setup.bash
-</pre></div>
-</div>
-</li>
-<li><p>Start the app</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>ariac_app<span class="w"> </span>app
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You should see a message that looks like this:</p>
-<p><cite>NiceGUI ready to go on http://localhost:8080, and http://x.x.x.x:8080</cite></p>
-</div>
-</li>
-<li><p>Open the app in your browser</p>
-<p>To open the app, ctrl+click on either of the links in the terminal or click <a class="reference external" href="http://localhost:8080">here</a>.</p>
-</li>
-<li><p>Run the demos</p>
-<p>See the <a class="reference internal" href="demos.html#demos"><span class="std std-ref">demos page</span></a> for instructions on how to run the demos.</p>
-</li>
-</ol>
-</section>
 </section>
 </section>
 
@@ -579,20 +554,20 @@ pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </s
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="api.html"
+       href="demos.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">ROS API</p>
+        <p class="prev-next-title">Demos</p>
       </div>
     </a>
     <a class="right-next"
-       href="config_files.html"
+       href="scoring.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Configuration Files</p>
+        <p class="prev-next-title">Scoring</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -612,18 +587,7 @@ pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </s
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker">Docker</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launching-the-environment">Launching the Environment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-the-app">Starting the App</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local">Local</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Installation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Launching the Environment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Starting the App</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-steps">Submission Steps</a></li>
 </ul>
   </nav></div>
 
