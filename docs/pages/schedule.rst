@@ -6,7 +6,8 @@ Schedule
 
 .. list-table:: ARIAC 2025 Timeline
    :header-rows: 1
-   :widths: 25 75
+   :widths: 40 60
+   :class: centered-table
 
    * - Date
      - Event

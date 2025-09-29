@@ -90,7 +90,7 @@ For each detected defect, teams must populate a CellDefect message with:
 
 .. note::
 
-   Classifying defects is optional. Teams can simply report that a cell is defective without providing detailed defect information. However, correctly classifying defects provides bonus points (see :ref:`Inspection Classification <EVALUATION>` bonus in the evaluation section).
+   Classifying defects is optional. Teams can simply report that a cell is defective without providing detailed defect information. However, correctly classifying defects provides bonus points (see :ref:`Inspection Classification <SCORING>` bonus in the scoring section).
 
 If the cell passes inspection, the inspection door will open allowing the cell to proceed. If the cell fails inspection, it will drop into the bin next to the conveyor. 
 

@@ -4,48 +4,170 @@
 Submission
 ==========
 
-For ARIAC 2025, there are two types of submissions: smoketests and finals. Both will use the same methods of using a Dockerfile and a private GitHub Repository to submit teams' code. 
+This page provides a step-by-step guide for submitting your code for the competition. See the :ref:`schedule <SCHEDULE>` for submission dates.
 
-----------------
-Submission Types
-----------------
+**Smoke Test (Optional)**
 
-Smoketests
-==========
+The smoke test is an optional preliminary evaluation to:
 
-The smoketests are a way for teams to submit their code early for the organizers to test. We will provide results and help to get teams' systems working on our side. This will prevent potential issues for finals submissions. We will also provide a new tag on the Docker image so testing can be done by the teams as well.
-
-Finals
-======
-
-The finals are the part of ARIAC which is actually scored so teams can be compared against each other. A finals tag will be provided to teams for testing, but it will not include the actual defects and trials that will be used in the finals. A local private tag will be used for the actual finals. This local tag will be published after evalutation of the submissions have completed.
-
-----------
-Repository
-----------
-
-For this year's competition, each team will be invited to edit a private GitHub repository under the ``usnistgov`` organization. In that repository, teams will need to place their code and the Dockerfile used to build the team's submission. The organizers will send out a message prior to the smoketests requesting the team name and the emails of your team members which should be added as collaborators to the GitHub repository. 
-
-----------
-Dockerfile
-----------
-
-The Dockerfile is used to avoid any potential setup issues with dependencies and to have the commands needed to run a submission loaded correctly. In this Dockerfile, the FROM must be the official ARIAC image with the tag smoketest or final, depending on the submission type. Also, two environment variables must be set: 
-
-* ``TEAM_CONFIG``: Path to the team config in the container.
-
-* ``TEAM_COMMAND``: Command used to run the submission.
+- Validate your submission process
+- Ensure your code runs on the evaluation infrastructure
+- Help identify issues before the final submission
 
 .. note::
 
-  The command can either be a ROS 2 command (run/launch) or a shell command (./run.sh). If it is a shell command, be sure to change the permissions in the Dockerfile so it can be run easily.
- 
-Here is an example:
+   Teams are **not expected** to have fully operational submissions at this stage. The goal is to verify your code runs without crashing.
 
-.. literalinclude:: /_static/files/dockerfile_example
-  :language: docker
+**Finals (Required)**
 
-.. important::
-  The ``RUN echo "source /team_ws/install/setup.bash" >> /root/.bashrc`` is required to run the competition properly.
+The finals submission is the scored evaluation that determines your final team ranking.
 
-In your Dockerfile, it is important that the solution is built with dependencies, and that all ROS 2 packages are sourced in the .bashrc. For the smoketest and the finals, new ARIAC tags will be generated for the `official ARIAC image <https://hub.docker.com/r/nistariac/ariac2025>`_. The smoketest tag will be public as soon as it's released. There will be a finals tag for testing, but the actual tag used for evaluation will be a local image with modified defects and trials. This image will be publicly released after evaluation is complete.
+----------------
+Submission Steps
+----------------
+
+1. **Get Repository Access**
+
+   a. Submit team information: Complete the `Google form <https://forms.gle/aiaySnEiS8vna2op8>`_ before the smoke test deadline. You'll receive an email invitation within 24-48 hours.
+
+   b. Accept the GitHub invitation: Check your email and accept the invitation to your team's private repository.
+
+   .. important::
+  
+     **Set up SSH key** (if not already done): Follow GitHub's guide to `generate an SSH key <https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent>`_ and `add it to your GitHub account <https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account>`_.
+
+2. **Upload Your Code**
+
+   Choose the option that matches your current setup:
+
+   Option 1: You already use Git
+
+   Add the submission repository as a remote and push your existing code:
+
+   .. code-block:: bash
+
+      # Navigate to your existing repository
+      cd your-existing-repo
+
+      # Add the new repository as a remote
+      git remote add submission git@github.com:usnistgov/ariac2025_{team_name}.git
+
+      # Push your existing code
+      git push submission main
+
+   Option 2: You don't use Git
+
+   Clone the empty repository and copy your files:
+
+   .. code-block:: bash
+
+      # Clone the empty repository
+      git clone git@github.com:usnistgov/ariac2025_{team_name}.git
+      cd ariac2025_{team_name}
+
+      # Copy your existing files into this directory
+      # Replace {path_to_existing_files} with your actual file path
+      cp -r {path_to_existing_files}/* .
+
+      # Add and commit your files
+      git add .
+      git commit -m "Initial commit with team code"
+      git push origin main
+
+
+3. **Create a Dockerfile**
+
+   Create a Dockerfile in your repository's root directory. This file tells the evaluation system how to build and run your code. Your Dockerfile must include the base image, environment variables, and any setup needed for your solution.
+
+   a. Use the correct base image:
+
+      .. code-block:: docker
+
+         # For smoke test
+         FROM nistariac/ariac2025:smoke_test
+
+         # For finals
+         FROM nistariac/ariac2025:final
+
+   b. Set required environment variables:
+
+      .. code-block:: docker
+
+         ENV TEAM_CONFIG=/team_ws/config/team_config.yaml
+         ENV TEAM_COMMAND="ros2 launch your_package your_launch.py"
+
+      .. important::
+         ``TEAM_COMMAND`` can be a ROS 2 command or shell script. For shell scripts, set proper permissions with ``RUN chmod +x /path/to/script.sh``.
+
+   In addition the Dockerfile should:
+   
+   - Install all dependencies for your solution
+   - Build your ROS workspace
+   - Source the workspace in the container's .bashrc  
+
+   
+   **Example Dockerfile**:
+
+   .. literalinclude:: /_static/files/dockerfile_example
+     :language: docker
+
+4. **Test Your Submission**
+
+   a. Add a docker compose configuration to your repository:
+
+      Example:
+
+      .. literalinclude:: /_static/files/docker-compose_example.yaml
+         :language: yaml
+
+   b. Start the container using docker compose:
+
+      If you have an NVIDIA graphics card:
+
+      .. code-block:: bash
+
+         docker compose up ariac_nvidia
+
+      Otherwise:
+
+      .. code-block:: bash
+
+         docker compose up ariac
+
+   c. Launch the environment (in a new terminal):
+
+      Open a new terminal in the container and launch the environment with your team config:
+
+      .. code-block:: bash
+
+         docker exec -it your_container_name bash
+         ros2 launch ariac_gz ariac.launch.py user_config:=$TEAM_CONFIG trial_config:=/path/to/trial/config.yaml
+
+   d. Run your team command (in another new terminal):
+
+      Open another terminal in the container and execute your team's solution:
+
+      .. code-block:: bash
+
+         docker exec -it your_container_name bash
+         $TEAM_COMMAND
+
+5. **Create Tagged Release**
+
+   NIST will evaluate your code using specific tagged versions. Create the appropriate tag for each submission:
+
+   a. Create and push a git tag:
+
+      .. code-block:: bash
+
+         # For smoke test
+         git tag smoketest
+         git push submission smoketest
+
+         # For finals
+         git tag final
+         git push submission final
+
+   .. important::
+
+      Ensure all your code and Dockerfile are committed and pushed before creating a tag. Tags must be created before the submission deadline. 

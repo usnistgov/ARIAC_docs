@@ -1,0 +1,29 @@
+services:
+  ariac:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: example_team
+    ports:
+      - "8080:8080"
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ./:/team_ws/src/
+    environment:
+      - DISPLAY=${DISPLAY}
+    stdin_open: true
+    tty: true
+    
+  ariac_nvidia:
+    extends: ariac
+    runtime: nvidia
+    environment:
+      - QT_X11_NO_MITSHM=1
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
+      - XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR}
+      - __NV_PRIME_RENDER_OFFLOAD=1
+      - __GLX_VENDOR_LIBRARY_NAME=nvidia
+      - XAUTHORITY=${XAUTHORITY}
+    volumes:
+      - ${XAUTHORITY}:${XAUTHORITY}
