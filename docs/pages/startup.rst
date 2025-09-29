@@ -6,9 +6,6 @@ Startup
 
 There are two ways for teams to develop a solution for this year's ARIAC competition: 
 
-* Docker 
-* Local
-
 ------
 Docker
 ------
