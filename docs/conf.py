@@ -56,4 +56,7 @@ rst_prolog = """
 
 .. role:: action-name
    :class: action-name
+
+.. role:: strike
+   :class: strikethrough
 """
