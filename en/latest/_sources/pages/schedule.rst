@@ -6,20 +6,19 @@ Schedule
 
 .. list-table:: ARIAC 2025 Timeline
    :header-rows: 1
-   :widths: 40 60
    :class: centered-table
-
+   
    * - Date
      - Event
-   * - **September 4, 2025**
+   * - **September 4**
      - Kick-off Presentation
-   * - **September 16, 2025**
+   * - **September 16**
      - Code Release
-   * - **December 8, 2025**
+   * - :strike:`December 8` **January 12, 8:00 AM EST**
      - Smoke Test Submission Deadline
-   * - **December 12, 2025**
+   * - :strike:`December 12` **January 16**
      - Smoke Test Results Released
-   * - **January 2, 2026**
+   * - :strike:`January 2` **February 2, 8:00 AM EST**
      - Finals Submission Deadline
-   * - **February 2, 2026**
+   * - :strike:`February 2` **March 2**
      - Finals Results Announced

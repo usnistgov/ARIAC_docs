@@ -82,6 +82,10 @@ html[data-theme="dark"] img {
   text-decoration: none !important;
 }
 
+.strikethrough {
+  text-decoration: line-through;
+}
+
 /* ==========================================================================
    API Table 
    ========================================================================== */
