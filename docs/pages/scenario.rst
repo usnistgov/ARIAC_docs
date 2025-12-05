@@ -140,6 +140,7 @@ Completed kits must meet a specified voltage tolerance based on the :ref:`nomina
 
   V_{total} \in 4 \cdot V_{cell} \pm 0.15
 
+Before moving the AGV, call the :ref:`check kit quality service <checkkitquality_srv>` to ensure that the kit on the AGV tray is good.
 
 .. figure:: /_static/images/task_1d.gif
   :width: 100%

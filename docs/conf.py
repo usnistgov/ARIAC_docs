@@ -38,8 +38,7 @@ html_theme_options = {
 extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.todo',
-    'sphinx_copybutton',
-    'sphinxemoji.sphinxemoji'
+    'sphinx_copybutton'
 ]
 
 
