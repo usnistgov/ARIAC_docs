@@ -219,6 +219,7 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../interfaces/service_definitions.html">Service Definitions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/srv/AttachTool.html">Attach Tool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/srv/BidirectionalConveyorControl.html">Bidirectional Conveyor Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../interfaces/srv/CheckKitQuality.html">Check Kit Quality</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/srv/ControlCellFeeder.html">Control Cell Feeder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/srv/ConveyorControl.html">Conveyor Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/srv/EndCompetition.html">End Competition</a></li>
@@ -465,6 +466,7 @@ document.write(`
 <p>Completed kits must meet a specified voltage tolerance based on the <a class="reference internal" href="../interfaces/msg/CellTypes.html#cell-types-msg"><span class="std std-ref">nominal cell voltages and tolerance values</span></a> defined for each cell type:</p>
 <div class="math notranslate nohighlight">
 \[V_{total} \in 4 \cdot V_{cell} \pm 0.15\]</div>
+<p>Before moving the AGV, call the <a class="reference internal" href="../interfaces/srv/CheckKitQuality.html#checkkitquality-srv"><span class="std std-ref">check kit quality service</span></a> to ensure that the kit on the AGV tray is good.</p>
 <figure class="align-default" id="id8">
 <a class="reference internal image-reference" href="../_images/task_1d.gif"><img alt="../_images/task_1d.gif" src="../_images/task_1d.gif" style="width: 100%;" /></a>
 <figcaption>

@@ -205,6 +205,8 @@ AGV Control Interfaces
      - Current location and pose
    * - :ref:`/{agv_name}/tray_status <agvtraystatus_msg>`
      - Tray occupancy and part information
+   * - :ref:`/{agv_name}/check_kit_quality <checkkitquality_srv>`
+     - Check the quality of the kit on the AGV tray
    * - :ref:`/{agv_name}/recycle_cells <trigger_srv>`
      - Recycle tray at recycling station
    * - :ref:`/{agv_name}/move <moveagv_action>`

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Cell Defect &#8212; ARIAC Docs  documentation</title>
+    <title>Check Kit Quality &#8212; ARIAC Docs  documentation</title>
   
   
   
@@ -44,11 +44,11 @@
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'interfaces/msg/CellDefect';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'interfaces/srv/CheckKitQuality';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Cell Feeder Status" href="CellFeederStatus.html" />
-    <link rel="prev" title="Break Beam Status" href="BreakBeamStatus.html" />
+    <link rel="next" title="Control Cell Feeder" href="ControlCellFeeder.html" />
+    <link rel="prev" title="Bidirectional Conveyor Control" href="BidirectionalConveyorControl.html" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -194,37 +194,37 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ROS Interfaces</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../message_definitions.html">Message Definitions</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="AgvStations.html">Agv Stations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="AgvStatus.html">Agv Status</a></li>
-<li class="toctree-l2"><a class="reference internal" href="AgvTrayStatus.html">Agv Tray Status</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BreakBeamStatus.html">Break Beam Status</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Cell Defect</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CellFeederStatus.html">Cell Feeder Status</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CellTypes.html">Cell Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CompetitionStates.html">Competition States</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CompetitionStatus.html">Competition Status</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CompetitionTime.html">Competition Time</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ConveyorStatus.html">Conveyor State</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DistanceSensor.html">Distance Sensor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="HighPriorityOrder.html">High Priority Order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="InspectionReport.html">Inspection Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="OperationStates.html">Conveyor State</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ToolChangerStatus.html">Tool Changer Status</a></li>
-<li class="toctree-l2"><a class="reference internal" href="VacuumTools.html">Vacuum Tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="VoltageReading.html">Voltage Reading</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../message_definitions.html">Message Definitions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../msg/AgvStations.html">Agv Stations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/AgvStatus.html">Agv Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/AgvTrayStatus.html">Agv Tray Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/BreakBeamStatus.html">Break Beam Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/CellDefect.html">Cell Defect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/CellFeederStatus.html">Cell Feeder Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/CellTypes.html">Cell Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/CompetitionStates.html">Competition States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/CompetitionStatus.html">Competition Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/CompetitionTime.html">Competition Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/ConveyorStatus.html">Conveyor State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/DistanceSensor.html">Distance Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/HighPriorityOrder.html">High Priority Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/InspectionReport.html">Inspection Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/OperationStates.html">Conveyor State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/ToolChangerStatus.html">Tool Changer Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/VacuumTools.html">Vacuum Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/VoltageReading.html">Voltage Reading</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../service_definitions.html">Service Definitions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../srv/AttachTool.html">Attach Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../srv/BidirectionalConveyorControl.html">Bidirectional Conveyor Control</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../srv/CheckKitQuality.html">Check Kit Quality</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../srv/ControlCellFeeder.html">Control Cell Feeder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../srv/ConveyorControl.html">Conveyor Control</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../srv/EndCompetition.html">End Competition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../srv/SubmitHighPriorityOrder.html">Submit High Priority Order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../srv/SubmitInspectionReport.html">Submit Inspection Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../srv/Trigger.html">Trigger</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../service_definitions.html">Service Definitions</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="AttachTool.html">Attach Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BidirectionalConveyorControl.html">Bidirectional Conveyor Control</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Check Kit Quality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ControlCellFeeder.html">Control Cell Feeder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ConveyorControl.html">Conveyor Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EndCompetition.html">End Competition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SubmitHighPriorityOrder.html">Submit High Priority Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SubmitInspectionReport.html">Submit Inspection Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Trigger.html">Trigger</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../action_definitions.html">Action Definitions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -304,7 +304,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Cell Defect</h1>
+    <h1>Check Kit Quality</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -318,23 +318,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="cell-defect">
-<span id="celldefect-msg"></span><h1>Cell Defect<a class="headerlink" href="#cell-defect" title="Permalink to this heading">#</a></h1>
+  <section id="check-kit-quality">
+<span id="checkkitquality-srv"></span><h1>Check Kit Quality<a class="headerlink" href="#check-kit-quality" title="Permalink to this heading">#</a></h1>
 <p>This is a ROS message definition.</p>
 <p><strong>Source</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># CellDefect.msg</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># CheckKitQuality.srv</span>
 
-<span class="n">uint8</span> <span class="n">DENT</span><span class="o">=</span><span class="mi">1</span>
-<span class="n">uint8</span> <span class="n">BULGE</span><span class="o">=</span><span class="mi">2</span>
-<span class="n">uint8</span> <span class="n">SCRATCH</span><span class="o">=</span><span class="mi">3</span>
-
-<span class="n">uint8</span> <span class="n">defect_type</span> <span class="c1"># one of the defect types above</span>
-
-<span class="c1"># Location of the defect in cylinderical coordinates </span>
-<span class="c1">#  relative to the cell base (r is implied as the radius of the cell)</span>
-
-<span class="n">float64</span> <span class="n">theta</span> <span class="c1"># azimuthal angle of the defect centroid</span>
-<span class="n">float64</span> <span class="n">z</span> <span class="c1"># height of the defect`centroid</span>
+<span class="o">---</span>
+<span class="nb">bool</span> <span class="n">is_good</span>
+<span class="n">string</span> <span class="n">message</span>
 </pre></div>
 </div>
 </section>
@@ -351,20 +343,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="BreakBeamStatus.html"
+       href="BidirectionalConveyorControl.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Break Beam Status</p>
+        <p class="prev-next-title">Bidirectional Conveyor Control</p>
       </div>
     </a>
     <a class="right-next"
-       href="CellFeederStatus.html"
+       href="ControlCellFeeder.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Cell Feeder Status</p>
+        <p class="prev-next-title">Control Cell Feeder</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
